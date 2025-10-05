@@ -19,7 +19,15 @@ Python 1.0 was the first official release, establishing Python's foundation with
 
 **Python 1.1** - October 11, 1994
 
-*No official documentation available for this release.*
+Python 1.1 extended Python beyond its Unix roots with official Windows NT support, broader threading reliability, and the first bundled Tk interface. Guido paired those platform gains with major language evolution—flexible operator overloading, attribute hooks, and callable instances—plus tooling like Freeze and `.pyc` execution that made distributing Python applications far easier.
+
+**Major Highlights:**
+- Language hooks for richer objects: revamped operator overloading, `__getattr__`/`__setattr__`/`__delattr__`, and instance `__call__`
+- Dynamic-module groundwork and tooling upgrades: shared-library builds, Freeze utility, `compileall`, improved `h2py`, direct `.pyc` execution
+- New batteries: bundled `tkinter`, `signal`, `termios`, `curses`, `syslog`, `new`, `types`, `urlparse`, `uu`, updated profiler, and `mhlib`
+- Stronger portability: out-of-the-box builds on more Unix variants plus Windows NT, with threads working on more platforms
+
+_Research note: Summary derived from the `Misc/NEWS` file bundled with the archived Python-1.1 source tarball._
 
 ## Python 1.2 (1995)
 
