@@ -65,7 +65,7 @@ Organize all changes into these core categories based on **what action developer
 
 **User impact:** Affects deployment, CI/CD, and platform-specific development
 
-**Example:** `🟡 **Platform** iOS and Android now officially supported at tier 3 (PEP 730, 738)`
+**Example:** `- 🟡 **Platform** iOS and Android now officially supported at tier 3 (PEP 730, 738)`
 
 ### 7. Release Process & Meta Changes
 **When to use:** Changes about Python releases themselves, not the code.
@@ -75,15 +75,17 @@ Organize all changes into these core categories based on **what action developer
 
 **User impact:** Affects upgrade planning and support windows
 
-**Example:** `🟡 **Release** Python 3.13+ gets 2 years full support (up from 1.5 years) + 3 years security fixes (PEP 602)`
+**Example:** `- 🟡 **Release** Python 3.13+ gets 2 years full support (up from 1.5 years) + 3 years security fixes (PEP 602)`
 
 ## Bullet Point Format
 
-Each bullet point should follow this format:
+Each bullet point should be on its own line using markdown list syntax:
 
 ```
-[Impact] **[Domain]** [Description] [(PEP/Reference)] [- Additional context]
+- [Impact] **[Domain]** [Description] [(PEP/Reference)] [- Additional context]
 ```
+
+**Important:** Always start each bullet with `- ` (dash and space) for proper markdown rendering.
 
 ### Impact Level Emoji
 
@@ -166,25 +168,25 @@ Use concise domain tags to categorize by area. Common tags:
 ### Breaking Changes
 - Always provide migration path or alternative
 - Be explicit about what breaks
-- Example: `🔴 **distutils** Removed distutils package (PEP 632) - Use setuptools or modern build tools`
+- Example: `- 🔴 **distutils** Removed distutils package (PEP 632) - Use setuptools or modern build tools`
 
 ### Deprecations
 - Always include removal timeline
 - Group by removal version (3.14, 3.15, etc.)
-- Example: `🟡 **asyncio** asyncio.get_event_loop() behavior change (removal in 3.14)`
+- Example: `- 🟡 **asyncio** asyncio.get_event_loop() behavior change (removal in 3.14)`
 
 ### New Features
 - Briefly explain the benefit/use case
 - Include syntax examples only for major features
-- Example: `🔴 **Type System** New type parameter syntax for generics (PEP 695) - Simpler generic class/function declarations`
+- Example: `- 🔴 **Type System** New type parameter syntax for generics (PEP 695) - Simpler generic class/function declarations`
 
 ### Improvements
 - Quantify performance gains when available
-- Example: `🟡 **asyncio** 75% performance improvement in socket writes`
+- Example: `- 🟡 **asyncio** 75% performance improvement in socket writes`
 
 ### Implementation Details
 - Can be more technical - audience is advanced
-- Example: `🟢 **Bytecode** Add LOAD_SUPER_ATTR instruction for faster super() calls`
+- Example: `- 🟢 **Bytecode** Add LOAD_SUPER_ATTR instruction for faster super() calls`
 
 ### Experimental/Preview Features
 Features that are explicitly marked as experimental, disabled by default, or in preview:
@@ -194,7 +196,7 @@ Features that are explicitly marked as experimental, disabled by default, or in 
 
 **Format:**
 ```
-🟡 **Interpreter** Experimental free-threaded mode (PEP 703) - Run without GIL for true parallelism
+- 🟡 **Interpreter** Experimental free-threaded mode (PEP 703) - Run without GIL for true parallelism
   - Enable: `python --disable-gil` or set `PYTHON_GIL=0`
   - Status: Experimental, may have compatibility issues with C extensions
 ```
@@ -202,7 +204,7 @@ Features that are explicitly marked as experimental, disabled by default, or in 
 ### Large-Scale Removals
 When many modules/APIs removed together (e.g., PEP 594 "dead batteries"):
 - List inline to show scope
-- Example: `🔴 **stdlib** Removed 19 legacy modules (PEP 594) - aifc, audioop, cgi, cgitb, chunk, crypt, imghdr, mailcap, msilib, nis, nntplib, ossaudiodev, pipes, sndhdr, spwd, sunau, telnetlib, uu, xdrlib`
+- Example: `- 🔴 **stdlib** Removed 19 legacy modules (PEP 594) - aifc, audioop, cgi, cgitb, chunk, crypt, imghdr, mailcap, msilib, nis, nntplib, ossaudiodev, pipes, sndhdr, spwd, sunau, telnetlib, uu, xdrlib`
 
 ### Porting Sections
 Official release notes include "Porting to Python X.Y" sections:
@@ -220,31 +222,31 @@ Official release notes include "Porting to Python X.Y" sections:
 
 ## Breaking Changes
 
-🔴 **distutils** Removed distutils package (PEP 632) - Use setuptools or modern packaging tools
-🔴 **venv** setuptools no longer pre-installed in virtual environments - Run `pip install setuptools` if needed
-🟡 **asynchat, asyncore, imp** Removed deprecated modules
-🟢 **Syntax** Null bytes in source code now raise SyntaxError
+- 🔴 **distutils** Removed distutils package (PEP 632) - Use setuptools or modern packaging tools
+- 🔴 **venv** setuptools no longer pre-installed in virtual environments - Run `pip install setuptools` if needed
+- 🟡 **asynchat, asyncore, imp** Removed deprecated modules
+- 🟢 **Syntax** Null bytes in source code now raise SyntaxError
 
 ## Deprecations
 
 ### Removing in Python 3.14
 
-🔴 **asyncio** asyncio.get_event_loop() will warn/error if no event loop exists
-🟡 **ast** ast.Num, ast.Str, ast.Bytes deprecated - Use ast.Constant instead
+- 🔴 **asyncio** asyncio.get_event_loop() will warn/error if no event loop exists
+- 🟡 **ast** ast.Num, ast.Str, ast.Bytes deprecated - Use ast.Constant instead
 ...
 
 ### Removing in Python 3.15
 
-🟡 **importlib** Various importlib.abc classes deprecated - Use importlib.resources.abc
+- 🟡 **importlib** Various importlib.abc classes deprecated - Use importlib.resources.abc
 ...
 
 ## New Features
 
-🔴 **Type System** New type parameter syntax for generics (PEP 695)
+- 🔴 **Type System** New type parameter syntax for generics (PEP 695)
   - Simpler syntax: `def max[T](args: Iterable[T]) -> T`
   - New `type` statement for type aliases: `type Point = tuple[float, float]`
 
-🔴 **Syntax** F-string restrictions removed (PEP 701)
+- 🔴 **Syntax** F-string restrictions removed (PEP 701)
   - Can reuse quotes: `f"Hello {", ".join(names)}"`
   - Multiline expressions and comments now allowed
   - Backslashes in expressions now supported
