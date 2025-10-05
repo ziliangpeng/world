@@ -170,6 +170,7 @@ Python 3.6 introduced game-changing syntax features and critical infrastructure 
 **Major Highlights:**
 - F-strings (PEP 498) - formatted string literals revolutionized string formatting: `f"Hello {name}"`
 - Variable type annotations (PEP 526) - complete type hint support: `primes: List[int] = []`
+- Async generators and comprehensions (PEP 525/530) - `async for` in comprehensions, `yield` in async functions
 - Underscores in numeric literals (PEP 515) - improved readability: `1_000_000`
 - Compact dictionaries - 20-25% memory reduction with insertion-order preservation (implementation detail)
 - asyncio stabilized - graduated from provisional to stable API with 30% performance boost
@@ -371,6 +372,7 @@ Python 3.12 focuses on usability improvements for type hints, f-strings, and dev
 - F-string restrictions removed (PEP 701) - can reuse quotes, use multiline expressions, and include backslashes
 - Comprehensions 2x faster (PEP 709) - list/dict/set comprehensions inlined for major speedup
 - `isinstance()` 2-20x faster - protocol checks dramatically accelerated
+- Incremental garbage collection - reduced pause times for large heaps
 - Better error messages - "Did you forget to import 'sys'?" and "Did you mean: 'self.blech'?"
 - Per-interpreter GIL (PEP 684) - foundation for better parallelism (C-API only)
 - `distutils` removed (PEP 632) - use setuptools or modern packaging tools
