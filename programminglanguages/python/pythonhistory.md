@@ -2,18 +2,91 @@
 
 A comprehensive guide to Python's evolution, major features by version, and practical guidance for version selection.
 
-## Python 1.x (1994-2000)
+## Python 1.0 (1994)
 
-**Python 1.0** - January 1994
-- First official release
-- Lambda, map, filter, reduce (functional programming)
-- Exception handling
-- Core data types: list, dict, str
-- Modules and packages
+**Python 1.0** - January 26, 1994
 
-**Python 1.5** - December 1997
-- Standard library enhancements
-- Initial Unicode support
+Python 1.0 was the first official release, establishing Python's foundation with functional programming tools, exception handling, and the module system that would define Python's architecture.
+
+**Major Highlights:**
+- Lambda, map, filter, reduce - functional programming tools
+- Exception handling with try/except
+- Core data types: list, dict, str, tuple
+- Module and package system
+- Basic object-oriented programming
+
+## Python 1.1 (1994)
+
+**Python 1.1** - October 11, 1994
+
+*No official documentation available for this release.*
+
+## Python 1.2 (1995)
+
+**Python 1.2** - April 13, 1995
+
+*No official documentation available for this release.*
+
+## Python 1.3 (1995)
+
+**Python 1.3** - October 13, 1995
+
+*No official documentation available for this release.*
+
+## Python 1.4 (1996)
+
+**Python 1.4** - October 25, 1996
+
+Python 1.4 introduced Modula-3 inspired keyword arguments and built-in support for complex numbers, marking significant usability improvements.
+
+**Major Highlights:**
+- Keyword arguments - Modula-3 inspired function parameter syntax
+- Built-in support for complex numbers
+- Basic data hiding through name mangling
+- Improved standard library
+
+## Python 1.5 (1997-1998)
+
+**Python 1.5** - December 31, 1997 (January 3, 1998)
+
+Python 1.5 was a major milestone with nearly 2x performance improvement, introducing the package system with `__init__.py`, private variables via name mangling, and the powerful `re` module for regular expressions.
+
+**Major Highlights:**
+- Package system requiring `__init__.py` files for hierarchical imports
+- Private variables with `__` (double underscore) name mangling
+- `assert` statement for conditional error checking
+- Performance nearly doubled compared to 1.4
+- `re` module with Perl-style regular expressions
+- New modules: threading, imaplib, poplib, smtplib, xmllib
+- Raw strings for easier regular expression handling
+- Dictionary methods: `.clear()`, `.copy()`, `.update()`, `.get()`
+
+```python
+# Package imports
+import spam.ham.eggs  # Hierarchical module names
+
+# Private variables with name mangling
+class MyClass:
+    def __init__(self):
+        self.__private_var = 42  # Becomes _MyClass__private_var
+
+# Assert statement
+assert x > 0, "x must be positive"
+
+# Raw strings for regex
+pattern = r'\d+\.\d+'  # No need to escape backslashes
+```
+
+## Python 1.6 (2000)
+
+**Python 1.6** - September 5, 2000
+
+Python 1.6 was a transitional release created at CNRI's request, representing the state of Python development as of May 2000, with Unicode support as its primary new feature. Released the same day as Python 2.0 beta1, it was quickly superseded.
+
+**Major Highlights:**
+- Unicode support (16-bit characters)
+- Forward compatibility with Python 2.0
+- Final release under CNRI development
 
 ## Python 2.0 (2000-2001)
 
