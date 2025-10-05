@@ -44,7 +44,7 @@ A comprehensive guide to Python's evolution, major features by version, and prac
 
 ## Python 3.0 (2008-2009)
 
-**Python 3.0** - December 3, 2008 | **EOL: January 2009**
+**Python 3.0** - December 3, 2008 | **EOL: June 27, 2009**
 
 Python 3.0 "Py3K" is the first ever intentionally backwards incompatible Python release - a comprehensive language redesign that fundamentally restructures Python around clean text/bytes separation, removes accumulated legacy features, and establishes a solid foundation for the language's future.
 
