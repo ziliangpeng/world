@@ -47,13 +47,13 @@ _Research note: Details sourced from the original `Misc/NEWS` inside the archive
 
 **Python 1.3** - October 13, 1995
 
-Python 1.3 broadened Python's footprint beyond its Unix roots with official Windows 95/NT binaries, while tightening its import machinery and sandboxing story. The release laid the groundwork for the richer 1.4 feature set by stabilizing the recently added networking and CGI stack that early web developers were beginning to rely on.
+Python 1.3 marked Python's second evolution stage: keyword arguments arrived, hierarchical package imports became practical, and the web/datastore libraries were upgraded for real-world use. The release also added runtime hooks like `globals()`, `locals()`, and `sys.platform`, refining the interpreter for embedders and tool builders.
 
 **Major Highlights:**
-- Import customization with the new `ihooks` module and companion `rexec`/`Bastion` sandbox facilities
-- `tabnanny.py` script added to detect ambiguous indentation in source files
-- Web tooling polish across `cgi`, `urllib`, `mimetools`, `mailcap`, and `httplib`
-- Official Windows installers plus incremental Mac/Unix portability fixes
+- Keyword arguments and optional traceback arguments for `raise`, plus more forgiving tokenization and interactive `compile(..., 'single')`
+- Hierarchical import infrastructure via `ni`/`ihooks`, along with a rewritten `rexec` sandbox
+- Overhauled internet stack (`htmllib`, `formatter`, `urllib`, `httplib`, `nntplib`, `rfc822`) and new text/binary codecs (`binascii`, `base64`, `binhex`, `quopri`)
+- Unified DBM story (`bsddb`, `dumbdbm`, `anydbm`) and dynamic-loader improvements such as shared-library deduplication
 
 _Research note: Highlights gathered from the `Misc/NEWS` file bundled with the archived Python-1.3 source tarball._
 
