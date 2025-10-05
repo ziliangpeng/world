@@ -73,7 +73,7 @@ a, *rest = [1, 2, 3, 4]  # a = 1, rest = [2, 3, 4]
 
 ## Python 3.1 (2009-2012)
 
-**Python 3.1** - June 27, 2009 | **EOL: June 2012**
+**Python 3.1** - June 27, 2009 | **EOL: April 9, 2012**
 
 Python 3.1 made Python 3 practical for real-world use with critical performance fixes that addressed Python 3.0's biggest bottleneck - the I/O library was completely rewritten in C for 2-20x speedup.
 
@@ -88,7 +88,7 @@ Python 3.1 made Python 3 practical for real-world use with critical performance 
 
 ## Python 3.2 (2011-2016)
 
-**Python 3.2** - February 20, 2011 | **EOL: February 2016**
+**Python 3.2** - February 20, 2011 | **EOL: February 20, 2016**
 
 Python 3.2 is the release that made Python 3 production-ready, fixing critical bytes/text handling issues and adding essential infrastructure for Python packaging and deployment.
 
@@ -103,7 +103,7 @@ Python 3.2 is the release that made Python 3 production-ready, fixing critical b
 
 ## Python 3.3 (2012-2017)
 
-**Python 3.3** - September 29, 2012 | **EOL: September 2017**
+**Python 3.3** - September 29, 2012 | **EOL: September 29, 2017**
 
 Python 3.3 modernizes the language with better Unicode handling, virtual environments in the standard library, and improved migration from Python 2.
 
@@ -118,7 +118,7 @@ Python 3.3 modernizes the language with better Unicode handling, virtual environ
 
 ## Python 3.4 (2014-2019)
 
-**Python 3.4** - March 16, 2014 | **EOL: March 2019**
+**Python 3.4** - March 16, 2014 | **EOL: March 18, 2019**
 
 Python 3.4 focused on infrastructure improvements and developer experience with no new syntax, bringing pip by default and the foundational asyncio framework.
 
@@ -133,7 +133,7 @@ Python 3.4 focused on infrastructure improvements and developer experience with 
 
 ## Python 3.5 (2015-2020)
 
-**Python 3.5** - September 13, 2015 | **EOL: September 2020**
+**Python 3.5** - September 13, 2015 | **EOL: September 30, 2020**
 
 Python 3.5 is a groundbreaking release for asynchronous programming and scientific computing with revolutionary dedicated syntax for coroutines.
 
