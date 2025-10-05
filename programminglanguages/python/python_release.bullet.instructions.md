@@ -5,8 +5,55 @@ This guide explains how to convert raw Python release notes into concise, action
 ## File Naming Convention
 
 - Raw release notes: `python_X.Y_release.raw.md`
-- Bullet summary: `python_X.Y.bullet.md`
-- Example: `python_3.12.bullet.md`
+- Bullet summary: `python_X.Y_release.bullet.md`
+- Prose summary: `python_X.Y_release.summary.md`
+- Example: `python_3.12_release.bullet.md`
+
+## File Structure
+
+Each bullet summary file should have this structure:
+
+1. **Header** - Title, release date, EOL date
+2. **Major Highlights** - 5-7 most impactful changes in plain language
+3. **Experimental Features** - If applicable (e.g., Python 3.13's free-threading and JIT)
+4. **Breaking Changes** - Changes that break existing code
+5. **Deprecations** - Grouped by removal timeline
+6. **New Features** - New capabilities added
+7. **Improvements** - Performance and quality improvements
+8. **Implementation Details** - Low-level changes for advanced users
+9. **Platform & Environment** - If applicable
+10. **Release Process & Meta Changes** - If applicable
+
+### Major Highlights Section
+
+**Purpose:** Make it easy to quickly grasp the most important changes in a release without reading hundreds of bullets.
+
+**Guidelines:**
+- Place immediately after the header (release date/EOL)
+- List 5-7 of the most impactful changes
+- Use plain language, not bullet format
+- Focus on changes that affect the widest audience or represent significant architectural shifts
+- Include a brief one-line summary that captures the release's theme
+- Prioritize:
+  - Experimental/revolutionary features (free-threading, JIT)
+  - Major breaking changes (dead batteries removal, distutils removal)
+  - Significant language syntax changes (PEP 695, PEP 701)
+  - Major performance improvements (2x+ speedups)
+  - Important developer experience improvements (REPL, error messages)
+  - Platform support changes
+
+**Example:**
+```markdown
+## Major Highlights
+
+Python 3.13 is a groundbreaking release with two experimental game-changers and major quality-of-life improvements:
+
+1. **Free-threaded mode (PEP 703)** - Run Python without the GIL for true parallelism (experimental)
+2. **JIT compiler (PEP 744)** - Experimental just-in-time compilation for performance improvements
+3. **Improved REPL** - Modern interactive interpreter with colors, multiline editing, and history browsing
+4. **Defined locals() semantics (PEP 667)** - Clear mutation behavior for debugging and introspection
+5. **Removed 19 "dead batteries" modules (PEP 594)** - Cleanup of legacy standard library modules
+```
 
 ## Primary Categorization: Action Required
 
@@ -220,6 +267,18 @@ Official release notes include "Porting to Python X.Y" sections:
 **Released:** October 2, 2023
 **EOL:** October 2028 (security support)
 
+## Major Highlights
+
+Python 3.12 focuses on usability improvements for type hints, f-strings, and developer experience:
+
+1. **New type parameter syntax (PEP 695)** - Cleaner generic classes and functions
+2. **F-string restrictions removed (PEP 701)** - Can reuse quotes, use multiline expressions
+3. **Comprehensions 2x faster (PEP 709)** - List/dict/set comprehensions inlined
+4. **isinstance() 2-20x faster** - Protocol checks dramatically accelerated
+5. **Better error messages** - "Did you forget to import 'sys'?"
+6. **Per-interpreter GIL (PEP 684)** - Foundation for better parallelism
+7. **distutils removed (PEP 632)** - Use setuptools or modern packaging tools
+
 ## Breaking Changes
 
 - 🔴 **distutils** Removed distutils package (PEP 632) - Use setuptools or modern packaging tools
@@ -290,6 +349,7 @@ Official release notes include "Porting to Python X.Y" sections:
 ## Quality Checklist
 
 Before finalizing, verify:
+- [ ] Major Highlights section present with 5-7 key changes and theme summary
 - [ ] Every breaking change has migration guidance
 - [ ] Every deprecation has removal timeline
 - [ ] Experimental features clearly marked with activation method
@@ -300,6 +360,6 @@ Before finalizing, verify:
 - [ ] No duplicate information across categories
 - [ ] Major PEPs are all covered (check official summary for PEP list)
 - [ ] Performance claims include numbers when available
-- [ ] Formatting is consistent throughout
+- [ ] Formatting is consistent throughout (all bullets start with `- `)
 - [ ] Release date and EOL date in header
 - [ ] Porting guide sections reviewed and integrated into Breaking Changes

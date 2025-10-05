@@ -3,6 +3,18 @@
 **Released:** October 7, 2024
 **EOL:** October 2029 (security support - 2 years full support + 3 years security fixes per PEP 602)
 
+## Major Highlights
+
+Python 3.13 is a groundbreaking release with two experimental game-changers and major quality-of-life improvements:
+
+1. **Free-threaded mode (PEP 703)** - Run Python without the GIL for true parallelism (experimental)
+2. **JIT compiler (PEP 744)** - Experimental just-in-time compilation for performance improvements
+3. **Improved REPL** - Modern interactive interpreter with colors, multiline editing, and history browsing
+4. **Defined locals() semantics (PEP 667)** - Clear mutation behavior for debugging and introspection
+5. **Removed 19 "dead batteries" modules (PEP 594)** - Cleanup of legacy standard library modules
+6. **iOS and Android tier 3 support** - Official mobile platform support
+7. **Extended support timeline (PEP 602)** - 2 years full support + 3 years security fixes (up from 1.5 + 3.5)
+
 ## Experimental Features
 
 - 🔴 **Interpreter** Experimental free-threaded mode (PEP 703) - Run without GIL for true parallelism

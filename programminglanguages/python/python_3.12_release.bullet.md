@@ -3,6 +3,18 @@
 **Released:** October 2, 2023
 **EOL:** October 2028 (security support)
 
+## Major Highlights
+
+Python 3.12 focuses on usability improvements for type hints, f-strings, and developer experience:
+
+1. **New type parameter syntax (PEP 695)** - Cleaner generic classes and functions: `def max[T](args: Iterable[T]) -> T`
+2. **F-string restrictions removed (PEP 701)** - Can reuse quotes, use multiline expressions, and include backslashes
+3. **Comprehensions 2x faster (PEP 709)** - List/dict/set comprehensions inlined for major speedup
+4. **isinstance() 2-20x faster** - Protocol checks dramatically accelerated
+5. **Better error messages** - "Did you forget to import 'sys'?" and "Did you mean: 'self.blech'?"
+6. **Per-interpreter GIL (PEP 684)** - Foundation for better parallelism (C-API only)
+7. **distutils removed (PEP 632)** - Use setuptools or modern packaging tools
+
 ## Breaking Changes
 
 - 🔴 **distutils** Removed distutils package (PEP 632) - Use setuptools or modern build tools instead
