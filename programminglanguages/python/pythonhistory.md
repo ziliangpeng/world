@@ -25,13 +25,29 @@ Python 1.0 was the first official release, establishing Python's foundation with
 
 **Python 1.2** - April 13, 1995
 
-*No official documentation available for this release.*
+Python 1.2 was a "maturity" release: it pushed the Great Renaming through the C API, reworked imports, and shipped polished documentation alongside long-requested persistence features. Guido also laid the groundwork for safer execution models while tightening portability across Unix, Mac, NeXT, and the emerging Windows NT builds.
+
+**Major Highlights:**
+- Phase 2 of the Great Renaming: public C API now uses `PyObject`-style names with a new `imp` module exposing import internals
+- Hooks for restricted execution by routing `import` through `__import__` and per-module `__builtins__`
+- New persistence toolkit: `pickle`, `shelve`, and `copy` plus first-class docstrings via `__doc__`
+- Massive bug and leak sweep, dynamic-loader fixes, and broader platform support (autoconf 2.0, X11/Motif, Mac, Windows NT)
+
+_Research note: Details sourced from the original `Misc/NEWS` inside the archived Python-1.2 tarball._
 
 ## Python 1.3 (1995)
 
 **Python 1.3** - October 13, 1995
 
-*No official documentation available for this release.*
+Python 1.3 broadened Python's footprint beyond its Unix roots with official Windows 95/NT binaries, while tightening its import machinery and sandboxing story. The release laid the groundwork for the richer 1.4 feature set by stabilizing the recently added networking and CGI stack that early web developers were beginning to rely on.
+
+**Major Highlights:**
+- Import customization with the new `ihooks` module and companion `rexec`/`Bastion` sandbox facilities
+- `tabnanny.py` script added to detect ambiguous indentation in source files
+- Web tooling polish across `cgi`, `urllib`, `mimetools`, `mailcap`, and `httplib`
+- Official Windows installers plus incremental Mac/Unix portability fixes
+
+_Research note: Highlights gathered from the `Misc/NEWS` file bundled with the archived Python-1.3 source tarball._
 
 ## Python 1.4 (1996)
 
