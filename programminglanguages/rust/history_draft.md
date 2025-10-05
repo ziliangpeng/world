@@ -2,6 +2,13 @@
 
 > Curated from `rust/RELEASES.md`; focuses on editions, language pillars, and ecosystem turning points.
 
+## Foundations Before 1.0 (2013–2014)
+- **0.8 (2013-09-26)** — Shifted `for` loops onto iterators, introduced default trait methods and the `format!` family, plus a Rust-written runtime/IO stack and checked integer ops (`rust/RELEASES.md:14657`, `rust/RELEASES.md:14659`, `rust/RELEASES.md:14700`, `rust/RELEASES.md:14716`, `rust/RELEASES.md:14727`).
+- **0.9 (2014-01-09)** — Added feature gates, overhauled `Option`/`Result` and `std::io`, strengthened linting, and expanded trait-object coercions and macro capabilities (`rust/RELEASES.md:14493`, `rust/RELEASES.md:14571`, `rust/RELEASES.md:14525`, `rust/RELEASES.md:14530`).
+- **0.10 (2014-04-03)** — Launched the RFC process, enabled cross-crate macros, delivered `Vec<T>`, `try!`, `Weak`, and standardized `Deref`/`DerefMut` behavior (`rust/RELEASES.md:14324`, `rust/RELEASES.md:14338`, `rust/RELEASES.md:14386`, `rust/RELEASES.md:14383`, `rust/RELEASES.md:14365`).
+- **0.11 (2014-07-02)** — Retired `~`/`@` pointers in favor of `Box`, `Vec`, and `String`, made fields private by default, introduced the `std` façade with `libcore`, and adopted jemalloc (`rust/RELEASES.md:14191`, `rust/RELEASES.md:14199`, `rust/RELEASES.md:14232`, `rust/RELEASES.md:14260`).
+- **0.12 (2014-10-09)** — Landed lifetime elision, `if let`, `where` clauses, the `Sized`/DST model, unboxed closures, and 64-bit Windows support, turning the language into its 1.0 form (`rust/RELEASES.md:14069`, `rust/RELEASES.md:14081`, `rust/RELEASES.md:14088`, `rust/RELEASES.md:14130`, `rust/RELEASES.md:14083`).
+
 ## Launch and Stability (2015–2016)
 - **1.0.0 (2015-05-15)** — First stable toolchain; most of `std` marked `#[stable]`, crate naming rules tightened, and integer overflow traps in debug builds (see `rust/RELEASES.md:13624`, `rust/RELEASES.md:13644`, `rust/RELEASES.md:13629`).
 - **1.13.0 (2016-11-10)** — Stabilized the `?` operator and macros in type position, making idiomatic error propagation and macro-heavy APIs feel natural (`rust/RELEASES.md:11130`, `rust/RELEASES.md:11132`).
