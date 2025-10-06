@@ -10,6 +10,8 @@ Ideas and topics to explore in depth.
   - Constrained decoding and structured outputs
   - Speculative decoding
   - Guidance and control methods (classifier-free guidance, etc.)
+- [ ] model behavior steering
 
 ## To Be Categorized
 
+- [ ] multi-node inference connectivity technology
