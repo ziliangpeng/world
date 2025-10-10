@@ -10,7 +10,7 @@
   - NVLink 2.0: 300 GB/s per GPU (V100, 6 links @ 25 GB/s bidirectional)
   - NVLink 3.0: 600 GB/s per GPU (A100, 12 links @ 50 GB/s bidirectional)
   - NVLink 4.0: 900 GB/s per GPU (H100, 18 links @ 50 GB/s bidirectional)
-  - NVLink 5.0: 1.8 TB/s per GPU (B100/GB200)
+  - NVLink 5.0: 1.8 TB/s per GPU (B100/B200/GB200, 18 links @ 100 GB/s bidirectional, 224G SerDes)
 - **XGMI/Infinity Fabric** (AMD) - AMD's GPU interconnect
   - MI200 (XGMI-2): 200 GB/s per GPU (4 links @ 25 GT/s, 50 GB/s per link)
   - MI250: 400 GB/s bidirectional between GCDs (4 links)
