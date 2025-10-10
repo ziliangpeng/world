@@ -6,13 +6,15 @@
 
 #### Proprietary High-Speed Interconnects:
 - **NVLink** (NVIDIA) - Dedicated GPU-to-GPU links
-  - NVLink 2.0: 300 GB/s per GPU (V100)
-  - NVLink 3.0: 600 GB/s per GPU (A100)
-  - NVLink 4.0: 900 GB/s per GPU (H100)
+  - NVLink 1.0: 160 GB/s per GPU (P100, 4 links @ 20 GB/s bidirectional)
+  - NVLink 2.0: 300 GB/s per GPU (V100, 6 links @ 25 GB/s bidirectional)
+  - NVLink 3.0: 600 GB/s per GPU (A100, 12 links @ 50 GB/s bidirectional)
+  - NVLink 4.0: 900 GB/s per GPU (H100, 18 links @ 50 GB/s bidirectional)
   - NVLink 5.0: 1.8 TB/s per GPU (B100/GB200)
 - **XGMI/Infinity Fabric** (AMD) - AMD's GPU interconnect
-  - Used in MI100, MI200, MI300 series
-  - Up to 200-400 GB/s depending on generation
+  - MI200 (XGMI-2): 200 GB/s per GPU (4 links @ 25 GT/s, 50 GB/s per link)
+  - MI250: 400 GB/s bidirectional between GCDs (4 links)
+  - MI300 (XGMI-3): ~64 GB/s per link (32 GT/s, 16-bit wide, ~48 GB/s effective)
 - **Xe Link** (Intel) - Intel GPU interconnect for data center GPUs
   - Used in Ponte Vecchio and newer Xe GPUs
 - **NVSwitch** (NVIDIA) - Switch fabric connecting multiple NVLink GPUs
@@ -154,6 +156,23 @@ GPU-to-GPU Direct Communication
 ---
 
 ## Technology Comparison
+
+### Bandwidth Comparison: PCIe vs GPU Interconnects
+
+| Technology | Bandwidth | Notes |
+|------------|-----------|-------|
+| **PCIe 4.0 x16** | ~32 GB/s | General-purpose interconnect |
+| **PCIe 5.0 x16** | ~64 GB/s | 2x PCIe 4.0 |
+| **PCIe 6.0 x16** | ~128 GB/s | 4x PCIe 4.0 (emerging) |
+| **NVLink 1.0** (P100) | 160 GB/s | **5x faster than PCIe 4.0** |
+| **XGMI-2** (MI200) | 200 GB/s | **6x faster than PCIe 4.0** |
+| **NVLink 2.0** (V100) | 300 GB/s | **9x faster than PCIe 4.0** |
+| **XGMI-2** (MI250) | 400 GB/s | **12x faster than PCIe 4.0** |
+| **NVLink 3.0** (A100) | 600 GB/s | **19x faster than PCIe 4.0** |
+| **NVLink 4.0** (H100) | 900 GB/s | **28x faster than PCIe 4.0** |
+| **NVLink 5.0** (GB200) | 1,800 GB/s | **56x faster than PCIe 4.0** |
+
+**Key Insight:** GPU-to-GPU interconnects (NVLink/XGMI) are purpose-built for high-bandwidth parallel data transfer and are **5-56x faster** than PCIe. PCIe is a general-purpose interconnect and becomes a major bottleneck for GPU-to-GPU communication.
 
 ### NIXL vs UCX vs NCCL
 
