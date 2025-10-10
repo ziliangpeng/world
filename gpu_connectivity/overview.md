@@ -17,7 +17,9 @@
     - MI250 inter-package: Dual (2 links) or Single (1 link) configurations
   - MI300 (XGMI-3): 64 GB/s per link (32 GT/s, 16-bit wide, ~48 GB/s effective)
 - **Xe Link** (Intel) - Intel GPU interconnect for data center GPUs
-  - Used in Ponte Vecchio and newer Xe GPUs
+  - Ponte Vecchio: ~26.5 GB/s per link unidirectional (53 Gbps, 90 Gb/s SerDes)
+  - 16 Xe Links total per 2-stack GPU (8 links per stack)
+  - Multi-GPU configs: 6 links (159 GB/s) or 2 links (53 GB/s) between GPUs
 - **NVSwitch** (NVIDIA) - Switch fabric connecting multiple NVLink GPUs
   - Enables all-to-all GPU communication at full NVLink speed
 
