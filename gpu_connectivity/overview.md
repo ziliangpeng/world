@@ -55,6 +55,19 @@
   - 100 GbE, 200 GbE, 400 GbE variants
 - **Ethernet** - Standard networking (100GbE, 200GbE, 400GbE)
 
+#### Cloud-Specific Network Technologies:
+- **GPUDirect-TCPX** (Google Cloud) - Custom RDMA networking stack for A3 VMs
+  - RDMA semantics over TCP/IP transport
+  - Direct GPU memory to network transfers (bypasses CPU)
+  - Works with gVNIC (Google Virtual NIC)
+  - Optimized for H100 GPUs on A3 instances
+  - **TCPXO** variant on A3 Mega VMs for enhanced performance
+  - Open-source: https://github.com/google/nccl-plugin-gpudirecttcpx
+- **EFA (Elastic Fabric Adapter)** (AWS) - Custom network interface for AWS
+  - High-performance inter-instance communication
+  - OS-bypass hardware interface
+  - Lower latency than traditional TCP transport
+
 #### Network-GPU Integration:
 - **GPUDirect RDMA** - Direct network-to-GPU transfers (bypasses CPU and system memory)
 - **GPUDirect Async** - Async transfers between GPU and network
@@ -153,6 +166,15 @@ GPU-to-GPU Direct Communication
 | **GPU Initiation** | Yes (IBGDA) | Partial | No |
 | **Storage Integration** | Native (GPUDirect Storage, S3) | Limited | No |
 
+### Cloud Network Technologies
+
+| Technology | Provider | Transport | Use Case | Hardware |
+|------------|----------|-----------|----------|----------|
+| **InfiniBand** | Standard | Native RDMA | On-prem/HPC | Specialized NICs |
+| **RoCE** | Standard | RDMA over Ethernet | Data center | RDMA-capable NICs |
+| **TCPX** | Google Cloud | RDMA over TCP/IP | A3 VMs (H100) | gVNIC |
+| **EFA** | AWS | Custom OS-bypass | EC2 instances | Custom adapter |
+
 ---
 
 ## Notes
@@ -162,6 +184,8 @@ GPU-to-GPU Direct Communication
 - **GPUDirect** is a suite of technologies that enable direct data paths, bypassing CPU overhead
 - **IBGDA** enables GPU-initiated network operations without CPU involvement
 - **CXL** is an emerging standard that may unify some of the proprietary interconnect space
+- **TCPX** is Google's cloud-native answer to RDMA without specialized hardware - achieves high performance using standard TCP/IP with custom optimizations
+- Cloud providers (Google, AWS) have developed custom networking solutions (TCPX, EFA) optimized for their infrastructure
 
 ---
 
