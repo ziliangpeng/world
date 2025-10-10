@@ -21,6 +21,10 @@
   - 16 Xe Links total per 2-stack GPU (8 links per stack)
   - Multi-GPU configs: 6 links (159 GB/s) or 2 links (53 GB/s) between GPUs
 - **NVSwitch** (NVIDIA) - Switch fabric connecting multiple NVLink GPUs
+  - NVSwitch 1.0: 7.2 Tb/s switch throughput (DGX-2, V100)
+  - NVSwitch 2.0: Supports 12 NVLinks @ 50 GB/s (DGX A100)
+  - NVSwitch 3.0: 12.8 Tb/s switch throughput, 18 NVLinks support (DGX H100)
+  - NVSwitch 4.0: 1.8 TB/s GPU-to-GPU bandwidth, up to 576 GPUs (B100/B200, 1 PB/s total)
   - Enables all-to-all GPU communication at full NVLink speed
 
 #### Standard Interconnects:
