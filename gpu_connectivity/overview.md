@@ -12,10 +12,10 @@
   - NVLink 4.0: 900 GB/s per GPU (H100, 18 links @ 50 GB/s bidirectional)
   - NVLink 5.0: 1.8 TB/s per GPU (B100/B200/GB200, 18 links @ 100 GB/s bidirectional, 224G SerDes)
 - **XGMI/Infinity Fabric** (AMD) - AMD's GPU interconnect
-  - MI200/MI250 (XGMI-2): 50 GB/s per link (25 GT/s, 16-bit wide, 100 GB/s bidirectional)
-    - MI250 intra-package: 400 GB/s bidirectional between GCDs (4 links)
-    - MI250 inter-package: Dual (2 links) or Single (1 link) configurations
-  - MI300 (XGMI-3): 64 GB/s per link (32 GT/s, 16-bit wide, ~48 GB/s effective)
+  - MI200/MI250 (XGMI-2): 50 GB/s unidirectional per link (100 GB/s bidirectional).
+    - MI250 intra-package: 400 GB/s bidirectional between GCDs (4 links).
+    - MI250 inter-package: up to 8 external links on an MI250X.
+  - MI300 (XGMI-3): 64 GB/s unidirectional per link (~48 GB/s effective). An MI300X has 8 links, totaling 512 GB/s.
 - **Xe Link** (Intel) - Intel GPU interconnect for data center GPUs
   - Ponte Vecchio: ~26.5 GB/s per link unidirectional (53 Gbps, 90 Gb/s SerDes)
   - 16 Xe Links total per 2-stack GPU (8 links per stack)
