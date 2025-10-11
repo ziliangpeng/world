@@ -21,6 +21,7 @@
   - 16 Xe Links total per 2-stack GPU (8 links per stack)
   - Multi-GPU configs: 6 links (159 GB/s) or 2 links (53 GB/s) between GPUs
 - **NVSwitch** (NVIDIA) - Switch fabric connecting multiple NVLink GPUs
+- **NeuronLink** (AWS) - Proprietary interconnect for AWS Trainium/Inferentia chips.
   - NVSwitch 1.0 (2018, V100): Connects up to 16 GPUs in a node.
   - NVSwitch 2.0 (2020, A100): Connects up to 8 GPUs in a node.
   - NVSwitch 3.0 (2022, H100): Connects up to 8 GPUs in a node.
@@ -55,11 +56,17 @@
 **Note on Layers:** Layer 1 is the **connectivity hardware** (e.g., NVLink, PCIe). Layer 2 consists of the **drivers, specialized orchestration hardware (e.g., DMA engines for GPUDirect), and software libraries** that manage data transfers and collective operations across the Layer 1 hardware.
 
 #### Hardware/Driver Level:
-- **GPUDirect** (NVIDIA) - Main goal is to bypass the CPU and system memory for data transfers. This reduces latency, increases bandwidth, and frees up system resources.
-  - **P2P (Peer-to-Peer):** Direct memory transfers between GPUs (via NVLink or PCIe).
-  - **Storage:** Direct data transfers between storage (NVMe) and a GPU (via PCIe).
-  - **RDMA (Remote Direct Memory Access):** Direct data transfers between a GPU and a network card (via PCIe).
-- **UVM (Unified Virtual Memory)** - Automatic page migration between CPU/GPU
+- **NVIDIA CUDA Platform Features**
+  - **GPUDirect:** Main goal is to bypass the CPU/system memory. This reduces latency, increases bandwidth, and frees up resources.
+    - **P2P:** Direct memory transfers between GPUs (via NVLink or PCIe).
+    - **Storage:** Direct data transfers between storage (NVMe) and a GPU (via PCIe).
+    - **RDMA:** Direct data transfers between a GPU and a network card (via PCIe).
+  - **UVM (Unified Virtual Memory):** Provides a unified address space and automatic page migration between CPU and GPU.
+- **AMD ROCm Platform Features**
+  - **Shared Virtual Memory:** Provides a unified address space for CPU/GPU, analogous to UVM.
+  - **P2P Transfers:** Enables direct data transfers between AMD GPUs over Infinity Fabric or PCIe.
+- **Intel oneAPI Features**
+  - **Shared Virtual Memory (SVM):** Provides a unified address space for CPU/GPU within the oneAPI model.
 
 #### Software/Library Level:
 - **NCCL** (NVIDIA Collective Communications Library)
