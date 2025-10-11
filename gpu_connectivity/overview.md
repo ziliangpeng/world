@@ -85,12 +85,19 @@
 
 ##### Proprietary Libraries:
 - **NCCL** (NVIDIA Collective Communications Library)
+  - **Topology Awareness:** Automatically detects hardware topology (NVLink, PCIe, NUMA) to optimize communication paths.
+  - **Algorithm Selection:** Dynamically chooses the most efficient collective algorithm (e.g., ring, tree) based on the detected topology.
+  - **Synchronization & Ordering:** Manages low-level synchronization and ordering of operations across GPUs.
+  - **Data Type Optimization:** Provides optimized kernels for various data types (FP32, FP16, BF16).
+  - **Point-to-Point Primitives:** Offers basic Send/Receive operations for building custom communication patterns.
 - **Neuron CCL** (AWS's library for Trainium/Inferentia)
 - Custom ASIC vendors provide their own software stacks to manage their unique hardware. These include the **Cerebras SDK**, **Groq SDK**, **SambaFlow** (SambaNova), and **tt-metal** (Tenstorrent).
 
 ##### Open-Source Libraries:
 - **RCCL** (ROCm version for AMD)
+  - **Goal:** Functional and API-compatible drop-in replacement for NCCL, optimized for AMD's Infinity Fabric.
 - **oneCCL** (Intel's collective communications)
+  - **Goal:** Functional and API-compatible drop-in replacement for NCCL, optimized for Intel's Xe Link.
 - **Gloo** (Facebook/Meta) - An open-source, hardware-agnostic library. It provides a portable option for any hardware but is not optimized for specific accelerator interconnects like NCCL or other vendor-specific libraries.
 
 ---
