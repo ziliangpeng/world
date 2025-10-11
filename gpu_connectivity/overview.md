@@ -188,8 +188,21 @@ Unlike collective communication libraries, these are full-stack programming envi
   - In-network capabilities (e.g., SHARP reductions) can accelerate collectives when leveraged by libraries such as NCCL or UCX
 - **RoCE** (RDMA over Converged Ethernet) - RDMA on Ethernet
   - Implements InfiniBand verbs over Ethernet (lossless via PFC/ECN), letting deployments reuse Ethernet fabrics instead of dedicated InfiniBand gear
-  - 100 GbE, 200 GbE, 400 GbE variants
+  - Generational timeline:
+    - RoCE v1 (2010): Layer 2 RDMA over 10/40 GbE fabrics for single subnet deployments
+    - RoCE v2 (2014): Adds UDP/IP encapsulation for Layer 3 routing; scales with 40/56/100 GbE links
+    - RoCE v2 + 25/50/100 GbE (2016): Aligns with IEEE 802.3by/bs, enabling 25/50/100 GbE low-latency clusters
+    - RoCE v2 + 200/400 GbE (2019): Widely deployed in cloud/HPC fabrics as 200/400 GbE switches and NICs ship
+  - Common deployments today: 100 GbE, 200 GbE, 400 GbE, with early 800 GbE adoption
 - **Ethernet** - Standard networking (100GbE, 200GbE, 400GbE)
+  - Generational timeline:
+    - 10 GbE (2002): IEEE 802.3ae; first high-speed optical/copper data-center deployments
+    - 40/100 GbE (2010): IEEE 802.3ba; parallel optics for spine-leaf fabrics
+    - 25 GbE (2014): IEEE 802.3by; single-lane 25 Gb/s for cost-effective server links
+    - 50/200 GbE (2018): IEEE 802.3cd/bs; PAM4 signaling doubles throughput per lane
+    - 400 GbE (2019): IEEE 802.3bs; baseline for modern AI/HPC spine networks
+    - 800 GbE (2022): IEEE 802.3ck/df; early hyperscaler backbone deployments
+  - Common deployments today: 100 GbE, 200 GbE, 400 GbE, with early 800 GbE adoption
 
 #### Cloud-Specific Network Technologies:
 - **GPUDirect-TCPX** (Google Cloud) - Custom RDMA networking stack for A3 VMs
