@@ -26,6 +26,7 @@
   - NVSwitch 3.0: 12.8 Tb/s switch throughput, 18 NVLinks support (DGX H100)
   - NVSwitch 4.0: 1.8 TB/s GPU-to-GPU bandwidth, up to 576 GPUs (B100/B200, 1 PB/s total)
   - Enables all-to-all GPU communication at full NVLink speed
+  - **Note on Topology**: In smaller systems, NVLink connects GPUs directly. In larger systems, GPUs connect via NVLink to the NVSwitch, which creates a switched fabric for all-to-all communication.
 
 #### Standard Interconnects:
 - **PCIe** (PCI Express) - Universal standard, connects GPU to CPU and other PCIe devices
