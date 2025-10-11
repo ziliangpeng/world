@@ -67,12 +67,16 @@
   - **P2P Transfers:** Enables direct data transfers between AMD GPUs over Infinity Fabric or PCIe.
 - **Intel oneAPI Features**
   - **Shared Virtual Memory (SVM):** Provides a unified address space for CPU/GPU within the oneAPI model.
+- **AWS Neuron Platform Features**
+  - **Neuron Driver:** Manages the Trainium/Inferentia accelerators.
+  - **P2P Transfers:** Enables direct data transfers between accelerators over NeuronLink.
 
 #### Software/Library Level:
 - **NCCL** (NVIDIA Collective Communications Library)
 - **RCCL** (ROCm version for AMD)
-- **Gloo** (Facebook's collective communications)
 - **oneCCL** (Intel's collective communications)
+- **Neuron CCL** (AWS's library for Trainium/Inferentia)
+- **Gloo** (Facebook's collective communications)
 
 ---
 
