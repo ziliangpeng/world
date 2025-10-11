@@ -30,9 +30,13 @@
 
 #### Standard Interconnects (Primarily CPU-GPU):
 - **PCIe** (PCI Express) - Universal standard, connects GPU to CPU and other PCIe devices
+  - PCIe 1.0 (2003): ~4 GB/s per x16 slot
+  - PCIe 2.0 (2007): ~8 GB/s per x16 slot
+  - PCIe 3.0 (2010): ~16 GB/s per x16 slot
   - PCIe 4.0 (2017): ~32 GB/s per x16 slot
   - PCIe 5.0 (2019): ~64 GB/s per x16 slot
-  - PCIe 6.0 (2022): ~128 GB/s per x16 slot (emerging)
+  - PCIe 6.0 (2022): ~128 GB/s per x16 slot
+  - PCIe 7.0 (Spec target 2025): ~256 GB/s per x16 slot (in development)
 - **CXL** (Compute Express Link) - Emerging cache-coherent interconnect (announced 2019).
   - Built on PCIe physical layer
   - Enables CPU-GPU memory coherency
