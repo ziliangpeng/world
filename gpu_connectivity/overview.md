@@ -55,8 +55,10 @@
 **Note on Layers:** Layer 1 is the **connectivity hardware** (e.g., NVLink, PCIe). Layer 2 consists of the **drivers, specialized orchestration hardware (e.g., DMA engines for GPUDirect), and software libraries** that manage data transfers and collective operations across the Layer 1 hardware.
 
 #### Hardware/Driver Level:
-- **GPUDirect P2P** - Direct GPU-to-GPU memory transfers over PCIe (bypassing CPU)
-- **GPUDirect Storage** - Direct GPU-to-storage transfers
+- **GPUDirect** (NVIDIA) - Main goal is to bypass the CPU and system memory for data transfers. This reduces latency, increases bandwidth, and frees up system resources.
+  - **P2P (Peer-to-Peer):** Direct memory transfers between GPUs (via NVLink or PCIe).
+  - **Storage:** Direct data transfers between storage (NVMe) and a GPU (via PCIe).
+  - **RDMA (Remote Direct Memory Access):** Direct data transfers between a GPU and a network card (via PCIe).
 - **UVM (Unified Virtual Memory)** - Automatic page migration between CPU/GPU
 
 #### Software/Library Level:
