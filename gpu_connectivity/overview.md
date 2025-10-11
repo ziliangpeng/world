@@ -181,6 +181,9 @@ Unlike collective communication libraries, these are full-stack programming envi
     - HDR (High Data Rate, 2017): 50 Gb/s per lane (~200 Gb/s on x4 links)
     - NDR (Next Data Rate, 2021): 100 Gb/s per lane (~400 Gb/s on x4 links, 800 Gb/s dual-port)
     - XDR (Extreme Data Rate, 2023): 200 Gb/s per lane (~800 Gb/s on x4 links)
+  - **Performance:**
+    - **Latency:** Sub-microsecond to ~2 μs end-to-end (port-to-port switch latency ~100 ns)
+    - **CPU Overhead:** Minimal due to hardware RDMA offload and NIC-resident DMA engines
   - **IBGDA** (InfiniBand GPU-Async) - GPU-initiated network operations
   - Connects host channel adapters (HCAs) in each server to InfiniBand switches arranged in multi-tier topologies (fat tree, dragonfly, etc.) for cluster-wide reachability
   - Uses queue pairs (send/receive and completion queues) exposed via the verbs API; NIC-resident DMA engines move data without CPU involvement
@@ -194,6 +197,10 @@ Unlike collective communication libraries, these are full-stack programming envi
     - RoCE v2 + 25/50/100 GbE (2016): Aligns with IEEE 802.3by/bs, enabling 25/50/100 GbE low-latency clusters
     - RoCE v2 + 200/400 GbE (2019): Widely deployed in cloud/HPC fabrics as 200/400 GbE switches and NICs ship
   - Common deployments today: 100 GbE, 200 GbE, 400 GbE, with early 800 GbE adoption
+  - **Performance:**
+    - **Latency:** 2-6 μs end-to-end (port-to-port switch latency ~230 ns; as low as 1.3 μs with high-end NICs)
+    - **CPU Overhead:** Low due to hardware RDMA offload (comparable to InfiniBand)
+    - **Configuration Complexity:** Requires proper tuning of PFC (Priority Flow Control) and ECN (Explicit Congestion Notification) for lossless operation
 - **Ethernet** - Standard networking (100GbE, 200GbE, 400GbE)
   - Generational timeline:
     - 10 GbE (2002): IEEE 802.3ae; first high-speed optical/copper data-center deployments
@@ -203,6 +210,27 @@ Unlike collective communication libraries, these are full-stack programming envi
     - 400 GbE (2019): IEEE 802.3bs; baseline for modern AI/HPC spine networks
     - 800 GbE (2022): IEEE 802.3ck/df; early hyperscaler backbone deployments
   - Common deployments today: 100 GbE, 200 GbE, 400 GbE, with early 800 GbE adoption
+  - **Performance Limitations (TCP/IP):**
+    - **High Latency:** Standard TCP/IP stack incurs 50+ μs latency (vs 1-6 μs for RDMA technologies like InfiniBand/RoCE)
+    - **High CPU Overhead:** Kernel must process every packet, copy data through system memory, and manage protocol stack
+    - **Not Suitable for GPU-GPU Communication:** Without RDMA (RoCE), standard Ethernet is impractical for AI training workloads due to 10-50x higher latency
+
+**Network Fabric Performance Summary:**
+
+| Technology | Latency | Bandwidth (Current) | CPU Overhead | Cost | Complexity | Use Case |
+|------------|---------|---------------------|--------------|------|------------|----------|
+| **InfiniBand** | 1-2 μs (best) | 200-800 Gbps | Minimal | Highest | High (dedicated fabric) | HPC, large-scale AI training |
+| **RoCE** | 2-6 μs | 100-800 GbE | Low | Medium | Medium (PFC/ECN tuning) | AI training, cloud datacenter |
+| **Ethernet (TCP/IP)** | 50+ μs | 100-800 GbE | High | Lowest | Low | General networking, not AI training |
+
+**Key Insights:**
+- **Bandwidth scales dramatically across generations** (10 Gb/s → 800 Gb/s over 20 years), but **latency improvements are minimal** due to physics constraints (speed of light) and error correction overhead
+- **Technology choice matters more than generation** for latency: InfiniBand vs RoCE vs TCP/IP represents a 25-50x difference, while generational improvements within each technology are only ~3x over 20 years
+- **InfiniBand**: Gold standard for lowest latency and predictable performance; requires dedicated hardware and separate network fabric
+- **RoCE**: Has narrowed the gap to 95-98% of InfiniBand performance while offering significant cost savings (55% TCO reduction) and infrastructure flexibility
+- **TCP/IP**: Not viable for GPU-to-GPU communication in AI workloads without RDMA acceleration
+- **Real-world benchmarks**: NCCL tests show InfiniBand and RoCE achieve nearly identical throughput (~195 GBps on 16 GPUs), with latency differences staying within nanoseconds for properly configured RoCE deployments
+- **Adoption**: InfiniBand leads in TOP500 supercomputers (47.8%), but RoCE leads in total port bandwidth deployed (48.5%), reflecting its cost-effectiveness for large-scale deployments
 
 #### Cloud-Specific Network Technologies:
 - **GPUDirect-TCPX** (Google Cloud) - Custom RDMA networking stack for A3 VMs
@@ -355,4 +383,4 @@ GPU-to-GPU Direct Communication
 
 ---
 
-*Last updated: 2025-10-09*
+*Last updated: 2025-10-11*
