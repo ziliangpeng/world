@@ -170,9 +170,21 @@ Unlike collective communication libraries, these are full-stack programming envi
 
 #### Network Fabric:
 - **InfiniBand** - High-performance RDMA network
-  - HDR: 200 Gb/s
-  - NDR: 400 Gb/s
+  - Current links scale from 200 Gb/s (HDR) to 800 Gb/s (XDR) depending on generation and lane count
+  - Generational timeline:
+    - SDR (Single Data Rate, 2001): 2.5 Gb/s per lane (~10 Gb/s on x4 links)
+    - DDR (Double Data Rate, 2005): 5 Gb/s per lane (~20 Gb/s on x4 links)
+    - QDR (Quad Data Rate, 2008): 10 Gb/s per lane (~40 Gb/s on x4 links)
+    - FDR (Fourteen Data Rate, 2011): 14 Gb/s per lane (~56 Gb/s on x4 links)
+    - EDR (Enhanced Data Rate, 2014): 25 Gb/s per lane (~100 Gb/s on x4 links)
+    - HDR (High Data Rate, 2017): 50 Gb/s per lane (~200 Gb/s on x4 links)
+    - NDR (Next Data Rate, 2021): 100 Gb/s per lane (~400 Gb/s on x4 links, 800 Gb/s dual-port)
+    - XDR (Extreme Data Rate, 2023): 200 Gb/s per lane (~800 Gb/s on x4 links)
   - **IBGDA** (InfiniBand GPU-Async) - GPU-initiated network operations
+  - Connects host channel adapters (HCAs) in each server to InfiniBand switches arranged in multi-tier topologies (fat tree, dragonfly, etc.) for cluster-wide reachability
+  - Uses queue pairs (send/receive and completion queues) exposed via the verbs API; NIC-resident DMA engines move data without CPU involvement
+  - Provides RDMA read/write/atomic and send/receive operations with credit-based, lossless flow control and adaptive routing
+  - In-network capabilities (e.g., SHARP reductions) can accelerate collectives when leveraged by libraries such as NCCL or UCX
 - **RoCE** (RDMA over Converged Ethernet) - RDMA on Ethernet
   - 100 GbE, 200 GbE, 400 GbE variants
 - **Ethernet** - Standard networking (100GbE, 200GbE, 400GbE)
