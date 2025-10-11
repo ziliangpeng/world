@@ -6,11 +6,11 @@
 
 #### Proprietary High-Speed Interconnects:
 - **NVLink** (NVIDIA) - Dedicated GPU-to-GPU links
-  - NVLink 1.0: 160 GB/s per GPU (P100, 4 links @ 20 GB/s bidirectional)
-  - NVLink 2.0: 300 GB/s per GPU (V100, 6 links @ 25 GB/s bidirectional)
-  - NVLink 3.0: 600 GB/s per GPU (A100, 12 links @ 50 GB/s bidirectional)
-  - NVLink 4.0: 900 GB/s per GPU (H100, 18 links @ 50 GB/s bidirectional)
-  - NVLink 5.0: 1.8 TB/s per GPU (B100/B200/GB200, 18 links @ 100 GB/s bidirectional, 224G SerDes)
+  - NVLink 1.0 (2016, P100): 160 GB/s (4 links @ 20 GB/s bidirectional)
+  - NVLink 2.0 (2017, V100): 300 GB/s (6 links @ 25 GB/s bidirectional)
+  - NVLink 3.0 (2020, A100): 600 GB/s (12 links @ 50 GB/s bidirectional)
+  - NVLink 4.0 (2022, H100): 900 GB/s (18 links @ 50 GB/s bidirectional)
+  - NVLink 5.0 (2024, B100): 1.8 TB/s (18 links @ 100 GB/s bidirectional)
 - **XGMI/Infinity Fabric** (AMD) - AMD's GPU interconnect
   - MI200/MI250 (XGMI-2): 50 GB/s unidirectional per link (100 GB/s bidirectional).
     - MI250 intra-package: 400 GB/s bidirectional between GCDs (4 links).
@@ -21,10 +21,10 @@
   - 16 Xe Links total per 2-stack GPU (8 links per stack)
   - Multi-GPU configs: 6 links (159 GB/s) or 2 links (53 GB/s) between GPUs
 - **NVSwitch** (NVIDIA) - Switch fabric connecting multiple NVLink GPUs
-  - NVSwitch 1.0: 7.2 Tb/s switch throughput (DGX-2, V100)
-  - NVSwitch 2.0: Supports 12 NVLinks @ 50 GB/s (DGX A100)
-  - NVSwitch 3.0: 12.8 Tb/s switch throughput, 18 NVLinks support (DGX H100)
-  - NVSwitch 4.0: 1.8 TB/s GPU-to-GPU bandwidth, up to 576 GPUs (B100/B200, 1 PB/s total)
+  - NVSwitch 1.0 (2018, V100): Connects up to 16 GPUs in a node.
+  - NVSwitch 2.0 (2020, A100): Connects up to 8 GPUs in a node.
+  - NVSwitch 3.0 (2022, H100): Connects up to 8 GPUs in a node.
+  - NVSwitch 4.0 (2024, B200): Scales to 72 GPUs in a single rack (GB200 NVL72).
   - Enables all-to-all GPU communication at full NVLink speed
   - **Note on Topology**: In smaller systems, NVLink connects GPUs directly. In larger systems, GPUs connect via NVLink to the NVSwitch, which creates a switched fabric for all-to-all communication.
 
