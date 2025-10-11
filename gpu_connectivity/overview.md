@@ -91,7 +91,7 @@
 ##### Open-Source Libraries:
 - **RCCL** (ROCm version for AMD)
 - **oneCCL** (Intel's collective communications)
-- **Gloo** (Facebook's collective communications)
+- **Gloo** (Facebook/Meta) - An open-source, hardware-agnostic library. It provides a portable option for any hardware but is not optimized for specific accelerator interconnects like NCCL or other vendor-specific libraries.
 
 ---
 
