@@ -36,6 +36,10 @@
 - **CXL** (Compute Express Link) - Emerging cache-coherent interconnect
   - Built on PCIe physical layer
   - Enables CPU-GPU memory coherency
+  - **Performance & Adoption:**
+    - **Bandwidth:** Determined by the underlying PCIe physical layer (e.g., ~64 GB/s on PCIe 5.0 x16).
+    - **Latency:** While higher than local DRAM (~200-300ns vs. <100ns), it is orders of magnitude faster than NVMe storage.
+    - **Outlook:** This performance trade-off is enabling large-scale memory expansion, and CXL is now seen as the essential successor to PCIe for memory-centric data center workloads.
 
 
 **A Note on Aggregate vs. Per-Link Bandwidth:** A GPU uses only **one** PCIe x16 slot for CPU communication (~64 GB/s with PCIe 5.0). While this may be faster than a single proprietary link (e.g., one NVLink 4.0 link is 50 GB/s), a high-end GPU has many such links. For example, an NVIDIA H100 has **18** NVLink 4.0 links, providing a total of **900 GB/s** for GPU-to-GPU communication. It is this massive difference in *aggregate* bandwidth that makes proprietary interconnects crucial for multi-GPU performance.
