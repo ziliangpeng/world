@@ -52,6 +52,8 @@
 
 ### **Layer 2: Intra-Node Communication** (Within a single server)
 
+**Note on Layers:** Layer 1 is the **connectivity hardware** (e.g., NVLink, PCIe). Layer 2 consists of the **drivers, specialized orchestration hardware (e.g., DMA engines for GPUDirect), and software libraries** that manage data transfers and collective operations across the Layer 1 hardware.
+
 #### Hardware/Driver Level:
 - **GPUDirect P2P** - Direct GPU-to-GPU memory transfers over PCIe (bypassing CPU)
 - **GPUDirect Storage** - Direct GPU-to-storage transfers
