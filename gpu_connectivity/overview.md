@@ -89,7 +89,19 @@ These libraries focus specifically on multi-accelerator collective operations (A
 **Proprietary:**
 - **NCCL** (NVIDIA Collective Communications Library)
   - **Topology Awareness:** Automatically detects hardware topology (NVLink, PCIe, NUMA) to optimize communication paths.
-  - **Algorithm Selection:** Dynamically chooses the most efficient collective algorithm (e.g., ring, tree) based on the detected topology.
+  - **Collective Operations:** Implements standard collective primitives used in distributed training:
+    - **AllReduce:** Reduces data across all GPUs and distributes result to all (most common for gradient synchronization).
+    - **Broadcast:** Sends data from one GPU to all others.
+    - **Reduce:** Reduces data from all GPUs to a single destination GPU.
+    - **AllGather:** Gathers data from all GPUs and distributes complete result to all.
+    - **ReduceScatter:** Reduces data across all GPUs and scatters results (each GPU gets a portion).
+    - **AllToAll:** Each rank sends different data to every other rank (k ranks exchange k×N values).
+    - **Gather:** Gathers data from all GPUs to root rank only (unlike AllGather which distributes to all).
+    - **Scatter:** Root rank distributes different chunks to each GPU.
+  - **Algorithm Selection:** Dynamically chooses the most efficient collective algorithm based on the detected topology and message size.
+    - **Ring Algorithm:** Linear latency, 100% bandwidth utilization. Optimal for large messages and ring topologies.
+    - **Tree Algorithm:** Logarithmic latency (up to 180x improvement at scale), 95% bandwidth using dual binary trees. Better for small/medium messages and high GPU counts.
+    - **CollNet/Direct:** Leverages in-network reduction capabilities when available (e.g., InfiniBand switches with SHARP).
   - **Synchronization & Ordering:** Manages low-level synchronization and ordering of operations across GPUs.
   - **Data Type Optimization:** Provides optimized kernels for various data types (FP32, FP16, BF16).
   - **Point-to-Point Primitives:** Offers basic Send/Receive operations for building custom communication patterns.
