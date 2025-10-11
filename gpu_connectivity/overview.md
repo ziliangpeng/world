@@ -21,13 +21,13 @@
   - 16 Xe Links total per 2-stack GPU (8 links per stack)
   - Multi-GPU configs: 6 links (159 GB/s) or 2 links (53 GB/s) between GPUs
 - **NVSwitch** (NVIDIA) - Switch fabric connecting multiple NVLink GPUs
-- **NeuronLink** (AWS) - Proprietary interconnect for AWS Trainium/Inferentia chips.
   - NVSwitch 1.0 (2018, V100): Connects up to 16 GPUs in a node.
   - NVSwitch 2.0 (2020, A100): Connects up to 8 GPUs in a node.
   - NVSwitch 3.0 (2022, H100): Connects up to 8 GPUs in a node.
   - NVSwitch 4.0 (2024, B200): Scales to 72 GPUs in a single rack (GB200 NVL72).
   - Enables all-to-all GPU communication at full NVLink speed
   - **Note on Topology**: In smaller systems, NVLink connects GPUs directly. In larger systems, GPUs connect via NVLink to the NVSwitch, which creates a switched fabric for all-to-all communication.
+- **NeuronLink** (AWS) - Proprietary interconnect for AWS Trainium/Inferentia chips.
 
 #### Standard Interconnects (Primarily CPU-GPU):
 - **PCIe** (PCI Express) - Universal standard, connects GPU to CPU and other PCIe devices
