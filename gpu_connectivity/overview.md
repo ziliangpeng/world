@@ -82,10 +82,14 @@
   - **P2P Transfers:** Enables direct data transfers between accelerators over NeuronLink.
 
 #### Software/Library Level:
+
+##### Proprietary Libraries:
 - **NCCL** (NVIDIA Collective Communications Library)
+- **Neuron CCL** (AWS's library for Trainium/Inferentia)
+
+##### Open-Source Libraries:
 - **RCCL** (ROCm version for AMD)
 - **oneCCL** (Intel's collective communications)
-- **Neuron CCL** (AWS's library for Trainium/Inferentia)
 - **Gloo** (Facebook's collective communications)
 
 ---
