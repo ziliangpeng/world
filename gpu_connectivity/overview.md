@@ -187,6 +187,7 @@ Unlike collective communication libraries, these are full-stack programming envi
   - Provides RDMA read/write/atomic and send/receive operations with credit-based, lossless flow control and adaptive routing
   - In-network capabilities (e.g., SHARP reductions) can accelerate collectives when leveraged by libraries such as NCCL or UCX
 - **RoCE** (RDMA over Converged Ethernet) - RDMA on Ethernet
+  - Implements InfiniBand verbs over Ethernet (lossless via PFC/ECN), letting deployments reuse Ethernet fabrics instead of dedicated InfiniBand gear
   - 100 GbE, 200 GbE, 400 GbE variants
 - **Ethernet** - Standard networking (100GbE, 200GbE, 400GbE)
 
