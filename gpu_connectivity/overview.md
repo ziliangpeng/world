@@ -170,6 +170,7 @@ Unlike collective communication libraries, these are full-stack programming envi
 
 #### Network Fabric:
 - **InfiniBand** - High-performance RDMA network
+  - Originated from the InfiniBand Trade Association (late 1990s) as an open industry standard; Mellanox became the primary vendor and was acquired by NVIDIA in 2020
   - Current links scale from 200 Gb/s (HDR) to 800 Gb/s (XDR) depending on generation and lane count
   - Generational timeline:
     - SDR (Single Data Rate, 2001): 2.5 Gb/s per lane (~10 Gb/s on x4 links)
