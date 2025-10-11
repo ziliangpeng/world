@@ -28,6 +28,14 @@
   - Enables all-to-all GPU communication at full NVLink speed
   - **Note on Topology**: In smaller systems, NVLink connects GPUs directly. In larger systems, GPUs connect via NVLink to the NVSwitch, which creates a switched fabric for all-to-all communication.
 - **NeuronLink** (AWS) - Proprietary interconnect for AWS Trainium/Inferentia chips.
+- **ICI (Inter-Chip Interconnect)** (Google) - Proprietary physical link for Google TPUs, also used to build the Layer 3 network fabric in TPU Pods.
+- **IPU-Link** (Graphcore) - Proprietary high-speed link for connecting IPU (Intelligence Processing Unit) chips.
+- **SwarmX** (Cerebras) - Fabric for connecting multiple CS-2 Wafer-Scale Engine systems together.
+- **On-Chip Network** (Tenstorrent) - Wormhole processors include high-speed Ethernet ports directly on-chip, allowing them to be connected in a grid without external switches.
+- **Deterministic Interconnect** (Groq) - A custom, high-bandwidth link for Groq's LPU chips where data movement is statically scheduled by the compiler, eliminating the need for a dynamic network fabric.
+- **Dojo Training Tile** (Tesla) - A 2D mesh of custom D1 chips with extremely high-bandwidth, low-latency interconnects between adjacent chips on the tile.
+- **RDU Interconnect** (SambaNova) - A custom, high-speed interconnect for linking multiple RDU (Reconfigurable Dataflow Unit) chips.
+- **MTIA Interconnect** (Meta) - A custom physical interconnect for Meta's line of MTIA (Meta Training and Inference Accelerator) chips.
 
 #### Standard Interconnects (Primarily CPU-GPU):
 - **PCIe** (PCI Express) - Universal standard, connects GPU to CPU and other PCIe devices
