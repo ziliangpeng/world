@@ -86,6 +86,7 @@
 ##### Proprietary Libraries:
 - **NCCL** (NVIDIA Collective Communications Library)
 - **Neuron CCL** (AWS's library for Trainium/Inferentia)
+- Custom ASIC vendors provide their own software stacks to manage their unique hardware. These include the **Cerebras SDK**, **Groq SDK**, **SambaFlow** (SambaNova), and **tt-metal** (Tenstorrent).
 
 ##### Open-Source Libraries:
 - **RCCL** (ROCm version for AMD)
