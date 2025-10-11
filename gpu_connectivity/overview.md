@@ -245,6 +245,21 @@ Unlike collective communication libraries, these are full-stack programming envi
   - OS-bypass hardware interface
   - Lower latency than traditional TCP transport
 
+**Cloud Network Performance Comparison:**
+
+Google's TCPX represents a cloud-native approach to achieving RDMA-like performance without specialized hardware:
+- **Architecture**: RDMA over TCP/IP (no specialized RDMA NICs required, works over standard Ethernet)
+- **Performance**:
+  - A3 High: 1,600 Gbps total bandwidth (8x200 Gbps)
+  - A3 Mega (TCPXO): 1,800 Gbps maximum bandwidth
+  - Estimated latency: 5-15 μs (between RoCE and standard TCP/IP)
+  - NCCL throughput: ~176 GB/s for large transfers, up to 3.8x speedup vs standard networking
+- **Trade-offs**:
+  - Better than standard TCP/IP but likely not quite matching bare-metal InfiniBand/RoCE latency
+  - Cloud-friendly: No PFC/ECN tuning complexity, no specialized hardware requirements
+  - Vendor lock-in to GCP ecosystem
+- **Use case**: AI training in cloud environments where absolute lowest latency is less critical than cost-effectiveness and operational simplicity
+
 #### Network-GPU Integration:
 - **GPUDirect RDMA** - Direct network-to-GPU transfers (bypasses CPU and system memory)
 - **GPUDirect Async** - Async transfers between GPU and network
