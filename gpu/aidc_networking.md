@@ -67,6 +67,177 @@ This document covers network topology, fabric architecture, and other networking
 
 ---
 
+## Network Topology Scaling Limits
+
+### Scaling Comparison Summary
+
+| Topology | Max Nodes (Practical) | Max GPUs (8 GPU/node) | Diameter | Cost/Port | Complexity | AI Training Fit |
+|----------|----------------------|----------------------|----------|-----------|------------|-----------------|
+| **Ring** | 8-16 | 8-16 | O(N) | Very Low | Very Low | Single node only |
+| **Spine-Leaf** | 2,000-10,000 | 16,000-80,000 | O(1) - 2 hops | Medium | Low | Excellent (small-medium) |
+| **Fat-Tree** | 10,000-100,000+ | 80,000-800,000+ | O(log N) | High | Medium | Excellent (large scale) |
+| **Torus/Mesh** | 1,000-100,000+ | 8,000-800,000+ | O(N^(1/d)) | Low | Medium-High | Good (HPC-style) |
+| **Dragonfly** | 10,000-1,000,000+ | 80,000-8,000,000+ | O(1) - 3 hops | Medium | High | Excellent (massive scale) |
+
+### Detailed Topology Scaling Analysis
+
+#### 1. Ring Topology
+**Node Limit**: 8-16 nodes (practical limit)
+**GPU Limit**: 8-16 GPUs
+
+**Scaling Characteristics**:
+- Average hop count = N/4 (for N nodes)
+- Latency grows linearly with ring size
+- Bandwidth per node decreases as 1/N
+- NCCL ring algorithm works well up to ~8 GPUs
+- Beyond 16 GPUs, latency becomes prohibitive
+
+**Real-World Examples**:
+- Single server with 8x H100 GPUs connected via NVLink in ring pattern
+- NVIDIA DGX A100: 8 GPUs with NVLink ring/mesh hybrid
+
+#### 2. Spine-Leaf (2-Tier Clos)
+**Node Limit**: 2,000-10,000 nodes (depends on switch radix)
+**GPU Limit**: 16,000-80,000 GPUs (at 8 GPUs/node)
+
+**Scaling Characteristics**:
+- Limited by spine switch port count and number of leaf switches
+- Modern switches: 32-64 ports (Spectrum-3), up to 128 ports (Spectrum-4)
+- Calculation example: 64-port spine with 48 ports for leaves
+  - → 48 leaf switches × ~40 servers/leaf = ~2,000 servers
+- Can scale to ~10,000 nodes with 128-port switches
+- Beyond this requires 3-tier fat-tree or multiple pods
+- Always 2-hop maximum between any two servers
+
+**Real-World Examples**:
+- Meta's AI Research SuperCluster (RSC): 16,000 GPUs (2,000 nodes)
+- Typical cloud AI training clusters: 4,000-32,000 GPUs
+
+#### 3. Fat-Tree (3+ Tier Clos)
+**Node Limit**: 10,000-100,000+ nodes
+**GPU Limit**: 80,000-800,000+ GPUs
+
+**Scaling Characteristics**:
+- Scales by adding hierarchy (aggregation layer between spine and leaf)
+- K-ary fat-tree with k-port switches supports k³/4 servers
+- Example: 48-port switches → 27,648 servers theoretically
+- Can be extended with multiple tiers (4-tier, 5-tier)
+- Practical limit depends on acceptable oversubscription ratio
+- Diameter grows logarithmically with network size
+
+**Real-World Examples**:
+- Google Jupiter datacenter fabric: 100,000+ servers
+- Microsoft Azure datacenter networks: similar massive scale
+- Large cloud provider GPU clusters: 50,000-500,000+ GPUs
+
+#### 4. Torus/Mesh Topology
+**Node Limit**: 1,000-100,000+ nodes (depends on dimensionality)
+**GPU Limit**: 4,000-400,000+ GPUs
+
+**Scaling Characteristics**:
+- 2D torus: scales as N × M (rows × columns)
+- 3D torus: scales as N × M × P
+- Diameter grows as O(√N) for 2D, O(∛N) for 3D
+- Higher dimensions improve scaling but increase wiring complexity
+- Direct connections limit total nodes by available ports per node
+- Excellent for nearest-neighbor and collective operations
+
+**Real-World Examples**:
+- Google TPU v3 Pod: 1,024 chips (128 × 8 2D torus)
+- Google TPU v4 Pod: 4,096 chips (16 × 16 × 16 3D torus)
+- Google TPU v5p Pod: up to 8,960 chips (3D torus)
+- Frontier supercomputer: 9,408 nodes (Slingshot dragonfly with torus elements)
+
+#### 5. Dragonfly Topology
+**Node Limit**: 10,000-1,000,000+ nodes (theoretical)
+**GPU Limit**: 80,000-8,000,000+ GPUs (theoretical)
+
+**Scaling Characteristics**:
+- Hierarchical: groups of fully-connected routers, groups connected via global links
+- With g groups, a routers per group, h hosts per router: total hosts = g × a × h
+- Example: 128 groups × 64 routers/group × 32 hosts/router = 262,144 hosts
+- Scales to millions with sufficient router radix and global bandwidth
+- Practical limits: adaptive routing complexity, load balancing challenges, cost
+- Diameter typically 2-3 hops maximum
+
+**Real-World Examples**:
+- Fugaku supercomputer: 158,976 nodes (Tofu interconnect D, 6D torus-like dragonfly)
+- Perlmutter (NERSC): 6,159 nodes (Slingshot-11 dragonfly)
+- Aurora (Argonne): ~10,000+ nodes (Slingshot-11 dragonfly)
+- El Capitan (LLNL): 11,000+ nodes (Slingshot-11 dragonfly)
+
+### Key Scaling Constraints & Factors
+
+#### Switch Radix (Port Count)
+**Impact**: Primary limiting factor for spine-leaf and fat-tree topologies
+
+- **32-64 ports**: Common merchant silicon
+  - Broadcom Tomahawk 3/4: 32-64 ports
+  - NVIDIA Spectrum-2/3: 32-64 ports
+- **128 ports**: High-end merchant silicon
+  - NVIDIA Spectrum-4: 128 ports of 400GbE or 64 ports of 800GbE
+- **256+ ports**: Custom ASICs or optical circuit switches
+  - Google Jupiter: 256-512 ports per switch tier
+
+**Scaling Impact**: Spine-leaf scales linearly with radix; doubling port count doubles maximum server count.
+
+#### Oversubscription Trade-offs
+
+- **1:1 (Non-blocking)**:
+  - Doubles switch count requirement
+  - Maintains full bandwidth for all traffic patterns
+  - Best for AI training but highest cost
+  - Limits scale due to cost and power constraints
+
+- **2:1**:
+  - Common compromise for AI clusters
+  - Halves switch count and cost
+  - Acceptable for most training workloads
+
+- **4:1+**:
+  - Standard for general datacenter use
+  - May bottleneck gradient synchronization
+  - Not recommended for large-scale training
+
+#### Cable Distance Constraints
+
+- **Copper DAC (1-7m)**:
+  - Restricts to intra-rack connections only
+  - Forces rack-local topologies or optical uplinks
+
+- **AOC (1-100m)**:
+  - Enables rack-to-rack within same row
+  - Common for spine-leaf leaf-to-spine connections
+
+- **Optical (100m-10km+)**:
+  - Required for inter-row, inter-pod, inter-building
+  - Enables fat-tree upper tiers and dragonfly global links
+  - Higher cost and power per port
+
+**Topology Impact**: Physical distance constraints favor hierarchical topologies (fat-tree, dragonfly) for large scale, while limiting single-tier designs (spine-leaf) to smaller deployments.
+
+#### Power & Cost Economics
+
+**Switch Count by Topology** (for ~10,000 servers):
+- **Spine-Leaf**: ~200-300 switches (128 leaf + 64+ spine)
+- **Fat-Tree**: ~400-600 switches (adds aggregation tier)
+- **Dragonfly**: ~300-400 switches (fewer but higher radix)
+- **Torus**: ~0 switches (direct connections, but expensive cabling)
+
+**Cost Implications**:
+- Fat-tree and dragonfly require more switches → higher capital and operational cost
+- Torus has fewer/no switches but significantly longer and more complex cabling
+- Spine-leaf offers best cost/performance ratio for <10,000 node clusters
+- Beyond 10,000 nodes, dragonfly becomes more cost-effective than fat-tree
+
+**Power Considerations**:
+- Switch power: 500W-3kW per switch (depends on radix and speed)
+- Optics power: 10-30W per port (varies by speed and distance)
+- Large clusters: network can consume 10-20% of total facility power
+- Direct topologies (torus) save switch power but increase cable loss
+
+---
+
 ## Network Architecture Design
 
 ### Oversubscription
