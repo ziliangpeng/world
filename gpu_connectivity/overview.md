@@ -106,8 +106,17 @@ These libraries focus specifically on multi-accelerator collective operations (A
   - **Data Type Optimization:** Provides optimized kernels for various data types (FP32, FP16, BF16).
   - **Point-to-Point Primitives:** Offers basic Send/Receive operations for building custom communication patterns.
 - **Neuron CCL** (AWS's library for Trainium/Inferentia)
-  - Collective communication primitives optimized for NeuronLink interconnect.
-  - Supports standard collectives (AllReduce, AllGather, ReduceScatter) for multi-chip training and inference.
+  - **Hardware Architecture:** Dedicated collective compute engines (CC-Cores) run in parallel to NeuronCores for compute-communication overlap.
+    - 6 CC-Cores per chip for collective operations
+    - Trainium: 4 NeuronLink-v2 connections (768 GB/s aggregate)
+    - Inferentia2: 2 NeuronLink-v2 connections (192 GB/s aggregate)
+  - **Collective Operations:** Implements standard collectives for distributed training:
+    - **AllReduce:** Primary operation for gradient synchronization
+    - **AllGather:** Gathers activations along dimensions (sequence parallelism)
+    - **ReduceScatter:** Replaces AllReduce in tensor-parallel blocks
+  - **Topology Support:** 2D torus topology within single instance (trn1.32xlarge supports 2, 8, or 32 ranks)
+  - **Multi-Node:** Integrates with EFA (Elastic Fabric Adapter) for inter-instance communication (800 Gbps on Trn1)
+  - **Data Path:** Direct transfers between Neuron devices and EFA, bypassing host CPU for low latency
 
 **Open-Source:**
 - **RCCL** (ROCm version for AMD)
