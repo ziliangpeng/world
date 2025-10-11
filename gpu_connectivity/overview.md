@@ -28,7 +28,7 @@
   - Enables all-to-all GPU communication at full NVLink speed
   - **Note on Topology**: In smaller systems, NVLink connects GPUs directly. In larger systems, GPUs connect via NVLink to the NVSwitch, which creates a switched fabric for all-to-all communication.
 
-#### Standard Interconnects:
+#### Standard Interconnects (Primarily CPU-GPU):
 - **PCIe** (PCI Express) - Universal standard, connects GPU to CPU and other PCIe devices
   - PCIe 4.0: ~32 GB/s per x16 slot
   - PCIe 5.0: ~64 GB/s per x16 slot
