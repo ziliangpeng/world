@@ -83,7 +83,10 @@
 
 #### Software/Library Level:
 
-##### Proprietary Libraries:
+##### Collective Communication Libraries:
+These libraries focus specifically on multi-accelerator collective operations (AllReduce, Broadcast, etc.) and work on top of existing compute kernels.
+
+**Proprietary:**
 - **NCCL** (NVIDIA Collective Communications Library)
   - **Topology Awareness:** Automatically detects hardware topology (NVLink, PCIe, NUMA) to optimize communication paths.
   - **Algorithm Selection:** Dynamically chooses the most efficient collective algorithm (e.g., ring, tree) based on the detected topology.
@@ -91,14 +94,54 @@
   - **Data Type Optimization:** Provides optimized kernels for various data types (FP32, FP16, BF16).
   - **Point-to-Point Primitives:** Offers basic Send/Receive operations for building custom communication patterns.
 - **Neuron CCL** (AWS's library for Trainium/Inferentia)
-- Custom ASIC vendors provide their own software stacks to manage their unique hardware. These include the **Cerebras SDK**, **Groq SDK**, **SambaFlow** (SambaNova), and **tt-metal** (Tenstorrent).
+  - Collective communication primitives optimized for NeuronLink interconnect.
+  - Supports standard collectives (AllReduce, AllGather, ReduceScatter) for multi-chip training and inference.
 
-##### Open-Source Libraries:
+**Open-Source:**
 - **RCCL** (ROCm version for AMD)
   - **Goal:** Functional and API-compatible drop-in replacement for NCCL, optimized for AMD's Infinity Fabric.
 - **oneCCL** (Intel's collective communications)
   - **Goal:** Functional and API-compatible drop-in replacement for NCCL, optimized for Intel's Xe Link.
-- **Gloo** (Facebook/Meta) - An open-source, hardware-agnostic library. It provides a portable option for any hardware but is not optimized for specific accelerator interconnects like NCCL or other vendor-specific libraries.
+- **Gloo** (Facebook/Meta)
+  - An open-source, hardware-agnostic library. It provides a portable option for any hardware but is not optimized for specific accelerator interconnects like NCCL or other vendor-specific libraries.
+
+##### Custom ASIC Programming Environments:
+Unlike collective communication libraries, these are full-stack programming environments that compile high-level models down to custom hardware architectures with fundamentally different compute and communication paradigms.
+
+- **Cerebras SDK** (Cerebras)
+  - **Architecture Target:** Wafer-Scale Engine (WSE) - a single silicon wafer with 850,000+ cores.
+  - **Programming Model:** Cerebras Software Language (CSL) - a C-like language built around a dataflow programming model.
+  - **Communication Primitives:** Includes `<collectives_2d>` library with MPI-like collective operations (broadcast, scatter, gather, reduce) across rows/columns of processing elements.
+  - **Abstraction Level:** Low-level spatial programming - developers explicitly map computation to the 2D PE array.
+  - **Routing:** All routing configuration is handled automatically behind the scenes.
+  - **Compilation:** Takes CSL code or high-level frameworks and compiles to WSE-specific execution.
+
+- **Groq SDK** (Groq)
+  - **Architecture Target:** Language Processing Unit (LPU) / Tensor Streaming Processor (TSP) - deterministic, software-defined architecture.
+  - **Programming Model:** Producer-consumer dataflow model with static scheduling.
+  - **Key Feature:** Deterministic execution - data flow is statically scheduled at compile time and executes identically every time.
+  - **Architecture:** Functionally sliced microarchitecture with interleaved memory and compute units forming a programmable assembly line.
+  - **Compiler:** Model-independent compiler that routes computation through the hardware deterministically.
+  - **Power Efficiency:** Intelligent ability to turn off idle components and route around only necessary computation.
+
+- **SambaFlow** (SambaNova)
+  - **Architecture Target:** Reconfigurable Dataflow Unit (RDU) - a tiled architecture of reconfigurable functional units.
+  - **Programming Model:** Dataflow architecture where communications are programmed and optimized for how data should transit computations.
+  - **Workflow:**
+    - Accepts PyTorch/TensorFlow models
+    - Analyzes to extract dataflow graph
+    - Compiles to PEF (Program Execution File) that defines the dataflow graph for RDU hardware
+    - Runtime loads code/data onto RDUs and manages execution
+  - **Scaling:** Seamlessly scales from one to multiple RDUs using the same programming model.
+  - **Abstraction:** High-level (works with standard ML frameworks) but maps to spatial dataflow execution.
+
+- **tt-metal** (Tenstorrent)
+  - **Architecture Target:** Tensix cores - grid of specialized compute nodes, each with 5 RISC-V CPUs, matrix/vector engines, and 1.5MB SRAM.
+  - **Programming Model:** Low-level heterogeneous programming - direct access to RISC-V processors, NoC (Network-on-Chip), and compute engines.
+  - **Kernel Structure:** Typically requires three kernels per Tensix core: reader (data input), compute (calculations), writer (data output).
+  - **Collective Operations:** Developing CCL with support for all-gather (line/ring topologies) and reduce-scatter (ring topology).
+  - **Higher-Level Abstraction:** TTNN provides mesh tensors that wrap multi-chip partial tensors as single logical tensors for easier multi-chip programming.
+  - **On-Chip Networking:** High-speed Ethernet ports directly on-chip enable grid connections without external switches.
 
 ---
 
