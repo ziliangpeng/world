@@ -12,6 +12,10 @@ Ideas and topics to explore in depth.
   - Guidance and control methods (classifier-free guidance, etc.)
 - [ ] model behavior steering
 
+## Hardware & Infrastructure
+
+- [ ] GPU connectivity deep dive - write blog post about GPU interconnect technologies
+
 ## To Be Categorized
 
 - [ ] multi-node inference connectivity technology
