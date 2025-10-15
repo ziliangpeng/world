@@ -126,6 +126,14 @@ These libraries focus specifically on multi-accelerator collective operations (A
 - **Gloo** (Facebook/Meta)
   - An open-source, hardware-agnostic library. It provides a portable option for any hardware but is not optimized for specific accelerator interconnects like NCCL or other vendor-specific libraries.
 
+**Compiler-Integrated (Not Standalone Libraries):**
+- **XLA Collective Operations** (Google TPU)
+  - Unlike NCCL which is a standalone library, TPU collective operations are built into the XLA compiler/runtime.
+  - Implements standard collectives (AllReduce, AllGather, ReduceScatter, etc.) for TPU workloads.
+  - Uses ICI (Inter-Chip Interconnect) from Layer 1 as the physical communication layer.
+  - Accessed via high-level frameworks (JAX, TensorFlow) rather than as a separate library.
+  - **Architecture difference:** XLA handles compilation, execution, and communication as an integrated system, whereas NVIDIA separates compute (CUDA kernels) from communication (NCCL library).
+
 ##### Custom ASIC Programming Environments:
 Unlike collective communication libraries, these are full-stack programming environments that compile high-level models down to custom hardware architectures with fundamentally different compute and communication paradigms.
 
@@ -288,6 +296,20 @@ Google's TCPX represents a cloud-native approach to achieving RDMA-like performa
 - **NCCL/RCCL** - Collective operations (AllReduce, etc.) optimized for training
 - **MPI** (Message Passing Interface) - Standard parallel computing API
   - Can leverage GPUDirect and UCX underneath
+
+#### Runtime Abstraction APIs:
+- **PJRT** (Plugin for JAX Runtime) - Uniform device runtime interface for XLA
+  - **Scope:** Much broader than collective communication libraries - abstracts compilation, execution, and communication
+  - **Primary Use:** Backend interface for JAX/PyTorch XLA to support multiple accelerators
+  - **Abstraction Level:** Provides uniform APIs for:
+    - Program compilation and loading
+    - Memory management and buffer allocation
+    - Computation execution
+    - Multi-device/multi-host coordination
+  - **Hardware Support:** TPU, GPU (CUDA), CPU, and other XLA-compatible backends
+  - **Architecture:** Plugin-based system where each hardware vendor implements the PJRT API for their accelerator
+  - **Relationship to Layer 2:** PJRT calls into hardware-specific collective implementations (e.g., XLA's TPU collectives, NCCL for GPUs) rather than implementing collectives itself
+  - **Key Difference from NCCL:** NCCL is a specialized library for collective communication; PJRT is a comprehensive runtime API that unifies how frameworks interact with diverse accelerator backends
 
 ---
 
