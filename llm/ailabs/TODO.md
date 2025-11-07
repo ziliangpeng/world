@@ -97,6 +97,14 @@ This file tracks the research on various LLM models from different companies and
   - 🤖 Viking models (Nordic and European languages)
   - 🤖 TildeOpen LLM (30B+, Balto-Slavic)
   - 🔧 SiloGen platform
+- [x] 🇩🇪 Nyonic
+  - 🤖 Wonton-7B (base model)
+  - 🤖 Wonton-3B
+  - 🤖 Wonton-1.5B
+  - 🌍 Industrial-focused multilingual foundation models (30+ languages)
+  - 📦 Model-as-a-Service platform
+  - 💼 Domain-specific training for enterprise use
+  - 💰 Backed by Lenovo Capital and Incubator Group
 - [x] 🇫🇷 Bioptimus
   - 🧬 Universal AI foundation model for biology
   - 🧬 Integrates biological/biomedical data
@@ -455,39 +463,47 @@ This file tracks the research on various LLM models from different companies and
   - 📋 ISO 42001 certified
   - 📊 Trained on trusted enterprise data (code, legal, finance)
   - 🔓 Multi-platform distribution (Hugging Face, Docker, Ollama)
+- [x] 🇺🇸 ServiceNow
+  - 🤖 Apriel-1.5-15b-Thinker (reasoning models)
+  - 🤖 Now LLM (generative LLM for enterprise)
+  - 💻 StarCoder2 (code generation, partnership with Hugging Face/NVIDIA)
+  - 🤖 Apriel Nemotron 15B (with NVIDIA, agentic tools)
+  - 🔧 Fast-LLM framework (open-source training library)
+  - 🏢 Enterprise domain-specific LLMs
+  - 📅 Q2 2025 availability for customers
 
 ## 🌐 Other Commercial Companies
 
 **Note: Companies with unclear status or limited information. Primarily consulting/platforms.**
 
 - [x] 🇷🇺 Yandex
-  - 🤖 YandexGPT 5.1 Pro
-  - 🎨 YandexART (image generation)
-  - 🤖 Saiga/Mistral variants
-  - 🔌 Foundation Models service
-- [x] ServiceNow
-  - ⚠️ No foundation models
-  - Enterprise platform company
-  - NOT a foundation model builder
-- [x] Nyonic
-  - Wonton-7B (base model)
-  - Wonton-3B
-  - Wonton-1.5B
-  - Industrial-focused multilingual foundation models
-  - Model-as-a-Service platform
-- [x] Paiteq
-  - ⚠️ No information found
-  - Unable to verify if foundation models exist
+  - 🤖 YandexGPT 5.1 Pro (launched Aug 2025 for business, 32K context window, cost reduced 3x)
+  - 🤖 YandexGPT 5 Lite (available via API)
+  - 🎨 YandexART 2.0 (text-to-image, 110B image-text training, hybrid CNN-transformer)
+  - 💬 Alice assistant (uses YandexGPT 3+ family)
+  - 🌍 Russian frontier foundation models
 - [x] Contextual AI
-  - ⚠️ Focused on fine-tuning/optimization techniques
-  - Not a foundation model builder
-  - Researches in-context learning approaches
+  - 🔧 RAG 2.0 platform (Retrieval-Augmented Generation)
+  - 💼 Enterprise LLM customization and fine-tuning
+  - 📊 Back-propagation optimization for retriever + LLM
+  - 💰 $80M Series A (includes NVIDIA investment)
+  - ❌ Does NOT build foundation models (customizes existing ones)
 - [x] MosaicML
-  - ⚠️ Infrastructure/tools company (acquired by Databricks)
-  - Not a foundation model builder
+  - 🤖 MPT-7B (3M+ downloads, most downloaded open LLM)
+  - 🤖 MPT-30B (major foundation model)
+  - 🤖 MPT series (full lineup open-source models)
+  - 📊 Trained on cutting-edge hardware efficiency
+  - 📅 Acquired by Databricks (July 2023)
+  - 🔄 Integrated into Mosaic AI platform
 - [x] Hugging Face
-  - ⚠️ Model hub/platform, not builder of proprietary models
-  - Infrastructure for hosting and discovering models
+  - 🤖 SmolVLM family (Vision-Language Models):
+    - SmolVLM-256M (world's smallest VLM, Jan 2025, runs on <1GB GPU)
+    - SmolVLM-500M
+    - SmolVLM-2B (open-source)
+  - 🤖 SmolLM series (efficient language models)
+  - 📊 FineVision dataset (24M samples for VLM training, Sept 2025)
+  - 🏛️ Model hub/platform (500K+ hosted models) + foundation model builder
+  - 🔓 100% open-source focus, democratizing AI
 
 ## 🔬 Research Labs (University & Private)
 
@@ -497,11 +513,15 @@ This file tracks the research on various LLM models from different companies and
   - Privacy-aware foundation models research
   - Visual foundation models work
 - [x] Stanford AI Lab
-  - Center for Research on Foundation Models (CRFM)
-  - Marin project (open lab model development)
-  - CLMBR (clinical language models, 141M parameters)
-  - Robotics foundation models (ILIAD)
-  - Specialized domains: law, music, robotics, biomedicine
+  - 🏛️ Center for Research on Foundation Models (CRFM)
+  - 🤖 Marin-8B (2024-2025, fully open-source, Apache 2.0)
+    - Complete research pipeline (code, datasets, training logs transparent)
+    - Built with JAX and Levanter framework
+    - Trained on 12 trillion tokens
+  - 📋 CLMBR (clinical language models, 141M parameters)
+  - 🤖 Robotics foundation models (ILIAD)
+  - 🎯 Specialized domains: law, music, robotics, biomedicine
+  - 👨‍💼 New director (2025): Carlos Guestrin
 - [x] UCLA StarAI Lab
   - Research focus: Tractable Deep Generative Models, Statistical Relational Learning
   - Work on LLM optimization and symbolic reasoning
@@ -512,20 +532,26 @@ This file tracks the research on various LLM models from different companies and
   - PRoC3S framework (robotics with foundation models)
   - Large Language Model for Mixed Reality (LLMR)
 - [x] Carnegie Mellon University (CMU)
-  - CMU Foundation and Language Model Center (FLAME)
-  - Models: Llemma (math), OWSM (speech), XL-Net (long documents), Polycoder (code)
-  - MLC LLM (universal deployment)
-  - FlexFlow Serve, Sotopia
+  - 🏛️ CMU Foundation and Language Model Center (FLAME)
+  - 🤖 FLAME-MoE (released 2025) - suite of 7 decoder-only models (38M - 1.7B active parameters, fully open)
+  - 🧮 Llemma (math foundation model)
+  - 🎙️ OWSM & OWSM-CTC (speech models, 180K hours audio, multilingual)
+  - 📄 XL-Net (long-document modeling)
+  - 💻 Polycoder (2.7B code generation, 12 languages)
+  - 🔧 MLC LLM (universal deployment)
+  - 🔀 FlexFlow Serve, Sotopia (multi-agent research)
 - [x] University of Toronto
   - "Large Models" course (Llama 3 deep dive)
   - LLM research for Canadian political transparency
   - Focus on uncertainty estimates and scalability
 - [x] Allen Institute for AI (AI2)
-  - OLMo series (7B, 13B, 32B)
-  - OLMo 2 (fully open-source)
-  - OlmoEarth (multimodal, earth observation)
-  - Molmo (multimodal models)
-  - Tulu (open post-training recipes)
+  - 🤖 OLMo series (7B, 13B, 32B)
+  - 🤖 OLMo 2 (trained to 6T tokens, 32B outperforms GPT-3.5-Turbo)
+  - 🤖 OlmoEarth (🌍 multimodal earth observation, released Nov 4, 2025)
+    - First open end-to-end satellite/sensor data solution
+    - Trained on 10TB+ earth observation data
+  - 🎨 Molmo (multimodal models)
+  - 🔧 Tulu 3 (leading instruction-following, fully open-source recipes)
 - [x] EleutherAI
   - GPT-Neo (125M, open-source GPT-3 alternative)
   - GPT-J (6B parameters)
@@ -540,52 +566,70 @@ This file tracks the research on various LLM models from different companies and
   - 🖥️ Trained on Jean Zay supercomputer (France)
   - 🔓 Fully open-source
 - [x] 🇺🇸 Together AI
-  - 📊 RedPajama V1 (1.2T tokens)
-  - 📊 RedPajama V2 (100T tokens)
-  - 🔧 Used by Snowflake Arctic, Salesforce XGen, AI2 OLMo
-  - 🔓 Open-source LLM platform
-  - 🏢 Collaborative AI infrastructure
+  - 📊 RedPajama V1 (1.2T tokens training data)
+  - 📊 RedPajama V2 (30T+ tokens, used by 500+ models)
+  - 🔧 GPU infrastructure (10K+ clusters) for model training
+  - 🏢 Open-source research organization with 200+ hosted models
+  - ⚠️ Note: Infrastructure/dataset provider, not proprietary foundation model builder
 - [x] 🇺🇸 LMSYS (UC Berkeley)
   - 🤖 Vicuna (7B, 13B, 33B)
   - 🏆 Chatbot Arena (1.5M+ votes)
   - ⚡ FastChat platform
   - 📊 LMSYS-Chat-1M dataset
   - 🔬 LLM evaluation and benchmarking
-- [x] Technology Innovation Institute (TII)
-  - NOOR (largest Arabic LLM)
-  - Falcon series (Falcon, Falcon Mamba 7B)
-  - Digital Science Research Centre
-  - Falcon Foundation (non-profit for open-source)
-- [x] Occiglot
-  - Multilingual European models (occiglot-7b-fr-en, occiglot-7b-eu5)
-  - Built on Mistral-7B and Llama-3-8B
-  - Supports 5+ European languages, planning all 24 EU official languages
-  - Community OSCAR multilingual datasets
-- [x] LatamGPT
-  - Latam-GPT (50B parameters, LLaMA-based)
-  - Trained on 8TB regional data (Spanish, Portuguese, English)
-  - Collaboration across 30+ Latin American institutions
-  - Launching September 2025
-- [x] Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)
-  - Institute of Foundation Models (IFM)
-  - Jais (Arabic LLM, open-source)
-  - Multimodal foundation models for healthcare, finance, environment
-  - LLM360 initiative (transparent development)
+- [x] Technology Innovation Institute (TII) - Abu Dhabi 🇦🇪
+  - 🤖 NOOR (largest Arabic LLM)
+  - 🤖 Falcon series (40B parameters, 1T tokens training)
+  - 🤖 Falcon Mamba 7B (2024)
+  - 🤖 Falcon Arabic (released May 2025) - first Arabic in Falcon series, native Arabic + dialects
+  - 🤖 Falcon-H1 (2025) - hybrid Transformer-Mamba architecture, faster inference
+  - 🏛️ Digital Science Research Centre
+  - 🔓 Falcon Foundation (non-profit for open-source)
+- [x] Occiglot - German/EU 🇩🇪
+  - 🤖 Occiglot-7B-EU5 (Mistral-7B based) - English, Spanish, French, German, Italian
+  - 🤖 Llama-3-8B based models (2025) - continually pre-trained on German tokens
+  - 🌍 Planning all 24 official EU languages + regional languages
+  - 📊 Built on Community OSCAR multilingual datasets
+  - 🏛️ Led by DFKI (German Research Center for AI) and hessian.AI
+  - 🎯 Focus on robust generalization across European languages
+- [x] LatamGPT - 🌎 Latin America
+  - 🤖 Latam-GPT (50B parameters, LLaMA-based, ~GPT-3.5 comparable)
+  - 📊 Trained on 8TB regional data (2.6M documents from 20 LAC countries + Spain)
+  - 💬 Spanish, Portuguese, English + Indigenous languages (Rapa Nui translator)
+  - 🤝 Collaboration across 30+ institutions, 12 countries
+  - 📅 Beta: October 2025 | Official Launch: December 2025
+  - 🏛️ Led by CENIA (Chile's National Center for AI)
+- [x] 🇦🇪 Mohamed bin Zayed University (MBZUAI) - Abu Dhabi
+  - 🏛️ Institute of Foundation Models (IFM) - launched May 2025 with Silicon Valley, Paris, Abu Dhabi labs
+  - 🤖 Jais (world's most advanced Arabic LLM, with G42 & Cerebras)
+  - 🎨 Multimodal foundation models for healthcare, finance, environment
+  - 📊 LLM360 initiative (fully transparent development with code/data/checkpoints)
+  - 🔓 Leading transparent AI development globally
 - [x] University of Oxford
   - LLM research replication benchmarks
   - LLM alignment and diversity research (Microsoft AFMR partnership)
   - Oxford LLMs program (social science applications)
   - Focus on model interpretability and fair representation
-- [x] Technical University of Munich
-  - Nicheformer (spatial genomics foundation model, 110M cells)
-  - Genomic LLMs with NVIDIA and InstaDeep
-  - Software Engineering & AI chair LLM research
-  - CompAI Lab (computational imaging + foundation models)
-- [x] ETH Zurich + EPFL
-  - Swiss AI Initiative (800+ researchers, 20M GPU hours/year)
-  - Apertus (8B and 70B multilingual foundation models)
-  - 15 trillion tokens across 1000+ languages
-  - Fully open: weights, data, recipes, architecture
+- [x] 🇩🇪 Technical University of Munich (TUM)
+  - 🧬 Nicheformer (published Nature Methods 2025)
+    - First large-scale foundation model integrating single-cell + spatial transcriptomics
+    - Trained on 110M+ cells
+    - Consistently outperforms existing approaches
+    - Co-developed with Helmholtz Munich
+  - 🧬 Nucleotide Transformer (with NVIDIA & InstaDeep)
+    - Collection of 4 DNA LLMs (500M - 2.5B parameters)
+    - Largest model trained on 850+ species genetic data
+  - 🔬 Software Engineering & AI chair LLM research
+  - 🎨 CompAI Lab (computational imaging + foundation models)
+- [x] 🇨🇭 ETH Zurich + EPFL - Swiss AI Initiative
+  - 🤖 Apertus (released Sept 2, 2025) - 8B and 70B multilingual models
+    - 70B ranks among most powerful fully open models worldwide
+    - 15 trillion tokens across 1000+ languages
+    - 40% non-English (includes Swiss German, Romansh, underrepresented languages)
+  - 🌍 Fully open: weights, data, recipes, architecture ("Apertus" = Latin for "open")
+  - 📊 Swiss AI Initiative: 800+ researchers, 20M+ GPU hours/year
+  - 🏛️ Partnership: ETH AI Center, EPFL AI Center, CSCS (Swiss National Supercomputing)
+  - 💼 Available via: Swisscom, Hugging Face, Public AI network
 - [x] National University of Singapore (NUS)
   - LLM research lab (collaboration with MIT, Stanford, Google)
   - ScholAIstic (educational LLM with RAG)
@@ -595,16 +639,24 @@ This file tracks the research on various LLM models from different companies and
   - LLM research across multiple institutes
   - Focus on technical improvements and societal implications
   - Brain science + foundation models symposium
-- [x] University of Freiburg
-  - Frank Hutter: Foundation models for tabular data
-  - CAAFE (automated feature engineering with LLMs)
-  - TabPFN and TabPFN v2 (1M+ downloads, published in Nature)
-  - ELLIS unit Freiburg, OpenEuroLLM research
-- [x] European Laboratory for Learning and Intelligent Systems (ELLIS)
-  - Pan-European AI network (43 sites, 16 research programs)
-  - ELLIOT project (€25M, multimodal foundation models)
-  - ELLIS Winter School on Foundation Models
-  - Focus on robust generalization across real-world data
+- [x] University of Freiburg - 🇩🇪
+  - 👨‍🔬 Frank Hutter (Professor) - foundation models for tabular data
+  - 🤖 TabPFN v2 (published Nature 2025) - orders of magnitude more data than v1
+    - 1M+ downloads
+    - Bayesian approach, works "out of the box" on time-series
+    - Sets new SOTA on key time-series benchmarks
+  - 🔧 CAAFE (first method for automated feature engineering with LLMs)
+  - 🏛️ ELLIS unit Freiburg, OpenEuroLLM research participation
+- [x] 🇪🇺 European Laboratory for Learning and Intelligent Systems (ELLIS)
+  - 🌍 Pan-European AI network (43 sites, 16 research programs, 16 countries)
+  - 🎓 ELLIS PhD & Postdoc Program
+  - 🏆 ELLIOT Project (July 2025 - June 2029, €25M Horizon Europe)
+    - European Large Open Multi-Modal Foundation Models for Robust Generalization
+    - 30 partners across 12 countries
+    - Focus: Fairness, explainability, privacy, EU AI regulation alignment
+    - Early-career researcher training component
+  - 📚 ELLIS Winter School on Foundation Models
+  - 🎯 Focus on robust generalization across real-world data
 - [x] Next Realm AI Innovation Lab
   - Researching LLMs, Transformers, Foundation Models
   - AGI research via JEPA and energy-based models
@@ -685,17 +737,21 @@ Representative sample verification:
 - [x] GotBot
   - ⚠️ No foundation models
   - Chatbot development platform
-- [x] Botlhale AI
-  - Develops AI models for African languages (not proprietary foundation models)
-  - Low-code bot builder for 7 South African languages (English, IsiZulu, IsiXhosa, Afrikaans, Sesotho, Setswana, Sepedi)
-  - Platform: conversational AI, language inclusion focus
-  - 10M+ translations served, identified 20+ languages in Sub-Saharan Africa
-- [x] Lesan AI
-  - Machine translation for low-resource languages (NOT Arabic)
-  - Focuses on Ethiopian languages: Tigrinya, Amharic, English
-  - Outperforms Google Translate and Microsoft Translator
-  - Transformer-based approach with back translation
-  - 10M+ translations served, emphasis on ethical AI and community engagement
+- [x] 🇿🇦 Botlhale AI
+  - 🤖 Proprietary speech recognition & NLP models for African languages
+  - 🗣️ Supports 11 South African languages (English, IsiZulu, IsiXhosa, Afrikaans, Sesotho, Setswana, Sepedi, others)
+  - 💼 SaaS platform for enterprise call centers
+  - 🔧 Conversational AI, voice-to-text, text-to-voice capabilities
+  - 🌍 Expanding to Ghana, Kenya, Nigeria (2025)
+  - ⚠️ Note: Specialized language models, not general-purpose LLMs
+- [x] 🇩🇪 Lesan AI
+  - 🤖 Proprietary machine translation models (specialized, not general-purpose)
+  - 🗣️ Focuses on Ethiopian/Eritrean languages: Tigrinya, Amharic, English
+  - 🏆 Outperforms Google Translate and Microsoft Translator on low-resource languages
+  - 🔧 Transformer-based with back-translation approach
+  - 🌍 10M+ translations served, community-based data collection
+  - 🤝 Partnerships with Dalberg, i4policy, UNICEF
+  - ⚠️ Note: Specialized translation models, not general-purpose LLMs
 - [x] TrainingData
   - ⚠️ No foundation models
   - Data labeling and ML training services
@@ -703,11 +759,20 @@ Representative sample verification:
   - ⚠️ No foundation models
   - Limited information, likely services
 - [x] Play.ht
-  - ⚠️ No foundation models
-  - AI text-to-speech service (uses other models)
+  - 🤖 PlayHT2.0 (proprietary speech foundation model)
+  - 🤖 Play3.0-mini (speech generation)
+  - 🎙️ Trained on 1M+ hours of multilingual speech
+  - 🗣️ Voice cloning (3-10 seconds needed)
+  - 🌍 100+ languages with emotional expressiveness
+  - ⚠️ Note: This is a speech foundation model company, not general-purpose LLM
 - [x] Saal.ai
   - ⚠️ No foundation models
   - AI analytics platform
+- [x] Paiteq
+  - ⚠️ No foundation models
+  - Mobile app development + AI integration services
+  - Specializes in custom app development with AR/VR
+  - Operations in India and USA
 
 **Remaining Consulting Companies (16+ items):**
 All other entries in this section are similarly consulting, integration, and development services without proprietary foundation models.
@@ -720,10 +785,10 @@ All other entries in this section are similarly consulting, integration, and dev
 
 **📈 Total Entries Researched: 152+** (organized by region + commercial type)
 
-**✨ Companies WITH Foundation Models: ~130** (verified to have their own LLMs/foundation models)
+**✨ Companies WITH Foundation Models: ~132** (verified to have their own LLMs/foundation models)
 - 🇺🇸 US Frontier AI Companies (7): Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple
-- 🇺🇸 US Commercial AI Companies (11): Anthropic, Reka AI, Writer, Inflection AI, Adept AI, xAI, Databricks, Snowflake, Cerebras, Salesforce, IBM
-- 🇪🇺 European AI Labs (12): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM, 🇬🇧 Stability AI, 🇫🇷 Mistral AI, 🇩🇪 Aleph Alpha, 🇫🇷 LightOn, 🇮🇹 iGenius, 🇫🇮 Silo AI, 🇫🇷 Bioptimus
+- 🇺🇸 US Commercial AI Companies (12): Anthropic, Reka AI, Writer, Inflection AI, Adept AI, xAI, Databricks, Snowflake, Cerebras, Salesforce, IBM, ServiceNow
+- 🇪🇺 European AI Labs (13): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM, 🇬🇧 Stability AI, 🇫🇷 Mistral AI, 🇩🇪 Aleph Alpha, 🇫🇷 LightOn, 🇮🇹 iGenius, 🇫🇮 Silo AI, 🇫🇷 Bioptimus, 🇩🇪 Nyonic
 - 🇨🇦 Canadian AI Labs (4): Mila, Vector Institute, Recursal AI, Cohere
 - 🇨🇳 Chinese AI Labs (11): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot, Tencent
 - 🌍 Regional AI Labs (31+): 🇰🇷 Korean (8), 🇯🇵 Japanese (6 incl. Rakuten), 🇮🇳 Indian (4), 🇸🇬 Singaporean/SEA (4), 🇦🇺 Australian (2), 🌎 South American (1), 🌍 African (3), 🌏 Middle Eastern (5 including AI21)
