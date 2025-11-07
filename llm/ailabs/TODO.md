@@ -97,6 +97,13 @@ This file tracks the research on various LLM models from different companies and
   - 🤖 Viking models (Nordic and European languages)
   - 🤖 TildeOpen LLM (30B+, Balto-Slavic)
   - 🔧 SiloGen platform
+- [x] 🇫🇷 Bioptimus
+  - 🧬 Universal AI foundation model for biology
+  - 🧬 Integrates biological/biomedical data
+  - 🔬 Domain-specialized foundation models
+  - 👥 Founded 2024 in Paris
+  - 🎯 Focus on healthcare, genomics, and life sciences
+  - 🤝 AI agents for scientific discovery
 
 ## 🇨🇦 Canadian AI Labs
 
@@ -174,6 +181,14 @@ This file tracks the research on various LLM models from different companies and
   - 💬 Kimi-K2-Instruct
   - 💭 Kimi K2 Thinking
   - 🔊 Kimi-Audio (open-source)
+- [x] Tencent
+  - 🤖 Hunyuan-Large (389B parameters, 52B activated MoE)
+  - 🤖 Hunyuan Turbo S (fastest reasoning LLM)
+  - 🤖 Hunyuan-A13B (fine-grained MoE architecture)
+  - 🎨 Hunyuan text-to-image, 3D generation
+  - 🔌 Integrated into 50+ Tencent products (Cloud, Games, WeChat, etc.)
+  - 📊 Trained on diverse data, May 2024 major upgrade
+  - 🔓 Open-source Hunyuan-Large (Nov 2024)
 
 ## 🇰🇷 South Korean AI Labs
 
@@ -240,6 +255,13 @@ This file tracks the research on various LLM models from different companies and
   - ⚡ Sarashina mini (70B parameters)
   - 🔧 Developed using model distillation
   - 🔌 Sarashina API (Chat Completion, Embeddings)
+- [x] 🇯🇵 Rakuten
+  - 🤖 Rakuten AI 2.0 (MoE architecture)
+  - 🤖 Rakuten AI 2.0 mini (SLM)
+  - 🌍 Optimized for Japanese language
+  - 📦 Foundation and instruct model versions
+  - 🎯 Fine-tuned and specialized variants
+  - 📅 Released Dec 2024, updated Feb 2025
 
 ## 🇮🇳 Indian AI Labs
 
@@ -416,6 +438,23 @@ This file tracks the research on various LLM models from different companies and
   - 🏥 Mayo Clinic Genomic Foundation Model
   - ⚙️ Chinchilla scaling laws compliance
   - 🔧 Domain-specific fine-tuning support
+- [x] 🇺🇸 Salesforce
+  - 🤖 XGen-7B (8K sequence length, 1.5T tokens)
+  - 👁️ XGen-MM (multimodal LMMs)
+  - 🤖 XGen-Sales (autonomous sales tasks)
+  - 🤖 xLAM (Large Action Models)
+  - 💻 XGen-Code (developer-focused, 2025)
+  - 🔒 Stringent data privacy controls
+  - 🏢 Powers Agentforce enterprise AI
+- [x] 🇺🇸 IBM
+  - 🤖 Granite 3.0 (1B-8B parameters, Oct 2024)
+  - 🤖 Granite 3.3
+  - 🤖 Granite 4.0 (hybrid transformer-Mamba, Oct 2025)
+  - 🤖 Granite 4.0 Nano (browser-capable)
+  - 🏢 watsonx platform for enterprise AI
+  - 📋 ISO 42001 certified
+  - 📊 Trained on trusted enterprise data (code, legal, finance)
+  - 🔓 Multi-platform distribution (Hugging Face, Docker, Ollama)
 
 ## 🌐 Other Commercial Companies
 
@@ -679,15 +718,15 @@ All other entries in this section are similarly consulting, integration, and dev
 
 ### ✅ Research Complete! (Reorganized by geography)
 
-**📈 Total Entries Researched: 147+** (organized by region + commercial type)
+**📈 Total Entries Researched: 152+** (organized by region + commercial type)
 
-**✨ Companies WITH Foundation Models: ~125** (verified to have their own LLMs/foundation models)
+**✨ Companies WITH Foundation Models: ~130** (verified to have their own LLMs/foundation models)
 - 🇺🇸 US Frontier AI Companies (7): Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple
-- 🇺🇸 US Commercial AI Companies (9): Anthropic, Reka AI, Writer, Inflection AI, Adept AI, xAI, Databricks, Snowflake, Cerebras
-- 🇪🇺 European AI Labs (11): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM, 🇬🇧 Stability AI, 🇫🇷 Mistral AI, 🇩🇪 Aleph Alpha, 🇫🇷 LightOn, 🇮🇹 iGenius, 🇫🇮 Silo AI
+- 🇺🇸 US Commercial AI Companies (11): Anthropic, Reka AI, Writer, Inflection AI, Adept AI, xAI, Databricks, Snowflake, Cerebras, Salesforce, IBM
+- 🇪🇺 European AI Labs (12): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM, 🇬🇧 Stability AI, 🇫🇷 Mistral AI, 🇩🇪 Aleph Alpha, 🇫🇷 LightOn, 🇮🇹 iGenius, 🇫🇮 Silo AI, 🇫🇷 Bioptimus
 - 🇨🇦 Canadian AI Labs (4): Mila, Vector Institute, Recursal AI, Cohere
-- 🇨🇳 Chinese AI Labs (10): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot
-- 🌍 Regional AI Labs (30+): 🇰🇷 Korean (8), 🇯🇵 Japanese (5), 🇮🇳 Indian (4), 🇸🇬 Singaporean/SEA (4), 🇦🇺 Australian (2), 🌎 South American (1), 🌍 African (3), 🌏 Middle Eastern (5 including AI21)
+- 🇨🇳 Chinese AI Labs (11): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot, Tencent
+- 🌍 Regional AI Labs (31+): 🇰🇷 Korean (8), 🇯🇵 Japanese (6 incl. Rakuten), 🇮🇳 Indian (4), 🇸🇬 Singaporean/SEA (4), 🇦🇺 Australian (2), 🌎 South American (1), 🌍 African (3), 🌏 Middle Eastern (5 including AI21)
 - 🔬 Research Labs & Institutes (24+): Berkeley BAIR, Stanford, CMU, MIT, Allen AI, EleutherAI, BigScience/BLOOM, Together AI, LMSYS, TII, MBZUAI, Occiglot, LatamGPT, Oxford, ETH Zurich, etc.
 
 **🌐 Other Commercial (5):**
