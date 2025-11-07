@@ -26,6 +26,63 @@ This file tracks the research on various LLM models from different companies and
   - 🤖 Nemotron series (Nemotron 3, Nano 2 VL, Parse, Safety Guard)
   - 🤖 Llama Nemotron
   - 🎥 Cosmos Nemotron
+- [x] 🇺🇸 Apple
+  - 🤖 Apple Intelligence (3B on-device, larger server model)
+  - 🤖 Ajax framework (internal LLM infrastructure)
+  - 🎯 PT-MoE (Parallel-Track Mixture-of-Experts)
+  - 🔒 On-device + Private Cloud Compute architecture
+  - 📱 Powers Siri, writing tools, summarization
+
+## 🇪🇺 European AI Labs
+
+- [x] 🇫🇷 Kyutai
+  - 🤖 Moshi (multimodal voice assistant, 7B + 8B)
+  - 🎙️ Real-time speech and text understanding
+  - 🔓 Open science approach (€300M budget)
+  - 👥 Team from Meta FAIR, Google DeepMind
+- [x] 🇩🇪 Black Forest Labs
+  - 🎨 FLUX.1 series (12B parameters)
+  - 🎨 FLUX.1 Schnell (open-source, fastest)
+  - 🎨 FLUX.1 Dev (open-weight)
+  - 🎨 FLUX.1 Pro (premium API)
+  - 🎨 FLUX 1.1 Pro (ultra mode)
+  - 💰 $4B valuation talks (2024)
+  - 👥 Founded by ex-Stability AI team
+- [x] 🇪🇺 EuroLLM Consortium
+  - 🤖 EuroLLM-9B (released Dec 2024)
+  - 🌍 Supports all 24 EU official languages + 11 international
+  - 🤝 Multi-country collaboration
+  - 🔓 Open-source commitment
+- [x] 🇪🇺 OpenEuroLLM
+  - 🤖 Open-source LLMs for all EU languages
+  - 🎓 Led by Charles University (Prague) + Silo AI
+  - 💰 EU-funded 2025 program
+  - 🌍 Pan-European collaboration
+- [x] 🇩🇪 LAION (Large-scale AI Open Network)
+  - 📊 LAION-5B, LAION-400M (massive datasets)
+  - 📊 Re-LAION-5B (Aug 2024 release)
+  - 🎨 Enabled Stable Diffusion, Imagen training
+  - 🏛️ German nonprofit
+  - ⚖️ Won legal case on TDM exceptions (Sept 2024)
+
+## 🇨🇦 Canadian AI Labs
+
+- [x] 🇨🇦 Mila - Quebec AI Institute
+  - 🎓 World's largest academic ML research center
+  - 🔬 Foundation models research and development
+  - 🔒 LLM safety and alignment research
+  - 🌍 Cultural competence in AI
+  - 👥 500+ researchers, led by Yoshua Bengio
+- [x] 🇨🇦 Vector Institute (Toronto)
+  - 🎓 National AI institute
+  - 🔬 Foundation model research and safety evaluation
+  - 🤝 Pan-Canadian AI Strategy (with Mila, Amii)
+  - 🏢 Industry partnerships for AI deployment
+- [x] 🇨🇦 Recursal AI
+  - 🤖 EagleX (RWKV architecture)
+  - 🌍 100+ languages support
+  - ⚡ Energy-efficient architecture
+  - 🔓 Novel approach to transformers
 
 ## 🇨🇳 Chinese AI Labs
 
@@ -184,6 +241,30 @@ This file tracks the research on various LLM models from different companies and
   - Supports 11 Southeast Asian languages
   - 500 billion tokens training corpus
   - Open-source multilingual model
+- [x] 🌏 SEA AI Lab / Singapore University of Technology
+  - 🤖 Sailor series (0.5B to 20B parameters)
+  - 🤖 Sailor2 (improved multilingual)
+  - 🌍 Languages: English, Chinese, Vietnamese, Thai, Indonesian, Malay, Lao
+  - 🔓 Based on Qwen architecture
+  - 📄 Published at EMNLP 2024
+- [x] 🌏 Alibaba DAMO Academy (Southeast Asia focus)
+  - 🤖 SeaLLMs (7B, 13B parameters)
+  - 🌍 12+ Southeast Asian languages
+  - 🔓 Open-sourced on Hugging Face
+  - ℹ️ Note: DAMO is Alibaba's research arm (main entry under Chinese labs)
+
+## 🇦🇺 Australian AI Labs
+
+- [x] 🇦🇺 Kangaroo LLM Project
+  - 🤖 Kangaroo (Australia's flagship sovereign LLM)
+  - 🦘 Tailored to Australian English, culture, humor, slang
+  - 🤝 Nonprofit consortium project
+  - ⚠️ Status: In development (delayed from Oct 2024)
+- [x] 🇦🇺 CSIRO (Commonwealth Scientific and Industrial Research Organisation)
+  - 🔬 Australia's national science agency
+  - 📊 Published major 2024 report on foundation models
+  - 🏛️ Researching sovereign AI capability
+  - 🔧 Infrastructure and strategy focus
 
 ## 🌎 South American AI Labs
 
@@ -249,6 +330,34 @@ This file tracks the research on various LLM models from different companies and
   - 👑 Claude Opus 4.1
   - ⚡ Claude Haiku 4.5
   - 🎯 Multimodal capabilities across all models
+- [x] 🇺🇸 Reka AI
+  - 🤖 Reka Core (largest, frontier model)
+  - ⚡ Reka Flash (21B parameters, fast)
+  - ⚡ Reka Edge (7B parameters, efficient)
+  - 🎯 Multimodal: text, image, video, audio
+  - 📏 128K context window
+  - 🌍 20+ languages
+  - 👥 Founded by DeepMind/Google Brain/FAIR alumni
+- [x] 🇺🇸 Writer
+  - 🤖 Palmyra X 004 (flagship model)
+  - 👁️ Palmyra Vision (multimodal)
+  - 🎨 Palmyra Creative (content generation)
+  - 🤖 Palmyra X5 (1M context window)
+  - 🏥 Palmyra-Med-70B (medical domain)
+  - 🛠️ First on tool-calling benchmarks
+  - 🏢 Enterprise AI focus
+- [x] 🇺🇸 Inflection AI
+  - 🤖 Inflection-1 (foundation model)
+  - 🤖 Inflection-2.5 (nearly matches GPT-4)
+  - 💬 Powers Pi chatbot
+  - 👥 Founded by Mustafa Suleyman (DeepMind co-founder)
+  - ⚠️ Note: Team mostly moved to Microsoft in 2024
+- [x] 🇺🇸 Adept AI
+  - 🤖 ACT-1 (Action Transformer)
+  - 🤖 Large Action Models (LAMs)
+  - 🔧 Pioneer in action-focused models
+  - 🖥️ Software automation and tool use
+  - 🎯 Desktop and web application control
 - [x] 🇬🇧 Stability AI
   - 🎨 Stable Diffusion series (1, 2, 3, 3.5)
   - 🎨 Stable Diffusion 3.5 Large
@@ -383,6 +492,25 @@ This file tracks the research on various LLM models from different companies and
   - GPT-NeoX (20B parameters)
   - The Pile (800GB text corpus)
   - Focus shifted to interpretability and alignment
+- [x] 🤝 BigScience / BLOOM
+  - 🤖 BLOOM (176B parameters)
+  - 🌍 46 natural languages + 13 programming languages
+  - 👥 1000+ researchers collaboration
+  - 🤝 Led by HuggingFace
+  - 🖥️ Trained on Jean Zay supercomputer (France)
+  - 🔓 Fully open-source
+- [x] 🇺🇸 Together AI
+  - 📊 RedPajama V1 (1.2T tokens)
+  - 📊 RedPajama V2 (100T tokens)
+  - 🔧 Used by Snowflake Arctic, Salesforce XGen, AI2 OLMo
+  - 🔓 Open-source LLM platform
+  - 🏢 Collaborative AI infrastructure
+- [x] 🇺🇸 LMSYS (UC Berkeley)
+  - 🤖 Vicuna (7B, 13B, 33B)
+  - 🏆 Chatbot Arena (1.5M+ votes)
+  - ⚡ FastChat platform
+  - 📊 LMSYS-Chat-1M dataset
+  - 🔬 LLM evaluation and benchmarking
 - [x] Technology Innovation Institute (TII)
   - NOOR (largest Arabic LLM)
   - Falcon series (Falcon, Falcon Mamba 7B)
@@ -548,16 +676,18 @@ All other entries in this section are similarly consulting, integration, and dev
 
 ## 📊 Summary
 
-### ✅ Research Complete!
+### ✅ Research Complete! (Updated with 20+ new organizations)
 
-**📈 Total Entries Researched: 127**
+**📈 Total Entries Researched: 147+** (up from 127)
 
-**✨ Companies WITH Foundation Models: ~95** (verified to have their own LLMs/foundation models)
-- 🏢 Major Tech Companies (6): 🇺🇸 Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA
+**✨ Companies WITH Foundation Models: ~115** (verified to have their own LLMs/foundation models)
+- 🏢 Major Tech Companies (7): 🇺🇸 Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple
+- 🇪🇺 European AI Labs (5): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM
+- 🇨🇦 Canadian AI Labs (3): Mila, Vector Institute, Recursal AI
 - 🇨🇳 Chinese AI Labs (10): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot
-- 🌍 Regional AI Labs (36): 🇰🇷 Korean, 🇯🇵 Japanese, 🇮🇳 Indian, 🇸🇬 Singapore, 🌎 South American, 🌍 African, 🌏 Middle Eastern
-- 🌐 Commercial Companies (20+): 🇨🇦 Cohere, 🇺🇸 Anthropic, 🇫🇷 Mistral, xAI, Databricks, Snowflake, 🇷🇺 Yandex, etc.
-- 🔬 Research Labs & Institutes (21): Berkeley BAIR, Stanford, CMU, MIT, Allen AI, EleutherAI, TII, MBZUAI, Occiglot, LatamGPT, Oxford, ETH Zurich, etc.
+- 🌍 Regional AI Labs (31+): 🇰🇷 Korean (8), 🇯🇵 Japanese (5), 🇮🇳 Indian (4), 🇸🇬 Singaporean/SEA (4), 🇦🇺 Australian (2), 🌎 South American (1), 🌍 African (3), 🌏 Middle Eastern (4)
+- 🌐 Commercial Companies (24+): 🇨🇦 Cohere, 🇺🇸 Anthropic, Reka AI, Writer, Inflection AI, Adept AI, 🇫🇷 Mistral, xAI, Databricks, Snowflake, 🇷🇺 Yandex, etc.
+- 🔬 Research Labs & Institutes (24+): Berkeley BAIR, Stanford, CMU, MIT, Allen AI, EleutherAI, BigScience/BLOOM, Together AI, LMSYS, TII, MBZUAI, Occiglot, LatamGPT, Oxford, ETH Zurich, etc.
 
 **❌ Companies WITHOUT Foundation Models: ~32**
 - 💼 Consulting/Services: Springs, WhyLabs, Dextralabs, InData Labs, LeewayHertz, Markovate, SoluLab, Rain Infotech, Debut, TechAhead, Vstorm, Sunrise, Blue Crystal, AI Advancements, HatchWorks, Dualboot, Rootstrap, VulaVula, Mymanu, GotBot, TrainingData, LMTD, Play.ht, Saal.ai
