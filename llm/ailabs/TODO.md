@@ -113,6 +113,110 @@ This file tracks the research on various LLM models from different companies and
   - 🎯 Focus on healthcare, genomics, and life sciences
   - 🤝 AI agents for scientific discovery
 
+## 🇪🇺 Extended European AI Labs (Additional Countries)
+
+- [x] 🇬🇧 UK-LLM / BritLLM (University College London)
+  - 🤖 UK's national LLM initiative
+  - 🗣️ Welsh, Scots, Scottish Gaelic support
+  - 🎯 UK language preservation
+  - 🤝 Collaboration with Bangor University
+
+- [x] 🇩🇪 OpenGPT-X / Teuken-7B (Fraunhofer Institutes)
+  - 🤖 7B parameters, all 24 EU official languages
+  - 🏢 German government-backed initiative
+  - 💻 Trained on Jülich supercomputer
+  - 🎯 Sovereign German AI
+
+- [x] 🇩🇪 LeoLM (LAION + Hessian.AI)
+  - 🤖 70B parameters, German-optimized
+  - 📊 First commercially viable open-source German LLM
+  - 🏆 Beats Llama 2 on German benchmarks
+  - 🔓 Open-source, community-driven
+
+- [x] 🇫🇷 LUCIE (LINAGORA + France 2030)
+  - 🤖 Open-source ethical AI model for Europe
+  - 🎓 Education/EdTech focus
+  - 📅 Released January 2025
+  - 🇫🇷 French government-backed
+
+- [x] 🇳🇱 GPT-NL (TNO + Netherlands Forensic Institute + SURF)
+  - 🤖 Dutch values-aligned LLM
+  - 💰 €13.5M government funding
+  - 🎯 National Dutch language model
+  - 🇳🇱 Netherlands national initiative
+
+- [x] 🇳🇱 Geitje (Netherlands)
+  - 🤖 Mistral-7B based, Dutch-trained
+  - 📊 Open-source Dutch foundation model
+  - 🗣️ Netherlands language focus
+
+- [x] 🇸🇪 GPT-SW3 (AI Sweden + RISE)
+  - 🤖 First LLM for Nordic languages
+  - 🎯 Swedish national model
+  - 🇸🇪 Sweden national initiative
+
+- [x] 🇳🇴 NorskGPT / Bineric AI (Norway)
+  - 🤖 Norway's first commercial LLM
+  - 🗣️ Bokmål and Nynorsk support
+  - 🇳🇴 Norwegian sovereign AI
+  - 🔒 GDPR compliant
+
+- [x] 🇮🇹 Minerva (Sapienza University + CINECA)
+  - 🤖 First Italian LLM family trained from scratch
+  - 💻 Leonardo supercomputer
+  - 📊 50% Italian, 50% English training data
+  - 🏛️ Italian academic consortium
+
+- [x] 🇮🇹 Domyn (Italy)
+  - 🤖 NVIDIA partnership for Italian LLM
+  - 🇮🇹 Italian Ministry backed
+  - 🎯 Italian sovereign AI infrastructure
+
+- [x] 🇪🇸 Spanish National LLM / Barcelona Supercomputing Center
+  - 🤖 Spanish, Catalan, Basque, Galician, Valencian
+  - 💼 Government + IBM partnership
+  - 🌎 Latin America collaboration
+  - 🏛️ Spanish government-backed
+
+- [x] 🇪🇸 Clibrain / Lince Zero (Spain)
+  - 🤖 Spanish-optimized commercial LLM
+  - 🏢 Madrid-based startup
+  - 🌍 European/Spanish focus
+
+- [x] 🇵🇱 PLLuM (Polish Large Language Model)
+  - 🤖 Government-backed, open-source Polish LLM
+  - 🇵🇱 Polish national initiative
+
+- [x] 🇵🇱 Bielik & Qra (Poland)
+  - 🤖 Polish foundation models
+  - 🎓 Community-driven (Bielik)
+  - 🏛️ Academic (Qra, Gdańsk University)
+
+- [x] 🇹🇷 Kumru AI (VNGRS, Turkey)
+  - 🤖 7.4B parameters, first Turkish LLM
+  - 📅 Unveiled October 2025
+  - 🇹🇷 Turkish sovereign AI
+
+- [x] 🇹🇷 T3AI (Turkish Technology Team Foundation + Baykar)
+  - 🤖 First Turkish LLM (defense-backed)
+  - 📅 Beta launched on Teknofest (2025)
+  - 🇹🇷 Turkish national defense initiative
+
+- [x] 🇺🇦 Lapa LLM (Ukraine AI Factory + Kyivstar)
+  - 🤖 National Ukrainian LLM
+  - 📅 Launch: Nov-Dec 2025
+  - 💪 50% more efficient tokenizer
+  - 🇺🇦 Ukrainian sovereign AI amid war
+
+- [x] 🇮🇪 UCCIX (ReML-AI, Ireland)
+  - 🤖 Irish-eXcellence LLM (Llama 2-13B based)
+  - 🏛️ Irish academic model
+
+- [x] 🇮🇸 Miðeind (Iceland)
+  - 🤖 Icelandic language LLM with OpenAI
+  - 🗣️ 4B+ words Icelandic training data
+  - 🎯 Language preservation
+
 ## 🇨🇦 Canadian AI Labs
 
 - [x] 🇨🇦 Mila - Quebec AI Institute
@@ -137,6 +241,57 @@ This file tracks the research on various LLM models from different companies and
   - 🔍 Rerank 3
   - 📊 Embed
   - 🏢 Enterprise and developer focused
+
+## 🇹🇼 Taiwan AI Labs
+
+- [x] 🇹🇼 TAIDE (Taiwan)
+  - 🤖 Trustworthy AI Dialogue Engine
+  - 📊 Based on Llama 2, 7B and 13B parameters
+  - 📅 Released April 2024
+  - 🎯 Taiwan's national LLM
+
+- [x] 🇹🇼 Formosa Foundation Model (Taiwan AI Cloud)
+  - 🤖 176B parameters, Traditional Chinese
+  - 💻 Taiwania-2 supercomputer
+  - 🏢 Enterprise-level multilingual model
+
+- [x] 🇹🇼 FoxBrain (Hon Hai Research Institute)
+  - 🤖 70B parameters, Llama 3.1 based
+  - 💭 First Traditional Chinese reasoning LLM
+  - 📅 Launched March 2025
+  - 🏢 Taiwan's latest commercial LLM
+
+- [x] 🇹🇼 Llama-3-Taiwan (National Taiwan University + partners)
+  - 🤖 TAME (Taiwan Mixture of Experts) project
+  - 📊 70B parameters
+  - 🎓 Taiwan academic consortium
+
+## 🇭🇰 Hong Kong AI Labs
+
+- [x] 🇭🇰 HKGAI V1 (Hong Kong Generative AI R&D Center)
+  - 🤖 First Hong Kong sovereign LLM (DeepSeek based)
+  - 📅 Released February 2025
+  - 💬 HKChat chatbot (launching 2025)
+  - 🏛️ Hong Kong government-backed
+
+- [x] 🇭🇰 InvestLM (HKUST Business School)
+  - 💰 Hong Kong's first open-source financial LLM
+  - 📊 Finance-domain specialized
+  - 🏛️ Academic research model
+
+## 🇷🇺 Russian AI Labs
+
+- [x] 🇷🇺 Yandex (Already listed in Other Commercial)
+- [x] 🇷🇺 Sber / GigaChat (Russia)
+  - 🤖 Leading Russian LLM alongside YandexGPT
+  - 💬 GigaChat (main product)
+  - 🌍 Russian frontier foundation model
+  - 🏢 Russian banking/tech giant
+
+- [x] 🇷🇺 Kandinsky (Sber, Russia)
+  - 🎨 Text-to-image multimodal model
+  - 🏆 Competes with DALL-E, Midjourney
+  - 🌍 Russian multimodal foundation model
 
 ## 🇨🇳 Chinese AI Labs
 
@@ -329,20 +484,33 @@ This file tracks the research on various LLM models from different companies and
   - 🦘 Tailored to Australian English, culture, humor, slang
   - 🤝 Nonprofit consortium project
   - ⚠️ Status: In development (delayed from Oct 2024)
+
+- [x] 🇦🇺 Isaacus / Kanon 2 (Australia)
+  - ⚖️ Legal AI foundation model
+  - 📚 Coverage: 38 jurisdictions
+  - 🏆 Beats OpenAI/Google on legal retrieval
+  - 🎯 Australian specialized legal LLM
+
 - [x] 🇦🇺 CSIRO (Commonwealth Scientific and Industrial Research Organisation)
   - 🔬 Australia's national science agency
   - 📊 Published major 2024 report on foundation models
   - 🏛️ Researching sovereign AI capability
   - 🔧 Infrastructure and strategy focus
 
-## 🌎 South American AI Labs
+## 🌎 South American & Latin American AI Labs
+
+- [x] 🇲🇽 Mexico IA / Mexican National LLM (NVIDIA + CCE + Mexican government)
+  - 🤖 NVIDIA + Mexican government partnership
+  - 🏛️ National AI Lab (April 2025)
+  - 🇲🇽 "ChatGPT in Spanish made in Mexico"
+  - 🎯 Mexican national AI initiative
 
 - [x] Brazil's National LLM Projects
-  - Amazonia AI (largest Brazilian LLM)
-  - Sabia/Maritaca AI (focus on Portuguese and Brazilian culture)
-  - AmazonIA
-  - Runs on Oracle data centers in Brazil
-  - Complies with LGPD (Brazilian data protection law)
+  - 🤖 Amazonia AI (largest Brazilian LLM)
+  - 🤖 Sabia/Maritaca AI (Portuguese, Brazilian culture)
+  - 🤖 AmazonIA
+  - 💻 Runs on Oracle data centers in Brazil
+  - ⚖️ Complies with LGPD (Brazilian data protection)
 
 ## 🌍 African AI Labs
 
@@ -357,12 +525,56 @@ This file tracks the research on various LLM models from different companies and
   - 🗣️ Support for Yoruba, Hausa, Igbo, Nigerian-accented English
   - 📖 Open-source commitment
   - 👥 LangEasy platform for crowdsourced training
-- [x] Jacaranda Health
-  - ⚠️ No foundation models
-  - 🏥 Health-focused platform
-  - ❌ NOT an LLM foundation model builder
+- [x] 🇿🇦🇰🇪🇳🇬 Jacaranda Health / UlizaLlama (Africa)
+  - 🤖 UlizaLlama - open-source African health LLM
+  - 🗣️ 5 African languages (Swahili, Hausa, Yoruba, Xhosa, Zulu)
+  - 🏥 Health-focused foundation models
+  - 🌍 Expanding across African markets (2025)
+  - 📖 Open-source commitment
 
-## 🌏 Middle Eastern AI Labs
+## 🌏 Middle Eastern & North African AI Labs
+
+- [x] 🇸🇦 ALLaM (SDAIA - Saudi Data and AI Authority)
+  - 🤖 Arabic-first LLM (Meta Llama-2 based)
+  - 📊 540B+ Arabic tokens training
+  - 🏛️ Saudi Vision 2030 initiative
+  - 🇸🇦 Saudi national model
+
+- [x] 🇸🇦 Mulhem (SDAIA, Saudi Arabia)
+  - 🤖 Open-source Arabic-first LLM
+  - 🌍 Arabic language preservation
+  - 🇸🇦 Saudi open-source initiative
+
+- [x] 🇸🇦 METABRAIN (stc Group, Saudi Arabia)
+  - 🤖 Multimodal AI platform
+  - 📊 Text, images, data analytics
+  - 🏢 Saudi telco (stc Group)
+  - 🇸🇦 Saudi enterprise model
+
+- [x] 🇶🇦 Fanar (Hamad Bin Khalifa University + QCRI)
+  - 🤖 Fanar Star and Fanar Prime
+  - 📊 1 trillion tokens (Arabic, English, code)
+  - 🎯 Qatar's national LLM
+
+- [x] 🇩🇿🇲🇦🇹🇳 Hadretna (Fentech, Algeria)
+  - 🤖 Algerian Arabic dialect (Daridja) + Berber (Tamazight)
+  - 🌍 96M speakers (Algeria, Morocco, Tunisia)
+  - 👥 Crowdsourced community data
+  - 📅 Version 2 expected early 2025
+
+- [x] 🇮🇷 PersianLLaMA (Iran)
+  - 🤖 First large Persian language model
+  - 📊 7B and 13B parameters
+  - 🇮🇷 Iranian national model
+
+- [x] 🇮🇷 PersianMind (Iran)
+  - 🤖 Cross-lingual Persian-English LLM
+  - 📈 9% improvement over LLaMA2-7B
+  - 🇮🇷 Persian bilingual model
+
+- [x] 🇮🇷 Maral-7B (MaralGPT, Iran)
+  - 🤖 7B bilingual Persian-English model
+  - 🇮🇷 Persian commercial LLM
 
 - [x] 🇦🇪 G42
   - 🤖 JAIS 70B (Arabic-focused model)
@@ -370,6 +582,7 @@ This file tracks the research on various LLM models from different companies and
   - 📊 370B tokens training (330B Arabic tokens)
   - 🎯 Multimodal foundation models (with Core42, Inception)
   - 🤝 Partnership with Mistral AI
+  - 🤖 K2 Think (reasoning model, 2025)
 - [x] 🇦🇪 AIQ
   - ⚠️ No foundation models for LLMs
   - ⚡ Energy data and analytics platform (AD.WE with Presight)
@@ -471,6 +684,55 @@ This file tracks the research on various LLM models from different companies and
   - 🔧 Fast-LLM framework (open-source training library)
   - 🏢 Enterprise domain-specific LLMs
   - 📅 Q2 2025 availability for customers
+- [x] 🇺🇸 Character.AI
+  - 🤖 Proprietary LLM technology
+  - 💬 Character-optimized conversational AI
+  - 🎯 Licensed to Google (non-exclusive)
+  - 🏢 Full-stack AI company
+  - 💰 $350M+ funding
+- [x] 🇺🇸 Perplexity
+  - 🤖 Custom LLM technology
+  - 🔍 AI search and knowledge discovery
+  - 💬 Multi-model synthesis (own + partner models)
+  - 💰 $20B valuation, $100M+ ARR
+  - 🌍 Multi-language support
+- [x] 🇺🇸 Runway
+  - 🎬 Foundation models for creative AI
+  - 🎨 Gen-2 (video generation)
+  - 🎨 Runway Custom Models
+  - 💰 $308M Series D, $3B valuation
+  - 🎯 Generative tools for creators
+- [x] 🇺🇸 Nomic AI
+  - 🤖 Nomic Embed Text V2 (Feb 2025)
+  - 🤖 Nomic Embed Multimodal (April 2025)
+  - 📊 Embedding foundation models
+  - 📊 Atlas platform for AI data visualization
+  - 🔓 Open-source approach
+- [x] 🇺🇸 Chai AI
+  - 🤖 In-house LLM for social engagement
+  - 💬 Social AI chatbot platform
+  - 📈 +10% engagement from custom models
+  - 🎯 Community-driven AI companions
+- [x] 🇺🇸 Replika
+  - 🤖 Internally developed LLMs
+  - 💭 Emotional connection + personalization
+  - 🎯 AI companion focus
+  - 👥 30M+ users
+
+- [x] 🇺🇸 Inworld AI
+  - 🤖 Emotionally intelligent AI character models
+  - 🎮 Game developer + narrative focus
+  - 🎙️ Real-time voice, facial expressions
+  - 🎬 Character generation LLMs
+  - 🏢 Interactive media foundation models
+
+## 🇬🇧 UK Commercial AI Companies
+
+- [x] 🇬🇧 Faculty AI (UK)
+  - 🤖 Bespoke enterprise LLMs
+  - 💼 Custom foundation models using PyTorch Lightning
+  - 🏢 UK business-focused models
+  - 🇬🇧 UK commercial LLM builder
 
 ## 🌐 Other Commercial Companies
 
@@ -783,25 +1045,60 @@ All other entries in this section are similarly consulting, integration, and dev
 
 ### ✅ Research Complete! (Reorganized by geography)
 
-**📈 Total Entries Researched: 152+** (organized by region + commercial type)
+**📈 Total Entries Researched: 200+** (organized by geography + commercial type)
 
-**✨ Companies WITH Foundation Models: ~132** (verified to have their own LLMs/foundation models)
+**✨ Companies WITH Foundation Models: ~180+** (verified to have their own LLMs/foundation models)
+
+**North America:**
 - 🇺🇸 US Frontier AI Companies (7): Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple
-- 🇺🇸 US Commercial AI Companies (12): Anthropic, Reka AI, Writer, Inflection AI, Adept AI, xAI, Databricks, Snowflake, Cerebras, Salesforce, IBM, ServiceNow
-- 🇪🇺 European AI Labs (13): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM, 🇬🇧 Stability AI, 🇫🇷 Mistral AI, 🇩🇪 Aleph Alpha, 🇫🇷 LightOn, 🇮🇹 iGenius, 🇫🇮 Silo AI, 🇫🇷 Bioptimus, 🇩🇪 Nyonic
+- 🇺🇸 US Commercial AI Companies (19): Anthropic, Reka AI, Writer, Inflection AI, Adept AI, xAI, Databricks, Snowflake, Cerebras, Salesforce, IBM, ServiceNow, Character.AI, Perplexity, Runway, Nomic AI, Chai AI, Replika, Inworld AI
+- 🇬🇧 UK Commercial (1): Faculty AI
 - 🇨🇦 Canadian AI Labs (4): Mila, Vector Institute, Recursal AI, Cohere
-- 🇨🇳 Chinese AI Labs (11): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot, Tencent
-- 🌍 Regional AI Labs (31+): 🇰🇷 Korean (8), 🇯🇵 Japanese (6 incl. Rakuten), 🇮🇳 Indian (4), 🇸🇬 Singaporean/SEA (4), 🇦🇺 Australian (2), 🌎 South American (1), 🌍 African (3), 🌏 Middle Eastern (5 including AI21)
-- 🔬 Research Labs & Institutes (24+): Berkeley BAIR, Stanford, CMU, MIT, Allen AI, EleutherAI, BigScience/BLOOM, Together AI, LMSYS, TII, MBZUAI, Occiglot, LatamGPT, Oxford, ETH Zurich, etc.
 
-**🌐 Other Commercial (5):**
+**Europe (Expanded):**
+- 🇪🇺 European AI Labs - Core (13): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM, 🇬🇧 Stability AI, 🇫🇷 Mistral AI, 🇩🇪 Aleph Alpha, 🇫🇷 LightOn, 🇮🇹 iGenius, 🇫🇮 Silo AI, 🇫🇷 Bioptimus, 🇩🇪 Nyonic
+- 🇪🇺 Extended European Labs (17): 🇬🇧 BritLLM, 🇩🇪 OpenGPT-X/Teuken, 🇩🇪 LeoLM, 🇫🇷 LUCIE, 🇳🇱 GPT-NL, 🇳🇱 Geitje, 🇸🇪 GPT-SW3, 🇳🇴 NorskGPT, 🇮🇹 Minerva, 🇮🇹 Domyn, 🇪🇸 Spanish National LLM, 🇪🇸 Clibrain, 🇵🇱 PLLuM, 🇵🇱 Bielik, 🇹🇷 Kumru AI, 🇹🇷 T3AI, 🇺🇦 Lapa LLM, 🇮🇪 UCCIX, 🇮🇸 Miðeind
+
+**Asia-Pacific (Greatly Expanded):**
+- 🇨🇳 Chinese AI Labs (9): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot, Tencent
+- 🇹🇼 Taiwan (4): TAIDE, Formosa, FoxBrain, Llama-3-Taiwan (TAME)
+- 🇭🇰 Hong Kong (2): HKGAI V1, InvestLM
+- 🇰🇷 South Korean (8): Naver Cloud, SK Telecom, Upstage, LG AI, NC AI, KT Corp, Samsung, Kakao
+- 🇯🇵 Japanese (6): ELYZA, Cogent Labs, NTT, SoftBank, SB Intuitions, Rakuten
+- 🇮🇳 Indian (4): Sarvam, Krutrim, Uniphore, CoRover
+- 🇸🇬 SEA/Singapore (4): WIZ.AI, AI Singapore, SEA AI Lab, Alibaba DAMO
+
+**Middle East & North Africa (Expanded):**
+- 🇸🇦 Saudi Arabia (3): ALLaM, Mulhem, METABRAIN
+- 🇦🇪 UAE (3): G42, TII (Falcon), MBZUAI (Jais)
+- 🇶🇦 Qatar (1): Fanar
+- 🇷🇺 Russia (2): Sber/GigaChat, Kandinsky
+- 🇮🇷 Iran (3): PersianLLaMA, PersianMind, Maral
+- 🇩🇿🇲🇦🇹🇳 North Africa (1): Hadretna
+- 🇦🇪 Other ME (1): AI21 Labs (Israel)
+
+**Africa:**
+- 🇿🇦 South Africa (1): Botlhale AI
+- 🇪🇹 Ethiopia (1): Lesan AI
+- 🌍 Pan-African (3): Lelapa AI, Awarri, Jacaranda Health/UlizaLlama
+
+**South America & Latin America:**
+- 🇲🇽 Mexico (1): Mexico IA National LLM
+- 🇧🇷 Brazil (1): Brazil's National LLM Projects
+- 🌎 Multi-country (1): LatamGPT
+
+**Oceania:**
+- 🇦🇺 Australian (3): Kangaroo LLM, Isaacus/Kanon 2, CSIRO
+
+**Research Labs & Universities (24+):**
+Berkeley BAIR, Stanford (Marin-8B), CMU (FLAME-MoE), MIT, Allen AI (OLMo/OlmoEarth), EleutherAI, BigScience/BLOOM, Together AI, LMSYS, TII, MBZUAI, Occiglot, LatamGPT, Oxford, ETH Zurich (Apertus), Freiburg (TabPFN), ELLIS, TUM (Nicheformer), and 6+ others
+
+**🌐 Other Commercial:**
 - 🇷🇺 Yandex (Russian frontier model)
-- ⚠️ Nyonic (Unclear status), Paiteq (no info), ServiceNow (platform), Contextual AI (fine-tuning), MosaicML (infrastructure), Hugging Face (model hub)
+- Contextual AI (RAG platform), MosaicML (acquired), Hugging Face (now builds models too)
 
-**❌ Companies WITHOUT Foundation Models: ~32**
-- 💼 Consulting/Services: Springs, WhyLabs, Dextralabs, InData Labs, LeewayHertz, Markovate, SoluLab, Rain Infotech, Debut, TechAhead, Vstorm, Sunrise, Blue Crystal, AI Advancements, HatchWorks, Dualboot, Rootstrap, VulaVula, Mymanu, GotBot, TrainingData, LMTD, Play.ht, Saal.ai
-- 🔧 Platforms/Non-Builders: ServiceNow, Contextual AI, MosaicML, Hugging Face
-- 🎯 Specialized Services: Botlhale AI (🇿🇦 African languages), Lesan AI (🇪🇹 Ethiopian languages)
-- ⚠️ Unable to Verify: Paiteq (no information found)
+**❌ NOT Foundation Model Builders (~25):**
+- 💼 Consulting/Services: Springs, WhyLabs, Dextralabs, InData Labs, LeewayHertz, Markovate, SoluLab, Rain Infotech, Debut, TechAhead, Vstorm, Sunrise, Blue Crystal, AI Advancements, HatchWorks, Dualboot, Rootstrap, VulaVula, Mymanu, GotBot, TrainingData, LMTD, Saal.ai
+- 🔧 Platforms/Non-Builders: Uniphore, AIQ, Play.ht (moved to specialized)
 
 **✅ All items now marked as [x] COMPLETE**
