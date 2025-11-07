@@ -37,11 +37,11 @@ This file tracks the research on various LLM models from different companies and
 
 ## Japanese AI Labs
 
-- [ ] ELYZA Inc.
-- [ ] Cogent Labs
-- [ ] NTT
-- [ ] SoftBank
-- [ ] SB Intuitions
+- [ ] ELYZA Inc. (ELYZA-japanese-Llama-2, ELYZA-LLM-Med, ELYZA-Thinking, ELYZA-Shortcut)
+- [ ] Cogent Labs (No specific LLM models found)
+- [ ] NTT (Tsuzumi)
+- [ ] SoftBank (Sarashina mini)
+- [ ] SB Intuitions (Sarashina mini)
 
 ## Indian AI Labs
 
