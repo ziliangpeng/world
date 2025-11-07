@@ -2,7 +2,11 @@
 
 This file tracks the research on various LLM models from different companies and research labs.
 
-## 🇺🇸 US Frontier AI Companies
+## 🇺🇸 United States AI Companies
+
+### Frontier Tier (9)
+
+**State-of-the-art models competing at highest level. Massive scale (100B+ parameters), tech giants or heavily funded AI companies.**
 
 - [x] 🇺🇸 Google (DeepMind)
   - 🤖 Gemini (1.0, 1.5, 2.0, 2.5)
@@ -32,6 +36,18 @@ This file tracks the research on various LLM models from different companies and
   - 🎯 PT-MoE (Parallel-Track Mixture-of-Experts)
   - 🔒 On-device + Private Cloud Compute architecture
   - 📱 Powers Siri, writing tools, summarization
+- [x] 🇺🇸 Anthropic
+  - 🤖 Claude series (1, 3, 3.5, 4, Sonnet, Opus, Haiku)
+  - 👑 Claude Sonnet 4.5 (frontier model, competes with GPT-4o)
+  - 👑 Claude Opus 4.1 (frontier capability)
+  - ⚡ Claude Haiku 4.5
+  - 🎯 Multimodal capabilities across all models
+  - 💰 $7.3B+ funding
+- [x] 🇺🇸 xAI
+  - 🤖 Grok series (Grok-1, Grok-1.5V, Grok 3, Grok 3 Mini, Grok 4, Grok 4 Heavy)
+  - 💪 314B Mixture-of-Experts (Grok-1)
+  - 🎯 Multimodal capabilities
+  - 👥 Founded by Elon Musk
 
 ## 🇪🇺 European AI Labs
 
@@ -604,14 +620,10 @@ This file tracks the research on various LLM models from different companies and
   - 🤖 Jamba 1.5 Large
   - 📏 256K context window models
 
-## 🇺🇸 US Commercial AI Companies
+### Commercial Tier (17)
 
-- [x] 🇺🇸 Anthropic
-  - 🤖 Claude series (1, 3, 3.5, 4, Sonnet, Opus, Haiku)
-  - 👑 Claude Sonnet 4.5 (frontier model)
-  - 👑 Claude Opus 4.1
-  - ⚡ Claude Haiku 4.5
-  - 🎯 Multimodal capabilities across all models
+**Strong foundation models for specialized domains. Competitive but focused on specific use cases or markets.**
+
 - [x] 🇺🇸 Reka AI
   - 🤖 Reka Core (largest, frontier model)
   - ⚡ Reka Flash (21B parameters, fast)
@@ -640,10 +652,6 @@ This file tracks the research on various LLM models from different companies and
   - 🔧 Pioneer in action-focused models
   - 🖥️ Software automation and tool use
   - 🎯 Desktop and web application control
-- [x] 🇺🇸 xAI
-  - 🤖 Grok series (Grok-1, Grok-1.5V, Grok 3, Grok 3 Mini, Grok 4, Grok 4 Heavy)
-  - 💪 314B Mixture-of-Experts (Grok-1)
-  - 🎯 Multimodal capabilities
 - [x] 🇺🇸 Databricks
   - 🤖 DBRX (132B total, 36B active parameters)
   - 💬 DBRX Instruct
@@ -1050,8 +1058,8 @@ All other entries in this section are similarly consulting, integration, and dev
 **✨ Companies WITH Foundation Models: ~180+** (verified to have their own LLMs/foundation models)
 
 **North America:**
-- 🇺🇸 US Frontier AI Companies (7): Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple
-- 🇺🇸 US Commercial AI Companies (19): Anthropic, Reka AI, Writer, Inflection AI, Adept AI, xAI, Databricks, Snowflake, Cerebras, Salesforce, IBM, ServiceNow, Character.AI, Perplexity, Runway, Nomic AI, Chai AI, Replika, Inworld AI
+- 🇺🇸 US Frontier AI Companies (9): Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple, **Anthropic, xAI**
+- 🇺🇸 US Commercial AI Companies (17): Reka AI, Writer, Inflection AI, Adept AI, Databricks, Snowflake, Cerebras, Salesforce, IBM, ServiceNow, Character.AI, Perplexity, Runway, Nomic AI, Chai AI, Replika, Inworld AI
 - 🇬🇧 UK Commercial (1): Faculty AI
 - 🇨🇦 Canadian AI Labs (4): Mila, Vector Institute, Recursal AI, Cohere
 
