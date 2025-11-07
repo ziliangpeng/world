@@ -26,14 +26,14 @@ This file tracks the research on various LLM models from different companies and
 
 ## South Korean AI Labs
 
-- [ ] Naver Cloud
-- [ ] SK Telecom
-- [ ] Upstage
-- [ ] LG AI Research
-- [ ] NC AI
-- [ ] KT Corporation
-- [ ] Samsung Electronics
-- [ ] Kakao Enterprise
+- [ ] Naver Cloud (HyperCLOVA X, HyperCLOVA X Seed)
+- [ ] SK Telecom (A.X series, Telco LLM)
+- [ ] Upstage (Solar)
+- [ ] LG AI Research (Exaone)
+- [ ] NC AI (Involved in sovereign LLM development)
+- [ ] KT Corporation (Mi:dm)
+- [ ] Samsung Electronics (Samsung Gauss)
+- [ ] Kakao Enterprise (KoGPT)
 
 ## Japanese AI Labs
 
@@ -100,12 +100,22 @@ This file tracks the research on various LLM models from different companies and
 - [ ] Berkeley Artificial Intelligence Research (BAIR) Lab
 - [ ] Stanford AI Lab
 - [ ] UCLA StarAI Lab
+- [ ] MIT (CSAIL & Media Lab)
+- [ ] Carnegie Mellon University (CMU)
+- [ ] University of Toronto
 - [ ] Allen Institute for AI (AI2)
 - [ ] EleutherAI
 - [ ] Technology Innovation Institute (TII)
 - [ ] Occiglot
 - [ ] LatamGPT
 - [ ] Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)
+- [ ] University of Oxford
+- [ ] Technical University of Munich
+- [ ] ETH Zurich
+- [ ] National University of Singapore (NUS)
+- [ ] Max Planck Institute for Informatics
+- [ ] University of Freiburg
+- [ ] European Laboratory for Learning and Intelligent Systems (ELLIS)
 - [ ] Next Realm AI Innovation Lab
 - [ ] Cornell Statistical Signal Processing Laboratory
 
