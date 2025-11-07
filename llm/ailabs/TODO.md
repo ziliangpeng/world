@@ -64,6 +64,39 @@ This file tracks the research on various LLM models from different companies and
   - 🎨 Enabled Stable Diffusion, Imagen training
   - 🏛️ German nonprofit
   - ⚖️ Won legal case on TDM exceptions (Sept 2024)
+- [x] 🇬🇧 Stability AI
+  - 🎨 Stable Diffusion series (1, 2, 3, 3.5)
+  - 🎨 Stable Diffusion 3.5 Large
+  - 🤖 StableLM (3B, 7B, 15B-65B)
+  - 🎥 Stable Video Diffusion
+- [x] 🇫🇷 Mistral AI
+  - 🤖 Mistral 7B
+  - 🤖 Mixtral 8x7B
+  - 🤖 Mistral series
+  - 💭 Magistral Small (open-source reasoning)
+  - 💭 Magistral Medium (reasoning)
+- [x] 🇩🇪 Aleph Alpha
+  - 🤖 Luminous model family (multimodal text+image)
+  - 🤖 Pharia-1-LLM series (7B parameters)
+  - 🔓 Tokenizer-free (T-Free) architecture
+  - 🌍 Optimized for German, French, Spanish
+  - 🎨 MAGMA (open-source multimodal)
+- [x] 🇫🇷 LightOn
+  - 🤖 Lyra-fr (10B French parameters)
+  - 👁️ VLM-4 (European languages)
+  - 🤖 Alfred-40B-0723 (based on Falcon-40B)
+  - 🔓 100+ billion parameter open models
+  - 🔒 GDPR-compliant platform (Paradigm)
+- [x] 🇮🇹 iGenius
+  - 🤖 Colosseum 355B (highly regulated industries)
+  - 💰 Italia (open-source financial sector)
+  - 🌍 50+ languages support
+  - 🛠️ Built with NVIDIA NIM microservices
+- [x] 🇫🇮 Silo AI
+  - 🤖 Poro 34B (Finnish, English, code)
+  - 🤖 Viking models (Nordic and European languages)
+  - 🤖 TildeOpen LLM (30B+, Balto-Slavic)
+  - 🔧 SiloGen platform
 
 ## 🇨🇦 Canadian AI Labs
 
@@ -83,6 +116,12 @@ This file tracks the research on various LLM models from different companies and
   - 🌍 100+ languages support
   - ⚡ Energy-efficient architecture
   - 🔓 Novel approach to transformers
+- [x] 🇨🇦 Cohere
+  - 🤖 Command series (A, R7B, A Translate, A Reasoning, A Vision, R+, R)
+  - 🌍 Aya family (23 languages, Aya Expanse, Aya Vision)
+  - 🔍 Rerank 3
+  - 📊 Embed
+  - 🏢 Enterprise and developer focused
 
 ## 🇨🇳 Chinese AI Labs
 
@@ -315,15 +354,15 @@ This file tracks the research on various LLM models from different companies and
   - 💰 $100+ billion investment commitment
   - 🏛️ Backed by Public Investment Fund
   - 🎯 Target: Top AI company globally by 2030
+- [x] 🇮🇱 AI21 Labs
+  - 🤖 Jurassic-2 (J2)
+  - 🤖 Jamba family
+  - ⚡ Jamba 1.5 Mini
+  - 🤖 Jamba 1.5 Large
+  - 📏 256K context window models
 
-## 🌐 Other Commercial Companies
+## 🇺🇸 US Commercial AI Companies
 
-- [x] 🇨🇦 Cohere
-  - 🤖 Command series (A, R7B, A Translate, A Reasoning, A Vision, R+, R)
-  - 🤖 Command A
-  - 🌍 Aya family (23 languages, Aya Expanse, Aya Vision)
-  - 🔍 Rerank 3
-  - 📊 Embed
 - [x] 🇺🇸 Anthropic
   - 🤖 Claude series (1, 3, 3.5, 4, Sonnet, Opus, Haiku)
   - 👑 Claude Sonnet 4.5 (frontier model)
@@ -358,23 +397,6 @@ This file tracks the research on various LLM models from different companies and
   - 🔧 Pioneer in action-focused models
   - 🖥️ Software automation and tool use
   - 🎯 Desktop and web application control
-- [x] 🇬🇧 Stability AI
-  - 🎨 Stable Diffusion series (1, 2, 3, 3.5)
-  - 🎨 Stable Diffusion 3.5 Large
-  - 🤖 StableLM (3B, 7B, 15B-65B)
-  - 🎥 Stable Video Diffusion
-- [x] 🇫🇷 Mistral AI
-  - 🤖 Mistral 7B
-  - 🤖 Mixtral 8x7B
-  - 🤖 Mistral series
-  - 💭 Magistral Small (open-source reasoning)
-  - 💭 Magistral Medium (reasoning)
-- [x] 🇮🇱 AI21 Labs
-  - 🤖 Jurassic-2 (J2)
-  - 🤖 Jamba family
-  - ⚡ Jamba 1.5 Mini
-  - 🤖 Jamba 1.5 Large
-  - 📏 256K context window models
 - [x] 🇺🇸 xAI
   - 🤖 Grok series (Grok-1, Grok-1.5V, Grok 3, Grok 3 Mini, Grok 4, Grok 4 Heavy)
   - 💪 314B Mixture-of-Experts (Grok-1)
@@ -389,46 +411,25 @@ This file tracks the research on various LLM models from different companies and
   - 🔌 Snowflake Cortex AISQL
   - 📖 Apache 2.0 licensed
   - ⚙️ Mixture-of-experts architecture
-- [x] 🇷🇺 Yandex
-  - 🤖 YandexGPT 5.1 Pro
-  - 🎨 YandexART (image generation)
-  - 🤖 Saiga/Mistral variants
-  - 🔌 Foundation Models service
 - [x] 🇺🇸 Cerebras
   - 🤖 Cerebras-GPT family (111M-13B)
   - 🏥 Mayo Clinic Genomic Foundation Model
   - ⚙️ Chinchilla scaling laws compliance
   - 🔧 Domain-specific fine-tuning support
+
+## 🌐 Other Commercial Companies
+
+**Note: Companies with unclear status or limited information. Primarily consulting/platforms.**
+
+- [x] 🇷🇺 Yandex
+  - 🤖 YandexGPT 5.1 Pro
+  - 🎨 YandexART (image generation)
+  - 🤖 Saiga/Mistral variants
+  - 🔌 Foundation Models service
 - [x] ServiceNow
   - ⚠️ No foundation models
   - Enterprise platform company
   - NOT a foundation model builder
-- [x] Aleph Alpha
-  - Luminous model family (multimodal text+image)
-  - Pharia-1-LLM series (7B parameters)
-  - Pharia-1-LLM-7B-control
-  - Pharia-1-LLM-7B-control-aligned
-  - Tokenizer-free (T-Free) architecture
-  - Optimized for German, French, Spanish
-  - MAGMA (open-source multimodal)
-- [x] LightOn
-  - Lyra-fr (10B French parameters)
-  - VLM-4 (European languages)
-  - Alfred-40B-0723 (based on Falcon-40B)
-  - 12+ LLMs developed
-  - 100+ billion parameter open models
-  - GDPR-compliant platform (Paradigm)
-- [x] iGenius
-  - Colosseum 355B (highly regulated industries)
-  - Italia (open-source financial sector)
-  - 50+ languages support
-  - Built with NVIDIA NIM microservices
-- [x] Silo AI
-  - Poro 34B (Finnish, English, code)
-  - Poro family (European languages)
-  - Viking models (Nordic and European languages)
-  - TildeOpen LLM (30B+, Balto-Slavic)
-  - SiloGen platform
 - [x] Nyonic
   - Wonton-7B (base model)
   - Wonton-3B
@@ -676,18 +677,22 @@ All other entries in this section are similarly consulting, integration, and dev
 
 ## 📊 Summary
 
-### ✅ Research Complete! (Updated with 20+ new organizations)
+### ✅ Research Complete! (Reorganized by geography)
 
-**📈 Total Entries Researched: 147+** (up from 127)
+**📈 Total Entries Researched: 147+** (organized by region + commercial type)
 
-**✨ Companies WITH Foundation Models: ~115** (verified to have their own LLMs/foundation models)
+**✨ Companies WITH Foundation Models: ~125** (verified to have their own LLMs/foundation models)
 - 🇺🇸 US Frontier AI Companies (7): Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple
-- 🇪🇺 European AI Labs (5): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM
-- 🇨🇦 Canadian AI Labs (3): Mila, Vector Institute, Recursal AI
+- 🇺🇸 US Commercial AI Companies (9): Anthropic, Reka AI, Writer, Inflection AI, Adept AI, xAI, Databricks, Snowflake, Cerebras
+- 🇪🇺 European AI Labs (11): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM, 🇬🇧 Stability AI, 🇫🇷 Mistral AI, 🇩🇪 Aleph Alpha, 🇫🇷 LightOn, 🇮🇹 iGenius, 🇫🇮 Silo AI
+- 🇨🇦 Canadian AI Labs (4): Mila, Vector Institute, Recursal AI, Cohere
 - 🇨🇳 Chinese AI Labs (10): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot
-- 🌍 Regional AI Labs (31+): 🇰🇷 Korean (8), 🇯🇵 Japanese (5), 🇮🇳 Indian (4), 🇸🇬 Singaporean/SEA (4), 🇦🇺 Australian (2), 🌎 South American (1), 🌍 African (3), 🌏 Middle Eastern (4)
-- 🌐 Commercial Companies (24+): 🇨🇦 Cohere, 🇺🇸 Anthropic, Reka AI, Writer, Inflection AI, Adept AI, 🇫🇷 Mistral, xAI, Databricks, Snowflake, 🇷🇺 Yandex, etc.
+- 🌍 Regional AI Labs (30+): 🇰🇷 Korean (8), 🇯🇵 Japanese (5), 🇮🇳 Indian (4), 🇸🇬 Singaporean/SEA (4), 🇦🇺 Australian (2), 🌎 South American (1), 🌍 African (3), 🌏 Middle Eastern (5 including AI21)
 - 🔬 Research Labs & Institutes (24+): Berkeley BAIR, Stanford, CMU, MIT, Allen AI, EleutherAI, BigScience/BLOOM, Together AI, LMSYS, TII, MBZUAI, Occiglot, LatamGPT, Oxford, ETH Zurich, etc.
+
+**🌐 Other Commercial (5):**
+- 🇷🇺 Yandex (Russian frontier model)
+- ⚠️ Nyonic (Unclear status), Paiteq (no info), ServiceNow (platform), Contextual AI (fine-tuning), MosaicML (infrastructure), Hugging Face (model hub)
 
 **❌ Companies WITHOUT Foundation Models: ~32**
 - 💼 Consulting/Services: Springs, WhyLabs, Dextralabs, InData Labs, LeewayHertz, Markovate, SoluLab, Rain Infotech, Debut, TechAhead, Vstorm, Sunrise, Blue Crystal, AI Advancements, HatchWorks, Dualboot, Rootstrap, VulaVula, Mymanu, GotBot, TrainingData, LMTD, Play.ht, Saal.ai
