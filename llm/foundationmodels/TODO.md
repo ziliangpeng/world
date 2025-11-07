@@ -2,7 +2,7 @@
 
 This file tracks the research on various LLM models from different companies and research labs.
 
-## 🏢 Major Tech Companies
+## 🇺🇸 US Frontier AI Companies
 
 - [x] 🇺🇸 Google (DeepMind)
   - 🤖 Gemini (1.0, 1.5, 2.0, 2.5)
@@ -681,7 +681,7 @@ All other entries in this section are similarly consulting, integration, and dev
 **📈 Total Entries Researched: 147+** (up from 127)
 
 **✨ Companies WITH Foundation Models: ~115** (verified to have their own LLMs/foundation models)
-- 🏢 Major Tech Companies (7): 🇺🇸 Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple
+- 🇺🇸 US Frontier AI Companies (7): Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple
 - 🇪🇺 European AI Labs (5): 🇫🇷 Kyutai, 🇩🇪 Black Forest Labs, 🇩🇪 LAION, EuroLLM, OpenEuroLLM
 - 🇨🇦 Canadian AI Labs (3): Mila, Vector Institute, Recursal AI
 - 🇨🇳 Chinese AI Labs (10): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot
