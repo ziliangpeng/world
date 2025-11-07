@@ -9,8 +9,20 @@ This file tracks the research on various LLM models from different companies and
 - [ ] Microsoft
 - [ ] Meta (FAIR)
 - [ ] Amazon
-- [ ] Baidu
+- [ ] NVIDIA
+
+## Chinese AI Labs
+
 - [ ] Alibaba
+- [ ] Baidu
+- [ ] Baichuan AI
+- [ ] Zhipu AI (z.ai)
+- [ ] 01.AI
+- [ ] SenseTime
+- [ ] Megvii
+- [ ] Rednote (Xiaohongshu)
+- [ ] DeepSeek
+- [ ] Moonshot AI (Kimi)
 
 ## Other Commercial Companies
 
@@ -22,11 +34,9 @@ This file tracks the research on various LLM models from different companies and
 - [ ] xAI
 - [ ] Databricks
 - [ ] Snowflake
-- [ ] 01.AI
-- [ ] Baichuan AI
-- [ ] Zhipu AI
-- [ ] SenseTime
-- [ ] Megvii
+- [ ] Yandex
+- [ ] Cerebras
+- [ ] ServiceNow
 - [ ] Paiteq
 - [ ] Contextual AI
 - [ ] MosaicML
@@ -38,6 +48,8 @@ This file tracks the research on various LLM models from different companies and
 - [ ] Stanford AI Lab
 - [ ] UCLA StarAI Lab
 - [ ] Allen Institute for AI (AI2)
+- [ ] EleutherAI
+- [ ] Technology Innovation Institute (TII)
 - [ ] Next Realm AI Innovation Lab
 - [ ] Cornell Statistical Signal Processing Laboratory
 
