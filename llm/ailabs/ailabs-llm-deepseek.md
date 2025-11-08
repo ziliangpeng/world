@@ -154,3 +154,58 @@ DeepSeek has published additional research papers on techniques and methodologie
 4. **International Impact**: Triggered policy discussions in US about AI competitiveness and export controls
 5. **Speed-to-Frontier**: From founding (Jul 2023) to frontier-class model (Dec 2024) in 17 months
 6. **Independent Success**: Proved that AI breakthrough doesn't require Silicon Valley ecosystem or massive venture funding
+
+### Open Source Week and Community Contributions
+
+Beyond model releases, DeepSeek has demonstrated deep commitment to building an open, collaborative AI ecosystem through community-driven initiatives and infrastructure tools.
+
+**DeepSeek Open Source Week (February 24-28, 2025)**
+
+During a dedicated week in late February 2025, DeepSeek released five major open-source tools and infrastructure projects, emphasizing the company philosophy: *"There are no ivory towers–just pure garage energy and community-driven innovation."*
+
+**Major Tool Releases:**
+
+1. **FlashMLA** - Hardware-optimized Multi-Head Latent Attention implementation
+   - Achieved 5,000+ GitHub stars within 6 hours of release
+   - Enables efficient inference for MLA-based models
+   - Production-tested in DeepSeek's own deployments
+
+2. **DeepEP** - Expert Parallelism optimization framework
+   - Optimized strategies for distributed MoE training
+   - Reduces communication overhead in expert-sharded architectures
+   - Battle-tested at scale
+
+3. **DeepGEMM** - GEMM (General Matrix Multiplication) library
+   - Mathematical computation acceleration for tensor operations
+   - Hardware-aligned implementations for efficiency
+   - Critical component of DeepSeek's training infrastructure
+
+4. **Optimized Parallelism Strategies** - Training efficiency tools
+   - Cross-node communication optimization techniques
+   - Proven methods from DeepSeek's own large-scale training
+   - Reproducible recipes for developers
+
+5. **Fire-Flyer File System (3FS)** - Distributed parallel file system
+   - Designed for AI workload I/O patterns
+   - Optimized for large model training and inference serving
+   - Production-proven infrastructure
+
+**Community Ecosystem:**
+
+- **700+ community models** based on DeepSeek-V3 and R1 on Hugging Face
+- **5M+ downloads** of community-contributed models and derivatives
+- **MIT licensing** across all open-source projects, enabling unrestricted use and modification
+- **Developer support infrastructure**: Enhanced platform at platform.deepseek.com with SDKs, documentation, and API guides
+- **Community channels**: Discord server with direct company team support and technical discussions
+
+**Beyond Models:**
+
+DeepSeek's community contributions extend beyond model releases:
+
+- **Infrastructure tooling**: Complete stack of training and inference optimization tools
+- **Real-world applications**: Practical utilities built on DeepSeek models (e.g., water management and environmental monitoring applications)
+- **Educational initiatives**: Workshops, tutorials, and research collaborations with academic institutions
+- **Industry engagement**: Hackathons, developer competitions, and partnerships with enterprises
+- **Research sharing**: Comprehensive technical documentation and research papers enabling others to build upon DeepSeek's innovations
+
+This approach to open-source contribution reflects DeepSeek's strategic positioning: rather than viewing models as proprietary assets, the company sees frontier AI as fundamentally a collaborative endeavor, with open infrastructure enabling a healthier, more competitive global AI ecosystem.
