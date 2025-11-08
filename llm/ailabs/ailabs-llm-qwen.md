@@ -121,15 +121,15 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 
 Beyond frontier models, Qwen has built a comprehensive ecosystem of infrastructure tools, partnerships, and initiatives positioning it as the "Android of the AI Era" with deep integration across enterprise and developer communities.
 
-**Annual Apsara Conference (Flagship Event)**
+**Annual Apsara Conference / Yunqi Conference (云栖大会) (Flagship Event)**
 
-**2024 Apsara Conference (September 19-21, Hangzhou)**
+**2024 Apsara Conference / Yunqi Conference 2024 (September 19-21, Hangzhou)**
 - Released Qwen2.5 with 100+ models across multiple modalities
 - Hosted 400 technical forums with 342 hours of content
 - Introduced AI Developer Assistant powered by Qwen for requirement analysis, coding, and debugging
 - Links: [YouTube Playlist](https://www.youtube.com/playlist?list=PLSs7f2cJ9zZAijHwyatbYhfe8_r6nIUUd), [Blog Coverage](https://www.alibabacloud.com/blog/eddie-wu-discusses-ai-alibaba-cloud-and-more-at-the-2024-apsara-conference_601627), [Alizila Article](https://www.alizila.com/aliviews-eddie-wu-speech-ai-alibaba-cloud-2024-apsara-conference/), [Replay](https://yunqi.aliyun.com/2024/live)
 
-**2025 Apsara Conference (September 24-26, Hangzhou) - "The Path to Super AI"**
+**2025 Apsara Conference / Yunqi Conference 2025 (September 24-26, Hangzhou) - "The Path to Super AI"**
 - CEO Eddie Wu announced RMB 380 billion ($52 billion) three-year AI infrastructure expansion plan
 - Launched Qwen3-Max (1T+ parameters MoE)
 - Unveiled Qwen3-Omni multimodal system for smart glasses and intelligent cockpits
