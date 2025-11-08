@@ -338,26 +338,26 @@ DeepSeek's leadership and team include:
 
 ### Model Lineage and Release Timeline
 
-| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
+| Release Date | Model | Parameters | Key Features | Open Weights | Links |
 |---|---|---|---|---|---|
-| Nov 2, 2023 | DeepSeek Coder | 1.3B, 5.7B, 6.7B, 33B | Code generation specialist | ✅ | [arXiv:2401.14196](https://arxiv.org/abs/2401.14196) |
-| Nov 29, 2023 | DeepSeek-LLM | 7B, 67B | Foundation models | ✅ | [arXiv:2401.02954](https://arxiv.org/abs/2401.02954) |
-| Jan 2024 | DeepSeek-MoE | 16B-A2.8B | MoE architecture (Base and Chat variants) | ✅ | [arXiv:2401.06066](https://arxiv.org/abs/2401.06066) |
-| Feb 2024 | DeepSeek-Math | 7B | Mathematical reasoning (Base, Instruct, RL) | ✅ | [arXiv:2402.03300](https://arxiv.org/abs/2402.03300) |
-| May 6, 2024 | DeepSeek-V2 | 236B-A21B | MoE, multi-head latent attention (MLA) | ✅ | [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
-| May 16, 2024 | DeepSeek-V2-Lite | 15.7B-A2.4B | Lightweight MoE, deployable on single 40G GPU | ✅ | [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
-| Jun 2024 | DeepSeek-Coder-V2 | 16B-A2.4B, 236B-A21B | Code intelligence, beats GPT-4 Turbo | ✅ | [arXiv:2406.11931](https://arxiv.org/abs/2406.11931) |
-| Sep 2024 | DeepSeek-V2.5 | 236B-A21B | Fusion of V2-Chat and Coder-V2-Instruct | ✅ | - |
+| Nov 2, 2023 | DeepSeek Coder | 1.3B, 5.7B, 6.7B, 33B | Code generation specialist | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-Coder), [arXiv:2401.14196](https://arxiv.org/abs/2401.14196) |
+| Nov 29, 2023 | DeepSeek-LLM | 7B, 67B | Foundation models | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-LLM), [arXiv:2401.02954](https://arxiv.org/abs/2401.02954) |
+| Jan 2024 | DeepSeek-MoE | 16B-A2.8B | MoE architecture (Base and Chat variants) | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-MoE), [HF](https://huggingface.co/deepseek-ai/deepseek-moe-16b-base), [arXiv:2401.06066](https://arxiv.org/abs/2401.06066) |
+| Feb 2024 | DeepSeek-Math | 7B | Mathematical reasoning (Base, Instruct, RL) | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-Math), [HF](https://huggingface.co/deepseek-ai/deepseek-math-7b-base), [arXiv:2402.03300](https://arxiv.org/abs/2402.03300) |
+| May 6, 2024 | DeepSeek-V2 | 236B-A21B | MoE, multi-head latent attention (MLA) | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-V2), [HF](https://huggingface.co/deepseek-ai/DeepSeek-V2), [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
+| May 16, 2024 | DeepSeek-V2-Lite | 15.7B-A2.4B | Lightweight MoE, deployable on single 40G GPU | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V2-Lite), [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
+| Jun 2024 | DeepSeek-Coder-V2 | 16B-A2.4B, 236B-A21B | Code intelligence, beats GPT-4 Turbo | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-Coder-V2), [HF](https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Instruct), [arXiv:2406.11931](https://arxiv.org/abs/2406.11931) |
+| Sep 2024 | DeepSeek-V2.5 | 236B-A21B | Fusion of V2-Chat and Coder-V2-Instruct | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V2.5) |
 | Nov 20, 2024 | DeepSeek-R1-Lite-Preview | - | First reasoning model, o1-preview competitor | ✅ | - |
-| Dec 10, 2024 | DeepSeek-V2.5-1210 | 236B-A21B | Updated V2.5 with improved math/coding | ✅ | - |
-| Dec 2024 | DeepSeek-V3 | 671B-A37B | MoE, cost-efficient, frontier performance | ✅ | [arXiv:2412.19437](https://arxiv.org/abs/2412.19437) |
-| Jan 20, 2025 | DeepSeek-R1 | 671B-A37B | Reasoning model, o1 competitor | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
-| Jan 20, 2025 | DeepSeek-R1-Zero | 671B-A37B | Pure RL reasoning without distillation | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
-| Jan 20, 2025 | DeepSeek-R1-Distill | Qwen: 1.5B, 7B, 14B, 32B; Llama: 8B, 70B | Distilled from R1 to Qwen2.5 and Llama3 | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
-| Mar 24, 2025 | DeepSeek-V3-0324 | 671B-A37B | Enhanced reasoning and coding, MIT license | ✅ | - |
-| Aug 2025 | DeepSeek-V3.1 | 671B-A37B | Improvements over V3 | ✅ | - |
-| Sep 22, 2025 | DeepSeek-V3.1-Terminus | 671B-A37B | Updated V3.1 version | ✅ | - |
-| Sep 29, 2025 | DeepSeek-V3.2-Exp | 671B-A37B | Experimental version | ✅ | - |
+| Dec 10, 2024 | DeepSeek-V2.5-1210 | 236B-A21B | Updated V2.5 with improved math/coding | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V2.5-1210) |
+| Dec 2024 | DeepSeek-V3 | 671B-A37B | MoE, cost-efficient, frontier performance | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-V3), [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3), [arXiv:2412.19437](https://arxiv.org/abs/2412.19437) |
+| Jan 20, 2025 | DeepSeek-R1 | 671B-A37B | Reasoning model, o1 competitor | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-R1), [HF](https://huggingface.co/deepseek-ai/DeepSeek-R1), [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
+| Jan 20, 2025 | DeepSeek-R1-Zero | 671B-A37B | Pure RL reasoning without distillation | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-R1-Zero), [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
+| Jan 20, 2025 | DeepSeek-R1-Distill | Qwen: 1.5B, 7B, 14B, 32B; Llama: 8B, 70B | Distilled from R1 to Qwen2.5 and Llama3 | ✅ | [HF-Qwen](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B), [HF-Llama](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B), [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
+| Mar 24, 2025 | DeepSeek-V3-0324 | 671B-A37B | Enhanced reasoning and coding, MIT license | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3-0324) |
+| Aug 2025 | DeepSeek-V3.1 | 671B-A37B | Improvements over V3 | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.1) |
+| Sep 22, 2025 | DeepSeek-V3.1-Terminus | 671B-A37B | Updated V3.1 version | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus) |
+| Sep 29, 2025 | DeepSeek-V3.2-Exp | 671B-A37B | Experimental version | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp) |
 
 ### Performance and Reception
 
