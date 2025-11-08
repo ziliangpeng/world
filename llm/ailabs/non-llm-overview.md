@@ -27,6 +27,14 @@ This document tracks foundation models and specialized builders across non-LLM d
   - 🔓 Parts of Hunyuan open-sourced (3D models, translation tools)
   - 📱 Available on Hunyuan-image.com
 
+- [x] 🇨🇳 ByteDance - Seedream 4.0
+  - 🎨 Seedream 4.0: Text-to-image + image editing combined
+  - 🎨 1.8-second 2K generation, precise editing
+  - 🏆 Ranked #1 on major text-to-image leaderboards
+  - 🎯 Consistent character generation across multiple images
+  - 💰 $30 per 1,000 generations
+  - 🌍 Competes with Google DeepMind's Nano Banana
+
 ### Multimodal Companies with Image Gen (See LLM-Overview for full details)
 - Google (Gemini Diffusion, Veo video)
 - OpenAI (DALL-E via GPT-4V)
@@ -125,6 +133,13 @@ This document tracks foundation models and specialized builders across non-LLM d
   - 📊 Commercial success: 400M+ videos generated, $20M ARR
   - 🤝 Partnerships: JD.com, Amazon, e-commerce/advertising/animation verticals
   - 👨‍🔬 Founded March 2023 (spinout from Tsinghua University)
+
+- [x] 🇨🇳 ByteDance - Seedance 1.0
+  - 🎬 Seedance 1.0: Multi-shot video generation from text and image
+  - 🎥 1080p video generation with smooth motion and rich details
+  - 🎨 Cinematic aesthetics, text-to-video + image-to-video
+  - 📊 Advanced video generation capabilities
+  - 🤝 Part of ByteDance's Seed AI creative suite (alongside Seedream for images)
 
 ---
 
@@ -808,13 +823,13 @@ This document tracks foundation models and specialized builders across non-LLM d
 **Total Organizations Researched: 150+**
 
 **By Category (with entries):**
-- 🎨 Image Generation: 1 (Black Forest) + 4 multimodal
-- 🎬 Video Generation: 11 major companies
+- 🎨 Image Generation: 3 dedicated (Black Forest Labs, Tencent Hunyuan, ByteDance Seedream) + 4 multimodal
+- 🎬 Video Generation: 13 major companies
   - US: 5 frontier (OpenAI, Runway, Google, Meta, Midjourney), 2 specialized (Pika, Luma)
   - Avatar/Enterprise: 3 (Synthesia, HeyGen, D-ID)
-  - Asian: 1 (Kuaishou Kling)
-- 🎙️ Audio/Speech: 16+ companies
-  - Voice synthesis: 7 major (ElevenLabs, Microsoft, Meta, PlayAI, Cartesia, Descript, Resemble)
+  - Asian: 3 (Kuaishou Kling, Shengshu Vidu, ByteDance Seedance)
+- 🎙️ Audio/Speech: 17+ companies
+  - Voice synthesis: 8 major (ElevenLabs, Microsoft, Meta, PlayAI, Cartesia, Descript, Resemble, iFlyTek)
   - Music generation: 9+ (Suno, Udio, Stability AI, Meta MusicGen, Google, ByteDance, Adobe, Riffusion, Splash, AIVA, Boomy, Soundraw, Mubert)
 - 🤖 Robotics/Embodied AI: 17+ companies/labs
   - US humanoid: 7 (Tesla, Figure AI, Physical Intelligence, Agility, NVIDIA GR00T, 1X, Sanctuary)
@@ -834,7 +849,7 @@ This document tracks foundation models and specialized builders across non-LLM d
 
 **Geographic Distribution:**
 - 🇺🇸 United States: 80+ organizations (dominance in video, robotics, medical AI)
-- 🇨🇳 China: 8+ (robotics leaders, music/weather AI)
+- 🇨🇳 China: 11+ (video/image/audio leaders - Kling, Vidu, Seedream, Seedance, Seed-Music; robotics; TTS/voice - iFlyTek)
 - 🇬🇧 United Kingdom: 6 (DeepMind, Stability AI, Exscientia, Boston Dynamics HQ moves, D-ID, Patrick AI parent)
 - 🇪🇺 Europe: 8+ (Black Forest, Synthesia, AIVA, Aignostics, ESA, Huawei Research)
 - 🇦🇺 Australia: 1 (Splash Music)
