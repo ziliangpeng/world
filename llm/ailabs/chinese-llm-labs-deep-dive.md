@@ -82,22 +82,52 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 
 ### Model Lineage and Release Timeline
 
+**Qwen (v1.0) Series:**
+
 | Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
 |---|---|---|---|---|---|
 | Apr 2023 | Qwen (Beta) | 1.8B, 7B, 14B, 72B | Initial closed beta | ❌ | - |
-| Sep 2023 | Qwen (Public) | 7B, 14B, 72B | Public launch post-regulation | ❌ | - |
-| Dec 2023 | Qwen 1.8B, 72B | 1.8B, 72B | Extended size range | ❌ | - |
-| Aug 2023 | Qwen 7B (Open) | 7B | Open-source weights release | ✅ | - |
-| Jun 2024 | Qwen2 | 0.5B, 1.5B, 7B, 57B-A14B, 72B | Major architecture improvements | ❌ | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) |
-| Sep 2024 | Qwen2 (Open weights) | 0.5B, 1.5B, 7B, 57B-A14B, 72B | Open-source models released | ✅ | - |
-| Nov 2024 | QwQ-32B-Preview | 32B | Reasoning model (o1-style) | ✅ | - |
-| Jan 29, 2025 | Qwen2.5-Max | - | Outperforms GPT-4o, DeepSeek-V3 | ❌ | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) |
-| Mar 26, 2025 | Qwen2.5-Omni-7B | 7B | Multimodal with real-time speech | ✅ | [arXiv:2503.20215](https://arxiv.org/abs/2503.20215) |
-| Apr 28, 2025 | Qwen3 | 0.6B, 1.7B, 4B, 8B, 14B, 32B, 30B-A3B, 235B-A22B | "Hybrid" reasoning models (dense + MoE) | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
-| Sep 5, 2025 | Qwen3-Max | - | Latest frontier variant | ❌ | - |
-| Sep 10, 2025 | Qwen3-Next | 0.6B, 1.7B, 4B, 8B, 14B, 32B, 30B-A3B, 235B-A22B | Apache 2.0 licensed | ✅ | - |
-| Sep 22, 2025 | Qwen3-Omni | - | Omni-modal capabilities | ✅ | [arXiv:2509.17765](https://arxiv.org/abs/2509.17765) |
-| Sep 23, 2025 | Qwen3-VL-235B | 235B (22B activated) | Advanced vision-language | ✅ | - |
+| Aug 2023 | Qwen-7B-Open | 7B | Public open-source release | ✅ | - |
+| Sep 2023 | Qwen (Public API) | 7B, 14B, 72B | Commercial API launch post-regulation | ❌ | - |
+| Dec 2023 | Qwen-1.8B | 1.8B | Lightweight mobile variant | ❌ | - |
+
+**Qwen2 Series (June 2024):**
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
+|---|---|---|---|---|---|
+| Jun 2024 | Qwen2 | 0.5B, 1.5B, 7B, 57B-A14B, 72B | MoE & dense variants, 128K context | ❌ | [arXiv:2407.10671](https://arxiv.org/abs/2407.10671) |
+| Sep 2024 | Qwen2 (Open weights) | 0.5B, 1.5B, 7B, 57B-A14B, 72B | Full open-source release | ✅ | - |
+| 2024 | Qwen2-VL | 2B, 7B | Vision-language multimodal | ✅ | - |
+| 2024 | Qwen2-Audio | - | Audio understanding model | ✅ | - |
+| 2024 | Qwen2-Math | - | Mathematical reasoning specialized | ✅ | - |
+
+**Qwen2.5 Series (Sep 2024 - Mar 2025):**
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
+|---|---|---|---|---|---|
+| Sep 2024 | Qwen2.5 | 0.5B, 1.5B, 3B, 7B, 14B, 32B, 72B | 7 size variants, 128K context, 18T tokens training | ✅ | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) |
+| 2024 | Qwen2.5-Coder | Multiple sizes | Code generation specialization | ✅ | - |
+| 2024 | Qwen2.5-Math | Multiple sizes | Mathematical problem solving | ✅ | - |
+| Nov 2024 | QwQ-32B-Preview | 32B (32.5B exact) | Reasoning model via RL, 128K context | ✅ | - |
+| Nov 2024 | QwQ-32B | 32B (32.5B exact) | Full reasoning model release | ✅ | - |
+| Jan 29, 2025 | Qwen2.5-Max | - | Frontier API-only model | ❌ | - |
+| Jan 2025 | Qwen2.5-VL | 3B, 7B, 32B, 72B | Vision-language multimodal (4 sizes) | ✅ | - |
+| Mar 26, 2025 | Qwen2.5-Omni-7B | 7B | Multimodal (text, audio, vision, video) real-time speech | ✅ | [arXiv:2503.20215](https://arxiv.org/abs/2503.20215) |
+
+**Qwen3 Series (Apr 2025 onwards):**
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
+|---|---|---|---|---|---|
+| Apr 28, 2025 | Qwen3 Dense | 0.6B, 1.7B, 4B, 8B, 14B, 32B | Dense "hybrid" reasoning models, 128K context | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
+| Apr 28, 2025 | Qwen3 MoE | 30B-A3B, 235B-A22B | Sparse MoE reasoning models, 128K context | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
+| Apr 2025 | Qwen3-Coder-480B | 480B (35B activated) | Largest open-source coding model, 256K-1M context | ✅ | - |
+| Apr 2025 | Qwen3-Math | Multiple sizes | Mathematical reasoning with CoT & tool integration | ✅ | - |
+| Apr 2025 | Qwen3-VL | Multiple sizes | Advanced vision-language, 32-language OCR | ✅ | - |
+| May 2025 | Qwen3-2507 (Updated) | 4B, 30B-A3B, 235B-A22B | Instruct & Thinking variants | ✅ | - |
+| Sep 5, 2025 | Qwen3-Max | - | Latest frontier frontier API model | ❌ | - |
+| Sep 10, 2025 | Qwen3-Next | 0.6B, 1.7B, 4B, 8B, 14B, 32B, 30B-A3B, 235B-A22B | Apache 2.0 licensed full release | ✅ | - |
+| Sep 22, 2025 | Qwen3-Omni | - | Omni-modal (text, audio, image, video) | ✅ | [arXiv:2509.17765](https://arxiv.org/abs/2509.17765) |
+| Sep 23, 2025 | Qwen3-VL-235B | 235B (22B activated) | Advanced vision-language frontier | ✅ | - |
 
 ### Performance and Reception
 
