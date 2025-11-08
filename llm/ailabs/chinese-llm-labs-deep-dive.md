@@ -1228,10 +1228,17 @@ SenseTime positions SenseNova as **"Foundation Models for Enterprise Innovation"
 - Among Asia's largest intelligent computing platforms
 - Enables rapid iteration and experimentation with large models
 
-**Foundation Model Sets:**
-- **SenseChat**: Hundreds of billions parameters LLM
-- Multiple specialized foundation models for vision, multimodal, content generation
-- Models in natural language processing, visual understanding, content generation, automated annotation, decision intelligence
+**SenseChat Foundation Models:**
+- **SenseChat-Lite**: 1.8B parameters, optimized for mobile and edge devices
+- **SenseChat V4**: Large-scale LLM with support for 4K, 32K, 128K context windows
+- **SenseChat-Vision V4**: 30B multimodal parameters with advanced image and text comprehension
+- **SenseNova 5.0 (May 2024)**: 600B parameters, MoE architecture with 10TB training data
+- **SenseNova V6 Pro (April 2025)**: 620B parameters, native MoE multimodal model with 64K token context
+
+**Specialized Models:**
+- SenseChat variants for different scales and deployment scenarios
+- Multimodal models for vision, text, and video understanding
+- Domain-specific models for content generation, automated annotation, decision intelligence
 
 **Multimodal Integration:**
 - Strong vision-language capabilities leveraging vision expertise
@@ -1249,38 +1256,56 @@ SenseTime's leadership and team:
 
 ### Model Lineage and Release Timeline
 
-| Release Date | Model | Key Features | Open Weights | Technical Report |
-|---|---|---|---|---|
-| Apr 2023 | SenseNova Series v1.0 | Initial foundation model set | ❌ | - |
-| Jul 2023 | SenseNova Series (Upgraded) | Comprehensive upgrades and new capabilities | ❌ | - |
-| 2024 | SenseNova v2-5 | Continued iterations | ❌ | - |
-| 2025 | SenseNova Series (Current) | Latest versions | ❌ | - |
+| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
+|---|---|---|---|---|---|
+| Apr 2023 | SenseNova 1.0 | - | Initial foundation model set | ❌ | - |
+| Jul 2023 | SenseNova 2.0 | - | Upgrades, new capabilities | ❌ | - |
+| 2023 | SenseChat 2.0 | Hundreds of billions | NLP foundation model | ❌ | - |
+| 2023 | SenseChat-Lite | 1.8B | Mobile/edge optimized | ❌ | - |
+| Feb 2024 | SenseNova 4.0 | - | Advanced reasoning, long text | ❌ | - |
+| 2024 | SenseChat V4 | Hundreds of billions | 4K-128K context support | ❌ | - |
+| 2024 | SenseChat-Vision V4 | 30B (multimodal) | MME Benchmark top score | ❌ | - |
+| May 2024 | SenseNova 5.0 | 600B (MoE) | 10TB training data, 200K context | ❌ | - |
+| Apr 2025 | SenseNova V6 Pro | 620B (MoE) | Multimodal, 64K CoT, video support | ❌ | - |
+| Apr 2025 | SenseNova V6 Reasoner | 620B (MoE) | Enhanced multimodal reasoning | ❌ | - |
+| Apr 2025 | SenseNova V6 Video | 620B (MoE) | 10-minute video understanding | ❌ | - |
+| Apr 2025 | SenseNova V6 Omni | Lightweight | Real-time multimodal interaction | ❌ | - |
 
 ### Performance and Reception
 
+**Benchmark Performance:**
+- **SenseChat V4**: Claims to match or surpass GPT-4 Turbo on mainstream assessments
+- **SenseChat-Vision V4**: Tops MME benchmark for multimodal comprehension
+- **SenseNova 5.0**: Claims to surpass GPT-4 on multiple benchmarks
+- **SenseNova V6 Pro**: Rivals GPT-4o on 5 out of 8 key metrics, strongest in multimodal video understanding
+- Strong Chinese language performance across all models
+
 **Market Reception:**
-- Recognized as strong player but faces intense competition
-- Computer vision expertise provides differentiation but not always relevant to LLM performance
-- Enterprise partnerships reflect business focus
-- Less consumer mindshare than startups
-- Positive reception for multimodal capabilities
+- Recognized as strong technical player but faces intense competition from startups
+- Praised for efficient multimodal capabilities
+- Enterprise partnerships and cloud integration strengths
+- Positive reception for video understanding and reasoning models
+- SenseNova V6 positioning as "China's most advanced multimodal model"
 
 **Technical Contribution:**
-- Strong focus on practical business applications
+- Strong focus on practical business applications with vision expertise
 - Emphasis on reliability and production-readiness
 - Enterprise integration and deployment expertise
+- Leadership in multimodal reasoning and video understanding
 
 ### Notable Achievements and Stories
 
-1. **Vision to Generalists**: Successfully pivoted from vision specialist to general foundation model company
-2. **Infrastructure Investment**: Built 27,000 GPU infrastructure demonstrating commitment to AI
-3. **Enterprise Success**: Integration with Chinese businesses and enterprise deployments
-4. **Multimodal Leadership**: Leveraged vision expertise to build strong multimodal models
-5. **Resilience**: Navigated regulatory challenges while maintaining strategic focus
+1. **Vision to Generalists**: Successfully pivoted from vision specialist to comprehensive foundation model company with LLM, multimodal, and reasoning capabilities
+2. **Infrastructure Investment**: Built 27,000 GPU SenseCore infrastructure, one of Asia's largest intelligent computing platforms
+3. **Rapid Model Release**: Released 4 versions of SenseNova (1.0-5.0) plus V6 series in 2 years
+4. **Multimodal Leadership**: SenseNova V6 series leadership in video understanding (10-minute videos), multimodal reasoning (64K CoT)
+5. **Model Diversity**: Ranges from 1.8B mobile models to 620B multimodal frontier models
+6. **Enterprise Success**: Deep integration with Chinese businesses, competitive API pricing (¥0.58/M tokens for V6 Pro)
+7. **Resilience**: Navigated regulatory challenges while maintaining strategic focus and competitive positioning
 
 ---
 
-## 10. Rednote/Xiaohongshu (dots.llm1)
+## 12. Rednote/Xiaohongshu (dots.llm1)
 
 ### Company Overview
 
