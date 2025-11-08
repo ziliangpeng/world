@@ -127,11 +127,13 @@ Beyond frontier models, Qwen has built a comprehensive ecosystem of infrastructu
 - Released Qwen2.5 with 100+ models across multiple modalities
 - Hosted 400 technical forums with 342 hours of content
 - Introduced AI Developer Assistant powered by Qwen for requirement analysis, coding, and debugging
+- Links: [Blog Coverage](https://www.alibabacloud.com/blog/eddie-wu-discusses-ai-alibaba-cloud-and-more-at-the-2024-apsara-conference_601627), [Alizila Article](https://www.alizila.com/aliviews-eddie-wu-speech-ai-alibaba-cloud-2024-apsara-conference/), [Replay](https://yunqi.aliyun.com/2024/live)
 
-**2025 Apsara Conference (September, Hangzhou)**
+**2025 Apsara Conference (September 24-26, Hangzhou) - "The Path to Super AI"**
 - CEO Eddie Wu announced RMB 380 billion ($52 billion) three-year AI infrastructure expansion plan
 - Launched Qwen3-Max (1T+ parameters MoE)
 - Unveiled Qwen3-Omni multimodal system for smart glasses and intelligent cockpits
+- Links: [Keynote Video](https://www.bilibili.com/video/BV1MwJDzXEnK/) (Bilibili), [Official Announcement](https://www.alibabagroup.com/en-US/document-1911884625546838016), [Alizila Coverage](https://www.alizila.com/alibaba-clouds-apsara-conference-2025-full-stack-ai-cloud-leads-the-way-to-the-future-of-ai/), [Conference Page](https://www.alibabacloud.com/en/apsara-conference)
 
 **Global Hackathon Series**
 - **Singapore AI Hackathon 2025 (April 10-11)**: 80+ developers building with Qwen; winning projects included StorySpinner and adMorph.ai
