@@ -938,82 +938,18 @@ This file tracks the research on various LLM models from different companies and
   - Applied statistical signal processing to modern ML systems
   - Focus on behavioral economics + machine learning
 
-## 💼 Other Companies (Consulting/Development)
+## 🎯 Specialized Foundation Model Builders (Underserved Languages/Modalities)
 
-**Note: Most companies in this section (41 total) are consulting, AI services, and development firms that do NOT develop their own foundation models. They provide services for building, deploying, or integrating LLMs developed by other organizations.**
+**Note: These companies build proprietary foundation models for underserved languages and specialized modalities. Unlike general-purpose LLM builders, they focus on filling important gaps in linguistic diversity and new modalities (speech, translation).**
 
-Representative sample verification:
-
-- [x] Springs
-  - ⚠️ No foundation models
-  - AI consulting and development services
-  - Fine-tuning, meta-learning, transfer learning specialization
-  - Video synthesis, virtual avatars, AI assistants
-  - 8+ years in generative AI development
-- [x] WhyLabs
-  - ⚠️ No foundation models
-  - LLM monitoring and observability platform
-- [x] Dextralabs
-  - ⚠️ No foundation models
-  - AI development services
-- [x] InData Labs
-  - ⚠️ No foundation models
-  - Data science and AI consulting
-- [x] LeewayHertz
-  - ⚠️ No foundation models
-  - Custom AI and machine learning solutions
-- [x] Markovate
-  - ⚠️ No foundation models
-  - Enterprise AI solutions consulting
-- [x] SoluLab
-  - ⚠️ No foundation models
-  - AI development agency
-- [x] Rain Infotech
-  - ⚠️ No foundation models
-  - Software development and AI services
-- [x] Debut Infotech
-  - ⚠️ No foundation models
-  - Mobile and web development with AI integration
-- [x] TechAhead
-  - ⚠️ No foundation models
-  - AI and blockchain development
-- [x] Vstorm
-  - ⚠️ No foundation models
-  - Tech consulting and development
-- [x] Sunrise Technologies
-  - ⚠️ No foundation models
-  - Software development services
-- [x] Blue Crystal Solutions
-  - ⚠️ No foundation models
-  - Business software development
-- [x] AI Advancements Pty Ltd
-  - ⚠️ No foundation models
-  - AI implementation services
-- [x] HatchWorks AI
-  - ⚠️ No foundation models
-  - AI product development
-- [x] Dualboot Partners
-  - ⚠️ No foundation models
-  - Web and mobile development
-- [x] Rootstrap
-  - ⚠️ No foundation models
-  - Software development agency
-- [x] VulaVula
-  - ⚠️ No foundation models
-  - AI/ML development services
-- [x] Mymanu
-  - ⚠️ No foundation models
-  - AI and data science services
-- [x] GotBot
-  - ⚠️ No foundation models
-  - Chatbot development platform
 - [x] 🇿🇦 Botlhale AI
   - 🤖 Proprietary speech recognition & NLP models for African languages
   - 🗣️ Supports 11 South African languages (English, IsiZulu, IsiXhosa, Afrikaans, Sesotho, Setswana, Sepedi, others)
   - 💼 SaaS platform for enterprise call centers
   - 🔧 Conversational AI, voice-to-text, text-to-voice capabilities
   - 🌍 Expanding to Ghana, Kenya, Nigeria (2025)
-  - ⚠️ Note: Specialized language models, not general-purpose LLMs
+  - 🏆 First to bring speech models to underserved African languages
+
 - [x] 🇩🇪 Lesan AI
   - 🤖 Proprietary machine translation models (specialized, not general-purpose)
   - 🗣️ Focuses on Ethiopian/Eritrean languages: Tigrinya, Amharic, English
@@ -1021,31 +957,14 @@ Representative sample verification:
   - 🔧 Transformer-based with back-translation approach
   - 🌍 10M+ translations served, community-based data collection
   - 🤝 Partnerships with Dalberg, i4policy, UNICEF
-  - ⚠️ Note: Specialized translation models, not general-purpose LLMs
-- [x] TrainingData
-  - ⚠️ No foundation models
-  - Data labeling and ML training services
-- [x] LMTD
-  - ⚠️ No foundation models
-  - Limited information, likely services
-- [x] Play.ht
+
+- [x] 🇺🇸 Play.ht
   - 🤖 PlayHT2.0 (proprietary speech foundation model)
   - 🤖 Play3.0-mini (speech generation)
   - 🎙️ Trained on 1M+ hours of multilingual speech
   - 🗣️ Voice cloning (3-10 seconds needed)
   - 🌍 100+ languages with emotional expressiveness
-  - ⚠️ Note: This is a speech foundation model company, not general-purpose LLM
-- [x] Saal.ai
-  - ⚠️ No foundation models
-  - AI analytics platform
-- [x] Paiteq
-  - ⚠️ No foundation models
-  - Mobile app development + AI integration services
-  - Specializes in custom app development with AR/VR
-  - Operations in India and USA
-
-**Remaining Consulting Companies (16+ items):**
-All other entries in this section are similarly consulting, integration, and development services without proprietary foundation models.
+  - 🏆 First speech generation models with emotional expressiveness at scale
 
 ---
 
