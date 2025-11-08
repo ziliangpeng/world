@@ -82,29 +82,17 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 
 ### Model Lineage and Release Timeline
 
-**Qwen (v1.0) Series:**
-
 | Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
 |---|---|---|---|---|---|
 | Apr 2023 | Qwen (Beta) | 1.8B, 7B, 14B, 72B | Initial closed beta | ❌ | - |
 | Aug 2023 | Qwen-7B-Open | 7B | Public open-source release | ✅ | - |
 | Sep 2023 | Qwen (Public API) | 7B, 14B, 72B | Commercial API launch post-regulation | ❌ | - |
 | Dec 2023 | Qwen-1.8B | 1.8B | Lightweight mobile variant | ❌ | - |
-
-**Qwen2 Series (June 2024):**
-
-| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
-|---|---|---|---|---|---|
 | Jun 2024 | Qwen2 | 0.5B, 1.5B, 7B, 57B-A14B, 72B | MoE & dense variants, 128K context | ❌ | [arXiv:2407.10671](https://arxiv.org/abs/2407.10671) |
 | Sep 2024 | Qwen2 (Open weights) | 0.5B, 1.5B, 7B, 57B-A14B, 72B | Full open-source release | ✅ | - |
 | 2024 | Qwen2-VL | 2B, 7B | Vision-language multimodal | ✅ | - |
 | 2024 | Qwen2-Audio | - | Audio understanding model | ✅ | - |
 | 2024 | Qwen2-Math | - | Mathematical reasoning specialized | ✅ | - |
-
-**Qwen2.5 Series (Sep 2024 - Mar 2025):**
-
-| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
-|---|---|---|---|---|---|
 | Sep 2024 | Qwen2.5 | 0.5B, 1.5B, 3B, 7B, 14B, 32B, 72B | 7 size variants, 128K context, 18T tokens training | ✅ | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) |
 | 2024 | Qwen2.5-Coder | Multiple sizes | Code generation specialization | ✅ | - |
 | 2024 | Qwen2.5-Math | Multiple sizes | Mathematical problem solving | ✅ | - |
@@ -115,11 +103,6 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 | 2024-2025 | Qwen-VL-OCR | Based on VL variants | Specialized OCR: 32 languages, bounding boxes, 128K context | ✅ | - |
 | 2025 | Qwen-VL-OCR-Latest | Multiple versions | Updated OCR (2025-04-13, 2025-08-28 releases) | ✅ | - |
 | Mar 26, 2025 | Qwen2.5-Omni-7B | 7B | Multimodal (text, audio, vision, video) real-time speech | ✅ | [arXiv:2503.20215](https://arxiv.org/abs/2503.20215) |
-
-**Qwen3 Series (Apr 2025 onwards):**
-
-| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
-|---|---|---|---|---|---|
 | Apr 28, 2025 | Qwen3 Dense | 0.6B, 1.7B, 4B, 8B, 14B, 32B | Dense "hybrid" reasoning models, 128K context | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
 | Apr 28, 2025 | Qwen3 MoE | 30B-A3B, 235B-A22B | Sparse MoE reasoning models, 128K context | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
 | Apr 2025 | Qwen3-Coder-480B | 480B (35B activated) | Largest open-source coding model, 256K-1M context | ✅ | - |
