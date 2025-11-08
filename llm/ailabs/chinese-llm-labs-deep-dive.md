@@ -84,10 +84,7 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 
 | Release Date | Model | Parameters | Key Features | Open Weights | Model Page | Technical Report |
 |---|---|---|---|---|---|---|
-| Apr 2023 | Qwen (Beta) | 1.8B, 7B, 14B, 72B | Initial closed beta | ❌ | [Blog](https://qwenlm.github.io/blog/qwen/) | - |
-| Aug 2023 | Qwen-7B-Open | 7B | Public open-source release | ✅ | [GitHub](https://github.com/QwenLM/Qwen) | - |
-| Sep 2023 | Qwen (Public API) | 7B, 14B, 72B | Commercial API launch post-regulation | ❌ | [Blog](https://qwenlm.github.io/blog/qwen/) | - |
-| Dec 2023 | Qwen-1.8B | 1.8B | Lightweight mobile variant | ❌ | [GitHub](https://github.com/QwenLM/Qwen) | - |
+| Aug 2023 | Qwen | 1.8B, 7B, 14B, 72B | Open-source release with 4 size variants | ✅ | [GitHub](https://github.com/QwenLM/Qwen) | - |
 | Jun 2024 | Qwen2 | 0.5B, 1.5B, 7B, 57B-A14B, 72B | MoE & dense variants, 128K context | ❌ | [Blog](https://qwenlm.github.io/blog/qwen2/) | [arXiv:2407.10671](https://arxiv.org/abs/2407.10671) |
 | Sep 2024 | Qwen2 (Open weights) | 0.5B, 1.5B, 7B, 57B-A14B, 72B | Full open-source release | ✅ | [Blog](https://qwenlm.github.io/blog/qwen2/) | - |
 | 2024 | Qwen2-VL | 2B, 7B | Vision-language multimodal | ✅ | [Blog](https://qwenlm.github.io/blog/qwen2-vl/) | - |
