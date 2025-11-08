@@ -248,101 +248,230 @@ This document tracks foundation models and specialized builders across non-LLM d
 ### US Humanoid Leaders
 
 - [x] 🇺🇸 Tesla - Optimus
-  - 🤖 Neural world simulator trained on fleet video data
-  - 🎯 5,000 units planned for 2025
-  - 💾 1.5+ petabytes video data for training
-  - 🧠 Visual + motor control models
+  - 🤖 **Foundation Model:** End-to-end neural network + Neural World Simulator
+  - 🎯 Leverages Full Self-Driving (FSD) AI stack (48 neural networks)
+  - 💾 **Training Data:** 1.5+ petabytes from vehicle fleet
+  - 🎯 **Vision:** Vision-based only (no LiDAR)
+  - 🧠 **Capabilities:** Reinforcement learning, human-like movement, real-time decisions
+  - 📊 **Production:** 5,000 units targeted for 2025
+  - ⚙️ **Transfer Learning:** From autonomous vehicles to robotics
 
 - [x] 🇺🇸 Figure AI - Figure-02
-  - 🤖 Humanoid robot with OpenAI partnership
-  - 💰 $675M funding, $39.5B valuation talks
-  - 🎯 Dexterous manipulation, real-world deployment
+  - 🤖 **Foundation Model:** Vision-Language Model (VLM) + Vision-Language-Action
+  - 🤖 **Partner:** OpenAI (custom AI models partnership)
+  - 📊 **Vision:** 6 RGB cameras + onboard VLM
+  - 🏃 **Physical Specs:** 168cm, 70kg, 5h battery, 1.2m/s, 16 DOF hands
+  - 🎯 **Capabilities:** 3x more compute than Figure-01, autonomous conversation
+  - 💰 **Funding:** $675M Series B, $39.5B valuation talks (Feb 2025)
+  - 💼 **Deployment:** BMW factory pilot
 
-- [x] 🇺🇸 Physical Intelligence - π0
-  - 🤖 π0: 3.3B parameters, first to fold laundry autonomously
-  - 💰 $400M funding
-  - 🏆 Autonomous box assembly, laundry folding (1-20 hours fine-tuning per task)
+- [x] 🇺🇸 Physical Intelligence - π0 (pi-zero)
+  - 🤖 **Architecture:** 3.3B total (3B PaliGemma + 300M control)
+  - 🔧 **Innovation:** Novel "flow matching" architecture, 50Hz control
+  - 📊 **Training:** 7 different robots, 68 tasks, 1-20h fine-tuning per new task
+  - 🏆 **Capabilities:** First autonomous laundry folder, box assembly, bussing dishes
+  - 💰 **Funding:** $400M (Nov 2024)
+  - 🔓 **Status:** Open-sourced (GitHub: openpi)
 
 - [x] 🇺🇸 Agility Robotics - Digit
-  - 🤖 <1M param whole-body control (LSTM)
-  - 🎯 Zero-shot sim-to-real transfer, >99% success
-  - 💼 Deployed in GXO warehouses, Schaeffler plant
+  - 🤖 **Foundation Model:** <1M param LSTM "motor cortex"
+  - 📊 **Training:** 2,000 hours simulated motion (3-4 days real-time in NVIDIA Isaac Sim)
+  - 🎯 **Zero-shot sim-to-real:** >99% success on real hardware
+  - 💼 **Deployments:** GXO Georgia fulfillment, Schaeffler plant (Cheraw, SC)
+  - 🤝 **Partner:** NVIDIA Isaac Sim training
+
+- [x] 🇺🇸 Apptronik - Apollo
+  - 🤖 **Foundation Model:** Integrates NVIDIA Project GR00T VLM
+  - 📊 **Physical Specs:** 173cm, 73kg, 25kg payload
+  - 🎯 **Learning:** From text, video, demonstrations
+  - 💼 **Partnership:** Mercedes-Benz testing
 
 - [x] 🇺🇸 NVIDIA - GR00T N1.5
-  - 🤖 GR00T N1.5: 3B parameters, first open humanoid foundation model (2025)
-  - 🤖 Runs on Jetson on-device
-  - 📊 Training: 2 trillion tokens, robotics datasets
+  - 🤖 **Architecture:** Dual-system (fast reflexive + slow deliberate reasoning)
+  - 📊 **Specs:** 3B parameters, first open humanoid FM (2025)
+  - ⚙️ **Hardware:** Runs on Jetson on-device
+  - 📊 **Training:** 2 trillion tokens, heterogeneous data (real, video, synthetic)
+  - 🤝 **Partnerships:** Figure AI, Apptronik, Agility, Boston Dynamics, Fourier
+  - 🔓 **Status:** Open-source (GitHub: NVIDIA/Isaac-GR00T)
 
 - [x] 🇬🇧 🇺🇸 1X Technologies - NEO
-  - 🤖 NEO: World's first consumer humanoid
-  - 🤖 Redwood AI integration with OpenAI backing
-  - 💰 Founder: Trond Riiber Knudsen (Halodi/1X)
+  - 🤖 **Platform:** EVE (commercial), NEO (consumer home robot)
+  - 🤖 **Foundation Model:** Redwood AI (vision-language transformer)
+  - 🌍 **World Model:** 1X World Model (data-driven simulator, physics-grounded)
+  - 🎯 **Capabilities:** Voice commands, natural language, laundry, door answering
+  - 💰 **Founder:** Trond Riiber Knudsen (ex-Halodi)
+  - 💰 **Funding:** $23.5M Series A2 (March 2023, OpenAI Startup Fund)
+  - 🏆 **World's first consumer humanoid with home deployment**
 
 - [x] 🇺🇸 Sanctuary AI - Phoenix
-  - 🤖 Humanoid with task automation
-  - ⚡ <24 hours to automate tasks (vs weeks previously)
+  - 🤖 **Foundation Model:** Carbon AI Control System (mimics brain subsystems)
+  - 📊 **Dexterity:** 20 DOF hands with proprietary haptic tech
+  - ⚡ **Task Automation:** <24 hours (vs weeks previously)
+  - 🎯 **Capabilities:** 100+ tasks across 12+ industries, natural language tasking
+  - 📊 **Physical:** 170cm, 70kg, 25kg payload
 
-- [x] 🇬🇧 Boston Dynamics - Spot/Atlas
-  - 🤖 Mobile manipulation robots
-  - 📊 Advanced control, learning-from-demonstrations
+- [x] 🇨🇦 Skild AI (CMU Spinout)
+  - 🤖 **Foundation Model:** Skild Brain (scalable across hardware/tasks)
+  - 👨‍🔬 **Founders:** CMU Profs Deepak Pathak & Abhinav Gupta
+  - 📊 **Training:** 1,000x more data than competitors (claimed)
+  - 💰 **Funding:** $300M (2024)
+  - 🤖 **Platforms:** Mobile manipulation, quadruped
+
+- [x] 🇮🇱 Mentee Robotics
+  - 🤖 **Foundation Model:** Transformer-based LLM for task interpretation
+  - 👨‍🔬 **Founder:** Prof. Amnon Shashua (AI expert)
+  - 🎯 **Approach:** "Learning from data" + "Learning from experience"
+  - 🎯 **Features:** Verbal command execution, 360-degree vision, marker-less navigation
 
 ### Chinese Humanoid (Rapid Scale-Up)
 
 - [x] 🇨🇳 UBTech - Walker S1/S2
-  - 🤖 Walker S1/S2: 500+ orders, mass production started
-  - 🎯 World's first multi-humanoid coordination (swarm intelligence)
-  - 💼 BYD, Audi, Zeekr factory deployments
-  - 🏆 Advanced dexterity, industrial deployment
+  - 🤖 **Foundation Model:** DeepSeek-R1 deep reasoning multimodal model
+  - 🧠 **BrainNet:** "super brain" + "intelligent sub-brain" architecture
+  - 📊 **Training:** High-quality industrial dataset from real factories
+  - 🏆 **World-First:** Multi-humanoid robot coordination in factories (swarm intelligence)
+  - 💼 **Deployments:** BYD, Audi China, Zeekr 5G smart factory
+  - 📦 **Orders:** 500+ for Walker S1
+  - 📈 **2025 Target:** 500-1K units (60%+ Walker S2)
 
-- [x] 🇨🇳 AgiBot - GO-1
-  - 🤖 GO-1: 1M+ training dataset, 962 units manufactured
-  - 📊 AgiBot World dataset (1M+ training sets)
-  - 🏭 Mass production started
+- [x] 🇨🇳 AgiBot (Zhiyuan Robotics)
+  - 🤖 **Foundation Model:** Genie Operator-1 (GO-1) - generalist embodied FM
+  - 👨‍🔯 **Founders:** Deng Taihua & Peng Zhihui (ex-Huawei engineers)
+  - 📊 **Dataset:** AgiBot World (1M+ training sets, 100 robots, open-source)
+  - 🏆 **Largest humanoid manipulation dataset** (as of Dec 2024)
+  - 📦 **Production:** 962 units manufactured (Dec 15, 2024)
+  - 🏭 **Status:** Mass production begun
+  - 🎯 **Goal:** Match Tesla Optimus output in 2025
 
-- [x] 🇨🇳 Huawei - Pangu 5.0 Embodied AI
-  - 🤖 Pangu 5.0: Billions-trillions parameters
-  - 💰 $413M robotics investment
-  - 🎯 Humanoid and quadruped robots
+- [x] 🇨🇳 Fourier Intelligence - GR-1
+  - 🤖 **Foundation Model:** NVIDIA GR00T N1 support
+  - 📊 **Physical Specs:** 165cm, 55kg, 40 DOF, 50kg payload
+  - 🏆 **Claim:** World's first mass-produced humanoid (100+ units)
+  - 📅 **Launch:** July 2023 World AI Conference Shanghai
 
-- [x] 🇨🇳 Unitree - G1
-  - 🤖 G1: Humanoid at $16K (lowest cost in market)
-  - 📊 Advanced prediction, general AI model by end 2025 (prediction)
+- [x] 🇨🇳 Huawei - Kuafu Robot (Pangu 5.0 Embodied AI)
+  - 🤖 **Foundation Model:** Pangu 5.0 (billions-trillions parameters)
+  - 📊 **Architecture:** Understanding, NLP, task planning, dual-arm, autonomous execution
+  - ☁️ **CloudRobo:** Deploys algorithms to cloud for lightweight on-robot processing
+  - 🏢 **Innovation Center:** Shenzhen Global Embodied AI (2024)
+  - 💰 **Investment:** $413M into robotics subsidiary
+  - 🎯 **Goal:** "Humanoid Robot+" open ecosystem
+  - 🤝 **Partnerships:** Leju Robot, Han's Robot
+
+- [x] 🇨🇳 Unitree Robotics - G1 Humanoid
+  - 🤖 **G1 Specs:** $16K (lowest-cost humanoid), superhuman flexibility
+  - 🎯 **Capabilities:** Martial arts maneuvers, aerial cartwheels, kip-ups
+  - 📚 **Tech Base:** Years of quadruped accumulation → bipedal in 6 months (2023)
+  - 🎯 **CEO Prediction:** General-purpose robotic AI model by end 2025
+  - 📈 **Launch:** August 2024
+
+- [x] 🇨🇳 Ex-Robots (Dalian) - Entertainment Humanoids
+  - 🤖 **Foundation Model:** Multi-modal for environment recognition + facial feedback
+  - 👨‍🔬 **Founder:** Li Boyang (PhD AI, Waseda Univ 2010)
+  - 🎯 **Focus:** Lifelike facial expressions
+  - 📦 **Production:** 200+ operational, target 500+ by end 2024
+  - 💰 **Price:** $210K-$280K per unit
+  - 🤝 **Partnerships:** Huawei, iFlyTek, China Mobile
+
+- [x] 🇨🇳 Xiaomi - CyberOne
+  - 🤖 **Foundation Model:** Mi-Sense depth vision + AI interaction algorithm
+  - 📊 **Physical Specs:** 177cm, 52kg, 21 DOF
+  - 🎯 **Capabilities:** 3D perception, gesture/emotion recognition, 45 emotion classifications
+  - 🔄 **Display:** Curved OLED for interactive information
+  - 🎯 **Future:** Manufacturing integration for specific scenarios
+
+### Quadruped Robots
+
+- [x] 🇺🇸 Boston Dynamics - Spot/Atlas
+  - 🤖 **Foundation Model:** Large Behavior Models (LBMs) partnership with TRI
+  - 📊 **LBM Specs:** 450M-param diffusion transformer, 30Hz action output
+  - 🎯 **Capabilities:** Rigid + deformable manipulation, T-shirt folding, assembly
+  - 🤝 **Partnership:** Toyota Research Institute (Oct 2024)
+  - 🏆 **Industry leader in dynamic mobility**
+
+- [x] 🇨🇭 ANYbotics - ANYmal
+  - 🤖 **Foundation Model:** Attention-based recurrent encoder + neural network policy
+  - 📊 **Approach:** Sim-to-real transfer, fast automated data generation
+  - 🎯 **Capabilities:** Jumping, climbing, crouching, parkour navigation
+  - 🌐 **Community:** Hundreds of contributors (universities + corporate)
+  - 🏆 **Strong sim-to-real, robust outdoor operation**
 
 ### Research & Academic Robotics
 
-- [x] 🇺🇸 Google DeepMind - RT-2/RT-X
-  - 🤖 RT-2: Vision-Language-Action models (55B parameters)
-  - 🤖 RT-X: Open X-Embodiment (1M+ trajectories, 22 robots, 21 institutions)
-  - 🔓 Cross-embodiment learning
+- [x] 🇺🇸 Google DeepMind - RT-1/RT-2/RT-2-X
+  - 🤖 **RT-2:** First Vision-Language-Action (VLA) model (55B params)
+  - 📊 **RT-2-X:** 3x more successful than RT-2 for emergent skills
+  - 📊 **Training:** Web-scale vision-language + robotic data
+  - 🎯 **Capabilities:** Novel object generalization, emergent reasoning
+  - 🏆 **Pioneered VLA paradigm in robotics**
 
-- [x] 🇺🇸 Stanford - Mobile ALOHA
-  - 🤖 Bimanual teleoperated mobile robot ($32K)
-  - 🎯 Tasks: sauté shrimp, operate elevator, rinse pans
-  - 📊 OpenVLA (7B params): Beats RT-2-X (55B) by 16.5% with 7x fewer params
+- [x] 🇺🇸 Stanford - Mobile ALOHA/OpenVLA
+  - 🤖 **Mobile ALOHA:** Bimanual mobile manipulation ($32K, vs $200K commercial)
+  - 📊 **Training:** Supervised behavior cloning, 50 demos/task, 90% success with co-training
+  - 🎯 **Tasks:** Shrimp sauté, elevator operation, pan rinsing
+  - 🤖 **OpenVLA:** 7B params, beats RT-2-X (55B) by 16.5% with 7x fewer params
+  - 📊 **Training:** Open X-Embodiment dataset, 29 tasks, multiple embodiments
 
-- [x] 🇺🇸 Berkeley RAIL - BridgeData V2 / CrossFormer
-  - 📊 Robot learning datasets, cross-embodiment models
+- [x] 🇺🇸 Berkeley RAIL - BridgeData V2/CrossFormer
+  - 📊 **BridgeData V2:** Large-scale robot manipulation dataset
+  - 📊 **CrossFormer:** 900K trajectories across 20 embodiments
+  - 🔬 **Hardware:** WidowX 250 6DOF arm
+  - 🏆 **Major cross-embodiment learning contributor**
 
-- [x] 🇺🇸 MIT CSAIL - KALM / Neural Jacobian Fields
-  - 🤖 Foundation model supervision for robotics
-  - 📊 Advanced manipulation learning
+- [x] 🇺🇸 MIT CSAIL - Foundation Model Supervision
+  - 🤖 **KALM:** Pre-trained VLMs for task-relevant keypoints
+  - 🤖 **Neural Jacobian Fields (NJF):** Robots learn body response via vision only
+  - 🎯 **Approaches:** Leverage non-robot FMs for scalable supervision
+  - 💪 **Impact:** 5-10 demonstrations sufficient for policy generalization
 
 - [x] 🇺🇸 Toyota Research Institute - Large Behavior Models (LBMs)
-  - 🤖 80% less data needed, 3-5x faster learning
-  - 📊 Scale shows dramatic improvement
+  - 🤖 **Architecture:** Diffusion-based transformer (450M params)
+  - 📊 **Training:** ~1,700 hours real robot + 47K sim rollouts, 1,800 evaluations
+  - 🏆 **2024 Breakthrough:** 80% less data, learns 3-5x faster
+  - 🤖 **Single LBM:** Hundreds of manipulation tasks
+  - 🤖 **Output:** 50 DOF control at 30Hz
+  - 💡 **Motto:** "If you can demonstrate it, the robot can learn it"
+  - 🤝 **Partnership:** Boston Dynamics Atlas (Oct 2024)
 
-- [x] 🇺🇸 CMU - Skild AI
-  - 🤖 Spinout company with $300M+ funding
-  - 🎯 Robot foundation models for industry
+- [x] 🇨🇭 ETH Zurich Robotics
+  - 🔬 **Labs:** ASL, Robotics & Perception, IRIS (7 labs)
+  - 🎯 **Focus:** Autonomous navigation (camera/computation only), control strategies
+  - 📚 **Research:** Flying, service, mobile robots
+
+- [x] 🇨🇳 Tencent - Robotics X Lab / Tairos Platform
+  - 🤖 **Foundation Model:** Tairos (modular, plug-and-play embodied AI)
+  - 📊 **SLAP3 Framework:** Sensing, Learning, Action, Planning, Perception models
+  - ☁️ **Infrastructure:** Cloud simulation, training, data management
+  - 🎯 **Vision:** Neutral platform for startups
+  - 🤝 **Partnerships:** AgiBot, KEENON, Unitree
+  - 💰 **Investor:** Agibot
+
+### Foundation Model Frameworks (Infrastructure)
+
+- [x] **Covariant - RFM-1 (Robotics Foundation Model)**
+  - 🤖 **Architecture:** 8B parameter any-to-any transformer
+  - 📊 **Training:** 4 years warehouse pick-and-place data + internet data
+  - 🎯 **Capabilities:** First commercial GenAI for robots, physics world model
+  - 📹 **AI-Generated Video:** Predicts future scenarios, selects best action
+  - 💼 **Commercial Deployment:** Warehouse operations
+  - 🏆 **First to give robots deeper understanding via GenAI**
+
+- [x] **Open X-Embodiment Dataset**
+  - 📊 **Scale:** 1M+ trajectories, 22 robots, 21 institutions worldwide
+  - 🎯 **Impact:** Foundation for cross-embodiment learning
 
 ### Robotics Key Trends (2025)
 
 - **Production Scale-Up:** Tesla 5K, UBTech 500-1K, AgiBot mass production
-- **Cost Dropping:** Unitree G1 at $16K, trend toward <$10K
-- **Chinese Acceleration:** UBTech, AgiBot, Huawei rapid progress
+- **Cost Dropping:** Unitree G1 at $16K, Unitree CEO predicts <$10K by 2026
+- **Chinese Acceleration:** UBTech multi-robot coordination, AgiBot 1M dataset, Huawei Pangu
 - **VLA Model Convergence:** 2-7B parameters becoming standard (vs 55B for RT-2-X)
-- **Multi-Robot Coordination:** UBTech achieved world-first swarm intelligence
+- **Model Efficiency:** Smaller models (7B OpenVLA) beating larger (55B RT-2-X) by 16.5%
+- **Multi-Robot Coordination:** UBTech achieved world-first factory swarm intelligence
+- **Data Efficiency:** Toyota LBMs: 80% less data, 3-5x faster learning
+- **Sim-to-Real:** Zero-shot transfer >99% success (Agility Digit)
 - **Massive Funding:** $1B+ rounds becoming common
+- **Task Learning Speed:** <24 hours automation setup (Sanctuary Phoenix)
 
 ---
 
