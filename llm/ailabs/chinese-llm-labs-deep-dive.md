@@ -106,7 +106,7 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 | Apr 2025 | Qwen3-VL | Multiple sizes | Advanced vision-language, 32-language OCR | ✅ | [GitHub](https://github.com/QwenLM/Qwen3-VL) |
 | Jul 2025 | Qwen3-2507 (Updated) | 4B, 30B-A3B, 235B-A22B | Instruct & Thinking variants | ✅ | [Blog](https://qwenlm.github.io/blog/qwen3/) |
 | Jul 2025 | Qwen3-Coder-480B | 480B-A35B | Largest open-source coding model, 256K-1M context | ✅ | [Blog](https://qwenlm.github.io/blog/qwen3-coder/) |
-| Sep 5, 2025 | Qwen3-Max | 1T+ (MoE) | First trillion-param Qwen model, 262K context, API-only, closed-weight | ❌ | - |
+| Sep 5, 2025 | Qwen3-Max | 1T+ (MoE) | First trillion-param Qwen model, 262K context, API-only, closed-weight | ❌ | [API](https://qwen.ai/apiplatform), [Docs](https://www.alibabacloud.com/help/en/model-studio/use-qwen-by-calling-api) |
 | Sep 10, 2025 | Qwen3-Next | 80B-A3B | Hybrid MoE architecture, Apache 2.0 licensed (Instruct & Thinking variants) | ✅ | [HF](https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct) |
 | Sep 22, 2025 | Qwen3-Omni | - | Omni-modal (text, audio, image, video) | ✅ | [GitHub](https://github.com/QwenLM/Qwen3-Omni), [arXiv:2509.17765](https://arxiv.org/abs/2509.17765) |
 | Sep 23, 2025 | Qwen3-VL-235B | 235B-A22B | Advanced vision-language frontier | ✅ | [HF](https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct), [GitHub](https://github.com/QwenLM/Qwen3-VL) |
