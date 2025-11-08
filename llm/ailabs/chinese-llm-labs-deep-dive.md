@@ -96,8 +96,8 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 | Sep 2024 | Qwen2.5 | 0.5B, 1.5B, 3B, 7B, 14B, 32B, 72B | 7 size variants, 128K context, 18T tokens training | ✅ | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) |
 | 2024 | Qwen2.5-Coder | Multiple sizes | Code generation specialization | ✅ | - |
 | 2024 | Qwen2.5-Math | Multiple sizes | Mathematical problem solving | ✅ | - |
-| Nov 2024 | QwQ-32B-Preview | 32B (32.5B exact) | Reasoning model via RL, 128K context | ✅ | - |
-| Nov 2024 | QwQ-32B | 32B (32.5B exact) | Full reasoning model release | ✅ | - |
+| Nov 2024 | QwQ-32B-Preview | 32.5B | Reasoning model via RL, 128K context | ✅ | - |
+| Nov 2024 | QwQ-32B | 32.5B | Full reasoning model release | ✅ | - |
 | Jan 29, 2025 | Qwen2.5-Max | - | Frontier API-only model | ❌ | - |
 | Jan 2025 | Qwen2.5-VL | 3B, 7B, 32B, 72B | Vision-language multimodal (4 sizes) | ✅ | - |
 | 2024-2025 | Qwen-VL-OCR | Based on VL variants | Specialized OCR: 32 languages, bounding boxes, 128K context | ✅ | - |
@@ -108,11 +108,11 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 | Apr 2025 | Qwen3-Math | Multiple sizes | Mathematical reasoning with CoT & tool integration | ✅ | - |
 | Apr 2025 | Qwen3-VL | Multiple sizes | Advanced vision-language, 32-language OCR | ✅ | - |
 | Jul 2025 | Qwen3-2507 (Updated) | 4B, 30B-A3B, 235B-A22B | Instruct & Thinking variants | ✅ | - |
-| Jul 2025 | Qwen3-Coder-480B | 480B (35B activated) | Largest open-source coding model, 256K-1M context | ✅ | - |
+| Jul 2025 | Qwen3-Coder-480B | 480B-A35B | Largest open-source coding model, 256K-1M context | ✅ | - |
 | Sep 5, 2025 | Qwen3-Max | - | Latest frontier frontier API model | ❌ | - |
 | Sep 10, 2025 | Qwen3-Next | 80B-A3B | Hybrid MoE architecture, Apache 2.0 licensed (Instruct & Thinking variants) | ✅ | - |
 | Sep 22, 2025 | Qwen3-Omni | - | Omni-modal (text, audio, image, video) | ✅ | [arXiv:2509.17765](https://arxiv.org/abs/2509.17765) |
-| Sep 23, 2025 | Qwen3-VL-235B | 235B (22B activated) | Advanced vision-language frontier | ✅ | - |
+| Sep 23, 2025 | Qwen3-VL-235B | 235B-A22B | Advanced vision-language frontier | ✅ | - |
 
 ### Performance and Reception
 
