@@ -344,6 +344,26 @@ This file tracks comprehensive research on Large Language Models (LLMs) and foun
   - 💬 Kimi-K2-Instruct
   - 💭 Kimi K2 Thinking
   - 🔊 Kimi-Audio (open-source)
+- [x] MiniMax
+  - 🤖 MiniMax-Text-01 (foundation model)
+  - 🤖 Minimax-01 (open-source, January 2025)
+  - 🎬 Hailuo-02 (video generation)
+  - 🔊 Speech-02 (lifelike speech synthesis)
+  - 🎵 Music-01 (music generation)
+  - 👁️ MiniMax-VL-01 (multimodal with vision)
+  - 🤖 MiniMax-M1 (1M context window, 80K output tokens, June 2025)
+  - 💰 $1.15B total funding, $2.5B valuation (March 2024)
+  - 🇨🇳 Alibaba-led Series C round ($600M, 2024)
+- [x] StepFun
+  - 🤖 Step-1 (language model)
+  - 🤖 Step-2 (expected 1T+ parameters)
+  - 👁️ Step-1V (multimodal, 100B+ parameters)
+  - 💭 Advanced reasoning capabilities
+  - 🎬 Video generation (experimental)
+  - 🔊 Audio generation (experimental)
+  - 📦 11 foundation models released (as of 2024)
+  - 💰 Series B funding "several hundred million dollars" (2024)
+  - 🇨🇳 Founded April 2023 by Jiang Daxin (ex-Microsoft Asia Research)
 - [x] Tencent
   - 🤖 Hunyuan-Large (389B parameters, 52B activated MoE)
   - 🤖 Hunyuan Turbo S (fastest reasoning LLM)
@@ -948,7 +968,7 @@ This file tracks comprehensive research on Large Language Models (LLMs) and foun
 - 🇪🇺 Extended European Labs (17): 🇬🇧 BritLLM, 🇩🇪 OpenGPT-X/Teuken, 🇩🇪 LeoLM, 🇫🇷 LUCIE, 🇳🇱 GPT-NL, 🇳🇱 Geitje, 🇸🇪 GPT-SW3, 🇳🇴 NorskGPT, 🇮🇹 Minerva, 🇮🇹 Domyn, 🇪🇸 Spanish National LLM, 🇪🇸 Clibrain, 🇵🇱 PLLuM, 🇵🇱 Bielik, 🇹🇷 Kumru AI, 🇹🇷 T3AI, 🇺🇦 Lapa LLM, 🇮🇪 UCCIX, 🇮🇸 Miðeind
 
 **Asia-Pacific (Greatly Expanded):**
-- 🇨🇳 Chinese AI Labs (9): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot, Tencent
+- 🇨🇳 Chinese AI Labs (11): Alibaba, Baidu, Baichuan, Zhipu, 01.AI, SenseTime, DeepSeek, Moonshot, MiniMax, StepFun, Tencent
 - 🇹🇼 Taiwan (4): TAIDE, Formosa, FoxBrain, Llama-3-Taiwan (TAME)
 - 🇭🇰 Hong Kong (2): HKGAI V1, InvestLM
 - 🇰🇷 South Korean (8): Naver Cloud, SK Telecom, Upstage, LG AI, NC AI, KT Corp, Samsung, Kakao
