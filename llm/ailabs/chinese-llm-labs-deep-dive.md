@@ -82,20 +82,20 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 
 | Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
 |---|---|---|---|---|---|
-| Apr 2023 | Qwen (Beta) | Various | Initial closed beta | ❌ | - |
+| Apr 2023 | Qwen (Beta) | 1.8B, 7B, 14B, 72B | Initial closed beta | ❌ | - |
 | Sep 2023 | Qwen (Public) | 7B, 14B, 72B | Public launch post-regulation | ❌ | - |
 | Dec 2023 | Qwen 1.8B, 72B | 1.8B, 72B | Extended size range | ❌ | - |
 | Aug 2023 | Qwen 7B (Open) | 7B | Open-source weights release | ✅ | - |
-| Jun 2024 | Qwen2 | 0.5B-72B | Major architecture improvements | ❌ | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) |
-| Sep 2024 | Qwen2 (Open weights) | 0.5B-72B | Open-source models released | ✅ | - |
+| Jun 2024 | Qwen2 | 0.5B, 1.5B, 7B, 57B-A14B, 72B | Major architecture improvements | ❌ | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) |
+| Sep 2024 | Qwen2 (Open weights) | 0.5B, 1.5B, 7B, 57B-A14B, 72B | Open-source models released | ✅ | - |
 | Nov 2024 | QwQ-32B-Preview | 32B | Reasoning model (o1-style) | ✅ | - |
 | Jan 29, 2025 | Qwen2.5-Max | - | Outperforms GPT-4o, DeepSeek-V3 | ❌ | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) |
 | Mar 26, 2025 | Qwen2.5-Omni-7B | 7B | Multimodal with real-time speech | ✅ | [arXiv:2503.20215](https://arxiv.org/abs/2503.20215) |
-| Apr 28, 2025 | Qwen3 Series | 0.6B-235B | "Hybrid" reasoning models | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
+| Apr 28, 2025 | Qwen3 | 0.6B, 1.7B, 4B, 8B, 14B, 32B, 30B-A3B, 235B-A22B | "Hybrid" reasoning models (dense + MoE) | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
 | Sep 5, 2025 | Qwen3-Max | - | Latest frontier variant | ❌ | - |
-| Sep 10, 2025 | Qwen3-Next | - | Apache 2.0 licensed | ✅ | - |
+| Sep 10, 2025 | Qwen3-Next | 0.6B, 1.7B, 4B, 8B, 14B, 32B, 30B-A3B, 235B-A22B | Apache 2.0 licensed | ✅ | - |
 | Sep 22, 2025 | Qwen3-Omni | - | Omni-modal capabilities | ✅ | [arXiv:2509.17765](https://arxiv.org/abs/2509.17765) |
-| Sep 23, 2025 | Qwen3-VL-235B | 235B (22B active) | Advanced vision-language | ✅ | - |
+| Sep 23, 2025 | Qwen3-VL-235B | 235B (22B activated) | Advanced vision-language | ✅ | - |
 
 ### Performance and Reception
 
@@ -207,9 +207,9 @@ ERNIE is developed by Baidu's AI and Deep Learning Research Labs, including:
 | Jun 2023 | ERNIE Bot (Public) | 10B | Public release | ❌ | - |
 | 2024 | ERNIE 3.5 | - | 2x training, 17x inference speedup | ❌ | - |
 | Jun 2024 | ERNIE 4.0 Turbo | - | Major capability upgrade | ❌ | - |
-| Mar 2025 | ERNIE 4.5 Turbo | 0.3B-424B | MoE architecture, open-source ready | ✅ | [PDF](https://yiyan.baidu.com/blog/publication/ERNIE_Technical_Report.pdf) |
-| Mar 2025 | ERNIE X1 Turbo | - | Reasoning model variant | ✅ | [PDF](https://yiyan.baidu.com/blog/publication/ERNIE_Technical_Report.pdf) |
-| Jun 2025 | ERNIE Series (Open) | 0.3B-424B | Full open-source release | ✅ | - |
+| Mar 2025 | ERNIE 4.5 | 0.3B, 21B-A3B, 300B-A47B, 424B-A47B | MoE architecture, open-source ready | ✅ | [PDF](https://yiyan.baidu.com/blog/publication/ERNIE_Technical_Report.pdf) |
+| Mar 2025 | ERNIE X1 | 300B-A47B, 21B-A3B | Reasoning model variant | ✅ | [PDF](https://yiyan.baidu.com/blog/publication/ERNIE_Technical_Report.pdf) |
+| Jun 2025 | ERNIE Series (Open) | 0.3B, 21B-A3B, 300B-A47B, 424B-A47B | Full open-source release | ✅ | - |
 
 ### Performance and Reception
 
@@ -326,13 +326,13 @@ DeepSeek's leadership and team include:
 
 | Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
 |---|---|---|---|---|---|
-| Nov 2, 2023 | DeepSeek Coder | - | Code generation specialist | ✅ | - |
+| Nov 2, 2023 | DeepSeek Coder | 1.3B, 5.7B, 6.7B, 33B | Code generation specialist | ✅ | - |
 | Nov 29, 2023 | DeepSeek-LLM | 7B, 67B | Foundation models | ✅ | - |
-| Dec 2024 | DeepSeek-V3 | 671B (37B active) | MoE, cost-efficient, frontier performance | ✅ | [arXiv:2412.19437](https://arxiv.org/abs/2412.19437) |
-| Dec 2024 | DeepSeek-V3.1 | 671B (37B active) | Minor improvements | ✅ | - |
-| Jan 2025 | DeepSeek-R1 | - | Reasoning model, o1 competitor | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
-| Jan 2025 | DeepSeek-R1-Zero | - | Pure RL reasoning without distillation | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
-| 2025 | DeepSeek-V3.2 | 671B (37B active) | Continued improvements | ✅ | - |
+| Dec 2024 | DeepSeek-V3 | 671B (37B activated) | MoE, cost-efficient, frontier performance | ✅ | [arXiv:2412.19437](https://arxiv.org/abs/2412.19437) |
+| Dec 2024 | DeepSeek-V3.1 | 671B (37B activated) | Minor improvements | ✅ | - |
+| Jan 2025 | DeepSeek-R1 | 1.5B, 7B, 8B, 14B, 32B, 70B | Reasoning model, o1 competitor | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
+| Jan 2025 | DeepSeek-R1-Zero | 1.5B, 7B, 8B, 14B, 32B, 70B | Pure RL reasoning without distillation | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
+| 2025 | DeepSeek-V3.2 | 671B (37B activated) | Continued improvements | ✅ | - |
 
 ### Performance and Reception
 
@@ -447,11 +447,11 @@ Hunyuan is developed by Tencent's AI research organization, including:
 |---|---|---|---|---|---|
 | Sep 2023 | Hunyuan | 100B+ | Initial release | ❌ | - |
 | Ongoing | Hunyuan series | - | Continuous improvement cycle | ❌ | - |
-| May 2024 | Hunyuan-Large | 389B (52B active) | MoE, 256K context | ✅ | [arXiv:2411.02265](https://arxiv.org/abs/2411.02265) |
-| Sep 2024 | Hunyuan-A13B | 13B | Fine-grained MoE, efficient | ✅ | - |
-| Mar 2025 | Hunyuan T1 | - | Reasoning model | ❌ | [arXiv:2505.15431](https://arxiv.org/abs/2505.15431) |
+| May 2024 | Hunyuan-Large | 389B (52B activated) | MoE, 256K context | ✅ | [arXiv:2411.02265](https://arxiv.org/abs/2411.02265) |
+| Sep 2024 | Hunyuan-A13B | 80B (13B activated) | Fine-grained MoE, efficient | ✅ | - |
+| Mar 2025 | Hunyuan T1 | 52B (activated) | Reasoning model | ❌ | [arXiv:2505.15431](https://arxiv.org/abs/2505.15431) |
 | Mar 2025 | Hunyuan TurboS | - | Fast-thinking base model | ❌ | - |
-| Sep 2025 | Hunyuan T1 (Official) | - | Hybrid Transformer-Mamba, improved reasoning | ❌ | - |
+| Sep 2025 | Hunyuan T1 (Official) | 52B (activated) | Hybrid Transformer-Mamba, improved reasoning | ❌ | - |
 
 ### Performance and Reception
 
@@ -567,7 +567,7 @@ Moonshot's leadership and team:
 | Mar 2024 | Kimi (Long-Context) | - | Extended to 2M Chinese characters | ❌ | - |
 | Oct 2024 | Kimi K1 | - | Reasoning capabilities | ❌ | - |
 | Jan 20, 2025 | Kimi K1.5 | - | o1-level reasoning | ❌ | - |
-| Jul 2025 | Kimi K2 | 1T (32B active) | Frontier-class with weights release | ✅ | [GitHub](https://github.com/MoonshotAI/Kimi-K2/blob/main/tech_report.pdf) |
+| Jul 2025 | Kimi K2 | 1T (32B activated) | Frontier-class with weights release | ✅ | [GitHub](https://github.com/MoonshotAI/Kimi-K2/blob/main/tech_report.pdf) |
 
 ### Performance and Reception
 
@@ -678,10 +678,10 @@ Zhipu's leadership and team:
 |---|---|---|---|---|---|
 | End 2020 | GLM-10B | 10B | Early foundation model | ✅ | - |
 | 2022 | GLM-130B | 130B | Massive bilingual model | ✅ | - |
-| 2023 | ChatGLM | Hundreds B | Consumer chatbot | ✅ | - |
+| 2023 | ChatGLM | - | Consumer chatbot | ✅ | - |
 | 2024 | GLM-4 series | - | Improved capabilities | ❌ | - |
-| Jul 2025 | GLM-4.5 | 355B | Latest frontier model | ✅ | [arXiv:2508.06471](https://arxiv.org/abs/2508.06471) |
-| Jul 2025 | GLM-4.5 Air | - | Optimized variant | ✅ | - |
+| Jul 2025 | GLM-4.5 | 355B (32B activated) | Latest frontier model, MoE | ✅ | [arXiv:2508.06471](https://arxiv.org/abs/2508.06471) |
+| Jul 2025 | GLM-4.5 Air | 106B (12B activated) | Optimized variant, MoE | ✅ | - |
 | 2025 | Z.ai Rebranding | - | New company positioning | - | - |
 
 ### Performance and Reception
@@ -795,7 +795,7 @@ Baichuan's leadership and team:
 | Jun 2023 | Baichuan-7B | 7B | First model, open-source | ✅ | - |
 | 2023 | Baichuan-13B | 13B | Larger variant | ✅ | - |
 | 2023 | Baichuan4 | - | Top SuperCLUE ranking | ❌ | - |
-| 2024 | 12+ LLM variants | - | Various sizes and specializations | ✅ | - |
+| 2024 | Baichuan variants | 7B, 13B | Various sizes and specializations | ✅ | - |
 | May 2024 | Baixiaoying | - | AI assistant | ❌ | - |
 | Dec 2024 | Baichuan4-Finance | - | Finance domain specialized | ✅ | [arXiv:2412.15270](https://arxiv.org/abs/2412.15270) |
 
@@ -909,8 +909,8 @@ Baichuan's leadership and team:
 |---|---|---|---|---|---|
 | Nov 2023 | Yi-34B | 34B | First open-source, bilingual | ✅ | [arXiv:2403.04652](https://arxiv.org/abs/2403.04652) |
 | 2023-2024 | Yi-VL-34B | 34B | Vision-language model | ✅ | - |
-| 2024 | Yi-Coder | <10B | SOTA code generation | ✅ | - |
-| 2024 | Yi Chat Models | Various | Instruction-tuned variants | ✅ | - |
+| 2024 | Yi-Coder | 1.5B, 9B | SOTA code generation | ✅ | - |
+| 2024 | Yi Chat Models | 6B, 34B, 9B | Instruction-tuned variants | ✅ | - |
 | 2025 | Yi-Lightning Series | - | Optimized lightweight variants | ✅ | - |
 | 2025 | Yi-Large | - | Proprietary frontier model | ❌ | - |
 
