@@ -340,13 +340,13 @@ DeepSeek's leadership and team include:
 
 | Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
 |---|---|---|---|---|---|
-| Nov 2, 2023 | DeepSeek Coder | 1.3B, 5.7B, 6.7B, 33B | Code generation specialist | ✅ | - |
-| Nov 29, 2023 | DeepSeek-LLM | 7B, 67B | Foundation models | ✅ | - |
+| Nov 2, 2023 | DeepSeek Coder | 1.3B, 5.7B, 6.7B, 33B | Code generation specialist | ✅ | [arXiv:2401.14196](https://arxiv.org/abs/2401.14196) |
+| Nov 29, 2023 | DeepSeek-LLM | 7B, 67B | Foundation models | ✅ | [arXiv:2401.02954](https://arxiv.org/abs/2401.02954) |
 | Jan 2024 | DeepSeek-MoE | 16B-A2.8B | MoE architecture (Base and Chat variants) | ✅ | [arXiv:2401.06066](https://arxiv.org/abs/2401.06066) |
 | Feb 2024 | DeepSeek-Math | 7B | Mathematical reasoning (Base, Instruct, RL) | ✅ | [arXiv:2402.03300](https://arxiv.org/abs/2402.03300) |
 | May 6, 2024 | DeepSeek-V2 | 236B-A21B | MoE, multi-head latent attention (MLA) | ✅ | [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
 | May 16, 2024 | DeepSeek-V2-Lite | 15.7B-A2.4B | Lightweight MoE, deployable on single 40G GPU | ✅ | [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
-| Jun 2024 | DeepSeek-Coder-V2 | 16B-A2.4B, 236B-A21B | Code intelligence, beats GPT-4 Turbo | ✅ | - |
+| Jun 2024 | DeepSeek-Coder-V2 | 16B-A2.4B, 236B-A21B | Code intelligence, beats GPT-4 Turbo | ✅ | [arXiv:2406.11931](https://arxiv.org/abs/2406.11931) |
 | Sep 2024 | DeepSeek-V2.5 | 236B-A21B | Fusion of V2-Chat and Coder-V2-Instruct | ✅ | - |
 | Nov 20, 2024 | DeepSeek-R1-Lite-Preview | - | First reasoning model, o1-preview competitor | ✅ | - |
 | Dec 10, 2024 | DeepSeek-V2.5-1210 | 236B-A21B | Updated V2.5 with improved math/coding | ✅ | - |
