@@ -105,10 +105,10 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 | Mar 26, 2025 | Qwen2.5-Omni-7B | 7B | Multimodal (text, audio, vision, video) real-time speech | ✅ | [arXiv:2503.20215](https://arxiv.org/abs/2503.20215) |
 | Apr 28, 2025 | Qwen3 Dense | 0.6B, 1.7B, 4B, 8B, 14B, 32B | Dense "hybrid" reasoning models, 128K context | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
 | Apr 28, 2025 | Qwen3 MoE | 30B-A3B, 235B-A22B | Sparse MoE reasoning models, 128K context | ✅ | [arXiv:2505.09388](https://arxiv.org/abs/2505.09388) |
-| Apr 2025 | Qwen3-Coder-480B | 480B (35B activated) | Largest open-source coding model, 256K-1M context | ✅ | - |
 | Apr 2025 | Qwen3-Math | Multiple sizes | Mathematical reasoning with CoT & tool integration | ✅ | - |
 | Apr 2025 | Qwen3-VL | Multiple sizes | Advanced vision-language, 32-language OCR | ✅ | - |
-| May 2025 | Qwen3-2507 (Updated) | 4B, 30B-A3B, 235B-A22B | Instruct & Thinking variants | ✅ | - |
+| Jul 2025 | Qwen3-2507 (Updated) | 4B, 30B-A3B, 235B-A22B | Instruct & Thinking variants | ✅ | - |
+| Jul 2025 | Qwen3-Coder-480B | 480B (35B activated) | Largest open-source coding model, 256K-1M context | ✅ | - |
 | Sep 5, 2025 | Qwen3-Max | - | Latest frontier frontier API model | ❌ | - |
 | Sep 10, 2025 | Qwen3-Next | 80B-A3B | Hybrid MoE architecture, Apache 2.0 licensed (Instruct & Thinking variants) | ✅ | - |
 | Sep 22, 2025 | Qwen3-Omni | - | Omni-modal (text, audio, image, video) | ✅ | [arXiv:2509.17765](https://arxiv.org/abs/2509.17765) |
