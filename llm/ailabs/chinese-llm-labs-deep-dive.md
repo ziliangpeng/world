@@ -127,7 +127,7 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 | Apr 2025 | Qwen3-VL | Multiple sizes | Advanced vision-language, 32-language OCR | ✅ | - |
 | May 2025 | Qwen3-2507 (Updated) | 4B, 30B-A3B, 235B-A22B | Instruct & Thinking variants | ✅ | - |
 | Sep 5, 2025 | Qwen3-Max | - | Latest frontier frontier API model | ❌ | - |
-| Sep 10, 2025 | Qwen3-Next | 0.6B, 1.7B, 4B, 8B, 14B, 32B, 30B-A3B, 235B-A22B | Apache 2.0 licensed full release | ✅ | - |
+| Sep 10, 2025 | Qwen3-Next | 80B-A3B | Hybrid MoE architecture, Apache 2.0 licensed (Instruct & Thinking variants) | ✅ | - |
 | Sep 22, 2025 | Qwen3-Omni | - | Omni-modal (text, audio, image, video) | ✅ | [arXiv:2509.17765](https://arxiv.org/abs/2509.17765) |
 | Sep 23, 2025 | Qwen3-VL-235B | 235B (22B activated) | Advanced vision-language frontier | ✅ | - |
 
