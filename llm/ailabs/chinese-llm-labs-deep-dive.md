@@ -14,8 +14,10 @@ A comprehensive exploration of China's leading LLM research labs, their founding
 6. [Zhipu AI (GLM/ChatGLM)](#zhipu-ai-glmchatglm)
 7. [Baichuan AI](#baichuan-ai)
 8. [01.AI (Yi)](#01ai-yi)
-9. [SenseTime (SenseNova)](#sensetime-sensenova)
-10. [Rednote/Xiaohongshu (dots.llm1)](#rednotexiaohongshu-dotsllm1)
+9. [MiniMax](#minimax)
+10. [StepFun](#stepfun)
+11. [SenseTime (SenseNova)](#sensetime-sensenova)
+12. [Rednote/Xiaohongshu (dots.llm1)](#rednotexiaohongshu-dotsllm1)
 
 ---
 
@@ -943,7 +945,243 @@ Baichuan's leadership and team:
 
 ---
 
-## 9. SenseTime (SenseNova)
+## 9. MiniMax
+
+### Company Overview
+
+**MiniMax** (MiniMax AI) emerged as one of China's "AI Tiger" startups, founded by computer vision veterans to develop cutting-edge mixture-of-experts foundation models. Established in December 2021 by former SenseTime employees **Yan Junjie** and **Zhou Yucong**, MiniMax rapidly grew to become a significant player in the LLM space. The company received early backing from gaming giant MiHoYo and later secured major funding from Alibaba, Tencent, and other strategic investors, reaching a $2.5B valuation by 2024.
+
+### Founding Story and History
+
+MiniMax was founded in **December 2021** by **Yan Junjie** and **Zhou Yucong**, both former SenseTime employees with deep expertise in computer vision and AI systems. The founding occurred during the early hype around generative AI, positioning the company to capitalize on emerging opportunities.
+
+**Key Timeline:**
+- **Dec 2021**: Founded by former SenseTime executives
+- **Early investors**: MiHoYo (gaming company) provided initial backing
+- **2023**: Allocated 80% of computational resources to developing MoE models
+- **April 2024**: Launched ABAB 6.5 series (first MoE-based large model)
+- **March 2024**: Series B funding round - $600M from Alibaba, valuation reaches $2.5B
+- **Jan 2025**: Released MiniMax-Text-01 (456B) and MiniMax-VL-01 (multimodal)
+- **June 2025**: Launched MiniMax-M1 with 1M context window
+
+MiniMax's trajectory reflects rapid scaling enabled by strategic partnerships and strong computational infrastructure.
+
+### Funding and Investment
+
+**Funding Timeline:**
+
+| Round | Date | Amount | Key Investors |
+|---|---|---|---|
+| Early Backing | 2021-2022 | - | MiHoYo (initial) |
+| Series B | Mar 2024 | $600M | Alibaba (lead), Hillhouse, HongShan, IDG Capital, Tencent |
+
+**Total Funding**: $1.15B+ reported (as of 2024)
+**Valuation**: $2.5B+ (March 2024)
+
+Strategic backing from Alibaba and Tencent provided crucial resources and market channels.
+
+### Strategic Positioning
+
+MiniMax positions as **"Efficient LLMs with Long Context and Multimodal Capabilities"** emphasizing:
+
+1. **MoE Efficiency**: Pioneer in deploying MoE models efficiently in China
+2. **Long Context**: Extreme context windows (up to 4M tokens in inference)
+3. **Multimodal Focus**: Strong vision-language capabilities
+4. **Lightning Attention**: Proprietary attention mechanism for efficiency
+5. **Competitive Performance**: Claims outperform leading models on benchmarks
+6. **Rapid Innovation**: Fast iteration cycles releasing new capabilities
+
+### Technical Innovations and Architecture
+
+**Lightning Attention & Hybrid Architecture:**
+- Combines Lightning Attention (efficient token processing) with Softmax Attention
+- Hybrid structure: softmax positioned after every 7 lightning attention layers
+- Mixture-of-Experts with top-2 routing strategy
+
+**MiniMax-Text-01 Specifications:**
+- 456B total parameters with 45.9B activated per token
+- 80 layers, 64 attention heads (128 head dimension)
+- 32 experts with 9216 expert hidden dimension
+- Hybrid attention achieving 4M token context during inference
+- 1M token training context
+
+**Vision-Language Integration:**
+- MiniMax-VL-01: 303M Vision Transformer + MLP projector + MiniMax-Text-01 LLM base
+- Multimodal understanding of images and text
+
+### Team Background
+
+MiniMax's team includes:
+- **Yan Junjie**: Co-founder, background in computer vision and AI systems
+- **Zhou Yucong**: Co-founder, former SenseTime executive
+- Engineers and researchers from top AI labs
+- Vision expertise from SenseTime heritage transitioning to language models
+
+### Model Lineage and Release Timeline
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
+|---|---|---|---|---|---|
+| 2023 | MiniMax R&D | 80%+ compute | MoE model development | ❌ | - |
+| Apr 2024 | ABAB 6.5 Series | - | First MoE-based model | ❌ | - |
+| Jan 2025 | MiniMax-Text-01 | 456B (45.9B active) | Long context (4M), Lightning Attention | ❌ | - |
+| Jan 2025 | MiniMax-VL-01 | 303M ViT + LLM | Multimodal vision-language | ❌ | - |
+| Jan 2025 | T2A-01-HD | - | Text-to-audio, high definition | ❌ | - |
+| Jun 2025 | MiniMax-M1 | - | 1M context window, 80K output | ❌ | - |
+| 2025 | Hailuo-02 | - | Video generation | ❌ | - |
+| 2025 | Music-01 | - | Music generation | ❌ | - |
+| 2025 | Speech-02 | - | Lifelike speech synthesis | ❌ | - |
+
+### Performance and Reception
+
+**Benchmark Claims:**
+- MiniMax-Text-01: Claims outperform Google Gemini 2.0 Flash on MMLU and SimpleQA
+- Competitive with leading frontier models on various benchmarks
+- Strong performance on long-context tasks
+
+**Market Reception:**
+- Recognized as one of China's leading "AI Tiger" startups
+- Praised for MoE efficiency and long-context capabilities
+- Strategic partnerships with Alibaba and Tencent provide market advantages
+- Positive reception for multimodal models
+- Positioning as credible alternative to frontier Western models
+
+### Notable Achievements and Stories
+
+1. **MoE Pioneer**: First Chinese company to successfully deploy large-scale MoE models (ABAB 6.5)
+2. **Extreme Context**: MiniMax-Text-01 supports 4M token inference (vs DeepSeek-V3's 128K)
+3. **Fast Scaling**: From startup to $2.5B valuation in ~2.5 years
+4. **Strategic Backing**: Secured both Alibaba and Tencent as investors
+5. **Multimodal Leadership**: Early success in integrating vision-language capabilities
+6. **Jensen Huang Endorsement**: Reportedly backed by NVIDIA CEO based on AI innovation
+
+---
+
+## 10. StepFun
+
+### Company Overview
+
+**StepFun** (Step函数), founded by former Microsoft Asia Research Institute leadership, represents the "experienced researcher launching AI startup" archetype. Led by **Jiang Daxin**, a 16-year Microsoft veteran who headed projects like Bing search engine and Cortana voice assistant, StepFun focuses on "scaling law" principles - achieving AGI through larger models and more diverse data rather than novel architectures. The company released 11 foundation models in its first year, including the Step-2 trillion-parameter MoE model that ranks among China's best-performing LLMs.
+
+### Founding Story and History
+
+StepFun was founded in **April 2023** by **Jiang Daxin**, who brought 16 years of experience leading critical initiatives at Microsoft. Headquartered in Xuhui, Shanghai, the company is explicitly focused on achieving AGI (Artificial General Intelligence).
+
+**Jiang Daxin's Background:**
+- Led Bing search engine development
+- Headed Cortana intelligent voice assistant project
+- Oversaw Azure cognitive services
+- Developed natural language understanding systems for Microsoft 365
+- Chief Scientist of Microsoft Asia Research Institute
+
+**Founding Team**: Includes co-founders with shared Microsoft experience, including Zhu and Jiao Binxing.
+
+**Key Timeline:**
+- **Apr 2023**: Founded by Jiang Daxin and team
+- **Mar 2024**: Launched Step series models (Step-1 released)
+- **2024**: Released 11 foundation models including Step-1V (multimodal)
+- **2024**: Developed Step-2 trillion-parameter MoE model
+- **2024**: Series B funding: "several hundred million dollars"
+- **Dec 2024**: Secured additional funding in Series B round
+- **2025**: Step-Video-T2V text-to-video model released
+
+StepFun's rapid model releases reflect strong belief in scaling law approach.
+
+### Funding and Investment
+
+**Funding Information:**
+- **Series B (2024)**: "Several hundred million dollars" reported (exact amount not disclosed)
+- **Series B (Dec 2024)**: Additional funding round secured
+- **Status**: Achieved unicorn status (>$1B valuation implied)
+
+**Strategic Investment**: Funding indicates confidence in Jiang Daxin's leadership and StepFun's technical approach.
+
+### Strategic Positioning
+
+StepFun positions as **"Scaling Law AI - Bigger Models & More Data = AGI"** with philosophy:
+
+1. **Scaling Focus**: Belief that bigger models and diverse data drive AGI
+2. **Speed to Market**: Rapid model releases and iterations
+3. **Frontier Performance**: Competing with state-of-the-art on benchmarks
+4. **Technical Depth**: Led by experienced AI researcher (Jiang Daxin)
+5. **Comprehensive Models**: Text, multimodal, video, and audio models
+6. **Chinese Excellence**: Focus on building models competitive with Western alternatives
+
+### Technical Innovations and Architecture
+
+**Scaling Law Approach:**
+- Emphasis on model scale and data diversity over novel architectures
+- MoE architecture for Step-2 (trillion parameters)
+- Hybrid dense-sparse models
+
+**Step Series Architecture:**
+- Step-1: Dense 130B parameter architecture
+- Step-1V: Multimodal (100B+ parameters)
+- Step-2: Trillion-parameter MoE model
+- Step-1 variants: 8K and 32K context lengths (step-1-8k, step-1-32k)
+- Step-2-16k: 16K context variant
+
+**Multimodal & Generative Capabilities:**
+- Step-1V: Vision-language understanding
+- Step-Video-T2V: Text-to-video generation
+- Step-Audio: Speech generation and understanding (experimental)
+- Music generation experimental features
+
+### Team Background
+
+StepFun's leadership and team:
+- **Jiang Daxin**: Founder, CEO; 16-year Microsoft veteran, Asia Research Institute chief scientist
+- **Co-founders**: Zhu and Jiao Binxing (shared Microsoft background)
+- Engineers and researchers from top AI labs
+- Team emphasizing experience over startup inexperience
+
+### Model Lineage and Release Timeline
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
+|---|---|---|---|---|---|
+| Mar 2024 | Step-1 | 130B (dense) | Foundation text model | ❌ | - |
+| 2024 | Step-1-8k | 130B | 8K context variant | ❌ | - |
+| 2024 | Step-1-32k | 130B | 32K context variant | ❌ | - |
+| 2024 | Step-1V | 100B+ | Multimodal vision-language | ❌ | - |
+| 2024 | Step-2 | 1T+ (MoE) | Trillion-parameter model | ❌ | - |
+| 2024 | Step-2-16k | 1T+ (MoE) | Trillion-param, 16K context | ❌ | - |
+| 2025 | Step-Video-T2V | - | Text-to-video generation | ❌ | - |
+| 2025 | Step-Audio | - | Speech synthesis & understanding | ❌ | - |
+| TBD | 11+ models total | Various | Various specializations | - | - |
+
+### Performance and Reception
+
+**Benchmark Performance:**
+- Step-2-16k: Ranks 5th globally on LiveBench
+- Top performance among Chinese LLMs domestically
+- Step-2: Approaches GPT-4 level on multiple dimensions:
+  - Mathematics: Strong performance
+  - Logic: Competitive
+  - Programming: Competitive
+  - Knowledge: Strong
+  - Creativity: Strong
+  - Multi-turn dialogue: Strong
+- Instruction following: 86.57 score on instruction following (high)
+
+**Market Reception:**
+- Recognized as strong contender among Chinese AI startups
+- Positive reception for rapid model development pace
+- Respect for Jiang Daxin's leadership and Microsoft background
+- Step-2 considered among China's best-performing models
+- Appreciated for scaling law focus (clear technical philosophy)
+
+### Notable Achievements and Stories
+
+1. **Experienced Leadership**: Led by Microsoft veteran with track record on major projects
+2. **Rapid Development**: 11 models released within first year
+3. **Trillion Parameters**: Step-2 represents first trillion-parameter model by Chinese startup
+4. **Scaling Philosophy**: Clear technical positioning based on scaling laws
+5. **Competitive Performance**: Step-2 ranks 5th globally, outperforming many Western models
+6. **Multimodal & Generative**: Expanding beyond text to video, audio, music
+7. **AGI Focus**: Explicit commitment to artificial general intelligence development
+
+---
+
+## 11. SenseTime (SenseNova)
 
 ### Company Overview
 

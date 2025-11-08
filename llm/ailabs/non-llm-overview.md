@@ -17,6 +17,16 @@ This document tracks foundation models and specialized builders across non-LLM d
   - 💰 $4B valuation talks (2024)
   - 👥 Founded by ex-Stability AI team
 
+### Chinese Image Gen Labs
+
+- [x] 🇨🇳 Tencent - Hunyuan Image 3.0
+  - 🎨 Hunyuan Image 3.0: Text-to-image generation
+  - 🎨 Supports multiple styles (watercolor, oil painting, animation, 3D)
+  - 📊 Chinese and English support
+  - 🎭 Different Dimension Me: Anime photo generator
+  - 🔓 Parts of Hunyuan open-sourced (3D models, translation tools)
+  - 📱 Available on Hunyuan-image.com
+
 ### Multimodal Companies with Image Gen (See LLM-Overview for full details)
 - Google (Gemini Diffusion, Veo video)
 - OpenAI (DALL-E via GPT-4V)
@@ -105,6 +115,17 @@ This document tracks foundation models and specialized builders across non-LLM d
   - 📊 Text/image-to-video, various aspect ratios
   - 🏆 Positioned as "world's most powerful" video generator (Chinese competitor to OpenAI)
 
+- [x] 🇨🇳 Shengshu Technology - Vidu
+  - 🎥 Vidu Q1/Q2: 16-second to 2-minute videos, 1080p resolution
+  - 🎬 Vidu Q2 (upgraded): 3x faster reference video generation
+  - 🎨 Reference image generation: Supports inputting up to 7 images simultaneously
+  - 🎯 Image-to-video capabilities with high consistency
+  - 💰 Series A: Billions of yuan funding (2024)
+  - 🤝 Investors: Baidu, Alibaba Ant Group, Qiming Venture Partners, Beijing AI Industry Investment Fund
+  - 📊 Commercial success: 400M+ videos generated, $20M ARR
+  - 🤝 Partnerships: JD.com, Amazon, e-commerce/advertising/animation verticals
+  - 👨‍🔬 Founded March 2023 (spinout from Tsinghua University)
+
 ---
 
 ## 🎙️ Audio & Speech Foundation Models
@@ -162,6 +183,14 @@ This document tracks foundation models and specialized builders across non-LLM d
   - 🗣️ 1,000+ natural voices, 60+ languages
   - 👥 50M+ users
   - 🎯 AI Voice Cloning, Dubbing, Voice Changer
+
+- [x] 🇨🇳 iFlyTek (科大讯飞) - Unisound
+  - 🗣️ Speech recognition, synthesis, voiceprint synthesis
+  - 🗣️ Offline control and far-field processing
+  - 📊 Anti-noise and far-field speech signal processing
+  - 🎯 Use cases: Robotics, education, healthcare, connected vehicles
+  - 🏢 Major Chinese AI company, publicly listed
+  - 🤝 Partnerships with Huawei, Xiaomi, other major tech firms
 
 ### Music & Sound Generation
 
