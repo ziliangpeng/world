@@ -1,6 +1,8 @@
-# 📚 TODO: LLM Research
+# 📚 LLM Foundation Models Research
 
-This file tracks the research on various LLM models from different companies and research labs.
+This file tracks comprehensive research on Large Language Models (LLMs) and foundation models from companies and research labs worldwide.
+
+**Related doc:** See `non-llm-overview.md` for video, image, audio, robotics, and scientific foundation models.
 
 ## 🇺🇸 United States AI Companies
 
@@ -56,14 +58,6 @@ This file tracks the research on various LLM models from different companies and
   - 🎙️ Real-time speech and text understanding
   - 🔓 Open science approach (€300M budget)
   - 👥 Team from Meta FAIR, Google DeepMind
-- [x] 🇩🇪 Black Forest Labs
-  - 🎨 FLUX.1 series (12B parameters)
-  - 🎨 FLUX.1 Schnell (open-source, fastest)
-  - 🎨 FLUX.1 Dev (open-weight)
-  - 🎨 FLUX.1 Pro (premium API)
-  - 🎨 FLUX 1.1 Pro (ultra mode)
-  - 💰 $4B valuation talks (2024)
-  - 👥 Founded by ex-Stability AI team
 - [x] 🇪🇺 EuroLLM Consortium
   - 🤖 EuroLLM-9B (released Dec 2024)
   - 🌍 Supports all 24 EU official languages + 11 international
@@ -74,12 +68,6 @@ This file tracks the research on various LLM models from different companies and
   - 🎓 Led by Charles University (Prague) + Silo AI
   - 💰 EU-funded 2025 program
   - 🌍 Pan-European collaboration
-- [x] 🇩🇪 LAION (Large-scale AI Open Network)
-  - 📊 LAION-5B, LAION-400M (massive datasets)
-  - 📊 Re-LAION-5B (Aug 2024 release)
-  - 🎨 Enabled Stable Diffusion, Imagen training
-  - 🏛️ German nonprofit
-  - ⚖️ Won legal case on TDM exceptions (Sept 2024)
 - [x] 🇬🇧 Stability AI
   - 🎨 Stable Diffusion series (1, 2, 3, 3.5)
   - 🎨 Stable Diffusion 3.5 Large
@@ -341,10 +329,6 @@ This file tracks the research on various LLM models from different companies and
   - 🤖 SenseNova series (1.0 through 5.0)
   - 💬 SenseChat
   - 👁️ SenseNova Multimodal
-- [x] Megvii
-  - ⚠️ 👁️ Computer vision foundation models only (YOLOX, BEVDepth)
-  - 👁️ Multi-modal foundation models (research focus)
-  - ⚠️ Not traditional LLM foundation models
 - [x] Rednote (Xiaohongshu)
   - 🤖 dots.llm1 (first open-source foundation model)
   - ⚠️ Limited documentation available
@@ -792,10 +776,6 @@ This file tracks the research on various LLM models from different companies and
   - 🤖 Robotics foundation models (ILIAD)
   - 🎯 Specialized domains: law, music, robotics, biomedicine
   - 👨‍💼 New director (2025): Carlos Guestrin
-- [x] UCLA StarAI Lab
-  - Research focus: Tractable Deep Generative Models, Statistical Relational Learning
-  - Work on LLM optimization and symbolic reasoning
-  - Primary emphasis on probabilistic inference, not foundation models
 - [x] MIT (CSAIL & Media Lab)
   - Self-learning language models research
   - Co-LLM algorithm (expert LLM collaboration)
@@ -909,14 +889,6 @@ This file tracks the research on various LLM models from different companies and
   - LLM research across multiple institutes
   - Focus on technical improvements and societal implications
   - Brain science + foundation models symposium
-- [x] University of Freiburg - 🇩🇪
-  - 👨‍🔬 Frank Hutter (Professor) - foundation models for tabular data
-  - 🤖 TabPFN v2 (published Nature 2025) - orders of magnitude more data than v1
-    - 1M+ downloads
-    - Bayesian approach, works "out of the box" on time-series
-    - Sets new SOTA on key time-series benchmarks
-  - 🔧 CAAFE (first method for automated feature engineering with LLMs)
-  - 🏛️ ELLIS unit Freiburg, OpenEuroLLM research participation
 - [x] 🇪🇺 European Laboratory for Learning and Intelligent Systems (ELLIS)
   - 🌍 Pan-European AI network (43 sites, 16 research programs, 16 countries)
   - 🎓 ELLIS PhD & Postdoc Program
@@ -932,11 +904,6 @@ This file tracks the research on various LLM models from different companies and
   - AGI research via JEPA and energy-based models
   - Focus on practical generative AI solutions
   - Collaboration with academic and commercial institutions
-- [x] Cornell Statistical Signal Processing Laboratory
-  - Work on "Interacting Large Language Model Agents"
-  - "Bayesian Social Learning Based Interpretable Models" research
-  - Applied statistical signal processing to modern ML systems
-  - Focus on behavioral economics + machine learning
 
 ## 🎯 Specialized Foundation Model Builders (Underserved Languages/Modalities)
 
@@ -958,23 +925,17 @@ This file tracks the research on various LLM models from different companies and
   - 🌍 10M+ translations served, community-based data collection
   - 🤝 Partnerships with Dalberg, i4policy, UNICEF
 
-- [x] 🇺🇸 Play.ht
-  - 🤖 PlayHT2.0 (proprietary speech foundation model)
-  - 🤖 Play3.0-mini (speech generation)
-  - 🎙️ Trained on 1M+ hours of multilingual speech
-  - 🗣️ Voice cloning (3-10 seconds needed)
-  - 🌍 100+ languages with emotional expressiveness
-  - 🏆 First speech generation models with emotional expressiveness at scale
-
 ---
 
 ## 📊 Summary
 
-### ✅ Research Complete! (Reorganized by geography)
+### ✅ Research Complete! (LLM Foundation Models)
 
-**📈 Total Entries Researched: 200+** (organized by geography + commercial type)
+**📈 Total LLM Entries Researched: 190+** (organized by geography + commercial type)
 
-**✨ Companies WITH Foundation Models: ~180+** (verified to have their own LLMs/foundation models)
+**✨ Companies/Labs WITH LLM Foundation Models: ~175+** (verified to have their own LLMs/foundation models)
+
+**📚 See non-llm-overview.md for:** Video, image, audio, robotics, and scientific foundation models
 
 **North America:**
 - 🇺🇸 US Frontier AI Companies (9): Google, OpenAI, Microsoft, Meta, Amazon, NVIDIA, Apple, **Anthropic, xAI**
