@@ -169,26 +169,31 @@ During a dedicated week in late February 2025, DeepSeek released five major open
    - Achieved 5,000+ GitHub stars within 6 hours of release
    - Enables efficient inference for MLA-based models
    - Production-tested in DeepSeek's own deployments
+   - Links: [GitHub](https://github.com/deepseek-ai/FlashMLA)
 
 2. **DeepEP** - Expert Parallelism optimization framework
    - Optimized strategies for distributed MoE training
    - Reduces communication overhead in expert-sharded architectures
    - Battle-tested at scale
+   - Links: [GitHub](https://github.com/deepseek-ai/DeepEP), [Website](https://www.deepep.org/en/)
 
 3. **DeepGEMM** - GEMM (General Matrix Multiplication) library
    - Mathematical computation acceleration for tensor operations
    - Hardware-aligned implementations for efficiency
    - Critical component of DeepSeek's training infrastructure
+   - Links: [GitHub](https://github.com/deepseek-ai/DeepGEMM)
 
-4. **Optimized Parallelism Strategies** - Training efficiency tools
-   - Cross-node communication optimization techniques
-   - Proven methods from DeepSeek's own large-scale training
-   - Reproducible recipes for developers
+4. **Optimized Parallelism Strategies** - Training efficiency tools (Two Components)
+   - **DualPipe**: Bidirectional pipeline parallelism for computation-communication overlap
+     - Links: [GitHub](https://github.com/deepseek-ai/DualPipe)
+   - **EPLB**: Expert Parallelism Load Balancer for optimal expert placement
+     - Links: [GitHub](https://github.com/deepseek-ai/EPLB), [Website](https://www.deepep.org/en/eplb)
 
 5. **Fire-Flyer File System (3FS)** - Distributed parallel file system
    - Designed for AI workload I/O patterns
    - Optimized for large model training and inference serving
    - Production-proven infrastructure
+   - Links: [GitHub](https://github.com/deepseek-ai/3FS)
 
 **Community Ecosystem:**
 
