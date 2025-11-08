@@ -342,22 +342,22 @@ DeepSeek's leadership and team include:
 |---|---|---|---|---|---|
 | Nov 2, 2023 | DeepSeek Coder | 1.3B, 5.7B, 6.7B, 33B | Code generation specialist | ✅ | - |
 | Nov 29, 2023 | DeepSeek-LLM | 7B, 67B | Foundation models | ✅ | - |
-| Jan 2024 | DeepSeek-MoE | 16B (2.8B activated) | MoE architecture (Base and Chat variants) | ✅ | [arXiv:2401.06066](https://arxiv.org/abs/2401.06066) |
+| Jan 2024 | DeepSeek-MoE | 16B-A2.8B | MoE architecture (Base and Chat variants) | ✅ | [arXiv:2401.06066](https://arxiv.org/abs/2401.06066) |
 | Feb 2024 | DeepSeek-Math | 7B | Mathematical reasoning (Base, Instruct, RL) | ✅ | [arXiv:2402.03300](https://arxiv.org/abs/2402.03300) |
-| May 6, 2024 | DeepSeek-V2 | 236B (21B activated) | MoE, multi-head latent attention (MLA) | ✅ | [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
-| May 16, 2024 | DeepSeek-V2-Lite | 15.7B (2.4B activated) | Lightweight MoE, deployable on single 40G GPU | ✅ | [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
-| Jun 2024 | DeepSeek-Coder-V2 | 16B (2.4B activated), 236B (21B activated) | Code intelligence, beats GPT-4 Turbo | ✅ | - |
-| Sep 2024 | DeepSeek-V2.5 | 236B (21B activated) | Fusion of V2-Chat and Coder-V2-Instruct | ✅ | - |
+| May 6, 2024 | DeepSeek-V2 | 236B-A21B | MoE, multi-head latent attention (MLA) | ✅ | [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
+| May 16, 2024 | DeepSeek-V2-Lite | 15.7B-A2.4B | Lightweight MoE, deployable on single 40G GPU | ✅ | [arXiv:2405.04434](https://arxiv.org/abs/2405.04434) |
+| Jun 2024 | DeepSeek-Coder-V2 | 16B-A2.4B, 236B-A21B | Code intelligence, beats GPT-4 Turbo | ✅ | - |
+| Sep 2024 | DeepSeek-V2.5 | 236B-A21B | Fusion of V2-Chat and Coder-V2-Instruct | ✅ | - |
 | Nov 20, 2024 | DeepSeek-R1-Lite-Preview | - | First reasoning model, o1-preview competitor | ✅ | - |
-| Dec 10, 2024 | DeepSeek-V2.5-1210 | 236B (21B activated) | Updated V2.5 with improved math/coding | ✅ | - |
-| Dec 2024 | DeepSeek-V3 | 671B (37B activated) | MoE, cost-efficient, frontier performance | ✅ | [arXiv:2412.19437](https://arxiv.org/abs/2412.19437) |
-| Jan 20, 2025 | DeepSeek-R1 | 671B (37B activated) | Reasoning model, o1 competitor | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
-| Jan 20, 2025 | DeepSeek-R1-Zero | 671B (37B activated) | Pure RL reasoning without distillation | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
+| Dec 10, 2024 | DeepSeek-V2.5-1210 | 236B-A21B | Updated V2.5 with improved math/coding | ✅ | - |
+| Dec 2024 | DeepSeek-V3 | 671B-A37B | MoE, cost-efficient, frontier performance | ✅ | [arXiv:2412.19437](https://arxiv.org/abs/2412.19437) |
+| Jan 20, 2025 | DeepSeek-R1 | 671B-A37B | Reasoning model, o1 competitor | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
+| Jan 20, 2025 | DeepSeek-R1-Zero | 671B-A37B | Pure RL reasoning without distillation | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
 | Jan 20, 2025 | DeepSeek-R1-Distill | Qwen: 1.5B, 7B, 14B, 32B; Llama: 8B, 70B | Distilled from R1 to Qwen2.5 and Llama3 | ✅ | [arXiv:2501.12948](https://arxiv.org/abs/2501.12948) |
-| Mar 24, 2025 | DeepSeek-V3-0324 | 671B (37B activated) | Enhanced reasoning and coding, MIT license | ✅ | - |
-| Aug 2025 | DeepSeek-V3.1 | 671B (37B activated) | Improvements over V3 | ✅ | - |
-| Sep 22, 2025 | DeepSeek-V3.1-Terminus | 671B (37B activated) | Updated V3.1 version | ✅ | - |
-| Sep 29, 2025 | DeepSeek-V3.2-Exp | 671B (37B activated) | Experimental version | ✅ | - |
+| Mar 24, 2025 | DeepSeek-V3-0324 | 671B-A37B | Enhanced reasoning and coding, MIT license | ✅ | - |
+| Aug 2025 | DeepSeek-V3.1 | 671B-A37B | Improvements over V3 | ✅ | - |
+| Sep 22, 2025 | DeepSeek-V3.1-Terminus | 671B-A37B | Updated V3.1 version | ✅ | - |
+| Sep 29, 2025 | DeepSeek-V3.2-Exp | 671B-A37B | Experimental version | ✅ | - |
 
 ### Performance and Reception
 
