@@ -739,39 +739,39 @@ MiniMax operates with strong academic rigor, publishing technical papers and eng
 
 ### Foundation Models (Text)
 
-| Release | Model | Parameters | Context | Key Features | Resources |
-|---------|-------|------------|---------|--------------|-----------|
-| **Apr 2024** | **ABAB 6.5** | 1T+B (MoE) | 200K tokens | First MoE-based commercial model, competitive with GPT-4/Claude-3 | [News](https://www.minimax.io/news/abab65-series) |
-| **Apr 2024** | **ABAB 6.5s** | 1T+B (MoE) | 200K tokens | Efficient variant: 30K words/sec processing speed | API: abab6.5s-chat |
-| **Jan 2025** | **MiniMax-Text-01** | 456B (45.9B active) | 4M inference | Lightning Attention, hybrid architecture, outperforms Gemini 2.0 Flash | [Paper](https://arxiv.org/abs/2501.08313) · [GitHub](https://github.com/MiniMax-AI/MiniMax-01) |
-| **Jun 2025** | **MiniMax-M1-40K** | 456B (45.9B active) | 1M tokens | Open-weight reasoning model, 40K thinking tokens | [arXiv](https://arxiv.org/abs/2506.13585) · [GitHub](https://github.com/MiniMax-AI/MiniMax-M1) |
-| **Jun 2025** | **MiniMax-M1-80K** | 456B (45.9B active) | 1M tokens | Open-weight reasoning model, 80K thinking tokens, 25% FLOPs vs DeepSeek R1 | [News](https://www.minimax.io/news/minimaxm1) |
-| **Oct 2025** | **MiniMax-M2** | 230B (10B active) | Context TBD | Open-source, MIT licensed, coding/agentic focus, #1 on open-source evals | [GitHub](https://github.com/MiniMax-AI/MiniMax-M2) · [HF](https://huggingface.co/MiniMaxAI/MiniMax-M2) · [Blog](https://venturebeat.com/ai/minimax-m2-is-the-new-king-of-open-source-llms) |
+| Release | Model | Parameters | Context | Open Weights | Key Features | Resources |
+|---------|-------|------------|---------|--------------|--------------|-----------|
+| **Apr 2024** | **ABAB 6.5** | 1T+B (MoE) | 200K tokens | ❌ | First MoE-based commercial model, competitive with GPT-4/Claude-3 | [News](https://www.minimax.io/news/abab65-series) |
+| **Apr 2024** | **ABAB 6.5s** | 1T+B (MoE) | 200K tokens | ❌ | Efficient variant: 30K words/sec processing speed | API: abab6.5s-chat |
+| **Jan 2025** | **MiniMax-Text-01** | 456B (45.9B active) | 4M inference | ❌ | Lightning Attention, hybrid architecture, outperforms Gemini 2.0 Flash | [Paper](https://arxiv.org/abs/2501.08313) · [GitHub](https://github.com/MiniMax-AI/MiniMax-01) |
+| **Jun 2025** | **MiniMax-M1-40K** | 456B (45.9B active) | 1M tokens | ✅ | Open-weight reasoning model, 40K thinking tokens | [arXiv](https://arxiv.org/abs/2506.13585) · [GitHub](https://github.com/MiniMax-AI/MiniMax-M1) |
+| **Jun 2025** | **MiniMax-M1-80K** | 456B (45.9B active) | 1M tokens | ✅ | Open-weight reasoning model, 80K thinking tokens, 25% FLOPs vs DeepSeek R1 | [News](https://www.minimax.io/news/minimaxm1) |
+| **Oct 2025** | **MiniMax-M2** | 230B (10B active) | Context TBD | ✅ | Open-source, MIT licensed, coding/agentic focus, #1 on open-source evals | [GitHub](https://github.com/MiniMax-AI/MiniMax-M2) · [HF](https://huggingface.co/MiniMaxAI/MiniMax-M2) · [Blog](https://venturebeat.com/ai/minimax-m2-is-the-new-king-of-open-source-llms) |
 
 ### Multimodal Models
 
-| Release | Model | Architecture | Key Features | Resources |
-|---------|-------|--------------|--------------|-----------|
-| **Jan 2025** | **MiniMax-VL-01** | 303M ViT + 456B LLM | Vision-Language, dynamic resolution (336x336 to 2016x2016), 4M context | [Paper](https://arxiv.org/abs/2501.08313) · [HF](https://huggingface.co/MiniMaxAI/MiniMax-VL-01) |
+| Release | Model | Architecture | Open Weights | Key Features | Resources |
+|---------|-------|--------------|--------------|--------------|-----------|
+| **Jan 2025** | **MiniMax-VL-01** | 303M ViT + 456B LLM | ❌ | Vision-Language, dynamic resolution (336x336 to 2016x2016), 4M context | [Paper](https://arxiv.org/abs/2501.08313) · [HF](https://huggingface.co/MiniMaxAI/MiniMax-VL-01) |
 
 ### Speech & Audio Models
 
-| Release | Model | Type | Key Features | Resources |
-|---------|-------|------|--------------|-----------|
-| **2025** | **Speech-02** | Text-to-Speech | 32 languages, 99% similarity, 200K chars capacity, 44.1kHz audio, 300+ voices | [Tech](https://www.kdjingpai.com/en/minimax-speech-02/) · [API](https://replicate.com/minimax/speech-02-hd) |
-| **2025** | **Speech-02-HD** | TTS (High Quality) | Production-grade quality, multiple formats (MP3/WAV/FLAC/PCM) | [fal.ai](https://fal.ai/models/fal-ai/minimax/speech-02-hd) |
-| **2025** | **Speech-02-Turbo** | TTS (Real-time) | Optimized for low-latency applications | API variant |
-| **2025** | **T2A-01-HD** | Text-to-Audio | High-definition audio generation from text | Hailuo platform |
-| **2025** | **Music-01** | Music Generation | Multiple genres (classical, pop, rock, electronic), max 60s output | [Replicate](https://replicate.com/minimax/music-01) · [API](https://aimlapi.com/minimax-music-api) |
+| Release | Model | Type | Open Weights | Key Features | Resources |
+|---------|-------|------|--------------|--------------|-----------|
+| **2025** | **Speech-02** | Text-to-Speech | ❌ | 32 languages, 99% similarity, 200K chars capacity, 44.1kHz audio, 300+ voices | [Tech](https://www.kdjingpai.com/en/minimax-speech-02/) · [API](https://replicate.com/minimax/speech-02-hd) |
+| **2025** | **Speech-02-HD** | TTS (High Quality) | ❌ | Production-grade quality, multiple formats (MP3/WAV/FLAC/PCM) | [fal.ai](https://fal.ai/models/fal-ai/minimax/speech-02-hd) |
+| **2025** | **Speech-02-Turbo** | TTS (Real-time) | ❌ | Optimized for low-latency applications | API variant |
+| **2025** | **T2A-01-HD** | Text-to-Audio | ❌ | High-definition audio generation from text | Hailuo platform |
+| **2025** | **Music-01** | Music Generation | ❌ | Multiple genres (classical, pop, rock, electronic), max 60s output | [Replicate](https://replicate.com/minimax/music-01) · [API](https://aimlapi.com/minimax-music-api) |
 
 ### Video Generation Models
 
-| Release | Model | Architecture | Key Features | Resources |
-|---------|-------|--------------|--------------|-----------|
-| **2025** | **Hailuo-02** | Noise-aware Compute Redistribution (NCR) | 3x larger params, 4x training data vs v1, character-consistent, 720p/25fps | [News](https://www.minimax.io/news/minimax-hailuo-23) |
-| **2025** | **Hailuo-02-Standard** | Image-to-Video variant | Reference-based video generation | [fal.ai](https://fal.ai/models/fal-ai/minimax/hailuo-02/standard/image-to-video) |
-| **2025** | **Hailuo-2.3** | Enhanced Video Gen | Improved dynamic expression, anime/illustration support, ink wash painting style | [News](https://www.minimax.io/news/minimax-hailuo-23) |
-| **2025** | **Hailuo-2.3-FastVideo** | Optimized Video Gen | Faster processing for video generation | Platform variant |
+| Release | Model | Architecture | Open Weights | Key Features | Resources |
+|---------|-------|--------------|--------------|--------------|-----------|
+| **2025** | **Hailuo-02** | Noise-aware Compute Redistribution (NCR) | ❌ | 3x larger params, 4x training data vs v1, character-consistent, 720p/25fps | [News](https://www.minimax.io/news/minimax-hailuo-23) |
+| **2025** | **Hailuo-02-Standard** | Image-to-Video variant | ❌ | Reference-based video generation | [fal.ai](https://fal.ai/models/fal-ai/minimax/hailuo-02/standard/image-to-video) |
+| **2025** | **Hailuo-2.3** | Enhanced Video Gen | ❌ | Improved dynamic expression, anime/illustration support, ink wash painting style | [News](https://www.minimax.io/news/minimax-hailuo-23) |
+| **2025** | **Hailuo-2.3-FastVideo** | Optimized Video Gen | ❌ | Faster processing for video generation | Platform variant |
 
 ---
 
