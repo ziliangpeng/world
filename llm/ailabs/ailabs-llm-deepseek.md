@@ -218,9 +218,9 @@ DeepSeek's team culture prioritizes:
 | Jan 20, 2025 | Janus-Pro | 1B, 7B | Advanced unified understanding & generation | ✅ | [GitHub](https://github.com/deepseek-ai/Janus), [HF](https://huggingface.co/deepseek-ai/Janus-Pro-7B), [arXiv:2501.17811](https://arxiv.org/abs/2501.17811) |
 | Apr 2025 | DeepSeek-Prover-V2 | 7B, 671B | State-of-the-art formal theorem proving (88.9% MiniF2F) | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-Prover-V2), [arXiv:2504.21801](https://arxiv.org/abs/2504.21801) |
 | Mar 24, 2025 | DeepSeek-V3-0324 | 671B-A37B | Enhanced reasoning and coding, MIT license | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3-0324) |
-| Aug 2025 | DeepSeek-V3.1 | 671B-A37B | Improvements over V3 | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.1) |
-| Sep 22, 2025 | DeepSeek-V3.1-Terminus | 671B-A37B | Updated V3.1 version | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus) |
-| Sep 29, 2025 | DeepSeek-V3.2-Exp | 671B-A37B | Experimental version | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp) |
+| Aug 2025 | DeepSeek-V3.1 | 671B-A37B | Hybrid unified thinking mode, 128K context, AIME 93.1%, improved agent capabilities | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.1) |
+| Sep 21, 2025 | DeepSeek-V3.1-Terminus | 671B-A37B | Production-ready V3.1 polish, agent stability, language consistency fix, SWE Verified 68.4%, BrowseComp 38.5% | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus) |
+| Sep 29, 2025 | DeepSeek-V3.2-Exp | 671B-A37B | DeepSeek Sparse Attention (DSA), 50% cost reduction, parity with Terminus, experimental research step | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp) |
 | Oct 20, 2025 | DeepSeek-OCR | - | Vision-text compression for long contexts (97% OCR at 10x) | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-OCR), [HF](https://huggingface.co/deepseek-ai/DeepSeek-OCR), [arXiv:2510.18234](https://arxiv.org/abs/2510.18234) |
 
 ### 📄 Research Papers & Techniques (Without Separate Models)
