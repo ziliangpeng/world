@@ -338,7 +338,7 @@ This file tracks comprehensive research on Large Language Models (LLMs) and foun
   - 💭 DeepSeek-R1-Zero
   - 🤖 DeepSeek V3.1
   - 💻 DeepSeek Coder
-- [x] Moonshot AI (Kimi) - [Deep Dive](ailabs-llm-moonshot-kimi.md)
+- [x] Moonshot AI (Kimi) - [Deep Dive](ailabs-llm-chinese-moonshot.md)
   - 🤖 Kimi K2 series (1 trillion parameters total, 32B activated)
   - 🤖 Kimi-K2-Base
   - 💬 Kimi-K2-Instruct

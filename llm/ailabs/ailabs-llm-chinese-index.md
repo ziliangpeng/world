@@ -271,7 +271,7 @@ Hunyuan is developed by Tencent's AI research organization, including:
 
 ## 5. Moonshot AI (Kimi)
 
-**For detailed deep-dive analysis, see: [`ailabs-llm-moonshot-kimi.md`](ailabs-llm-moonshot-kimi.md)**
+**For detailed deep-dive analysis, see: [`ailabs-llm-chinese-moonshot.md`](ailabs-llm-chinese-moonshot.md)**
 
 ### Quick Summary
 
