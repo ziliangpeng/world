@@ -108,6 +108,25 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 - **Location**: Based in San Francisco, recruiting for China and US teams
 - **Online Presence**: [Personal Homepage](https://ppwwyyxx.com/)
 
+#### Key Executive Leadership
+
+**Zhang Yutong (张予彤) - Product Operations & Strategic Partner**
+- **Education**: BS in Electronic Engineering from Tsinghua University, MS in Management Engineering from Stanford University
+- **Background**: Venture capitalist and operations executive, instrumental in Moonshot's funding and product strategy
+- **Prior Experience**:
+  - Samsung (engineering roles)
+  - Bain & Company (management consulting)
+  - Qu Add Games/Ququ Games (COO - Chief Operating Officer)
+  - **GSR Ventures (2011-2024)**: Managing Partner, invested in major exits including Xiaohongshu and DeePhi Tech
+- **Connection to Yang Zhilin**: Tsinghua University alumni; previously invested in Yang's venture Recurrent Intelligence (2016)
+- **Role at Moonshot AI**:
+  - Key facilitator of $1B+ Series B funding round (February 2024)
+  - Negotiated strategic partnership with Alibaba in Singapore
+  - Joined officially as Product Operations Lead in April 2024
+  - Transitioned from GSR Ventures to full-time Moonshot AI commitment
+- **Shareholding**: ~12 million shares, second-largest individual shareholder after Yang Zhilin
+- **Note**: Yang Zhilin has publicly characterized her shareholding and contributions as "co-founder level," though her formal title is Product Operations Lead rather than technical co-founder
+
 #### Team Scale and Growth
 - **Early Growth**: $60M Series A → 40-person AI team built in first 3 months
 - **Current Scale**: ~300 employees (as of 2024-2025)
