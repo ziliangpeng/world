@@ -536,11 +536,154 @@ All models integrated into **Hailuo Platform**:
 
 ## 👥 Team Background
 
-MiniMax's team includes:
-- **Yan Junjie**: Co-founder, background in computer vision and AI systems
-- **Zhou Yucong**: Co-founder, former SenseTime executive
-- Engineers and researchers from top AI labs
-- Vision expertise from SenseTime heritage transitioning to language models
+MiniMax has assembled one of China's most technically accomplished AI teams, with a unique blend of computer vision heritage, frontier AI research experience, and youth-driven innovation culture. The team of ~200 people averages around age 25, with one-third holding PhDs from world-class labs.
+
+---
+
+### 🎯 Founding Team & Core Leadership
+
+**Yan Junjie / 颜俊杰 (CEO & Co-founder)**
+- **Education**: PhD, Chinese Academy of Sciences Institute of Automation
+- **Born**: 1989 (age ~36)
+- **SenseTime Career**: Rose from intern to Vice President
+  - Led deep-learning technologies, distributed computing, inference systems, and general intelligence initiatives
+  - Served as CTO of Smart City Business Group (major revenue source)
+  - Left just as SenseTime was preparing for IPO
+- **Vision**: "Building general-purpose AI for the public was important. The aim was to develop a model company that could also make good products"
+- **Leadership Style**: Technical leader with strong research background, willing to bet company on unproven approaches (80% compute on MoE)
+- **Recognition**: Featured in Jensen Huang's China visit; positioning MiniMax for potential IPO
+- **Twitter/X**: [@YJJMinimax](https://x.com/YJJMinimax)
+
+**Zhou Yucong / 周昱聪 (Co-founder & Head of Algorithms)**
+- **SenseTime Career**: Led algorithms R&D team
+- **Competition Success**: Won championships at ASC15, ISC17, and ICCV 2019
+- **Expertise**: Algorithm optimization, distributed systems, high-performance computing
+- **Role at MiniMax**: Oversees algorithm development and research direction
+- **Complementary to Yan**: Brings algorithmic depth and competitive programming excellence
+
+**Yang Bin / 杨斌 (Co-founder & Technical Partner)**
+- **Education**: PhD candidate, Machine Learning Group, University of Toronto
+  - Advised by Prof. Raquel Urtasun (pioneer in autonomous driving AI)
+- **Early Career**: First deep learning project at Chinese Academy of Sciences (2014)
+- **Uber ATG**: Founding team member of Uber Advanced Technologies Group research institute
+- **Waabi**: Early team member at Raquel Urtasun's autonomous driving startup
+- **Awards**:
+  - Microsoft Research PhD Fellowship (2021)
+  - NVIDIA Pioneer Award (2018)
+- **Expertise**: End-to-end learning systems, autonomous systems, data-driven AI
+- **Contribution to MiniMax**: Brings world-class research pedigree and autonomous AI experience
+- **LinkedIn**: [Bin Yang](https://www.linkedin.com/in/bin-yang-64ba2282/)
+- **Google Scholar**: [Publications](https://scholar.google.com/citations?user=Y3R-IYFQ2_cC&hl=en)
+
+**Wei Wei / 魏伟 (Former VP & Head of Open Platform, 2023-2024)**
+- **Role**: Vice President and Partner, led MiniMax Open Platform
+- **Tenure**: Joined late 2023, departed 2024
+- **Focus**: B2B commercialization, enterprise customer development, API platform growth
+- **Vision**: Ensuring MiniMax remained at cutting edge while delivering practical user value
+- **Departure**: Left as company shifted focus toward AI and consumer markets
+- **Legacy**: Established foundation for MiniMax's B2B business model
+
+**Zhang Qianchuan / 张前川 (Former Head of Consumer Product)**
+- **Previous Role**: Led user products at Toutiao (ByteDance)
+- **At MiniMax**: Head of Xingye (Glow) product
+- **Expertise**: Consumer product development, social/content products
+
+---
+
+### 🔬 Research Team Composition
+
+**Team Size & Demographics:**
+- **Total Size**: ~200 employees (as of 2024)
+- **Core R&D**: 100+ members focused on model development
+- **Average Age**: ~25 years old (mid-1990s birth cohort)
+- **Young Talent**: Many born after 2000
+- **PhD Density**: One-third of team holds PhDs from world-class institutions
+
+**Research Expertise Areas:**
+- **Natural Language Processing (NLP)**: Large-scale language model training
+- **Computer Vision**: SenseTime heritage, multimodal understanding
+- **Speech & Audio**: TTS, voice synthesis, music generation
+- **Computer Graphics**: Video generation, rendering techniques
+- **Distributed Systems**: MoE training, multi-GPU coordination
+- **Attention Mechanisms**: Lightning Attention innovation
+
+**Institutional Background:**
+- **Top Chinese Universities**: Tsinghua University, Peking University, Chinese Academy of Sciences
+- **Former Employers**:
+  - **Baidu**: ERNIE team alumni (China's early LLM project)
+  - **Alibaba Cloud**: Cloud AI infrastructure experience
+  - **SenseTime**: Computer vision and deep learning systems
+  - **International Labs**: Toronto ML Group, Uber ATG, autonomous driving companies
+
+---
+
+### 📝 Research Publications & Academic Contributions
+
+MiniMax operates with strong academic rigor, publishing technical papers and engaging with research community:
+
+**Major Publications:**
+
+1. **MiniMax-01: Scaling Foundation Models with Lightning Attention** (Jan 2025)
+   - arXiv: [2501.08313](https://arxiv.org/abs/2501.08313)
+   - ~90 authors from MiniMax research team
+   - Introduced Lightning Attention and hybrid architecture
+
+2. **MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention** (Jun 2025)
+   - arXiv: [2506.13585](https://arxiv.org/abs/2506.13585)
+   - 125+ authors from MiniMax
+   - First open-weight large-scale hybrid-attention reasoning model
+
+**Author Highlights** (from MiniMax-01 paper):
+- Aonian Li, Bangwei Gong, Bo Yang, Boji Shan, Chang Liu, Cheng Zhu, Chunhao Zhang
+- Congchao Guo, Da Chen, Dong Li, Enwei Jiao, Gengxin Li, Guojun Zhang
+- Haohai Sun, Houze Dong, Jiadai Zhu, Jiaqi Zhuang, Jiayuan Song, Jin Zhu
+- Jingtao Han, Jingyang Li, Junbin Xie, Junhao Xu, Junjie Yan (CEO)
+- *...and 60+ additional researchers*
+
+**Research Philosophy:**
+- **Open Publication**: Publishing technical details despite competitive pressures
+- **Large Collaboration**: Papers list 90-125 authors, showing distributed expertise
+- **Technical Transparency**: Detailed architecture specifications in papers
+- **Community Engagement**: Open-source models (MiniMax-M1), Hugging Face presence
+
+---
+
+### 🏢 Team Culture & Organization
+
+**Cultural Characteristics:**
+
+1. **Youth-Driven Innovation**: Average age ~25 creates fast-moving, risk-tolerant culture
+2. **Technical Meritocracy**: Decision-making concentrated on technical excellence over business metrics
+3. **Research Orientation**: Strong emphasis on publishing and demonstrating capabilities
+4. **Lean Operations**: Small team relative to scope of work (200 vs. 1000+ at competitors)
+5. **Rapid Iteration**: Quick release cycles with new model variants and features
+
+**Competitive Advantages from Team Composition:**
+
+- **SenseTime Alumni Network**: Pre-existing working relationships, shared technical language
+- **International Experience**: Exposure to frontier research (Toronto, Uber ATG, etc.)
+- **Diverse Expertise**: Rare combination of vision + NLP + systems + graphics
+- **Youth Energy**: Willingness to work intensely on ambitious technical bets
+- **PhD Density**: Deep theoretical understanding enabling architectural innovations
+
+**Hiring Philosophy:**
+- Focus on top-tier university graduates (Tsinghua, Peking, UCAS)
+- Prioritize research experience and publication record
+- Recruit from leading Chinese AI companies (Baidu, Alibaba, SenseTime)
+- Value international exposure (Toronto, US research labs)
+- Seek specialists across modalities (text, vision, audio, video)
+
+---
+
+### 🌟 Why This Team Succeeded
+
+1. **Founder Credibility**: Yan's rise from intern to VP at world's leading CV company
+2. **Complementary Skills**: Yan (vision systems) + Zhou (algorithms) + Yang (autonomous AI)
+3. **Prestige Network**: Access to top Chinese AI talent through founder connections
+4. **Clear Technical Direction**: Early MoE bet focused team's efforts
+5. **Youth + Experience**: Young energy with seasoned leadership
+6. **Research Pedigree**: PhD density enabled architectural innovations
+7. **International Perspective**: Exposure to frontier research through Toronto/Uber connections
 
 ---
 
