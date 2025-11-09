@@ -134,21 +134,113 @@ Following DeepSeek's efficiency revolution, StepFun evolved its scaling law inte
 
 ---
 
-#### vs MiniMax (MoE + Ultra-long Context)
+#### vs MiniMax (Consumer AI Entertainment Powerhouse)
 
 **MiniMax Strengths:**
-- MoE architecture with extreme long context (4M tokens)
-- Consumer revenue success ($70M in 2024)
-- Entertainment/gaming focus
-- Strong C-end products
+- **Consumer apps dominant**: Talkie (29.77M MAU globally, #4 AI app in US), Hailuo video gen (surpassed OpenAI Sora in traffic)
+- **Architectural innovation**: Lightning Attention (O(d²n) complexity), **4M token context** (20x GPT-4o, industry-leading)
+- **Global reach**: 200+ countries, 50,000+ enterprise customers, proven US market success
+- **Dual tech giant backing**: Alibaba (lead investor, $600M Series B), Tencent (major shareholder)
+- **IPO readiness**: Q4 2025 Hong Kong IPO target, $4B+ valuation, clear exit path
+- **Open-source leadership**: MIT/Apache licensing, MiniMax-M2 "king of open-source LLMs for agentic tool calling"
+- **Jensen Huang endorsement**: Nvidia CEO praised as "world-class AI startup"
+
+**MiniMax Revenue Model (2024-2025):**
+- **$70M actual revenue in 2024** (vs StepFun's 10B yuan target for 2025)
+- Primary: Talkie advertising + premium subscriptions (longer conversations)
+- Secondary: Hailuo (video generation), enterprise API (50,000+ customers globally)
+- Geographic: Global-first (US teenager demographic), struggling in China domestic market (Xingye app)
+
+**MiniMax Technical Edge:**
+- **MiniMax-Text-01**: 456B parameters (MoE), 4M context, MMLU 88.5% (tied GPT-4o)
+- **Lightning Attention**: First commercial-grade linear attention (enables 4M context efficiency)
+- **Video**: Hailuo I2V/T2V-01-Director (6s@720p@25fps, viral global adoption)
+- **Multi-modality**: First Chinese startup with 4-modality capabilities (text, voice, image, video)
 
 **StepFun Counter-positioning:**
-- **Terminal AI vs entertainment**: Industrial applications vs games/content
-- **Multimodal breadth**: Video, audio, text vs primarily text
-- **B2B revenue focus**: Enterprise contracts vs consumer subscriptions
-- **Hardware partnerships**: Embedded systems vs cloud services
+- **B2B terminal AI vs consumer entertainment**:
+  - StepFun: Automotive (Geely), smartphones (50%+ top brands), IoT - hardware integration
+  - MiniMax: Consumer apps (Talkie, Hailuo), cloud APIs - software-only distribution
 
-**Assessment**: Non-overlapping strategies - MiniMax owns entertainment/consumer, StepFun owns industrial terminals.
+- **Multimodal generation vs ultra-long context**:
+  - StepFun: World's largest open-source video model (Step-Video-T2V, 30B params, 204 frames, 10s@540p)
+  - StepFun: First production-grade open speech framework (Step-Audio, end-to-end ASR+TTS+dialogue)
+  - MiniMax: 4M token context (architectural innovation), but standard video/audio capabilities
+
+- **China-first with state backing vs global-first with commercial backing**:
+  - StepFun: Shanghai State-owned Capital (strategic national AI asset), China-only footprint
+  - MiniMax: Alibaba/Tencent commercial investors, proven global expansion (29M MAU in 200+ countries)
+
+- **B2B2C revenue model vs consumer subscriptions**:
+  - StepFun: 10B yuan revenue target through terminal partnerships (licensing fees, per-device charges)
+  - MiniMax: $70M actual revenue from consumer ads/subscriptions (proven but lower scale)
+
+- **Hardware lock-in vs consumer brand**:
+  - StepFun: Deep integration with Geely vehicles, smartphone OS - high switching costs
+  - MiniMax: Viral consumer apps (Talkie, Hailuo) - global brand recognition, but low switching costs
+
+**Where They Compete:**
+1. **Foundation model benchmarks**: Both compete for technical leadership (LiveBench, MMLU)
+2. **Enterprise API market**: Overlap in finance, content creation sectors
+3. **Talent acquisition**: Both recruit from top labs (Microsoft, SenseTime)
+4. **Investor attention**: Both vie for "best of Six Tigers" narrative
+
+**Where They're Complementary:**
+1. **Market segmentation**: StepFun B2B terminal (auto/phones) vs MiniMax B2C entertainment (no direct conflict)
+2. **Technical focus**: StepFun multimodal generation vs MiniMax extreme context length (different innovations)
+3. **Geographic footprint**: StepFun China-centric vs MiniMax global expansion (different markets)
+4. **Revenue models**: StepFun B2B2C licensing vs MiniMax consumer subscriptions (different economics)
+
+**DeepSeek Impact Comparison:**
+
+On MiniMax:
+- **Challenge**: DeepSeek V3 outperforms MiniMax-Text-01 on MMLU (88.6% vs 88.5%), direct competition
+- **Response**: Released MiniMax-M1 (claimed Chinese LLM crown in June 2025), focused on Lightning Attention differentiation
+- **Status**: More direct LLM competition, but consumer apps provide revenue cushion
+
+On StepFun:
+- **Challenge**: DeepSeek R1 set new cost-efficiency bar for reasoning
+- **Response**: Doubled down on multimodal + terminal Agent focus (differentiation from pure-LLM)
+- **Status**: Less direct competition (multimodal focus), more defensible in terminal AI niche
+
+**Survival Assessment (2025-2027):**
+
+MiniMax:
+- **Strengths**: 29M MAU global consumer base, clear IPO path ($4B+ valuation Q4 2025), proven international revenue
+- **Weaknesses**: Not profitable ($70M revenue vs $200M+ burn), vulnerable to app store changes, low switching costs
+- **Most Likely Outcome (50%)**: Successful Hong Kong IPO, Talkie grows to 40-50M MAU, remains unprofitable but shows improving unit economics
+- **Acquisition Likelihood**: 30% by 2027 (Alibaba or Tencent most likely)
+
+StepFun:
+- **Strengths**: State backing ensures survival, hardware lock-in (Geely, smartphones), multimodal moat
+- **Weaknesses**: No global reach, low consumer brand, unclear exit path, profitability distant
+- **Most Likely Outcome (55%)**: Becomes China's terminal AI standard, 5-8B RMB revenue, remains unprofitable but state-backed
+- **Acquisition Likelihood**: 15% by 2027 (state ownership limits commercial acquisition)
+
+**Head-to-Head Verdict:**
+
+| Dimension | Winner | Reasoning |
+|-----------|--------|-----------|
+| **Survival odds** | **StepFun** (85% vs 70%) | State backing > market volatility |
+| **Revenue scale** | **StepFun** (10B yuan target > $200M trajectory) | B2B terminal partnerships scale faster |
+| **Global impact** | **MiniMax** (29M users, 200+ countries) | StepFun China-only |
+| **Profitability path** | **Tie** (neither likely by 2027) | Both ~35-40% odds |
+| **IPO/Exit clarity** | **MiniMax** (60% IPO odds) | StepFun unclear exit |
+| **DeepSeek resilience** | **StepFun** (multimodal differentiation) | MiniMax faces direct LLM competition |
+| **Technical innovation** | **Tie** | StepFun multimodal, MiniMax Lightning Attention |
+| **Consumer brand** | **MiniMax** (global recognition) | StepFun B2B anonymity |
+
+**Overall Assessment**:
+
+StepFun and MiniMax represent **fundamentally different success models**:
+
+- **StepFun**: Building **defensible B2B moat** in Chinese terminal AI with state backing ensuring survival but limiting global upside. Strategy is **more defensible against DeepSeek** due to multimodal + hardware integration.
+
+- **MiniMax**: Building **high-risk/high-reward global consumer platform** with proven traction (29M MAU) but vulnerable to competition, app store changes, profitability pressure. Clearer **path to liquidity (IPO)** and **global scale**.
+
+**Prediction**: By 2027, StepFun becomes China's terminal AI standard (like ARM for mobile chips), while MiniMax either (a) IPOs successfully as consumer AI leader or (b) gets acquired by Alibaba/Tencent at premium. Both survive, but pursue fundamentally different definitions of "success."
+
+**Strategic Insight**: Non-overlapping strategies mean they're **not direct competitors** - MiniMax owns global consumer AI entertainment, StepFun owns China terminal AI infrastructure. An investor seeking portfolio coverage of Chinese AI should consider **both** as complementary positions.
 
 ---
 
