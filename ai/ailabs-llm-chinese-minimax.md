@@ -640,6 +640,21 @@ MiniMax operates with strong academic rigor, publishing technical papers and eng
 - Jingtao Han, Jingyang Li, Junbin Xie, Junhao Xu, Junjie Yan (CEO)
 - *...and 60+ additional researchers*
 
+**Researchers with Public Profiles:**
+
+| Name (English) | Name (Chinese) | Role | Links |
+|----------------|----------------|------|-------|
+| Yan Junjie | 颜俊杰 | CEO & Co-founder | [Google Scholar](https://scholar.google.com/citations?user=rEYarG0AAAAJ) · [Twitter/X](https://x.com/YJJMinimax) |
+| Yang Bin | 杨斌 | Co-founder & Technical Partner | [LinkedIn](https://www.linkedin.com/in/bin-yang-64ba2282/) · [Google Scholar](https://scholar.google.com/citations?user=Y3R-IYFQ2_cC&hl=en) |
+| Guojun Zhang | 张国俊 | Former Algorithm Engineer (now at Alibaba Quark) | [Homepage](https://gordon-guojun-zhang.github.io/) · [Google Scholar](https://scholar.google.ca/citations?user=p8Y0xJEAAAAJ) · [LinkedIn](https://www.linkedin.com/in/guojun-zhang-bbb009a4/) · [GitHub](https://github.com/Gordon-Guojun-Zhang) |
+| Zihao Wang | 王子豪 | Research Engineer, Vision-Language | [LinkedIn](https://www.linkedin.com/in/zihao-wang-8770a41a4/) · [Google Scholar](https://scholar.google.com.hk/citations?user=u5cdqewAAAAJ) |
+| Jingtao Han | 韩景涛 | Algorithm Engineer, LLM Training | [LinkedIn](https://www.linkedin.com/in/jingtao-han-1bb8894b/) |
+| Wei Shi | 史伟 | LLM Algorithm Engineer | [LinkedIn](https://www.linkedin.com/in/shiweiba/) |
+| Wenqian Zhao | 赵文谦 | Former LLM Data Scientist (Pretraining) | [LinkedIn](https://www.linkedin.com/in/wez020/) |
+| Chenghao Li | 李成浩 | Former Intern, 3D Vision & AIGC | [LinkedIn](https://www.linkedin.com/in/chenghao-li-b73b73a4/) |
+
+*Note: Most MiniMax researchers maintain low public profiles. The GitHub organization members list is private. Contact: model@minimax.io*
+
 **Research Philosophy:**
 - **Open Publication**: Publishing technical details despite competitive pressures
 - **Large Collaboration**: Papers list 90-125 authors, showing distributed expertise
