@@ -307,23 +307,61 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 
 #### Core Leadership
 
-**Tang Jie (唐杰) - Co-founder, CEO**
-- **Background**: Professor at Tsinghua University's Department of Computer Science and Technology
-- **Research Focus**: Knowledge engineering, language models, NLP
-- **Academic Standing**: Prominent AI researcher with strong publication record
-- **Role**: Technical vision and research direction
-- **Leadership Philosophy**: Combining academic rigor with commercial viability
+**Tang Jie (唐杰) - Co-founder & Chief Scientist**
+- **Title**: Professor at Tsinghua University's Department of Computer Science and Technology
+- **Shareholding**: 8.12% direct ownership (as of 2024 IPO filing)
+- **Role**: Co-founder, Chief Scientist, Director of Foundation Model Research Center at Tsinghua AI Institute
+- **Research Focus**: Knowledge engineering, language models, NLP, foundation model architectures
+- **Academic Standing**: Prominent AI researcher with extensive publication record in top-tier conferences
+- **Leadership Philosophy**: Combining academic rigor with commercial viability, technical excellence as core
+- **Key Contribution**: Drove GLM architecture innovation and research direction
 
-**Li Juanzi (李卓亚) - Co-founder**
-- **Background**: Tsinghua University researcher and professor
-- **Expertise**: Knowledge graphs, language model architectures, NLP fundamentals
-- **Academic Contributions**: Active researcher in Tsinghua's Knowledge Engineering Group
-- **Role**: Architecture and technical strategy
+**Li Juanzi (李涓子) - Co-founder**
+- **Title**: Professor at Tsinghua University's Department of Computer Science and Technology
+- **Background**: Leading expert in knowledge graphs and semantic web technologies
+- **Expertise**: Knowledge graphs, entity linking, knowledge-enhanced NLP, language model architectures
+- **Academic Role**: Active researcher and leader in Tsinghua's Knowledge Engineering Group (KEG)
+- **Key Contribution**: Brought knowledge graph expertise to foundation models—differentiating Zhipu's approach from pure scaling
+- **Research Impact**: Extensive publications in knowledge graph construction, cross-lingual knowledge linking, semantic technologies
 
 **Zhang Peng (张鹏) - CEO**
-- **Background**: Internal saying attributed: "No matter how much money we raise or how much money we make, it will be a hindrance on our road to AGI"
-- **Leadership**: Focused on long-term AGI vision over short-term monetization
-- **Philosophy**: Technical excellence and research depth as primary drivers
+- **Education**: PhD from Tsinghua University's Department of Computer Science and Technology
+- **Shareholding**: 0.1286% direct ownership (as of 2024 IPO filing)
+- **Career Path**: Originally joined as CTO, later became CEO as company evolved
+- **Research Background**: Knowledge graphs and large-scale pre-training models
+- **Leadership Philosophy**: "No matter how much money we raise or how much money we make, it will be a hindrance on our road to AGI"
+  - Focused on long-term AGI vision over short-term monetization
+  - Technical excellence and research depth as primary drivers
+  - Prioritizes building transformative AI over quarterly revenue
+- **Role**: Scaling the business, product strategy, and operational leadership while maintaining research focus
+
+**Liu Debing (刘德兵) - Chairman**
+- **Title**: Chairman of Zhipu AI
+- **Shareholding**: 0.3914% direct ownership, controls ~17.3966% voting rights through shareholding platform
+- **Background**: Disciple/student of Academician Gao Wen (高文) from Chinese Academy of Engineering
+- **Previous Role**: Deputy Director at Big Data Research Center of Tsinghua University's Institute for Data Science
+- **Control Structure**: Along with Tang Jie and entities acting in concert, holds almost 37% of voting rights—making them actual controllers
+- **Strategic Vision**: Recently stated goal to "contribute China's AI strength to the world"
+- **Role**: Board leadership, strategic direction, government and institutional relations
+
+**Wang Shaolan (王绍兰) - President**
+- **Title**: President of Zhipu AI
+- **Education**: Tsinghua Innovation Leadership Doctorate (清华创新领军博士)
+- **Role**: Overall operations, business development, strategic partnerships
+- **Background**: Experienced executive with Tsinghua connections
+- **Key Responsibilities**: Operational execution, scaling team, business strategy
+
+**Hu Yunhua (胡云华) - Head of ChatGLM / Consumer Applications**
+- **Title**: Head of ChatGLM (Zhipu Qingyan) consumer-facing product
+- **Joined**: December 2024 (recent high-profile hire)
+- **Previous Experience**:
+  - **Microsoft Research Asia (MSRA)**: Researcher
+  - **Alibaba DAMO Academy**: Senior technical expert
+  - **Alipay China**: Chief Data Officer
+  - **Smartdot** (Founded 2016): Founder, conversational intelligent marketing systems
+- **Key Hire Significance**: Represents Zhipu's strategy of "poaching high-profile seasoned industry recruits" to bolster credibility
+- **Product Impact**: ChatGLM has 25M+ users under his leadership
+- **Contrast**: Different hiring approach vs DeepSeek (which hires fresh PhDs)
 
 #### Team Composition
 
