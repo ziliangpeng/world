@@ -445,6 +445,7 @@ Rather than competing on general-purpose benchmarks (where DeepSeek excels), Bai
 | **2024** | Baichuan 4 | Unknown | 1T+ tokens | Domain-specialized | Varies | Limited release |
 | **Oct 2024** | Baichuan-Omni-7B | 7B | - | Multimodal (4 modalities) | ✅ | [GitHub](https://github.com/westlake-baichuan-mllm/bc-omni) |
 | **Feb 2025** | Baichuan-M1 | 14.5B | 20T tokens | Medical AI specialist | ✅ | Available |
+| **Aug 2025** | Baichuan-M2 | 32B | Medical-enhanced | HealthBench #1 (60.1), RTX 4090 | ✅ | Available |
 
 ### 🔬 Technical Details
 
