@@ -193,11 +193,110 @@ Qwen's technical strategy differs from competitors through both adopted techniqu
 
 ### 👥 Team Background
 
-Qwen is developed by Alibaba Cloud's AI research division, staffed by:
-- AI researchers and engineers from Alibaba's internal research organizations
-- Talent acquisitions from Alibaba's strategic purchases of AI-focused startups
-- Collaboration with academic institutions in China
-- Led by Alibaba Cloud's CTO and AI research leadership
+**Leadership & Strategy**
+
+**Zhou Jingren (周靖人)** - Alibaba Cloud CTO, Head of Tongyi Lab
+- Strategic leader overseeing Qwen development and open-source AI strategy
+- Led Qwen to 300+ open-source models, 600M+ downloads, 90,000+ enterprise deployments
+- Philosophy: Large model development and cloud infrastructure are inseparable
+
+**Fei Huang (黄非)** - Chief Scientist, Language Technologies Lab, DAMO Academy
+- PhD from Carnegie Mellon University (former IBM, Facebook)
+- Built AliNLP platform supporting trillions of calls daily across Alibaba
+- Led evolution from PLUG and AliceMind to Tongyi Qianwen (Qwen)
+
+**Lin Junyang (林俊扬) / Justin Lin** - Head of Qwen LLM Project
+- Age 32, Research Fellow at Alibaba DAMO Academy
+- Master's in Linguistics from Peking University (unique linguistics background in AI)
+- Led original Tongyi Qianwen development, multimodal models (M6, OFA, CLIP)
+- Established Robotics and Embodied AI Group (October 2025)
+- Strong advocate for global open-source AI community
+
+**Core Research & Engineering Team**
+
+**An Yang (杨安)** - Lead Technical Researcher
+- First/lead author on Qwen2.5 and Qwen3 technical reports
+- Key technical architect across multiple model releases
+- Affiliation: Qwen Team, Peking University, Alibaba
+
+**Binyuan Hui (惠斌源)** - Staff Research Scientist, Coding Models Lead
+- Born 1999 (child prodigy); entered Northeastern University at age 15
+- Master's from Tianjin University; first prize Mathematical Contest in Modelling
+- Lead engineer for Qwen-Coder series; believer in autonomous coding as AI foundation
+- Initiator of OpenDevin project
+- Area Chair for ACL-24 and EMNLP-24
+
+**Liu Dayiheng (刘大一恒)** - Algorithm Expert, Foundational Models Lead
+- PhD from Sichuan University; selected for Huawei "Genius Youth" program (2M yuan/year)
+- Introduced Qwen3 at Apsara Conference 2025
+- First student from Sichuan University with ACL paper (cited by OpenAI)
+- Joined Alibaba DAMO Academy January 2021
+
+**Jinze Bai (白金泽)** - Senior Algorithm Engineer
+- Lead author on original Qwen technical report
+- Instrumental in Qwen base models and Qwen-VL series
+- Developed M-RoPE multimodal position embedding innovation
+- Lead of Qwen2-VL with Naive Dynamic Resolution mechanism
+
+**Baosong Yang (杨宝松)** - Senior Algorithm Expert, Multilingual Lead
+- PhD from University of Macau (NLP2CT Lab)
+- Leads Qwen's multilingual capabilities and machine translation
+- 50+ publications in ACL, EMNLP, AAAI, NAACL
+- Machine translation research since 2013
+
+**Specialized Technical Leaders**
+
+**Bai Shuai (白帅)** - Qwen3-VL Vision-Language Models Lead
+- Multi-modal learning and visual generation specialist
+- Second place at international Visual Object Tracking competition
+
+**Wu Chenfei (吴晨飞)** - Qwen-Image and Visual Generation Lead
+- PhD in computer vision from BUPT; former Microsoft Research Asia senior researcher
+- Contributed to NUWA visual generation model (2022)
+- Named "top 100" university student by China Computer Federation
+
+**Xu Jin (徐金)** - Qwen Audio and Qwen-Omni Multimodal Lead
+- Communications engineering from BUPT; PhD from Tsinghua University
+- Previous: Internships at Apple, Microsoft Research Asia, Baidu
+
+**Bowen Yu (郁博文)** - Research Scientist
+- PhD from Chinese Academy of Sciences (2017-2022)
+- Specializes in information extraction and large language models
+- Universal Information Extraction (TRUE-UIE framework)
+- Publications at EMNLP, ACL, NAACL, WWW
+
+**Tianyi Tang (唐天一)** - Human Alignment Researcher
+- Renmin University of China (AI Box lab, supervised by Prof. Wayne Xin Zhao)
+- Wu Yuzhang Scholarship 2024 (highest RUC honor)
+- Co-author on Qwen2.5, QwQ, Qwen3 technical reports
+- Publications at ICLR, ACL, EMNLP, CSUR
+
+**Peng Wang (王鹏)** - Vision-Language Research
+- Co-author on Qwen-VL and Qwen3 technical reports
+- Core contributor to state-of-the-art vision-language performance
+
+**Steven Hoi Chu-hong (蔡楚雄)** - Chief Scientist of Intelligent Information Platform
+- Founded HyperGAI in Singapore (2023)
+- Former Managing Director at Salesforce Research Asia (2019-2022)
+- Joined Alibaba January 2025; transferred to Tongyi Lab to strengthen foundational AI development
+
+**Team Characteristics**
+
+- **Blend of Expertise**: Established senior researchers (Zhou, Fei Huang) mentoring exceptional young talent (many in 20s-early 30s)
+- **Diverse Backgrounds**: Computer science, linguistics, communications engineering, vision specialists
+- **Academic Excellence**: Genius Youth program members, competition winners, top conference publications (ACL, EMNLP, ICLR, AAAI, NAACL)
+- **Global Talent**: International researchers and engineers with Microsoft, Apple, Baidu, Facebook experience
+- **Interdisciplinary**: Linguistics experts (Lin Junyang), child prodigies (Binyuan Hui), vision specialists (Wu Chenfei), audio engineers (Xu Jin)
+- **Open-Source Philosophy**: Strong commitment to open-source development led by Lin Junyang
+- **Scale**: 60+ co-authors on Qwen3 technical report representing diverse specializations
+
+**Organizational Structure**
+
+- **Alibaba Cloud DAMO Academy**: Core research hub
+- **Tongyi Lab**: Strategic AI research and development
+- **Language Technologies Lab**: NLP and multilingual focus
+- **Robotics and Embodied AI Group**: Emerging focus area (established October 2025)
+- **Collaboration**: Partnerships with Peking University, Tsinghua University, Renmin University researchers
 
 ### 🚀 Model Lineage and Release Timeline
 
