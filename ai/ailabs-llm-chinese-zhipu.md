@@ -53,7 +53,7 @@ Zhipu AI was founded in **2019** by professors **Tang Jie (唐杰)** and **Li Ju
 - **Leadership Vision**: Building models that combine technical rigor with practical capability
 - **Prior Work**: Led research groups at Tsinghua in NLP, language understanding, and structured prediction
 
-**Li Juanzi (李纯子) - Co-Founder**
+**Li Juanzi (李涓子) - Co-Founder**
 - **Title**: Professor and researcher at Tsinghua University
 - **Research Expertise**: Knowledge graphs, entity linking, knowledge-enhanced NLP, language models
 - **Academic Role**: Active researcher in Tsinghua's Knowledge Engineering Group (KEG)
