@@ -384,15 +384,67 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 
 ### 🚀 Model Lineage and Release Timeline
 
+#### Language Models (GLM / ChatGLM Series)
+
 | Release Date | Model | Parameters | Key Features | Open Weights | Resources |
 |---|---|---|---|---|---|
 | End 2020 | GLM-10B | 10B | Early foundation, GLM architecture proof-of-concept | ✅ | - |
-| 2022 | GLM-130B | 130B | Massive bilingual model, bilingual excellence | ✅ | [GitHub](https://github.com/THUDM/GLM-130B) |
-| 2023 | ChatGLM | - | Consumer chatbot, first consumer product | ✅ | [GitHub](https://github.com/THUDM/ChatGLM) |
-| 2024 | GLM-4 Series | - | Improved capabilities, reasoning | ❌ API-only | [API Platform](https://open.bigmodel.cn/) |
-| Jul 2025 | GLM-4.5 | 355B (32B activated) | Latest frontier model, MoE, top benchmark rankings | ✅ | [arXiv:2508.06471](https://arxiv.org/abs/2508.06471) \| [GitHub](https://github.com/THUDM/GLM-4-Turbo) |
-| Jul 2025 | GLM-4.5 Air | 106B (12B activated) | Optimized variant, MoE, cost-effective | ✅ | [GitHub](https://github.com/THUDM/GLM-4) |
-| 2025 | Z.ai Rebranding | - | Company rebranding, new positioning | - | [Z.ai Platform](https://z.ai/) |
+| Oct 2022 | GLM-130B | 130B | Massive bilingual (CN/EN) model, first 100B+ Chinese | ✅ | [arXiv:2210.02414](https://arxiv.org/abs/2210.02414) \| [GitHub](https://github.com/THUDM/GLM-130B) \| [Project](https://keg.cs.tsinghua.edu.cn/glm-130b/) |
+| Mar 14, 2023 | ChatGLM-6B | 6B | First consumer chatbot, bilingual | ✅ | [GitHub](https://github.com/THUDM/ChatGLM) |
+| Jun 25, 2023 | ChatGLM2-6B | 6B | +23% MMLU, 2K→32K context | ✅ | [GitHub](https://github.com/THUDM/ChatGLM2-6B) |
+| Oct 2023 | ChatGLM3-6B | 6B | Top 42 benchmarks (semantics, math, reasoning, code) | ✅ | [GitHub](https://github.com/THUDM/ChatGLM3) |
+| Jan 2024 | GLM-4 | - | Next-gen foundation, GPT-4 comparable | ❌ | [arXiv:2406.12793](https://arxiv.org/abs/2406.12793) \| [API](https://open.bigmodel.cn/) |
+| 2024 | GLM-4-9B | 9B | Open multilingual model, 128K/1M context variants | ✅ | [GitHub](https://github.com/THUDM/GLM-4) \| [HF](https://huggingface.co/THUDM/glm-4-9b-chat-hf) |
+| 2024 | GLM-4-Air | - | Lightweight variant for efficiency | ❌ | [API](https://open.bigmodel.cn/) |
+| 2024 | GLM-4-Plus | - | Enhanced vision-language capabilities | ❌ | [API](https://open.bigmodel.cn/) |
+| Jul 2025 | GLM-4.5 | 355B (32B active) | Frontier MoE, agentic/reasoning/coding (ARC), 70.1% TAU-Bench | ✅ | [arXiv:2508.06471](https://arxiv.org/abs/2508.06471) \| [GitHub](https://github.com/THUDM/GLM-4.5) \| [HF](https://huggingface.co/THUDM/glm-4-9b) |
+| Jul 2025 | GLM-4.5 Air | 106B (12B active) | Optimized MoE variant, cost-effective | ✅ | [GitHub](https://github.com/THUDM/GLM-4) |
+| Sep 2025 | GLM-4.6 | - | Domestic chips (Cambricon), enhanced coding/reasoning | ❌ | [Blog](https://chatglm.cn/) |
+| Dec 31, 2024 | GLM-Zero-Preview | - | Reasoning model via RL, GRE Math 126 score | ❌ | [API](https://bigmodel.cn/) |
+| 2024 | GLM-Edge-1.5B-Chat | 1.5B | Edge/mobile optimization | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
+| 2024 | GLM-Edge-4B-Chat | 4B | Edge/mobile optimization | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
+
+#### Vision-Language Models (VLM Series)
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Resources |
+|---|---|---|---|---|---|
+| Nov 2023 | CogVLM | 17B | Visual expert module, SOTA on 10 benchmarks | ✅ | [arXiv:2311.03079](https://arxiv.org/abs/2311.03079) \| [GitHub](https://github.com/THUDM/CogVLM) |
+| Dec 2023 | CogAgent | 18B | GUI agent, 1120x1120 resolution, SOTA on 9 benchmarks | ✅ | [arXiv:2312.08914](https://arxiv.org/abs/2312.08914) \| [GitHub](https://github.com/THUDM/CogAgent) |
+| Aug 2024 | GLM-4V-Plus | - | Video understanding, first general video API in China | ❌ | [API](https://open.bigmodel.cn/) |
+| Aug 30, 2024 | CogVLM2 | - | Enhanced image/video understanding, temporal grounding | ✅ | [arXiv:2408.16500](https://arxiv.org/abs/2408.16500) \| [GitHub](https://github.com/THUDM/CogVLM2) |
+| Aug 11, 2025 | GLM-4.5V | 106B (12B active) | Multimodal reasoning via RL, SOTA open VLM | ✅ | [arXiv:2507.01006](https://arxiv.org/abs/2507.01006) \| [GitHub](https://github.com/THUDM/GLM-4.5V) |
+| 2025 | GLM-4.1V-Thinking | - | Vision reasoning with CoT | ✅ | [arXiv:2507.01006](https://arxiv.org/abs/2507.01006) |
+| 2024 | GLM-Edge-V-2B | 2B | Edge vision-language | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
+| 2024 | GLM-Edge-V-5B | 5B | Edge vision-language | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
+
+#### Code Generation Models (CodeGeeX Series)
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Resources |
+|---|---|---|---|---|---|
+| Sep 2022 | CodeGeeX | 13B | Multilingual code generation, HumanEval-X benchmark | ✅ | [arXiv:2303.17568](https://arxiv.org/abs/2303.17568) \| [GitHub](https://github.com/THUDM/CodeGeeX) |
+| Jul 24, 2023 | CodeGeeX2 | 6B | Faster inference, better performance | ✅ | [GitHub](https://github.com/THUDM/CodeGeeX2) |
+| 2024 | CodeGeeX4-ALL-9B | 9B | 4th gen, comprehensive coding capabilities | ✅ | [GitHub](https://github.com/THUDM/CodeGeeX4) \| [HF](https://huggingface.co/THUDM/codegeex4-all-9b) |
+
+#### Multimodal Generation Models
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Resources |
+|---|---|---|---|---|---|
+| 2021-2022 | CogView (v1) | - | Text-to-image generation | ✅ | [GitHub](https://github.com/THUDM/CogView) |
+| 2022 | CogVideo | - | Text-to-video via Transformers | ✅ | [arXiv:2205.15868](https://arxiv.org/abs/2205.15868) \| [GitHub](https://github.com/THUDM/CogVideo) |
+| 2023 | CogView3 | - | Cascading diffusion, relay diffusion framework | ✅ | [GitHub](https://github.com/THUDM/CogView3) |
+| 2024 | CogView3-Plus | - | Diffusion Transformer based | ✅ | [GitHub](https://github.com/THUDM/CogView3) |
+| 2024 | CogVideoX | - | Next-gen video generation, upgraded architecture | ✅ | [GitHub](https://github.com/THUDM/CogVideo) |
+| 2024 | CogView4 | - | Latest image generation model | ✅ | [GitHub](https://github.com/THUDM/CogView4) |
+
+#### Other Notable Models
+
+| Model Family | Description | Resources |
+|---|---|---|
+| AutoGLM | Autonomous GUI agents | [arXiv:2411.00820](https://arxiv.org/abs/2411.00820) |
+| Relay Diffusion | Cascaded diffusion framework | Multiple CogView/CogVideo models |
+
+**Total Model Families**: 6 major series (GLM, ChatGLM, CogVLM, CogAgent, CodeGeeX, CogView/CogVideo)
+**Total Models Released**: 40+ variants across language, vision-language, code, and multimodal generation
 
 ### 📊 Performance and Reception
 
