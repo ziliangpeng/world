@@ -85,14 +85,17 @@ DeepSeek's efficiency breakthrough stems from revolutionary hardware-software co
 - Improves model performance on downstream benchmarks
 - Reduces training compute per token without sacrificing quality
 
-**Group Relative Policy Optimization (GRPO) - Efficient RL**
-- Designed by DeepSeek specifically for reasoning capability optimization
-- **Eliminates critic model**: compares response groups relative to average, not against learned value function
-- **40-60% memory reduction** vs standard PPO by removing value function
-- Reduces policy update variance through group-based comparisons
-- KL divergence constraint prevents drastic policy shifts
+**Group Relative Policy Optimization (GRPO) - DeepSeek RL Innovation**
+- **Invented by DeepSeek** and first published in DeepSeekMath (Feb 2024, arxiv:2402.03300)
+- Originally designed for mathematical reasoning, extended to general reasoning in R1
+- **Eliminates critic model**: compares response groups relative to group average rather than against learned value function
+- **40-60% memory reduction** vs standard PPO by removing separate value function network
+- Generates multiple responses per prompt, uses mean reward as baseline for advantage calculation
+- Reduces policy update variance through group-based comparisons vs individual comparisons
+- KL divergence constraint prevents drastic policy shifts during training
 - Enables emergent reasoning patterns: self-reflection, verification, dynamic strategy adaptation
-- Foundation for DeepSeek-R1 reasoning breakthrough ($294K post-training cost)
+- No labeled reasoning trajectories required—verification via programmable reward functions
+- Foundation for DeepSeek-R1 reasoning breakthrough ($294K post-training cost, Nature publication)
 
 **Comparative Positioning**
 
