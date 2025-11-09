@@ -4,13 +4,13 @@ A comprehensive deep-dive into MiniMax's foundation model development, MoE effic
 
 ---
 
-## Company Overview
+## 🏢 Company Overview
 
 **MiniMax** (MiniMax AI) emerged as one of China's "AI Tiger" startups, founded by computer vision veterans to develop cutting-edge mixture-of-experts foundation models. Established in December 2021 by former SenseTime employees **Yan Junjie** and **Zhou Yucong**, MiniMax rapidly grew to become a significant player in the LLM space. The company received early backing from gaming giant MiHoYo and later secured major funding from Alibaba, Tencent, and other strategic investors, reaching a $2.5B valuation by 2024.
 
 ---
 
-## Founding Story and History
+## 📜 Founding Story and History
 
 MiniMax was founded in **December 2021** by **Yan Junjie** and **Zhou Yucong**, both former SenseTime employees with deep expertise in computer vision and AI systems. The founding occurred during the early hype around generative AI, positioning the company to capitalize on emerging opportunities.
 
@@ -27,7 +27,7 @@ MiniMax's trajectory reflects rapid scaling enabled by strategic partnerships an
 
 ---
 
-## Funding and Investment
+## 💰 Funding and Investment
 
 **Funding Timeline:**
 
@@ -43,7 +43,7 @@ Strategic backing from Alibaba and Tencent provided crucial resources and market
 
 ---
 
-## Strategic Positioning
+## 🎯 Strategic Positioning
 
 MiniMax positions as **"Efficient LLMs with Long Context and Multimodal Capabilities"** emphasizing:
 
@@ -56,7 +56,7 @@ MiniMax positions as **"Efficient LLMs with Long Context and Multimodal Capabili
 
 ---
 
-## Technical Innovations and Architecture
+## 🔧 Technical Innovations and Architecture
 
 **Lightning Attention & Hybrid Architecture:**
 - Combines Lightning Attention (efficient token processing) with Softmax Attention
@@ -76,7 +76,7 @@ MiniMax positions as **"Efficient LLMs with Long Context and Multimodal Capabili
 
 ---
 
-## Team Background
+## 👥 Team Background
 
 MiniMax's team includes:
 - **Yan Junjie**: Co-founder, background in computer vision and AI systems
@@ -86,7 +86,7 @@ MiniMax's team includes:
 
 ---
 
-## Model Lineage and Release Timeline
+## 📊 Model Lineage and Release Timeline
 
 | Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
 |---|---|---|---|---|---|
@@ -102,7 +102,7 @@ MiniMax's team includes:
 
 ---
 
-## Performance and Reception
+## 📈 Performance and Reception
 
 **Benchmark Claims:**
 - MiniMax-Text-01: Claims outperform Google Gemini 2.0 Flash on MMLU and SimpleQA
@@ -118,7 +118,7 @@ MiniMax's team includes:
 
 ---
 
-## Notable Achievements and Stories
+## 🏆 Notable Achievements and Stories
 
 1. **MoE Pioneer**: First Chinese company to successfully deploy large-scale MoE models (ABAB 6.5)
 2. **Extreme Context**: MiniMax-Text-01 supports 4M token inference (vs DeepSeek-V3's 128K)
