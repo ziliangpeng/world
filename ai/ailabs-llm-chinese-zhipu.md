@@ -9,13 +9,13 @@
 The company is known for:
 - Developing the innovative **GLM** (General Language Model) pre-training architecture that combines advantages of both autoregressive and autoencoding approaches—a genuine architectural innovation beyond just scaling
 - Building the consumer-facing **ChatGLM** chatbot with strong user adoption among researchers and developers
-- Pioneering **bilingual foundation models** with GLM-130B (first massive 130B+ Chinese-English model)
+- Pioneering **bilingual foundation models** with GLM-130B (among the first open 100B-class bilingual Chinese-English models)
 - Pursuing **technical excellence and reasoning capabilities** rather than pure cost optimization
 
 **Company Status (2025):**
-- **Funding**: $1.4B+ across 12+ funding rounds
-- **Valuation**: $5.6B (making it one of China's most valuable AI startups)
-- **Team Size**: 800+ employees with 60-70% dedicated to R&D (highest R&D ratio among Chinese AI companies)
+- **Funding**: ~$1.5B across ~12–16 funding rounds (as of March 2025)
+- **Valuation**: ~20B RMB (~$2.8B) as of July–September 2024 (most recent well-sourced figure); claims of higher 2025 valuations exist but lack primary verification
+- **Team Size**: ~800 employees
 - **Rebranding**: Official rebrand to "**Z.ai**" in July 2025, signaling evolution from "startup" to "established frontier AI company"
 - **Market Position**: Recognized as "Strong Challenger Tier" in frontier AI race
 
@@ -41,17 +41,19 @@ The founding reflected recognition that:
 
 #### Academic Origins and Founder Background
 
-Zhipu AI was founded in **2019** by professors **Tang Jie (唐杰)** and **Li Juanzi (李卓亚)** at Tsinghua University Science Park, located in Beijing's Haidian District. The company emerged from Tsinghua's prestigious computer science research programs focused on natural language processing and language modeling, specifically from the university's renowned **Knowledge Engineering Group (KEG)** within the Department of Computer Science and Technology.
+Zhipu AI was founded in **2019** by professors **Tang Jie (唐杰)** and **Li Juanzi (李涓子)** at Tsinghua University Science Park, located in Beijing's Haidian District. The company emerged from Tsinghua's prestigious computer science research programs focused on natural language processing and language modeling, specifically from the university's renowned **Knowledge Engineering Group (KEG)** within the Department of Computer Science and Technology.
 
 **Founder Profiles:**
 
-**Tang Jie (唐杰) - CEO & Co-Founder**
+**Tang Jie (唐杰) - Co-Founder & Chief Scientist**
 - **Title**: Professor at Tsinghua University's Department of Computer Science and Technology
+- **Shareholding**: 8.12% direct ownership (as of 2024 IPO-related filings)
 - **Research Focus**: Natural language processing, language models, information extraction
 - **Academic Standing**: Prominent AI researcher with extensive publication record in top-tier conferences
 - **Research Philosophy**: Emphasis on elegant solutions combining multiple paradigms rather than brute-force scaling
 - **Leadership Vision**: Building models that combine technical rigor with practical capability
 - **Prior Work**: Led research groups at Tsinghua in NLP, language understanding, and structured prediction
+- **Role**: Director of Foundation Model Research Center at Tsinghua AI Institute; drives technical strategy and research direction
 
 **Li Juanzi (李涓子) - Co-Founder**
 - **Title**: Professor and researcher at Tsinghua University
@@ -240,11 +242,12 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 - Autoencoding: Good for understanding, poor for generation
 
 **GLM Solution - Unified Framework:**
-- Developed GLM pre-training framework combining advantages of both approaches
+- Developed GLM pre-training framework combining advantages of both approaches via **autoregressive blank infilling**
 - General Language Model: Single model capable of both understanding and generation
 - Uses "blank filling" paradigm: corrupts spans of text and learns to fill them in
 - Enables unified handling of diverse NLP tasks within single model architecture
 - More efficient training than separate encoder-decoder models
+- **Published**: ACL 2022 / [arXiv:2103.10360](https://arxiv.org/abs/2103.10360)
 
 **Technical Innovation Details:**
 - Corrupts 15% of tokens during pre-training
@@ -396,7 +399,7 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 | Jan 2024 | GLM-4 | - | Next-gen foundation, GPT-4 comparable | ❌ | [arXiv:2406.12793](https://arxiv.org/abs/2406.12793) \| [API](https://open.bigmodel.cn/) |
 | 2024 | GLM-4-9B | 9B | Open multilingual model, 128K/1M context variants | ✅ | [GitHub](https://github.com/THUDM/GLM-4) \| [HF](https://huggingface.co/THUDM/glm-4-9b-chat-hf) |
 | 2024 | GLM-4-Air | - | Lightweight variant for efficiency | ❌ | [API](https://open.bigmodel.cn/) |
-| Aug 27, 2024 | GLM-4-Flash | - | Free API, 72.14 tokens/s, 128K context, 26 languages | ❌ | [API](https://open.bigmodel.cn/dev/activities/free/glm-4-flash) |
+| Aug 27, 2024 | GLM-4-Flash | - | Free API, fast inference (~70+ tokens/s), 128K context, 26 languages | ❌ | [API](https://open.bigmodel.cn/dev/activities/free/glm-4-flash) |
 | 2024 | GLM-4-Plus | - | Enhanced vision-language capabilities | ❌ | [API](https://open.bigmodel.cn/) |
 | Jul 2025 | GLM-4.5 | 355B (32B active) | Frontier MoE, agentic/reasoning/coding (ARC), 70.1% TAU-Bench | ✅ | [arXiv:2508.06471](https://arxiv.org/abs/2508.06471) \| [GitHub](https://github.com/THUDM/GLM-4.5) \| [HF](https://huggingface.co/THUDM/glm-4-9b) |
 | Jul 2025 | GLM-4.5 Air | 106B (12B active) | Optimized MoE variant, cost-effective | ✅ | [GitHub](https://github.com/THUDM/GLM-4) |
