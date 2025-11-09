@@ -169,15 +169,77 @@ StepFun's leadership and team:
 
 ---
 
-## Strategic Outlook
+## Strategic Outlook and Business Performance
 
-StepFun's focus on scaling laws positions it uniquely in the Chinese LLM landscape. While competitors experiment with novel architectures, StepFun's bet is that AGI emerges from scale and data quality. The rapid release of 11 models in the first year demonstrates operational excellence and clear execution capability.
+**📖 For comprehensive strategic analysis, see: [`ailabs-llm-chinese-stepfun-strategy.md`](ailabs-llm-chinese-stepfun-strategy.md)**
 
-Key questions for StepFun's future:
+### Strategic Evolution: From Scaling Law to Multimodal Terminal AI
 
-1. **Open-Source Strategy**: Will StepFun embrace open-source to compete with DeepSeek, Qwen?
-2. **Enterprise vs Consumer**: Which market will StepFun prioritize for monetization?
-3. **Differentiation**: As frontier models converge in performance, how will StepFun differentiate?
-4. **Capital Efficiency**: Can StepFun's scaling law approach remain cost-competitive with efficient operators like DeepSeek?
+StepFun has evolved from pure scaling law philosophy to a **multimodal specialist focusing on smart terminal deployments** (automotive, smartphones, IoT). Following DeepSeek's efficiency revolution, StepFun acknowledges it cannot compete on language model efficiency alone, instead doubling down on capabilities where DeepSeek is weak: **video generation** (Step-Video-T2V), **audio interaction** (Step-Audio), and **terminal deployment**.
 
-The company's Microsoft DNA suggests strong engineering discipline and product focus, but the Chinese AI market increasingly rewards open-source adoption and aggressive pricing—areas where StepFun has yet to make major moves.
+The company's interpretation of "scaling law" has evolved beyond model size to encompass:
+- Scaling reinforcement learning (from imitation to environment feedback)
+- Scaling data quality (distribution and curation)
+- Scaling test-time compute (System 2 reasoning)
+- Scaling modalities (text → multimodal → embodied AI)
+
+### Business Performance and Monetization
+
+**Valuation and Funding:**
+- $2 billion valuation (June 2024)
+- $500M+ total raised across multiple rounds
+- Key investors: Alibaba, Tencent, Shanghai State-owned Capital, 5Y Capital, Qiming
+
+**Revenue Target:**
+- **10 billion yuan (~$1.4B) for 2025** - highest among the "Six Tigers"
+- Terminal partnerships (50%+): Smartphone manufacturers (50%+ of top domestic brands), Geely automotive
+- Enterprise B2B: Guotai Junan Securities, financial services, content creation
+
+**Key Partnerships:**
+- **Geely Auto**: AI smart cockpit with Step-Audio (industry first end-to-end voice model in production vehicles)
+- **50%+ of China's top smartphone manufacturers** (brands undisclosed)
+- **Guotai Junan Securities**: "Jun Hong Ling Xi" securities analysis model
+- **Huanrui Century**: Video generation for content creation
+
+**Profitability Status**: Not yet profitable (no Chinese AI startup has achieved profitability)
+
+### Competitive Positioning: "南阶跃、北智谱"
+
+Recognized as "南阶跃、北智谱" (StepFun in south, Zhipu in north) - two leading foundation model companies committed to continued R&D investment. StepFun ranks:
+- **#1** among Six Tigers in revenue target (10B yuan)
+- **#2-3** in technical capability
+- **#5-6** in consumer brand (behind Moonshot/ByteDance)
+
+### Differentiation Strategy
+
+**vs DeepSeek**: Cannot compete on language efficiency, focuses on multimodal (video/audio) where DeepSeek lacks
+- Open-Reasoner-Zero: Claims 25x efficiency improvement over DeepSeek-R1-Zero
+- Step-Video-T2V: World's largest open-source video model (30B params)
+- Step-Audio: First production-ready end-to-end speech framework
+
+**vs Moonshot/Kimi**: B2B-first with terminal integration (cars, phones) vs consumer chatbot
+
+**vs Baichuan**: Horizontal multimodal platform vs vertical medical specialization
+
+**Microsoft DNA Influence**: Jiang Daxin's 16 years at Microsoft (Bing, Cortana, Azure) shapes enterprise-focused, product-first mentality with rapid iteration (11 models in year 1).
+
+### Survival Assessment
+
+**Strengths:**
+- ✅ Multimodal moat where DeepSeek lacks
+- ✅ Terminal deployment expertise with major partnerships
+- ✅ Government backing (Shanghai State-owned Capital)
+- ✅ Highest revenue target among peers
+
+**Challenges:**
+- ❌ Cannot compete on language model efficiency
+- ❌ No clear profitability path yet
+- ❌ Weak consumer brand vs Moonshot/ByteDance
+- ❌ DeepSeek pricing pressure intense
+
+**Likely Outcomes (2025-2027):**
+- 30%: Independent IPO, achieves profitability
+- 50%: **Acquired by Alibaba/Tencent at $2-3B valuation**
+- 20%: Consolidation failure, acquihire
+
+**Verdict**: StepFun has successfully carved out a **multimodal terminal niche**, but commercial viability remains unproven. The scaling law philosophy evolved to stay relevant, but only through specialization—not through competing with DeepSeek on language models.
