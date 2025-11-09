@@ -272,13 +272,23 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 
 ### 🚀 Model Lineage and Release Timeline
 
-| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
+| Release Date | Model | Parameters | Key Features | Open Weights | Resources |
 |---|---|---|---|---|---|
-| Oct 2023 | Kimi Chatbot | - | Consumer-focused chatbot launch | ❌ | - |
-| Mar 2024 | Kimi (Long-Context) | - | Extended to 2M Chinese characters | ❌ | - |
-| Oct 2024 | Kimi K1 | - | Reasoning capabilities | ❌ | - |
-| Jan 20, 2025 | Kimi K1.5 | - | o1-level reasoning | ❌ | - |
-| Jul 2025 | Kimi K2 | 1T (32B activated) | Frontier-class with weights release | ✅ | [GitHub](https://github.com/MoonshotAI/Kimi-K2/blob/main/tech_report.pdf) |
+| Oct 2023 | Kimi Chatbot | - | Consumer chatbot, 200K char context | ❌ | [Kimi.ai](https://kimi.ai/) |
+| Mar 2024 | Kimi (Long-Context) | - | Extended to 2M Chinese characters, lossless | ❌ | [Blog](https://www.kimi.ai/) |
+| Jun 2024 | Kimi-Researcher | - | Agentic research tool, 70+ search queries | ❌ | [Project Page](https://moonshotai.github.io/Kimi-Researcher/) |
+| Jan 20, 2025 | Kimi K1.5 | - | o1-level reasoning, multimodal | ❌ | [arXiv 2501.12599](https://arxiv.org/abs/2501.12599) \| [GitHub](https://github.com/MoonshotAI/Kimi-k1.5) |
+| Apr 2025 | Kimi-VL | 16B (3B activated) | Vision-language, 128K context | ✅ | [arXiv 2504.07491](https://arxiv.org/abs/2504.07491) \| [GitHub](https://github.com/MoonshotAI/Kimi-VL) \| [HF](https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct) |
+| Jun 2025 | Kimi-VL-Thinking | 16B (3B activated) | Vision reasoning, long CoT + RL | ✅ | [arXiv 2504.07491](https://arxiv.org/abs/2504.07491) \| [GitHub](https://github.com/MoonshotAI/Kimi-VL) |
+| Jun 2025 | Kimi-Dev-72B | 72B | Coding-focused, 60.4% SWE-bench Verified | ✅ | [GitHub](https://github.com/MoonshotAI/Kimi-Dev) \| [HF](https://huggingface.co/moonshotai/Kimi-Dev-72B) |
+| Jun 2025 | Kimi-Researcher | - | Agentic RL, 26.9% HLE, 69% xbench-DeepSearch | ❌ | [Project Page](https://moonshotai.github.io/Kimi-Researcher/) |
+| Jul 2025 | Kimi K2 | 1T (32B activated) | Frontier-class agentic, MoE | ✅ | [arXiv 2507.20534](https://arxiv.org/abs/2507.20534) \| [GitHub](https://github.com/MoonshotAI/Kimi-K2) \| [HF](https://huggingface.co/moonshotai/Kimi-K2-Instruct) |
+| Sep 5, 2025 | Kimi-K2-Instruct-0905 | 1T (32B activated) | K2 updated, 256K context window | ✅ | [arXiv 2507.20534](https://arxiv.org/abs/2507.20534) \| [GitHub](https://github.com/MoonshotAI/Kimi-K2) |
+| Sep 24, 2025 | OK Computer | K2-based | Agentic AI agent, website/code generation | - | [Kimi.ai](https://kimi.ai/) |
+| Oct 2025 | Kimi Linear | 48B (3B activated) | Linear attention, 6x faster decoding | ✅ | [arXiv 2510.26692](https://arxiv.org/abs/2510.26692) \| [GitHub](https://github.com/MoonshotAI/Kimi-Linear) \| [HF](https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct) |
+| Nov 6, 2025 | Kimi K2 Thinking | 1T (32B activated) | Reasoning variant, 200-300 tool calls | ✅ | [arXiv 2507.20534](https://arxiv.org/abs/2507.20534) \| [GitHub](https://github.com/MoonshotAI/Kimi-K2) \| [HF](https://huggingface.co/moonshotai/Kimi-K2-Thinking) |
+| TBD | Kimi-Audio | - | Audio foundation model, speech/audio understanding | ✅ | [GitHub](https://github.com/MoonshotAI/Kimi-Audio) |
+| TBD | Kimi-Prover | - | Formal reasoning with RL, formal verification | ✅ | [GitHub](https://github.com/MoonshotAI/Kimi-Prover) |
 
 ### 📊 Performance and Reception
 
