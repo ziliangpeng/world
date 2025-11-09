@@ -23,7 +23,7 @@ A comprehensive exploration of China's leading LLM research labs, their founding
 
 ## 1. Alibaba (Tongyi Qianwen / Qwen)
 
-📖 **Full deep-dive available in: [`ailabs-llm-qwen.md`](ailabs-llm-qwen.md)**
+📖 **Full deep-dive available in: [`ailabs-llm-chinese-qwen.md`](ailabs-llm-chinese-qwen.md)**
 
 Quick summary: Alibaba Cloud's Qwen is one of China's most successful LLM initiatives with 90,000+ enterprise adoptions. Features 23 models from Aug 2023 to Sep 2025, strong Chinese language performance, and aggressive open-source strategy.
 
@@ -146,7 +146,7 @@ ERNIE is developed by Baidu's AI and Deep Learning Research Labs, including:
 
 ## 3. DeepSeek
 
-📖 **Full deep-dive available in: [`ailabs-llm-deepseek.md`](ailabs-llm-deepseek.md)**
+📖 **Full deep-dive available in: [`ailabs-llm-chinese-deepseek.md`](ailabs-llm-chinese-deepseek.md)** | **Evolution analysis:** [`ailabs-llm-chinese-deepseek-evolution.md`](ailabs-llm-chinese-deepseek-evolution.md)**
 
 Quick summary: DeepSeek (founded Jul 2023) has revolutionized the LLM landscape with radical cost efficiency. Features 28 models from Nov 2023 to Oct 2025, including the frontier V3 (trained for $5.58M), R1 reasoning model, and innovative Janus multimodal series. Backed by High-Flyer hedge fund with strong focus on cost transparency and technical innovation.
 
