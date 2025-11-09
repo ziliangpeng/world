@@ -247,6 +247,12 @@ MiniMax's core technical differentiation comes from three major innovations: Lig
 
 ### 🌩️ Lightning Attention: The Core Innovation
 
+**Official Resources:**
+- **Technical Paper**: [MiniMax-01: Scaling Foundation Models with Lightning Attention](https://arxiv.org/abs/2501.08313) (arXiv 2501.08313, Jan 2025)
+- **PDF Report**: [Direct PDF](https://filecdn.minimax.chat/_Arxiv_MiniMax_01_Report.pdf)
+- **GitHub**: [MiniMax-AI/MiniMax-01](https://github.com/MiniMax-AI/MiniMax-01)
+- **Technical Analysis**: [NeuroHive Deep Dive](https://neurohive.io/en/state-of-the-art/minimax-01-4m-context-length-benchmark-leader-powered-by-lightning-attention/)
+
 **What is Lightning Attention?**
 
 Lightning Attention is MiniMax's proprietary attention mechanism designed to dramatically reduce computational complexity for long-context processing. Unlike standard softmax attention which has O(n²) complexity with sequence length, Lightning Attention achieves near-linear scaling.
