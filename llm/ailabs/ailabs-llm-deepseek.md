@@ -45,32 +45,78 @@ DeepSeek's positioning challenges fundamental assumptions about AI development, 
 
 ### 🔧 Technical Innovations and Architecture
 
-DeepSeek introduced several technical innovations that contributed to efficiency breakthroughs:
+DeepSeek's efficiency breakthrough stems from revolutionary hardware-software co-design and novel architecture innovations:
 
-**Multi-Head Latent Attention (MLA):**
-- Reduces memory footprint of attention operations while maintaining performance
-- Key contributor to efficiency gains in V3
-- Reduces KV cache size requirements
+**Multi-Head Latent Attention (MLA) - KV Cache Revolution**
+- Compresses key-value pairs into low-rank latent representations
+- **KV cache reduction**: 93.3% smaller compared to standard attention
+- Low-rank compression allows different information to be used differently by heads
+- Maintains full performance while dramatically reducing memory footprint
+- Critical for 128K+ context windows and efficient inference
+- Enables near-linear scaling of inference with context length
 
-**Efficient Mixture of Experts:**
-- Fine-grained MoE architecture in V3 (671B total, 37B activated)
-- Dynamic routing of tokens to specialized experts
-- Significantly reduces computational cost per inference
+**DeepSeekMoE Architecture - Expert Specialization**
+- **257 total experts**: 256 routed + 1 shared expert per layer
+- **8 activated experts per token** (~9.4% activation rate for 671B model)
+- Fine-grained routing: dynamic token routing to specialized experts
+- **Auxiliary-loss-free load balancing**: expert-specific bias terms instead of traditional auxiliary losses
+- Minimizes performance degradation from load balancing constraints
+- Enables more granular expert specialization than competitor MoE designs
 
-**Partial 8-bit Native Training:**
-- Uses 8-bit precision for parts of training without full precision requirements
-- Effectively doubles model size that fits in memory
-- Co-designed with hardware and frameworks
+**FP8 Mixed-Precision Training - Hardware Revolution**
+- **First large model to train with FP8** precision end-to-end
+- Weights, activations, and gradients stored in FP8; accumulation in FP32
+- **50% memory reduction** compared to FP16 training
+- **Custom FP8-GEMM-with-rescaling kernel** for NVIDIA H-series GPUs
+- Blockwise weight scaling (128×128 blocks) + tilewise activation scaling (1×128 tiles)
+- **Online quantization**: computes scaling factors in real-time rather than delayed approach
+- Leverages NVIDIA WGMMA instructions for maximum throughput (~2 petaFLOPS on H100)
+- 4x bandwidth reduction through pre-transmission FP8 quantization
 
-**Cross-Node Optimization:**
-- Eliminated communication bottlenecks in multi-node MoE training
-- Achieved near-full computation-communication overlap
-- Hardware-software co-design for efficiency
+**Hardware-Software Co-Design**
+- Optimized for NVIDIA H800 GPU cluster (2048 GPUs for V3 training)
+- Custom kernels that leverage native FP8 support in Hopper architecture
+- Infrastructure optimizations: communication overlap, gradient accumulation patterns
+- Cross-node optimization eliminated traditional multi-node training bottlenecks
+- Near-full computation-communication overlap through pipelining
 
-**Reinforcement Learning for Reasoning:**
-- R1 uses RL to achieve reasoning capabilities with low post-training cost
-- Trained on $294K (post V3-Base training)
-- Competes with o1 despite massive cost difference
+**Multi-Token Prediction Training**
+- Predicts up to next 2 tokens during training (85-90% acceptance rate for second token)
+- Improves model performance on downstream benchmarks
+- Reduces training compute per token without sacrificing quality
+
+**Group Relative Policy Optimization (GRPO) - Efficient RL**
+- Designed by DeepSeek specifically for reasoning capability optimization
+- **Eliminates critic model**: compares response groups relative to average, not against learned value function
+- **40-60% memory reduction** vs standard PPO by removing value function
+- Reduces policy update variance through group-based comparisons
+- KL divergence constraint prevents drastic policy shifts
+- Enables emergent reasoning patterns: self-reflection, verification, dynamic strategy adaptation
+- Foundation for DeepSeek-R1 reasoning breakthrough ($294K post-training cost)
+
+**Comparative Positioning**
+
+DeepSeek's efficiency approach differs fundamentally from competitors:
+
+**Architectural Advantages**:
+- MLA vs Standard Attention: 93% KV cache reduction with no performance loss
+- MoE vs Dense: 9.4% activation rate vs 100% for dense models (11x compute savings)
+- GRPO vs PPO: 40-60% less memory, simpler training pipeline
+
+**Hardware Optimization Depth**:
+- Most competitors use FP16 training; DeepSeek uses native FP8
+- Custom kernel development targeting specific GPU architectures
+- Infrastructure co-design from GPU-level upward
+
+**Training Philosophy**:
+- **Efficiency-first**: Every component optimized for cost, not just performance
+- **Hardware-aware**: Designs leverage native capabilities vs workarounds
+- **End-to-end**: Optimization spans architecture → training → quantization → hardware
+
+**Production Impact**:
+- V3 training: $5.58M (70x cheaper than industry standard)
+- R1 post-training: $294K (99.8% cheaper than GPT-4 reasoning models)
+- Inference at scale: 93% KV cache reduction + FP8 storage = massive cost savings
 
 ### 👥 Team Background
 
