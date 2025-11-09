@@ -596,6 +596,138 @@ dots.llm1 developed by Xiaohongshu's Humane Intelligence Lab:
 
 ---
 
+## Failed and Struggling Startups: The Other Side of China's AI Boom
+
+While the "AI Tigers" raised billions and achieved unicorn status, the Chinese AI landscape is littered with failures. Between November 2022 and August 2024, approximately **80,000 AI companies faced bankruptcy or closure**, revealing the brutal economics behind China's "百模大战" (Hundred Model War).
+
+### Confirmed Shutdowns
+
+#### 1. **光年之外 (Light Years Beyond)**
+- **Founded**: February 2023 by Wang Huiwen (Meituan co-founder)
+- **Shutdown**: June 2023 (only 4 months)
+- **Investment**: $50 million (Wang's personal money)
+- **What went wrong**: Founder suffered severe health crisis from extreme work schedule after only 3 months. Company acquired by Meituan for symbolic 1 yuan payment. Most dramatic early failure showing even well-funded, prestigious founders could collapse within months.
+
+#### 2. **波形智能 (Waveform Intelligence)**
+- **Founded**: 2023
+- **Shutdown**: Mid-2024 (6 months after Pre-A funding)
+- **Product**: 蛙蛙写作2.0 (Wawa Writing) with 300,000+ users
+- **What went wrong**: Despite significant user traction, couldn't build sustainable business model. Entire team (CEO, CTO, core engineers) absorbed by OPPO.
+
+#### 3. **华夏芯 (Siengine)**
+- **Shutdown**: April 2024 via bankruptcy liquidation
+- **What went wrong**: Capital chain breakage. Assets (15 software copyrights, 14 patents) auctioned for just ~$1,400. Hardware/chip-focused AI companies hit hardest by funding drought.
+
+#### 4. **鹿影科技 (Luying Technology / Avolution.ai)**
+- **Founded**: September 2023
+- **Acquired**: Late 2024 by MiniMax (forced acquisition)
+- **Product**: YoYo (anime-style AI video generation)
+- **Valuation**: ~$14 million at seed (extremely low for AI video)
+- **What went wrong**: Failed to secure second funding round despite promising technology. Video AI sector showed promise but individual startups couldn't sustain.
+
+#### 5. **鹰眼智慧中医 (Eagle Eye Smart TCM)**
+- **Shutdown**: December 2024 (sudden dissolution)
+- **What went wrong**: Focused on vertical AI application (Traditional Chinese Medicine) but couldn't sustain operations. All employees dismissed immediately via enterprise WeChat.
+
+---
+
+### Strategic Pivots and Retreats
+
+#### **Baichuan Intelligence (百川智能)**
+- **Pivot**: Mid-2024 halted foundation model pretraining
+- **New focus**: Medical AI services (Baichuan-M2)
+- **Reason**: Cost of training foundation models became unsustainable. Despite 20+ billion RMB valuation, couldn't sustain general model race against DeepSeek's efficiency.
+
+#### **Skywork AI (天工)**
+- **Pivot**: Stopped pretraining entirely
+- **New strategy**: Now uses DeepSeek-R1-Distill-Qwen-32B, focuses on music AI (Mureka series)
+- **Reason**: Became application company rather than model company. Shows even companies that released foundation models couldn't sustain that strategy.
+
+#### **01.AI (零一万物)**
+- **Founded by**: Kai-Fu Lee (former Google China head)
+- **Pivot**: Early 2025 announced adopting DeepSeek
+- **New focus**: Solutions provider for finance, gaming, legal sectors
+- **Irony**: Company founded by one of China's most prominent AI figures still had to abandon foundation model development.
+
+---
+
+### Industry Statistics: The Consolidation Reality
+
+**Brutal Numbers**:
+- **130+ large language models** launched in China (40% of global total)
+- Predicted consolidation to **just 5 models** within a few years
+- **~80,000 AI companies** dissolved/shut down (Nov 2022 - Aug 2024)
+- **237,000+ new AI firms** registered in H1 2024, but 80,000+ faced bankruptcy in same period
+- **34% failure rate** within months of founding
+
+**Funding Collapse**:
+- **2023**: 63.1 billion yuan ($8.77B) across 530 deals (down 38% in deal count, 26% in funding YoY)
+- **2024**: Continued decline of 30-50% YoY
+- **2025 Q1**: $1.2 billion across 144 deals (down 30% vs 2024 Q1)
+- VC funding for AI startups down 50%+ due to geopolitics and unproven business models
+
+**Robin Li (Baidu CEO) on the "Hundred Model War"**:
+> "Significant waste of resources... over 200 domestic models have minimal usage. Everyone is reinventing the wheel."
+
+---
+
+### Why They Failed: Root Causes
+
+#### 1. **The DeepSeek Effect**
+DeepSeek's January 2025 breakthrough fundamentally changed the landscape:
+- Made foundation model development economically unviable for most startups
+- Proved extreme efficiency was possible with small teams
+- Open-source nature destroyed proprietary model economics
+- "Investors in China would now be wary of backing smaller AI firms still focused on foundation models"
+
+#### 2. **Unsustainable Economics**
+- Training costs: GPT-4 ~$78M, Gemini Ultra ~$191M
+- Chinese startups trying to compete with fraction of funding
+- "Monetization from purely selling model access is just not there anymore with DeepSeek making it so cheap" - Rui Ma, Tech Buzz China
+- Chipmakers profited most from AI craze, not model developers
+
+#### 3. **Funding Drought**
+- U.S.-China decoupling devastated AI startup funding
+- American VC historically drove growth but pulled back
+- Risk-averse local RMB funds deterred by capital-intensive AI
+- Data center overcapacity (80% unused) scared investors
+
+#### 4. **Talent Retention Crisis**
+- Core teams cycling between startups and big tech (Alibaba, Tencent, ByteDance)
+- Startups couldn't compete with big tech compensation
+- Wang Huiwen's burnout emblematic of unsustainable founder pace
+- At least 30 of 100+ AI startups had executives from ByteDance, Microsoft, Huawei, SenseTime
+
+#### 5. **Regulatory Compliance Burden**
+- CAC algorithm filing requirements
+- Training data must be "lawful" and adhere to "socialist core values"
+- Compliance costs disproportionately hurt small startups
+- Regulatory uncertainty contributed to 50% VC funding decline
+
+---
+
+### What Separated Winners from Losers
+
+| Factor | Successful "AI Tigers" | Failed/Struggling Startups |
+|--------|----------------------|---------------------------|
+| **Funding** | 3-5B+ yuan Series A | Tens of millions or less |
+| **Founders** | Ex-Google, Tsinghua professors, tech CEOs | Less prominent backgrounds |
+| **Pivot Timing** | Pivoted to apps while still funded | Pivoted too late or never |
+| **Connections** | Government, academic, big tech ties | Limited institutional support |
+| **Strategy** | Consumer products, specific niches | Generic API/model services |
+| **Revenue** | $50-70M+ (MiniMax, others) | Little to no revenue |
+| **Geography** | Beijing, Hangzhou hubs | Second/third-tier cities |
+| **Technology** | Built on open-source efficiently | Tried to compete on foundation models |
+
+**Key Lessons**:
+1. Foundation models are not viable for most startups post-DeepSeek
+2. Speed to commercialization is critical in Chinese market
+3. Institutional backing (academic, government, big tech) almost mandatory
+4. Application layer, not model layer, is where startups can compete
+5. Consolidation to ~5 major models will eliminate 90%+ of current players
+
+---
+
 ## Market Landscape and Competitive Dynamics
 
 ### Market Structure
