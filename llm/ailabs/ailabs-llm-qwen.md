@@ -2,17 +2,17 @@
 
 ## 1. Alibaba (Tongyi Qianwen / Qwen)
 
-### Company Overview
+### 🏢 Company Overview
 
 Alibaba Cloud's Tongyi Qianwen (通义千问), commonly known as **Qwen**, represents one of China's most ambitious and successful LLM initiatives. Operating under Alibaba Cloud's AI innovation department, Qwen has evolved into a comprehensive foundation model ecosystem spanning language, vision, multimodal, and reasoning capabilities. As of 2025, Qwen has attracted over 90,000 enterprise adoptions within its first year and commands the top position on Hugging Face among models from the region.
 
-### Founding Story and History
+### 📚 Founding Story and History
 
 Alibaba launched Qwen's beta in **April 2023** under the name Tongyi Qianwen, making it available for internal testing. After navigating Chinese regulatory clearance processes, the model opened for public use in **September 2023**, marking Alibaba's formal entry into the frontier LLM race. The initiative was driven by Alibaba Cloud's strategic recognition that generative AI would become central to cloud computing competitiveness.
 
 Unlike startups building LLMs from scratch, Alibaba leveraged its vast existing infrastructure, expertise from acquisition of startups, and integration with its cloud platform to create a differentiated offering. The Qwen project was conceived as a long-term investment in establishing Alibaba Cloud as a competitive AI infrastructure provider in China.
 
-### Funding and Investment
+### 💰 Funding and Investment
 
 As part of Alibaba Group (NASDAQ: BABA), Qwen benefits from:
 - **Direct funding**: Part of Alibaba Cloud's strategic investment in AI infrastructure
@@ -21,7 +21,7 @@ As part of Alibaba Group (NASDAQ: BABA), Qwen benefits from:
 
 No separate fundraising rounds were required for Qwen, as it operates as a strategic initiative within Alibaba's existing AI research and cloud computing divisions. This corporate backing provided significant competitive advantages in compute resources and market access compared to pure-play AI startups.
 
-### Strategic Positioning
+### 🎯 Strategic Positioning
 
 Alibaba positions Qwen as a **cost-effective, enterprise-grade AI solution** differentiated by:
 
@@ -34,7 +34,7 @@ Alibaba positions Qwen as a **cost-effective, enterprise-grade AI solution** dif
 
 In 2025, Alibaba announced aggressive price cuts across its LLM API offerings, a strategic move to capture market share and establish Qwen as the default choice for Chinese developers and enterprises.
 
-### Technical Innovations and Architecture
+### 🔧 Technical Innovations and Architecture
 
 **Multi-Model Architecture Approach:**
 - Original architecture based on Meta's Llama, then evolved into proprietary designs
@@ -51,7 +51,7 @@ In 2025, Alibaba announced aggressive price cuts across its LLM API offerings, a
 - Qwen2.5-Omni (March 2025): End-to-end multimodal supporting text, audio, vision, video, and real-time speech generation
 - Qwen3-VL: Vision-language models with 235B parameters for advanced image understanding
 
-### Team Background
+### 👥 Team Background
 
 Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 - AI researchers and engineers from Alibaba's internal research organizations
@@ -59,7 +59,7 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 - Collaboration with academic institutions in China
 - Led by Alibaba Cloud's CTO and AI research leadership
 
-### Model Lineage and Release Timeline
+### 🚀 Model Lineage and Release Timeline
 
 | Release Date | Model | Parameters | Key Features | Open Weights | Links | Notes |
 |---|---|---|---|---|---|---|
@@ -90,7 +90,7 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 | Sep 22, 2025 | Qwen3-Omni | - | Omni-modal (text, audio, image, video) | ✅ | [GitHub](https://github.com/QwenLM/Qwen3-Omni), [arXiv:2509.17765](https://arxiv.org/abs/2509.17765) | - |
 | Sep 23, 2025 | Qwen3-VL-235B | 235B-A22B | Advanced vision-language frontier | ✅ | [HF](https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct), [GitHub](https://github.com/QwenLM/Qwen3-VL) | - |
 
-### Performance and Reception
+### 📊 Performance and Reception
 
 **Benchmark Achievements:**
 - Qwen2.5-Max: Claims to outperform GPT-4o, DeepSeek-V3, and Llama-3.1-405B on key benchmarks
@@ -109,7 +109,7 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 - Reputation for reliability in production deployments
 - Perceived as more "safe" and compliant with Chinese regulations than international alternatives
 
-### Notable Achievements and Stories
+### ⭐ Notable Achievements and Stories
 
 1. **Market Dominance**: Became the most downloaded Chinese-origin model on Hugging Face, validating the open-source strategy
 2. **Enterprise Integration**: Deep integration across Alibaba's business units (DingTalk, Alibaba Cloud services, etc.)
@@ -117,7 +117,7 @@ Qwen is developed by Alibaba Cloud's AI research division, staffed by:
 4. **Accessibility Strategy**: Aggressive pricing and open-source approach democratized AI in China
 5. **Regulatory Navigation**: Successfully navigated Chinese regulatory requirements while maintaining frontier capabilities
 
-### Ecosystem & Community Contributions
+### 🌐 Ecosystem & Community Contributions
 
 Beyond frontier models, Qwen has built a comprehensive ecosystem of infrastructure tools, partnerships, and initiatives positioning it as the "Android of the AI Era" with deep integration across enterprise and developer communities.
 
