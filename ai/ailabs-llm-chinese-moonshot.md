@@ -1,18 +1,18 @@
-# Moonshot AI - Kimi Deep Dive
+# Moonshot AI (月之暗面) - Kimi Deep Dive
 
-## 1. Moonshot AI (Kimi)
+## 1. Moonshot AI (月之暗面) / Kimi
 
 ### 🏢 Company Overview
 
-**Moonshot AI** represents the "AI Tiger" startup archetype that emerged during the generative AI boom. Founded in March 2023 by seasoned entrepreneurs Yang Zhilin, Zhou Xinyu, and Wu Yuxin, Moonshot achieved unicorn status (>$1B valuation) within 8 months—one of the fastest achievements in Chinese startup history. The company is known for its consumer-focused Kimi chatbot and focus on long-context capabilities (ability to handle millions of tokens in a single prompt).
+**Moonshot AI (月之暗面, "Dark Side of the Moon")** represents the "AI Tiger" startup archetype that emerged during the generative AI boom. Founded in March 2023 by seasoned entrepreneurs Yang Zhilin (杨植麟), Zhou Xinyu (周昕宇), and Wu Yuxin (吴宇欣), Moonshot achieved unicorn status (>$1B valuation) within 8 months—one of the fastest achievements in Chinese startup history. The company is known for its consumer-focused Kimi (Kimi.ai) chatbot and focus on long-context capabilities (ability to handle millions of tokens in a single prompt).
 
 ### 📚 Founding Story and History
 
 #### The Founding Vision
 
-Moonshot was founded on **March 1, 2023**, chosen deliberately for the 50th anniversary of Pink Floyd's *The Dark Side of the Moon* album release—founder Yang Zhilin's favorite album that inspired both the company name and its Chinese name "月之暗面" (Dark Side of the Moon). The founding reflects Yang's romantic vision of building transformative "moonshot" AI projects combining OpenAI's technology idealism with ByteDance's business pragmatism.
+Moonshot was founded on **March 1, 2023**, chosen deliberately for the 50th anniversary of Pink Floyd's *The Dark Side of the Moon* album release—founder Yang Zhilin (杨植麟)'s favorite album that inspired both the company name and its Chinese name "月之暗面" (Dark Side of the Moon). The founding reflects Yang's romantic vision of building transformative "moonshot" AI projects combining OpenAI's technology idealism with ByteDance's business pragmatism.
 
-**Yang Zhilin's Background:**
+**Yang Zhilin (杨植麟) - CEO & Co-Founder Background:**
 - **Tsinghua undergraduate** in Computer Science
 - **Carnegie Mellon PhD** (2019) in Computer Science, advised by AI pioneer Ruslan Salakhutdinov
 - **Google Brain researcher** during doctoral studies (2017-2018)
@@ -36,7 +36,7 @@ Yang envisions Moonshot AI as a company that **"combines the technology idealism
 #### Early Growth and Milestones
 
 **2023 - Foundation Year:**
-- **March 2023**: Company founding with Yang Zhilin, Zhou Xinyu, Wu Yuxin
+- **March 2023**: Company founding with Yang Zhilin (杨植麟), Zhou Xinyu (周昕宇), Wu Yuxin (吴宇欣)
 - **Q1 2023**: $60M Series A funding → assembled 40-person core AI team in 3 months
 - **October 2023**: Kimi chatbot launched with industry-leading 128K token context (first commercially available)
 - **November 2023**: Public release of Kimi, rapid consumer adoption, immediate competitor to Baidu's ERNIE Bot
