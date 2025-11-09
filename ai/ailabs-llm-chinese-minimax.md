@@ -642,18 +642,51 @@ MiniMax operates with strong academic rigor, publishing technical papers and eng
 
 **Researchers with Public Profiles:**
 
-| Name (English) | Name (Chinese) | Role | Links |
-|----------------|----------------|------|-------|
-| Yan Junjie | 颜俊杰 | CEO & Co-founder | [Google Scholar](https://scholar.google.com/citations?user=rEYarG0AAAAJ) · [Twitter/X](https://x.com/YJJMinimax) |
-| Yang Bin | 杨斌 | Co-founder & Technical Partner | [LinkedIn](https://www.linkedin.com/in/bin-yang-64ba2282/) · [Google Scholar](https://scholar.google.com/citations?user=Y3R-IYFQ2_cC&hl=en) |
-| Guojun Zhang | 张国俊 | Former Algorithm Engineer (now at Alibaba Quark) | [Homepage](https://gordon-guojun-zhang.github.io/) · [Google Scholar](https://scholar.google.ca/citations?user=p8Y0xJEAAAAJ) · [LinkedIn](https://www.linkedin.com/in/guojun-zhang-bbb009a4/) · [GitHub](https://github.com/Gordon-Guojun-Zhang) |
-| Zihao Wang | 王子豪 | Research Engineer, Vision-Language | [LinkedIn](https://www.linkedin.com/in/zihao-wang-8770a41a4/) · [Google Scholar](https://scholar.google.com.hk/citations?user=u5cdqewAAAAJ) |
+| Name (English) | Name (Chinese) | Role/Affiliation | Links |
+|----------------|----------------|------------------|-------|
+| **Founders & Leadership** | | | |
+| Yan Junjie | 颜俊杰 | CEO & Co-founder | [Scholar](https://scholar.google.com/citations?user=rEYarG0AAAAJ) · [X](https://x.com/YJJMinimax) |
+| Yang Bin | 杨斌 | Co-founder & Technical Partner | [LinkedIn](https://www.linkedin.com/in/bin-yang-64ba2282/) · [Scholar](https://scholar.google.com/citations?user=Y3R-IYFQ2_cC&hl=en) |
+| Yiran Zhong | 钟伊然 | Senior Research Director | [Homepage](https://yiranzhong.com/) · [Scholar](https://scholar.google.co.uk/citations?user=E9NVOBUAAAAJ) · [LinkedIn](https://www.linkedin.com/in/yiran-zhong-138a7886/) |
+| Pengyu Zhao | 赵鹏宇 | Head of Large Model Team | [Scholar](https://scholar.google.com/citations?user=VepDX8QAAAAJ) · [X](https://x.com/zpysky1125) |
+| Zekang Li | 李泽康 | Group Leader & Founder of AI Group | [Homepage](https://zekangli.com/) · [GitHub](https://github.com/lizekang) · [OpenReview](https://openreview.net/profile?id=~Zekang_Li1) |
+| Haohai Sun | 孙浩海 | Pre-training Lead (MiniMax-M2) | No public profiles |
+| Long Xing | 邢龙 | Technical Director, AI Infrastructure | [ML Summit](https://ml-summit.org/speaker/886) |
+| **Core Research Team** | | | |
+| Enwei Jiao | 焦恩伟 | Senior Software Engineer | [LinkedIn](https://www.linkedin.com/in/enwei-jiao-41192a97/) · [GitHub](https://github.com/jiaoew1991) |
+| Guojun Zhang | 张国俊 | Former Algorithm Engineer (→ Alibaba) | [Homepage](https://gordon-guojun-zhang.github.io/) · [Scholar](https://scholar.google.ca/citations?user=p8Y0xJEAAAAJ) · [LinkedIn](https://www.linkedin.com/in/guojun-zhang-bbb009a4/) · [GitHub](https://github.com/Gordon-Guojun-Zhang) |
+| Jin Zhu | 朱瑾 | LLM Post-train Engineer | [LinkedIn](https://www.linkedin.com/in/jinzhucam/) · [Scholar](https://scholar.google.com/citations?user=KRqJ6XAAAAAJ) |
 | Jingtao Han | 韩景涛 | Algorithm Engineer, LLM Training | [LinkedIn](https://www.linkedin.com/in/jingtao-han-1bb8894b/) |
+| Jiayuan Song | — | LLM Algorithm Engineer | [LinkedIn](https://www.linkedin.com/in/olivesong/) · [Scholar](https://scholar.google.com/citations?user=Pp8g0M4AAAAJ) · [GitHub](https://github.com/olive-jy-song) |
+| Weiyu Cheng | 程伟宇 | AI Researcher | [Homepage](http://weiyu-cheng.com/) · [Scholar](https://scholar.google.com/citations?user=hQT41Q4AAAAJ) · [GitHub](https://github.com/WeiyuCheng) |
+| Yongyi Hu | 胡永毅 | Research Scientist | [LinkedIn](https://www.linkedin.com/in/yongyi-hu-1068ab1b1/) · [Scholar](https://scholar.google.com/citations?user=mq4Z_ZMAAAAJ) |
+| Zhuo Jiang | 蒋卓 | Distributed Training Infrastructure | [DBLP](https://dblp.org/pid/123/1783.html) |
+| Zihao Wang | 王子豪 | Research Engineer, Vision-Language | [LinkedIn](https://www.linkedin.com/in/zihao-wang-8770a41a4/) · [Scholar](https://scholar.google.com.hk/citations?user=u5cdqewAAAAJ) |
 | Wei Shi | 史伟 | LLM Algorithm Engineer | [LinkedIn](https://www.linkedin.com/in/shiweiba/) |
-| Wenqian Zhao | 赵文谦 | Former LLM Data Scientist (Pretraining) | [LinkedIn](https://www.linkedin.com/in/wez020/) |
+| **Academic Collaborators** | | | |
+| Junhao Xu | — | Researcher (Beihang University) | [Scholar](https://scholar.google.com/citations?user=mgbigWkAAAAJ) |
+| Leyang Wang | — | University of Bristol | [LinkedIn](https://www.linkedin.com/in/leyang-wang/) |
+| Meizhi Ju | 鞠美芝 | Tencent Jarvis Lab | [Scholar](https://scholar.google.com/citations?user=UzFB-d8AAAAJ) · [DBLP](https://dblp.org/pid/168/7718.html) |
+| Mozhi Zhang | 张墨驰 | PhD, University of Maryland | [Homepage](http://users.umiacs.umd.edu/~mozhi/) · [Scholar](https://scholar.google.com/citations?user=2_gFWe4AAAAJ) · [GitHub](https://github.com/zhangmozhi) · [LinkedIn](https://www.linkedin.com/in/mozhi-zhang-a2596657) |
+| Qidi Xu | 徐启迪 | UT Health Science Center | [Scholar](https://scholar.google.com/citations?user=_kn484kAAAAJ) · [GitHub](https://github.com/QidiXu96/Coated-LLM) |
+| Tao Huang | 黄涛 | Asst Prof, Shanghai Jiao Tong U | [Homepage](https://taohuang.info/) · [Scholar](https://scholar.google.com/citations?user=jkcRdBgAAAAJ) · [GitHub](https://github.com/hunto) |
+| Weigao Sun | 孙伟高 | Shanghai AI Laboratory | [Homepage](https://weigao266.github.io/) · [Scholar](https://scholar.google.com/citations?user=HGQ7pdkAAAAJ) · [GitHub](https://github.com/weigao266) |
+| Weixuan Sun | 孙伟轩 | Tencent Researcher | [Scholar](https://scholar.google.com/citations?user=vIS56AoAAAAJ) · [OpenReview](https://openreview.net/profile?id=~Weixuan_Sun1) |
+| Xinjie Zhang | 张欣洁 | PhD, HKUST | [Homepage](https://xinjie-q.github.io/) · [Scholar](https://scholar.google.com/citations?user=U_gSl6wAAAAJ) · [GitHub](https://github.com/Xinjie-Q) |
+| Xuyang Shen | 沈旭阳 | PhD, Australian National U | [Scholar](https://scholar.google.com/citations?user=k6Q1mcoAAAAJ) · [GitHub](https://github.com/XuyangSHEN) · [OpenReview](https://openreview.net/profile?id=~Xuyang_Shen1) |
+| Yingjie Zhu | 朱颖杰 | PhD, Harbin Inst of Technology | [Homepage](https://aaandy-zhu.github.io/) · [Scholar](https://scholar.google.com.hk/citations?user=fQdWCnAAAAAJ) · [GitHub](https://github.com/AAAndy-Zhu) |
+| Yipeng Zhou | 周一鹏 | Senior Lecturer, Macquarie U | [Homepage](https://sites.google.com/site/yipenghomepage/) · [Scholar](https://scholar.google.ca/citations?user=uv95RgUAAAAJ) · [LinkedIn](https://au.linkedin.com/in/yipeng-zhou-09190625) |
+| Yufeng Yang | 杨雨枫 | PhD, Ohio State University | [Homepage](https://yfyangseu.github.io/) · [Scholar](https://scholar.google.com/citations?user=grcuPY4AAAAJ) · [GitHub](https://github.com/yfyangseu) · [LinkedIn](https://www.linkedin.com/in/yufeng-yang-183066171/) |
+| Yuhao Li | 李宇豪 | PhD, University of Melbourne | [Homepage](https://liyuhao1124.github.io/) · [LinkedIn](https://www.linkedin.com/in/yuhao-li-3195841a0/) |
+| Yunpeng Huang | — | MS, Nanjing University | [Scholar](https://scholar.google.com/citations?user=0WNn5wIAAAAJ) · [OpenReview](https://openreview.net/profile?id=~Yunpeng_Huang3) |
+| Zehan Li | 李泽含 | PhD, UTHealth Houston | [Scholar](https://scholar.google.com/citations?user=Aa3mKPQAAAAJ) |
+| Zhen Qin | 秦震 | Staff Scientist, Google DeepMind | [Homepage](http://alumni.cs.ucr.edu/~zqin001/) · [Scholar](https://scholar.google.com/citations?user=Kv1yk3YAAAAJ) · [LinkedIn](https://www.linkedin.com/in/zhenqin/) · [Google](https://research.google/people/106036/) |
+| Zhihang Yu | 于志洋 | Harbin Inst of Tech & SenseTime | [Scholar](https://scholar.google.com/citations?user=aFSgMt8AAAAJ) |
+| **Former Members** | | | |
+| Wenqian Zhao | 赵文谦 | Former LLM Data Scientist | [LinkedIn](https://www.linkedin.com/in/wez020/) |
 | Chenghao Li | 李成浩 | Former Intern, 3D Vision & AIGC | [LinkedIn](https://www.linkedin.com/in/chenghao-li-b73b73a4/) |
 
-*Note: Most MiniMax researchers maintain low public profiles. The GitHub organization members list is private. Contact: model@minimax.io*
+**Summary:** 37 researchers identified with public profiles out of 89 MiniMax-01 paper authors. Most maintain low public profiles typical of industry researchers. Contact: model@minimax.io
 
 **Research Philosophy:**
 - **Open Publication**: Publishing technical details despite competitive pressures
