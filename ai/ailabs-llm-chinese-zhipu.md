@@ -396,13 +396,24 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 | Jan 2024 | GLM-4 | - | Next-gen foundation, GPT-4 comparable | ❌ | [arXiv:2406.12793](https://arxiv.org/abs/2406.12793) \| [API](https://open.bigmodel.cn/) |
 | 2024 | GLM-4-9B | 9B | Open multilingual model, 128K/1M context variants | ✅ | [GitHub](https://github.com/THUDM/GLM-4) \| [HF](https://huggingface.co/THUDM/glm-4-9b-chat-hf) |
 | 2024 | GLM-4-Air | - | Lightweight variant for efficiency | ❌ | [API](https://open.bigmodel.cn/) |
+| Aug 27, 2024 | GLM-4-Flash | - | Free API, 72.14 tokens/s, 128K context, 26 languages | ❌ | [API](https://open.bigmodel.cn/dev/activities/free/glm-4-flash) |
 | 2024 | GLM-4-Plus | - | Enhanced vision-language capabilities | ❌ | [API](https://open.bigmodel.cn/) |
 | Jul 2025 | GLM-4.5 | 355B (32B active) | Frontier MoE, agentic/reasoning/coding (ARC), 70.1% TAU-Bench | ✅ | [arXiv:2508.06471](https://arxiv.org/abs/2508.06471) \| [GitHub](https://github.com/THUDM/GLM-4.5) \| [HF](https://huggingface.co/THUDM/glm-4-9b) |
 | Jul 2025 | GLM-4.5 Air | 106B (12B active) | Optimized MoE variant, cost-effective | ✅ | [GitHub](https://github.com/THUDM/GLM-4) |
 | Sep 2025 | GLM-4.6 | - | Domestic chips (Cambricon), enhanced coding/reasoning | ❌ | [Blog](https://chatglm.cn/) |
 | Dec 31, 2024 | GLM-Zero-Preview | - | Reasoning model via RL, GRE Math 126 score | ❌ | [API](https://bigmodel.cn/) |
+| Jan 2025 | GLM-Realtime | - | End-to-end multimodal (video+voice), 2-min memory, Function Call, singing | ❌ | [API](https://bigmodel.cn/) |
 | 2024 | GLM-Edge-1.5B-Chat | 1.5B | Edge/mobile optimization | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
 | 2024 | GLM-Edge-4B-Chat | 4B | Edge/mobile optimization | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
+
+#### Reasoning Models (GLM-Z1 Series)
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Resources |
+|---|---|---|---|---|---|
+| Apr 15, 2025 | GLM-4-32B-0414 | 32B | Base foundation model, approaches GPT-4o/DeepSeek-V3 | ✅ | [API](https://bigmodel.cn/) |
+| Apr 15, 2025 | GLM-Z1-32B-0414 | 32B | Reasoning model, 200 tokens/s, 8× faster than DeepSeek-R1 | ✅ | [API](https://bigmodel.cn/) |
+| Apr 15, 2025 | GLM-Z1-9B-0414 | 9B | Compact reasoning model, strong math/coding | ✅ | [API](https://bigmodel.cn/) |
+| Apr 15, 2025 | GLM-Z1-Rumination-32B-0414 | 32B | Multi-step deliberation for complex AGI tasks | ✅ | [API](https://bigmodel.cn/) |
 
 #### Vision-Language Models (VLM Series)
 
@@ -410,12 +421,19 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 |---|---|---|---|---|---|
 | Nov 2023 | CogVLM | 17B | Visual expert module, SOTA on 10 benchmarks | ✅ | [arXiv:2311.03079](https://arxiv.org/abs/2311.03079) \| [GitHub](https://github.com/THUDM/CogVLM) |
 | Dec 2023 | CogAgent | 18B | GUI agent, 1120x1120 resolution, SOTA on 9 benchmarks | ✅ | [arXiv:2312.08914](https://arxiv.org/abs/2312.08914) \| [GitHub](https://github.com/THUDM/CogAgent) |
+| 2025 | GLM-4V-Flash | - | Free multimodal model, enhanced image processing accuracy | ❌ | [API](https://bigmodel.cn/) |
 | Aug 2024 | GLM-4V-Plus | - | Video understanding, first general video API in China | ❌ | [API](https://open.bigmodel.cn/) |
 | Aug 30, 2024 | CogVLM2 | - | Enhanced image/video understanding, temporal grounding | ✅ | [arXiv:2408.16500](https://arxiv.org/abs/2408.16500) \| [GitHub](https://github.com/THUDM/CogVLM2) |
 | Aug 11, 2025 | GLM-4.5V | 106B (12B active) | Multimodal reasoning via RL, SOTA open VLM | ✅ | [arXiv:2507.01006](https://arxiv.org/abs/2507.01006) \| [GitHub](https://github.com/THUDM/GLM-4.5V) |
 | 2025 | GLM-4.1V-Thinking | - | Vision reasoning with CoT | ✅ | [arXiv:2507.01006](https://arxiv.org/abs/2507.01006) |
 | 2024 | GLM-Edge-V-2B | 2B | Edge vision-language | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
 | 2024 | GLM-Edge-V-5B | 5B | Edge vision-language | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
+
+#### Voice/Audio Models
+
+| Release Date | Model | Parameters | Key Features | Open Weights | Resources |
+|---|---|---|---|---|---|
+| Dec 3, 2024 | GLM-4-Voice | 9B base | End-to-end spoken chatbot, CN/EN, 175bps speech tokenizer | ✅ | [arXiv:2412.02612](https://arxiv.org/abs/2412.02612) \| [GitHub](https://github.com/THUDM/GLM-4-Voice) |
 
 #### Code Generation Models (CodeGeeX Series)
 
@@ -443,8 +461,8 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 | AutoGLM | Autonomous GUI agents | [arXiv:2411.00820](https://arxiv.org/abs/2411.00820) |
 | Relay Diffusion | Cascaded diffusion framework | Multiple CogView/CogVideo models |
 
-**Total Model Families**: 6 major series (GLM, ChatGLM, CogVLM, CogAgent, CodeGeeX, CogView/CogVideo)
-**Total Models Released**: 40+ variants across language, vision-language, code, and multimodal generation
+**Total Model Families**: 8 major series (GLM/ChatGLM, GLM-Z1 Reasoning, CogVLM/CogAgent, GLM-Voice, CodeGeeX, CogView/CogVideo)
+**Total Models Released**: 50+ variants across language, reasoning, vision-language, voice, code, and multimodal generation
 
 ### 📊 Performance and Reception
 
