@@ -277,7 +277,7 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 | Oct 2023 | Kimi Chatbot | - | Consumer chatbot, 200K char context | ❌ | [Kimi.ai](https://kimi.ai/) |
 | Mar 2024 | Kimi (Long-Context) | - | Extended to 2M Chinese characters, lossless | ❌ | [Blog](https://www.kimi.ai/) |
 | Jun 2024 | Kimi-Researcher | - | Agentic research tool, 70+ search queries | ❌ | [Project Page](https://moonshotai.github.io/Kimi-Researcher/) |
-| Jan 20, 2025 | Kimi K1.5 | - | o1-level reasoning, multimodal | ❌ API-only | [arXiv 2501.12599](https://arxiv.org/abs/2501.12599) \| [GitHub](https://github.com/MoonshotAI/Kimi-k1.5) \| [API](https://platform.moonshot.cn/) |
+| Jan 20, 2025 | Kimi K1.5 | - | o1-level reasoning, multimodal | ❌ | [arXiv 2501.12599](https://arxiv.org/abs/2501.12599) \| [GitHub](https://github.com/MoonshotAI/Kimi-k1.5) |
 | Apr 2025 | Kimi-VL | 16B (3B activated) | Vision-language, 128K context | ✅ | [arXiv 2504.07491](https://arxiv.org/abs/2504.07491) \| [GitHub](https://github.com/MoonshotAI/Kimi-VL) \| [HF](https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct) |
 | Jun 2025 | Kimi-VL-Thinking | 16B (3B activated) | Vision reasoning, long CoT + RL | ✅ | [arXiv 2504.07491](https://arxiv.org/abs/2504.07491) \| [GitHub](https://github.com/MoonshotAI/Kimi-VL) |
 | Jun 2025 | Kimi-Dev-72B | 72B | Coding-focused, 60.4% SWE-bench Verified | ✅ | [GitHub](https://github.com/MoonshotAI/Kimi-Dev) \| [HF](https://huggingface.co/moonshotai/Kimi-Dev-72B) |
