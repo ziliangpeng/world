@@ -127,6 +127,39 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 - **Shareholding**: ~12 million shares, second-largest individual shareholder after Yang Zhilin
 - **Note**: Yang Zhilin has publicly characterized her shareholding and contributions as "co-founder level," though her formal title is Product Operations Lead rather than technical co-founder
 
+#### Key Technical Leadership
+
+**Xu Xinran (许欣然) - VP of Engineering / Infrastructure Lead**
+- **Role**: VP of Engineering, Infrastructure Lead
+- **Key Contributions**:
+  - Led infrastructure optimization that improved Kimi response speed by 3x (compared to October 2023)
+  - Infrastructure optimization across data, model training, and product levels
+  - Technical coordination on long-context capability improvements
+- **Notable Work**:
+  - Co-authored Mooncake paper (won Best Paper at USENIX FAST 25 conference)
+  - Mooncake: KVCache-centric serving architecture powering Kimi production
+- **Impact**: Mooncake architecture enables handling 115% more requests on NVIDIA A800 clusters and 107% more on H800 clusters
+
+**Ruoyu Qin - Infrastructure Architect & Systems Engineer**
+- **Background**: Moonshot AI & Tsinghua University
+- **Role**: Lead architect for LLM serving infrastructure
+- **Notable Achievement**:
+  - Lead author of "Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving" paper
+  - **Award**: Best Paper at USENIX FAST 25 Conference (2025)
+  - Pioneered KVCache-centric disaggregated architecture separating prefill and decoding clusters
+- **Technical Innovation**:
+  - KVCache-centric scheduler that balances throughput maximization with Service Level Objectives (SLOs)
+  - Leverages underutilized CPU, DRAM, and SSD resources of GPU clusters
+- **Practical Impact**: Mooncake processes 100 billion tokens daily for Kimi production service
+
+**Yifan Bai - Research Coordination Lead**
+- **Role**: Lead coordinator for Kimi K2 technical research efforts
+- **Key Work**:
+  - First author on Kimi K2: Open Agentic Intelligence technical report (July 2025)
+  - Coordinated research efforts across ~168 co-authors from Moonshot AI team
+  - Documentation and technical coordination for K2 release
+- **Impact**: Kimi K2 features 1 trillion total parameters with 32 billion activated (MoE architecture), ranked #1 on HuggingFace Open LLM Leaderboard
+
 #### Team Scale and Growth
 - **Early Growth**: $60M Series A → 40-person AI team built in first 3 months
 - **Current Scale**: ~300 employees (as of 2024-2025)
