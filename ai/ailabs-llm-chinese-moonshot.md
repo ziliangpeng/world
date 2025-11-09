@@ -51,20 +51,87 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 
 ### 🔧 Technical Innovations and Architecture
 
-**Long-Context Architecture:**
-- Developed techniques to extend context windows to extremely long lengths
-- March 2024: Extended from 200K to 2M Chinese characters
-- October 2023: First to support millions of tokens in single prompt
-- Different technical approach than competitors (not fully disclosed)
+#### Long-Context Breakthroughs
 
-**Reasoning Capabilities:**
-- K1.5: Claims mathematical, coding, and multimodal reasoning matching o1
-- K2: 1T total parameters with 32B activated (mixture of experts)
+**Context Window Scaling:**
+- October 2023: First to support 200K Chinese character (≈70K token) single prompt
+- March 2024: Extended to 2M Chinese characters (lossless, without sliding window/downsampling)
+- July 2025 (K2): 256K token context window with 128K effective context
+- **Key Innovation**: "Lossless long-context" - no performance degradation at extended lengths
+
+**Mixture of Block Attention (MoBA) - 2025 Research:**
+- Revolutionary attention mechanism applying MoE principles to attention layers
+- Divides context into blocks with dynamic gating for relevant block selection
+- **Performance**: 6.5x speedup at 1M tokens, 16x speedup at 10M tokens
+- Maintains causal masking for autoregressive generation
+- Already deployed in Kimi for production long-context support
+- [GitHub: MoonshotAI/MoBA](https://github.com/MoonshotAI/MoBA)
+
+#### Mixture of Experts (MoE) Architecture
+
+**Kimi K2 MoE Design:**
+- Total parameters: 1 trillion (1T)
+- Activated parameters: 32 billion per token (3.2% efficiency)
+- Architecture details:
+  - 61 layers (1 dense, 60 MoE layers)
+  - 384 experts total with 8 experts routed per token
+  - 1 shared expert for global context
+  - 64 attention heads, 7168 hidden dimension
+  - Multi-head Latent Attention (MLA) with SwiGLU activation
+- **Training**: 15.5 trillion tokens with zero instability
+
+#### MuonClip Optimizer - Training Stability at Scale
+
+**Problem Solved:** "Logit explosion" in attention layers that destabilizes ultra-large model training
+- During training, attention logits would rapidly exceed 1000, causing crashes or divergence
+- Traditional clipping after softmax distorts learning signals
+
+**Solution - MuonClip:**
+- Builds on Muon optimizer (inherently token-efficient)
+- Adds QK-Clip: Rescales Query and Key weight matrices after each update
+- Operates at weight level (before instability arises) rather than post-softmax
+- **Results**: Trained Kimi K2 on 15.5T tokens without a single training crash
+- **Performance**: 25% faster convergence than standard optimizers
+
+#### Kimi Linear - Ultra-Efficient Linear Attention (October 2025)
+
+**Architecture:**
+- 48 billion total parameters with 3 billion active (6.25% efficiency)
+- Hybrid approach: 3:1 ratio of Kimi Delta Attention (KDA) to Multi-head Latent Attention (MLA)
+- Kimi Delta Attention: Linear attention with fine-grained gating mechanism
+
+**Performance Gains:**
+- Up to 6x faster decoding
+- 75% reduction in KV cache usage
+- 6x throughput increase at 1M context length
+- Significantly reduced latency (time per output token - TPOT)
+
+**Deployment:** Open-source release on HuggingFace and GitHub
+
+#### Mooncake - Production Infrastructure (USENIX FAST 25 Best Paper)
+
+**KVCache-Centric Disaggregated Architecture:**
+- Separates prefill and decoding clusters
+- Leverages underutilized CPU, DRAM, and SSD resources for KV cache
+- KVCache-centric scheduler balancing throughput and Service Level Objectives (SLOs)
+
+**Real-World Impact:**
+- Processes 100 billion tokens daily for Kimi production
+- Handles 115% more requests on NVIDIA A800 clusters
+- Handles 107% more requests on NVIDIA H800 clusters
+
+#### Reasoning Capabilities
+
+**K1.5 (January 2025):**
+- Claims mathematical, coding, and multimodal reasoning matching o1-level performance
 - Integration of reinforcement learning for reasoning improvement
+- Capabilities: Complex math, code generation, vision reasoning
 
-**Efficient Architecture:**
-- K2 MoE design with selective expert activation
-- Post-training focus emphasizing reasoning and instruction-following
+**K2 Reasoning:**
+- Agentic capabilities with tool use and sequential planning
+- Can execute 200-300 sequential tool calls without human intervention
+- Strong performance on code, math, and reasoning benchmarks
+- Ranked #1 on HuggingFace Open LLM Leaderboard (at release)
 
 ### 👥 Team Background
 
