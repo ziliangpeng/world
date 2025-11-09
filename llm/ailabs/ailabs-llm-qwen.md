@@ -40,7 +40,8 @@ In 2025, Alibaba announced aggressive price cuts across its LLM API offerings, a
 
 Qwen evolved from Llama foundation (Qwen 1.0) to proprietary architectures with unique technical innovations that differentiate it from competitors:
 
-**Grouped Query Attention (GQA)** - Introduced in Qwen2
+**Grouped Query Attention (GQA)** - Adopted in Qwen2 (Originally from Google)
+- Qwen2 adopted GQA technique (originally introduced by Google)
 - Replaces standard multi-head attention (MHA) with shared key-value heads across multiple query heads
 - Reduces KV cache size by factor of `n_heads / n_kv_heads`
 - Dramatically improves inference throughput and memory efficiency
