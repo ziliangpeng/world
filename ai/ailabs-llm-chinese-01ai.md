@@ -218,13 +218,163 @@ Lee's 2018 book laid out conditions for China's AI success:
 
 ## Team Background
 
-01.AI's leadership and team:
+### Leadership Structure
 
-- **Kai-Fu Lee**: Founder and CEO
-- Senior executives from tech companies (Microsoft, Google backgrounds)
-- Talent attraction through Lee's network and reputation
-- Mix of Chinese and international perspectives
-- Strategic partnerships with academic institutions
+**Executive Leadership**
+
+1. **Kai-Fu Lee** (李开复) - CEO, Chairman, Co-founder
+   - PhD in Computer Science from Carnegie Mellon University
+   - BS in Computer Science from Columbia University (1983, summa cum laude)
+   - Continues as Chairman of Sinovation Ventures (创新工场)
+   - Named to TIME's 100 most influential people in AI (2023)
+   - Career: Apple → Microsoft Research Asia (Founding Director, 1998-2000) → Google China (President, 2005-2009) → Sinovation Ventures (Founder, 2009)
+   - Expertise: AI research, technology strategy, China-US tech ecosystems
+
+2. **Ken Qi** (祁琪) - Co-founder, VP of Sales & Business Development
+   - BS in Engineering & International Trade from Beijing University of Technology (1994)
+   - Previous roles: GM of Public Sector Group at Microsoft China, VP at Cisco China (2010-2012), VP at SAP China (2012-2014), Co-founder at Aibee Inc.
+   - 500+ LinkedIn connections based in Beijing
+   - Expertise: Enterprise sales, government affairs, business development
+
+3. **Anita Huang** (黄琪) - Co-founder, VP of Marketing
+   - MSc in Marketing and Communications from Northwestern University
+   - 10+ years at Sinovation Ventures before 01.AI
+   - Previous roles: VP of Marketing at Tudou.com, Director of Greater China Marketing at Google, executive roles at Yahoo
+   - 12 years of experience in large-scale Internet platforms
+   - Based in United States, 500+ LinkedIn connections
+   - Expertise: Brand marketing, product management, business development
+
+**Core Vice Presidents & Technical Leadership**
+
+4. **Ma Jie** (马杰) - Co-founder, VP, Legal Representative
+   - Former Vice President at Baidu (百度)
+     - Oversaw Security Department, Smart Cloud IoT Department, ARM cloud service businesses
+     - Led Baidu's "Xirong" (希壤) metaverse project (launched December 2021)
+     - Head of Baidu Safety; Founded "Anquanbao" (安全宝), China's first SaaS cloud security service (acquired by Baidu, 2015)
+   - Former CTO at Sinovation Ventures (2010-2011)
+   - Became legal representative of Beijing 01.AI Technology Co. in September 2023
+   - Became chairman of subsidiary "零一绿洲" (01 Oasis) - AI gaming business (established September 2024)
+   - Expertise: Network security, cloud security, data security, infrastructure construction, 2C business, metaverse
+
+5. **Wenhao Huang** (黄文浩) - VP of Technology, Head of Pretrained Models
+   - PhD in Computer Science from Peking University (北京大学)
+   - Senior Researcher at Microsoft Research Asia (微软亚洲研究院)
+   - Senior Researcher at Beijing Academy of Artificial Intelligence
+   - AI agents research praised by Bill Gates and Satya Nadella at Microsoft
+   - Co-author of Yi model technical paper (arXiv:2403.04652)
+   - Key figure behind Yi-34B development
+   - Expertise: Large language models, model pre-training, AI agents, scaling laws
+
+**Notable Former Co-founders (2023-2025 Departures)**
+
+6. **Gu Xuemei** (谷雪梅) - Former Co-founder, Former VP Model Training (DEPARTED LATE 2024/EARLY 2025)
+   - Vice President at Alibaba (阿里巴巴)
+     - Head of Alibaba Search Business Unit, Product Director at Alimama, CTO of Cainiao Network (菜鸟网络)
+   - Deputy Director of Google China Research Institute (2005-2015)
+     - First local female engineer at Google China
+     - Reached T7 level (highest-ranked engineer at Google China)
+   - Chief Scientist at T3 Chuxing (T3出行) ride-hailing platform (2021)
+   - Left 01.AI in late 2024/early 2025 to start own business
+   - Expertise: Large-scale distributed computing, search recommendation, advertising, knowledge graphs, model pre-training
+
+7. **Li Xiangang** (李先刚) - Former Co-founder, Former Chief Algorithm Engineer (DEPARTED 2024)
+   - PhD in Computer and Information Sciences from Peking University (北京大学)
+   - Chief Algorithm Engineer at Baidu (百度)
+   - Chief Algorithm Engineer at Didi Chuxing (滴滴出行)
+   - Recognized leading Chinese scientist in speech recognition
+   - Left 01.AI in 2024, joined Beike (贝壳), then moved to Alibaba Tongyi Lab to lead voice AI research
+   - Expertise: Speech recognition, AI algorithms, NLP
+   - GitHub: tjadamlee; Personal website: xiangangli.github.io
+
+8. **Dai Zonghong** (戴宗洪) - Former Co-founder, Former VP of Technology (DEPARTED 2024)
+   - CTO of Huawei Cloud AI (华为云AI)
+   - Head of Technological Innovation at Huawei (华为)
+   - Director of AI Infra at Alibaba DAMO Academy (阿里达摩院)
+   - Left 01.AI in 2024 to start own business after AI Infra team layoff
+   - Recent startup project received investment from Sinovation Ventures
+   - Expertise: AI infrastructure, large-scale parallel training, training efficiency, cost reduction
+
+### Research and Engineering Teams
+
+**Model Development Team**
+
+The Yi model technical paper (arXiv:2403.04652) lists **31 authors** from 01.AI, representing core research and engineering talent focused on model development:
+
+**Lead Contributors** (publicly named):
+- Alex Young, Bei Chen, Chao Li, Chengen Huang, Ge Zhang, Guanwei Zhang, Guoyin Wang
+- Heng Li, Jiangcheng Zhu, Jianqun Chen, Jing Chang, Kaidong Yu, Peng Liu, Qiang Liu
+- Shawn Yue, Senbin Yang, Shiming Yang, Wen Xie, Wenhao Huang (VP), Xiaohui Hu
+- Xiaoyi Ren, Xinyao Niu, Pengcheng Nie, Yanpeng Li, Yuchi Xu, Yudong Liu
+- Yue Wang, Yuxuan Cai, Zhenyu Gu, Zhiyuan Liu, Zonghong Dai
+
+**Specializations**: Model architecture design, pre-training optimization, vision-language models, code generation models, inference optimization
+
+### Team Composition and Size
+
+**Overall Team**
+- **November 2023**: Over 100 employees
+- **2024**: Approximately 67 core team members (after restructuring and departures)
+- **Employee Range**: 51-200 total staff (including contractors and subsidiaries)
+- **Team Composition**: Over 50% are LLM experts from major tech firms
+
+**Geographic Distribution**
+- **Primary Base**: Beijing, China (headquarters and engineering)
+- **International Offices**: San Francisco, CA; Toronto, Canada
+- **Team Spread**: Predominantly China-based with some international presence
+
+**Company Backgrounds**
+Team members recruited from:
+- **Chinese Tech Giants**: Alibaba (阿里巴巴), Baidu (百度), Huawei (华为), Didi Chuxing (滴滴), Tencent (腾讯)
+- **Global Tech Leaders**: Microsoft (微软), Google (谷歌), Cisco (思科), SAP
+- **Research Institutions**: Microsoft Research Asia, Beijing Academy of Artificial Intelligence, Peking University
+
+**Educational Background**
+- Multiple PhD holders: Kai-Fu Lee (Carnegie Mellon), Wenhao Huang (Peking University), Li Xiangang (Peking University)
+- Northwestern University, Beijing University of Technology
+- Focus on top-tier universities in China and US
+
+### Organizational Evolution and Changes
+
+**Leadership Timeline**
+- **May 2023**: Ma Jie founded Beijing 01.AI Technology Co. as legal representative (99% stake, Sinovation 1%)
+- **July 2023**: Li Xiangang became legal representative, manager, executive director
+- **September 2023**: Ma Jie took over as legal representative; Li Xiangang resigned from manager positions
+- **2024**: Significant departures - Li Xiangang, Dai Zonghong left company
+- **Late 2024/Early 2025**: Gu Xuemei (half of co-founder team) left to start own business
+- **February 2025**: Joint "industrial large model laboratory" with Alibaba Cloud (阿里云)
+
+**Impact of Departures**: By early 2025, **half of 01.AI's co-founders have departed**, reflecting organizational restructuring and strategic pivots toward enterprise focus.
+
+**Subsidiary Development**
+- **September 2024**: Established "零一绿洲" (01 Oasis) for AI gaming business with Ma Jie as chairman
+- Spinning off gaming, finance, and industry-specific AI applications into independent units
+- Focus on building multiple revenue streams
+
+### Key Team Strengths and Gaps
+
+**Strengths**
+1. **Silicon Valley + China Expertise**: Deep experience spanning both US tech leadership (Google, Microsoft) and China market (Alibaba, Baidu, Didi)
+2. **Research Credibility**: 31 authors on Yi paper, multiple PhD holders, published researchers
+3. **Technical Depth**: Specialists in LLMs, vision-language models, code generation, system infrastructure
+4. **Rapid Execution**: Assembled world-class team and achieved unicorn status in 8 months
+5. **Bilingual Capability**: Team optimized for English and Chinese language excellence
+
+**Notable Gaps in Public Information**
+- No publicly disclosed CTO as single executive
+- No publicly disclosed CFO or COO roles
+- Chief Architect identity not public (former TensorFlow founding member)
+- Limited detailed backgrounds for 24 of 31 Yi paper authors
+- No formal advisory board structure disclosed
+- Department sizes and organizational chart not public
+- Majority of team members maintain low public profiles
+
+### Advisory and Investor Network
+
+While no formal advisory board is disclosed, major investors serve strategic roles:
+- **Sinovation Ventures (创新工场)**: Kai-Fu Lee's network and portfolio support
+- **Alibaba Cloud (阿里云)**: Technology partnership, enterprise distribution, infrastructure
+- **Xiaomi (小米)**: Hardware ecosystem, consumer distribution
+- **Tencent (腾讯)**: Social and gaming ecosystem access
 
 ---
 
