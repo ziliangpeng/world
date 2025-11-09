@@ -393,9 +393,30 @@ Between August 2024 and March 2025, Baichuan underwent a **dramatic strategic tr
 
 ### 🎯 Strategic Positioning
 
-Baichuan differentiates through **three strategic elements**:
+**Post-Pivot (2025+): Medical AI Specialist**
 
-#### 1. Search Engine DNA
+Following the strategic pivot in 2024-2025, Baichuan has repositioned as a **medical AI specialist** rather than a general-purpose foundation model company. The company differentiates through **four strategic elements**:
+
+#### 1. Medical AI Leadership
+
+**Core Focus:**
+- **Primary Mission**: Building AI systems for healthcare and clinical applications
+- **Vision**: "Creating a doctor is equivalent to achieving AGI" (Wang Xiaochuan)
+- **Products**: Baichuan-M1, M2 (HealthBench #1), Futang Pediatric AI
+
+**Market Position:**
+- First-mover in open-source medical LLMs in China
+- Real-world clinical deployments (Beijing Children's Hospital, 150+ county hospitals)
+- Differentiated positioning among "Six Tigers" competitors
+- Government-backed healthcare modernization partnerships
+
+**Competitive Advantages:**
+- **95% diagnostic alignment** with expert physicians (Pediatric AI)
+- **World's #1 on HealthBench**: M2 score of 60.1 beats GPT-oss120b (57.6)
+- **Cost-effective deployment**: M2 runs on single RTX 4090 ($1,400 hardware)
+- **Domain depth**: 30+ doctors on medical product team, partnerships with top hospitals
+
+#### 2. Search Engine DNA Applied to Medical AI
 
 **Competitive Advantage:**
 - **Ranking algorithms**: Deep expertise optimizing relevance at scale
@@ -403,33 +424,48 @@ Baichuan differentiates through **three strategic elements**:
 - **Language understanding**: 20 years of Sogou experience in Chinese language processing
 - **Inference efficiency**: Search engines demand fast, cheap inference
 
-**Application to LLMs:**
-- Efficient inference (critical for search-like use cases requiring speed)
-- Better understanding of context and relevance
-- Superior Chinese language capabilities
-- Domain-specific optimization (law, finance, medicine - search-heavy domains)
+**Application to Medical AI:**
+- Medical diagnosis as information retrieval problem (matching symptoms to conditions)
+- Efficient inference for real-time clinical decision support
+- Ranking medical literature and treatment options
+- Superior Chinese medical terminology understanding
+- Fast response times critical for clinical workflows
 
-#### 2. Rapid Iteration and Open-Source Strategy
+#### 3. Open-Source Strategy for Medical AI
 
 **Philosophy:**
-- Release models frequently (multiple per quarter)
-- Open-source weights to build developer community
-- Focus on practical performance over benchmark optimization
-- Domain specialization rather than one-size-fits-all
+- Release medical models as open-source (M1, M2) to build research community
+- Enable private deployment in hospitals (data privacy requirements)
+- Foster academic partnerships and clinical validation
+- Differentiate from closed proprietary medical AI systems
 
 **Market Positioning:**
-- Attracted developer community through open weights
-- Positioned as alternative to closed proprietary models
-- Demonstrated "AI Tiger" agility vs. traditional tech giants
+- Top medical LLM in research community
+- Attracted developer community through transparency
+- Positioned as accessible alternative to expensive proprietary systems
+- Demonstrated rapid iteration (M1 Feb 2025 → M2 Aug 2025, 6 months)
 
-#### 3. Domain Specialization Focus
+**Business Model:**
+- Hospital partnerships and clinical deployments
+- Medical AI SaaS for healthcare institutions
+- Private deployment licenses (M2 on RTX 4090)
+- Government healthcare contracts (150+ county hospitals)
 
-**Strategic Insight:**
-Rather than competing on general-purpose benchmarks (where DeepSeek excels), Baichuan focuses on:
-- **Medical AI** (Baichuan-M1 trained on medical knowledge)
-- **Finance** (specialized models for financial analysis)
-- **Law** (legal document understanding)
-- **Classical Chinese** (literature and historical texts)
+#### 4. Clinical Validation and Real-World Deployment
+
+**Strategic Differentiator:**
+Unlike pure benchmark-focused competitors, Baichuan emphasizes:
+- **Real clinical deployments**: Beijing Children's Hospital, National Children's Medical Center
+- **Measured outcomes**: 95% diagnostic alignment with expert decisions
+- **Scale expansion**: 150+ county hospitals in deployment pipeline
+- **Partnership depth**: Collaboration with 300+ renowned pediatric specialists
+
+**Domains (Historical - Pre-Pivot):**
+Prior to 2025 pivot, Baichuan explored other domains (now discontinued):
+- ~~Finance~~ (specialized models for financial analysis) - disbanded March 2025
+- ~~Education~~ (disbanded March 2025)
+- **Law** (legal document understanding) - limited activity
+- **Classical Chinese** (literature and historical texts) - research interest
 
 ### 🚀 Model Lineage and Releases
 
