@@ -2,13 +2,13 @@
 
 ## Company Overview
 
-**StepFun** (Step函数), founded by former Microsoft Asia Research Institute leadership, represents the "experienced researcher launching AI startup" archetype. Led by **Jiang Daxin**, a 16-year Microsoft veteran who headed projects like Bing search engine and Cortana voice assistant, StepFun focuses on "scaling law" principles - achieving AGI through larger models and more diverse data rather than novel architectures. The company released 11 foundation models in its first year, including the Step-2 trillion-parameter MoE model that ranks among China's best-performing LLMs.
+**StepFun** (阶跃星辰, Step函数), founded by former Microsoft Asia Research Institute leadership, represents the "experienced researcher launching AI startup" archetype. Led by **Jiang Daxin (姜大昕)**, a 16-year Microsoft veteran who headed projects like Bing search engine and Cortana voice assistant, StepFun focuses on "scaling law" principles - achieving AGI through larger models and more diverse data rather than novel architectures. The company released 11 foundation models in its first year, including the Step-2 trillion-parameter MoE model that ranks among China's best-performing LLMs.
 
 ---
 
 ## Founding Story and History
 
-StepFun was founded in **April 2023** by **Jiang Daxin**, who brought 16 years of experience leading critical initiatives at Microsoft. Headquartered in Xuhui, Shanghai, the company is explicitly focused on achieving AGI (Artificial General Intelligence).
+StepFun was founded in **April 2023** by **Jiang Daxin (姜大昕)**, who brought 16 years of experience leading critical initiatives at Microsoft. Headquartered in Xuhui District, Shanghai (上海徐汇), the company is explicitly focused on achieving AGI (Artificial General Intelligence).
 
 ### Jiang Daxin's Background
 
@@ -90,8 +90,8 @@ StepFun positions as **"Scaling Law AI - Bigger Models & More Data = AGI"** with
 
 StepFun's leadership and team:
 
-- **Jiang Daxin**: Founder, CEO; 16-year Microsoft veteran, Asia Research Institute chief scientist
-- **Co-founders**: Zhu and Jiao Binxing (shared Microsoft background)
+- **Jiang Daxin (姜大昕)**: Founder, CEO; 16-year Microsoft veteran, Asia Research Institute chief scientist
+- **Co-founders**: Zhu (朱) and Jiao Binxing (焦斌星) (shared Microsoft background)
 - Engineers and researchers from top AI labs
 - Team emphasizing experience over startup inexperience
 
