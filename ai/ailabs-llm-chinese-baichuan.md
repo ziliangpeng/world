@@ -144,89 +144,132 @@ Following the 2024-2025 pivot, Baichuan positions as a **medical AI specialist**
 | **Feb 2025** | Baichuan-M1 | 14.5B | 20T tokens | Medical AI specialist | ✅ | Available |
 | **Aug 2025** | Baichuan-M2 | 32B | Medical-enhanced | HealthBench #1 (60.1), RTX 4090 | ✅ | Available |
 
-### 🔬 Technical Details
+### 🔬 Technical Innovations
 
-#### Baichuan 2 Series (Core Offering)
+Baichuan's technical approach emphasizes **search engine DNA**, **rapid iteration**, and **domain specialization** over pure parameter scaling. Key innovations reflect Wang Xiaochuan's background building Sogou Search.
 
-**Architecture:**
-- Transformer-based language models
-- Trained from scratch on 2.6 trillion tokens
-- 7B and 13B parameter variants
-- Extended context window (350,000 Chinese characters claimed)
+#### Innovation 1: Search-Optimized Inference Efficiency
 
-**Performance Improvements vs. Baichuan 1:**
-- +30% on general benchmarks (MMLU, CMMLU, C-Eval)
-- 2x improvement on math (GSM8K)
-- 2x improvement on code (HumanEval)
-- Better instruction following and dialogue quality
+**Background:**
+Unlike academic labs or big tech, Baichuan approaches LLM development through a **search engine lens** - prioritizing fast, cost-effective inference over raw model size.
 
-**Benchmarks:**
-- **MMLU**: Competitive with models of similar size
-- **CMMLU**: Strong Chinese language performance
-- **C-Eval**: Top-tier Chinese evaluation
-- **GSM8K**: Improved math reasoning
-- **HumanEval**: Competitive code generation
+**Key Techniques:**
+- **Ranking-inspired attention mechanisms**: Apply search relevance scoring to token attention
+- **Retrieval-augmented architecture**: Integrate external knowledge lookup (learned from web search)
+- **Inference optimization**: 20+ years of Sogou experience optimizing for millisecond-level response times
+- **Chinese language specialization**: Custom tokenizer and training for Chinese efficiency
 
-**Training Data:**
-- 2.6 trillion tokens (largest at time of release)
-- Multilingual corpus (Chinese/English weighted heavily)
-- Diverse sources ensuring broad knowledge coverage
-- Training checkpoints released at 200B, 500B, 1T, 2.6T tokens
+**Impact:**
+- Baichuan 2 achieved competitive performance at 7B/13B params (smaller than competitors)
+- Faster inference speeds than similar-sized models
+- Better cost-performance ratio for deployment
+- Superior Chinese language understanding per parameter
 
-#### Baichuan-Omni-7B (Multimodal Breakthrough)
+#### Innovation 2: Training from Scratch for Domain Specialization
 
-**Release**: October 2024
+**Philosophy:**
+Baichuan pioneered **domain-specific training from scratch** rather than fine-tuning general models - contrasting with industry standard of continue pretraining.
 
-**Unique Capabilities:**
-- **First open-source multimodal model** with true 4-modality support
-- Processes: Image, Video, Audio, Text simultaneously
-- 7B parameters (remarkably efficient for multimodal)
+**Baichuan-M1 Approach (Medical AI):**
+- **20 trillion tokens** with medical focus from initialization
+- **Hybrid tokenizer**: Handles both general text and medical terminology
+- **Short Convolution Attention**: Enhanced context understanding for clinical notes
+- **Sliding Window Attention**: Efficient processing of long medical documents
+- **Base + Instruct versions**: Separate models for research vs. clinical use
 
-**Architecture:**
-- Two-stage multimodal alignment and fine-tuning
-- Effective modal fusion for visual and audio data
-- Trained on diverse multimodal datasets
+**Results:**
+- Rivals GPT-4o on healthcare tasks despite 20x fewer parameters (14.5B vs 300B+)
+- Maintains general capabilities (math, coding) while excelling in medicine
+- Demonstrates viability of specialized models vs. one-size-fits-all approach
 
-**Performance:**
-- Outperforms VITA (12B MoE) on video QA benchmarks
+#### Innovation 3: First Open-Source 4-Modality Model (Baichuan-Omni)
+
+**Achievement:**
+October 2024 release of **Baichuan-Omni-7B** - first fully open-source model with true simultaneous support for Image + Video + Audio + Text.
+
+**Technical Architecture:**
+- **Two-stage alignment**: Separate multimodal alignment and fine-tuning phases
+- **Effective modal fusion**: Novel approach to combining visual and audio signals
+- **Parameter efficiency**: 7B parameters vs. competitors' 12B-100B+
+- **Unified representation**: Single model processes all modalities without mode-switching
+
+**Benchmark Leadership:**
+- Outperforms VITA (12B MoE) on video QA despite being 40% smaller
 - Exceeds Gemini 1.5 Pro on ActivityNet-QA
+- CMMLU (Chinese): 72.2% vs VITA's 46.6% (56% improvement)
 - SOTA on MSVD-QA among open-source models
-- Strong audio understanding with low WER (Word Error Rate)
-- **CMMLU (Chinese)**: 72.2% vs VITA's 46.6%
 
-**Significance:**
-First fully open-source multimodal model accessible to research community and developers.
+**Industry Impact:**
+First fully open multimodal architecture accessible to research community - previously all 4-modality models were closed (GPT-4o, Gemini).
 
-#### Baichuan-M1 (Medical Specialist)
+#### Innovation 4: Medical Reasoning Verification System (Baichuan-M2)
 
-**Release**: February 2025
+**Novel Approach (August 2025):**
+Baichuan-M2 introduces **Large Verifier System** - specialized medical reasoning verification architecture.
 
-**Specialization:**
-- 14.5B parameters
-- Trained on 20 trillion tokens
-- Optimized from scratch for medical scenarios
-- Industry's first open-source medical LLM
+**Technical Components:**
+- **32B parameters** built on Qwen2.5-32B base with medical enhancements
+- **Verifier architecture**: Separate reasoning and verification pathways
+- **4-bit quantization**: Enables single RTX 4090 GPU deployment (~$1,400)
+- **Medical-specific training**: Clinical decision-making scenarios
 
-**Performance:**
-- Rivals GPT-4o on healthcare tasks
-- Domain-specific knowledge in medical terminology, diagnosis, treatment
-- Trained on medical literature, clinical notes, and health data
+**Performance Breakthrough:**
+- **HealthBench: 60.1** (world #1, surpassing GPT-oss120b at 57.6)
+- Harder subset: 34.7 (second globally to exceed 32-point threshold)
+- **57x cheaper deployment** than DeepSeek-R1 H20 dual-node setup
+- Designed for private clinical deployment (data privacy compliance)
 
-**Strategic Importance:**
-- Demonstrates viability of domain-specialized LLMs
-- Addresses healthcare sector's unique needs
-- Open-source access benefits medical research and practitioners
+**Innovation Significance:**
+Demonstrates that **specialized verification systems** outperform general reasoning models in domain tasks, even with fewer parameters.
 
-#### Baichuan 3 & 4 (Frontier Models)
+#### Innovation 5: Aggressive Training Scale and Checkpoint Sharing
 
-**Status**: Limited public information
+**Scale Leadership:**
+- **Baichuan 2**: 2.6 trillion tokens (largest at September 2023 release)
+- **Baichuan-M1**: 20 trillion tokens (medical-focused)
+- Contrast with Meta's LLaMA 2 (2T tokens), competitive with much larger teams
 
-**Positioning:**
-- Baichuan 3: General improvements on Baichuan 2
-- Baichuan 4: Premier Chinese open-source LLM for domain-specific applications
-- Focus on law, finance, medicine, classical Chinese
-- Beyond 1 trillion parameters (exact unknown)
-- Closed or selective release (not fully open)
+**Open Science Approach:**
+- Released training checkpoints at **200B, 500B, 1T, 2.6T tokens**
+- Enables research into scaling laws and intermediate model behavior
+- Rare transparency from commercial entity (typically only academia shares checkpoints)
+
+**Impact:**
+- Researchers can study training dynamics without massive compute
+- Community fine-tuning starts from optimal intermediate checkpoints
+- Validates "more data > bigger models" for certain use cases
+
+#### Innovation 6: Extended Context Window (350K Chinese Characters)
+
+**Achievement:**
+Baichuan 2 claimed **350,000 Chinese character context** - extremely long for 2023 models.
+
+**Technical Challenge:**
+Chinese characters encode more information per token than English, making long-context processing harder:
+- 350K Chinese chars ≈ 150-200K English tokens
+- Requires efficient attention mechanisms at scale
+
+**Application Domains:**
+- Long document analysis (legal contracts, medical records)
+- Multi-document reasoning
+- Historical Chinese literature (classical texts can be very long)
+
+**Competitive Context:**
+At release (Sep 2023), this exceeded most competitors; Claude and GPT-4 expanded to 100K+ tokens later.
+
+#### Key Technical Differentiators Summary
+
+| Innovation | Baichuan Approach | Industry Standard | Impact |
+|------------|-------------------|-------------------|--------|
+| **Inference** | Search-optimized, efficiency-first | Parameter scaling | Faster, cheaper deployment |
+| **Domain Models** | Train from scratch | Fine-tune general model | Better domain performance |
+| **Multimodal** | First open 4-modality | Closed proprietary | Research community access |
+| **Medical AI** | Verifier system, private deployment | General models + prompts | Clinical validation, privacy |
+| **Training Scale** | 2.6T→20T tokens, checkpoints | Closed training | Open science, reproducibility |
+| **Context** | 350K Chinese chars | 32K-100K tokens | Long document processing |
+
+**Philosophy:**
+Baichuan's technical strategy reflects **search engine pragmatism** - optimize for real-world deployment constraints (cost, speed, privacy) rather than pure benchmark maximization. This differentiates from academic labs (benchmark-focused) and big tech (parameter-scaling focused).
 
 ### 👥 Team and Leadership
 
