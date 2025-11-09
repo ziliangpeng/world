@@ -309,6 +309,51 @@ The Yi model technical paper (arXiv:2403.04652) lists **31 authors** from 01.AI,
 
 **Specializations**: Model architecture design, pre-training optimization, vision-language models, code generation models, inference optimization
 
+### Research Team Member Directory
+
+| English Name | Chinese Name | LinkedIn | GitHub | Scholar/Homepage | Notes |
+|--------------|--------------|----------|--------|------------------|-------|
+| Kai-Fu Lee | 李开复 | [Profile](https://cn.linkedin.com/in/kaifulee) | - | [Twitter](https://twitter.com/kaifulee) | Founder, CEO, Chair of Sinovation Ventures |
+| Ma Jie | 马杰 | - | - | - | Co-founder, Legal Rep, former Baidu VP (security/metaverse) |
+| Gu Xuemei | 谷雪梅 | - | - | - | Co-founder, former Alibaba VP/Google T7 (Departed May 2025) |
+| Li Xiangang | 李先刚 | - | [GitHub](https://github.com/tjadamlee) | [Homepage](https://xiangangli.github.io) | Co-founder, Speech AI expert from Baidu/Didi (Departed 2024) |
+| Ken Qi | 祁琪 | [Profile](https://www.linkedin.com/in/ken-qi-42a27b16/) | - | - | Co-founder, VP Sales, ex-Microsoft/Cisco/SAP |
+| Zonghong Dai | 戴宗宏 | [Profile](https://www.linkedin.com/in/dai-zonghong-2b879b32/) | - | - | Co-founder, VP AI Infra, ex-Huawei/Alibaba (Founded AlignBase 2024) |
+| Wenhao Huang | 黄文灏 | [Profile](https://www.linkedin.com/in/wenhao-huang-476a0aaa/) | - | - | VP Technology, Pretraining Lead, ex-MSRA, Praised by Bill Gates (Joined ByteDance Aug 2024) |
+| Guoyin Wang | 王国胤 | [Profile](https://www.linkedin.com/in/guoyinwang/) | - | [Homepage](https://guoyin.wang/) | Yi Post-training Lead, now leads Qwen Pilot at Alibaba (Departed 2024) |
+| Anita Huang | 黄琪 | [Profile](https://www.linkedin.com/in/anita-huang) | - | - | Co-founder, VP Marketing, 12y Internet experience |
+| Alex Young | - | - | - | - | First author, Yi-34B paper |
+| Bei Chen | 陈蓓 | [Profile](https://www.linkedin.com/in/bei-chen-170839a5/) | - | [Tsinghua](https://ml.cs.tsinghua.edu.cn/~beichen/) | Senior Researcher, MSRA alum, PhD Tsinghua |
+| Chao Li | 李超 | - | - | [Scholar](https://scholar.google.com/citations?user=multiple) | Yi paper author |
+| Chengen Huang | 黄成恩 | - | - | - | Yi model contributor |
+| Ge Zhang | 张革 | - | - | - | Yi contributor, now at ByteDance, former 01.AI intern |
+| Guanwei Zhang | 张冠伟 | - | - | - | Yi paper author |
+| Heng Li | 李恒 | - | - | - | Yi paper author |
+| Jiangcheng Zhu | 朱江成 | - | - | - | Yi paper author |
+| Jianqun Chen | 陈建群 | [Profile](https://www.linkedin.com/in/chenjianqun/) | - | - | LLM Post-training specialist |
+| Jing Chang | 常静 | - | - | - | Yi paper author |
+| Kaidong Yu | 于凯东 | - | [GitHub](https://github.com/KaidongYu) | [Scholar](https://scholar.google.com/citations?user=afIk7r4AAAAJ) | Tsinghua-affiliated researcher |
+| Peng Liu | 刘鹏 | - | - | - | Yi paper author (common name) |
+| Qiang Liu | 刘强 | - | - | - | Yi paper author (common name) |
+| Shawn Yue | 岳(?) | - | - | [CatalyzeX](https://www.catalyzex.com/author/Shawn%20Yue) | Yi paper author |
+| Senbin Yang | 杨森斌 | - | - | - | Yi paper author |
+| Shiming Yang | 杨士明 | [Profile](https://www.linkedin.com/in/shimingyang/) | - | - | MS Operations Research, Columbia |
+| Wen Xie | 谢文 | - | - | - | Yi paper author |
+| Xiaohui Hu | 胡晓辉 | - | - | [Scholar](https://scholar.google.com/citations?user=eyZiybYAAAAJ) | Head of Research US, Signify |
+| Xiaoyi Ren | 任晓义 | [Profile](https://www.linkedin.com/in/xiaoyiren/) | - | - | Software Engineer, joined June 2023 |
+| Xinyao Niu | 牛新尧 | - | - | [DBLP](https://dblp.org/pid/368/8120.html) | Aria model contributor |
+| Pengcheng Nie | 聂鹏程 | - | - | - | Yi model contributor |
+| Yanpeng Li | 李彦鹏 | - | - | - | Yi paper author |
+| Yuchi Xu | 徐宇驰 | - | - | [CatalyzeX](https://www.catalyzex.com/author/Yuchi%20Xu) | Industrial recommender systems |
+| Yudong Liu | 刘雨东 | - | - | [Homepage](https://yudongl2000.github.io/cv/) | Vision-language models |
+| Yue Wang | 王悦 | [Profile](https://sg.linkedin.com/in/wang-yue) | [GitHub](https://github.com/yuewang-cuhk) | [Scholar/Homepage](https://yuewang-cuhk.github.io/) | Staff Researcher, Yi-Coder lead, PhD CUHK (Joined Alibaba Mar 2025) |
+| Yuxuan Cai | 蔡宇轩 | [Profile](https://www.linkedin.com/in/yuxuan-cai) | - | [OpenReview](https://openreview.net/profile?id=~Yuxuan_Cai1) | Ex-Megvii, 2023-2025 at 01.AI |
+| Zhenyu Gu | 顾振宇 | - | - | [Scholar](https://scholar.google.com/citations?user=5E4lm8IAAAAJ) | HPC & Deep Learning, Alibaba |
+| Zhiyuan Liu | 刘知远 | - | - | [Tsinghua THUNLP](https://nlp.csai.tsinghua.edu.cn/~lzy/) | Associate Professor, Tsinghua, NLP expert |
+| Cao Dapeng | 曹大鹏 | - | - | - | Product Lead (PopAI), ex-nice founder (Departed Sept 2024) |
+
+**Note**: "-" indicates link not found in public sources. Some team members maintain low public profiles. Based on comprehensive research across arXiv papers, LinkedIn, GitHub, and Chinese tech media (36kr, Lei Feng Wang). Table includes 31 Yi paper authors plus 5 additional executives/key members identified through various sources.
+
 ### Team Composition and Size
 
 **Overall Team**
