@@ -400,7 +400,7 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 | 2024 | GLM-4-Plus | - | Enhanced vision-language capabilities | ❌ | [API](https://open.bigmodel.cn/) |
 | Jul 2025 | GLM-4.5 | 355B (32B active) | Frontier MoE, agentic/reasoning/coding (ARC), 70.1% TAU-Bench | ✅ | [arXiv:2508.06471](https://arxiv.org/abs/2508.06471) \| [GitHub](https://github.com/THUDM/GLM-4.5) \| [HF](https://huggingface.co/THUDM/glm-4-9b) |
 | Jul 2025 | GLM-4.5 Air | 106B (12B active) | Optimized MoE variant, cost-effective | ✅ | [GitHub](https://github.com/THUDM/GLM-4) |
-| Sep 2025 | GLM-4.6 | - | Domestic chips (Cambricon), enhanced coding/reasoning | ❌ | [Blog](https://chatglm.cn/) |
+| Sep 2025 | GLM-4.6 | 355B (32B active) | 200K context, coding near Claude Sonnet 4, domestic chips support | ✅ | [HF](https://huggingface.co/zai-org/GLM-4.6) \| [GitHub](https://github.com/zai-org/GLM-4.5) \| [Blog](https://z.ai/blog/glm-4.6) |
 | Dec 31, 2024 | GLM-Zero-Preview | - | Reasoning model via RL, GRE Math 126 score | ❌ | [API](https://bigmodel.cn/) |
 | Jan 2025 | GLM-Realtime | - | End-to-end multimodal (video+voice), 2-min memory, Function Call, singing | ❌ | [API](https://bigmodel.cn/) |
 | 2024 | GLM-Edge-1.5B-Chat | 1.5B | Edge/mobile optimization | ✅ | [GitHub](https://github.com/THUDM/GLM-Edge) |
