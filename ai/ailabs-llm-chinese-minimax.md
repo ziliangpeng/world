@@ -241,21 +241,290 @@ This positions MiniMax not as consumer brand but as essential technical infrastr
 
 ## 🔧 Technical Innovations and Architecture
 
-**Lightning Attention & Hybrid Architecture:**
-- Combines Lightning Attention (efficient token processing) with Softmax Attention
-- Hybrid structure: softmax positioned after every 7 lightning attention layers
-- Mixture-of-Experts with top-2 routing strategy
+MiniMax's core technical differentiation comes from three major innovations: Lightning Attention for efficiency, Mixture-of-Experts for scale, and extreme context windows through hybrid architecture design.
 
-**MiniMax-Text-01 Specifications:**
-- 456B total parameters with 45.9B activated per token
-- 80 layers, 64 attention heads (128 head dimension)
-- 32 experts with 9216 expert hidden dimension
-- Hybrid attention achieving 4M token context during inference
-- 1M token training context
+---
 
-**Vision-Language Integration:**
-- MiniMax-VL-01: 303M Vision Transformer + MLP projector + MiniMax-Text-01 LLM base
-- Multimodal understanding of images and text
+### 🌩️ Lightning Attention: The Core Innovation
+
+**What is Lightning Attention?**
+
+Lightning Attention is MiniMax's proprietary attention mechanism designed to dramatically reduce computational complexity for long-context processing. Unlike standard softmax attention which has O(n²) complexity with sequence length, Lightning Attention achieves near-linear scaling.
+
+**Key Design Principles:**
+
+1. **Linear Complexity**: Reduces quadratic attention bottleneck through approximation techniques
+2. **Maintained Quality**: Preserves semantic understanding despite computational shortcuts
+3. **Hybrid Integration**: Works alongside standard softmax attention for best-of-both-worlds approach
+
+**Technical Mechanism:**
+- Uses linear attention approximations (likely kernel-based or low-rank factorization)
+- Processes tokens efficiently without full pairwise attention computation
+- Enables processing of millions of tokens that would be impossible with pure softmax attention
+
+**Performance Impact:**
+- Enables 4M token context window (vs typical 128K with standard attention)
+- Reduces memory footprint during inference
+- Accelerates inference speed for long-context queries
+- Critical enabler for MiniMax's differentiation strategy
+
+---
+
+### 🔀 Hybrid Attention Architecture
+
+**Architecture Design:**
+
+MiniMax employs a carefully balanced hybrid attention system that alternates between Lightning Attention and standard Softmax Attention:
+
+```
+Pattern: [Lightning Attention] × 7 → [Softmax Attention] × 1 → repeat
+```
+
+**Rationale for Hybrid Approach:**
+
+1. **Efficiency**: Lightning Attention handles bulk of computation (7/8 of layers)
+2. **Quality Preservation**: Softmax attention every 8th layer ensures semantic coherence
+3. **Long-Range Dependencies**: Periodic softmax layers capture global context patterns
+4. **Gradient Flow**: Regular softmax checkpoints help training stability
+
+**Why This Pattern Works:**
+
+- **Lightning layers**: Fast, approximate attention for local patterns and efficiency
+- **Softmax layers**: Precise attention to maintain model quality and long-range reasoning
+- **7:1 ratio**: Empirically optimized balance between speed and quality
+- **Strategic placement**: Ensures critical information propagates through network
+
+**Comparison to Alternatives:**
+
+| Approach | Context Window | Speed | Quality |
+|----------|---------------|-------|---------|
+| Pure Softmax | Limited (~128K) | Slow | Excellent |
+| Pure Linear | Unlimited | Fast | Degraded |
+| MiniMax Hybrid | 4M tokens | Fast | High |
+
+---
+
+### 🧩 Mixture-of-Experts (MoE) Architecture
+
+**MoE Design Philosophy:**
+
+MiniMax made an early strategic bet on MoE architecture, allocating 80% of compute resources to MoE research from 2023 onward. This focus paid off with industry-leading efficiency.
+
+**MiniMax-Text-01 MoE Specifications:**
+
+- **Total Parameters**: 456B (one of largest Chinese models)
+- **Active Parameters**: 45.9B per token (10% activation rate)
+- **Number of Experts**: 32 specialist expert networks
+- **Expert Hidden Dimension**: 9,216 (each expert's internal size)
+- **Routing Strategy**: Top-2 routing (activate 2 of 32 experts per token)
+- **Efficiency Gain**: ~10x parameter efficiency vs dense models
+
+**How MoE Routing Works:**
+
+For each token:
+1. **Router network** evaluates which experts are most relevant
+2. **Top-2 selection**: Activates the 2 highest-scoring experts
+3. **Weighted combination**: Blends expert outputs based on routing scores
+4. **Sparse activation**: Only 45.9B of 456B parameters actively compute
+
+**Strategic Advantages:**
+
+1. **Cost Efficiency**: Inference cost proportional to active params (45.9B), not total (456B)
+2. **Specialization**: Different experts learn different capabilities (math, coding, reasoning, etc.)
+3. **Scalability**: Can add more experts without proportionally increasing inference cost
+4. **Competitive Moat**: Expertise in MoE training and deployment is rare and hard to replicate
+
+**MoE Training Challenges MiniMax Solved:**
+
+- **Load Balancing**: Ensuring all experts get trained (not just a few dominant ones)
+- **Routing Stability**: Preventing routing collapse where all tokens go to same experts
+- **Communication Overhead**: Efficiently distributing experts across GPUs in training
+- **Expert Specialization**: Encouraging meaningful differentiation between experts
+
+**Why MiniMax's MoE is Different:**
+
+Unlike other MoE implementations (DeepSeek-V3, Mixtral), MiniMax combines:
+- MoE sparsity for efficiency
+- Lightning Attention for long context
+- Hybrid attention for quality
+- Result: Unique efficiency + context + quality combination
+
+---
+
+### 📏 Extreme Context Windows
+
+**Context Window Progression:**
+
+| Model | Context Window | Relative Size |
+|-------|---------------|---------------|
+| GPT-4 | 128K tokens | 1x (baseline) |
+| Claude 3 | 200K tokens | 1.56x |
+| Gemini 1.5 Pro | 1M tokens | 7.8x |
+| Moonshot Kimi | 2M chars (~500K tokens) | 3.9x |
+| MiniMax-M1 | 1M tokens | 7.8x |
+| **MiniMax-Text-01** | **4M tokens** | **31.25x** |
+
+**Technical Enablers for 4M Context:**
+
+1. **Lightning Attention**: Linear complexity makes long context tractable
+2. **Hybrid Design**: Maintains quality despite extreme length
+3. **MoE Architecture**: Sparse activation reduces memory pressure
+4. **Training Infrastructure**: Specialized systems for long-sequence training
+
+**Implementation Details:**
+
+- **Training Context**: 1M tokens (establishes base capability)
+- **Inference Context**: 4M tokens (extended through architectural properties)
+- **Extrapolation**: System can generalize beyond training length
+- **RoPE Modifications**: Likely uses modified rotary position embeddings for long sequences
+
+**Practical Use Cases for 4M Context:**
+
+- **Codebase Analysis**: Entire large repository in single context (~150K-500K tokens)
+- **Long Documents**: Academic papers with full citations, legal documents
+- **Multi-turn Conversations**: Days of chat history without forgetting
+- **Knowledge Synthesis**: Multiple books/papers analyzed simultaneously
+- **Data Analysis**: Large CSV/JSON datasets processed in-context
+
+**Memory and Computational Requirements:**
+
+Standard attention for 4M tokens would require:
+- Memory: O(n²) = 16 trillion attention scores
+- Computation: Intractable on current hardware
+
+MiniMax's hybrid approach:
+- Memory: Near-linear with Lightning Attention
+- Computation: Feasible with 7:1 Lightning-to-Softmax ratio
+- **Result**: Makes 4M context window practical on production hardware
+
+---
+
+### 🖼️ Multimodal Architecture
+
+**MiniMax-VL-01 (Vision-Language Model):**
+
+**Architecture Components:**
+
+1. **Vision Encoder**: 303M parameter Vision Transformer (ViT)
+   - Processes images into visual token embeddings
+   - Pre-trained on large-scale image datasets
+   - Fine-tuned for language model integration
+
+2. **Projection Layer**: MLP (Multi-Layer Perceptron) adapter
+   - Bridges visual embeddings to language model dimension
+   - Learnable alignment between vision and text spaces
+   - Critical for semantic coherence
+
+3. **Language Model Base**: MiniMax-Text-01 (456B params)
+   - Full text model serves as multimodal foundation
+   - No architectural changes to base LLM
+   - Vision tokens treated as additional input sequence
+
+**Multimodal Processing Flow:**
+
+```
+Image → ViT Encoder (303M) → Visual Tokens
+                                    ↓
+Text → Tokenizer → Text Tokens → [MLP Projector] → Combined Sequence
+                                    ↓
+                         MiniMax-Text-01 LLM (456B)
+                                    ↓
+                         Unified Output (text + vision understanding)
+```
+
+**Design Philosophy:**
+
+- **Frozen LLM**: Language model capabilities preserved
+- **Vision as Input**: Images converted to "language" the LLM understands
+- **Minimal Architecture Change**: Lightweight adapter rather than full redesign
+- **Transfer Learning**: Leverages pre-trained components (ViT + LLM)
+
+---
+
+### 🎵 Beyond Vision: Complete Multimodal Stack
+
+MiniMax has expanded beyond text and vision into full generative AI suite:
+
+**Audio Models:**
+
+1. **Speech-02**: Lifelike speech synthesis
+   - Natural prosody and intonation
+   - Multi-speaker capabilities
+   - Chinese and English support
+
+2. **Music-01**: Music generation from text descriptions
+   - Genre-aware composition
+   - Instrument selection
+   - Emotional tone control
+
+3. **T2A-01-HD**: High-definition text-to-audio
+   - Sound effects generation
+   - Environmental audio
+   - High-fidelity output
+
+**Video Models:**
+
+- **Hailuo-02**: Text-to-video generation
+  - Cinematic quality output
+  - Multi-shot composition
+  - Temporal consistency
+
+**Unified Platform Architecture:**
+
+All models integrated into **Hailuo Platform**:
+- Single API for all modalities
+- Cross-modal capabilities (e.g., image + text → video + audio)
+- Unified billing and access control
+- Potential for future cross-modal models (joint training)
+
+---
+
+### 🏗️ Infrastructure and Training
+
+**Training Infrastructure:**
+
+- Large-scale GPU clusters (exact size undisclosed)
+- Access to Alibaba Cloud and Tencent GPU resources
+- Estimated training cost lower than Western equivalents due to:
+  - Chinese GPU access (H100 via grey market, domestic alternatives)
+  - Lower electricity costs
+  - Efficient MoE architecture reducing total compute
+
+**Training Data:**
+
+- Multi-lingual focus: Chinese + English + other languages
+- Code-heavy datasets for programming capabilities
+- Long-document datasets for context window training
+- Multimodal datasets for vision-language alignment
+
+**Optimization Techniques:**
+
+- Mixed-precision training (likely FP16/BF16)
+- Gradient checkpointing for memory efficiency
+- Pipeline parallelism for large model scale
+- Expert parallelism for MoE distribution
+- Sequence parallelism for long context training
+
+---
+
+### 🆚 Technical Comparison: MiniMax vs Competitors
+
+| Feature | MiniMax-Text-01 | DeepSeek-V3 | Qwen2.5-Max | GPT-4 Turbo |
+|---------|----------------|-------------|-------------|-------------|
+| **Parameters** | 456B (45.9B active) | 671B (37B active) | Undisclosed | ~1.8T (rumored) |
+| **Architecture** | MoE + Hybrid Attn | MoE + MLA | Dense (likely) | MoE (rumored) |
+| **Context Window** | 4M tokens | 128K tokens | 128K tokens | 128K tokens |
+| **Attention Type** | Lightning + Softmax | Multi-head Latent | Standard | Unknown |
+| **Training Cost** | ~$600M (inferred) | $5.58M | Undisclosed | $100M+ (rumored) |
+| **Open Source** | ❌ | ✅ | ❌ | ❌ |
+| **Multimodal** | ✅ (Vision) | ❌ | ✅ (Vision) | ✅ (Vision, Audio) |
+
+**Key Differentiators:**
+
+1. **MiniMax's Advantage**: Extreme context (4M vs 128K), hybrid attention innovation
+2. **DeepSeek's Advantage**: Radical cost efficiency ($5.58M training), open weights
+3. **Qwen's Advantage**: Alibaba ecosystem integration, strong Chinese performance
+4. **GPT-4's Advantage**: Mature ecosystem, proven reliability, multimodal breadth
 
 ---
 
