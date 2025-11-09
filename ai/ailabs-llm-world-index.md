@@ -315,6 +315,14 @@ This file tracks comprehensive research on Large Language Models (LLMs) and foun
   - 🤖 Baichuan 1, 2
   - 👁️ Baichuan-Omni (multimodal, 7B)
   - 🤖 Baichuan 4
+- [x] ByteDance - [Deep Dive](ailabs-llm-chinese-bytedance.md)
+  - 🤖 Doubao-1.5-Pro (frontier performance, ultra-low cost)
+  - 🤖 Doubao-1.5-Lite (lightweight)
+  - 👁️ Doubao Vision-Pro (multimodal)
+  - 🔊 Doubao Real-time Voice (real-time speech)
+  - 🎬 Goku Video Generation (84.85 VBench score)
+  - 🖥️ UI-TARS (GUI automation, outperforms GPT-4o)
+  - 🔧 Coze (no-code agent platform, 100+ integrations)
 - [x] Zhipu AI (z.ai)
   - 🤖 GLM/ChatGLM series
   - 🤖 GLM-4 series

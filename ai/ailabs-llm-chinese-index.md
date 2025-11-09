@@ -8,16 +8,17 @@ A comprehensive exploration of China's leading LLM research labs, their founding
 
 1. [Alibaba (Tongyi Qianwen / Qwen)](#alibaba-tongyi-qianwen--qwen)
 2. [Baidu (ERNIE)](#baidu-ernie)
-3. [DeepSeek](#deepseek)
-4. [Tencent (Hunyuan)](#tencent-hunyuan)
-5. [Moonshot AI (Kimi)](#moonshot-ai-kimi)
-6. [Zhipu AI (GLM/ChatGLM)](#zhipu-ai-glmchatglm)
-7. [Baichuan AI](#baichuan-ai)
-8. [01.AI (Yi)](#01ai-yi)
-9. [MiniMax](#minimax)
-10. [StepFun](#stepfun)
-11. [SenseTime (SenseNova)](#sensetime-sensenova)
-12. [Rednote/Xiaohongshu (dots.llm1)](#rednotexiaohongshu-dotsllm1)
+3. [ByteDance (Doubao / Coze)](#bytedance-doubao--coze)
+4. [DeepSeek](#deepseek)
+5. [Tencent (Hunyuan)](#tencent-hunyuan)
+6. [Moonshot AI (Kimi)](#moonshot-ai-kimi)
+7. [Zhipu AI (GLM/ChatGLM)](#zhipu-ai-glmchatglm)
+8. [Baichuan AI](#baichuan-ai)
+9. [01.AI (Yi)](#01ai-yi)
+10. [MiniMax](#minimax)
+11. [StepFun](#stepfun)
+12. [SenseTime (SenseNova)](#sensetime-sensenova)
+13. [Rednote/Xiaohongshu (dots.llm1)](#rednotexiaohongshu-dotsllm1)
 
 ---
 
@@ -144,7 +145,37 @@ ERNIE is developed by Baidu's AI and Deep Learning Research Labs, including:
 
 ---
 
-## 3. DeepSeek
+## 3. ByteDance (Doubao / Coze)
+
+📖 **Full deep-dive available in: [`ailabs-llm-chinese-bytedance.md`](ailabs-llm-chinese-bytedance.md)**
+
+Quick summary: ByteDance (founded 2012, Seed AI team 2023) leverages its 1B+ Douyin users and algorithmic expertise to build competitive foundation models. Features Doubao-1.5 (frontier performance at ultra-low cost, $0.11/M tokens vs $15/M for GPT-4o), multimodal models (Vision-Pro, Real-time Voice, Goku video generation), GUI automation (UI-TARS outperforms GPT-4o on screen understanding), and Coze platform for no-code AI agents. Estimated $300B+ valuation with profitable core business funding aggressive AI R&D.
+
+### Key Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Founded** | 2012 (AI Lab: 2016, Seed Team: 2023) |
+| **Founders** | Zhang Yiming, Liang Rubo |
+| **Headquarters** | Beijing, China |
+| **Valuation** | ~$300B+ (estimated, private) |
+| **Employees** | 100,000+ |
+| **Key Product** | Douyin/TikTok (1B+ users globally) |
+| **Revenue Model** | Douyin ads (core), emerging AI monetization |
+| **AI Annual R&D** | Estimated $5B+ |
+| **Strategic Division** | "Flow" (AI equal to Douyin in org structure) |
+
+### Notable Achievements
+
+1. **Price War Leadership**: Initiated aggressive pricing on Doubao-1.5-Pro ($0.11/M tokens) forcing entire market reconsideration
+2. **Multimodal Excellence**: Achieving SOTA simultaneously on vision-language (38/60 benchmarks), speech, video, and GUI understanding
+3. **Speed of Execution**: From 2023 Seed team establishment to Doubao-1.5 parity with GPT-4o in ~14 months
+4. **Data Moat**: Unique advantage with 1B+ Douyin users providing real-time signals on engagement, trends, video understanding
+5. **Coze Platform**: 100+ integrations enabling 1M+ potential enterprises to build AI agents
+
+---
+
+## 4. DeepSeek
 
 📖 **Full deep-dive available in: [`ailabs-llm-chinese-deepseek.md`](ailabs-llm-chinese-deepseek.md)** | **Evolution analysis:** [`ailabs-llm-chinese-deepseek-evolution.md`](ailabs-llm-chinese-deepseek-evolution.md)**
 
@@ -152,7 +183,7 @@ Quick summary: DeepSeek (founded Jul 2023) has revolutionized the LLM landscape 
 
 ---
 
-## 4. Tencent (Hunyuan)
+## 5. Tencent (Hunyuan)
 
 ### Company Overview
 
@@ -269,7 +300,7 @@ Hunyuan is developed by Tencent's AI research organization, including:
 
 ---
 
-## 5. Moonshot AI (Kimi)
+## 6. Moonshot AI (Kimi)
 
 **For detailed deep-dive analysis, see: [`ailabs-llm-chinese-moonshot.md`](ailabs-llm-chinese-moonshot.md)**
 
@@ -288,7 +319,7 @@ Hunyuan is developed by Tencent's AI research organization, including:
 
 ---
 
-## 6. Zhipu AI (智谱清言) / GLM-ChatGLM
+## 7. Zhipu AI (智谱清言) / GLM-ChatGLM
 
 **For detailed deep-dive analysis, see: [`ailabs-llm-chinese-zhipu.md`](ailabs-llm-chinese-zhipu.md)**
 
@@ -308,7 +339,7 @@ Hunyuan is developed by Tencent's AI research organization, including:
 
 ---
 
-## 7. Baichuan AI
+## 8. Baichuan AI
 
 ### Company Overview
 
@@ -423,7 +454,7 @@ Baichuan's leadership and team:
 
 ---
 
-## 8. 01.AI (Yi)
+## 9. 01.AI (Yi)
 
 📖 **Full deep-dive available in: [`ailabs-llm-chinese-01ai.md`](ailabs-llm-chinese-01ai.md)**
 
@@ -431,7 +462,7 @@ Quick summary: 01.AI (founded March 2023) founded by renowned AI investor Kai-Fu
 
 ---
 
-## 9. MiniMax
+## 10. MiniMax
 
 📖 **Full deep-dive available in: [`ailabs-llm-chinese-minimax.md`](ailabs-llm-chinese-minimax.md)**
 
