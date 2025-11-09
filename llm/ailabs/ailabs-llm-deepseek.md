@@ -2,11 +2,11 @@
 
 ## 3. DeepSeek
 
-### Company Overview
+### 🏢 Company Overview
 
 **DeepSeek** has emerged as one of the most significant players in the LLM landscape despite being founded in 2023. The company is known for radical cost efficiency, powerful open-source models, and technical innovations that challenged assumptions about training costs and efficiency. DeepSeek-V3 (671B parameters) and DeepSeek-R1 (reasoning model) have attracted significant international attention for achieving frontier performance at a fraction of the computational cost of Western models.
 
-### Founding Story and History
+### 📚 Founding Story and History
 
 DeepSeek was founded in **July 2023** by **Liang Wenfeng**, the co-founder of High-Flyer, a Chinese hedge fund. The unusual pedigree of a startup funded by a hedge fund (rather than VCs) meant DeepSeek had patient capital and independence from typical startup pressures. Liang Wenfeng, having built successful trading systems and quantitative algorithms at High-Flyer, brought a deep technical and computational mindset to AI development.
 
@@ -20,7 +20,7 @@ DeepSeek was founded in **July 2023** by **Liang Wenfeng**, the co-founder of Hi
 
 DeepSeek's rapid ascent from unknown startup to industry-shaping player occurred in under 18 months, driven by technically superior models and radical cost transparency.
 
-### Funding and Investment
+### 💰 Funding and Investment
 
 DeepSeek represents an unusual funding model:
 - **Sole investor**: High-Flyer hedge fund, wholly owned and funded by the parent company
@@ -30,7 +30,7 @@ DeepSeek represents an unusual funding model:
 
 This funding structure enabled DeepSeek to pursue long-term, high-risk research without external pressure to monetize quickly, contributing to technical breakthroughs.
 
-### Strategic Positioning
+### 🎯 Strategic Positioning
 
 DeepSeek positions as **"Efficient AI for Everyone"** with distinctive strategic elements:
 
@@ -43,7 +43,7 @@ DeepSeek positions as **"Efficient AI for Everyone"** with distinctive strategic
 
 DeepSeek's positioning challenges fundamental assumptions about AI development, suggesting it's about technical innovation rather than brute-force compute scale.
 
-### Technical Innovations and Architecture
+### 🔧 Technical Innovations and Architecture
 
 DeepSeek introduced several technical innovations that contributed to efficiency breakthroughs:
 
@@ -72,7 +72,7 @@ DeepSeek introduced several technical innovations that contributed to efficiency
 - Trained on $294K (post V3-Base training)
 - Competes with o1 despite massive cost difference
 
-### Team Background
+### 👥 Team Background
 
 DeepSeek's leadership and team include:
 - **Liang Wenfeng**: Founder and CEO, background in quantitative trading and algorithms
@@ -81,7 +81,7 @@ DeepSeek's leadership and team include:
 - Relatively small team (50-100 core researchers) compared to Western AI companies
 - Talent attracted by technical autonomy and financial stability
 
-### Model Lineage and Release Timeline
+### 🚀 Model Lineage and Release Timeline
 
 | Release Date | Model | Parameters | Key Features | Open Weights | Links |
 |---|---|---|---|---|---|
@@ -113,7 +113,7 @@ DeepSeek's leadership and team include:
 | Sep 29, 2025 | DeepSeek-V3.2-Exp | 671B-A37B | Experimental version | ✅ | [HF](https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp) |
 | Oct 20, 2025 | DeepSeek-OCR | - | Vision-text compression for long contexts (97% OCR at 10x) | ✅ | [GitHub](https://github.com/deepseek-ai/DeepSeek-OCR), [HF](https://huggingface.co/deepseek-ai/DeepSeek-OCR), [arXiv:2510.18234](https://arxiv.org/abs/2510.18234) |
 
-### Research Papers & Techniques (Without Separate Models)
+### 📄 Research Papers & Techniques (Without Separate Models)
 
 DeepSeek has published additional research papers on techniques and methodologies that enhance their models:
 
@@ -124,7 +124,7 @@ DeepSeek has published additional research papers on techniques and methodologie
 | Mar 2025 | A Review of DeepSeek Models' Key Innovative Techniques | [arXiv:2503.11486](https://arxiv.org/abs/2503.11486) | Comprehensive review of DeepSeek's core innovations |
 | Apr 2025 | Inference-Time Scaling for Generalist Reward Modeling | [arXiv:2504.02495](https://arxiv.org/abs/2504.02495) | Self-Principled Critique Tuning (SPCT) for scalable reward modeling |
 
-### Performance and Reception
+### 📊 Performance and Reception
 
 **Benchmark Performance:**
 - DeepSeek-V3: Outperforms Llama 3.1-405B and GPT-4o on many benchmarks
@@ -146,7 +146,7 @@ DeepSeek has published additional research papers on techniques and methodologie
 - Respected for technical excellence and innovation
 - Some skepticism about claimed training costs (e.g., analysts questioning R1 cost estimates)
 
-### Notable Achievements and Stories
+### ⭐ Notable Achievements and Stories
 
 1. **Cost Revolution**: Trained V3 for $5.58M vs $100M+ for comparable Western models, fundamentally challenging assumptions about AI scaling
 2. **R1 Breakthrough**: Demonstrated reasoning can be achieved through RL with minimal post-training cost ($294K)
@@ -155,7 +155,7 @@ DeepSeek has published additional research papers on techniques and methodologie
 5. **Speed-to-Frontier**: From founding (Jul 2023) to frontier-class model (Dec 2024) in 17 months
 6. **Independent Success**: Proved that AI breakthrough doesn't require Silicon Valley ecosystem or massive venture funding
 
-### Open Source Week and Community Contributions
+### 🌐 Open Source Week and Community Contributions
 
 Beyond model releases, DeepSeek has demonstrated deep commitment to building an open, collaborative AI ecosystem through community-driven initiatives and infrastructure tools.
 
