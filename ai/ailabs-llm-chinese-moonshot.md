@@ -68,12 +68,52 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 
 ### 👥 Team Background
 
-Moonshot's leadership and team:
-- **Yang Zhilin**: Co-founder, Chairman
-- **Zhou Xinyu**: Co-founder, CTO
-- **Wu Yuxin**: Co-founder
-- Core team attracted through strong compensation and tech autonomy
-- Talent primarily from Chinese tech companies and research labs
+#### Core Founders
+
+**Yang Zhilin (杨植麟) - CEO & Co-Founder**
+- **Education**: BS from Tsinghua University, PhD from Carnegie Mellon University (2019)
+- **Background**: Highly cited AI researcher specializing in NLP and transformer architecture
+- **Prior Experience**:
+  - Google Brain (doctoral research)
+  - Meta AI (postdoctoral fellow)
+  - Beijing Academy of Artificial Intelligence (led Wudao LLM development)
+  - Huawei (early Pangu AI model development)
+- **Notable Work**: First author of "Transformer-XL" and "XLNet" - two foundational NLP papers
+- **Vision**: AGI purist focused on building foundational models to achieve AGI
+- **Personal Detail**: Chose company name "Moonshot" inspired by Pink Floyd's 1973 album "The Dark Side of the Moon"
+- **Online Presence**: [Research Profile](https://kimiyoung.github.io/)
+
+**Zhou Xinyu (周新宇) - Co-Founder, CTO**
+- **Education**: Tsinghua University graduate
+- **Background**: Expertise in deploying neural networks on resource-constrained hardware
+- **Prior Experience**:
+  - Hulu (deep learning research)
+  - Tencent (neural network optimization)
+  - Megvii (hardware-efficient models)
+- **Key Strength**: Infrastructure and systems optimization for efficient model deployment
+- **Location**: Based in Beijing (Haidian)
+
+**Wu Yuxin (吴宇欣) - Co-Founder, Multimodal AI Lead**
+- **Education**: BS from Tsinghua University (2015), MS in Computer Vision from Carnegie Mellon University (2016)
+- **Background**: Foundation models and computer vision research, now leading multimodal efforts at Moonshot
+- **Prior Experience**:
+  - Google Brain (foundation models team)
+  - Meta AI Research/Facebook AI Research (computer vision research)
+- **Notable Achievements**:
+  - Created Detectron2 ("one of the most popular Facebook AI projects")
+  - Best Paper Honorable Mention at ECCV 2018
+  - Best Paper Nomination at CVPR 2020
+  - Mark Everingham Prize at ICCV 2021
+- **Research Focus**: MoCo (unsupervised learning), PointRend (segmentation), adversarial robustness, normalization techniques
+- **Location**: Based in San Francisco, recruiting for China and US teams
+- **Online Presence**: [Personal Homepage](https://ppwwyyxx.com/)
+
+#### Team Scale and Growth
+- **Early Growth**: $60M Series A → 40-person AI team built in first 3 months
+- **Current Scale**: ~300 employees (as of 2024-2025)
+- **Hiring Strategy**: Strong compensation packages and technical autonomy to attract top talent
+- **Talent Sources**: Primarily from Tsinghua University, Chinese tech companies (Alibaba, Tencent, Huawei, Hulu), and international research labs (Google, Meta, CMU)
+- **Geographic Distribution**: Headquarters in Beijing, offices in Shanghai, and recruitment in Silicon Valley
 
 ### 🚀 Model Lineage and Release Timeline
 
