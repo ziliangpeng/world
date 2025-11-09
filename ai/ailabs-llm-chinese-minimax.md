@@ -6,7 +6,7 @@ A comprehensive deep-dive into MiniMax's foundation model development, MoE effic
 
 ## 🏢 Company Overview
 
-**MiniMax** (MiniMax AI) represents one of China's most technically sophisticated "AI Tiger" startups, uniquely positioned at the intersection of computer vision expertise and frontier language model development. Founded in December 2021 by former SenseTime executives, MiniMax has rapidly evolved from a computer vision company into a major player in large language models and multimodal AI, distinguished by its radical focus on efficiency through Mixture-of-Experts (MoE) architecture and proprietary attention mechanisms.
+**MiniMax** (MiniMax AI / 迷你马克斯) represents one of China's most technically sophisticated "AI Tiger" startups, uniquely positioned at the intersection of computer vision expertise and frontier language model development. Founded in December 2021 by former SenseTime executives, MiniMax has rapidly evolved from a computer vision company into a major player in large language models and multimodal AI, distinguished by its radical focus on efficiency through Mixture-of-Experts (MoE) architecture and proprietary attention mechanisms.
 
 **Market Position:**
 MiniMax occupies a unique position in China's competitive AI landscape:
@@ -34,14 +34,14 @@ MiniMax occupies a unique position in China's competitive AI landscape:
 
 ### Founder Backgrounds
 
-**Yan Junjie (Co-founder & CEO)**
+**Yan Junjie / 颜俊杰 (Co-founder & CEO)**
 - **Background**: Senior AI researcher at SenseTime, specializing in computer vision and deep learning systems
 - **Expertise**: 10+ years experience building large-scale vision AI systems
 - **SenseTime Legacy**: Participated in developing some of SenseTime's core computer vision technologies
 - **Vision**: Recognized early that computer vision and NLP were converging—foundation models would be critical for next era
 - **Motivation**: Transitioned from specialized vision systems to general-purpose foundation models as strategic evolution
 
-**Zhou Yucong (Co-founder)**
+**Zhou Yucong / 周昱聪 (Co-founder)**
 - **Background**: Executive at SenseTime with focus on AI systems and infrastructure
 - **Expertise**: AI infrastructure, distributed systems, and model deployment
 - **Leadership**: Brought operational and infrastructure expertise to complement Yan's research background
@@ -49,7 +49,7 @@ MiniMax occupies a unique position in China's competitive AI landscape:
 
 ### The SenseTime Legacy
 
-MiniMax's founding reflected a strategic departure from SenseTime's core vision business:
+MiniMax's founding reflected a strategic departure from SenseTime (商汤科技)'s core vision business:
 - **Context**: SenseTime was world's most valuable AI unicorn (~$12B valuation) but focused narrowly on facial recognition and video analysis
 - **Recognition**: After ChatGPT's success (Nov 2022), founders recognized foundation models as next frontier
 - **Decision**: Rather than competing within SenseTime's existing business, they chose startup route for focus and speed
@@ -58,7 +58,7 @@ MiniMax's founding reflected a strategic departure from SenseTime's core vision 
 ### Early Trajectory: From Idea to Scale
 
 **Phase 1: Founding & Initial Backing (Dec 2021 - 2022)**
-- **Founding Capital**: Initial backing from **MiHoYo** (Chinese gaming giant known for Genshin Impact)
+- **Founding Capital**: Initial backing from **MiHoYo** (米哈游, Chinese gaming giant known for Genshin Impact)
   - Strategic choice: MiHoYo had GPU resources and interest in AI applications
   - MiHoYo investment signaled serious intent and provided early capital + technical credibility
 - **Early Team**: Built team from SenseTime alumni and top AI researchers (40-50 person core team)
@@ -80,9 +80,9 @@ MiniMax's founding reflected a strategic departure from SenseTime's core vision 
 - **Result**: Triggered investor interest and enabled next funding round
 
 **Phase 4: Major Funding & Acceleration (March 2024)**
-- **Series B Funding**: Secured **$600M** in Series B led by Alibaba
+- **Series B Funding**: Secured **$600M** in Series B led by Alibaba (阿里巴巴)
 - **Valuation**: Reached $2.5B+ valuation (from ~$1B+ in Series A)
-- **Investor Syndicate**: Joined by Hillhouse, HongShan, IDG Capital, and Tencent
+- **Investor Syndicate**: Joined by Hillhouse (高瓴), HongShan (鸿商), IDG Capital, and Tencent (腾讯)
   - **Alibaba Leadership**: Strategic vote of confidence from e-commerce giant
   - **Tencent Participation**: Added gaming/social distribution channel
   - **Multi-Strategic Backing**: Unique positioning with both Alibaba and Tencent as major shareholders
@@ -192,8 +192,8 @@ MiniMax's strategic positioning differs fundamentally from other Chinese LLM com
 - **Long-term Value**: Multimodal platform becomes network effect business (each modality adds value to others)
 
 **5. Infrastructure Advantage Through Strategic Investors**
-- **Alibaba**: Direct access to e-commerce computing infrastructure, cloud resources
-- **Tencent**: Access to gaming GPU infrastructure (Tencent Games uses massive GPUs for rendering)
+- **Alibaba** (阿里巴巴): Direct access to e-commerce computing infrastructure, cloud resources
+- **Tencent** (腾讯): Access to gaming GPU infrastructure (Tencent Games uses massive GPUs for rendering)
 - **Synergy**: MiniMax can leverage both companies' compute without captial expense
 - **Scaling Moat**: Competitors without strategic investors face compute constraints at scale
 
@@ -206,21 +206,21 @@ MiniMax's strategic positioning differs fundamentally from other Chinese LLM com
 - **MiniMax Weakness**: Higher compute costs implied by $600M funding needs vs. DeepSeek's efficiency
 - **Differentiation**: MiniMax = enterprise platform; DeepSeek = open-source efficiency leader
 
-**vs. Alibaba Qwen:**
+**vs. Alibaba Qwen (通义千问):**
 - **Qwen Strength**: Direct integration into Alibaba ecosystem
 - **Qwen Weakness**: Corporate constraints, regulatory/political scrutiny
 - **MiniMax Advantage**: Technical focus, rapid innovation cycles, extreme context
 - **MiniMax Weakness**: Smaller distribution (though both Alibaba and Tencent backing helps)
 - **Differentiation**: MiniMax = technically optimized; Qwen = ecosystem integrated
 
-**vs. Moonshot Kimi:**
+**vs. Moonshot Kimi (月之暗面, 智谱清言 Kimi):**
 - **Kimi Strength**: Consumer mindshare, long context pioneer (2M characters)
 - **Kimi Weakness**: Regulatory scrutiny, limited modality, API competition
 - **MiniMax Advantage**: Multimodal platform, B2B focus avoids regulatory risk
 - **MiniMax Weakness**: Less brand recognition with consumers
 - **Differentiation**: MiniMax = B2B platform; Kimi = B2C application
 
-**vs. Tencent Hunyuan:**
+**vs. Tencent Hunyuan (腾讯混元):**
 - **Hunyuan Strength**: Direct corporate backing, integrated into Tencent products
 - **Hunyuan Weakness**: Corporate bureaucracy, slow to innovate
 - **MiniMax Advantage**: Speed, extreme context, multimodal focus, independence
