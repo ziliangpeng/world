@@ -47,16 +47,20 @@ Qwen evolved from Llama foundation (Qwen 1.0) to proprietary architectures with 
 - Dramatically improves inference throughput and memory efficiency
 - Enables efficient long-context processing at lower computational cost
 
-**Dual Chunk Attention (DCA)** - Novel Long-Context Mechanism (Qwen2/2.5/3)
+**Dual Chunk Attention (DCA)** - Adopted from HKUNLP Researchers (Used in Qwen2/2.5/3)
+- Originally developed by HKUNLP team (An, Huang, et al., arxiv:2402.17463, ICML 2024)
+- Qwen adopted DCA for long-context capabilities
 - Segments sequences into manageable chunks for efficient processing
 - Intra-chunk attention for local dependencies within chunks
 - Cross-chunk attention for long-range dependencies between chunks
 - Remaps relative positions to avoid unseen distances during training
-- Combined with YARN (Yet Another RoPE extensioN) for 4x sequence length increase
+- Combined with YARN (Yet Another RoPE extensioN) for extended sequence length
 - Proven up to 1M token context window
 
-**Adaptive Basis Frequency (ABF)** - Long-Context Extension
-- Increases RoPE (Rotary Positional Embeddings) base frequency from 10,000 to 1,000,000
+**Adjusted Base Frequency (ABF)** - Adopted from Meta AI (Used in Qwen)
+- Originally developed by Meta AI researchers (Xiong, Liu, et al., arxiv:2309.16039)
+- Qwen adopted ABF technique for long-context extension
+- Increases RoPE (Rotary Positional Embeddings) base frequency from 10,000 to higher values (Qwen uses up to 1,000,000)
 - Enables three-stage pre-training: 4K → 32K → 128K context
 - Foundation for experimental 1M token models
 
@@ -91,7 +95,9 @@ Qwen2.5/3 MoE Design (Different from Dense Models):
 
 **Multimodal Architecture Innovations**
 
-**M-RoPE (Multimodal Rotary Position Embedding)** - Qwen2-VL/3-VL Innovation
+**M-RoPE (Multimodal Rotary Position Embedding)** - Qwen Invention (Bai et al., 2023)
+- Originally developed by Qwen team (Bai, Jinze et al., arxiv:2308.12966, August 2023)
+- Qwen's unique contribution to multimodal model architectures
 - Decomposes original RoPE into three components:
   - Temporal information (1D for text sequences)
   - Height information (2D for image/video spatial)
@@ -99,6 +105,7 @@ Qwen2.5/3 MoE Design (Different from Dense Models):
 - Unified paradigm for processing 1D text, 2D images, and 3D videos in single model
 - More sophisticated than sequential multimodal processing
 - Enables native image and video understanding
+- Further refined in Qwen2-VL and Qwen3-VL models
 
 **Naive Dynamic Resolution** - Vision Processing Innovation
 - Handles arbitrary image resolutions (not predetermined sizes)
