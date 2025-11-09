@@ -467,6 +467,43 @@ Zhipu positions as **"The Academic AI Company"** with distinctive strategic elem
 **Total Model Families**: 8 major series (GLM/ChatGLM, GLM-Z1 Reasoning, CogVLM/CogAgent, GLM-Voice, CodeGeeX, CogView/CogVideo)
 **Total Models Released**: 50+ variants across language, reasoning, vision-language, voice, code, and multimodal generation
 
+### 📚 Complete Research & Technical Papers
+
+#### Foundation Architecture & Language Models
+
+| arXiv ID | Title | Year | Focus |
+|---|---|---|---|
+| [2103.10360](https://arxiv.org/abs/2103.10360) | GLM: General Language Model Pretraining with Autoregressive Blank Infilling | 2021 | GLM core architecture (autoregressive + autoencoding hybrid) |
+| [2210.02414](https://arxiv.org/abs/2210.02414) | GLM-130B: An Open Bilingual Pre-Trained Model | 2022 | Massive bilingual foundation model |
+| [2406.12793](https://arxiv.org/abs/2406.12793) | ChatGLM: A Family of Large Language Models from GLM-130B to GLM-4 | 2024 | GLM-4 family, unified chat architecture |
+| [2508.06471](https://arxiv.org/abs/2508.06471) | GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models | 2025 | GLM-4.5 frontier model, MoE, agentic capabilities |
+
+#### Vision-Language & Multimodal Models
+
+| arXiv ID | Title | Year | Focus |
+|---|---|---|---|
+| [2311.03079](https://arxiv.org/abs/2311.03079) | CogVLM: Visual Expert for Visual Language Models | 2023 | Vision-language understanding with visual experts |
+| [2312.08914](https://arxiv.org/abs/2312.08914) | CogAgent: A Visual Language Model for GUI Agents | 2023 | GUI automation and desktop task understanding |
+| [2408.16500](https://arxiv.org/abs/2408.16500) | CogVLM2: Improving Open-Source Vision Language Models with Training-Free Module Replacement | 2024 | Enhanced image/video understanding |
+| [2507.01006](https://arxiv.org/abs/2507.01006) | GLM-4.5V and GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable RL | 2025 | Multimodal reasoning via reinforcement learning |
+| [2412.02612](https://arxiv.org/abs/2412.02612) | GLM-4-Voice: Towards Intelligent and Human-Like End-to-End Spoken Chatbot | 2024 | End-to-end voice conversation with emotion/dialect control |
+| [2205.15868](https://arxiv.org/abs/2205.15868) | CogVideo: Text-to-Video Generation via Transformers | 2022 | Video generation using Transformer architecture |
+
+#### Code Generation & Analysis
+
+| arXiv ID | Title | Year | Focus |
+|---|---|---|---|
+| [2303.17568](https://arxiv.org/abs/2303.17568) | CodeGeeX: A Pre-Trained Model for Code Generation | 2023 | Multilingual code generation model |
+
+#### Agent & Automation Systems
+
+| arXiv ID | Title | Year | Focus |
+|---|---|---|---|
+| [2411.00820](https://arxiv.org/abs/2411.00820) | AutoGLM: Autonomous Agents for GUI Interaction | 2024 | GUI automation, browser control, web agent capabilities |
+| [2508.14040](https://arxiv.org/abs/2508.14040) | ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents | 2025 | API-GUI paradigm for desktop automation with RL training |
+
+**Total Papers**: 14 published arXiv papers spanning foundations, vision, voice, code generation, and agentic systems
+
 ### 📊 Performance and Reception
 
 **Benchmark Performance:**
