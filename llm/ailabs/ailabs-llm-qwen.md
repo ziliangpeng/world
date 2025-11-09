@@ -199,11 +199,13 @@ Qwen's technical strategy differs from competitors through both adopted techniqu
 - Strategic leader overseeing Qwen development and open-source AI strategy
 - Led Qwen to 300+ open-source models, 600M+ downloads, 90,000+ enterprise deployments
 - Philosophy: Large model development and cloud infrastructure are inseparable
+- Links: [LinkedIn](https://cn.linkedin.com/in/jrzhou), [Google Scholar](https://scholar.google.com/citations?user=64zxhRUAAAAJ&hl=en)
 
 **Fei Huang (黄非)** - Chief Scientist, Language Technologies Lab, DAMO Academy
 - PhD from Carnegie Mellon University (former IBM, Facebook)
 - Built AliNLP platform supporting trillions of calls daily across Alibaba
 - Led evolution from PLUG and AliceMind to Tongyi Qianwen (Qwen)
+- Links: [Google Scholar](https://scholar.google.com/citations?user=9r98PpoAAAAJ&hl=en), [Website](https://sites.google.com/view/fei-huang)
 
 **Lin Junyang (林俊扬) / Justin Lin** - Head of Qwen LLM Project
 - Age 32, Research Fellow at Alibaba DAMO Academy
@@ -211,6 +213,7 @@ Qwen's technical strategy differs from competitors through both adopted techniqu
 - Led original Tongyi Qianwen development, multimodal models (M6, OFA, CLIP)
 - Established Robotics and Embodied AI Group (October 2025)
 - Strong advocate for global open-source AI community
+- Links: [LinkedIn](https://www.linkedin.com/in/junyang-lin-0b2b38151/), [Google Scholar](https://scholar.google.com.hk/citations?user=qp6IwtgAAAAJ&hl=en), [Website](https://justinlin610.github.io/), [GitHub](https://github.com/JustinLin610), [Twitter](https://x.com/justinlin610)
 
 **Core Research & Engineering Team**
 
@@ -218,6 +221,7 @@ Qwen's technical strategy differs from competitors through both adopted techniqu
 - First/lead author on Qwen2.5 and Qwen3 technical reports
 - Key technical architect across multiple model releases
 - Affiliation: Qwen Team, Peking University, Alibaba
+- Links: [Google Scholar](https://scholar.google.com/citations?user=vO9FZekAAAAJ&hl=en), [GitHub](https://github.com/yangapku)
 
 **Binyuan Hui (惠斌源)** - Staff Research Scientist, Coding Models Lead
 - Born 1999 (child prodigy); entered Northeastern University at age 15
@@ -225,60 +229,71 @@ Qwen's technical strategy differs from competitors through both adopted techniqu
 - Lead engineer for Qwen-Coder series; believer in autonomous coding as AI foundation
 - Initiator of OpenDevin project
 - Area Chair for ACL-24 and EMNLP-24
+- Links: [LinkedIn](https://www.linkedin.com/in/binyuan-hui-19403730b/), [GitHub](https://github.com/huybery), [Website](https://huybery.github.io/), [Twitter](https://x.com/huybery)
 
 **Liu Dayiheng (刘大一恒)** - Algorithm Expert, Foundational Models Lead
 - PhD from Sichuan University; selected for Huawei "Genius Youth" program (2M yuan/year)
 - Introduced Qwen3 at Apsara Conference 2025
 - First student from Sichuan University with ACL paper (cited by OpenAI)
 - Joined Alibaba DAMO Academy January 2021
+- Links: [Website](https://dayihengliu.github.io/), [GitHub](https://github.com/dayihengliu)
 
 **Jinze Bai (白金泽)** - Senior Algorithm Engineer
 - Lead author on original Qwen technical report
 - Instrumental in Qwen base models and Qwen-VL series
 - Developed M-RoPE multimodal position embedding innovation
 - Lead of Qwen2-VL with Naive Dynamic Resolution mechanism
+- Links: [LinkedIn](https://www.linkedin.com/in/jinze-bai-aab327105/), [GitHub](https://github.com/jinze1994)
 
 **Baosong Yang (杨宝松)** - Senior Algorithm Expert, Multilingual Lead
 - PhD from University of Macau (NLP2CT Lab)
 - Leads Qwen's multilingual capabilities and machine translation
 - 50+ publications in ACL, EMNLP, AAAI, NAACL
 - Machine translation research since 2013
+- Links: [Google Scholar](https://scholar.google.com/citations?user=fXsHJXkAAAAJ&hl=en), [Website](https://baosongyang.site/)
 
 **Specialized Technical Leaders**
 
 **Bai Shuai (白帅)** - Qwen3-VL Vision-Language Models Lead
 - Multi-modal learning and visual generation specialist
 - Second place at international Visual Object Tracking competition
+- Links: [GitHub](https://github.com/ShuaiBai623)
 
 **Wu Chenfei (吴晨飞)** - Qwen-Image and Visual Generation Lead
 - PhD in computer vision from BUPT; former Microsoft Research Asia senior researcher
 - Contributed to NUWA visual generation model (2022)
 - Named "top 100" university student by China Computer Federation
+- Links: [LinkedIn](https://www.linkedin.com/in/chenfei-wu-544986167/), [Website](https://chenfei-wu.github.io/), [GitHub](https://github.com/chenfei-wu)
 
 **Xu Jin (徐金)** - Qwen Audio and Qwen-Omni Multimodal Lead
 - Communications engineering from BUPT; PhD from Tsinghua University
 - Previous: Internships at Apple, Microsoft Research Asia, Baidu
+- Links: [Google Scholar](https://scholar.google.com/citations?user=COYDNmYAAAAJ&hl=zh-CN), [Website](https://jxu-thu.github.io/), [Twitter](https://twitter.com/xujnx)
 
 **Bowen Yu (郁博文)** - Research Scientist
 - PhD from Chinese Academy of Sciences (2017-2022)
 - Specializes in information extraction and large language models
 - Universal Information Extraction (TRUE-UIE framework)
 - Publications at EMNLP, ACL, NAACL, WWW
+- Links: [LinkedIn](https://www.linkedin.com/in/bowen-yu-512000157/), [Google Scholar](https://scholar.google.com/citations?user=oHoEp34AAAAJ&hl=zh-CN), [Website](https://yubowen-ph.github.io/), [Twitter](https://twitter.com/jediyubowen)
 
 **Tianyi Tang (唐天一)** - Human Alignment Researcher
 - Renmin University of China (AI Box lab, supervised by Prof. Wayne Xin Zhao)
 - Wu Yuzhang Scholarship 2024 (highest RUC honor)
 - Co-author on Qwen2.5, QwQ, Qwen3 technical reports
 - Publications at ICLR, ACL, EMNLP, CSUR
+- Links: [Google Scholar](https://scholar.google.com/citations?user=t1mRUvQAAAAJ&hl=en), [Website](https://steventang1998.github.io/), [GitHub](https://github.com/StevenTang1998)
 
 **Peng Wang (王鹏)** - Vision-Language Research
 - Co-author on Qwen-VL and Qwen3 technical reports
 - Core contributor to state-of-the-art vision-language performance
+- Links: [Google Scholar](https://scholar.google.com.hk/citations?user=7fjqA0YAAAAJ&hl=zh-CN), [GitHub](https://github.com/logicwong)
 
 **Steven Hoi Chu-hong (蔡楚雄)** - Chief Scientist of Intelligent Information Platform
 - Founded HyperGAI in Singapore (2023)
 - Former Managing Director at Salesforce Research Asia (2019-2022)
 - Joined Alibaba January 2025; transferred to Tongyi Lab to strengthen foundational AI development
+- Links: [LinkedIn](https://www.linkedin.com/in/steven-hoi-8712b41/), [Website](https://sites.google.com/view/stevenhoi/home), [Twitter](https://x.com/stevenhoi), [HyperGAI](https://www.hypergai.com/)
 
 **Team Characteristics**
 
