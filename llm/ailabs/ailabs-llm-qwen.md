@@ -171,11 +171,25 @@ Qwen2.5/3 MoE Design (Different from Dense Models):
 
 **Comparative Positioning**
 
-Qwen's technical strategy differs from competitors:
-- **vs. DeepSeek**: Qwen emphasizes broader multilingual support (119 vs 29 languages), unified thinking/non-thinking modes (vs. separate R1), and higher open-source activity
-- **vs. Llama**: Qwen evolved beyond Llama base to proprietary DCA, hybrid attention, and M-RoPE innovations; more sophisticated long-context and multimodal approaches
-- **vs. GPT/Claude/Gemini**: Qwen offers open-source availability, aggressive quantization support for edge deployment, and superior multilingual capabilities
-- **Key differentiator**: Only model family with both dense and advanced MoE at all scales, hybrid attention mechanisms, and unified thinking framework in single models
+Qwen's technical strategy differs from competitors through both adopted techniques and original innovations:
+
+**Qwen's Core Innovations:**
+- **M-RoPE**: Original multimodal positional encoding (Qwen invention, Bai et al. 2023)
+- **Hybrid Attention (Qwen3-Next)**: Gated DeltaNet + standard attention combination for 7-10x efficiency gains
+- **Unified Thinking Framework**: Integrated reasoning/non-reasoning modes in single model
+- **Naive Dynamic Resolution**: Dynamic image resolution handling
+- **Instance-level Data Mixture**: 7:2:1 Code:Text:Math optimization
+
+**Qwen's Smart Adoption of External Research:**
+- **DCA**: Adopted from HKUNLP researchers for efficient long-context (arxiv:2402.17463)
+- **ABF**: Adopted from Meta AI for context extension (arxiv:2309.16039)
+- **GQA**: Adopted from Google for KV cache efficiency
+
+**Strategic Positioning vs Competitors:**
+- **vs. DeepSeek**: Broader multilingual support (119 vs 29 languages), unified thinking modes (vs. separate R1), higher open-source ecosystem activity
+- **vs. Llama**: Evolved beyond Llama foundation with proprietary innovations (M-RoPE, hybrid attention, advanced MoE); more sophisticated multimodal and long-context approaches
+- **vs. GPT/Claude/Gemini**: Open-source availability, aggressive quantization for edge deployment, superior multilingual capabilities, unified reasoning framework
+- **Key differentiator**: Only model family with both dense and advanced MoE at all scales, proprietary hybrid attention mechanisms, unified thinking/non-thinking framework, and M-RoPE for true multimodal integration
 
 ### 👥 Team Background
 
