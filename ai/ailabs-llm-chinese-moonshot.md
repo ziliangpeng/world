@@ -65,7 +65,10 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 - **Performance**: 6.5x speedup at 1M tokens, 16x speedup at 10M tokens
 - Maintains causal masking for autoregressive generation
 - Already deployed in Kimi for production long-context support
-- [GitHub: MoonshotAI/MoBA](https://github.com/MoonshotAI/MoBA)
+- **Resources**:
+  - [arXiv Paper (2502.13189)](https://arxiv.org/abs/2502.13189)
+  - [GitHub: MoonshotAI/MoBA](https://github.com/MoonshotAI/MoBA)
+  - [MarkTechPost Coverage](https://www.marktechpost.com/2025/02/18/moonshot-ai-research-introduce-mixture-of-block-attention-moba-a-new-ai-approach-that-applies-the-principles-of-mixture-of-experts-moe-to-the-attention-mechanism/)
 
 #### Mixture of Experts (MoE) Architecture
 
@@ -79,6 +82,10 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
   - 64 attention heads, 7168 hidden dimension
   - Multi-head Latent Attention (MLA) with SwiGLU activation
 - **Training**: 15.5 trillion tokens with zero instability
+- **Resources**:
+  - [Kimi K2 arXiv Paper (2507.20534)](https://arxiv.org/abs/2507.20534)
+  - [GitHub: MoonshotAI/Kimi-K2](https://github.com/MoonshotAI/Kimi-K2)
+  - [HuggingFace Blog - Kimi K2 Explained](https://huggingface.co/blog/fdaudens/moonshot-ai-kimi-k2-explained)
 
 #### MuonClip Optimizer - Training Stability at Scale
 
@@ -92,6 +99,11 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 - Operates at weight level (before instability arises) rather than post-softmax
 - **Results**: Trained Kimi K2 on 15.5T tokens without a single training crash
 - **Performance**: 25% faster convergence than standard optimizers
+- **Resources**:
+  - [Kimi K2 Paper (featuring MuonClip) - arXiv 2507.20534](https://arxiv.org/abs/2507.20534)
+  - [Muon Research - arXiv 2502.16982](https://arxiv.org/abs/2502.16982)
+  - [Fireworks AI Deep-Dive on MuonClip](https://fireworks.ai/blog/muonclip)
+  - [Medium - MuonClip Analysis](https://medium.com/@ranjanunicode22/muonclip-the-optimizer-that-made-trillion-parameter-kimi-k2-possible-47a2e6458462)
 
 #### Kimi Linear - Ultra-Efficient Linear Attention (October 2025)
 
@@ -107,6 +119,11 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 - Significantly reduced latency (time per output token - TPOT)
 
 **Deployment:** Open-source release on HuggingFace and GitHub
+- **Resources**:
+  - [arXiv Paper (2510.26692) - Kimi Linear: An Expressive, Efficient Attention Architecture](https://arxiv.org/abs/2510.26692)
+  - [GitHub: MoonshotAI/Kimi-Linear](https://github.com/MoonshotAI/Kimi-Linear)
+  - [HuggingFace Models](https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct)
+  - [Hacker News Discussion](https://news.ycombinator.com/item?id=45766937)
 
 #### Mooncake - Production Infrastructure (USENIX FAST 25 Best Paper)
 
@@ -119,6 +136,11 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 - Processes 100 billion tokens daily for Kimi production
 - Handles 115% more requests on NVIDIA A800 clusters
 - Handles 107% more requests on NVIDIA H800 clusters
+- **Resources**:
+  - [USENIX FAST 25 Conference Paper](https://www.usenix.org/conference/fast25/presentation/qin)
+  - [arXiv Paper (2407.00079)](https://arxiv.org/abs/2407.00079)
+  - [GitHub: kvcache-ai/Mooncake](https://github.com/kvcache-ai/Mooncake)
+  - [Mooncake Documentation](https://kvcache-ai.github.io/Mooncake/)
 
 #### Reasoning Capabilities
 
@@ -126,12 +148,26 @@ Moonshot positions as **"The Consumer-First LLM Company"** with emphasis on:
 - Claims mathematical, coding, and multimodal reasoning matching o1-level performance
 - Integration of reinforcement learning for reasoning improvement
 - Capabilities: Complex math, code generation, vision reasoning
+- **Resources**:
+  - [arXiv Paper (2501.12599) - Kimi k1.5: Scaling Reinforcement Learning with LLMs](https://arxiv.org/abs/2501.12599)
+  - [GitHub: MoonshotAI/Kimi-k1.5](https://github.com/MoonshotAI/Kimi-k1.5)
 
 **K2 Reasoning:**
 - Agentic capabilities with tool use and sequential planning
 - Can execute 200-300 sequential tool calls without human intervention
 - Strong performance on code, math, and reasoning benchmarks
 - Ranked #1 on HuggingFace Open LLM Leaderboard (at release)
+- **Resources**:
+  - [Kimi K2 arXiv Paper (2507.20534)](https://arxiv.org/abs/2507.20534)
+  - [GitHub: MoonshotAI/Kimi-K2](https://github.com/MoonshotAI/Kimi-K2)
+  - [Kimi K2-Thinking HuggingFace](https://huggingface.co/moonshotai/Kimi-K2-Thinking)
+
+**K2 Vision & Multimodal:**
+- Kimi-VL: Efficient MoE vision-language model with 128K context window
+- 2.8B active parameters in language decoder for efficient inference
+- **Resources**:
+  - [arXiv Paper (2504.07491) - Kimi-VL Technical Report](https://arxiv.org/abs/2504.07491)
+  - [GitHub: MoonshotAI/Kimi-VL](https://github.com/MoonshotAI/Kimi-VL)
 
 ### 👥 Team Background
 
