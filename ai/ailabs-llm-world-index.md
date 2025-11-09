@@ -311,10 +311,11 @@ This file tracks comprehensive research on Large Language Models (LLMs) and foun
   - 🤖 ERNIE series (3.5, 4.0, 4.5)
   - 💭 ERNIE X1 (reasoning model)
   - 🤖 ERNIE Bot
-- [x] Baichuan AI
-  - 🤖 Baichuan 1, 2
-  - 👁️ Baichuan-Omni (multimodal, 7B)
-  - 🤖 Baichuan 4
+- [x] Baichuan AI - [Deep Dive](ailabs-llm-chinese-baichuan.md)
+  - 🤖 Baichuan 2 (7B, 13B - 2.6T tokens training)
+  - 👁️ Baichuan-Omni-7B (first open-source 4-modality: image, video, audio, text)
+  - 🤖 Baichuan 4 (domain-specialized: law, finance, medicine, classical Chinese)
+  - 🏥 Baichuan-M1 (medical AI, 14.5B params, 20T tokens)
 - [x] ByteDance - [Deep Dive](ailabs-llm-chinese-bytedance.md)
   - 🤖 Doubao-1.5-Pro (frontier performance, ultra-low cost)
   - 🤖 Doubao-1.5-Lite (lightweight)
