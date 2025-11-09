@@ -74,12 +74,122 @@ DeepSeek introduced several technical innovations that contributed to efficiency
 
 ### 👥 Team Background
 
-DeepSeek's leadership and team include:
-- **Liang Wenfeng**: Founder and CEO, background in quantitative trading and algorithms
-- Core team trained at High-Flyer
-- Hiring from top AI labs (Tsinghua, Peking University, etc.)
-- Relatively small team (50-100 core researchers) compared to Western AI companies
-- Talent attracted by technical autonomy and financial stability
+**Leadership & Founder**
+
+**Liang Wenfeng (梁文锋)** - Founder and CEO
+- Born 1985 in Wuchuan, Guangdong; from family of educators
+- Bachelor's in Electronic Information Engineering from Zhejiang University (2007)
+- Master's in Information and Communication Engineering from Zhejiang University (2010)
+- Co-founded quantitative hedge fund High-Flyer (2015) with AI-powered trading strategies
+- Launched DeepSeek in July 2023 as High-Flyer's AI division
+- Personally holds 84% stake in DeepSeek through shell corporations
+- Philosophy: Patient capital and technical independence enable long-term AI research
+- Links: [Wikipedia](https://en.wikipedia.org/wiki/Liang_Wenfeng)
+
+**Core Research & Technical Leadership**
+
+**Zhihong Shao (邵智宏)** - Core Researcher, LLM Reasoning Lead
+- CS PhD from Tsinghua University; BS from Beihang University
+- Named MIT Tech Review's 35 Innovators Under 35
+- Key contributor to DeepSeek-R1, DeepSeek-Prover, DeepSeek-Coder-V2, DeepSeekMath
+- Co-authored ICLR 2024 paper on ToRA (Tool-Integrated Reasoning Agent)
+- Received Lenovo Scholarship from Tsinghua University (2023)
+- Mentored by Nan Duan and Weizhu Chen at MSRA
+- Links: [Personal Website](https://zhihongshao.github.io/), [LinkedIn](https://www.linkedin.com/in/zhihong-shao-18a1981b4/), [Google Scholar](https://scholar.google.com/citations?user=PZy4HEIAAAAJ&hl=zh-CN), [GitHub](https://github.com/ZhihongShao), [Twitter](https://x.com/zhs05232838)
+
+**Zhibin Gou (苟志斌)** - Core Researcher, Reasoning & RL Specialist
+- MS from Tsinghua University's SIGS, advised by Prof. Yujiu Yang
+- BS from Beijing University of Posts and Telecommunications
+- Research Intern at Microsoft Research Asia NLC Group (Jan 2023 - May 2024)
+- Mentored by Yeyun Gong and Weizhu Chen at MSRA
+- Co-authored ICLR 2024 paper on ToRA and CRITIC (200+ citations)
+- Core contributor to DeepSeek-R1
+- Links: [Personal Website](https://zubingou.github.io/), [Google Scholar](https://scholar.google.com/citations?user=jTMOma8AAAAJ&hl=en), [GitHub](https://github.com/ZubinGou), [Twitter](https://x.com/zebgou)
+
+**Gao Huazuo (高华左)** - Senior Researcher, MLA Architecture Lead
+- BS Physics from Peking University (2017)
+- Key innovator in Multi-Head Latent Attention (MLA) architecture
+- 12+ research papers with 886+ citations
+- Major contributor to DeepSeek-R1, DeepSeek-VL2
+- Focus on efficiency innovations and attention mechanisms
+- Links: [ResearchGate](https://www.researchgate.net/scientific-contributions/Huazuo-Gao-2278776359), [OpenReview](https://openreview.net/profile?id=~Huazuo_Gao1)
+
+**Junxiao Song** - Principal Researcher, Reinforcement Learning Lead
+- PhD in Electronic and Computer Engineering from Hong Kong University of Science and Technology (2015)
+- BS in Automation from Zhejiang University
+- Proposed GRPO (Group Relative Policy Optimization) algorithm used across DeepSeek series
+- Designed novel RL pipelines for DeepSeek-R1 eliminating need for supervised fine-tuning
+- Links: [Personal Website](https://junxiaosong.github.io/), [GitHub](https://github.com/junxiaosong), [Google Scholar](https://scholar.google.com/citations?user=J95hmyQAAAAJ&hl=en)
+
+**Luo Fuli (罗福利)** - Senior Researcher, NLP & MLA Expert (Age 29)
+- Master's from Institute of Computational Linguistics, Peking University
+- Previously at Alibaba DAMO Academy ML Lab (developed multilingual VECO, AliceMind)
+- Joined DeepSeek in 2022; pivotal role in DeepSeek-V2 development
+- Expertise in Multi-Level Attention (MLA) and multilingual NLP
+- Published at ACL 2019 and other top NLP conferences
+- Nickname: "AI Prodigy" among Chinese tech community
+- Links: [ResearchGate](https://www.researchgate.net/scientific-contributions/Fuli-Luo-2142783103)
+
+**Daya Guo (郭大雅)** - Senior Researcher, Code Intelligence & Reasoning
+- BS from Sun Yat-sen University
+- PhD from Sun Yat-sen University (2018-2023) through joint program with MSRA
+- Supervised by Ming Zhou; mentored by Nan Duan and Duyu Tang at MSRA
+- Held positions at Rensselaer Polytechnic Institute and Microsoft Research Asia
+- Core author on DeepSeekMath, Coder-V2, V2, and R1 papers
+- Research focus: NLP, code intelligence, reasoning ability of LLMs
+- Links: [Personal Website](https://guoday.github.io/), [Google Scholar](https://scholar.google.com/citations?user=gCG4cPYAAAAJ&hl=en), [Twitter](https://x.com/guodaya)
+
+**Zeng Wangding** - Technical Researcher, MLA Architecture
+- Master's candidate at Beijing University of Posts and Telecommunications AI Institute (2021+)
+- Key innovator in Multi-Head Latent Attention (MLA) mechanism alongside Gao Huazuo
+- Focus on KV cache compression and inference efficiency
+- Expertise in hardware-aligned attention mechanisms
+
+**Pan Zizheng (潘子正)** - Senior Researcher, Multimodal Systems Lead
+- BS from Harbin Institute of Technology
+- MS from University of Adelaide (Australia)
+- PhD candidate in Computer Science from Monash University (2021-2024)
+- Interned at NVIDIA (Summer 2023); turned down full-time offer to join DeepSeek
+- "Key role" in DeepSeek-VL2, DeepSeek-V3, DeepSeek-R1 projects
+- Represents growing trend of Chinese AI talent rejecting Silicon Valley for opportunities in China
+- Links: [Twitter](https://x.com/zizhpan)
+
+**Supporting Research Infrastructure**
+
+**Zhenda Xie** - Researcher, Model Architecture
+- Research Intern at Microsoft Research Asia (2019-2023) under Dr. Han Hu's mentorship
+- Core contributor to architectural innovations
+- Links: [Personal Website](https://zdaxie.github.io/)
+
+**Team Characteristics**
+
+- **Talent Strategy**: Preference for young academics and recent graduates from top Chinese universities over established senior researchers
+- **Academic Excellence**: Strong representation from Tsinghua University, Peking University, and Beihang University
+- **International Experience**: Many team members studied or worked internationally (HKUST, University of Adelaide, Monash, MSRA)
+- **Microsoft Research Asia Connection**: Strong pipeline of researchers trained at MSRA's Natural Language Computing Group
+- **Lean Structure**: ~200 employees total as of January 2025 with ~50-100 core researchers despite frontier-class model development
+- **Age Profile**: Mix of young prodigies (age 20s-early 30s) and experienced leaders, with "young geniuses" philosophy
+- **No Competition Culture**: Emphasized collaboration over internal competition, unlike many tech companies
+- **Patent Holders**: Multiple team members hold 20+ patents each
+- **Publication Record**: Prolific academic contributors with 100+ research papers collective
+
+**Organizational Philosophy**
+
+DeepSeek's team culture prioritizes:
+- **Technical Autonomy**: Freedom to pursue long-term research without external investor pressure
+- **Financial Stability**: Patient capital from High-Flyer hedge fund enables risk-taking
+- **Collaborative Environment**: Emphasis on team collaboration rather than individual recognition or competition
+- **Merit-Based Hiring**: Ability and potential valued over credentials and experience
+- **Open-Source Contribution**: Team members actively contribute to community infrastructure and tools
+- **Rapid Iteration**: Ability to move quickly from research concept to production deployment
+
+**Notable Achievements Across Team**
+
+- Reduced training cost from $100M+ industry standard to $5.58M for frontier models (70x efficiency improvement)
+- Achieved o1-class reasoning performance with $294K post-training investment (99.8% cost reduction vs industry estimates)
+- 88.9% accuracy on formal theorem proving (DeepSeek-Prover-V2)
+- State-of-the-art performance on MATH, GSM8K, and coding benchmarks
+- Published in top venues: Nature (DeepSeek-R1), ICLR 2024 (ToRA), multiple arxiv technical reports
 
 ### 🚀 Model Lineage and Release Timeline
 
