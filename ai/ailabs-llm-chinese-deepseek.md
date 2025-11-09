@@ -1,24 +1,104 @@
-# DeepSeek - Deep Dive
+# DeepSeek (深度求索) - Deep Dive
 
 ## 3. DeepSeek
 
 ### 🏢 Company Overview
 
-**DeepSeek** has emerged as one of the most significant players in the LLM landscape despite being founded in 2023. The company is known for radical cost efficiency, powerful open-source models, and technical innovations that challenged assumptions about training costs and efficiency. DeepSeek-V3 (671B parameters) and DeepSeek-R1 (reasoning model) have attracted significant international attention for achieving frontier performance at a fraction of the computational cost of Western models.
+**DeepSeek (深度求索)** has emerged as one of the most significant and disruptive players in the global LLM landscape despite being founded in mid-2023. The company is known for radical cost efficiency, powerful open-source models, and technical innovations that fundamentally challenged Western assumptions about frontier AI training costs and efficiency. DeepSeek-V3 (671B parameters with 37B active) and DeepSeek-R1 (reasoning model) have attracted unprecedented international attention for achieving frontier performance at less than 3% of typical Western training budgets. The company's emergence has triggered geopolitical and industry-wide reassessment of AI development economics.
 
 ### 📚 Founding Story and History
 
-DeepSeek was founded in **July 2023** by **Liang Wenfeng**, the co-founder of High-Flyer, a Chinese hedge fund. The unusual pedigree of a startup funded by a hedge fund (rather than VCs) meant DeepSeek had patient capital and independence from typical startup pressures. Liang Wenfeng, having built successful trading systems and quantitative algorithms at High-Flyer, brought a deep technical and computational mindset to AI development.
+#### Founder Background
 
-**Key Timeline:**
-- **Jul 2023**: DeepSeek founded
-- **Nov 2, 2023**: DeepSeek Coder released, establishing the company's technical credibility
-- **Nov 29, 2023**: DeepSeek-LLM series launched
-- **Dec 2024**: DeepSeek-V3 released, immediately causing international attention for cost-efficiency claims
-- **Jan 2025**: DeepSeek-R1 launched, competing directly with OpenAI's o1
-- **Jan 2025**: DeepSeek chatbot launched with over 10M downloads within days
+**Liang Wenfeng (梁文锋) - Founder & CEO**
+- **Birth**: 1985 in Mililing village, Wuchuan city, Guangdong Province (humble rural beginnings)
+- **Family**: Parents were both primary school teachers
+- **Education**:
+  - Zhejiang University, BS in Electronic Information Engineering (2007)
+  - Zhejiang University, MS in Information and Communication Engineering (2010)
+  - Master's dissertation: "Study on object tracking algorithm based on low-cost PTZ camera"
+- **Early career**: Relocated to Chengdu after graduation, experimented with AI in various industries with multiple failed ventures
+- **Breakthrough discovery**: Found success applying AI to quantitative finance
+- **High-Flyer founding path**:
+  - 2008: Formed team during financial crisis to accumulate financial market data
+  - 2015: Co-founded Hangzhou Huanfang Technology Co Ltd.
+  - February 2016: Co-founded Ningbo High-Flyer Quantitative Investment Management (梁文锋与两位工程系同学联合创办)
+  - Built High-Flyer into major hedge fund with 100+ billion yuan AUM (≈$14B) by 2021
+  - Became billionaire through High-Flyer's success
+- **Transition to AI**: May 2023 - announced High-Flyer would pivot to AGI development, launching DeepSeek
 
-DeepSeek's rapid ascent from unknown startup to industry-shaping player occurred in under 18 months, driven by technically superior models and radical cost transparency.
+#### Strategic Funding Model
+
+Unlike typical venture-backed AI startups, DeepSeek's unique funding structure enabled technical breakthroughs:
+
+**Funding Structure:**
+- **Sole investor**: High-Flyer hedge fund (梁文锋's company)
+- **Initial investment**: $50 million (modest vs. Western competitors)
+- **Ownership**: 100% owned and funded by High-Flyer, no external VC pressure
+- **Patient capital**: Hedge fund's long-term investment horizon, not beholden to quarterly metrics
+- **Key advantage**: Pre-emptive GPU acquisition (10,000 Nvidia A100s in 2022-2023 before US restrictions)
+- **Revenue reinvestment**: Model deployment revenues reinvested into R&D
+
+This structure enabled DeepSeek to pursue high-risk, long-term research without external pressure to monetize quickly—contributing directly to breakthrough efficiency innovations.
+
+#### Timeline and Milestones
+
+**2023 - Quiet Launch:**
+- **May 2023**: High-Flyer announces AGI pursuit, DeepSeek officially established
+- **July 2023**: DeepSeek officially founded as AI research subsidiary
+- **~100 engineers**: Team scaled to ~100 within founding period (vs. 40 for Moonshot)
+- **Nov 2, 2023**: DeepSeek Coder released (establishing technical credibility)
+- **Nov 29, 2023**: DeepSeek-LLM series launched (7B, 13B, 67B, 97B variants)
+- **Strategy**: Deliberate low-profile approach, minimal marketing, focus on technical excellence
+
+**2024 - Technical Innovations:**
+- **Early 2024**: Continued research into MLA, MoE efficiency improvements
+- **Throughout 2024**: Various model releases demonstrating steady technical progress
+- **Infrastructure achievement**: Showed ability to train competitive models with modest compute (2,048 H800 GPUs)
+- **Market positioning**: Built reputation for cost-transparency and open-source commitment
+
+**2024-2025 - Global Impact:**
+- **December 26, 2024**: **DeepSeek-V3 released** - 671B parameters, 37B active
+  - Training cost: $5.58 million (vs. OpenAI GPT-4o estimated $100M+)
+  - 2,048 H800s × 57 days = 2.78M GPU hours
+  - Performance: Competitive with GPT-4, Claude 3.5 Sonnet, o1
+  - Open-source under MIT license
+  - Immediate global impact: Sparked reassessment of AI economics
+
+- **January 2025**: **DeepSeek-R1 released** - Reasoning model competing with o1
+  - Training cost: $294,000 for post-training (frontier reasoning at minimal cost)
+  - Outperforms o1-mini on many benchmarks
+  - Open-source weights released
+
+- **January 2025**: **DeepSeek Chatbot launched**
+  - Over 10 million downloads within days
+  - Became top-1 app in Apple App Store (China)
+  - Demonstrated consumer-facing viability alongside research focus
+
+- **January 2025**: DeepSeek received personal endorsement from China's Premier Li Qiang (significant political validation)
+
+DeepSeek's transformation from unknown startup (mid-2023) to global AI disruptor (18 months) represents unprecedented impact velocity, fundamentally reshaping assumptions about AI development economics and feasibility.
+
+#### Core Team Philosophy
+
+**Hiring and Culture:**
+- **Team size**: ~150 people (deliberately lean, high-density talent strategy)
+- **Hiring philosophy**: Preference for new graduates and PhD students early in career
+- **Unconventional approach**: Hired several doctoral students who hadn't yet graduated
+- **Notable team members**:
+  - Guo Daya: 2023 PhD graduate, Sun Yat-sen University
+  - Zhu Qihao: Fresh PhD graduate, Peking University
+  - Dai Damai: Fresh PhD graduate, Peking University
+- **Organizational culture**:
+  - Deliberately flat hierarchy, downplays job ranks
+  - Research topic determination and resource mobilization democratized
+  - Emphasis on "talent density" over "personnel scale" (质量优先)
+  - All-elite team composition
+
+**Leadership Philosophy:**
+- Liang's quant trading background translated to AI: optimization mindset, cost-consciousness, efficiency obsession
+- Philosophy: "Frontier models don't require $100M budgets—they require superior algorithms and architecture"
+- Radical transparency: Publishing training costs and infrastructure details (unusual in AI industry)
 
 ### 💰 Funding and Investment
 
