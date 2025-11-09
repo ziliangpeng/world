@@ -8,18 +8,58 @@
 
 ### 📚 Founding Story and History
 
-Moonshot was founded on **March 20, 2023**, chosen deliberately for the 50th anniversary of Pink Floyd's *The Dark Side of the Moon*—founder Yang Zhilin's favorite album that inspired the company name. The founding story reflects Yang's romantic vision of building "moonshot" AI projects.
+#### The Founding Vision
 
-**Company Origin and Early Success:**
-- **3 months to 40-person team**: Raised $60M and assembled core AI team in first quarter
-- **October 2023**: Launched Kimi chatbot, immediately positioning as competitor to Baidu's ERNIE Bot
-- **Rapid Product Innovation**: Focused heavily on chat/consumer experience
-- **February 2024**: Raised $1B+ Series B from Alibaba, boosting valuation to $2.5B
-- **August 2024**: Tencent and other investors joined $300M round, valuing company at $3.3B
-- **January 2025**: Kimi K1.5 released claiming o1-level reasoning
-- **July 2025**: Moonshot released Kimi K2 weights (1T total parameters, 32B activated)
+Moonshot was founded on **March 1, 2023**, chosen deliberately for the 50th anniversary of Pink Floyd's *The Dark Side of the Moon* album release—founder Yang Zhilin's favorite album that inspired both the company name and its Chinese name "月之暗面" (Dark Side of the Moon). The founding reflects Yang's romantic vision of building transformative "moonshot" AI projects combining OpenAI's technology idealism with ByteDance's business pragmatism.
 
-Moonshot's trajectory represents the fastest path to frontier models among Chinese startups.
+**Yang Zhilin's Background:**
+- **Tsinghua undergraduate** in Computer Science
+- **Carnegie Mellon PhD** (2019) in Computer Science, advised by AI pioneer Ruslan Salakhutdinov
+- **Google Brain researcher** during doctoral studies (2017-2018)
+- **Meta AI Research** internship (2017-2018)
+- **Published landmark NLP papers**: First author of "Transformer-XL" and "XLNet"—foundational works cited thousands of times
+- **Contributed to China's first LLMs**: Technical lead on Huawei's Pangu AI (2020) and BAAI's Wudao model (2021)
+- **Academic role**: Assistant Professor at Tsinghua University
+- **Entrepreneurial experience**: Founded Recurrent Intelligence (2016), a B2B sales technology company
+- **Inspiration for Moonshot**: Visited US in December 2022 after ChatGPT launch, witnessing the GenAI wave and deciding it was time to "ride the wave"
+
+#### Vision and Philosophy
+
+Yang envisions Moonshot AI as a company that **"combines the technology idealism of OpenAI and business philosophy of ByteDance"**:
+- **OpenAI element**: Bold focus on scaling, AGI as north star, fundamental research breakthroughs
+- **ByteDance element**: User obsession, rapid iteration, commercial viability, continuous optimization
+- **Three strategic pillars for AGI**:
+  1. Ultra-long context processing (millions of tokens)
+  2. Multimodal world models (text, vision, audio)
+  3. Scalable general architecture with continuous self-improvement
+
+#### Early Growth and Milestones
+
+**2023 - Foundation Year:**
+- **March 2023**: Company founding with Yang Zhilin, Zhou Xinyu, Wu Yuxin
+- **Q1 2023**: $60M Series A funding → assembled 40-person core AI team in 3 months
+- **October 2023**: Kimi chatbot launched with industry-leading 128K token context (first commercially available)
+- **November 2023**: Public release of Kimi, rapid consumer adoption, immediate competitor to Baidu's ERNIE Bot
+- **Dec 2022-2023**: Rapid iteration on chat experience and long-context capabilities
+
+**2024 - Scale and Expansion:**
+- **February 2024**: $1.0B Series B led by Alibaba Group → $2.5B valuation (fastest unicorn in Chinese AI)
+- **March 2024**: Extended Kimi to 2M Chinese characters (lossless, ~10x improvement)
+- **June 2024**: Launched Kimi-Researcher autonomous research agent
+- **August 2024**: $300M Series C from Tencent, Gaorong Capital → $3.3B valuation
+- **October 2024**: Internal testing of video generation model
+- **Consumer Traction**: 100M+ monthly active users estimated on Kimi platform
+
+**2025 - Product Proliferation:**
+- **January 2025**: Kimi K1.5 released with o1-level reasoning capabilities
+- **April 2025**: Kimi-VL vision-language model (16B, 3B active)
+- **June 2025**: Kimi-VL-Thinking, Kimi-Dev-72B (SOTA coding), enhanced Kimi-Researcher
+- **July 2025**: Kimi K2 open-source release (1T total, 32B active) - first frontier model with open weights from China
+- **September 2025**: Kimi-K2-Instruct-0905 update, OK Computer agentic features
+- **October 2025**: Kimi Linear (48B, 3B active) with novel linear attention achieving 6x faster decoding
+- **November 2025**: Kimi K2 Thinking with reasoning variant outperforming GPT-5, Claude Sonnet 4.5 on benchmarks
+
+**Trajectory Summary**: From founding to frontier model leadership in 2.5 years—representing the fastest path to frontier capabilities among Chinese startups, achieving what typically takes Western companies 3-5 years.
 
 ### 💰 Funding and Investment
 
