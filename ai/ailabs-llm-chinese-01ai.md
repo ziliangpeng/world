@@ -542,6 +542,72 @@ By 2024, Lee was direct about the challenge: "Too many LLM startups focus on bre
 - Industry-specific applications (gaming, finance)
 - Partnership ecosystem player (with Alibaba, for DeepSeek)
 
+### Phase 5: Platform Pivot and AI Agents (2025)
+
+**Strategic Direction**: Abandoning trillion-parameter model development for enterprise platform and AI Agent focus
+
+**Major Strategic Shift - Foundation Model Development Ends**:
+The company made a pivotal announcement: **01.AI will no longer train trillion+ parameter foundation models**. Instead of continuing to compete with DeepSeek, Qwen, and international players in the foundation model race, the company pivoted to platform services and application layer development.
+
+**Key Launches and Partnerships**:
+
+1. **January 2025 - Alibaba Cloud Joint Lab**
+   - "Industrial Foundation Model Laboratory" partnership
+   - Focus: Combined R&D for enterprise model deployment
+   - Strategic: Positions 01.AI as enterprise platform provider rather than competing model developer
+
+2. **March 2025 - Wanzhi Enterprise Platform 1.0** (万智企业大模型一站式平台)
+   - Enterprise AI deployment and integration platform
+   - **Model-agnostic approach**: Integrates third-party models (DeepSeek, Qwen, Yi)
+   - Features: Enterprise deployment, model customization, workflow automation
+   - Positions company as "Windows for AI" - infrastructure layer rather than models
+
+3. **July 2025 - Wanzhi Platform 2.0 + "Super Employee" AI Agent** (万仔)
+   - **L2 reasoning agent capabilities**: Multi-step autonomous task completion
+   - Service integration: Can operate across multiple enterprise systems
+   - CEO-level strategic consulting approach to problem-solving
+   - Advanced autonomous agent layer built on foundation models
+
+4. **July 2025 - Baiwang Partnership (Hong Kong)**
+   - Full-scenario AI solutions for Hong Kong enterprises
+   - Expansion of enterprise AI services beyond mainland China
+
+**Model Development Strategy Shift**:
+- **Last new model releases**: Yi-Lightning and Yi-Lightning-Lite (December 2024), Yi-Coder series (September 2024)
+- **No new models in 2025**: Strategic focus on integration and application rather than model training
+- **Third-party model integration**: Partner with DeepSeek and Qwen rather than compete directly
+- **Cost rationalization**: Avoided expensive ongoing compute for billion-parameter model training
+
+**Business Model Evolution**:
+- **From**: Foundation model developer → API provider
+- **To**: Enterprise AI platform provider → "Windows gap" infrastructure filler
+- **Revenue streams**: Shift from model API usage fees to enterprise platform subscriptions and services
+- **Target customer**: Enterprise clients seeking AI deployment, not researchers/developers
+
+**Financial Impact and Path to Profitability**:
+- Enterprise platform licensing has higher margins than API model calls
+- Reduced R&D costs by abandoning trillion-parameter model training
+- Spinning off vertical applications (gaming, finance) into independent units with separate monetization
+- Focused on recurring B2B revenue rather than consumer/API consumption
+
+**Kai-Fu Lee's 2025 Vision**:
+> "2025 is the year of AI-First applications and commercialization"
+> "We're filling the 'Windows gap' in AI"
+> "Focus shifted from parameter count to delivering business value"
+
+**Strategic Rationale**:
+- **Market consolidation**: With DeepSeek and Qwen dominating open-source and Alibaba backing 01.AI, competing on foundation models became redundant
+- **Cost efficiency**: Training trillion-parameter models requires massive compute investment with diminishing returns
+- **Real value**: Enterprise customers want deployment/integration platforms, not raw model APIs
+- **Competitive advantage**: 01.AI's team strength in enterprise product (vs. research) better suited for platform business
+- **Path to profitability**: B2B enterprise software margins higher than AI API models
+
+**Organizational Changes**:
+- De-emphasis on foundation model research team
+- Reallocation of resources to enterprise platform engineering
+- Focus on building agentic systems and application layer capabilities
+- Emphasis on product and go-to-market execution
+
 ---
 
 ## Model Lineage and Release Timeline
@@ -593,6 +659,8 @@ By 2024, Lee was direct about the challenge: "Too many LLM startups focus on bre
 **Parameters Range**: 1.5B to 1 trillion
 **Context Range**: 4K to 200K (128K for Yi-Coder)
 **API Pricing**: Yi-Lightning at $0.14 per 1M tokens (vs $0.26 for GPT o1-mini)
+
+**Important Note on 2025**: No new foundation models were released in 2025. 01.AI announced a strategic pivot away from trillion-parameter model development toward enterprise platform services (Wanzhi Enterprise Platform, "Super Employee" AI Agent) and third-party model integration. The company's last new model releases were Yi-Lightning and Yi-Lightning-Lite in December 2024.
 
 ### Productivity Applications
 
