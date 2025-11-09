@@ -546,14 +546,60 @@ By 2024, Lee was direct about the challenge: "Too many LLM startups focus on bre
 
 ## Model Lineage and Release Timeline
 
-| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
-|---|---|---|---|---|---|
-| Nov 2023 | Yi-34B | 34B | First open-source, bilingual | ✅ | [arXiv:2403.04652](https://arxiv.org/abs/2403.04652) |
-| 2023-2024 | Yi-VL-34B | 34B | Vision-language model | ✅ | - |
-| 2024 | Yi-Coder | 1.5B, 9B | SOTA code generation | ✅ | - |
-| 2024 | Yi Chat Models | 6B, 34B, 9B | Instruction-tuned variants | ✅ | - |
-| 2025 | Yi-Lightning Series | - | Optimized lightweight variants | ✅ | - |
-| 2025 | Yi-Large | - | Proprietary frontier model | ❌ | - |
+### Complete 01.AI Model Catalog (2023-2025)
+
+| Release Date | Model Name | Parameters | Key Features | Open Weights | Context | Links |
+|---|---|---|---|---|---|---|
+| **Nov 02, 2023** | Yi-6B | 6B | Bilingual (EN/CN) base model | ✅ Apache 2.0 | 4K (32K capable) | [HF](https://huggingface.co/01-ai/Yi-6B) |
+| **Nov 02, 2023** | Yi-34B | 34B | #1 on Hugging Face, 3T tokens training | ✅ Apache 2.0 | 4K (32K capable) | [HF](https://huggingface.co/01-ai/Yi-34B) · [Paper](https://arxiv.org/abs/2403.04652) |
+| **Nov 05, 2023** | Yi-6B-200K | 6B | Extended context version | ✅ Apache 2.0 | 200K | [HF](https://huggingface.co/01-ai/Yi-6B-200K) |
+| **Nov 05, 2023** | Yi-34B-200K | 34B | 99.8% needle-in-haystack performance | ✅ Apache 2.0 | 200K | [HF](https://huggingface.co/01-ai/Yi-34B-200K) |
+| **Nov 23, 2023** | Yi-6B-Chat | 6B | Instruction-tuned chat model | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-6B-Chat) |
+| **Nov 23, 2023** | Yi-6B-Chat (4bits/8bits) | 6B | AWQ/GPTQ quantized variants | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-6B-Chat-4bits) |
+| **Nov 23, 2023** | Yi-34B-Chat | 34B | MMLU leader, top-ranked chat | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-34B-Chat) |
+| **Nov 23, 2023** | Yi-34B-Chat (4bits/8bits) | 34B | AWQ/GPTQ quantized variants | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-34B-Chat-4bits) |
+| **Jan 23, 2024** | Yi-VL-6B | 6B | Vision-language multimodal | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-VL-6B) |
+| **Jan 23, 2024** | Yi-VL-34B | 34B | #1 on MMMU/CMMMU benchmarks | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-VL-34B) |
+| **Mar 06, 2024** | Yi-9B | 9B | Depth-upscaled, code/math focused | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-9B) |
+| **Mar 16, 2024** | Yi-9B-200K | 9B | Extended context variant | ✅ Apache 2.0 | 200K | [HF](https://huggingface.co/01-ai/Yi-9B-200K) |
+| **May 13, 2024** | Yi-1.5-6B | 6B | Enhanced base, +500B tokens | ✅ Apache 2.0 | 32K | [HF](https://huggingface.co/01-ai/Yi-1.5-6B) |
+| **May 13, 2024** | Yi-1.5-6B-Chat | 6B | Better math/code, 3M diverse samples | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-1.5-6B-Chat) |
+| **May 13, 2024** | Yi-1.5-6B-Chat-16K | 6B | Extended context chat variant | ✅ Apache 2.0 | 16K | [HF](https://huggingface.co/01-ai/Yi-1.5-6B-Chat-16K) |
+| **May 13, 2024** | Yi-1.5-9B | 9B | Enhanced 9B base model | ✅ Apache 2.0 | 32K | [HF](https://huggingface.co/01-ai/Yi-1.5-9B) |
+| **May 13, 2024** | Yi-1.5-9B-Chat | 9B | Improved 9B chat model | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-1.5-9B-Chat) |
+| **May 13, 2024** | Yi-1.5-9B-Chat-16K | 9B | Extended context chat variant | ✅ Apache 2.0 | 16K | [HF](https://huggingface.co/01-ai/Yi-1.5-9B-Chat-16K) |
+| **May 13, 2024** | Yi-1.5-9B-32K | 9B | 32K context base model | ✅ Apache 2.0 | 32K | [HF](https://huggingface.co/01-ai/Yi-1.5-9B-32K) |
+| **May 13, 2024** | Yi-1.5-34B | 34B | Bridges Llama 3 8B-70B gap | ✅ Apache 2.0 | 32K | [HF](https://huggingface.co/01-ai/Yi-1.5-34B) |
+| **May 13, 2024** | Yi-1.5-34B-Chat | 34B | Top open-source, MMLU-Pro leader | ✅ Apache 2.0 | 4K | [HF](https://huggingface.co/01-ai/Yi-1.5-34B-Chat) |
+| **May 13, 2024** | Yi-1.5-34B-Chat-16K | 34B | Extended context chat variant | ✅ Apache 2.0 | 16K | [HF](https://huggingface.co/01-ai/Yi-1.5-34B-Chat-16K) |
+| **May 13, 2024** | Yi-1.5-34B-32K | 34B | 32K context base model | ✅ Apache 2.0 | 32K | [HF](https://huggingface.co/01-ai/Yi-1.5-34B-32K) |
+| **May 13, 2024** | Yi-Large (API) | ~1T | Outperforms GPT-4 on 6 benchmarks | ❌ API Only | 32K | [API](https://platform.lingyiwanwu.com) |
+| **May 13, 2024** | Yi-Large-Turbo (API) | Unknown | High performance, cost-effective | ❌ API Only | 32K | [API](https://platform.lingyiwanwu.com) |
+| **May 13, 2024** | Yi-Large-RAG (API) | Unknown | Optimized for RAG systems | ❌ API Only | 32K | [API](https://platform.lingyiwanwu.com) |
+| **May 13, 2024** | Yi-Large-FC (API) | Unknown | Function calling specialized | ❌ API Only | 32K | [API](https://platform.lingyiwanwu.com) |
+| **May 13, 2024** | Yi-Medium (API) | Unknown | Mid-tier model | ❌ API Only | Unknown | [API](https://platform.lingyiwanwu.com) |
+| **May 13, 2024** | Yi-Medium-200K (API) | Unknown | Extended context mid-tier | ❌ API Only | 200K | [API](https://platform.lingyiwanwu.com) |
+| **May 13, 2024** | Yi-Spark (API) | Unknown | Lightweight, math/code optimized | ❌ API Only | 200K | [API](https://platform.lingyiwanwu.com) |
+| **May 13, 2024** | Yi-Vision (API) | Unknown | Multimodal vision API | ❌ API Only | Unknown | [API](https://platform.lingyiwanwu.com) |
+| **Sep 05, 2024** | Yi-Coder-1.5B | 1.5B | Code generation, 52 languages, 128K | ✅ Apache 2.0 | 128K | [HF](https://huggingface.co/01-ai/Yi-Coder-1.5B) |
+| **Sep 05, 2024** | Yi-Coder-1.5B-Chat | 1.5B | Instruction-tuned code model | ✅ Apache 2.0 | 128K | [HF](https://huggingface.co/01-ai/Yi-Coder-1.5B-Chat) |
+| **Sep 05, 2024** | Yi-Coder-9B | 9B | Advanced code model, 23% LiveCodeBench | ✅ Apache 2.0 | 128K | [HF](https://huggingface.co/01-ai/Yi-Coder-9B) |
+| **Sep 05, 2024** | Yi-Coder-9B-Chat | 9B | Top code <10B params | ✅ Apache 2.0 | 128K | [HF](https://huggingface.co/01-ai/Yi-Coder-9B-Chat) |
+| **Oct 16, 2024** | Yi-Lightning (API) | MoE | #6 globally, #1 China on LMSYS | ❌ API Only | Unknown | [API](https://platform.lingyiwanwu.com) · [Paper](https://arxiv.org/abs/2412.01253) |
+| **Oct 16, 2024** | Yi-Lightning-Lite (API) | MoE | Lightweight variant, math/code | ❌ API Only | Unknown | [API](https://platform.lingyiwanwu.com) |
+
+**Total Models**: 38 open-source variants + 10+ proprietary API models
+**License**: Apache 2.0 (open-source models)
+**Parameters Range**: 1.5B to 1 trillion
+**Context Range**: 4K to 200K (128K for Yi-Coder)
+**API Pricing**: Yi-Lightning at $0.14 per 1M tokens (vs $0.26 for GPT o1-mini)
+
+### Productivity Applications
+
+| Product | Chinese Name | Type | Launch Date | Description | Availability |
+|---------|--------------|------|-------------|-------------|--------------|
+| Wanzhi | 万知 | AI Office Suite | May 2024 | Spreadsheets, documents, presentations, financial reports | 🌐 Web |
+| PopAI | PopAI | Productivity Tool | 2024 | Overseas version, 10M+ users | 🌐 Global |
 
 ---
 
