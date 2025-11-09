@@ -19,6 +19,9 @@ A comprehensive exploration of China's leading LLM research labs, their founding
 11. [StepFun](#stepfun)
 12. [SenseTime (SenseNova)](#sensetime-sensenova)
 13. [Rednote/Xiaohongshu (dots.llm1)](#rednotexiaohongshu-dotsllm1)
+14. [Failed and Struggling Startups](#failed-and-struggling-startups-the-other-side-of-chinas-ai-boom)
+15. [Market Landscape and Competitive Dynamics](#market-landscape-and-competitive-dynamics)
+16. [Conclusion](#conclusion)
 
 ---
 
