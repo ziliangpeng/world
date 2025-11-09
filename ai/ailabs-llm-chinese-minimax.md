@@ -737,17 +737,105 @@ MiniMax operates with strong academic rigor, publishing technical papers and eng
 
 ## 📊 Model Lineage and Release Timeline
 
-| Release Date | Model | Parameters | Key Features | Open Weights | Technical Report |
-|---|---|---|---|---|---|
-| 2023 | MiniMax R&D | 80%+ compute | MoE model development | ❌ | - |
-| Apr 2024 | ABAB 6.5 Series | - | First MoE-based model | ❌ | - |
-| Jan 2025 | MiniMax-Text-01 | 456B (45.9B active) | Long context (4M), Lightning Attention | ❌ | - |
-| Jan 2025 | MiniMax-VL-01 | 303M ViT + LLM | Multimodal vision-language | ❌ | - |
-| Jan 2025 | T2A-01-HD | - | Text-to-audio, high definition | ❌ | - |
-| Jun 2025 | MiniMax-M1 | - | 1M context window, 80K output | ❌ | - |
-| 2025 | Hailuo-02 | - | Video generation | ❌ | - |
-| 2025 | Music-01 | - | Music generation | ❌ | - |
-| 2025 | Speech-02 | - | Lifelike speech synthesis | ❌ | - |
+### Foundation Models (Text)
+
+| Release | Model | Parameters | Context | Key Features | Resources |
+|---------|-------|------------|---------|--------------|-----------|
+| **Apr 2024** | **ABAB 6.5** | 1T+B (MoE) | 200K tokens | First MoE-based commercial model, competitive with GPT-4/Claude-3 | [News](https://www.minimax.io/news/abab65-series) |
+| **Apr 2024** | **ABAB 6.5s** | 1T+B (MoE) | 200K tokens | Efficient variant: 30K words/sec processing speed | API: abab6.5s-chat |
+| **Jan 2025** | **MiniMax-Text-01** | 456B (45.9B active) | 4M inference | Lightning Attention, hybrid architecture, outperforms Gemini 2.0 Flash | [Paper](https://arxiv.org/abs/2501.08313) · [GitHub](https://github.com/MiniMax-AI/MiniMax-01) |
+| **Jun 2025** | **MiniMax-M1-40K** | 456B (45.9B active) | 1M tokens | Open-weight reasoning model, 40K thinking tokens | [arXiv](https://arxiv.org/abs/2506.13585) · [GitHub](https://github.com/MiniMax-AI/MiniMax-M1) |
+| **Jun 2025** | **MiniMax-M1-80K** | 456B (45.9B active) | 1M tokens | Open-weight reasoning model, 80K thinking tokens, 25% FLOPs vs DeepSeek R1 | [News](https://www.minimax.io/news/minimaxm1) |
+| **Oct 2025** | **MiniMax-M2** | 230B (10B active) | Context TBD | Open-source, MIT licensed, coding/agentic focus, #1 on open-source evals | [GitHub](https://github.com/MiniMax-AI/MiniMax-M2) · [HF](https://huggingface.co/MiniMaxAI/MiniMax-M2) · [Blog](https://venturebeat.com/ai/minimax-m2-is-the-new-king-of-open-source-llms) |
+
+### Multimodal Models
+
+| Release | Model | Architecture | Key Features | Resources |
+|---------|-------|--------------|--------------|-----------|
+| **Jan 2025** | **MiniMax-VL-01** | 303M ViT + 456B LLM | Vision-Language, dynamic resolution (336x336 to 2016x2016), 4M context | [Paper](https://arxiv.org/abs/2501.08313) · [HF](https://huggingface.co/MiniMaxAI/MiniMax-VL-01) |
+
+### Speech & Audio Models
+
+| Release | Model | Type | Key Features | Resources |
+|---------|-------|------|--------------|-----------|
+| **2025** | **Speech-02** | Text-to-Speech | 32 languages, 99% similarity, 200K chars capacity, 44.1kHz audio, 300+ voices | [Tech](https://www.kdjingpai.com/en/minimax-speech-02/) · [API](https://replicate.com/minimax/speech-02-hd) |
+| **2025** | **Speech-02-HD** | TTS (High Quality) | Production-grade quality, multiple formats (MP3/WAV/FLAC/PCM) | [fal.ai](https://fal.ai/models/fal-ai/minimax/speech-02-hd) |
+| **2025** | **Speech-02-Turbo** | TTS (Real-time) | Optimized for low-latency applications | API variant |
+| **2025** | **T2A-01-HD** | Text-to-Audio | High-definition audio generation from text | Hailuo platform |
+| **2025** | **Music-01** | Music Generation | Multiple genres (classical, pop, rock, electronic), max 60s output | [Replicate](https://replicate.com/minimax/music-01) · [API](https://aimlapi.com/minimax-music-api) |
+
+### Video Generation Models
+
+| Release | Model | Architecture | Key Features | Resources |
+|---------|-------|--------------|--------------|-----------|
+| **2025** | **Hailuo-02** | Noise-aware Compute Redistribution (NCR) | 3x larger params, 4x training data vs v1, character-consistent, 720p/25fps | [News](https://www.minimax.io/news/minimax-hailuo-23) |
+| **2025** | **Hailuo-02-Standard** | Image-to-Video variant | Reference-based video generation | [fal.ai](https://fal.ai/models/fal-ai/minimax/hailuo-02/standard/image-to-video) |
+| **2025** | **Hailuo-2.3** | Enhanced Video Gen | Improved dynamic expression, anime/illustration support, ink wash painting style | [News](https://www.minimax.io/news/minimax-hailuo-23) |
+| **2025** | **Hailuo-2.3-FastVideo** | Optimized Video Gen | Faster processing for video generation | Platform variant |
+
+---
+
+### Detailed Model Specifications
+
+#### **MiniMax-Text-01 (Flagship Foundation Model)**
+- **Architecture**: 80 layers, 64 attention heads (128 dim), 32 experts with 9,216 hidden dim
+- **Context**: 1M tokens training → 4M tokens inference (31.25x longer than GPT-4)
+- **Attention**: Hybrid (7 Lightning + 1 Softmax per 8 layers)
+- **Benchmarks**: Outperforms Google Gemini 2.0 Flash on MMLU & SimpleQA
+- **Release**: January 2025
+- **Papers**: [arXiv 2501.08313](https://arxiv.org/abs/2501.08313)
+
+#### **MiniMax-M1 (Open-Weight Reasoning)**
+- **Training Cost**: $534,700 on 512 H800 GPUs for 3 weeks
+- **RL Algorithm**: CISPO (Clipped Importance Sampling for Policy Optimization)
+- **Compute Efficiency**: 25% FLOPs vs DeepSeek R1 at 100K tokens generation
+- **Versions**: 40K and 80K thinking budgets
+- **Open Source**: MIT/Apache licensed, fully open-weight
+- **Training Data**: Diverse problems including software engineering, sandbox-based tasks
+- **Performance**: Comparable/superior to DeepSeek-R1 and Qwen3-235B
+- **Papers**: [arXiv 2506.13585](https://arxiv.org/abs/2506.13585)
+
+#### **MiniMax-M2 (October 2025 Release)**
+- **Parameters**: 230B total, 10B active (MoE)
+- **Specialization**: Coding, agentic tool use, multi-file edits
+- **Licensing**: MIT (fully open, commercial use allowed)
+- **Benchmarks**: #1 among open-source models on composite scores
+- **Pricing**: $0.30/M input tokens, $1.20/M output tokens
+- **Features**: Interleaved thinking, tool use, long reasoning chains
+- **Availability**: HuggingFace, GitHub, ModelScope, API
+- **Analysis**: [VentureBeat](https://venturebeat.com/ai/minimax-m2-is-the-new-king-of-open-source-llms-especially-for-agentic-tool)
+
+#### **MiniMax-VL-01 (Vision-Language)**
+- **Vision Encoder**: 303M Vision Transformer (ViT)
+- **Language Base**: MiniMax-Text-01 (456B params)
+- **Training**: 694M image-caption pairs, 512B tokens across 4 stages
+- **Resolution**: Dynamic from 336×336 to 2016×2016
+- **Benchmarks**: 96.4% DocVQA, 91.7% AI2D, matches GPT-4o & Claude-3.5-Sonnet
+- **Context**: Inherits 4M token context from base LLM
+
+#### **Speech-02 (Text-to-Speech)**
+- **Architecture**: AR Transformer with Learnable Speaker Encoder
+- **Language Coverage**: 32 languages with accent/emotion control
+- **Audio Quality**: 44.1kHz, bitrate 64-320 kbps, 99% speaker similarity
+- **Capacity**: 200,000 character input (Long-Text Mode)
+- **Voice Cloning**: 10-second audio → 99% similarity
+- **Voices**: 300+ pre-built options across demographics
+- **Paper**: [arXiv 2505.07916](https://arxiv.org/pdf/2505.07916)
+
+#### **Hailuo Video Generation (Latest: Hailuo-2.3)**
+- **Architecture**: Noise-aware Compute Redistribution (NCR)
+- **Scale**: 3x parameters, 4x training data vs previous version
+- **Output**: 720p @ 25fps (Pro version: 1080p)
+- **Features**: Character-consistent, anime/illustration support, ink wash painting, game CG styles
+- **Speed**: ~2 minutes for typical video
+- **Modes**: Text-to-Video & Image-to-Video
+
+#### **Music-01 (AI Music Generation)**
+- **Genres**: Classical, pop, rock, electronic, 20+ styles
+- **Input**: Text prompts + optional reference audio for style/rhythm learning
+- **Output**: Max 60 seconds (upcoming: 3 minutes), 400 char lyrics max
+- **Bitrate/Sample Rate**: Configurable (32k-256k bps, 16k-44.1k Hz)
+- **Features**: Simultaneous accompaniment + vocals generation
 
 ---
 
