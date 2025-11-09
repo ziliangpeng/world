@@ -1,4 +1,4 @@
-# MiniMax: Efficient LLMs with Long Context and Multimodal Capabilities
+# 🚀 MiniMax: Efficient LLMs with Long Context and Multimodal Capabilities
 
 A comprehensive deep-dive into MiniMax's foundation model development, MoE efficiency innovations, and competitive positioning in China's AI landscape.
 
