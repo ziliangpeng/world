@@ -1,4 +1,5 @@
-# 01.AI (Yi) - Comprehensive Documentation
+# 01.AI (Yi / 一迅) - Comprehensive Documentation
+# 零一万物 - 综合文档
 
 ## Company Overview
 
@@ -26,16 +27,16 @@
    - Continues as Chairman of Sinovation Ventures while leading 01.AI
    - Named to TIME's list of 100 most influential people in AI (2023)
 
-2. **Ken Qi** - Co-founder
+2. **Ken Qi** (祁琪) - Co-founder
    - Sales and government affairs expertise
    - Background: GM of Public Sector Group at Microsoft China, VP at Cisco China, VP at SAP China, Co-founder at Aibee Inc.
 
-3. **Anita Huang** - Co-founder
+3. **Anita Huang** (黄琪) - Co-founder
    - Marketing and business development leadership
    - MSc in Marketing and Communications from Northwestern University
    - Background: VP of Marketing at Tudou.com, Director of Greater China Marketing at Google, executive roles at Yahoo
 
-**Core Leadership Team**: Former executives from Alibaba, Baidu, Microsoft, Google, Cisco, and SAP; experts in large model technology, AI algorithms, NLP, system architecture, computing infrastructure, data security, and product development.
+**Core Leadership Team**: Former executives from Alibaba (阿里巴巴), Baidu (百度), Microsoft (微软), Google (谷歌), Cisco (思科), and SAP; experts in large model technology, AI algorithms, NLP, system architecture, computing infrastructure, data security, and product development.
 
 ### Mission and Vision
 
@@ -74,7 +75,7 @@ Kai-Fu Lee's journey to founding 01.AI represents a 30+ year trajectory in techn
 - Oversaw Google's operations and strategy in Chinese market
 - Witnessed mobile internet transformation
 
-**Sinovation Ventures (2009-2023)**
+**Sinovation Ventures (创新工场) (2009-2023)**
 - Founded major venture capital firm focused on Chinese tech startups
 - Invested in hundreds of AI and tech companies
 - Developed deep understanding of both Western Silicon Valley and Chinese tech ecosystems
@@ -104,7 +105,7 @@ At 60+ years old, Lee could have remained as Sinovation Ventures chairman. Inste
 
 **The Founding Team**:
 Lee assembled a core team combining:
-- Former executives from Alibaba, Baidu, Microsoft, Google
+- Former executives from Alibaba (阿里巴巴), Baidu (百度), Microsoft (微软), Google (谷歌)
 - Algorithm specialists and ML researchers
 - Product and infrastructure engineers
 - Business development experts from his Sinovation network
@@ -152,7 +153,7 @@ Lee's 2018 book laid out conditions for China's AI success:
 - **Technical Innovation**: Building world-class AI talent and models ✅ (Yi models)
 - **Market Opportunity**: Leveraging China's large, innovative market ✅ (Consumer and enterprise focus)
 - **Ecosystem Development**: Building an AI-enabled ecosystem ✅ (Open source + proprietary strategy)
-- **Practical Implementation**: Converting research into products ✅ (Wanzhi, enterprise solutions)
+- **Practical Implementation**: Converting research into products ✅ (Wanzhi 万知, enterprise solutions)
 
 01.AI represents Lee's direct implementation of this vision, moving from venture investor observing trends to operational executive building the future.
 
@@ -172,10 +173,10 @@ Lee's 2018 book laid out conditions for China's AI success:
 
 ### Strategic Advantages of Major Investors
 
-- **Sinovation Ventures** (Kai-Fu Lee): Direct access to venture ecosystem and networks
-- **Alibaba Cloud**: Infrastructure partnership, enterprise distribution, technology integration
-- **Xiaomi**: Hardware ecosystem, consumer distribution channels
-- **Tencent**: Social and gaming ecosystem access
+- **Sinovation Ventures (创新工场)** (Kai-Fu Lee): Direct access to venture ecosystem and networks
+- **Alibaba Cloud (阿里云)**: Infrastructure partnership, enterprise distribution, technology integration
+- **Xiaomi (小米)**: Hardware ecosystem, consumer distribution channels
+- **Tencent (腾讯)**: Social and gaming ecosystem access
 - **Lee's network**: Attracts top-tier talent and credibility with global AI community
 
 ---
@@ -234,8 +235,8 @@ Lee's 2018 book laid out conditions for China's AI success:
 **Focus**: Building proprietary foundation models + open-source strategy
 
 **Key Actions**:
-- Assembled elite team from Alibaba, Baidu, Microsoft, Google
-- Secured GPU inventory and funding through Sinovation Ventures
+- Assembled elite team from Alibaba (阿里巴巴), Baidu (百度), Microsoft (微软), Google (谷歌)
+- Secured GPU inventory and funding through Sinovation Ventures (创新工场)
 - Optimized training infrastructure for efficiency despite semiconductor constraints
 - Prioritized bilingual (English-Chinese) capability
 
@@ -252,9 +253,9 @@ Lee's 2018 book laid out conditions for China's AI success:
 **Product Launches**:
 - **January 2024**: Yi-VL-34B vision-language model (ranked #1 among open-source on MMMU and CMMMU benchmarks)
 - **March 2024**: Yi-9B model launch
-- **May 2024**: Wanzhi productivity assistant launch (comparable to Microsoft Copilot)
+- **May 2024**: Wanzhi (万知) productivity assistant launch (comparable to Microsoft Copilot)
 
-**Wanzhi Features**:
+**Wanzhi (万知) Features**:
 - Creates spreadsheets, documents, slide presentations from natural language
 - Interprets financial reports, takes meeting minutes
 - Speed-reads 600,000+ word documents (demonstrated with Elon Musk biography)
@@ -262,7 +263,7 @@ Lee's 2018 book laid out conditions for China's AI success:
 - Available on PC browsers and WeChat
 - Kai-Fu Lee serves as Chief Experience Officer, personally guiding product direction
 
-**Revenue Model**: PopAi paid overseas productivity tool (20-30% of 2024 revenue)
+**Revenue Model**: PopAi paid overseas productivity tool (20-30% of 2024 revenue); Wanzhi (万知) via WeChat
 
 **Financial Performance**:
 - 2024 Revenue: >100 million yuan (US$13.7M)
@@ -295,19 +296,19 @@ Lee's 2018 book laid out conditions for China's AI success:
 
 **Product Focus**:
 1. **Yi-Lightning Model**: Cost-effective foundation model for enterprises
-2. **Consumer Applications**: Refined Wanzhi and PopAi products
+2. **Consumer Applications**: Refined Wanzhi (万知) and PopAi products
 3. **Enterprise Solutions**: Vertical-specific AI applications
 
 **Organizational Changes**:
 - Spinning off gaming, finance, and other AI applications into independent business units
-- February 2025: Joint "industrial large model laboratory" with Alibaba Cloud
+- February 2025: Joint "industrial large model laboratory" with Alibaba Cloud (阿里云)
   - Combined R&D for super-large model development and enterprise services
   - Some employees dedicated to training larger models
 
 **New Products**:
-- **March 2025**: Wanzhi Enterprise Platform (AI applications for businesses)
+- **March 2025**: Wanzhi (万知) Enterprise Platform (AI applications for businesses)
 - **2025**: WorldWise Enterprise LLM Platform (Hong Kong launch)
-- **2025**: "Super Employee" enterprise AI agent
+- **2025**: "Super Employee" (超级员工) enterprise AI agent
 - **2025**: LLM one-box solution machine (CAICT certified)
 
 **Financial Trajectory**:
@@ -387,11 +388,11 @@ By 2024, Lee was direct about the challenge: "Too many LLM startups focus on bre
 
 ## Notable Achievements and Stories
 
-1. **Experienced Leadership**: Kai-Fu Lee bringing Silicon Valley and China expertise to Chinese AI
+1. **Experienced Leadership**: Kai-Fu Lee (李开复) bringing Silicon Valley and China expertise to Chinese AI
 2. **Fast Unicorn**: Achieved $1B+ valuation within 8 months of founding
 3. **Strong Open Models**: Yi-34B considered one of best open bilingual models at release
 4. **Coding Excellence**: Yi-Coder achieved SOTA under 10B parameters
-5. **Strategic Vision**: Lee's articulate vision about AI's future and consumer applications
+5. **Strategic Vision**: Lee's articulate vision about AI's future and consumer applications (Wanzhi 万知)
 
 ---
 
