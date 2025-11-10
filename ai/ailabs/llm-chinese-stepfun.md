@@ -42,7 +42,7 @@ StepFun's rapid model releases reflect strong belief in scaling law approach.
 
 - **Series B (2024)**: "Several hundred million dollars" reported (exact amount not disclosed)
 - **Series B (Dec 2024)**: Additional funding round secured
-- **Status**: Achieved unicorn status (>$1B valuation implied)
+- **Status**: Not a unicorn as of late 2024
 
 **Strategic Investment**: Funding indicates confidence in Jiang Daxin's leadership and StepFun's technical approach.
 
@@ -186,12 +186,12 @@ The company's interpretation of "scaling law" has evolved beyond model size to e
 ### Business Performance and Monetization
 
 **Valuation and Funding:**
-- $2 billion valuation (June 2024)
-- $500M+ total raised across multiple rounds
-- Key investors: Alibaba, Tencent, Shanghai State-owned Capital, 5Y Capital, Qiming
+- $450 million valuation (December 2024)
+- Series B funding of "several hundred million dollars"
+- Key investors: Tencent, Shanghai State-owned Capital, 5Y Capital, Qiming, Sequoia Capital China, Matrix Partners China
 
 **Revenue Target:**
-- **10 billion yuan (~$1.4B) for 2025** - highest among the "Six Tigers"
+- **~$12 million ARR (as of April 2025)**
 - Terminal partnerships (50%+): Smartphone manufacturers (50%+ of top domestic brands), Geely automotive
 - Enterprise B2B: Guotai Junan Securities, financial services, content creation
 
@@ -206,7 +206,7 @@ The company's interpretation of "scaling law" has evolved beyond model size to e
 ### Competitive Positioning: "南阶跃、北智谱"
 
 Recognized as "南阶跃、北智谱" (StepFun in south, Zhipu in north) - two leading foundation model companies committed to continued R&D investment. StepFun ranks:
-- **#1** among Six Tigers in revenue target (10B yuan)
+- (Previously claimed #1 revenue target, but this was based on incorrect data)
 - **#2-3** in technical capability
 - **#5-6** in consumer brand (behind Moonshot/ByteDance)
 
@@ -239,7 +239,7 @@ Recognized as "南阶跃、北智谱" (StepFun in south, Zhipu in north) - two l
 
 **Likely Outcomes (2025-2027):**
 - 30%: Independent IPO, achieves profitability
-- 50%: **Acquired by Alibaba/Tencent at $2-3B valuation**
+- 50%: **Acquired by Alibaba/Tencent at ~$500M-1B valuation**
 - 20%: Consolidation failure, acquihire
 
 **Verdict**: StepFun has successfully carved out a **multimodal terminal niche**, but commercial viability remains unproven. The scaling law philosophy evolved to stay relevant, but only through specialization—not through competing with DeepSeek on language models.
