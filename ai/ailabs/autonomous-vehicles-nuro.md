@@ -6,8 +6,8 @@
 **Co-Founders:** Dave Ferguson, Jiajun Zhu (both ex-Google/Waymo)
 **CEO:** Cosimo Leipold (2024-present), previously Jiajun Zhu (2016-2024)
 **Status:** Private
-**Valuation:** $8.6B (2021 peak), estimated $3-5B (2024 post-correction)
-**Total Funding:** $2.1B+
+**Valuation:** $8.6B (2021 peak), ~$6B (2025 Series E funding)
+**Total Funding:** $2.1B+ (through 2021), additional funding in 2025
 
 ---
 
@@ -18,10 +18,10 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 **Key Achievements:**
 - 🤖 First custom-built autonomous delivery vehicle (R1, 2018)
 - 🏆 First autonomous delivery exemption from NHTSA (2020)
-- 🛒 Partnerships with Walmart, Kroger, Domino's, 7-Eleven, Uber Eats, FedEx
-- 📦 100,000+ commercial deliveries completed (2024)
-- 🚗 Third-generation vehicle (R3) in development
-- 💰 $2.1B total funding from SoftBank, Tiger Global, Greylock, others
+- 🛒 Partnerships with Walmart, Kroger, Domino's, 7-Eleven, Uber Eats, FedEx (some pilots ongoing, others paused)
+- 📦 Tens of thousands of commercial deliveries completed (company reports, as of 2024-2025)
+- 🚗 Third-generation vehicle (R3) in development (timeline TBD)
+- 💰 $2.1B+ funding through 2021, additional Series E in 2025 at ~$6B valuation
 
 **Mission Statement:** "Better everyday life through robotics."
 
@@ -154,12 +154,13 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 **R3 Development (2024+):**
 - Third-generation vehicle in development
-- Goals:
-  - Lower cost (target: <$50K per unit vs. R2's ~$250K+)
+- Company targets:
+  - Lower cost (target: <$50K per unit vs. R2's estimated ~$250K+)
   - Higher production volume (manufacturability focus)
   - Improved reliability, uptime
   - Modular design (easier maintenance)
 - Manufacturing partner: TBD (exploring in-house vs. contract manufacturing)
+- Timeline for mass production: Not publicly confirmed
 
 **Partnership Strategy (2024):**
 - Deepen existing partnerships (Walmart, Uber Eats, 7-Eleven)
@@ -204,11 +205,11 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 **R3 (2025+ - In Development):**
 - Third-generation, designed for mass production
-- Target cost: <$50K per unit (10x reduction vs. R2)
+- Target cost: <$50K per unit according to company goals (vs. R2's estimated ~$250K+)
 - Manufacturing scalability (design for manufacturing principles)
 - Improved sensors, compute (benefiting from industry cost curves)
 - Modular design (reduce maintenance costs, easier repairs)
-- Status: Prototypes in testing, production timeline TBD (likely 2026+)
+- Status: Prototypes in testing, production timeline TBD
 
 **Key Design Principles:**
 - **No human occupants**: Enables different safety standards
@@ -384,11 +385,11 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 ### Revenue Model
 
-**Current (2024):**
+**Current (2024-2025):**
 1. **Per-Delivery Fees** (primary revenue)
-   - Charge partners $5-10 per delivery (estimate)
-   - 100,000+ deliveries completed to date
-   - Revenue: ~$5-10M lifetime (very small, pilot-stage)
+   - Charge partners $5-10 per delivery (industry estimate)
+   - Tens of thousands of deliveries completed to date (company reports)
+   - Revenue: Estimated low single-digit millions (very small, pilot-stage)
 
 2. **Partnership Agreements**
    - May include fixed fees, revenue shares, or hybrid models
@@ -437,22 +438,22 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 ### Unit Economics Challenge
 
-**Cost Per Delivery (Current):**
-- Vehicle amortization: $250K / 50K deliveries lifetime = $5/delivery
-- Operations (energy, maintenance): ~$2-3/delivery
-- Remote assistance, insurance: ~$2-3/delivery
-- **Total**: ~$10-15/delivery (not profitable vs. $5-10 revenue)
+**Cost Per Delivery (Current - Industry Estimates):**
+- Vehicle amortization: Estimated $250K / projected 50K deliveries lifetime = ~$5/delivery
+- Operations (energy, maintenance): ~$2-3/delivery (estimated)
+- Remote assistance, insurance: ~$2-3/delivery (estimated)
+- **Total**: ~$10-15/delivery (not yet profitable vs. estimated $5-10 revenue per delivery)
 
-**Cost Per Delivery (R3 Target):**
-- Vehicle amortization: $50K / 100K deliveries = $0.50/delivery
-- Operations: ~$1-2/delivery (improved efficiency)
-- Insurance, remote assist: ~$1-2/delivery
-- **Total**: ~$3-5/delivery (profitable vs. $8-10 revenue)
+**Cost Per Delivery (R3 Target - According to Company Goals/Analyst Estimates):**
+- Vehicle amortization: $50K target / projected deliveries = $0.50-1/delivery
+- Operations: ~$1-2/delivery (improved efficiency target)
+- Insurance, remote assist: ~$1-2/delivery (estimated)
+- **Total**: ~$3-5/delivery (target profitability vs. estimated $8-10 revenue per delivery)
 
 **Key to Profitability:**
-1. **Lower vehicle cost** (R3 < $50K)
+1. **Lower vehicle cost** (R3 target < $50K per company goals)
 2. **Higher utilization** (10+ deliveries/day per vehicle)
-3. **Longer vehicle lifespan** (100K+ deliveries, 5+ years)
+3. **Longer vehicle lifespan** (target: tens of thousands of deliveries per vehicle, 5+ years)
 4. **Operational efficiency** (reduce remote assist, maintenance)
 
 ---
@@ -583,9 +584,9 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 | **Vehicle Type** | Custom (R2/R3) | Jaguar I-PACE, Zeekr | Small sidewalk robots | Small sidewalk robots |
 | **Max Speed** | 25-45 mph | 65+ mph | 4 mph | 10 mph |
 | **Operating Domain** | Streets, bike lanes | Streets, highways | Sidewalks only | Sidewalks only |
-| **Deployments** | 100K+ deliveries | 700K+ rides/week | 6M+ deliveries | 30K+ deliveries |
+| **Deployments** | Tens of thousands (est.) | 700K+ rides/week | 6M+ deliveries | 30K+ deliveries |
 | **Funding** | $2.1B | $8.5B+ | $230M+ | $100M+ |
-| **Valuation** | $3-5B (est.) | $30-45B (est.) | $2B+ (private) | $500M+ |
+| **Valuation** | ~$6B (2025) | $30-45B (est.) | $2B+ (private) | $500M+ |
 | **Geography** | Houston, Bay Area | 4+ US cities | 80+ cities globally | LA, San Diego |
 
 **Nuro's Position:**
@@ -622,14 +623,14 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 ### Mid-Term (2027-2028)
 
-**Optimistic Scenario:**
-- R3 in mass production (10,000+ units manufactured)
+**Optimistic Scenario (Speculative):**
+- R3 in mass production (target: 10,000+ units manufactured)
 - 10+ major metro areas operational
-- 10M+ deliveries/year
-- Profitability achieved (unit economics proven)
+- 10M+ deliveries/year (target)
+- Profitability achieved (unit economics proven per company goals)
 - International expansion (Europe, Asia-Pacific pilots)
 
-**Realistic Scenario:**
+**Realistic Scenario (Speculative):**
 - R3 production ramps slowly (1,000-5,000 units)
 - 5-7 metro areas operational
 - 2-5M deliveries/year
@@ -644,23 +645,23 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 ### Long-Term (2029-2030)
 
-**Bull Case:**
-- 50,000+ Nuro vehicles deployed
-- 50M+ deliveries/year
-- Profitable at scale ($500M+ revenue, positive EBITDA)
+**Bull Case (Speculative):**
+- 50,000+ Nuro vehicles deployed (target)
+- 50M+ deliveries/year (target)
+- Profitable at scale (target: $500M+ revenue, positive EBITDA)
 - Technology licensing to OEMs, logistics companies
 - IPO or acquisition by major player (Walmart, FedEx, Amazon?)
 
-**Bear Case:**
+**Bear Case (Speculative):**
 - Nuro acquired for technology/talent (not independent)
 - Delivery market dominated by drones (faster) or sidewalk robots (cheaper)
 - Autonomous delivery remains niche (human drivers + gig economy persist)
 
-**Most Likely:**
+**Most Likely (Analyst Projection):**
 - **Sustainable niche player**: Nuro operates in 10-20 cities, handles 10-50M deliveries/year
-- Profitability achieved with R3 economics
+- Profitability achieved with R3 economics (per company targets)
 - Partners with 3-5 major retailers (Walmart, Kroger, + new partners)
-- Not dominant, but viable business ($100-500M revenue range)
+- Not dominant, but viable business (estimated $100-500M revenue range)
 - Potential acquisition target (strategic buyer values technology, partnerships)
 
 ---
@@ -673,17 +674,19 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 **Technology:**
 - ✅ R1, R2 custom vehicle design and production
-- ✅ R3 in development (10x cost reduction target)
-- ✅ 100,000+ commercial deliveries completed
+- ✅ R3 in development (company targets ~10x cost reduction, timeline TBD)
+- ✅ Tens of thousands of commercial deliveries completed (company reports)
 
 **Partnerships:**
-- ✅ Walmart (largest retailer partnership)
-- ✅ Kroger, 7-Eleven, Uber Eats, FedEx, Domino's
-- ✅ Multi-year agreements with major retailers
+- ✅ Walmart (largest retailer partnership, ongoing)
+- ✅ Kroger, 7-Eleven, Uber Eats, FedEx (various pilot statuses)
+- ✅ Domino's (pilot commenced 2019, current status varies)
+- ✅ Multi-year agreements with select major retailers
 
 **Funding:**
-- ✅ $2.1B total raised (SoftBank, Tiger Global, Greylock)
+- ✅ $2.1B+ total raised through 2021 (SoftBank, Tiger Global, Greylock)
 - ✅ $8.6B valuation at peak (2021)
+- ✅ Series E funding in 2025 at ~$6B valuation
 
 **Recognition:**
 - ✅ TIME Best Inventions (2018, R1)
