@@ -7,7 +7,7 @@
 **Co-CEOs:** Jiajun Zhu, Dave Ferguson (2016-present)
 **Status:** Private
 **Valuation:** $8.6B (2021 peak), ~$6B (2025 Series E funding)
-**Total Funding:** $2.1B+ (through 2021), additional funding in 2025
+**Total Funding:** $2.3B+ (through 2025)
 
 ---
 
@@ -21,7 +21,7 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 - 🛒 Partnerships with Walmart, Kroger, Domino's, 7-Eleven, Uber Eats, FedEx (some pilots ongoing, others paused)
 - 📦 Commercial deliveries ongoing since 2018 (specific delivery count not publicly disclosed)
 - 🚗 Third-generation vehicle (R3) in development (timeline TBD)
-- 💰 $2.1B+ funding through 2021, additional Series E in 2025 at ~$6B valuation
+- 💰 $2.1B+ funding through 2021, Series E in 2025 ($203M raised) at ~$6B valuation
 
 **Mission Statement:** "Better everyday life through robotics."
 
@@ -590,7 +590,7 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 | **Operating Domain** | Streets, bike lanes | Streets, highways | Sidewalks only | Sidewalks only |
 | **Deployments** | Not disclosed | 700K+ rides/week | 6M+ deliveries | 30K+ deliveries |
 | **Funding** | $2.1B | $8.5B+ | $230M+ | $100M+ |
-| **Valuation** | ~$6B (2025) | $30-45B (est.) | $2B+ (private) | $500M+ |
+| Valuation | ~$6B (2025) | $30-45B (est.) | $550M (2024) | $500M+ |
 | **Geography** | Houston, Bay Area | 4+ US cities | 80+ cities globally | LA, San Diego |
 
 **Nuro's Position:**
