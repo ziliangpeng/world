@@ -16,8 +16,8 @@ Waymo is the world's leading autonomous vehicle technology company and the first
 
 **Key Achievements:**
 - 🏆 First commercial robotaxi service (Waymo One, 2018)
-- 🚗 700,000+ paid rides per week (as of Q4 2024)
-- 📊 25+ million autonomous miles driven
+- 🚗 175,000+ paid rides per week (as of Q4 2024)
+- 📊 50+ million autonomous miles driven
 - 🌍 Operating in 4+ major US cities without safety drivers
 - 💰 $5.6B Series C funding (October 2024)
 
@@ -106,7 +106,7 @@ Waymo is the world's leading autonomous vehicle technology company and the first
 - 2023: Dmitri Dolgov promoted to Co-CEO alongside Mawakana
 - 2023: Expanded to Los Angeles
 - 2023: Launched service in Austin, Texas
-- 2024: 150,000+ weekly paid rides → 700,000+ weekly paid rides
+- 2024: 50,000+ weekly paid rides → 175,000+ weekly paid rides
 - 2024: Partnership with Uber (available in Uber app)
 
 **Major Funding & Valuation (2024):**
@@ -279,7 +279,7 @@ Waymo is the world's leading autonomous vehicle technology company and the first
 **Testing Pyramid:**
 1. Simulation (billions of miles)
 2. Closed-course testing (Castle facility, private test track)
-3. Public road testing (25+ million real-world miles)
+3. Public road testing (50+ million real-world miles)
 
 **Safety Validation:**
 - FMEA (Failure Mode and Effects Analysis)
@@ -411,7 +411,7 @@ Waymo is the world's leading autonomous vehicle technology company and the first
 **Current (2024):**
 1. **Waymo One ride revenue** (primary)
    - Fare collection from riders
-   - 700K+ rides/week × ~$15-30 average fare = ~$500M-1B+ annual revenue (estimated)
+   - 175K+ rides/week × ~$15-30 average fare = ~$140M-280M+ annual revenue (estimated)
 
 2. **Partnership revenue (Uber)**
    - Revenue share on Uber-booked rides
@@ -490,7 +490,7 @@ Waymo is the world's leading autonomous vehicle technology company and the first
 
 **Data Flywheel:**
 - More miles → more data → better models → safer driving → more trust → more rides → more miles
-- 25M+ real-world miles = largest real-world dataset
+- 50M+ real-world miles = largest real-world dataset
 
 **First-Mover Advantage:**
 - Regulatory relationships (worked with DMV, NHTSA for 15+ years)
@@ -542,13 +542,13 @@ Waymo is the world's leading autonomous vehicle technology company and the first
 
 **Technology:**
 - ✅ First to achieve fully driverless (no safety driver) public rides (2017)
-- ✅ 25+ million autonomous miles (industry-leading)
+- ✅ 50+ million autonomous miles (industry-leading)
 - ✅ 20+ billion simulated miles
 - ✅ Zero fatal accidents in autonomous mode (as of 2024)
 
 **Commercial:**
 - ✅ First commercial robotaxi service (2018)
-- ✅ 700,000+ paid rides per week (2024)
+- ✅ 175,000+ paid rides per week (2024)
 - ✅ Largest AV funding round ($5.6B, 2024)
 - ✅ Operating in 4 major US cities
 
@@ -596,15 +596,15 @@ Waymo is the world's leading autonomous vehicle technology company and the first
 | Metric | Waymo | Cruise | Baidu Apollo | Tesla FSD |
 |--------|-------|--------|--------------|-----------|
 | **Autonomy Level** | Level 4 | Level 4 (paused) | Level 4 | Level 2+ |
-| **Weekly Paid Rides** | 700K+ | 0 (paused) | ~1M+ (China) | N/A (supervision) |
+| **Weekly Paid Rides** | 175K+ | 0 (paused) | ~85K+ (China) | N/A (supervision) |
 | **Operating Cities** | 4 (US) | 0 (paused) | 40+ (China) | Global (supervised) |
 | **Driverless** | ✅ Yes | ❌ Paused | ✅ Yes | ❌ No |
-| **Cumulative Miles** | 25M+ | ~5M | ~100M+ | Billions (supervised) |
+| **Cumulative Miles** | 50M+ | ~5M | ~62M+ (100M+ km) | Billions (supervised) |
 | **Recent Funding** | $5.6B (2024) | GM-backed | Baidu-backed | Tesla revenue |
 
 **Waymo's Position:**
 - 🥇 **#1 in US robotaxi market** (by rides, revenue, scale)
-- 🥈 **#2 globally** (behind Baidu Apollo in total rides)
+- 🥇 **#1 globally** (by rides, revenue, scale in the US; ahead of Baidu on weekly rides)
 - 🏆 **Technology leader** in safety, perception, simulation
 - 💰 **Best-funded independent AV company**
 
