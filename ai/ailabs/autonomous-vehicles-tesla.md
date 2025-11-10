@@ -6,7 +6,7 @@
 **CEO:** Elon Musk
 **AI Leadership:** Ashok Elluswamy (Director of Autopilot Software), Milan Kovac (VP of Autopilot)
 **Status:** Public (NASDAQ: TSLA)
-**Market Cap:** $800B+ (2024)
+**Market Cap:** $1.3-1.4T (late 2024/Nov 2025), up from ~$790B early 2024
 
 ---
 
@@ -16,11 +16,11 @@ Tesla is the world's leading electric vehicle manufacturer and a pioneer in cons
 
 **Key Achievements:**
 - 🚗 2+ million vehicles with Full Self-Driving (FSD) capability (hardware)
-- 🤖 500,000+ active FSD Beta/Supervised users (2024)
-- 📊 1+ billion real-world miles driven on FSD Beta
+- 🤖 500K-900K+ active FSD users (varied by quarter in 2024)
+- 📊 2+ billion real-world miles driven on FSD by late 2024 (3.6B+ by early 2025)
 - 👁️ Vision-only approach (no LiDAR, no HD maps)
-- 🧠 End-to-end neural network architecture
-- 💰 $15,000 FSD package (one-time purchase or subscription)
+- 🧠 End-to-end neural network architecture (v12+, March 2024)
+- 💰 $8,000-15,000 FSD package (one-time purchase) or $99-199/month subscription
 
 **Mission Statement:** "To accelerate the world's transition to sustainable energy" (autonomous driving as enabler of mobility transformation)
 
@@ -81,7 +81,8 @@ Tesla is the world's leading electric vehicle manufacturer and a pioneer in cons
 ### 2020-2021: FSD Beta Launch & Vision-Only Pivot
 
 **FSD Beta Program (October 2020):**
-- Limited release to select testers (~1,000 initially)
+- Limited release to select testers (handful of public + several hundred employees initially)
+- Grew to ~1,000 testers by January 2021
 - First version of city street autonomy (not just highways)
 - Handles intersections, traffic lights, stop signs, turns
 - Still requires driver supervision (Level 2)
@@ -471,9 +472,9 @@ Tesla is the world's leading electric vehicle manufacturer and a pioneer in cons
 ## 🎯 Strategic Advantages
 
 ### 1. Fleet Size & Data Scale
-- **6 million+ Tesla vehicles on road** (largest EV fleet globally)
+- **6.2 million+ Tesla vehicles on road** (cumulative deliveries by late 2024, largest EV fleet globally)
 - Every vehicle is a data collector (even without FSD purchase)
-- **1 billion+ miles on FSD Beta** (real-world supervised data)
+- **2+ billion miles on FSD** by late 2024, 3.6B+ by early 2025 (real-world supervised data)
 - Dwarfs competitors in data volume (Waymo: 25M autonomous miles)
 
 ### 2. Vertical Integration
@@ -589,19 +590,19 @@ Tesla is the world's leading electric vehicle manufacturer and a pioneer in cons
 |--------|-----------|-------|--------|--------------|
 | **Autonomy Level** | Level 2 | Level 4 | Level 4 (paused) | Level 4 |
 | **Supervision** | Required | None | None (paused) | None |
-| **Active Users** | 500K+ | Public (4 cities) | 0 (paused) | Public (40+ cities) |
-| **Fleet Size** | 2M+ capable | ~700 vehicles | ~400 (idle) | 500+ vehicles |
-| **Real-World Miles** | 1B+ (supervised) | 25M+ (autonomous) | ~5M (autonomous) | 100M+ (autonomous) |
+| **Active Users** | 500K-900K+ (2024) | Public (4 cities) | 0 (paused) | Public (40+ cities) |
+| **Fleet Size** | 2M+ FSD-capable | ~700 vehicles | ~400 (idle) | 500+ vehicles |
+| **Real-World Miles** | 2-3.6B+ (supervised) | 25M+ (autonomous) | ~5M (autonomous) | 100M+ (autonomous) |
 | **Approach** | Vision-only | LiDAR + camera | LiDAR + camera | LiDAR + camera |
 | **Geography** | Global (limited) | 4 US cities | 0 (paused) | China (40+ cities) |
-| **Revenue** | ~$1B/year (FSD sales) | ~$100M (estimate) | $0 (paused) | Undisclosed |
+| **Revenue** | ~$1B/year (est. FSD sales) | ~$100M (estimate) | $0 (paused) | Undisclosed |
 
 **Tesla's Unique Position:**
 - 🥇 **Largest deployed fleet** (millions of vehicles with FSD hardware)
-- 🥇 **Highest real-world mileage** (1B+ miles, though supervised)
+- 🥇 **Highest real-world mileage** (2-3.6B+ miles, though supervised)
 - 🥈 **Not Level 4** (only Level 2, requires supervision)
 - 🎯 **Consumer-focused** (not robotaxi, yet)
-- 💰 **Already revenue-generating** (FSD sales/subscriptions)
+- 💰 **Already revenue-generating** (estimated ~$1B/year FSD sales/subscriptions)
 
 **Strategic Trade-Offs:**
 - **Tesla**: Wide deployment, incremental autonomy, revenue today, regulatory risk
@@ -679,19 +680,19 @@ Tesla is the world's leading electric vehicle manufacturer and a pioneer in cons
 
 **Technology:**
 - ✅ First to deploy vision-only autonomy at scale (2021+)
-- ✅ End-to-end neural network architecture (v12, 2024)
-- ✅ Custom FSD chip design (HW3, 2019)
+- ✅ End-to-end neural network architecture (v12, March 2024)
+- ✅ Custom FSD chip design (HW3, 2019 - 144 TOPS)
 - ✅ Dojo supercomputer (2023+)
-- ✅ 1 billion+ supervised autonomous miles (2024)
+- ✅ 2+ billion supervised autonomous miles by late 2024 (3.6B+ by early 2025)
 
 **Commercial:**
 - ✅ 2M+ vehicles with FSD hardware capability
-- ✅ 500K+ active FSD users (Beta/Supervised)
-- ✅ ~$1B/year FSD revenue (sales + subscriptions)
-- ✅ Largest real-world AV dataset globally
+- ✅ 500K-900K+ active FSD users (varied by quarter in 2024)
+- ✅ ~$1B/year FSD revenue estimated (sales + subscriptions, not publicly disclosed)
+- ✅ Largest real-world AV dataset globally (2-3.6B+ miles)
 
 **Fleet & Scale:**
-- ✅ 6M+ Tesla vehicles on road (2024)
+- ✅ 6.2M+ Tesla vehicles delivered cumulatively (through 2024)
 - ✅ Over-the-air updates to millions of vehicles simultaneously
 - ✅ Global deployment (US, Canada, limited Europe/China)
 
