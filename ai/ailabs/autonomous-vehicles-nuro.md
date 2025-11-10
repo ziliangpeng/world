@@ -19,7 +19,7 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 - 🤖 First custom-built autonomous delivery vehicle (R1, 2018)
 - 🏆 First autonomous delivery exemption from NHTSA (2020)
 - 🛒 Partnerships with Walmart, Kroger, Domino's, 7-Eleven, Uber Eats, FedEx (some pilots ongoing, others paused)
-- 📦 Tens of thousands of commercial deliveries completed (company reports, as of 2024-2025)
+- 📦 Commercial deliveries ongoing since 2018 (specific delivery count not publicly disclosed)
 - 🚗 Third-generation vehicle (R3) in development (timeline TBD)
 - 💰 $2.1B+ funding through 2021, additional Series E in 2025 at ~$6B valuation
 
@@ -388,8 +388,8 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 **Current (2024-2025):**
 1. **Per-Delivery Fees** (primary revenue)
    - Charge partners $5-10 per delivery (industry estimate)
-   - Tens of thousands of deliveries completed to date (company reports)
-   - Revenue: Estimated low single-digit millions (very small, pilot-stage)
+   - Delivery volume not publicly disclosed
+   - Revenue: Estimated pilot-stage (very small, specific figures not disclosed)
 
 2. **Partnership Agreements**
    - May include fixed fees, revenue shares, or hybrid models
@@ -584,7 +584,7 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 | **Vehicle Type** | Custom (R2/R3) | Jaguar I-PACE, Zeekr | Small sidewalk robots | Small sidewalk robots |
 | **Max Speed** | 25-45 mph | 65+ mph | 4 mph | 10 mph |
 | **Operating Domain** | Streets, bike lanes | Streets, highways | Sidewalks only | Sidewalks only |
-| **Deployments** | Tens of thousands (est.) | 700K+ rides/week | 6M+ deliveries | 30K+ deliveries |
+| **Deployments** | Not disclosed | 700K+ rides/week | 6M+ deliveries | 30K+ deliveries |
 | **Funding** | $2.1B | $8.5B+ | $230M+ | $100M+ |
 | **Valuation** | ~$6B (2025) | $30-45B (est.) | $2B+ (private) | $500M+ |
 | **Geography** | Houston, Bay Area | 4+ US cities | 80+ cities globally | LA, San Diego |
@@ -675,7 +675,7 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 **Technology:**
 - ✅ R1, R2 custom vehicle design and production
 - ✅ R3 in development (company targets ~10x cost reduction, timeline TBD)
-- ✅ Tens of thousands of commercial deliveries completed (company reports)
+- ✅ Commercial delivery operations ongoing since 2018 (specific delivery count not publicly disclosed)
 
 **Partnerships:**
 - ✅ Walmart (largest retailer partnership, ongoing)
