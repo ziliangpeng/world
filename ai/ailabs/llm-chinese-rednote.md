@@ -2,23 +2,35 @@
 
 ## Company Overview
 
-**Rednote** (小红书, Xiaohongshu, meaning "Little Red Book"), China's leading social e-commerce platform often compared to Instagram mixed with Pinterest, launched its **dots.llm1** foundation model in 2025 as a strategic entry into the open-source LLM space. This represents platform companies expanding into AI infrastructure. The dots.llm1 model is notable for achieving competitive performance with leading models while using only 25% of the training compute required by competitors.
+The **Humane Intelligence Lab** (hi lab, 人文智能实验室) is the AI research division of Xiaohongshu (Rednote), established in 2024 to develop AI systems that understand not just language and data, but also human emotions and values. The lab's mission is pushing the boundaries of AI by creating more diverse and balanced forms of intelligence—interpersonal, spatial-visual, and musical intelligence—to make AI a natural and beneficial companion to humanity.
+
+In June 2025, the lab released **dots.llm1**, its first open-source foundation model, achieving competitive performance with leading models while using only 25% of the training compute required by competitors (1.46M vs 6.12M GPU hours). The lab represents a new wave of Chinese AI research focused on "humanistic intelligence" rather than pure capability scaling, partnering with institutions like Fudan University's School of Philosophy to cultivate researchers with humanities backgrounds alongside technical expertise.
 
 ---
 
 ## Founding Story and History
 
-**Xiaohongshu (Rednote) was founded in 2013** by **Miranda Qu (瞿芳)** and **Billy Chen (毛文超)**, initially as social sharing and lifestyle platform targeting young, affluent Chinese women. It evolved into:
+The **Humane Intelligence Lab** emerged from Xiaohongshu's strategic decision to build internal AI capabilities:
 
-- **2013-2020**: Social platform for lifestyle sharing and reviews
-- **E-commerce Integration**: Integrated shopping directly into social platform
-- **Major Growth**: Hundreds of millions users, significant influence on Chinese consumer behavior
-- **Regulatory Navigation**: Survived Chinese regulatory scrutiny due to careful compliance
-- **AI Expansion (2025)**: Launched Humane Intelligence Lab announcing dots.llm1 foundation model
+### Timeline of AI Lab Development
 
-### Entry into LLM Space
+- **March 2023**: Xiaohongshu begins preparing independent large model team, drawing core members from the NLP technology team of the advertising business (the "Xiaodigua" project)
+- **2024**: Formal establishment of **Humane Intelligence Lab (hi lab)** with mission to develop humanistic AI that understands emotions and values, not just language
+- **Early 2025**: Partnership announcement with **Fudan University's School of Philosophy** to launch AI Talent Training Camp, cultivating "Humanities + AI" compound talents
+- **January 2025**: Beta launch of **Diandian** (点点), an AI research assistant with deep research capabilities, deployed on Xiaohongshu platform
+- **June 6, 2025**: Public release of **dots.llm1**, the lab's first open-source foundation model (142B parameters, 14B active)
+- **Ongoing**: Development of multimodal capabilities including dots.vlm1 (vision-language) and dots.ocr (document understanding)
 
-Xiaohongshu's entry into LLM development represents platform companies recognizing AI infrastructure as core strategic capability. The company's decision to open-source suggests focus on building ecosystem rather than proprietary competitive advantage.
+### Strategic Philosophy
+
+The lab's entry into LLM development reflects a distinctive approach among Chinese AI labs: **humanistic intelligence over pure capability scaling**. Unlike competitors focused primarily on benchmark performance, the Humane Intelligence Lab emphasizes:
+
+1. **Emotional and interpersonal intelligence**: Understanding human relationships and context
+2. **Humanities integration**: Recruiting researchers with philosophy and humanities backgrounds
+3. **Efficiency over scale**: Demonstrating 4x training efficiency gains rather than pursuing larger parameter counts
+4. **Open-source ecosystem building**: MIT licensing to foster community rather than proprietary lock-in
+
+This positioning represents platform companies recognizing AI infrastructure as core strategic capability while differentiating through values-alignment and efficiency rather than competing on raw scale.
 
 ---
 
@@ -72,10 +84,35 @@ Xiaohongshu/Rednote positions dots.llm1 as **"Efficient Open-Source LLM for Comm
 
 ## Team Background
 
-dots.llm1 developed by Xiaohongshu's **Humane Intelligence Lab**:
-- Computer scientists and engineers from Xiaohongshu
-- Interdisciplinary team combining vision (from platform) with language expertise
-- Access to platform's data and user feedback
+The **Humane Intelligence Lab** brings together an interdisciplinary team focused on humanistic AI research:
+
+### Known Team Members
+
+**Weijian (William) Luo** - Senior Research Scientist
+- PhD in Statistics and Generative Modeling from Peking University
+- Research focus: Diffusion models, text-to-image generation, RLHF (Reinforcement Learning from Human Feedback)
+- Notable contributions: Diff-Instruct series, Uni-Instruct, dots.vlm1 (vision-language model)
+
+**Kaiqi** - Vice President of Technology at Xiaohongshu
+- Involved in strategic partnership with Fudan University Philosophy School
+- Oversees AI research initiatives at company level
+
+### Team Composition and Philosophy
+
+The lab's unique approach to team building includes:
+
+1. **Interdisciplinary Background**: Drawing from computer science, NLP engineering, and humanities/philosophy
+2. **Platform Advantage**: Access to Xiaohongshu's hundreds of millions of users for understanding human communication patterns and emotional expression
+3. **Humanities Recruitment**: Actively recruiting researchers with strong humanities and philosophy backgrounds, not just technical credentials
+4. **University Partnerships**: Collaboration with Fudan University's School of Philosophy to develop "Humanities + AI" talent pipeline
+
+### Research Focus Areas
+
+The team's research spans multiple intelligence modalities:
+- **Language Understanding**: Foundation models (dots.llm1)
+- **Vision-Language**: Multimodal understanding (dots.vlm1)
+- **Document Intelligence**: OCR and document parsing (dots.ocr)
+- **Applied AI**: Platform integration (Diandian research assistant)
 
 ---
 
