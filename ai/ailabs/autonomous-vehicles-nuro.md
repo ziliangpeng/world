@@ -4,7 +4,7 @@
 **Founded:** 2016
 **Headquarters:** Mountain View, California, USA
 **Co-Founders:** Dave Ferguson, Jiajun Zhu (both ex-Google/Waymo)
-**CEO:** Cosimo Leipold (2024-present), previously Jiajun Zhu (2016-2024)
+**Co-CEOs:** Jiajun Zhu, Dave Ferguson (2016-present)
 **Status:** Private
 **Valuation:** $8.6B (2021 peak), ~$6B (2025 Series E funding)
 **Total Funding:** $2.1B+ (through 2021), additional funding in 2025
@@ -56,8 +56,9 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 - Partner with retailers (not build own delivery service)
 - Design custom vehicle optimized for deliveries (not cars)
 
-**Seed Funding (2016):**
-- $92M Series A (Greylock Partners, Banyan Capital)
+**Series A Funding (June 2017):**
+- $92M raised (Greylock Partners, Banyan Capital)
+- Closed June 2017 (company founded September 2016)
 - Largest robotics Series A at the time
 - Founding team credibility (Waymo pedigree) attracted capital
 
@@ -67,7 +68,7 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 - First custom autonomous delivery vehicle revealed
 - Specs:
   - Fully electric, zero emissions
-  - ~2.5 feet wide (narrower than car, fits bike lanes)
+  - 3.5 feet (42 inches) wide - narrower than standard car
   - Heated/cooled cargo compartments
   - Max speed: 25 mph
   - No steering wheel, pedals, or human controls
@@ -117,10 +118,11 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 - **Chipotle partnership (2021)**: Food delivery pilot (Ohio State University)
 - **7-Eleven (2021)**: Convenience delivery (Mountain View, CA)
 
-**Series C Funding (November 2021):**
-- $600M raised (Tiger Global, D1 Capital, SoftBank)
+**Series D Funding (November 2021):**
+- $600M raised (Tiger Global, D1 Capital, SoftBank, Google)
 - **Valuation: $8.6B** (peak valuation)
 - Post-money valuation made Nuro a "super unicorn"
+- Note: This was Series D, not Series C
 
 ### 2022-2023: Challenges, Layoffs & Strategic Pivot
 
@@ -130,10 +132,10 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 - Autonomous vehicle timeline skepticism grows (Argo AI shutdown, Cruise struggles)
 
 **Layoffs & Cost Cutting (2022-2023):**
-- **April 2022**: 20% workforce reduction (~300 employees)
-- **November 2023**: Additional 30% layoffs
+- **November 2022**: 20% workforce reduction (~300 employees)
+- **May 2023**: Additional 30% layoffs (~340 employees)
 - Total headcount reduced from ~1,500 → ~700
-- Focus: Path to profitability, operational efficiency
+- Focus: Path to profitability, operational efficiency, extended capital runway
 
 **Pilot Pauses & Pullbacks:**
 - Scaled back some pilot programs (consolidated geographies)
@@ -147,10 +149,11 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 ### 2024-Present: New Leadership & R3 Development
 
-**CEO Transition (2024):**
-- Jiajun Zhu steps down as CEO (remains on board)
-- **Cosimo Leipold appointed CEO** (former Motorola exec, telecom/operations background)
-- Focus: Operational excellence, path to profitability, partnerships
+**Business Model Pivot (2024):**
+- September 2024: Shift from hardware manufacturing to licensing model
+- Plan to license autonomous driving technology to OEMs and delivery services
+- Jiajun Zhu and Dave Ferguson remain as Co-CEOs
+- Focus: Operational excellence, path to profitability, technology licensing
 
 **R3 Development (2024+):**
 - Third-generation vehicle in development
@@ -180,21 +183,22 @@ Nuro is the world's leading autonomous delivery vehicle company, pioneering a un
 
 **R1 (2018 - Prototype):**
 - First-generation proof of concept
-- Limited production (~100 units)
+- Limited production (small batch, exact number not disclosed)
 - Deployed in Scottsdale pilot (Kroger)
-- Narrow design (2.5 ft wide), 25 mph max speed
+- Narrow design (3.5 ft / 42 inches wide), 25 mph max speed
 - Electric, heated/cooled compartments
 - Exterior airbag (pedestrian safety innovation)
+- Weight: ~1,500 lbs (680 kg)
 
 **R2 (2020-2023 - Commercial Deployment):**
 - Second-generation production vehicle
 - NHTSA exemption granted (no mirrors, windshield, etc.)
 - Specs:
-  - Dimensions: ~6 ft long, 3.5 ft wide, 6 ft tall
-  - Cargo: 24 cubic feet (groceries, meals, packages)
-  - Range: 100+ miles per charge
+  - Dimensions: 108 inches (9 ft) long, 43 inches (3.6 ft) wide, 73 inches (6.1 ft) tall
+  - Cargo: 22.38 cubic feet (groceries, meals, packages)
+  - Range: 100+ miles per charge (general estimate)
   - Max speed: 45 mph (but limited to 25 mph in urban areas)
-  - Weight: ~1,500 lbs (much lighter than cars)
+  - Weight: ~2,535 lbs (1,150 kg)
 - Safety features:
   - 360° sensor suite (LiDAR, cameras, radar, ultrasonic)
   - Redundant braking, steering, compute
