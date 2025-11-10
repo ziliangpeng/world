@@ -84,35 +84,94 @@ Xiaohongshu/Rednote positions dots.llm1 as **"Efficient Open-Source LLM for Comm
 
 ## Team Background
 
-The **Humane Intelligence Lab** brings together an interdisciplinary team focused on humanistic AI research:
+The **Humane Intelligence Lab** brings together an interdisciplinary team focused on humanistic AI research, led by executives from China's top tech companies (Baidu, Alibaba) and supported by researchers with both technical and humanities backgrounds.
 
-### Known Team Members
+### Leadership Team
 
-**Weijian (William) Luo** - Senior Research Scientist
-- PhD in Statistics and Generative Modeling from Peking University
+**Zhang Debing (张德兵)** - Head of Large Language Model Team
+- Leads Xiaohongshu's independent large model team (established March 2023)
+- Lead author on dots.llm1 technical report (arXiv:2506.05767)
+- Previous: Head of Multimodal Intelligent Creation Group at Kuaishou, Chief Scientist at DeepGlint
+- Research areas: Machine Learning, Computer Vision, Deep Learning (Google Scholar profile)
+- Public vision: Emphasized multimodal technology and migration/conversion between text, vision, voice, and music as key research directions
+
+**Kaiqi (Zhang Lei, 张雷)** - Vice President of Technology at Xiaohongshu
+- PhD from Shanghai Jiao Tong University
+- Former Chief Architect of Baidu Phoenix Nest (百度凤巢), responsible for search advertising CTR machine learning
+- Former China Technical Director for IBM's DeepQA project
+- Strategic oversight of Humane Intelligence Lab and Fudan University Philosophy School partnership
+- Built LarC machine learning platform at Xiaohongshu
+- Key quote: "We hope AI can expand beyond language and data to comprehend human emotions and values"
+
+**Wang Xiaobo (王晓博, "Fengdi")** - Vice President of Technology
+- PhD from Beihang University (2010), specializing in data mining
+- Former Alibaba P9 senior algorithm expert (Taobao, Alimama, Youku algorithms)
+- Joined Xiaohongshu 2015, currently oversees e-commerce, advertising, and Applied Algorithms Department
+- Manages integration of algorithm teams across commercialization, community, and e-commerce
+
+**Deng Chao (邓超, "Yingmu")** - Head of Product and Design
+- Third employee at Xiaohongshu, architect background (Shanghai Modern Architecture Design Group)
+- Serves as product manager for large model team (working with Zhang Debing)
+- Oversees AI product portfolio: Diandian (点点), Davinci (达芬奇), Trik, Cike, Sousoushu, Wendiandian
+
+**Xiahou (夏侯)** - Head of Applied Algorithms Department
+- Former Head of Xiaohongshu Community Technology Department
+- Leads newly established Applied Algorithms Department integrating teams from commercialization, community, and e-commerce
+- Reports to Wang Xiaobo (Fengdi)
+
+### Senior Researchers
+
+**Weijian (William) Luo (罗伟健)** - RedStar Senior Research Scientist
+- PhD in Statistics and Generative Modeling from Peking University; Master's from Carnegie Mellon University
+- Leads large generative understanding models research in hi-lab
 - Research focus: Diffusion models, text-to-image generation, RLHF (Reinforcement Learning from Human Feedback)
-- Notable contributions: Diff-Instruct series, Uni-Instruct, dots.vlm1 (vision-language model)
+- Notable contributions: Diff-Instruct series using RLHF for one-step text-to-image models, dots.vlm1
+- Personal website: https://pkulwj1994.github.io/
 
-**Kaiqi** - Vice President of Technology at Xiaohongshu
-- Involved in strategic partnership with Fudan University Philosophy School
-- Oversees AI research initiatives at company level
+**Junfeng Tian (田俊峰)** - AI Researcher
+- Research interests: Large Language Modeling, NLP, Multimodal Learning
+- Google Scholar: 2,317 citations
+- Co-author on dots.llm1 technical report
+- Affiliated with Xiaohongshu Inc, nyonic.ai, and formerly Alibaba Group
+
+**Haofan Wang (王浩帆, "Yanzhen")** - Algorithm Engineer, Creation Publishing Team
+- Master's degree from Carnegie Mellon University
+- Co-Founder at Lovart AI; previously at Kuaishou (Kolors Team)
+- Research focus: Controllable conditional generation, generative and agentic models
+- Key contribution: InstantID (zero-shot identity-preserving generation) developed at Xiaohongshu
+- Personal website: https://haofanwang.github.io/
+
+**Ruige (瑞格)** - Head of Intelligent Distribution Team
+- Former Baidu Phoenix Nest researcher (large-scale distributed training for CTR estimation)
+- Recruited to Xiaohongshu by former CTO alongside Kaiqi
+- Built online learning framework supporting ultra-large-scale parameters at Xiaohongshu
+- Leads recommendation system with minute-level updates for recall, indexing, and model training
+
+### Research Team Scale
+
+The dots.llm1 technical report lists **27 co-authors**, indicating substantial research team investment. Additional identified members include:
+- **Feng Shaoxiong (冯少雄)** - Head of LTR (Learning to Rank) Fine Ranking Team
+- **Tetu (特图)** - Information Flow Advertising Model Engineer
 
 ### Team Composition and Philosophy
 
 The lab's unique approach to team building includes:
 
-1. **Interdisciplinary Background**: Drawing from computer science, NLP engineering, and humanities/philosophy
-2. **Platform Advantage**: Access to Xiaohongshu's hundreds of millions of users for understanding human communication patterns and emotional expression
-3. **Humanities Recruitment**: Actively recruiting researchers with strong humanities and philosophy backgrounds, not just technical credentials
-4. **University Partnerships**: Collaboration with Fudan University's School of Philosophy to develop "Humanities + AI" talent pipeline
+1. **Top-tier Leadership**: Executives recruited from Baidu (Kaiqi, Ruige) and Alibaba (Fengdi), bringing advertising/recommendation expertise
+2. **Interdisciplinary Background**: Computer science, NLP engineering, humanities/philosophy researchers
+3. **Platform Advantage**: Access to 300M+ Xiaohongshu users for understanding human communication patterns and emotional expression
+4. **Humanities Recruitment**: Dedicated "Humanities Trainer Program" with backgrounds in Philosophy, Literature, Political Science, Anthropology, History, Film Arts
+5. **University Partnerships**: Fudan University Philosophy School collaboration for "AI + Humanities" talent cultivation
+6. **Academic Collaboration**: REDtech Youth Technology Salon featuring internal researchers and academics from Shanghai Jiao Tong, Fudan, Beihang, Tsinghua universities
 
 ### Research Focus Areas
 
 The team's research spans multiple intelligence modalities:
-- **Language Understanding**: Foundation models (dots.llm1)
-- **Vision-Language**: Multimodal understanding (dots.vlm1)
-- **Document Intelligence**: OCR and document parsing (dots.ocr)
-- **Applied AI**: Platform integration (Diandian research assistant)
+- **Language Understanding**: Foundation models (dots.llm1 - 142B/14B active parameters)
+- **Vision-Language**: Multimodal understanding (dots.vlm1 with 1.2B vision encoder)
+- **Document Intelligence**: OCR and document parsing (dots.ocr - 1.7B parameters, multilingual)
+- **Reinforcement Learning**: dots.rl framework (fork of verl)
+- **Applied AI Products**: Diandian research assistant, Davinci chat assistant, InstantID, content creation tools
 
 ---
 
@@ -126,26 +185,102 @@ The team's research spans multiple intelligence modalities:
 
 ## Performance and Reception
 
-### Benchmark Performance
+### Overall Assessment
 
-- **Chinese language understanding**: Strong performance
-- **HumanEval (coding)**: Beats Qwen2.5-72B-Instruct
-- Competitive with leading models on most benchmarks
-- Exceptional efficiency-to-performance ratio
+**Grade: B+ (Strong Mid-Tier Model)**
 
-### Market Reception
+dots.llm1 delivers **Qwen2.5-72B-class performance at 25% of training cost**, positioning as an efficiency champion rather than performance leader. It excels at Chinese language understanding but trails frontier models like DeepSeek-V3 and has critical English factual knowledge weaknesses.
 
-- Positive reception for efficiency focus
-- MIT licensing appeals to developers and community
-- Seen as significant contribution to open-source ecosystem
-- Recognition of practical innovation over headline claims
-- Strong interest in model training and deployment
+### Benchmark Performance Summary
+
+| **Category** | **Score** | **Competitive Position** |
+|---|---|---|
+| **Chinese Language Understanding** | 91.3% | ⭐ Top 5 among all models |
+| **English Language Understanding** | 75.7% | Mid-tier |
+| **English SimpleQA (Factual Knowledge)** | **9.3** | ⚠️ Critical weakness for 142B model |
+| **Mathematical Reasoning** | 78.3% | Mid-tier, competitive |
+| **Code Generation** | 59.6% | Good, beats Qwen2.5-72B |
+| **Training Efficiency** | **4x vs Qwen2.5-72B** | 🏆 Industry-leading |
+| **Context Length** | 32K tokens | Standard, some degradation at max |
+
+**Detailed Benchmark Results:**
+- **C-Eval, CMMLU, CLUEWSC, C3, Xiezhi** (Chinese): 91.3% average - exceptional Chinese understanding
+- **HumanEval, MBPP, MCEval, BigCodeBench** (Coding): 59.6% average - beats Qwen2.5-72B-Instruct
+- **GSM8K, MATH, CMath** (Mathematics): 78.3% average - solid mathematical reasoning
+- **MMLU**: ~78% (comparable to Qwen2.5-72B)
+- **Chinese SimpleQA**: 56.7 (significantly behind DeepSeek-V3's 68.9)
+
+### Competitive Positioning
+
+**Among Chinese LLMs:**
+- **Tier 1 (Frontier):** DeepSeek-V3, Qwen3-235B, ERNIE 4.0
+- **Tier 2 (Mid-range):** ← **dots.llm1** (comparable to Qwen2.5-72B)
+- **Tier 3 (Specialized):** Moonshot Kimi, Yi-Large
+
+**vs. Key Competitors:**
+- **vs Qwen2.5-72B:** Comparable overall performance, 4x more efficient training (1.46M vs 6.12M GPU hours)
+- **vs DeepSeek-V3:** Significantly behind in capability (56.7 vs 68.9 on C-SimpleQA)
+- **vs Llama 3.1-70B:** Similar global performance tier
+- **Training Cost:** $100K-$200K (vs Qwen2.5-72B ~$800K, DeepSeek-V3 $50M+)
+
+### Key Strengths
+
+✅ **Training Efficiency Leader** - 4x more efficient than Qwen2.5-72B (1.46M vs 6.12M GPU hours)
+✅ **Chinese Language Excellence** - 91.3% average, platform data advantage from Xiaohongshu
+✅ **Code Generation** - Beats Qwen2.5-72B-Instruct on HumanEval
+✅ **Inference Efficiency** - Only 14B active params (out of 142B total) enables cost-effective deployment
+✅ **Open-Source Leadership** - MIT license (most permissive among Chinese LLMs)
+✅ **Transparent Research** - Releases training checkpoints at every 1T tokens
+
+### Critical Weaknesses
+
+❌ **English Factual Knowledge Gap** - SimpleQA score of 9.3 (critically low; smaller models like Gemma 3 27B score higher)
+❌ **Not Frontier-Class** - Trails DeepSeek-V3 significantly on Chinese SimpleQA (56.7 vs 68.9)
+❌ **Hardware Requirements** - Requires 8 GPUs for efficient inference (8x40GB or 8x80GB)
+❌ **Limited Track Record** - First model release (June 2025), uncertain long-term commitment
+❌ **Long Context Degradation** - Performance drops at maximum 32K context length
+
+### Use Case Recommendations
+
+**Recommended For:**
+- ✅ Chinese language applications (social media, content moderation, customer service)
+- ✅ Cost-sensitive deployments prioritizing efficiency over absolute performance
+- ✅ Code generation in Chinese/English bilingual contexts
+- ✅ Research into MoE training dynamics (training checkpoints available)
+- ✅ Organizations with Xiaohongshu ecosystem integration
+
+**NOT Recommended For:**
+- ❌ English factual question answering (weak SimpleQA performance)
+- ❌ Applications requiring frontier reasoning capabilities
+- ❌ Long-context specialized tasks (32K limit with degradation)
+- ❌ Consumer hardware deployment (requires 8 GPUs)
+- ❌ Regulated industries with geopolitical concerns about Chinese models
+
+### Community Reception
+
+**Adoption Metrics:**
+- **GitHub:** 453 stars, 21 forks (modest adoption)
+- **Hugging Face Downloads:** 20,000+ across model variants
+- **Framework Support:** llama.cpp, vLLM, SGLang, Hugging Face Transformers
+- **Quantization:** GGUF versions by unsloth, lmstudio-community, bartowski
+
+**Developer Sentiment:**
+- **Positive:** Praised for training efficiency achievements, MIT licensing, Chinese language performance
+- **Critical:** English SimpleQA weakness noted as major limitation, skepticism about claims of surpassing Qwen3-235B
+- **Overall:** "Fairly ok, similar smarts to other recent local models of this kind of size" - solid mid-tier recognition
+
+**Expert Analysis:**
+- Validates efficiency-first approach over pure scaling
+- Demonstrates platform companies can contribute to open-source AI
+- Seen as "practical innovation" rather than headline-chasing
+- Questions about Xiaohongshu's sustained commitment to AI research
 
 ### Competitive Impact
 
 - Demonstrates that frontier-class performance doesn't require massive compute
-- Challenges assumptions about training compute requirements
+- Challenges assumptions about training compute requirements (4x efficiency gain)
 - Encourages other companies toward efficiency focus
+- Sets new standard for permissive licensing among Chinese LLMs (MIT vs restrictive licenses)
 
 ---
 
