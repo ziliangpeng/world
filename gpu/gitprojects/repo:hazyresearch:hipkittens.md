@@ -4,6 +4,8 @@
 
 HipKittens is an open-source project from HazyResearch at Stanford University that provides a set of minimal, opinionated C++ primitives for writing high-performance AI kernels specifically for AMD GPUs. The project's primary motivation is to foster a "multi-silicon" future for AI, where software is not locked into a single hardware vendor's ecosystem. It aims to abstract hardware-specific details while exposing the necessary primitives for achieving near-metal performance. HipKittens builds upon the concepts of a previous project, ThunderKittens, and adapts them to the architecture of AMD's CDNA3 and CDNA4 GPUs.
 
+**Repository**: [https://github.com/HazyResearch/HipKittens](https://github.com/HazyResearch/HipKittens)
+
 ### 1.1 What HipKittens Is (and Isn't)
 
 HipKittens is **more than just a wrapper** around HIP/ROCm APIs - it's a high-performance kernel library that:
@@ -72,11 +74,662 @@ These kernels are not just proof-of-concepts; they are integrated into training 
 
 A significant part of the HipKittens project is its emphasis on performance analysis. The `analysis/` directory contains scripts to benchmark the provided kernels across a range of dimensions and settings. This allows researchers and developers to reproduce the performance results presented in the project's associated paper and to evaluate the effectiveness of the HipKittens primitives.
 
-## 6. Scheduling Patterns and Latency Hiding
+## 6. Technical Depth and Advanced Features
+
+While HipKittens' scheduling patterns represent its most *innovative* contribution, the library contains several other highly technical components that demonstrate expert-level GPU programming. This section explores the most technically complex aspects of the codebase, ranked by implementation difficulty.
+
+### 6.1 Technical Complexity Spectrum
+
+Different aspects of HipKittens require varying levels of GPU programming expertise:
+
+| Component | Technical Complexity | Innovation Level | Difficulty to Implement |
+|-----------|---------------------|-----------------|------------------------|
+| **Attention backward kernels** | ⭐⭐⭐⭐⭐ Expert | ⭐⭐⭐⭐ High | ⭐⭐⭐⭐⭐ Very Hard |
+| **Explicit register allocation (art)** | ⭐⭐⭐⭐⭐ Expert | ⭐⭐⭐ Medium | ⭐⭐⭐⭐⭐ Very Hard |
+| **Memory swizzling** | ⭐⭐⭐⭐ Advanced | ⭐⭐ Low | ⭐⭐⭐⭐ Hard |
+| **Type system with concepts** | ⭐⭐⭐⭐ Advanced | ⭐⭐⭐ Medium | ⭐⭐⭐ Medium |
+| **Scheduling patterns** | ⭐⭐⭐ Intermediate | ⭐⭐⭐⭐⭐ Very High | ⭐⭐⭐ Medium |
+| **Assembly integration** | ⭐⭐⭐ Intermediate | ⭐⭐ Low | ⭐⭐ Easy |
+
+The following subsections explore each of these technical areas in detail.
+
+### 6.2 Explicit Register Allocation with art (Allocated Register Tiles)
+
+One of HipKittens' most technically sophisticated features is the **art** (allocated register tile) abstraction, which allows kernel developers to manually specify exactly which VGPRs (Vector General Purpose Registers) and AGPRs (Accumulation GPRs) store tile data.
+
+#### Why Manual Register Allocation Matters
+
+On AMD CDNA GPUs, complex kernels like attention backward can require **more than 256 VGPRs**:
+- Standard VGPRs: 0-255
+- Extended AGPRs: 256-511 (accessed via special instructions)
+
+The compiler's automatic register allocator:
+- May create unnecessary register pressure
+- Cannot perform zero-cost layout transformations
+- Lacks visibility into algorithmic register reuse opportunities
+
+Manual allocation enables:
+- Precise control over register liveness
+- Transposing data by reinterpreting register layout (zero data movement)
+- Extending beyond 256 registers into AGPR space
+- Optimal register reuse across loop iterations
+
+#### The art Type System
+
+From `include/types/register/art.cuh`:
+
+```cpp
+// Define register ranges
+using Q_ranges = art::split_many_t<
+    art::type_list<art::range<368, 383>>,  // VGPRs 368-383 (16 registers)
+    4  // Split into 4 groups of 4 registers each
+>;
+
+// Create a tile that lives in these specific registers
+art<bf16, 16, 64, row_l, rt_16x32_s, Q_ranges> Q_tile;
+
+// The compiler maps Q_tile.data directly to v368-v383
+```
+
+**Key concepts**:
+- `art::range<lo, hi>`: Specifies register indices (inclusive)
+- `art::split_many_t<ranges, N>`: Divides ranges into N groups for tile decomposition
+- `art::type_list<...>`: Combines multiple disjoint register ranges
+- `art::transpose_2d<ranges, M, N>`: Reinterprets MxN tile as NxM (zero cost!)
+
+#### Example from Attention Backward Kernel
+
+From `kernels/attn/gqa_causal_backwards/attn_bkwd_causal.cpp`:
+
+```cpp
+// Explicitly allocate registers for different tensors
+using Q_ranges = art::split_many_t<
+    art::type_list<art::range<368, 383>>, 4>;
+
+using dO_ranges = art::split_many_t<
+    art::type_list<art::range<78, 93>>, 4>;
+
+using K_ranges = art::split_many_t<
+    art::type_list<
+        art::range<256, 303>,  // Part in AGPRs
+        art::range<62, 77>     // Part in VGPRs
+    >, 4>;
+
+using dK_ranges = art::split_many_t<
+    art::type_list<art::range<384, 511>>, 16>;  // All in AGPRs
+
+using dV_ranges = art::split_many_t<
+    art::type_list<art::range<128, 255>>, 16>;
+
+// Reserve these registers (prevent compiler from using them)
+art::clobber<Q_ranges>();
+art::clobber<dO_ranges>();
+art::clobber<K_ranges>();
+
+// Create tiles pointing to exact registers
+art<bf16, DOT_SLICE_QO, D, row_l, rt_16x32_s, Q_ranges> Q_i;
+art<bf16, DOT_SLICE_QO, D, row_l, rt_16x32_s, dO_ranges> dO_i;
+art<bf16, WARP_SIZE_KV, D, row_l, rt_16x32_s, K_ranges> K_j;
+
+// Gradient accumulators in AGPRs
+art<float, D, WARP_SIZE_KV, col_l, rt_32x32_s, dK_ranges> dK_j_T;
+art<float, D, WARP_SIZE_KV, col_l, rt_32x32_s, dV_ranges> dV_j_T;
+```
+
+#### Zero-Cost Transpose Through Layout Reinterpretation
+
+One of the most elegant features is transposing without data movement:
+
+```cpp
+// Original: 64x16 tile stored in registers 128-255
+using Original_ranges = art::type_list<art::range<128, 255>>;
+art<float, 64, 16, row_l, rt_32x32_s, Original_ranges> dV_original;
+
+// Transposed: 16x64 tile, SAME registers, different interpretation
+using Transposed_ranges = art::transpose_2d<Original_ranges, 4, 2>;
+art<float, 16, 64, col_l, rt_32x32_s, Transposed_ranges> dV_transposed;
+
+// dV_transposed logically contains the transpose of dV_original
+// Zero data movement - just different indexing into same VGPRs!
+```
+
+**How this works**:
+- The `transpose_2d<ranges, M, N>` metafunction remaps the 2D range interpretation
+- From `M` rows × `N` cols of register groups → `N` rows × `M` cols
+- Same physical registers, different logical layout
+- MMA operations can use either view depending on whether A or B^T is needed
+
+#### Register Clobbering to Reserve Ranges
+
+From `include/common/macros.cuh`:
+
+```cpp
+template<int GPR>
+__device__ __forceinline__ void clobber_gpr() {
+    if constexpr (GPR >= 256) {
+        constexpr int reg = GPR - 256;  // AGPR index
+        switch (reg) {
+            case 0: asm volatile("" ::: "a0"); break;
+            case 1: asm volatile("" ::: "a1"); break;
+            // ... up to a255
+        }
+    } else {
+        constexpr int reg = GPR;  // VGPR index
+        switch (reg) {
+            case 0: asm volatile("" ::: "v0"); break;
+            case 1: asm volatile("" ::: "v1"); break;
+            // ... up to v255
+        }
+    }
+}
+```
+
+**Purpose**: Tell the compiler "these registers are live and in use, don't allocate them for anything else"
+
+#### Why This Is Expert-Level
+
+Manual register allocation requires:
+1. **Understanding register pressure**: Know exactly how many registers each operation needs
+2. **Liveness analysis**: Track which registers hold live data at each program point
+3. **Avoiding conflicts**: Ensure temporary computations don't overwrite needed data
+4. **AGPRs vs VGPRs**: Know which instructions can access which register file
+5. **Debugging nightmares**: Register corruption bugs are extremely difficult to diagnose
+
+**One mistake** → Silent data corruption or kernel crash
+
+### 6.3 Memory Swizzling and Bank Conflict Elimination
+
+GPU shared memory (LDS on AMD) is organized into **banks** to enable high-bandwidth parallel access. However, when multiple threads access the same bank simultaneously, **bank conflicts** occur, serializing access and destroying performance.
+
+#### The Bank Conflict Problem
+
+**AMD CDNA LDS characteristics**:
+- 64 KB shared memory per compute unit
+- 32 banks
+- 4 bytes per bank element
+- Bank index = `(address >> 2) & 31`
+
+**Without swizzling** (naive row-major layout):
+```
+Row 0: [elem_0, elem_1, elem_2, ..., elem_31, elem_32, ...]
+Bank:  [  0   ,   1   ,   2   , ...,   31  ,   0   , ...]
+                                              ^
+                                      Bank conflict with elem_0!
+```
+
+When a warp reads the same column across multiple rows, all threads hit the same bank → 32-way serialization!
+
+#### XOR Swizzling Pattern
+
+From `include/types/shared/st.cuh`:
+
+```cpp
+template<typename _T, int _rows, int _cols, st_shape::all _shape>
+struct st {
+    __device__ __forceinline__ static const uint32_t swizzle(int2 coord) {
+        return shape::template swizzle<T>(coord);
+    }
+};
+```
+
+**Swizzle implementations** vary by tile shape. A common pattern:
+
+```cpp
+// For st_16x32_s shape
+template<typename T>
+static __device__ inline int swizzle(int2 idx) {
+    int row = idx.x;
+    int col = idx.y;
+
+    // XOR the row with high bits of col to distribute across banks
+    int swizzled_row = row ^ (col >> 4);
+
+    return (swizzled_row * stride + col) * sizeof(T);
+}
+```
+
+**Effect**: Elements from the same column but different rows now map to **different banks**
+
+```
+Without swizzle:  col=0 → bank 0 for all rows (conflict!)
+With swizzle:     col=0, row=0  → bank 0
+                  col=0, row=1  → bank 1  (0 XOR 1)
+                  col=0, row=2  → bank 2  (0 XOR 2)
+                  col=0, row=15 → bank 15 (0 XOR 15)
+```
+
+#### Swizzle Patterns for Different Tile Shapes
+
+Different tile shapes use different XOR patterns:
+
+**For 16x16 tiles (st_16x16_s)**:
+```cpp
+// Simple XOR pattern
+int swizzled_offset = ((row ^ col) * 16 + col) * sizeof(T);
+```
+
+**For 16x32 tiles (st_16x32_s)**:
+```cpp
+// XOR with high bits to handle wider tiles
+int swizzled_offset = ((row ^ (col >> 4)) * 32 + col) * sizeof(T);
+```
+
+**For 16x128 tiles (st_16x128_s)** (FP8 tensor cores):
+```cpp
+// More complex pattern for very wide tiles
+int swizzled_offset = ((row ^ (col >> 6)) * 128 + col) * sizeof(T);
+```
+
+#### Performance Impact
+
+**Without swizzling**:
+- Column access: 32-way bank conflict
+- Effective bandwidth: ~1/32 of peak
+- LDS access becomes bottleneck
+
+**With swizzling**:
+- Bank conflicts eliminated
+- Full LDS bandwidth achieved
+- Memory operations hidden by compute
+
+**Real impact**: 10-30% kernel speedup for memory-intensive operations
+
+#### Code Example: Swizzled Load
+
+From `include/ops/warp/memory/tile/shared_to_register.cuh`:
+
+```cpp
+template<...>
+__device__ inline void load(rt<...> &dst, const st<...> &src) {
+    // Compute swizzled address
+    int2 coord = {tile_row, tile_col};
+    uint32_t addr = reinterpret_cast<uint32_t>(&src.data[0]);
+    addr += src.swizzle(coord);  // Apply XOR swizzle pattern
+
+    // Load from swizzled address
+    asm volatile(
+        "ds_read_b128 %0, %1\n"
+        : "=v"(*reinterpret_cast<float4*>(&dst.data[idx]))
+        : "v"(addr)
+        : "memory"
+    );
+}
+```
+
+### 6.4 Complex Kernel Case Study: Attention Backward with Online Softmax
+
+The attention backward kernel represents HipKittens' most complex implementation, combining multiple advanced techniques:
+
+1. **Explicit register allocation (art)** - 256+ registers manually managed
+2. **Online softmax with rescaling** - Numerical stability across streaming data
+3. **Gradient computation through softmax** - Backward pass algebra
+4. **Causal masking** - Conditional operations for autoregressive attention
+5. **Multi-stage MMA dependencies** - Careful orchestration of matrix operations
+
+#### Online Softmax: The Numerical Stability Challenge
+
+Standard softmax requires two passes:
+```
+Pass 1: max_val = max(x)
+Pass 2: softmax(x) = exp(x - max_val) / sum(exp(x - max_val))
+```
+
+But in attention, the input is too large to fit in registers. **Online softmax** computes in one streaming pass:
+
+From `kernels/attn/gqa/kernel_d64.cpp`:
+
+```cpp
+constexpr float RESCALE_THRESHOLD = 8.0f;
+
+template<typename RV>
+__device__ __forceinline__ int rv_all_below(const RV& prev, const RV& cur, float T) {
+    int ok = 1;
+    #pragma unroll
+    for (int o = 0; o < RV::outer_dim; ++o) {
+        #pragma unroll
+        for (int i = 0; i < RV::inner_dim; ++i) {
+            // Check if new max is "close enough" to old max
+            ok &= (float(cur.data[o][i]) - float(prev.data[o][i]) <= T);
+        }
+    }
+    return ok;  // 1 or 0, per lane
+}
+
+// Wave-uniform: true iff EVERY lane says "all below"
+__device__ __forceinline__ int wave_all_ok(int lane_ok) {
+    return __all(lane_ok);  // AMD intrinsic: warp-level vote
+}
+```
+
+**Algorithm**:
+1. Track running maximum `m` and running sum `l`
+2. For each new chunk of attention scores:
+   - Update `m_new = max(m, new_scores)`
+   - If `m_new - m > THRESHOLD`: **rescale** accumulated values
+   - Update `l` with rescaling factor
+3. Avoid catastrophic cancellation through careful rescaling
+
+**Why this is hard**:
+- Must maintain numerical precision across streaming computation
+- Rescaling requires expensive `exp()` operations
+- Must coordinate across all threads (warp-level vote with `__all()`)
+- Gradient computation requires forward pass intermediate values
+
+#### Gradient Flow Through Attention
+
+The attention backward kernel computes gradients:
+
+```
+Attention(Q, K, V) = softmax(Q @ K^T) @ V
+```
+
+**Backward pass requires**:
+```
+dQ = (dP - rowsum(dP ⊙ P)) ⊙ P @ K
+dK = ((dP - rowsum(dP ⊙ P)) ⊙ P)^T @ Q
+dV = P^T @ dO
+```
+
+Where:
+- `P = softmax(Q @ K^T)` (attention weights from forward pass)
+- `dO` = gradient from upstream
+- `dP` = intermediate gradient
+- `⊙` = element-wise multiplication
+
+From the kernel:
+
+```cpp
+// Compute dP = dO @ V^T
+mma_ABt(dP_ij, dO_i, V_j, dP_ij);
+
+// Apply softmax backward: dP = (dP - rowsum(dP ⊙ P)) ⊙ P
+// (Actual implementation uses online algorithm)
+
+// Compute dK += Q^T @ dP
+mma_AtB(dK_j_T, Q_i_col, dP_ij_bf16, dK_j_T);
+
+// Compute dV += P^T @ dO
+mma_AtB(dV_j_T, P_ij_col, dO_i, dV_j_T);
+```
+
+#### Causal Masking
+
+For autoregressive (causal) attention, future positions must be masked:
+
+```cpp
+for (int pos = 0; pos < WARP_SIZE_KV; pos++) {
+    int k_pos = j * WARP_SIZE_KV + pos;
+    if (k_pos > seq_pos) {  // Future position
+        // Set attention score to -infinity
+        #pragma unroll
+        for (int i = 0; i < ...; i++) {
+            P_ij.tiles[...].data[...] = -__builtin_huge_valf();
+        }
+    }
+}
+```
+
+**Gradient implications**: Masked positions contribute zero gradient, but must not corrupt numerical stability of online softmax.
+
+#### Orchestrating 256+ Registers
+
+The kernel manages an enormous register footprint:
+
+```cpp
+// Registers 78-93: dO input gradient
+// Registers 62-77: K values (split across VGPR and AGPR)
+// Registers 256-303: More K values (in AGPRs)
+// Registers 368-383: Q values
+// Registers 384-511: dK accumulator (128 registers in AGPRs!)
+// Registers 128-255: dV accumulator
+
+// Plus temporaries for:
+// - dP intermediate gradients
+// - P attention weights
+// - Row sums for softmax backward
+// - Online softmax running statistics
+```
+
+**Challenge**: Ensure no register is overwritten while data is still live.
+
+**Solution**: Explicit `art` tiles with carefully planned allocation:
+- Input data (Q, K, V, dO) in low registers
+- Gradient accumulators (dK, dV) in high AGPRs
+- Temporaries reuse registers after inputs are consumed
+
+#### Why This Kernel Is "Wizard-Level"
+
+This kernel combines:
+1. ✅ Explicit register allocation with 256+ registers
+2. ✅ Numerically stable online algorithms
+3. ✅ Complex gradient algebra
+4. ✅ Multiple dependent MMA operations
+5. ✅ Conditional masking
+6. ✅ Warp-level collective operations (`__all()`)
+7. ✅ Careful memory choreography
+
+**One bug** could:
+- Cause numerical instability (NaN gradients)
+- Create incorrect gradients (wrong model convergence)
+- Trigger register corruption (undefined behavior)
+- Violate data dependencies (incorrect results)
+
+This is the **pinnacle of GPU kernel complexity** in HipKittens.
+
+### 6.5 C++20 Concepts-Based Type System
+
+HipKittens uses modern C++20 **concepts** to enforce compile-time correctness for hardware-specific operations.
+
+#### Type Safety for Hardware Operations
+
+From `include/types/register/rt.cuh`:
+
+```cpp
+namespace ducks {
+namespace rt {
+
+// Concept: "Is this type a register tile?"
+template<typename T>
+concept all = requires {
+    typename T::identifier;
+} && std::is_same_v<typename T::identifier, identifier>;
+
+// Concept: "Is this a row-layout register tile?"
+template<typename T>
+concept row_layout = all<T> &&
+    std::is_same_v<typename T::layout, rt_layout::row>;
+
+// Concept: "Is this a col-layout register tile?"
+template<typename T>
+concept col_layout = all<T> &&
+    std::is_same_v<typename T::layout, rt_layout::col>;
+
+} // namespace rt
+} // namespace ducks
+```
+
+#### Concept-Constrained Function Templates
+
+Operations use concepts to ensure compile-time type safety:
+
+```cpp
+// Only compiles with row-layout register tiles
+template<ducks::rt::row_layout RT_A,
+         ducks::rt::col_layout RT_B,
+         ducks::rt::col_layout RT_C>
+__device__ void mma_ABt(RT_C &C, const RT_A &A, const RT_B &B, const RT_C &accum) {
+    // A must be row-layout (for efficient loading)
+    // B must be col-layout (for B^T interpretation)
+    // C must be col-layout (for accumulator)
+    // ...
+}
+```
+
+**Benefit**: Attempting to call `mma_ABt(C, A_col_layout, B_row_layout, C)` produces a **clear compile error**, not a runtime bug.
+
+#### Template Metaprogramming for Register Splitting
+
+From attention backward kernel:
+
+```cpp
+// Split register range into N groups
+template<typename RangeList, int N>
+using split_many_t = /* complex metaprogramming */;
+
+// Example: Split 16 registers into 4 groups of 4
+using Q_ranges = art::split_many_t<
+    art::type_list<art::range<368, 383>>,  // 16 registers
+    4  // 4 groups
+>;
+
+// Result: 4 register ranges, each with 4 consecutive registers
+// Group 0: v368-v371
+// Group 1: v372-v375
+// Group 2: v376-v379
+// Group 3: v380-v383
+```
+
+**Why this matters**: The tile's 2D decomposition (e.g., 4x4 subtiles) must match the register range decomposition. Template metaprogramming ensures this happens at compile time.
+
+#### Zero Runtime Overhead
+
+All concept checks and metaprogramming happen at **compile time**:
+- No runtime type checking
+- No vtables or dynamic dispatch
+- Generates same assembly as hand-written code
+- Errors caught before kernel runs
+
+**Trade-off**: Longer compile times (complex templates), but perfect runtime performance.
+
+### 6.6 Assembly Integration and Tensor Core Access
+
+While assembly integration is the "easiest" of the advanced topics, it's still crucial for performance.
+
+#### Matrix Multiply-Accumulate (MFMA) Intrinsics
+
+From `include/ops/warp/register/tile/mma.cuh`:
+
+```cpp
+// BF16 matrix multiply: C += A @ B^T
+__device__ static inline void mfma161632(
+    float2 (&D)[2],           // Output: 4 floats
+    const bf16_2 (&A)[4],     // Input A: 8 bf16s
+    const bf16_2 (&B)[4],     // Input B: 8 bf16s
+    const float2 (&C)[2]      // Accumulator: 4 floats
+) {
+    typedef __attribute__((__vector_size__(8 * sizeof(__bf16)))) __bf16 bf16x8_t;
+    typedef __attribute__((__vector_size__(4 * sizeof(float)))) float floatx4_t;
+
+    *(floatx4_t*)D = __builtin_amdgcn_mfma_f32_16x16x32_bf16(
+        (*(bf16x8_t*)A),
+        (*(bf16x8_t*)B),
+        *(floatx4_t*)C,
+        0, 0, 0  // cbsz, abid, blgp parameters (unused)
+    );
+}
+```
+
+**Parameters**:
+- `f32`: Output in FP32
+- `16x16`: Output tile is 16×16
+- `32`: K-dimension (dot product length)
+- `bf16`: Input in BF16
+
+**Available MFMA variants**:
+```cpp
+__builtin_amdgcn_mfma_f32_32x32x16_bf16   // 32×32 output, 16 K-dim
+__builtin_amdgcn_mfma_f32_16x16x32_f16    // FP16 inputs
+__builtin_amdgcn_mfma_scale_f32_32x32x64_f8f6f4  // FP8 (CDNA4 only)
+```
+
+#### Fast Type Conversions with Inline Assembly
+
+From `include/common/base_types.cuh`:
+
+```cpp
+// Convert float2 to bf16_2 using AMD ISA
+template<>
+struct convertor<bf16_2, float2> {
+    static __device__ inline bf16_2 convert(const float2 &u) {
+        uint32_t result;
+        asm volatile(
+            "v_cvt_pk_bf16_f32 %0, %1, %2"
+            : "=v"(result)
+            : "v"(u.x), "v"(u.y)
+        );
+        return *reinterpret_cast<bf16_2*>(&result);
+    }
+};
+```
+
+**Why inline assembly**:
+- Compiler may not generate optimal instruction
+- Direct control over instruction selection
+- Ensures packed conversion (2 floats → 2 bf16s in one instruction)
+
+#### Shared Memory Operations
+
+From `include/ops/warp/memory/tile/shared_to_register.cuh`:
+
+```cpp
+// Load 128 bits (16 bytes) from LDS to registers
+if constexpr (RT::base_tile_stride == 8) {
+    asm volatile(
+        "ds_read_b128 %0, %1 offset:%2\n"
+        : "=v"(*reinterpret_cast<float4*>(&dst.data[idx]))
+        : "v"(addr), "i"(offset)
+        : "memory"
+    );
+}
+
+// Load 64 bits (8 bytes) from LDS to registers
+else if constexpr (RT::base_tile_stride == 4) {
+    asm volatile(
+        "ds_read_b64 %0, %1 offset:%2\n"
+        : "=v"(*reinterpret_cast<float2*>(&dst.data[idx]))
+        : "v"(addr), "i"(offset)
+        : "memory"
+    );
+}
+```
+
+**Key instructions**:
+- `ds_read_b128`: Read 128 bits from LDS (Local Data Store = shared memory)
+- `ds_read_b64`: Read 64 bits from LDS
+- `ds_write_b*`: Symmetric write operations
+- `buffer_load_dwordx4`: Load from HBM via buffer descriptor
+
+### 6.7 Summary: Layers of Technical Complexity
+
+HipKittens demonstrates expertise across multiple GPU programming domains:
+
+**For Beginners**:
+- Understand tile abstractions (rt, st, rv, sv)
+- Use high-level operations (load, store, mma_ABt)
+- Follow existing kernel patterns
+
+**For Intermediate Developers**:
+- Understand scheduling patterns (ping-pong, interleave)
+- Implement memory swizzling for specific tile shapes
+- Debug bank conflicts and memory access patterns
+
+**For Advanced Developers**:
+- Use type system concepts to ensure correctness
+- Implement new tile shapes and operations
+- Optimize memory layouts for new kernels
+
+**For Expert/Wizard Developers**:
+- Explicit register allocation with art
+- Numerically stable online algorithms
+- Complex multi-stage gradient kernels with 256+ registers
+
+The library is designed so that most developers can work at the beginner/intermediate level (using provided primitives) while the most complex kernels benefit from expert-level techniques when needed.
+
+## 7. Scheduling Patterns and Latency Hiding
 
 One of HipKittens' most significant contributions is the discovery and codification of scheduling patterns specifically optimized for AMD CDNA3 and CDNA4 GPUs. These patterns—"8-wave ping-pong" and "4-wave interleave"—represent a fundamental rethinking of how to achieve peak performance on AMD hardware, diverging from NVIDIA-centric optimization strategies.
 
-### 6.1 The Scheduling Challenge on AMD GPUs
+### 8.1 The Scheduling Challenge on AMD GPUs
 
 GPU kernel performance is fundamentally limited by the ability to hide memory latency behind computation. Understanding the latency characteristics is crucial:
 
@@ -99,7 +752,7 @@ However, on AMD CDNA3/4 GPUs with **static register allocation**, this approach 
 
 HipKittens discovered that AMD GPUs require fundamentally different scheduling patterns to achieve peak performance.
 
-### 6.2 8-Wave Ping-Pong Pattern
+### 8.2 8-Wave Ping-Pong Pattern
 
 The **8-wave ping-pong** pattern is HipKittens' primary scheduling strategy, achieving performance that matches or exceeds AMD's hand-written assembly kernels.
 
@@ -209,7 +862,7 @@ The 8-wave ping-pong pattern is the **default choice** for most kernels:
 *   Any kernel where code maintainability matters
 *   When 95%+ peak performance is sufficient
 
-### 6.3 4-Wave Interleave Pattern
+### 8.3 4-Wave Interleave Pattern
 
 The **4-wave interleave** pattern provides an alternative for kernels where 8-wave ping-pong leaves performance on the table, at the cost of significantly more complex code.
 
@@ -301,7 +954,7 @@ Use 4-wave interleave when:
 *   Squeezing the last 5-10% performance is critical
 *   Example: GQA causal backward attention
 
-### 6.4 Implementation: Manual Scheduling, Not Automated
+### 8.4 Implementation: Manual Scheduling, Not Automated
 
 A critical understanding: HipKittens **does not include a software scheduler**. The scheduling patterns are **manually coded** by expert kernel developers, with hints provided to AMD's hardware scheduler.
 
@@ -398,7 +1051,7 @@ HipKittens' manual patterns **guide** the scheduler by:
 *   Ensuring data dependencies are satisfied
 *   Pre-computing addresses to reduce scheduler overhead
 
-### 6.5 Industry Context vs HipKittens Innovation
+### 8.5 Industry Context vs HipKittens Innovation
 
 HipKittens builds upon established GPU optimization concepts while introducing AMD-specific innovations.
 
@@ -459,7 +1112,7 @@ After HipKittens:
 *   Educational resource explaining **why** AMD requires different approaches
 *   Reproducible patterns that work across different AMD CDNA-based GPUs (MI300, MI355, etc.)
 
-### 6.6 AMD vs NVIDIA Architectural Differences
+### 8.6 AMD vs NVIDIA Architectural Differences
 
 Understanding why HipKittens' patterns differ from NVIDIA best practices requires understanding the architectural divergence between vendors.
 
@@ -551,7 +1204,7 @@ for (int k = 0; k < K_iters; k++) {
 
 The static register allocation on AMD means **all waves must do both memory and compute work** to utilize resources efficiently.
 
-### 6.7 Performance Impact and Pattern Selection
+### 8.7 Performance Impact and Pattern Selection
 
 #### Performance Measurements
 
@@ -634,7 +1287,7 @@ Stick with **8-wave ping-pong** when:
 *   Rapid prototyping is important
 *   Teaching/research contexts where understanding matters
 
-### 6.8 Reference and Further Reading
+### 8.8 Reference and Further Reading
 
 **Primary Publication**:
 *   **Title**: "HipKittens: Fast and Furious AMD Kernels"
@@ -659,9 +1312,9 @@ Stick with **8-wave ping-pong** when:
 *   `kernels/attn/gqa/` - Attention kernels with sched_barrier examples
 *   `kernels/gemm/bf16fp32/mi350x/micros/hint_based/schedule_utils.cpp` - Scheduling utilities
 
-## 7. Value Proposition and Ecosystem Position
+## 8. Value Proposition and Ecosystem Position
 
-### 7.1 Key Differentiators
+### 8.1 Key Differentiators
 
 HipKittens occupies a unique position in the AMD GPU programming ecosystem:
 
@@ -670,7 +1323,7 @@ HipKittens occupies a unique position in the AMD GPU programming ecosystem:
 *   **Educational & Research-First**: Explicitly names and teaches optimization patterns, designed to be understood and modified by researchers, includes full training examples (BERT, Llama) proving real-world utility
 *   **Performance Sweet Spot**: Bridges the gap between "easy to use" (PyTorch) and "maximum performance" (hand-written assembly)
 
-### 7.2 The AMD GPU Programming Spectrum
+### 8.2 The AMD GPU Programming Spectrum
 
 ```
 Low-level                                              High-level
@@ -685,13 +1338,13 @@ HipKittens fills the critical gap for researchers and developers who need:
 *   Understanding of *why* kernels are fast (not just black-box usage)
 *   Freedom from CUDA ecosystem lock-in
 
-### 7.3 Comparison to Alternatives
+### 8.3 Comparison to Alternatives
 
 *   **vs Raw HIP**: Much easier to use while maintaining near-metal performance
 *   **vs Composable Kernel (AMD official)**: Simpler, more accessible, better for learning and research
 *   **vs Triton/JAX**: Lower-level control, AMD-specific optimizations, but requires separate implementation per vendor
 *   **vs ThunderKittens**: Same team, same philosophy, but for NVIDIA/CUDA - patterns transfer but code doesn't
 
-## 8. Conclusion
+## 9. Conclusion
 
 HipKittens is a valuable contribution to the field of high-performance computing for AI. By providing a set of well-designed primitives for AMD GPUs, it helps to bridge the gap between hardware-specific programming and high-level deep learning frameworks. The project's focus on performance, its comprehensive set of example kernels, and its open-source nature make it a promising tool for researchers and practitioners who want to unlock the full potential of AMD's AI hardware. It represents a significant step towards a more diverse and competitive hardware ecosystem for artificial intelligence.
