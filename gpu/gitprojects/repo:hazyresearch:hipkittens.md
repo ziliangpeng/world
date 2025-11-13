@@ -4,6 +4,30 @@
 
 HipKittens is an open-source project from HazyResearch at Stanford University that provides a set of minimal, opinionated C++ primitives for writing high-performance AI kernels specifically for AMD GPUs. The project's primary motivation is to foster a "multi-silicon" future for AI, where software is not locked into a single hardware vendor's ecosystem. It aims to abstract hardware-specific details while exposing the necessary primitives for achieving near-metal performance. HipKittens builds upon the concepts of a previous project, ThunderKittens, and adapts them to the architecture of AMD's CDNA3 and CDNA4 GPUs.
 
+### 1.1 What HipKittens Is (and Isn't)
+
+HipKittens is **more than just a wrapper** around HIP/ROCm APIs - it's a high-performance kernel library that:
+
+*   **Wraps low-level APIs**: Provides cleaner abstractions over raw HIP calls
+*   **Provides opinionated primitives**: Pre-configured tensor core operations and optimized memory layouts
+*   **Embeds hand-optimized code**: Direct assembly instructions for critical performance paths
+*   **Codifies proven patterns**: Implements scheduling strategies like "8-wave ping pong" and "4-wave interleave" that aren't provided by HIP itself
+
+The relationship can be visualized as:
+```
+Your Kernel Code
+       ↓
+   HipKittens (tile primitives, optimized patterns)
+       ↓
+     HIP API (low-level GPU programming interface)
+       ↓
+    ROCm Stack (AMD's GPU software platform)
+       ↓
+   AMD GPU Hardware
+```
+
+**Important**: HipKittens is AMD-specific and does not provide cross-vendor portability. Its sibling project, ThunderKittens, serves the same role for NVIDIA/CUDA GPUs. The two projects share conceptual patterns and design philosophy but require separate implementations.
+
 ## 2. Core Primitives and Concepts
 
 HipKittens is designed from the "hardware up," meaning its design principles are dictated by the underlying silicon. The core of the library revolves around a few key concepts:
@@ -48,6 +72,39 @@ These kernels are not just proof-of-concepts; they are integrated into training 
 
 A significant part of the HipKittens project is its emphasis on performance analysis. The `analysis/` directory contains scripts to benchmark the provided kernels across a range of dimensions and settings. This allows researchers and developers to reproduce the performance results presented in the project's associated paper and to evaluate the effectiveness of the HipKittens primitives.
 
-## 6. Conclusion
+## 6. Value Proposition and Ecosystem Position
+
+### 6.1 Key Differentiators
+
+HipKittens occupies a unique position in the AMD GPU programming ecosystem:
+
+*   **Anti-Vendor-Lock-In Mission**: Explicitly designed to foster a "multi-silicon future" - an academic/open-source alternative not beholden to AMD's priorities or release cycles
+*   **Minimal & Opinionated vs Comprehensive**: Unlike AMD's Composable Kernel (CK) which tries to cover everything, HipKittens deliberately provides minimal primitives with strong opinions on "the right way," trading generality for simplicity and teachability
+*   **Educational & Research-First**: Explicitly names and teaches optimization patterns, designed to be understood and modified by researchers, includes full training examples (BERT, Llama) proving real-world utility
+*   **Performance Sweet Spot**: Bridges the gap between "easy to use" (PyTorch) and "maximum performance" (hand-written assembly)
+
+### 6.2 The AMD GPU Programming Spectrum
+
+```
+Low-level                                              High-level
+(Hard, Fast)                                           (Easy, Slower)
+
+Raw HIP/Assembly → HipKittens → Composable Kernel → PyTorch/JAX
+```
+
+HipKittens fills the critical gap for researchers and developers who need:
+*   Competitive AMD GPU performance (not just NVIDIA fallback)
+*   Ability to experiment with novel kernels without vendor bureaucracy
+*   Understanding of *why* kernels are fast (not just black-box usage)
+*   Freedom from CUDA ecosystem lock-in
+
+### 6.3 Comparison to Alternatives
+
+*   **vs Raw HIP**: Much easier to use while maintaining near-metal performance
+*   **vs Composable Kernel (AMD official)**: Simpler, more accessible, better for learning and research
+*   **vs Triton/JAX**: Lower-level control, AMD-specific optimizations, but requires separate implementation per vendor
+*   **vs ThunderKittens**: Same team, same philosophy, but for NVIDIA/CUDA - patterns transfer but code doesn't
+
+## 7. Conclusion
 
 HipKittens is a valuable contribution to the field of high-performance computing for AI. By providing a set of well-designed primitives for AMD GPUs, it helps to bridge the gap between hardware-specific programming and high-level deep learning frameworks. The project's focus on performance, its comprehensive set of example kernels, and its open-source nature make it a promising tool for researchers and practitioners who want to unlock the full potential of AMD's AI hardware. It represents a significant step towards a more diverse and competitive hardware ecosystem for artificial intelligence.
