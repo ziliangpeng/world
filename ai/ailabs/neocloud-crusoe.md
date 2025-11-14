@@ -1,6 +1,6 @@
 # Crusoe: Climate-Aligned AI Cloud Infrastructure
 
-## 1. Company Overview
+## 🏢 1. Company Overview
 
 ### Corporate Profile
 - **Company Name:** Crusoe Energy Systems Inc.
@@ -32,7 +32,7 @@
 
 ---
 
-## 2. Founding Story and History
+## 📜 2. Founding Story and History
 
 ### Origin Story (2017-2018)
 
@@ -74,7 +74,7 @@ The company was founded following a 2017 hiking trip where Chase Lochmiller and 
 
 ---
 
-## 3. Product Lineup
+## 🛠️ 3. Product Lineup
 
 ### 3.1 GPU Computing Infrastructure
 
@@ -268,7 +268,7 @@ DRO represents Crusoe's newer, gigawatt-scale model for high-performance AI infr
 
 ---
 
-## 4. Value Proposition and Differentiators
+## 💎 4. Value Proposition and Differentiators
 
 ### 4.1 Core Value Proposition
 
@@ -524,7 +524,7 @@ This is why Crusoe can charge $3.90/hr for H100 while AWS must charge $7.50/hr t
 
 ---
 
-## 5. Future Roadmap and Plans
+## 🗺️ 5. Future Roadmap and Plans
 
 ### 5.1 Infrastructure Expansion (2025-2027)
 
