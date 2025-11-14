@@ -1199,6 +1199,35 @@ MARA (Marathon Digital Holdings) occupies a unique position in the evolving digi
 **The Good News:**
 - Crusoe has proven the energy-first model works (structural cost advantage, rapid scaling)
 - MARA has similar energy assets and vertical integration strategy
+## Risk Factors  
+
+Investing in Marathon Digital Holdings (MARA) carries several risks:  
+
+- **Bitcoin Price Dependence** – Revenue is highly tied to Bitcoin price; halving events reduce mining rewards; MARA stock moves leverage Bitcoin's volatility.  
+- **AI Pivot Execution Risk** – Early-stage AI infrastructure projects with limited experience; gaps in cooling, networking, and platform; execution delays may lead to limited AI revenue.  
+- **Energy Market & Infrastructure Risk** – Dependence on cheap flared gas/renewables; regulatory changes on methane flaring; competition for energy sources; operational fragility of micro-data centers.  
+- **Capital Intensity and Dilution** – Expanding energy generation and compute hardware requires significant CapEx; equity offerings dilute existing shareholders.  
+- **GPU Supply and Cost Constraints** – Access to high-end GPUs may be limited due to vendor prioritization of larger buyers; supply constraints could slow AI expansion.  
+- **Geographic & Operational Risk** – International sites face currency, political, and infrastructure risks; extreme environments require advanced cooling to prevent equipment failure.  
+- **Regulatory & ESG Risk** – Increased scrutiny of Bitcoin mining's environmental footprint; potential for energy-use caps, taxes, or ESG-driven investment exclusion.  
+- **Market Perception & Valuation Risk** – High price-to-sales multiple based on AI optimism; valuation could contract if pivot underperforms.  
+- **Talent & Execution Risk** – Need to hire specialized talent for AI cloud operations; competition with hyperscalers increases labor costs.  
+- **Macro & Systemic Risk** – Changes in energy prices, hardware supply, or crypto market could affect profitability.  
+
+### Risk Summary Table  
+
+| Risk Category | Impact | Likelihood |  
+|---|---|---|  
+| Bitcoin price dependence | Very high | High |  
+| AI pivot execution | High | Medium |  
+| Energy market & infrastructure | High | Medium |  
+| Capital & dilution | Medium–High | High |  
+| GPU supply constraints | Medium | Medium |  
+| Regulatory & ESG | Medium | Medium |  
+| Market perception | High | High |  
+| Talent & execution | Medium | Medium |  
+| Macro & systemic | Medium | Medium |
+
 - Public company status provides capital flexibility
 
 **The Challenge:**
