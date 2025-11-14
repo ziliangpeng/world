@@ -14,9 +14,11 @@ Nebius was spun out of Yandex in 2023 and built its AI cloud from a clean sheet.
 | **Lambda** | **Moderate** | Evolved from on‑prem server sales and VM‑based research clusters; has to support earlier Lambda Stack deployments and VM layers. |  
 | **Crusoe** | **Moderate** | Originated with flare‑gas compute and portable data centres; initial stack was not ML‑optimised. |  
 | **Hyperscalers (AWS, Azure, GCP)** | **Very high** | Must support dozens of older services, maintain backward compatibility and subsidise non‑GPU offerings; carry huge architectural and organisational overhead. |  
+| **Vultr** | **Low** | Independent cloud provider built post‑2014; AI‑native cloud emphasises flexibility and cost‑efficiency; not hindered by rigid legacy hyperscaler platforms ([Vultr Delivers High-Performance Cloud for Government ...](https://blogs.vultr.com/public-sector#:~:text=Vultr%20Delivers%20High,institutions%2C%20and%20justice%20systems%20worldwide), [Vultr Cloud Infrastructure Designed for Public Sector ...](https://discover.vultr.com/public-sector-solution-brief#:~:text=Vultr%27s%20high,sector%20organizations%20modernize%20their%20infrastructure)). |  
 
 ## Why Lack of Legacy Burden Is a Moat  
+
 - **Lower operating cost:** No need to maintain old data‑centre assets or pay for backward compatibility.  
 - **Faster adoption of new GPU designs:** Clean architecture allows rapid deployment of new hardware like H200 and B200 without migration headaches.  
 - **Pure focus on AI:** Resources and engineering are focused on GPU workloads, not diverted to other cloud products.  
-- **Pricing flexibility:** With fewer overheads and no legacy cross‑subsidies, Nebius can sustain lower pricing while remaining profitable. 
+- **Pricing flexibility:** With fewer overheads and no legacy cross‑subsidies, Nebius can sustain lower pricing while remaining profitable.
