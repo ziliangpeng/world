@@ -130,7 +130,7 @@ Self-contained, modular datacenter platforms designed for edge deployment withou
 
 ---
 
-## 🤝 Part 3: Major Energy Partnerships
+## 🤝 Part 2: Major Energy Partnerships
 
 Crusoe's evolution beyond "stranded energy" is evident in its expanding portfolio of direct power partnerships and infrastructure deals.
 
@@ -279,7 +279,7 @@ If successful, validates Crusoe's ability to deploy next-generation clean energy
 
 ---
 
-## 🏗️ Part 4: Stargate Project - Energy Infrastructure at Hyperscale
+## 🏗️ Part 3: Stargate Project - Energy Infrastructure at Hyperscale
 
 The Stargate Project (Abilene, Texas) demonstrates Crusoe's energy-first approach at unprecedented scale: a $12B datacenter purpose-built around on-site power generation rather than grid connection.
 
@@ -361,7 +361,7 @@ Stargate validates that Crusoe's energy-first model scales to hyperscale. The 6-
 
 ---
 
-## 💰 Part 5: Energy Economics - How Cost Advantage Works
+## 💰 Part 4: Energy Economics - How Cost Advantage Works
 
 ### The Energy Cost Advantage Breakdown
 
@@ -485,7 +485,7 @@ This vertical integration provides Crusoe with control over supply chain, faster
 
 ---
 
-## 🌱 Part 7: Environmental Impact & Sustainability
+## 🌱 Part 5: Environmental Impact & Sustainability
 
 ### Self-Reported Environmental Metrics
 
@@ -592,7 +592,7 @@ These regulatory trends create favorable environment for flare mitigation soluti
 
 ---
 
-## 🔮 Part 8: Future Energy Roadmap
+## 🔮 Part 6: Future Energy Roadmap
 
 ### Energy Pipeline (20-45 GW Identified)
 
