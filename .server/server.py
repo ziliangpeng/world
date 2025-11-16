@@ -249,6 +249,9 @@ def view():
         extras=['fenced-code-blocks', 'tables', 'header-ids', 'toc']
     )
 
+    # Extract TOC BEFORE any string operations (which would lose the toc_html attribute)
+    toc = getattr(html_content, 'toc_html', None) if hasattr(html_content, 'toc_html') else None
+
     # Fix relative image paths: convert images/foo.webp to /content/ai/aiinfra/images/foo.webp
     # based on the markdown file's directory
     md_dir = abs_path.parent.relative_to(ROOT_DIR)
@@ -263,9 +266,6 @@ def view():
         return match.group(0)
 
     html_content = re.sub(r'src="([^"]+)"', fix_img_src, html_content)
-
-    # Extract TOC if available
-    toc = getattr(html_content, 'toc_html', None) if hasattr(html_content, 'toc_html') else None
 
     # Get parent directory path
     parent_path = str(abs_path.parent.relative_to(ROOT_DIR))
