@@ -1,98 +1,26 @@
-# Crusoe Energy - Technology & Strategy Deep Dive
+# Crusoe Energy - Energy Strategy & Technology Analysis
 
 > **Research Report** | Last Updated: January 2025
-> A comprehensive analysis of Crusoe Energy's approach to AI infrastructure through energy-first innovation
+> Deep dive into Crusoe's energy-first approach to AI infrastructure
+
+**Note**: For company overview, products, and pricing, see [`neocloud-crusoe.md`](./neocloud-crusoe.md). This document focuses specifically on energy strategy, technologies, and economics.
 
 ## 📋 Executive Summary
 
-Crusoe Energy has emerged as one of the most distinctive players in the AI infrastructure space, built on a fundamental premise: that energy sourcing should drive datacenter placement, not the other way around. From its 2018 founding as a Bitcoin mining company using flared natural gas, Crusoe has evolved into a $10 billion-valued AI cloud provider powering some of the world's largest AI deployments.
+Crusoe's core thesis: **energy sourcing should drive datacenter placement, not the other way around.** By deploying compute infrastructure where stranded or surplus energy exists (flared natural gas, curtailed renewables), the company claims 30-50% power cost advantages and $2-5B savings per gigawatt from bypassing grid interconnection.
 
-**Key Highlights:**
-- 💰 **Valuation**: $10B+ (October 2025), up from $1.75B in 2022
-- 📈 **Revenue Growth**: $152M (2023) → $276M (2024) → $998M projected (2025)
-- 🏗️ **Stargate Project**: $12B Abilene datacenter with 400,000 NVIDIA GB200 GPUs
-- ⚡ **Energy Advantage**: 30-50% below market power costs, $2-5B grid bypass savings
-- 🌍 **Environmental Impact**: 2.7M metric tons CO2e avoided cumulatively (self-reported)
+**Key Energy Developments:**
+- ⚡ **Energy Advantage**: 30-50% below market power costs through direct sourcing
 - 🔄 **Strategic Pivot**: Sold Bitcoin mining and DFM business to NYDIG (March 2025)
+- 🏗️ **Shift to Conventional Power**: Now building purpose-built natural gas plants (Chevron, GE Vernova, Kalina)
+- 🌍 **Environmental Claims**: 2.7M metric tons CO2e avoided cumulatively (self-reported, no third-party verification)
+- ♻️ **Future Vision**: Nuclear (1.5 GW by 2031), carbon capture (>90%), battery storage (EV batteries)
 
-The company's journey represents a fundamental bet: that in an era of explosive AI compute demand and grid constraints, controlling energy infrastructure creates an unassailable competitive moat.
-
----
-
-## 🏢 Part 1: Company Overview & Evolution
-
-### The Founding Story
-
-Crusoe Energy was born from an unlikely convergence of expertise in 2017. Chase Lochmiller, fresh from climbing Mount Everest, reconnected with high school friend Cully Cavness over a hiking trip in Colorado. Lochmiller brought deep technical background—MIT degrees in math and physics, Stanford MS in computer science with AI specialization, and experience as a quantitative trader at Jump Trading and GETCO. Cavness contributed third-generation oil and gas family knowledge and firsthand observation of the flaring problem plaguing the industry.
-
-The insight was elegant: natural gas flaring at oil well sites represented both environmental waste and untapped energy. If computing infrastructure could be deployed where this stranded energy existed, rather than bringing energy to traditional datacenter locations, both problems could be solved simultaneously.
-
-**The name "Crusoe"** comes from Daniel Defoe's Robinson Crusoe—a character who survived being stranded on an island through resourcefulness and adaptation. The metaphor of utilizing "stranded" resources became central to the company's identity.
-
-### Evolution Timeline
-
-**2018 - 2021: The Bitcoin Mining Era**
-- Founded in Denver, Colorado
-- Initial focus: Bitcoin mining powered by flared natural gas
-- Developed Digital Flare Mitigation (DFM) technology (patented)
-- Deployed mobile datacenters directly at well sites
-- Proved concept: computing can follow energy, not vice versa
-
-**2021 - 2023: Dual Business Model**
-- Maintained Bitcoin mining (80% of 2023 revenue)
-- Began building AI cloud infrastructure (14-20% of 2023 revenue)
-- Series C funding: $350M at $1.75B valuation (April 2022)
-- Expanded from flared gas to curtailed renewables
-- Acquired Easter-Owens (manufacturing division, became Crusoe Industries)
-
-**2024 - Present: The AI Pivot**
-- AI cloud revenue surpassed Bitcoin: $124M AI vs $152M Bitcoin (2024)
-- Series D: $600M at $2.8B valuation (December 2024)
-- Stargate Project announced with Oracle and OpenAI
-- Series E: $1.375B at $10B+ valuation (October 2025)
-- **March 2025**: Sold entire Bitcoin mining and DFM business to NYDIG
-- Now 100% focused on AI infrastructure
-
-### Leadership Team
-
-**Chase Lochmiller** - CEO & Co-Founder
-- MIT BS in Mathematics and Physics (2008)
-- Stanford MS in Computer Science, AI specialization (2016)
-- Former Managing Director at GETCO, Head of Algorithmic Trading (handled 10%+ of daily US stock volume)
-- General Partner at Polychain Capital ($1B blockchain fund)
-- Named TIME 100 Most Influential People in AI 2025
-
-**Cully Cavness** - President/COO & Co-Founder
-- Middlebury College BS in Geology (2010)
-- Third-generation oil and gas family background
-- Former CFO at Sword & Plough, Associate at Petrie Partners (energy investment banking)
-- Brought the "flaring problem" to Chase, co-invented DFM platform
-
-**Other Key Executives:**
-- Matthew DeNezza - CFO (joined August 2020)
-- Nitin Perumbeti - CTO
-- Patrick McGregor - Chief Product Officer
-- Jamey Seely - General Counsel
-- John M. Adams - SVP of Power Infrastructure (appointed June 2025)
-
-### Scale & Operations
-
-**Geographic Presence:**
-- Dual headquarters: Denver, Colorado & San Francisco, California
-- Operating in 7 countries globally
-- Manufacturing facilities: Arvada CO, Tulsa OK, Ponchatoula LA
-- Tel Aviv R&D center (established via Atero acquisition, August 2025)
-
-**Employee Growth:**
-- December 2022: ~180 employees
-- December 2023: 242 employees
-- March 2024: 280 employees
-- Current: 600+ employees (135% growth since late 2022)
-- Note: Lost 135 employees in NYDIG sale of Bitcoin/DFM division
+**Critical Observation**: Crusoe's energy strategy has evolved from "utilize waste energy" (DFM) to "build conventional power infrastructure behind-the-meter" (Chevron, Kalina). While the grid bypass advantage remains real, the "stranded energy moat" narrative diverges from operational reality.
 
 ---
 
-## ⚡ Part 2: Energy Technology Portfolio
+## ⚡ Part 1: Energy Technology Portfolio
 
 Crusoe's core differentiation lies in its energy sourcing and integration capabilities. The company has evolved from a single technology (DFM) to a portfolio of energy solutions.
 
@@ -351,16 +279,16 @@ If successful, validates Crusoe's ability to deploy next-generation clean energy
 
 ---
 
-## 💼 Part 4: The Stargate Project - Enterprise Validation
+## 🏗️ Part 4: Stargate Project - Energy Infrastructure at Hyperscale
 
-### Overview
+The Stargate Project (Abilene, Texas) demonstrates Crusoe's energy-first approach at unprecedented scale: a $12B datacenter purpose-built around on-site power generation rather than grid connection.
 
-The Stargate Project represents Crusoe's entry into hyperscale AI infrastructure and validates the company's ability to compete with traditional cloud providers at enterprise scale.
+**Energy Significance:**
+- Validates that behind-the-meter power sourcing scales to hyperscale (1.2 GW)
+- Demonstrates 6-month power deployment vs 2-3 years for traditional grid interconnection
+- Proves energy-first model can compete with hyperscalers on enterprise reliability
 
-**Project Name:** Stargate (part of broader $500B national AI infrastructure initiative)
-**Location:** Abilene, Texas
-**Total Investment:** $15 billion for full campus buildout
-**Timeline:** Phase 1 energized H1 2025, Phase 2 operational mid-2026
+For full Stargate project details (Oracle relationship, GPU specs, construction), see [neocloud-crusoe.md](./neocloud-crusoe.md).
 
 ### Project Structure
 
@@ -427,49 +355,17 @@ Crusoe delivered new on-site power plant and energized first substation in **und
 - JPMorgan Chase: $2.3B construction loan (January 2025)
 - Brookfield Asset Management: $750M credit line to Crusoe (June 2025)
 
-### Strategic Significance
+### Energy Infrastructure Takeaway
 
-**Hyperscale Validation:**
-Stargate demonstrates Crusoe can compete at the same scale as CoreWeave (the current #1 neocloud provider) and traditional hyperscalers. The 400,000 GPU deployment ranks among the world's largest AI training clusters.
-
-**Oracle Relationship:**
-The 15-year lease provides revenue visibility and validates Crusoe's enterprise credibility. Oracle's willingness to commit to such a long-term agreement signals confidence in Crusoe's operational capabilities.
-
-**Construction Workforce:**
-At peak, the Abilene site employs **5,600+ workers daily**:
-- DPR Construction (general contractor): Largest workforce
-- Rosendin Electric: 1,200+ workers, 180 supervisors
-- Southland Brandt: 900+ workers, ~200 supervisors
-- Mortenson: EPC (Electrical) contractor
-
-This construction scale demonstrates Crusoe's ability to execute complex megaprojects, a critical capability for competing in hyperscale AI infrastructure.
+Stargate validates that Crusoe's energy-first model scales to hyperscale. The 6-month power deployment vs 2-3 year traditional timeline demonstrates competitive advantage through grid bypass. However, the 4.5 GW natural gas reliance shows the shift from "stranded energy" to conventional power generation.
 
 ---
 
-## 📊 Part 5: Business Model & Financial Performance
+## 💰 Part 5: Energy Economics - How Cost Advantage Works
 
-### Revenue Evolution
+### The Energy Cost Advantage Breakdown
 
-**Historical Performance:**
-- 2023: **$152M** total revenue
-  - Bitcoin mining: ~$122M (80% of revenue)
-  - AI cloud: ~$30M (20% of revenue)
-
-- 2024: **$276M** total revenue (82% YoY growth)
-  - Bitcoin mining: **$152M** (55% of revenue, 17% YoY growth)
-  - AI cloud: **$124M** (45% of revenue, 460% YoY growth)
-
-**Inflection Point (2024):**
-AI cloud revenue growth (460%) dramatically outpaced Bitcoin mining (17%), signaling the strategic shift that would culminate in the March 2025 divestiture of the Bitcoin/DFM business.
-
-**Projections:**
-- 2025: **$998M** (262% growth) - driven primarily by Stargate
-- 2026: **$2B**
-- 2027: **$3.6B**
-- 2028: **$5.5B**
-- **CAGR (2023-2028): 105%**
-
-### Funding History & Valuation Trajectory
+Crusoe claims 30-50% lower energy costs translate to competitive advantage. Here's how the economics actually work:
 
 **Seed Round (March 2019):**
 - Investors: Founders Fund, Bain Capital Ventures, Winklevoss Capital
@@ -585,147 +481,7 @@ This vertical integration provides Crusoe with control over supply chain, faster
 
 ---
 
-## 💻 Part 6: Technical Platform & Cloud Services
-
-### Infrastructure Performance
-
-**Uptime & Reliability:**
-- **Contractual SLA:** 99.5% uptime guarantee
-- **Actual Performance:** Up to **99.98% cluster uptime**
-- **Key Features:**
-  - 24/7 global coverage
-  - 100% CSAT (Customer Satisfaction Score)
-  - Automatic node swapping on hardware failures
-  - Multi-week burn-in testing before customer deployment
-
-**Power Usage Effectiveness (PUE):**
-- **Target:** 1.2 to 1.3
-- **Industry Average:** 1.8
-- **State-of-art:** 1.1
-- **Advantage:** Crusoe's PUE is 33-50% more efficient than industry average
-
-**Network Performance (90-day uptime by region):**
-- us-northcentral1-a: **100%**
-- us-east1-a: **99.62%**
-- us-southcentral1-a: **99.99%**
-- eu-iceland1-a: **99.98%**
-
-**Bandwidth:**
-- Current: **400 Gb/s** egress per site
-- By end 2025: Edge capacity "well into the **terabit range**"
-- InfiniBand: 30-32μs latency for small messages, 3,200 Gbps server-to-server
-
-### Storage Infrastructure - VAST Data Partnership
-
-**Partnership Announced:** September 2024
-
-**Technical Specifications:**
-- **Read Performance:** Up to 200 MBps per TiB provisioned
-- **Write Performance:** 40 MBps per TiB provisioned
-- **Scale:** Petabyte-scale file system
-- **Aggregate Bandwidth:** Hundreds of GBps per cluster
-- **SLA:** 99.5% (matching GPU VM SLA)
-
-**Features:**
-- NFS solution optimized for AI/ML workloads
-- Granular QoS policies prevent multi-tenant I/O contention
-- Pre-integrated with Crusoe Cloud (Shared Disks product)
-- Co-engineered reference architectures
-- GPUDirect Storage (GDS) capability via Lightbits integration
-
-**Value Proposition:**
-Addresses the AI training storage bottleneck where datasets often exceed local GPU server storage and require high-throughput access without impacting training performance.
-
-### GPU Portfolio
-
-**NVIDIA:**
-- **Current Generation:** H100 Tensor Core GPUs, H200
-- **Next Generation:** GB200 NVL72 (Blackwell), B200
-- **Stargate Deployment:** 400,000 GB200 GPUs planned
-- **Partnership:** NVIDIA is strategic investor (Series D, Series E)
-- **Early Access:** Priority allocation for latest generation chips
-
-**AMD:**
-- **$400M Equipment Order** (~13,000 units)
-- **MI300X:** First cloud provider to virtualize AMD MI300X on Linux KVM (October 2024)
-- **MI355X (288GB):** Early access, Fall 2025 deployment
-- **Strategic Value:** Supply chain diversification from NVIDIA dependency
-
-**Platform Support:**
-- Linux KVM hypervisor with VFIO passthrough
-- Full GPU virtualization capabilities
-- Multi-vendor GPU strategy
-
-### Platform Services (Announced March 2025, Q2 2025 Preview)
-
-**Crusoe AutoClusters:**
-- Fault-tolerant orchestration service
-- Supports Slurm, Kubernetes, and other platform services
-- Automates administration and oversight of HPC environments
-- Built-in fault tolerance with comprehensive monitoring
-- Delivers reliability for AI training workloads
-
-**Crusoe Managed Inference:**
-- Fully managed inference serving
-- Send prompts directly to API
-- Receive responses from advanced AI models
-- Eliminates infrastructure management overhead
-
-### Developer Tools & APIs
-
-**Launch Options:**
-- Single API call
-- CLI command
-- Intuitive UI flow
-- Minimal setup time and complexity
-
-**Infrastructure as Code:**
-- **Terraform Support:** Full Terraform provider
-- Enables automated infrastructure provisioning
-- Version-controlled datacenter deployments
-
-**CLI Commands:**
-```bash
-crusoe whoami                    # Verify installation
-crusoe compute vms create        # Launch VMs
-crusoe compute vms list          # List resources
-crusoe compute images list       # Available images
-```
-
-**REST API:**
-- Endpoint: `api.crusoecloud.com/v1alpha5/`
-- Manage projects, compute resources, custom images
-- Prometheus-compatible query endpoints for metrics
-- Cascading delete operations
-
-**Documentation:**
-- Comprehensive docs at `docs.crusoecloud.com`
-- NCCL Topology files for optimal performance
-- Curated images with IB software/drivers pre-installed
-- InfiniBand partition management
-
-### Cooling Technology
-
-**Approach:**
-- Advanced **liquid-to-chip cooling** (Direct Liquid Cooling - DLC)
-- High-density racks supporting extreme power densities
-- Norway DRA01 facility: Up to **115kW per rack**
-
-**CDU Manufacturers:**
-Technical details on specific Coolant Distribution Unit vendors remain proprietary. Industry standard partners include Boyd, LiquidStack, nVent, Nidec, and JetCool, though Crusoe has not publicly disclosed specific supplier relationships.
-
-### ClusterMAX Rating
-
-**Industry Standard:** SemiAnalysis ClusterMAX 2.0 rating system
-
-**Crusoe Status:**
-- Previously achieved **Gold tier** rating
-- Criteria: "Reasonable pricing and contract terms in addition to strong technical competency"
-
-**Competitive Context:**
-- CoreWeave: Exclusive **Platinum tier** (highest)
-- Nebius: **Gold tier** (with Oracle and Microsoft Azure)
-- Lambda Labs: Not specifically tier-rated
+**Note**: Technical platform details (GPUs, storage, networking, APIs) are covered in [`neocloud-crusoe.md`](./neocloud-crusoe.md). This document focuses on energy infrastructure.
 
 ---
 
@@ -832,213 +588,11 @@ These regulatory trends create favorable environment for flare mitigation soluti
 
 ---
 
-## 🏆 Part 8: Competitive Landscape
-
-### Neocloud Market Overview
-
-The "neocloud" sector represents specialized cloud providers focused on GPU infrastructure for AI workloads, distinct from traditional hyperscalers (AWS, GCP, Azure) and general-purpose cloud providers.
-
-**Market Size:**
-- **Serviceable Addressable Market (SAM):** $20-25B by 2027
-- **Total Addressable Market (TAM):** Global AI datacenter market growing 22% annually through 2030
-- **Sector Funding:** Over $50B in venture and debt financing attracted to neocloud providers
-
-### Capital Raised Rankings
-
-**GPU Cloud Capital Rankings:**
-1. **CoreWeave:** $12.1B raised (equity + debt)
-2. **Crusoe:** $5.4B raised (equity + debt)
-3. **Lambda Labs:** $893M raised
-
-### Revenue Comparison (2024)
-
-**Estimated Annual Revenue:**
-- **CoreWeave:** $1B+ quarterly (Q1 2025), projecting $5B annual
-- **Crusoe:** $276M (2024), $998M projected (2025)
-- **Lambda Labs:** $425M ARR, 70% YoY growth
-- **Nebius:** 385% YoY revenue growth (Q1 2025)
-
-### Pricing Comparison - H100 GPUs
-
-**H100 On-Demand Pricing (per GPU-hour):**
-- **Lambda Labs:** $1.99/hr (most competitive)
-- **DataCrunch:** $1.99/hr
-- **CoreWeave:** $2.23/hr (H100 HGX), $4.25/hr (H100 PCIe)
-- **Crusoe:** $3.90/hr (on-demand), $1.60/hr (spot)
-- **Nebius:** Competitive for short-to-medium term rentals
-
-**A100 Pricing (per GPU-hour):**
-- **Lambda:** $1.29/hr (40GB) - lowest
-- **Crusoe:** $1.65/hr (80GB PCIe), $1.45/hr (40GB PCIe)
-- **CoreWeave:** $2.21/hr (80GB NVLINK)
-
-**Observation:**
-Despite Crusoe's claimed 30-50% energy cost advantage, they are not the lowest-priced provider. Lambda and others maintain pricing leadership, suggesting either:
-1. Crusoe takes higher margins
-2. Other cost factors offset energy savings
-3. Different customer segments (enterprise vs developer) justify premium pricing
-
-### Competitive Positioning Matrix
-
-**CoreWeave:**
-- **Strengths:** 3x revenue scale, Kubernetes-native (35x faster launches claimed), 7th largest NVIDIA customer globally, strong enterprise base, Platinum ClusterMAX tier
-- **Focus:** Enterprise long-term clusters, hyperscale deployments
-- **Debt:** >$10B, debt-to-equity >8x
-- **Differentiation:** Scale and K8s platform maturity
-
-**Crusoe:**
-- **Strengths:** Energy-first moat, 30-50% power cost advantage, vertical integration, sustainability narrative, AMD leadership (first MI300X virtualization)
-- **Focus:** Enterprise ESG-conscious customers, hyperscale (Stargate)
-- **Debt:** >$200M + construction financing
-- **Differentiation:** Unique energy sourcing and environmental story
-
-**Nebius:**
-- **Strengths:** 385% growth, virtually **$0 debt**, competitive pricing, balance sheet strength, full-stack cloud
-- **Focus:** Short-to-medium term rentals, European market
-- **Debt:** None (key differentiator)
-- **Differentiation:** Financial strength without leverage
-
-**Lambda Labs:**
-- **Strengths:** Developer-friendly, lowest pricing ($1.99/hr H100), one-click clusters, pre-configured for TensorFlow/PyTorch
-- **Focus:** Growth-stage AI companies, developer experience
-- **Debt:** >$500M
-- **Differentiation:** Simplicity and ease of use
-
-### Market Share & Growth Trajectories
-
-**CoreWeave Market Position:**
-- Largest neocloud provider by revenue
-- Quarterly revenue exceeds Crusoe's annual 2024 revenue
-- Strong momentum with Fortune 500 customers
-
-**Crusoe Trajectory:**
-- Stargate validates hyperscale capability
-- 262% projected revenue growth (2024-2025)
-- Path to $2-3B annual revenue by 2026-2027
-- Strong positioning in sustainability-focused segment
-
-**Key Question:**
-Can Crusoe overcome CoreWeave's 3-year head start and 3x revenue scale advantage? Success likely depends on:
-1. Stargate execution and follow-on enterprise deals
-2. Energy advantage translating to margin superiority
-3. ESG narrative creating pricing power with Fortune 500 customers
-
-### Competitive Moats - Assessment
-
-**Crusoe's Claimed Moats:**
-1. ✅ **Energy cost advantage:** 30-50% below market rates (validated by multiple sources)
-2. ✅ **Grid bypass savings:** $2-5B per 1 GW datacenter in avoided transmission infrastructure
-3. ✅ **Speed advantage:** 6-month power plant deployment vs 2-3 years traditional
-4. ✅ **Vertical integration:** Manufacturing control, 78% faster component delivery
-5. ⚠️ **Environmental differentiation:** Self-reported metrics, no third-party verification
-
-**Defensibility:**
-- **Strong:** Energy sourcing relationships and speed (hard to replicate quickly)
-- **Medium:** Vertical integration (competitors could build or acquire)
-- **Weak:** AMD partnership (CoreWeave or others could match)
-- **Unknown:** Whether ESG narrative creates pricing power
-
-**Competitive Threats:**
-- **Hyperscaler price wars:** AWS/GCP/Azure could aggressively drop GPU pricing
-- **CoreWeave scale:** Larger deployments may achieve better unit economics
-- **Energy advantage replication:** Others could build direct power relationships
-- **Regulatory:** Environmental scrutiny on fossil fuel datacenter power
+**Note**: Competitive landscape analysis is covered in [`neocloud-crusoe.md`](./neocloud-crusoe.md) and [neocloud-crusoe-energy-critical.md](./neocloud-crusoe-energy-critical.md).
 
 ---
 
-## 🚀 Part 9: Operational Execution
-
-### Construction & Deployment Speed
-
-**Abilene Campus (Stargate):**
-- Broke ground: June 2024
-- First substation energized: Under 6 months
-- Phase 1 (200 MW): Operational H1 2025
-- Phase 2 (1 GW): Mid-2026 target
-- Full campus (1.2 GW): 2027 completion
-
-**Comparison to Industry:**
-- Traditional grid interconnection: **2-3 years minimum**
-- Utility approval processes: Often 3-5+ years
-- Crusoe behind-the-meter approach: **6 months** for first power
-
-**Workforce Scale:**
-- Peak construction: **5,600+ workers daily**
-- Economic impact: $1 billion+ over 20 years (Abilene facility)
-- Construction jobs created: ~5,000
-
-**Construction Partners:**
-- **DPR Construction** (general contractor, also Series E investor)
-- **Rosendin Electric** (1,200+ workers, 180 supervisors)
-- **Southland Brandt** (900+ workers, ~200 supervisors)
-- **Mortenson** (EPC electrical)
-- **HKS, Inc., AlfaTech, GPLA** (design partners)
-
-### Manufacturing & Supply Chain
-
-**Prefabrication Approach:**
-- **Digital Building Components:** 656 prefinished exterior panels in ~60 days
-- Modular construction reduces on-site assembly time
-- Factory assembly enables quality control and speed
-
-**In-House Manufacturing Advantage:**
-- **Traditional supplier:** 100 weeks for essential electrical components
-- **Crusoe in-house:** 22 weeks delivery
-- **Speed improvement:** 78% faster
-
-**Deployment Track Record:**
-- 400+ Crusoe Spark units deployed globally
-- Operations in harsh conditions (oil fields, remote sites)
-- 3-month lead time from order to deployment
-
-### Employee Growth & Organization
-
-**Headcount Trajectory:**
-- December 2022: ~180 employees
-- December 2023: 242 employees
-- March 2024: 280 employees
-- Current: 600+ employees (after losing 135 in NYDIG sale)
-- **Growth rate:** 135% since late 2022
-
-**Hiring Focus:**
-- 73 jobs in California
-- 248 total openings (Indeed)
-- 301 jobs (ZipRecruiter)
-- Departments: Engineering, operations, datacenter construction, manufacturing, procurement, customer support
-
-**Geographic Distribution:**
-- San Francisco, Denver (headquarters)
-- Tulsa (manufacturing)
-- Tel Aviv (R&D, via Atero acquisition)
-- European operations (Iceland, Norway)
-
-**Culture & Work Policy:**
-- Hybrid: 3 days in-office (Denver or Arvada), 2 days remote
-- Described as "unabashedly anti-remote work" (July 2024)
-- Compensation: 4.2/5 stars on Glassdoor, "world-class pay, top of market"
-- 86% say they believe they're paid fairly (A+ rating)
-
-### Customer Success & Support
-
-**Service Metrics:**
-- 24/7 global coverage
-- **100% CSAT** (Customer Satisfaction Score)
-- Automatic node swapping on failures
-- Real-time performance monitoring
-
-**Customer Testimonials:**
-- "They provide a level of quality of service, responsiveness, and support for early access programs that we couldn't find with any other cloud provider"
-- "Latest NVIDIA hardware and extraordinary support"
-- Oasis (gaming AI): Scaled 5x capacity within hours, served 2M users in 4 days across Europe
-
-**Enterprise Support:**
-- Multi-week burn-in testing before customer deployment
-- Dramatically reduced hardware failures
-- Dedicated account management for large deployments
-
----
-
-## 🔮 Part 10: Future Roadmap & Strategic Direction
+## 🔮 Part 8: Future Energy Roadmap
 
 ### Energy Pipeline (20-45 GW Identified)
 
