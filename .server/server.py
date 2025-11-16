@@ -292,7 +292,7 @@ if __name__ == '__main__':
     observer = start_file_watcher()
 
     try:
-        app.run(debug=True, port=8000, use_reloader=False)
+        app.run(host='0.0.0.0', debug=True, port=8000, use_reloader=False)
     finally:
         observer.stop()
         observer.join()
