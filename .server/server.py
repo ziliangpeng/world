@@ -79,6 +79,10 @@ VIEWER_TEMPLATE = """
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 <body>
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-toggle-icon">🌕</span>
+    </button>
+
     <div class="container">
         <div class="breadcrumb">
             {% for part in breadcrumb %}
@@ -105,6 +109,23 @@ VIEWER_TEMPLATE = """
     </div>
 
     <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = document.querySelector('.theme-toggle-icon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        darkModeIcon.textContent = currentTheme === 'dark' ? '💡' : '🌕';
+
+        darkModeToggle.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            darkModeIcon.textContent = newTheme === 'dark' ? '💡' : '🌕';
+        });
+
         // Syntax highlighting
         hljs.highlightAll();
 
