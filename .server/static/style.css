@@ -131,7 +131,18 @@ h1 {
 }
 
 .toc ul {
-    list-style-position: inside;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.toc ul ul {
+    padding-left: 20px;
+    margin-top: 4px;
+}
+
+.toc li {
+    margin: 4px 0;
 }
 
 .toc a {
