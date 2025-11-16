@@ -5,6 +5,7 @@ Serves markdown files from the parent directory with live reload.
 """
 import os
 import mimetypes
+import re
 from pathlib import Path
 from flask import Flask, render_template_string, send_file, jsonify, request
 import markdown2
@@ -248,6 +249,21 @@ def view():
         extras=['fenced-code-blocks', 'tables', 'header-ids', 'toc']
     )
 
+    # Fix relative image paths: convert images/foo.webp to /content/ai/aiinfra/images/foo.webp
+    # based on the markdown file's directory
+    md_dir = abs_path.parent.relative_to(ROOT_DIR)
+
+    def fix_img_src(match):
+        src = match.group(1)
+        # Only fix relative paths (not absolute URLs or paths starting with /)
+        if not src.startswith(('http://', 'https://', '/')):
+            # Construct absolute path based on markdown file's directory
+            abs_src = md_dir / src
+            return f'src="/content/{abs_src}"'
+        return match.group(0)
+
+    html_content = re.sub(r'src="([^"]+)"', fix_img_src, html_content)
+
     # Extract TOC if available
     toc = getattr(html_content, 'toc_html', None) if hasattr(html_content, 'toc_html') else None
 
@@ -294,6 +310,24 @@ def changes():
 def static_files(filename):
     """Serve static files from .server/static/"""
     return send_file(SCRIPT_DIR / 'static' / filename)
+
+
+@app.route('/content/<path:filepath>')
+def serve_content(filepath):
+    """Serve content files (images, etc.) from the repository"""
+    abs_path = (ROOT_DIR / filepath).resolve()
+
+    # Security: ensure path is within ROOT_DIR
+    if not str(abs_path).startswith(str(ROOT_DIR)):
+        return "Access denied", 403
+
+    if not abs_path.exists():
+        return "File not found", 404
+
+    if not abs_path.is_file():
+        return "Not a file", 400
+
+    return send_file(abs_path)
 
 
 def start_file_watcher():
