@@ -6,21 +6,6 @@
 
 ---
 
-## Table of Contents
-
-1. [Construction Methodology](#construction-methodology)
-2. [Cooling Systems](#cooling-systems)
-3. [Power Infrastructure](#power-infrastructure)
-4. [Networking Architecture](#networking-architecture)
-5. [GPU & Compute Configuration](#gpu--compute-configuration)
-6. [Modular Data Centers (Crusoe Spark)](#modular-data-centers-crusoe-spark)
-7. [Storage Infrastructure](#storage-infrastructure)
-8. [Facility Specifications](#facility-specifications)
-9. [Data Center Locations](#data-center-locations)
-10. [Key Technical Innovations](#key-technical-innovations)
-
----
-
 ## Construction Methodology
 
 ### Building Speed & Process

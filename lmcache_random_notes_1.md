@@ -6,15 +6,6 @@ Follow-up research on LMCache architecture, vLLM integration, and performance op
 
 ---
 
-## Table of Contents
-1. [High-Level Call Flow](#high-level-call-flow)
-2. [Scheduler vs Worker Architecture](#scheduler-vs-worker-architecture)
-3. [LMCache Code in vLLM](#lmcache-code-in-vllm)
-4. [Async Loading & GPU Overlap](#async-loading--gpu-overlap)
-5. [Feature Timeline](#feature-timeline)
-
----
-
 ## High-Level Call Flow
 
 ### Two-Phase Architecture

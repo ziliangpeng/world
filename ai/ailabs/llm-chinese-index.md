@@ -4,27 +4,6 @@ A comprehensive exploration of China's leading LLM research labs, their founding
 
 ---
 
-## Table of Contents
-
-1. [Alibaba (Tongyi Qianwen / Qwen)](#alibaba-tongyi-qianwen--qwen)
-2. [Baidu (ERNIE)](#baidu-ernie)
-3. [ByteDance (Doubao / Coze)](#bytedance-doubao--coze)
-4. [DeepSeek](#deepseek)
-5. [Tencent (Hunyuan)](#tencent-hunyuan)
-6. [Moonshot AI (Kimi)](#moonshot-ai-kimi)
-7. [Zhipu AI (GLM/ChatGLM)](#zhipu-ai-glmchatglm)
-8. [Baichuan AI](#baichuan-ai)
-9. [01.AI (Yi)](#01ai-yi)
-10. [MiniMax](#minimax)
-11. [StepFun](#stepfun)
-12. [SenseTime (SenseNova)](#sensetime-sensenova)
-13. [Rednote/Xiaohongshu (dots.llm1)](#rednotexiaohongshu-dotsllm1)
-14. [Failed and Struggling Startups](#failed-and-struggling-startups-the-other-side-of-chinas-ai-boom)
-15. [Market Landscape and Competitive Dynamics](#market-landscape-and-competitive-dynamics)
-16. [Conclusion](#conclusion)
-
----
-
 ## 1. Alibaba (Tongyi Qianwen / Qwen)
 
 📖 **Full deep-dive available in: [`ailabs-llm-chinese-qwen.md`](ailabs-llm-chinese-qwen.md)**
