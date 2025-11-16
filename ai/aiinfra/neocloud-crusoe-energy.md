@@ -281,6 +281,9 @@ If successful, validates Crusoe's ability to deploy next-generation clean energy
 
 ## 🏗️ Part 3: Stargate Project - Energy Infrastructure at Hyperscale
 
+![Aerial view of Crusoe's Stargate datacenter construction site in Abilene, Texas](images/crusoe-stargate-abilene-aerial.webp)
+*Aerial view of Crusoe's Stargate datacenter campus under construction in Abilene, Texas. The 900-acre site shows multiple datacenter buildings in various stages of completion, with red clay excavation visible across the planned 1.2 GW campus. Photo: Crusoe Energy*
+
 The Stargate Project (Abilene, Texas) demonstrates Crusoe's energy-first approach at unprecedented scale: a $12B datacenter purpose-built around on-site power generation rather than grid connection.
 
 **Energy Significance:**
