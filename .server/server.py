@@ -108,7 +108,8 @@ VIEWER_TEMPLATE = """
         // Syntax highlighting
         hljs.highlightAll();
 
-        // Live reload
+        // Live reload - polling based approach (checks every 30s)
+        // TODO: Could migrate to WebSockets/SSE for instant push-based updates
         let lastCheck = Date.now();
         const currentPath = "{{ file_path }}";
 
@@ -124,7 +125,7 @@ VIEWER_TEMPLATE = """
             } catch (e) {
                 console.error('Live reload check failed:', e);
             }
-        }, 1000);
+        }, 30000);
     </script>
 </body>
 </html>
