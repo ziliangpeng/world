@@ -53,7 +53,7 @@ NVIDIA's AI accelerator architectures have evolved dramatically since 2012, with
 
 4. **Blackwell (2024)**: Dual-die architecture broke reticle limits; FP4 precision enabled 20 PFLOPS performance in single GPU
 
-### Current Generation: Hopper (2022-2025)
+### Hopper Architecture (2022-2025)
 
 #### H100
 
@@ -136,7 +136,7 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
 - Retrieval-augmented generation (RAG) systems
 - Multi-modal models requiring extensive memory
 
-### Latest Generation: Blackwell (2024-2025)
+### Blackwell Architecture (2024-2025)
 
 **Architectural Innovation:**
 
