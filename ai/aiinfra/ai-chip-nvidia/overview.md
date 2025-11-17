@@ -3,7 +3,7 @@
 > **Company Research Report** | Last Updated: January 2025
 > Comprehensive analysis of NVIDIA's AI chip business, technology, and competitive position
 
-**Related:** [AI Chip Industry Overview Part 1](./ai-chip-overview-part-1.md) | [Part 2](./ai-chip-overview-part-2.md)
+**Related:** [AI Chip Industry Overview Part 1](../ai-chip-overview-part-1.md) | [Part 2](../ai-chip-overview-part-2.md)
 
 ---
 
