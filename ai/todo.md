@@ -256,3 +256,9 @@ ai/
 - Highlight open source vs proprietary models clearly
 - Add performance benchmark tables for easy comparison
 
+---
+
+## Research Tasks
+
+- [ ] Research 'AI Scientist' - autonomous AI research systems
+
