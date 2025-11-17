@@ -298,6 +298,8 @@ Unlike the H800, which entered a market with no alternatives, the H20 faced stro
 
 ### GH200 Grace Hopper Superchip - CPU+GPU Hybrid
 
+The Grace Hopper Superchip is fundamentally different from a standalone GPU. **Named GH200, this Superchip product** integrates a high-performance Grace CPU and a Hopper GPU into a single package. Every computer system requires a CPU (Central Processing Unit) to act as the "brain" or "general manager," running the operating system and orchestrating tasks. The GPU is a specialized "worker" for parallel calculations. The innovation of the Superchip is to integrate a high-performance Grace CPU and a Hopper GPU (which can be **either an H100 or an H200 variant**) into a single package, connecting them with an ultra-fast NVLink-C2C interconnect. This eliminates the traditional communication bottleneck of a PCIe bus, allowing the CPU and GPU to work together much more efficiently on data-intensive tasks. While the Superchip acts as the core processing engine, a complete server still requires standard components like storage, system memory, and power supplies.
+
 **Architecture:**
 
 Each superchip combines:
