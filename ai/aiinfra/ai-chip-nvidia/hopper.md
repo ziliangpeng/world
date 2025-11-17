@@ -22,6 +22,7 @@ The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com
 ### H100 SXM5 (80GB) - Flagship Training GPU
 
 **Specifications:**
+
 - **Memory**: 80GB HBM3, 3.35 TB/s bandwidth
 - **TDP**: 700W (configurable)
 - **Form Factor**: SXM5 module
@@ -31,26 +32,31 @@ The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com
 - **Boost Clock**: 1,830 MHz
 
 **Performance:**
+
 - FP32: ~67 TFLOPS
 - FP16/BF16: 1,979 TFLOPS
 - FP8 (with Transformer Engine): ~4,000 TFLOPS
 - Sparsity: Up to 2x throughput for sparse models
 
 **Pricing (2025):**
+
 - Purchase: $25,000-$40,000 per GPU
 - Manufacturing cost: ~$3,320
 - 8-GPU systems: $300,000-$500,000 (including infrastructure)
 - Cloud rental: $2.10-$6.00/hour
+
   - Budget providers (GMI Cloud, Jarvislabs): $2.10-$3.00/hour
   - Hyperscale (AWS, Azure, GCP): ~$5.00/hour on-demand
 
 **Target Market:**
+
 - Large language model training (GPT-class, 70B+ parameters)
 - High-throughput inference for production LLMs
 - Large-scale scientific computing and HPC
 - Multi-modal AI training
 
 **Key Features:**
+
 - Requires liquid or specialized air cooling
 - Maximum performance variant in H100 family
 - FP8 Transformer Engine optimized for transformer models (GPT, BERT, LLaMA)
@@ -62,6 +68,7 @@ The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com
 ### H100 PCIe (80GB) - Standard Server Integration
 
 **Specifications:**
+
 - **Memory**: 80GB HBM2e, 2.0 TB/s bandwidth
 - **TDP**: 350W
 - **Form Factor**: Dual-slot PCIe Gen5 x16
@@ -71,13 +78,16 @@ The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com
 - **Boost Clock**: 1,620 MHz
 
 **Performance:**
+
 - Lower than SXM5 variant due to reduced core count and memory bandwidth
 - FP8: Lower TFLOPS than SXM5
 
 **Pricing (2025):**
+
 - Purchase: $20,000-$30,000
 
 **Target Market:**
+
 - Enterprises needing flexible server integration
 - Mid-size AI teams
 - Cloud providers
@@ -85,6 +95,7 @@ The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com
 - 7B-70B parameter model training
 
 **Key Features:**
+
 - First GPU with PCIe Gen5 support
 - Easier integration into existing datacenter infrastructure
 - Lower power requirements (fits standard datacenter power/cooling)
@@ -95,6 +106,7 @@ The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com
 ### H100 NVL (94GB per GPU, 188GB total) - LLM Inference Specialist
 
 **Specifications:**
+
 - **Memory**: 94GB HBM3 per GPU (188GB total for dual-GPU assembly), 3.9 TB/s per GPU
 - **TDP**: 700-800W total (350-400W per GPU)
 - **Form Factor**: Dual-GPU PCIe card with three NVLink 4 bridges
@@ -102,13 +114,16 @@ The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com
 - **Cooling**: Passive cooling
 
 **Performance:**
+
 - Up to 12X performance improvement for GPT-175B over DGX A100
 
 **Target Market:**
+
 - Large language model (LLM) deployment and inference
 - Production serving of 100B+ parameter models
 
 **Key Features:**
+
 - Dual-GPU configuration bridged together as single unit
 - Optimized specifically for LLM inference workloads
 - Higher memory capacity per GPU than standard H100 (94GB vs 80GB)
@@ -118,18 +133,21 @@ The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com
 ### H100 CNX (80GB) - Converged Accelerator
 
 **Specifications:**
+
 - **Memory**: 80GB HBM3 (H100 specifications)
 - **TDP**: Similar to H100 base variant
 - **Form Factor**: Converged platform
 - **Interconnect**: Integrated ConnectX-7 SmartNIC with 400 Gb/s networking
 
 **Target Market:**
+
 - I/O-intensive applications
 - Multinode AI training in enterprise datacenters
 - 5G edge processing
 - Applications requiring high-speed networking
 
 **Key Features:**
+
 - Combines H100 GPU with ConnectX-7 SmartNIC in single platform
 - Reduces complexity and cost for networked AI workloads
 - 400 Gb/s networking integrated on-chip
@@ -154,6 +172,7 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
 | **TDP** | 700W | 700W | Same power envelope |
 
 **Specifications:**
+
 - **Memory**: 141GB HBM3e, 4.8 TB/s bandwidth
 - **TDP**: 700W (configurable)
 - **Form Factor**: SXM5 module
@@ -161,6 +180,7 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
 - **Cooling**: Air and liquid cooling options
 
 **Performance:**
+
 - FP8: 3,958 TFLOPS
 - FP16/BFLOAT16: 1,979 TFLOPS
 - TF32: 989 TFLOPS
@@ -168,6 +188,7 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
 - FP64: 34 TFLOPS
 
 **Performance Gains:**
+
 - LLM Inference: Up to 2x faster than H100
 - MLPerf Llama2-70B Benchmark:
   - H200: 31,712 tokens/second
@@ -175,12 +196,14 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
   - **45% improvement** in real-world workloads
 
 **Why Memory Matters:**
+
 - Larger batch sizes: 141GB enables more concurrent requests for inference
 - Bigger models: Fits 200B+ parameter models without model parallelism
 - Longer context windows: Essential for RAG systems and document processing
 - Same infrastructure: No power/cooling upgrades needed vs H100
 
 **Pricing (2025):**
+
 - Purchase: $30,000-$40,000 (15-20% premium over H100)
 - Cloud rental: $2.50-$10.60/hour
   - Budget: Jarvislabs ($3.80/hour), GMI Cloud ($2.50/hour)
@@ -188,6 +211,7 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
   - Spot/preemptible: Google Cloud ($3.72/hour)
 
 **Target Market:**
+
 - Very large language models (200B+ parameters)
 - High-throughput production inference
 - Long-context applications (32K+ tokens)
@@ -195,6 +219,7 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
 - Multi-modal models requiring extensive memory
 
 **Key Features:**
+
 - First GPU with HBM3e memory
 - 1.4X more memory and 2.4X more bandwidth than A100
 - Up to 18% higher performance vs NVL
@@ -204,6 +229,7 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
 ### H200 NVL (141GB) - Air-Cooled Enterprise Inference
 
 **Specifications:**
+
 - **Memory**: 141GB HBM3e, 4.8 TB/s bandwidth
 - **TDP**: 600W (configurable)
 - **Form Factor**: Dual-slot PCIe Gen5 x16
@@ -211,14 +237,17 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
 - **Cooling**: Air-cooled only
 
 **Performance:**
+
 - Up to 1.7X faster LLM inference vs H100 NVL when connected in 4-way configuration
 
 **Target Market:**
+
 - Enterprise AI inference
 - Air-cooled deployments
 - Flexible configurations requiring scalable inference
 
 **Key Features:**
+
 - Air-cooled only (no liquid cooling required)
 - Flexible 2-way or 4-way configurations
 - Same memory advantages as H200 SXM5 (141GB HBM3e)
@@ -270,12 +299,14 @@ Unlike the H800, which entered a market with no alternatives, the H20 faced stro
 ### GH200 Grace Hopper Superchip - CPU+GPU Hybrid
 
 **Architecture:**
+
 Each superchip combines:
 - **1 × Grace CPU** (72-core ARM Neoverse V2)
 - **1 × Hopper GPU** (H100 or H200 variant)
 - Connected via **NVLink-C2C**: 900 GB/s bidirectional CPU-GPU bandwidth
 
 **Specifications:**
+
 - **GPU Memory**: 96GB HBM3 or 141GB HBM3e (H200 variant)
 - **CPU**: 72-core ARM Neoverse V2
 - **CPU Memory**: 120GB, 240GB, or 480GB LPDDR5X with ECC
@@ -284,12 +315,14 @@ Each superchip combines:
 - **CPU-GPU Interconnect**: 900 GB/s NVLink-C2C (chip-to-chip), 7X faster than PCIe Gen5
 
 **Target Market:**
+
 - AI/HPC hybrid workloads requiring tight CPU-GPU integration
 - Applications with large CPU working sets
 - Scientific computing
 - Graph analytics
 
 **Key Features:**
+
 - Coherent CPU+GPU memory model (GPU can access CPU memory)
 - ARM-based architecture (not x86)
 - Single-package integration
@@ -301,20 +334,24 @@ Each superchip combines:
 ### GH200 NVL2 - Dual Superchip
 
 **Architecture:**
+
 - 2× GH200 Superchips connected via NVLink
 
 **Specifications:**
+
 - **GPU Memory**: 288GB total high-bandwidth memory (2 × 141GB or 2 × 96GB)
 - **CPU Memory**: Up to 960GB LPDDR5X combined (2 × 480GB)
 - **Total Memory**: 1.2TB fast memory
 - **Total Bandwidth**: 10 TB/s memory bandwidth
 
 **Target Market:**
+
 - Extremely large AI models
 - Models requiring >600GB memory
 - Multi-modal foundation models
 
 **Key Features:**
+
 - Fully connects two GH200 Superchips with NVLink
 - Unified memory space across 2 CPUs and 2 GPUs
 - 1.2TB total fast-access memory
@@ -324,24 +361,29 @@ Each superchip combines:
 ### DGX GH200 - Supercomputer Scale
 
 **Architecture:**
+
 - 32 × GH200 Superchips
+
   - 32 × Grace CPUs (72-core ARM each)
   - 32 × H100 GPUs
 - NVLink Switch System providing non-blocking fat-tree topology
 
 **Specifications:**
+
 - **Total GPU Memory**: 144TB shared memory accessible to all GPUs
 - **System Bandwidth**: 128 TB/s bisection bandwidth
 - **Compute**: 1 ExaFLOP FP8 with sparsity
 - **Supported Precisions**: FP64, FP32, FP16, BF16, FP8, FP4
 
 **Target Market:**
+
 - Supercomputing centers
 - National AI infrastructure
 - Massive AI model training (trillion+ parameters)
 - Research requiring unprecedented memory capacity
 
 **Key Features:**
+
 - First 100TB+ GPU memory system
 - Every GPU can access all other GPU/CPU memory at 900 GB/s
 - Non-blocking NVLink fabric
@@ -386,27 +428,41 @@ NVIDIA offers the DGX system as a complete, pre-configured AI development platfo
 **Total Hopper-based Products**: 14 distinct variants/configurations
 
 **Product Categories:**
+
 - H100 variants: 4 (SXM5, PCIe, NVL, CNX)
 - H200 variants: 2 (SXM5, NVL)
 - China-specific: 2 (H800, H20)
 - Grace Hopper: 3 (GH200, GH200 NVL2, DGX GH200)
 - System platforms: 1 (DGX H100)
 
+**Variant Definitions:**
+
+- **NVL (NVLink-connected):**
+    Refers to a dual-GPU configuration on a single PCIe card, where two GPUs are connected to each other via high-speed NVLink bridges.
+
+    - **On-card GPU-to-GPU speed:** 600 GB/s (H100 NVL) or 900 GB/s (H200 NVL).
+    - **Off-card (to host/other cards) speed:** Limited by PCIe Gen5 x16 at 128 GB/s.
+- **CNX (Converged Accelerator):** Refers to a single GPU combined with a high-speed ConnectX-7 SmartNIC on the same card, designed for I/O-intensive workloads.
+
 **Memory Range:**
+
 - Minimum: 80GB (H100 PCIe, H100 SXM5)
 - Maximum single GPU: 141GB (H200)
 - Maximum system: 144TB (DGX GH200 with 32 GPUs)
 
 **TDP Range:**
+
 - Minimum: 350W (H100 PCIe)
 - Maximum single GPU: 700W (H100 SXM5, H200 SXM5)
 - Maximum system: 10.4kW (DGX H100)
 
 **Process Technology:**
+
 - TSMC 4N (custom 5nm node)
 - 80 billion transistors (H100/H200 die)
 
 **Interconnect Evolution:**
+
 - NVLink 4.0: 900 GB/s per GPU (H100, H200)
 - NVLink-C2C: 900 GB/s CPU-GPU (Grace Hopper)
 - PCIe Gen5: 128 GB/s (first GPU to support)
@@ -437,33 +493,39 @@ NVIDIA offers the DGX system as a complete, pre-configured AI development platfo
 ## Key Innovations
 
 **Fourth-Generation Tensor Cores:**
+
 - FP8 precision support (first GPU architecture with FP8)
 - 2.5X AI performance improvement over previous generation
 - Sparsity support for up to 2X additional throughput
 
 **Transformer Engine:**
+
 - Automatic precision switching for transformer models
 - Optimized specifically for GPT, BERT, LLaMA architectures
 - Dynamic precision selection (FP8 ↔ FP16/BF16)
 - Purpose-built for LLM era
 
 **NVLink 4.0:**
+
 - 900 GB/s bidirectional bandwidth per GPU
 - 3X improvement over NVLink 3.0 (300 GB/s)
 - Enables efficient scaling to 100B+ parameter models
 
 **HBM3/HBM3e Memory:**
+
 - First GPU with HBM3 (H100)
 - First GPU with HBM3e (H200)
 - Up to 4.8 TB/s bandwidth (H200)
 - Up to 141GB capacity (H200)
 
 **Multi-Instance GPU (MIG):**
+
 - Up to 7 GPU instances per physical GPU
 - Hardware-level isolation
 - Workload consolidation and QoS
 
 **Confidential Computing:**
+
 - Hardware-based TEE (Trusted Execution Environment)
 - Memory encryption
 - Secure key management
@@ -477,6 +539,7 @@ NVIDIA offers the DGX system as a complete, pre-configured AI development platfo
 **Timing**: Coincided with ChatGPT-driven AI explosion (November 2022)
 
 **Dominance Factors:**
+
 1. FP8 Transformer Engine optimized specifically for transformer models
 2. 900 GB/s NVLink enables efficient multi-GPU scaling
 3. First-to-market advantage during 2023 LLM boom
@@ -484,6 +547,7 @@ NVIDIA offers the DGX system as a complete, pre-configured AI development platfo
 5. Memory capacity and bandwidth leadership
 
 **Competition:**
+
 - AMD MI300X
 - Google TPU v5
 - AWS Trainium
@@ -491,6 +555,7 @@ NVIDIA offers the DGX system as a complete, pre-configured AI development platfo
 - Specialized accelerators (Groq, Cerebras)
 
 **Export Restrictions:**
+
 - H800: Initial China-compliant variant (banned October 2023)
 - H20: Current China-compliant variant (reduced compute, maintained memory)
 - Restrictions target AI compute performance (TFLOPS)
