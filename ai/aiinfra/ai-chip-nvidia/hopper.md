@@ -15,7 +15,9 @@ Hopper is NVIDIA's GPU architecture launched in 2022, featuring 4th-generation T
 
 ---
 
-## H100 Variants
+## H100 Variants (Announced March 2022, Shipping October 2022)
+
+The H100 GPU was officially announced on [March 22, 2022](https://www.nvidia.com/en-us/about-nvidia/press-releases/2022/nvidia-hopper-architecture-the-new-engine-for-the-worlds-ai-infrastructures/). Initial shipments began in [October 2022](https://www.crn.com/news/components-peripherals/nvidia-h100-gpu-shipping-now-partners-see-big-ai-opportunities/).
 
 ### H100 SXM5 (80GB) - Flagship Training GPU
 
@@ -134,9 +136,12 @@ Hopper is NVIDIA's GPU architecture launched in 2022, featuring 4th-generation T
 
 ---
 
-## H200 Variants
+## H200 Variants (Announced November 2023, Shipping Q2 2024)
+
+The H200 GPU was officially announced on [November 13, 2023](https://nvidianews.nvidia.com/news/nvidia-supercharges-generative-ai-with-h200-gpu-with-worlds-fastest-memory/). While initial anticipated shipping was Q2 2024, large-scale deliveries are now expected after Q3 2024. The first DGX H200 system was personally delivered to OpenAI in [late March 2024](https://www.tomshardware.com/pc-components/gpus/jensen-huang-delivers-first-nvidia-dgx-h200-to-openai-and-sam-altman/). Cloud provider CoreWeave began offering H200 GPUs in [August 2024](https://www.prnewswire.com/news-releases/coreweave-is-first-cloud-provider-to-offer-nvidias-h200-tensor-core-gpus-302220333.html/).
 
 ### H200 SXM5 (141GB) - Memory-Upgraded Flagship
+A memory-focused refresh of the H100, designed for larger models and higher-throughput inference.
 
 **Key Improvements Over H100:**
 
@@ -224,47 +229,39 @@ The H200 uses the same Hopper GH100 die but upgrades the memory subsystem:
 
 ### H800 - Export-Compliant (Pre-October 2023)
 
-**Specifications:**
-- **Memory**: 80GB HBM (type varies)
-- **Interconnect**: 300 GB/s (reduced from H100's 900 GB/s)
+The H800 was a modified version of the H100, introduced by NVIDIA in late 2022 specifically to comply with then-current U.S. export regulations for the Chinese market. It served as a temporary solution until it was also banned by updated, stricter rules in October 2023.
 
-**Target Market:**
-- Chinese market (pre-October 2023 regulations)
+**Export Regulation & Key Changes:**
+The primary limitation imposed by the export rules was on the maximum chip-to-chip interconnect speed, designed to hinder the ability to build massive, interconnected GPU clusters for training large-scale AI models.
 
-**Key Features:**
-- Export-compliant version with ~70% of H100 performance
-- NVLink bandwidth reduced to meet export restrictions
-- Later banned by updated U.S. export restrictions (October 2023)
+- **Performance Reduction:** The H800's key change was a significant reduction in its NVLink bandwidth to **400 GB/s**, down from the H100's 900 GB/s.
+- **Core Architecture:** Beyond the interconnect speed, the H800 was largely identical to its H100 PCIe counterpart, retaining the same 80GB memory, CUDA core counts, and Tensor core capabilities.
+
+**Performance Impact:**
+- **Multi-GPU Training:** The reduced bandwidth directly slowed down large-scale training tasks that require frequent, high-speed communication across multiple GPUs.
+- **Single-GPU Performance:** For workloads that run on a single chip (like inference or smaller model training), the H800's performance was very close to the H100, delivering up to 95% of the performance in many cases.
+
+**Market Reception & Sales:**
+As the most powerful compliant GPU available in China at the time, the H800 was highly sought after. Major Chinese technology and cloud companies (such as Alibaba, Baidu, and Tencent) were significant buyers, placing large orders to build out their AI infrastructure before the rules were tightened. While exact sales figures are not public, the high demand from these tech giants underscores its critical role in the Chinese market during that period.
 
 ---
 
 ### H20 - Current China Market GPU
 
-**Specifications:**
-- **Memory**: 96GB HBM3e, 4.0 TB/s bandwidth
-- **TDP**: 400W
-- **Form Factor**: PCIe
-- **Die Size**: 814mm²
-- **Compute**: 296 TFLOPS (FP8), approximately 15% of H100's AI compute power
-- **Interconnect**: 900 GB/s NVLink (maintained from H100)
+The H20 is NVIDIA's most advanced chip designed for the Chinese market under the strict U.S. export regulations updated in October 2023. It became available in mid-2024 and represents a different compliance strategy compared to its predecessor, the H800.
 
-**Performance:**
-- Raw compute: Only ~15% of H100 (296 vs ~4,000 TFLOPS FP8)
-- LLM inference: Over 20% faster than H100 despite lower raw compute
-  - Due to superior memory capacity and bandwidth
+**Export Regulation & Design Strategy:**
+The October 2023 rules targeted overall "Total Processing Performance" and "Performance Density," forcing a more drastic redesign. Instead of only limiting interconnect speed, NVIDIA's strategy for the H20 was to:
+1.  **Significantly Reduce Compute:** The chip's raw AI compute power (TFLOPS) was cut to approximately 15% of a full H100 to stay under the regulatory threshold.
+2.  **Maintain Key Strengths:** Crucially, NVIDIA kept the full **900 GB/s NVLink** interconnect and equipped the H20 with a large and fast **96GB HBM3e memory** subsystem.
 
-**Pricing:**
-- $12,000-$15,000
+**Performance Profile:**
+This design created a unique performance profile. The low TFLOPS make the H20 inefficient for training large models from scratch. However, its large memory and high bandwidth can make it faster than even an H100 for specific memory-bound tasks, particularly inference on already-trained large language models.
 
-**Target Market:**
-- Chinese market (post-2023 export regulations)
-- Compliant with updated U.S. export restrictions
+**Market Reception & Competition:**
+The H20 received a mixed reception. Its ability to run large models and its integration with the mature CUDA software ecosystem made it a necessary option for some Chinese companies. However, its high price point for limited training performance led to reports of lukewarm demand.
 
-**Key Features:**
-- Significantly lower AI compute to meet export restrictions
-- Higher memory capacity than H100 (96GB vs 80GB)
-- Performance advantage for memory-bound workloads (LLM inference)
-- Maintains full NVLink bandwidth
+Unlike the H800, which entered a market with no alternatives, the H20 faced strong competition from domestic chips like **Huawei's Ascend 910B**, which had become a viable alternative for many Chinese firms seeking to reduce reliance on U.S. technology.
 
 ---
 
@@ -353,22 +350,30 @@ Each superchip combines:
 
 ---
 
-## DGX H100 System Configuration
+## DGX H100 / H200 System Configurations
 
-**Configuration:**
-- **GPUs**: 8× H100 SXM5 GPUs
-- **Total GPU Memory**: 640GB HBM3
+NVIDIA offers the DGX system as a complete, pre-configured AI development platform. It is available with either H100 or H200 GPUs, with the primary difference being the total GPU memory.
+
+**Base Configuration:**
+
 - **GPU Interconnect**: 900 GB/s NVLink per GPU
 - **Networking**: 8× NVIDIA ConnectX-7 400 Gb/s NICs
-- **System Power**: 10.4kW total
+- **System Power**: ~10.4kW total
 - **Form Factor**: Rack-mounted system
 
+| System | GPUs | Total GPU Memory |
+| :--- | :--- | :--- |
+| **DGX H100** | 8 × H100 SXM5 | 640GB HBM3 |
+| **DGX H200** | 8 × H200 SXM5 | 1.1TB HBM3e |
+
 **Target Market:**
+
 - Enterprise AI infrastructure
 - Unified AI development platform
 - Organizations needing turnkey AI systems
 
 **Key Features:**
+
 - Complete system (not just GPUs)
 - Pre-configured and optimized
 - Full NVLink connectivity between all 8 GPUs
@@ -405,6 +410,27 @@ Each superchip combines:
 - NVLink 4.0: 900 GB/s per GPU (H100, H200)
 - NVLink-C2C: 900 GB/s CPU-GPU (Grace Hopper)
 - PCIe Gen5: 128 GB/s (first GPU to support)
+
+### Hopper GPU Comparison Table
+
+| GPU Variant | Memory Size & Type | Memory Bandwidth | FP8 TFLOPS (AI) | Interconnect Bandwidth | Max TDP |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **H100 SXM5** | 80GB HBM3 | 3.35 TB/s | ~4,000 | 900 GB/s (NVLink 4.0) | 700W |
+| **H100 PCIe** | 80GB HBM2e | 2.0 TB/s | Lower than SXM5 | 128 GB/s (PCIe Gen5) | 350W |
+| **H100 NVL**¹ | 94GB HBM3 | 3.9 TB/s | Not specified | 600 GB/s (NVLink Bridge) | 350-400W |
+| **H100 CNX** | 80GB HBM3 | Not specified | Not specified | 400 Gb/s (ConnectX-7) | ~350W |
+| **H200 SXM5** | 141GB HBM3e | 4.8 TB/s | 3,958 | 900 GB/s (NVLink 4.0) | 700W |
+| **H200 NVL**² | 141GB HBM3e | 4.8 TB/s | Not specified | 900 GB/s (NVLink Bridge) | 600W (Card) |
+| **H800** | 80GB HBM | Not specified | ~70% of H100 | 300 GB/s (NVLink) | Not specified |
+| **H20** | 96GB HBM3e | 4.0 TB/s | 296 | 900 GB/s (NVLink) | 400W |
+| **GH200**³ | up to 141GB HBM3e | up to 4.8 TB/s | up to 3,958 | 900 GB/s (NVLink-C2C) | 1000W (Chip) |
+
+<br>
+¹ Specs are per GPU in a dual-GPU assembly.
+<br>
+² Specs are per GPU, but TDP is for the entire dual-slot card.
+<br>
+³ GPU specs depend on whether the H100 or H200 variant is used in the Superchip.
 
 ---
 
