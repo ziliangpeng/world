@@ -41,6 +41,10 @@ BROWSER_TEMPLATE = """
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-toggle-icon">🌕</span>
+    </button>
+
     <div class="container">
         <div class="breadcrumb">
             {% for part in breadcrumb %}
@@ -67,6 +71,25 @@ BROWSER_TEMPLATE = """
             {% endfor %}
         </div>
     </div>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = document.querySelector('.theme-toggle-icon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        darkModeIcon.textContent = currentTheme === 'dark' ? '💡' : '🌕';
+
+        darkModeToggle.addEventListener('click', () => {
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            darkModeIcon.textContent = newTheme === 'dark' ? '💡' : '🌕';
+        });
+    </script>
 </body>
 </html>
 """
@@ -117,8 +140,8 @@ VIEWER_TEMPLATE = """
         const darkModeIcon = document.querySelector('.theme-toggle-icon');
         const htmlElement = document.documentElement;
 
-        // Check for saved preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
+        // Check for saved preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
         htmlElement.setAttribute('data-theme', currentTheme);
         darkModeIcon.textContent = currentTheme === 'dark' ? '💡' : '🌕';
 
