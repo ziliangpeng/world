@@ -437,12 +437,15 @@ NVIDIA offers the DGX system as a complete, pre-configured AI development platfo
 
 **Variant Definitions:**
 
+The various Hopper GPU products are primarily "variants" in that they are all based on the same core **GH100 silicon die**. Differences between these variants stem from their packaging, the number of active cores enabled (binning), and the additional components integrated onto the card, tailoring them for specific use cases and server environments.
+
+- **SXM5:** A high-performance module designed for direct mounting onto a server baseboard (e.g., NVIDIA HGX). In an 8-GPU system, an NVLink Switch System allows all GPUs to communicate with each other at the full **900 GB/s** speed.
 - **NVL (NVLink-connected):**
     Refers to a dual-GPU configuration on a single PCIe card, where two GPUs are connected to each other via high-speed NVLink bridges.
 
     - **On-card GPU-to-GPU speed:** 600 GB/s (H100 NVL) or 900 GB/s (H200 NVL).
     - **Off-card (to host/other cards) speed:** Limited by PCIe Gen5 x16 at 128 GB/s.
-- **CNX (Converged Accelerator):** Refers to a single GPU combined with a high-speed ConnectX-7 SmartNIC on the same card, designed for I/O-intensive workloads.
+- **CNX (Converged Accelerator):** Refers to a single GPU combined with a high-speed ConnectX-7 SmartNIC on the same card. This **convergence** of compute and networking onto a single physical unit is designed to eliminate I/O bottlenecks in workloads requiring both massive computation and extremely fast data movement. The SmartNIC's **RDMA (Remote Direct Memory Access)** capabilities are crucial for enabling this high-speed, low-latency data transfer directly to the GPU.
 
 **Memory Range:**
 
