@@ -26,8 +26,10 @@ class MarkdownChangeHandler(FileSystemEventHandler):
     """Watch for markdown file changes"""
     def on_modified(self, event):
         if event.src_path.endswith('.md'):
+            print(f"[File Watcher] Detected change: {event.src_path}")
             with lock:
                 changed_files.append(event.src_path)
+                print(f"[File Watcher] Tracked files: {len(changed_files)}")
 
 
 # HTML template for file browser
@@ -130,7 +132,7 @@ VIEWER_TEMPLATE = """
         // Syntax highlighting
         hljs.highlightAll();
 
-        // Live reload - polling based approach (checks every 30s)
+        // Live reload - polling based approach (checks every 2s)
         // TODO: Could migrate to WebSockets/SSE for instant push-based updates
         let lastCheck = Date.now();
         const currentPath = "{{ file_path }}";
@@ -142,12 +144,13 @@ VIEWER_TEMPLATE = """
                 lastCheck = Date.now();
 
                 if (data.changed) {
+                    console.log('File changed, reloading...');
                     location.reload();
                 }
             } catch (e) {
                 console.error('Live reload check failed:', e);
             }
-        }, 30000);
+        }, 2000);
     </script>
 </body>
 </html>
@@ -300,8 +303,11 @@ def changes():
     with lock:
         # Check if the specific file was changed
         changed = any(abs_path == changed_path for changed_path in changed_files)
-        # Clear old changes
-        changed_files.clear()
+        if changed:
+            print(f"[Changes API] File changed detected: {abs_path}")
+        # Only remove this specific file from the list if it was detected
+        if changed:
+            changed_files[:] = [f for f in changed_files if f != abs_path]
 
     return jsonify({'changed': changed})
 
