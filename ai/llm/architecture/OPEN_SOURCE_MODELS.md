@@ -67,120 +67,120 @@ Major open source LLM families with full architecture documentation.
 
 | Date | Model | Notes |
 |------|-------|-------|
-| Feb 2023 | 📜 [Llama 1](https://arxiv.org/abs/2302.13971) | 7B, 13B, 33B, 65B |
-| Jul 2023 | 📜 [Llama 2](https://arxiv.org/abs/2307.09288) | 7B, 13B, 70B |
-| Aug 2023 | 📜 [Code Llama](https://arxiv.org/abs/2308.12950) | 7B, 13B, 34B - Base/Python/Instruct |
-| Dec 2023 | 📜 [Llama Guard](https://arxiv.org/abs/2312.06674) | 7B safety model |
-| Jan 2024 | 📜 [Code Llama 70B](https://arxiv.org/abs/2308.12950) | 70B variant added |
-| Apr 2024 | 📜 [Llama 3](https://arxiv.org/abs/2407.21783) | 8B, 70B |
-| Apr 2024 | 📜 [Llama Guard 2](https://arxiv.org/abs/2407.21783) | 8B safety model |
-| Jul 2024 | 📜 [Llama 3.1](https://arxiv.org/abs/2407.21783) | 8B, 70B, 405B |
-| Jul 2024 | 📜 [Llama Guard 3](https://arxiv.org/abs/2407.21783) | 1B, 12B safety models |
-| Sep 2024 | 📜 [Llama 3.2](https://arxiv.org/abs/2407.21783) | 1B, 3B, 11B Vision, 90B Vision |
-| Dec 2024 | 📜 [Llama 3.3](https://arxiv.org/abs/2407.21783) | 70B |
-| Apr 2025 | 📜 [Llama 4](https://arxiv.org/abs/2510.12178) | Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context |
-| Apr 2025 | Prompt Guard 2 | 86M, 22M - Injection attack prevention |
+| Feb 2023 | 📜 [Llama 1](https://arxiv.org/abs/2302.13971) | 🔥 7B, 13B, 33B, 65B - First major open LLM |
+| Jul 2023 | 📜 [Llama 2](https://arxiv.org/abs/2307.09288) | 🔥 7B, 13B, 70B - Commercial license, RLHF |
+| Aug 2023 | 📜 [Code Llama](https://arxiv.org/abs/2308.12950) | 🔥 7B, 13B, 34B - Base/Python/Instruct |
+| Dec 2023 | 📜 [Llama Guard](https://arxiv.org/abs/2312.06674) | 🔥 7B safety model - First safety classifier |
+| Jan 2024 | 📜 [Code Llama 70B](https://arxiv.org/abs/2308.12950) | 🥱 70B variant added |
+| Apr 2024 | 📜 [Llama 3](https://arxiv.org/abs/2407.21783) | 🔥 8B, 70B - 15T tokens, improved architecture |
+| Apr 2024 | 📜 [Llama Guard 2](https://arxiv.org/abs/2407.21783) | 🥱 8B safety model |
+| Jul 2024 | 📜 [Llama 3.1](https://arxiv.org/abs/2407.21783) | 🔥 8B, 70B, 405B - First 400B+ open model, 128K context |
+| Jul 2024 | 📜 [Llama Guard 3](https://arxiv.org/abs/2407.21783) | 🥱 1B, 12B safety models |
+| Sep 2024 | 📜 [Llama 3.2](https://arxiv.org/abs/2407.21783) | 🔥 1B, 3B, 11B Vision, 90B Vision - First Llama multimodal |
+| Dec 2024 | 📜 [Llama 3.3](https://arxiv.org/abs/2407.21783) | 🥱 70B - Refined version |
+| Apr 2025 | 📜 [Llama 4](https://arxiv.org/abs/2510.12178) | 🔥 Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context |
+| Apr 2025 | Prompt Guard 2 | 🔥 86M, 22M - Injection attack prevention |
 
 ## [Mistral/Mixtral](open-source-models/mistral-mixtral.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
-| Sep 2023 | 📜 [Mistral 7B](https://arxiv.org/abs/2310.06825) | Dense 7B, Sliding Window Attention |
-| Dec 2023 | 📜 [Mixtral 8x7B](https://arxiv.org/abs/2401.04088) | MoE, 46.7B total, 12.9B active |
-| Feb 2024 | [Mistral Small](https://mistral.ai/news/mistral-large) | Dense 22B, low latency |
-| Apr 2024 | [Mixtral 8x22B](https://mistral.ai/news/mixtral-8x22b) | MoE, 141B total, 39B active, 64K context |
-| May 2024 | [Codestral](https://mistral.ai/news/codestral) | Dense 22B, code specialized, 80+ languages |
-| Jul 2024 | [Mistral NeMo](https://mistral.ai/news/mistral-nemo) | Dense 12B, NVIDIA collab, Tekken tokenizer, 128K context |
-| Jul 2024 | [Mistral Large 2](https://mistral.ai/news/mistral-large-2407) | Dense 123B, flagship model, 128K context |
-| Jul 2024 | [Codestral Mamba](https://mistral.ai/news/codestral-mamba) | SSM 7B, State Space Model, 256K context |
-| Jul 2024 | [Mathstral 7B](https://mistral.ai/news/mathstral) | Dense 7B, math/STEM specialized, 32K context |
-| Sep 2024 | 📜 [Pixtral 12B](https://arxiv.org/abs/2410.07073) | Multimodal, 12B + 400M vision encoder |
-| Oct 2024 | [Ministral 3B](https://mistral.ai/news/ministraux) | Dense 3B, edge/on-device, 128K context |
-| Oct 2024 | [Ministral 8B](https://mistral.ai/news/ministraux) | Dense 8B, edge/on-device, 128K context |
-| Nov 2024 | [Mistral Large 24.11](https://mistral.ai/news/pixtral-large) | Dense 123B, improved long context, 131K context |
-| Nov 2024 | [Pixtral Large](https://mistral.ai/news/pixtral-large) | Multimodal, 123B + 1B vision encoder, frontier multimodal |
+| Sep 2023 | 📜 [Mistral 7B](https://arxiv.org/abs/2310.06825) | 🔥 Dense 7B, Sliding Window Attention - First Mistral |
+| Dec 2023 | 📜 [Mixtral 8x7B](https://arxiv.org/abs/2401.04088) | 🔥 MoE, 46.7B total, 12.9B active - First open MoE |
+| Feb 2024 | [Mistral Small](https://mistral.ai/news/mistral-large) | 🥱 Dense 22B, low latency |
+| Apr 2024 | [Mixtral 8x22B](https://mistral.ai/news/mixtral-8x22b) | 🔥 MoE, 141B total, 39B active, 64K context - Scaled up |
+| May 2024 | [Codestral](https://mistral.ai/news/codestral) | 🥱 Dense 22B, code specialized, 80+ languages |
+| Jul 2024 | [Mistral NeMo](https://mistral.ai/news/mistral-nemo) | 🔥 Dense 12B, NVIDIA collab, Tekken tokenizer, 128K context |
+| Jul 2024 | [Mistral Large 2](https://mistral.ai/news/mistral-large-2407) | 🔥 Dense 123B, flagship model, 128K context |
+| Jul 2024 | [Codestral Mamba](https://mistral.ai/news/codestral-mamba) | 🔥 SSM 7B, State Space Model, 256K context - First SSM |
+| Jul 2024 | [Mathstral 7B](https://mistral.ai/news/mathstral) | 🥱 Dense 7B, math/STEM specialized, 32K context |
+| Sep 2024 | 📜 [Pixtral 12B](https://arxiv.org/abs/2410.07073) | 🔥 Multimodal, 12B + 400M vision encoder - First multimodal |
+| Oct 2024 | [Ministral 3B](https://mistral.ai/news/ministraux) | 🥱 Dense 3B, edge/on-device, 128K context |
+| Oct 2024 | [Ministral 8B](https://mistral.ai/news/ministraux) | 🥱 Dense 8B, edge/on-device, 128K context |
+| Nov 2024 | [Mistral Large 24.11](https://mistral.ai/news/pixtral-large) | 🥱 Dense 123B, improved long context, 131K context |
+| Nov 2024 | [Pixtral Large](https://mistral.ai/news/pixtral-large) | 🔥 Multimodal, 123B + 1B vision encoder, frontier multimodal |
 
 ## [Qwen Series](open-source-models/qwen.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
-| Aug 2023 | 📜 [Qwen 1.0](https://arxiv.org/abs/2309.16609) | 1.8B, 7B, 14B, 72B |
-| Oct 2023 | 📜 [Qwen-VL](https://arxiv.org/abs/2308.12966) | Vision-language with grounding |
-| Nov 2023 | 📜 [Qwen-Audio](https://arxiv.org/abs/2311.07919) | Universal audio understanding |
-| Feb 2024 | Qwen 1.5 | 0.5B-110B, includes MoE-A2.7B |
-| Jun 2024 | 📜 [Qwen2](https://arxiv.org/abs/2407.10671) | 0.5B-72B, 57B-A14B MoE |
-| Jul 2024 | 📜 [Qwen2-Audio](https://arxiv.org/abs/2407.10759) | Voice chat + audio analysis |
-| Sep 2024 | 📜 [Qwen2-VL](https://arxiv.org/abs/2409.12191) | 2B, 7B - Any resolution vision |
-| Sep 2024 | 📜 [Qwen2.5](https://arxiv.org/abs/2412.15115) | 0.5B-72B, 18T tokens, 128K context |
-| Sep 2024 | 📜 [Qwen2.5-Coder](https://arxiv.org/abs/2409.12186) | 0.5B-32B - Code specialized |
-| Sep 2024 | 📜 [Qwen2.5-Math](https://arxiv.org/abs/2409.12122) | 1.5B-72B - Math specialized |
-| Nov 2024 | QwQ-32B-Preview | 32B reasoning model |
-| Jan 2025 | Qwen2.5-VL | 3B-72B vision models |
-| Mar 2025 | Qwen2.5-Omni | 7B omni-modal |
-| Apr 2025 | 📜 [Qwen3](https://arxiv.org/abs/2505.09388) | 0.6B-235B, dense + MoE, 36T tokens |
-| Jul 2025 | Qwen3-Coder | 480B MoE - Agentic coding |
-| Sep 2025 | Qwen3-Omni | Real-time multimodal |
-| Sep 2025 | Qwen3-Max | Flagship proprietary |
-| Sep 2025 | Qwen3-Next | 80B total, 3B active MoE |
+| Aug 2023 | 📜 [Qwen 1.0](https://arxiv.org/abs/2309.16609) | 🔥 1.8B, 7B, 14B, 72B - First Qwen series |
+| Oct 2023 | 📜 [Qwen-VL](https://arxiv.org/abs/2308.12966) | 🔥 Vision-language with grounding |
+| Nov 2023 | 📜 [Qwen-Audio](https://arxiv.org/abs/2311.07919) | 🔥 Universal audio understanding, 30+ tasks |
+| Feb 2024 | Qwen 1.5 | 🥱 0.5B-110B, includes MoE-A2.7B |
+| Jun 2024 | 📜 [Qwen2](https://arxiv.org/abs/2407.10671) | 🔥 0.5B-72B, 57B-A14B MoE - Architecture refresh |
+| Jul 2024 | 📜 [Qwen2-Audio](https://arxiv.org/abs/2407.10759) | 🔥 Voice chat + audio analysis modes |
+| Sep 2024 | 📜 [Qwen2-VL](https://arxiv.org/abs/2409.12191) | 🔥 2B, 7B - Any resolution vision |
+| Sep 2024 | 📜 [Qwen2.5](https://arxiv.org/abs/2412.15115) | 🔥 0.5B-72B, 18T tokens, 128K context |
+| Sep 2024 | 📜 [Qwen2.5-Coder](https://arxiv.org/abs/2409.12186) | 🔥 0.5B-32B - Code specialized, 5.5T code tokens |
+| Sep 2024 | 📜 [Qwen2.5-Math](https://arxiv.org/abs/2409.12122) | 🔥 1.5B-72B - Math specialist via self-improvement |
+| Nov 2024 | QwQ-32B-Preview | 🔥 32B reasoning model, o1-style thinking |
+| Jan 2025 | Qwen2.5-VL | 🥱 3B-72B vision models |
+| Mar 2025 | Qwen2.5-Omni | 🔥 7B omni-modal (text/image/video/audio) |
+| Apr 2025 | 📜 [Qwen3](https://arxiv.org/abs/2505.09388) | 🔥 0.6B-235B, dense + MoE, 36T tokens, 119 languages |
+| Jul 2025 | Qwen3-Coder | 🔥 480B MoE (35B active) - Agentic coding |
+| Sep 2025 | Qwen3-Omni | 🔥 Real-time multimodal with speech generation |
+| Sep 2025 | Qwen3-Max | 🥱 Flagship proprietary |
+| Sep 2025 | Qwen3-Next | 🥱 80B total, 3B active MoE |
 
 ## [DeepSeek](open-source-models/deepseek.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
-| Nov 2023 | 📜 [DeepSeek-Coder V1](https://arxiv.org/abs/2401.14196) | 1.3B, 5.7B, 6.7B, 33B - First DeepSeek model, 16K context |
-| Nov 2023 | 📜 [DeepSeek-LLM V1](https://arxiv.org/abs/2401.02954) | 7B, 67B - First general-purpose LLM |
-| Feb 2024 | 📜 [DeepSeek-Math](https://arxiv.org/abs/2402.03300) | 7B - Math specialized |
-| Mar 2024 | 📜 [DeepSeek-VL](https://arxiv.org/abs/2403.05525) | 1.3B, 7B - First vision-language model |
-| May 2024 | 📜 [DeepSeek-V2](https://arxiv.org/abs/2405.04434) | 236B total, 21B active - MoE with MLA, 128K context |
-| May 2024 | 📜 [DeepSeek-Prover V1](https://arxiv.org/abs/2405.14333) | Theorem proving for Lean 4 |
-| Jun 2024 | DeepSeek-Coder-V2 | 16B/236B MoE - 128K context |
-| Aug 2024 | DeepSeek-Prover-V1.5 | Enhanced theorem proving with RLPAF |
-| Sep 2024 | DeepSeek-V2.5 | 236B total, 21B active - Unified general + coding |
-| Nov 2024 | 📜 [JanusFlow](https://arxiv.org/abs/2411.07975) | 1.3B - Unified image understanding + generation |
-| Nov 2024 | DeepSeek-R1-Lite-Preview | Reasoning model preview (API only) |
-| Dec 2024 | 📜 [DeepSeek-VL2](https://arxiv.org/abs/2412.10302) | 3.37B-27.5B MoE - Advanced multimodal |
-| Dec 2024 | 📜 [DeepSeek-V3](https://arxiv.org/abs/2412.19437) | 671B total, 37B active - 14.8T tokens, 128K context |
-| Jan 2025 | 📜 [DeepSeek-R1](https://arxiv.org/abs/2501.12948) | 671B MoE - Reasoning via RL, comparable to OpenAI o1 |
-| Jan 2025 | DeepSeek-R1 Distilled | 1.5B-70B dense - Distilled from R1 |
-| Jan 2025 | Janus-Pro | 1.5B, 7B - Multimodal understanding + generation |
-| Mar 2025 | DeepSeek-V3-0324 | 671B MoE - MIT licensed update |
-| Apr 2025 | DeepSeek-Prover-V2 | 7B, 671B - State-of-the-art theorem proving |
-| May 2025 | DeepSeek-R1-0528 | 685B MoE - System prompts, function calling |
-| Aug 2025 | DeepSeek-V3.1 | 840B MoE - Hybrid reasoning modes |
-| Sep 2025 | DeepSeek-V3.1-Terminus | 671B MoE - V3 finale, agent capabilities |
-| Sep 2025 | DeepSeek-V3.2-Exp | 671B MoE - Sparse attention optimization |
-| Oct 2025 | 📜 [DeepSeek-OCR](https://arxiv.org/abs/2510.18234) | 3B MoE (570M active) - Optical context compression |
+| Nov 2023 | 📜 [DeepSeek-Coder V1](https://arxiv.org/abs/2401.14196) | 🔥 1.3B, 5.7B, 6.7B, 33B - First DeepSeek model, 16K context |
+| Nov 2023 | 📜 [DeepSeek-LLM V1](https://arxiv.org/abs/2401.02954) | 🔥 7B, 67B - First general-purpose LLM |
+| Feb 2024 | 📜 [DeepSeek-Math](https://arxiv.org/abs/2402.03300) | 🥱 7B - Math specialized |
+| Mar 2024 | 📜 [DeepSeek-VL](https://arxiv.org/abs/2403.05525) | 🔥 1.3B, 7B - First vision-language model |
+| May 2024 | 📜 [DeepSeek-V2](https://arxiv.org/abs/2405.04434) | 🔥 236B total, 21B active - MoE with MLA, 128K context |
+| May 2024 | 📜 [DeepSeek-Prover V1](https://arxiv.org/abs/2405.14333) | 🔥 Theorem proving for Lean 4 |
+| Jun 2024 | DeepSeek-Coder-V2 | 🥱 16B/236B MoE - 128K context |
+| Aug 2024 | DeepSeek-Prover-V1.5 | 🥱 Enhanced theorem proving with RLPAF |
+| Sep 2024 | DeepSeek-V2.5 | 🥱 236B total, 21B active - Unified general + coding |
+| Nov 2024 | 📜 [JanusFlow](https://arxiv.org/abs/2411.07975) | 🔥 1.3B - Unified image understanding + generation |
+| Nov 2024 | DeepSeek-R1-Lite-Preview | 🥱 Reasoning model preview (API only) |
+| Dec 2024 | 📜 [DeepSeek-VL2](https://arxiv.org/abs/2412.10302) | 🔥 3.37B-27.5B MoE - Advanced multimodal |
+| Dec 2024 | 📜 [DeepSeek-V3](https://arxiv.org/abs/2412.19437) | 🔥 671B total, 37B active - 14.8T tokens, 128K context, $6M training |
+| Jan 2025 | 📜 [DeepSeek-R1](https://arxiv.org/abs/2501.12948) | 🔥 671B MoE - Reasoning via RL, comparable to OpenAI o1 |
+| Jan 2025 | DeepSeek-R1 Distilled | 🔥 1.5B-70B dense - Distilled from R1 |
+| Jan 2025 | Janus-Pro | 🥱 1.5B, 7B - Multimodal understanding + generation |
+| Mar 2025 | DeepSeek-V3-0324 | 🔥 671B MoE - MIT licensed update |
+| Apr 2025 | DeepSeek-Prover-V2 | 🔥 7B, 671B - State-of-the-art theorem proving |
+| May 2025 | DeepSeek-R1-0528 | 🥱 685B MoE - System prompts, function calling |
+| Aug 2025 | DeepSeek-V3.1 | 🔥 840B MoE - Hybrid reasoning modes |
+| Sep 2025 | DeepSeek-V3.1-Terminus | 🥱 671B MoE - V3 finale, agent capabilities |
+| Sep 2025 | DeepSeek-V3.2-Exp | 🥱 671B MoE - Sparse attention optimization |
+| Oct 2025 | 📜 [DeepSeek-OCR](https://arxiv.org/abs/2510.18234) | 🔥 3B MoE (570M active) - Optical context compression |
 
 ## [Google Gemma](open-source-models/google-gemma.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
-| Feb 2024 | 📜 [Gemma 1](https://arxiv.org/abs/2403.08295) | 2B, 7B |
-| Apr 2024 | 📜 [CodeGemma](https://arxiv.org/abs/2406.11409) | 2B, 7B - Code specialized |
-| May 2024 | 📜 [PaliGemma](https://arxiv.org/abs/2407.07726) | Vision-language model |
-| Jun 2024 | 📜 [Gemma 2](https://arxiv.org/abs/2408.00118) | 2B, 7B, 9B, 27B |
-| Jul 2024 | 📜 [ShieldGemma](https://arxiv.org/abs/2407.21772) | Safety assessment model |
-| Mar 2025 | 📜 [Gemma 3](https://arxiv.org/abs/2503.19786) | 270M-27B - Multimodal |
-| Mar 2025 | 📜 [ShieldGemma 2](https://arxiv.org/abs/2504.01081) | 4B - Safety assessment model |
+| Feb 2024 | 📜 [Gemma 1](https://arxiv.org/abs/2403.08295) | 🔥 2B, 7B - First Gemma, from Gemini tech |
+| Apr 2024 | 📜 [CodeGemma](https://arxiv.org/abs/2406.11409) | 🥱 2B, 7B - Code specialized |
+| May 2024 | 📜 [PaliGemma](https://arxiv.org/abs/2407.07726) | 🔥 Vision-language model |
+| Jun 2024 | 📜 [Gemma 2](https://arxiv.org/abs/2408.00118) | 🔥 2B, 7B, 9B, 27B - Sliding window + global attention, 256K vocab |
+| Jul 2024 | 📜 [ShieldGemma](https://arxiv.org/abs/2407.21772) | 🔥 Safety assessment model |
+| Mar 2025 | 📜 [Gemma 3](https://arxiv.org/abs/2503.19786) | 🔥 270M-27B - Multimodal, 140+ languages |
+| Mar 2025 | 📜 [ShieldGemma 2](https://arxiv.org/abs/2504.01081) | 🥱 4B - Safety assessment model |
 
 ## [Microsoft Phi](open-source-models/microsoft-phi.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
-| Jun 2023 | 📜 [Phi-1](https://arxiv.org/abs/2306.11644) | 1.3B - Python coding, textbook-quality data |
-| Sep 2023 | 📜 [Phi-1.5](https://arxiv.org/abs/2309.05463) | 1.3B - Common sense reasoning, 2K context |
-| Dec 2023 | [Phi-2](https://www.microsoft.com/en-us/research/blog/phi-2-the-surprising-power-of-small-language-models/) | 2.7B - 1.4T tokens, 2K context |
-| Apr 2024 | 📜 [Phi-3-mini](https://arxiv.org/abs/2404.14219) | 3.8B - 4K/128K context variants |
-| May 2024 | 📜 [Phi-3-small](https://arxiv.org/abs/2404.14219) | 7B - 8K/128K context variants |
-| May 2024 | 📜 [Phi-3-medium](https://arxiv.org/abs/2404.14219) | 14B - 4K/128K context variants |
-| May 2024 | 📜 [Phi-3-vision](https://arxiv.org/abs/2404.14219) | 4.2B - Multimodal (text + vision), 128K context |
-| May 2024 | [Phi-Silica](https://blogs.windows.com/windowsexperience/2024/12/06/phi-silica-small-but-mighty-on-device-slm/) | 3.3B - Optimized for Copilot+ PC NPUs |
-| Aug 2024 | [Phi-3.5-mini-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 3.8B - 128K context, multi-lingual |
-| Aug 2024 | [Phi-3.5-MoE-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 42B total, 6.6B active - 16 experts, 128K context |
-| Aug 2024 | [Phi-3.5-vision-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 4.2B - Multimodal, 128K context |
-| Dec 2024 | [Phi-4](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-phi-4-microsoft%E2%80%99s-newest-small-language-model-specializing-in-comple/4357090) | 14B - 16K context, complex reasoning, synthetic data |
-| Feb 2025 | 📜 [Phi-4-mini](https://arxiv.org/abs/2503.01743) | 3.8B - 128K context, speed optimized |
-| Feb 2025 | 📜 [Phi-4-multimodal-instruct](https://arxiv.org/abs/2503.01743) | 5.6B - Speech + vision + text, 20+ languages |
+| Jun 2023 | 📜 [Phi-1](https://arxiv.org/abs/2306.11644) | 🔥 1.3B - Python coding, textbook-quality data |
+| Sep 2023 | 📜 [Phi-1.5](https://arxiv.org/abs/2309.05463) | 🔥 1.3B - Common sense reasoning, 2K context |
+| Dec 2023 | [Phi-2](https://www.microsoft.com/en-us/research/blog/phi-2-the-surprising-power-of-small-language-models/) | 🔥 2.7B - 1.4T tokens, 2K context |
+| Apr 2024 | 📜 [Phi-3-mini](https://arxiv.org/abs/2404.14219) | 🔥 3.8B - 4K/128K context variants |
+| May 2024 | 📜 [Phi-3-small](https://arxiv.org/abs/2404.14219) | 🥱 7B - 8K/128K context variants |
+| May 2024 | 📜 [Phi-3-medium](https://arxiv.org/abs/2404.14219) | 🥱 14B - 4K/128K context variants |
+| May 2024 | 📜 [Phi-3-vision](https://arxiv.org/abs/2404.14219) | 🔥 4.2B - Multimodal (text + vision), 128K context |
+| May 2024 | [Phi-Silica](https://blogs.windows.com/windowsexperience/2024/12/06/phi-silica-small-but-mighty-on-device-slm/) | 🔥 3.3B - Optimized for Copilot+ PC NPUs |
+| Aug 2024 | [Phi-3.5-mini-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 🥱 3.8B - 128K context, multi-lingual |
+| Aug 2024 | [Phi-3.5-MoE-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 🔥 42B total, 6.6B active - 16 experts, 128K context |
+| Aug 2024 | [Phi-3.5-vision-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 🥱 4.2B - Multimodal, 128K context |
+| Dec 2024 | [Phi-4](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-phi-4-microsoft%E2%80%99s-newest-small-language-model-specializing-in-comple/4357090) | 🔥 14B - 16K context, complex reasoning, synthetic data |
+| Feb 2025 | 📜 [Phi-4-mini](https://arxiv.org/abs/2503.01743) | 🥱 3.8B - 128K context, speed optimized |
+| Feb 2025 | 📜 [Phi-4-multimodal-instruct](https://arxiv.org/abs/2503.01743) | 🔥 5.6B - Speech + vision + text, 20+ languages |
 
 ## [Other Notable Models](open-source-models/other-models.md)
 
