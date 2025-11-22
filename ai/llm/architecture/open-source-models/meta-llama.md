@@ -2,6 +2,47 @@
 
 The Llama series from Meta represents one of the most influential open-source LLM families, setting standards for decoder-only transformer architectures.
 
+## Llama 1 (February 2023)
+
+### Model Variants
+- **7B**: 7 billion parameters
+- **13B**: 13 billion parameters
+- **33B**: 33 billion parameters
+- **65B**: 65 billion parameters
+
+### Architecture
+
+**Base Design**: Auto-regressive decoder-only transformer
+
+**Key Components**:
+- **Normalization**: RMSNorm pre-normalization (instead of post-normalization)
+- **Activation**: SwiGLU activation function (from PaLM)
+- **Position Encoding**: Rotary Embeddings (RoPE, not absolute positional embeddings)
+- **Attention**: Multi-Head Attention (MHA)
+- **FFN Dimension**: 2/3 × 4d instead of 4d (as in PaLM)
+
+### Training Details
+- **Tokens**:
+  - 65B & 33B: 1.4 trillion tokens
+  - 7B: 1 trillion tokens
+- **Context Window**: 2,048 tokens
+- **Vocabulary**: 32K tokens (SentencePiece tokenizer)
+- **Training Data**: Publicly available datasets only
+  - English CommonCrawl, C4
+  - GitHub, Wikipedia
+  - Gutenberg and Books3
+  - ArXiv, Stack Exchange
+
+### Performance
+- LLaMA-13B outperformed GPT-3 175B on most benchmarks
+- LLaMA-65B competitive with Chinchilla-70B and PaLM-540B
+
+### Significance
+- First major open-source model from Meta
+- Proved open models could compete with proprietary ones
+- Established architectural patterns (RMSNorm, SwiGLU, RoPE)
+- Sparked explosion of derivative models
+
 ## Llama 2 (July 2023)
 
 ### Model Variants
@@ -90,19 +131,63 @@ The Llama series from Meta represents one of the most influential open-source LL
 ## Llama 3.2 (September 2024)
 
 ### Model Variants
+
+**Text-Only Models**:
 - **1B**: 1 billion parameters
 - **3B**: 3 billion parameters
-- **Vision-capable variants**: Multimodal models
+
+**Vision Models**:
+- **11B Vision**: 11 billion parameters (built on Llama 3.1 8B)
+- **90B Vision**: 90 billion parameters (built on Llama 3.1 70B)
 
 ### Architecture
+
+**Text-Only Models**:
 - Same foundation as Llama 3/3.1 (GQA, RoPE, SwiGLU, RMSNorm)
 - Optimized for edge deployment and on-device inference
 - Maintains architectural consistency with larger siblings
 
-### Focus
-- Smaller models for resource-constrained environments
-- Vision capabilities for multimodal tasks
-- Efficiency without sacrificing too much quality
+**Vision Models - Multimodal Architecture**:
+
+**Two-Stage Vision Processing**:
+1. **Stage 1 - Feature Extraction**:
+   - 32-layer transformer processing patched image inputs
+   - Outputs 1280-dimensional features
+   - Preserves intermediate representations
+
+2. **Stage 2 - Global Encoding**:
+   - 8-layer global encoder with gated attention
+   - Concatenates intermediate features with final output
+   - Creates rich multi-level visual representation
+
+**Cross-Attention Integration**:
+- Language component: 40-layer decoder-only transformer (4096 hidden size)
+- Cross-attention layers integrated every 5th layer
+- Separately trained adapter weights connect vision and language
+- Adapter trained on **6 billion image-text pairs**
+- Vision encoder updated, language model frozen (preserves text capabilities)
+
+### Training
+
+**Vision Model Pretraining**:
+- 6B image-text pairs
+- Adapter-based approach
+- Maintains Llama 3.1 text capabilities
+- Drop-in replacement for corresponding text models
+
+### Capabilities
+
+**Text-Only** (1B, 3B):
+- Edge device deployment
+- On-device inference
+- Resource-constrained environments
+
+**Vision Models** (11B, 90B):
+- Visual recognition and reasoning
+- Image captioning
+- Visual question answering
+- Document understanding with charts/graphs
+- Maintains all text-only capabilities
 
 ## Llama 3.3 (Late 2024)
 
@@ -110,6 +195,182 @@ The Llama series from Meta represents one of the most influential open-source LL
 - Latest iteration maintaining architectural consistency
 - Further optimizations for efficiency and performance
 - Continued refinement of training data and processes
+
+---
+
+## Code Llama (August 2023)
+
+### Model Sizes and Variants
+
+**Base Models**: 7B, 13B, 34B, 70B parameters
+
+**Three Variants** (all available in all sizes):
+1. **Code Llama (Base)**: Foundation for general code tasks
+2. **Code Llama - Python**: Python-specialized versions
+3. **Code Llama - Instruct**: Instruction-following for code tasks
+
+### Architecture Modifications
+
+**Base**: Built on Llama 2, initialized with pretrained weights
+
+**Extended Context**:
+- Context expanded from 4,096 to **100,000 tokens**
+- Modified RoPE parameters for long sequences
+- Trained on 16K token sequences
+- Strong extrapolation up to 100K tokens
+
+**Fill-in-the-Middle (FIM)**:
+- Supported: 7B, 13B, 70B (base and instruct)
+- NOT supported: 34B models, Python variants
+- Enables code completion and insertion
+- Uses causal infilling alongside autoregressive prediction
+
+### Training Approach
+
+**Multi-Stage Specialization**:
+1. Initialize with Llama 2 pretrained weights (already saw 80B code tokens)
+2. Train on 500B tokens of code (1T for 70B model)
+3. Long context fine-tuning (separate stage)
+4. Instruction fine-tuning (for Instruct variants)
+
+**Training Data** (500B tokens, 1T for 70B):
+- **85%**: Open-source GitHub code
+- **8%**: Natural language about code
+- **7%**: General natural language
+
+**Multitask Objective**: 7B, 13B, 70B use both autoregressive and causal infilling
+
+### Key Innovations
+- First major open-source code model from Meta
+- Successfully extended context to 100K tokens with RoPE modifications
+- Multi-stage specialization: pretrain → code → long context → instruct
+- Fill-in-the-middle for real-time editor integration
+- Cost-efficient long-context fine-tuning as separate stage
+
+### Use Cases
+- Code completion in editors
+- Code generation from natural language
+- Docstring generation
+- Code explanation and debugging
+- Code translation between languages
+
+---
+
+## Llama Guard (Safety & Moderation)
+
+### Purpose
+LLM-based input-output safeguard for human-AI conversations, providing content moderation and safety classification.
+
+### Model Evolution
+
+**Llama Guard 1** (December 2023):
+- **7B parameters** (based on Llama 2-7B)
+- Initial safety classification model
+
+**Llama Guard 2**:
+- Expanded to 11 safety categories
+- Improved taxonomy
+
+**Llama Guard 3** (Current):
+- **8B parameters** (based on Llama 3.1-8B)
+- Supports 8 languages
+- MLCommons-aligned taxonomy (13 categories)
+- INT8 quantized version available
+
+**Llama Guard 3-1B**:
+- **1B parameters** for resource-constrained environments
+- **1B-INT4**: 440MB compressed (7x smaller)
+- F1 score: 0.904 (outperforms uncompressed 1B)
+
+**Llama Guard 4**:
+- **12B parameters**
+- Multimodal input/output moderation
+
+### Safety Taxonomy
+
+**Llama Guard 3** (13 Categories - MLCommons aligned):
+- Violent Crimes
+- Non-Violent Crimes
+- Sex-Related Crimes
+- Child Sexual Exploitation
+- Defamation
+- Specialized Advice
+- Privacy violations
+- Intellectual Property
+- Indiscriminate Weapons
+- Hate
+- Suicide & Self-Harm
+- Sexual Content
+- Elections (manipulation)
+
+### Capabilities
+- Classifies prompts and responses as safe/unsafe
+- Lists violated categories when unsafe
+- Supports both input (prompt) and output (response) classification
+- Flexible, customizable taxonomy
+- Multilingual support (8 languages in Guard 3)
+- Optimized for search and code interpreter tool calls
+
+---
+
+## Purple Llama (Trust & Safety Tools)
+
+### What It Is
+
+**NOT a Model**: Purple Llama is an umbrella project for open trust and safety tools and evaluations for responsible generative AI development.
+
+**Name Origin**: "Purple" from cybersecurity (Red team + Blue team = Purple team) + "Llama"
+
+### Main Components
+
+**1. CyberSecEval** - Cybersecurity Benchmarks
+
+**Purpose**: Comprehensive evaluation of LLM cybersecurity risks
+
+**Evaluation Domains**:
+- Propensity to generate insecure code
+- Compliance when asked to assist in cyberattacks
+
+**Evolution**:
+- CyberSecEval 1 (December 2023)
+- CyberSecEval 2, 3 (2024)
+- CyberSecEval 4 (Latest): Adds CyberSOCEval + AutoPatchBench
+
+**Tools**:
+- **Insecure Code Detector (ICD)**: 189 static analysis rules, 50 insecure practices
+- **MITRE Tests**: MITRE ATT&CK framework compliance evaluation
+
+**2. Llama Guard**:
+- Input/output safeguards (see Llama Guard section above)
+- Pretrained safety classification
+
+**3. Prompt Guard**:
+- Protection against malicious prompts
+- Prevents prompt injection attacks
+- Application security
+
+**4. Code Shield**:
+- Inference-time filtering of insecure code
+- Prevents code interpreter abuse
+- Secure command execution
+
+### Licensing and Collaboration
+
+**License**: Permissively licensed for research and commercial use
+
+**Partners**: AI Alliance, AMD, AWS, Google Cloud, Hugging Face, IBM, Intel, Microsoft, NVIDIA, MLCommons, and many others
+
+**Repository**: https://github.com/meta-llama/PurpleLlama
+
+### Relationship to Llama Models
+
+Provides tools to assess and improve security of Llama and other LLMs:
+- Evaluate cybersecurity risks
+- Prevent unsafe outputs
+- Filter insecure code
+- Protect against attacks
+
+---
 
 ## Common Architectural Foundation
 
