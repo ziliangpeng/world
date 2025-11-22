@@ -43,6 +43,10 @@ The Llama series from Meta represents one of the most influential open-source LL
 - Established architectural patterns (RMSNorm, SwiGLU, RoPE)
 - Sparked explosion of derivative models
 
+### Links
+- **Paper**: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
+- **Meta AI Research**: [LLaMA Publication](https://ai.meta.com/research/publications/llama-open-and-efficient-foundation-language-models/)
+
 ## Llama 2 (July 2023)
 
 ### Model Variants
@@ -72,6 +76,11 @@ The Llama series from Meta represents one of the most influential open-source LL
 - Introduced optimizations that became standard (RMSNorm, SwiGLU, RoPE)
 - 70B variant pioneered GQA in production LLMs
 
+### Links
+- **Paper**: [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
+- **Blog**: [Meta and Microsoft Introduce the Next Generation of Llama](https://ai.meta.com/blog/llama-2/)
+- **Hugging Face**: [Llama-2-7b](https://huggingface.co/meta-llama/Llama-2-7b), [Llama-2-13b](https://huggingface.co/meta-llama/Llama-2-13b), [Llama-2-70b](https://huggingface.co/meta-llama/Llama-2-70b)
+
 ## Llama 3 (April 2024)
 
 ### Model Variants
@@ -95,6 +104,11 @@ The Llama series from Meta represents one of the most influential open-source LL
 - Extended GQA to smaller models (8B), validating efficiency gains
 - Massive vocabulary expansion for better multilingual support
 - Superior performance per parameter vs Llama 2
+
+### Links
+- **Paper**: [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783)
+- **Blog**: [Introducing Meta Llama 3](https://ai.meta.com/blog/meta-llama-3/)
+- **Hugging Face**: [Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B), [Meta-Llama-3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
 
 ## Llama 3.1 (July 2024)
 
@@ -127,6 +141,11 @@ The Llama series from Meta represents one of the most influential open-source LL
 - First open model to compete with GPT-4 class models
 - Massive context window expansion (8K → 128K)
 - Demonstrated scaling laws continue to work at 400B+ parameters
+
+### Links
+- **Paper**: [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783)
+- **Blog**: [Introducing Llama 3.1](https://ai.meta.com/blog/meta-llama-3-1/)
+- **Hugging Face**: [Llama-3.1-8B](https://huggingface.co/meta-llama/Llama-3.1-8B), [Llama-3.1-70B](https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct), [Llama-3.1-405B](https://huggingface.co/meta-llama/Llama-3.1-405B)
 
 ## Llama 3.2 (September 2024)
 
@@ -189,12 +208,21 @@ The Llama series from Meta represents one of the most influential open-source LL
 - Document understanding with charts/graphs
 - Maintains all text-only capabilities
 
+### Links
+- **Paper**: [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783)
+- **Blog**: [Llama 3.2: Revolutionizing edge AI and vision](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/)
+- **Hugging Face**: [Llama-3.2-1B](https://huggingface.co/meta-llama/Llama-3.2-1B), [Llama-3.2-3B](https://huggingface.co/meta-llama/Llama-3.2-3B), [Llama-3.2-11B-Vision](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision), [Llama-3.2-90B-Vision](https://huggingface.co/meta-llama/Llama-3.2-90B-Vision)
+
 ## Llama 3.3 (Late 2024)
 
 ### Updates
 - Latest iteration maintaining architectural consistency
 - Further optimizations for efficiency and performance
 - Continued refinement of training data and processes
+
+### Links
+- **Blog**: [The future of AI: Built with Llama](https://ai.meta.com/blog/future-of-ai-built-with-llama/)
+- **Hugging Face**: [Llama-3.3-70B-Instruct](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct)
 
 ---
 
@@ -254,6 +282,11 @@ The Llama series from Meta represents one of the most influential open-source LL
 - Code explanation and debugging
 - Code translation between languages
 
+### Links
+- **Paper**: [Code Llama: Open Foundation Models for Code](https://arxiv.org/abs/2308.12950)
+- **Blog**: [Introducing Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/)
+- **Hugging Face**: [CodeLlama-7b-hf](https://huggingface.co/meta-llama/CodeLlama-7b-hf), [CodeLlama-13b-hf](https://huggingface.co/meta-llama/CodeLlama-13b-hf), [CodeLlama-34b-hf](https://huggingface.co/meta-llama/CodeLlama-34b-hf), [CodeLlama-70b-hf](https://huggingface.co/meta-llama/CodeLlama-70b-hf)
+
 ---
 
 ## Llama Guard (Safety & Moderation)
@@ -310,6 +343,11 @@ LLM-based input-output safeguard for human-AI conversations, providing content m
 - Flexible, customizable taxonomy
 - Multilingual support (8 languages in Guard 3)
 - Optimized for search and code interpreter tool calls
+
+### Links
+- **Paper (Guard 1)**: [Llama Guard: LLM-based Input-Output Safeguard](https://arxiv.org/abs/2312.06674)
+- **Paper (Guard 3-1B)**: [Llama Guard 3-1B-INT4: Compact and Efficient Safeguard](https://arxiv.org/abs/2411.17713)
+- **Hugging Face**: [LlamaGuard-7b](https://huggingface.co/meta-llama/LlamaGuard-7b), [Llama-Guard-3-8B](https://huggingface.co/meta-llama/Llama-Guard-3-8B), [Llama-Guard-3-1B](https://huggingface.co/meta-llama/Llama-Guard-3-1B)
 
 ---
 
@@ -369,6 +407,10 @@ Provides tools to assess and improve security of Llama and other LLMs:
 - Prevent unsafe outputs
 - Filter insecure code
 - Protect against attacks
+
+### Links
+- **Repository**: [PurpleLlama GitHub](https://github.com/meta-llama/PurpleLlama)
+- **Blog**: [Purple Llama announcement](https://ai.meta.com/blog/purple-llama-open-trust-safety-generative-ai/)
 
 ---
 
