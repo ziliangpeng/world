@@ -11,7 +11,8 @@ Major open source LLM families with full architecture documentation:
 - Llama 3.3 (70B)
 - Llama 4 (Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context)
 - Code Llama (7B, 13B, 34B, 70B - Base/Python/Instruct variants)
-- Llama Guard (1B, 8B, 12B - Safety models)
+- Llama Guard (7B, 8B, 1B, 12B - Safety models)
+- Prompt Guard 2 (86M, 22M - Injection attack prevention)
 
 ## [Mistral/Mixtral](open-source-models/mistral-mixtral.md)
 - Mistral 7B (Dense)

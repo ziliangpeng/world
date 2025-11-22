@@ -232,16 +232,18 @@ The Llama series from Meta represents one of the most influential open-source LL
 ### Model Variants
 
 **Scout**:
-- 17B active parameters
+- 17B active parameters (109B total parameters)
 - 16 experts (MoE architecture)
 - 10 million token context window
 
 **Maverick**:
-- Released alongside Scout
+- 17B active parameters (400B total parameters)
+- 128 experts (MoE architecture)
+- 1 million token context window
 - Natively multimodal (text, images, video)
 
 **Behemoth** (Announced, not yet released):
-- 288B active parameters
+- 288B active parameters (~2T total parameters)
 - 16 experts
 - Still in training
 
@@ -366,8 +368,10 @@ LLM-based input-output safeguard for human-AI conversations, providing content m
 - F1 score: 0.904 (outperforms uncompressed 1B)
 
 **Llama Guard 4**:
-- **12B parameters**
+- **12B parameters** (based on Llama 4)
 - Multimodal input/output moderation
+- Supports multiple images in prompts
+- 14 hazard categories (MLCommons taxonomy) + code interpreter abuse
 
 ### Safety Taxonomy
 
@@ -397,7 +401,8 @@ LLM-based input-output safeguard for human-AI conversations, providing content m
 ### Links
 - **Paper (Guard 1)**: [Llama Guard: LLM-based Input-Output Safeguard](https://arxiv.org/abs/2312.06674)
 - **Paper (Guard 3-1B)**: [Llama Guard 3-1B-INT4: Compact and Efficient Safeguard](https://arxiv.org/abs/2411.17713)
-- **Hugging Face**: [LlamaGuard-7b](https://huggingface.co/meta-llama/LlamaGuard-7b), [Llama-Guard-3-8B](https://huggingface.co/meta-llama/Llama-Guard-3-8B), [Llama-Guard-3-1B](https://huggingface.co/meta-llama/Llama-Guard-3-1B)
+- **Hugging Face**: [LlamaGuard-7b](https://huggingface.co/meta-llama/LlamaGuard-7b), [Llama-Guard-3-8B](https://huggingface.co/meta-llama/Llama-Guard-3-8B), [Llama-Guard-3-1B](https://huggingface.co/meta-llama/Llama-Guard-3-1B), [Llama-Guard-4-12B](https://huggingface.co/meta-llama/Llama-Guard-4-12B)
+- **Documentation**: [Llama Guard 4 Model Card](https://www.llama.com/docs/model-cards-and-prompt-formats/llama-guard-4/)
 
 ---
 
@@ -436,11 +441,19 @@ LLM-based input-output safeguard for human-AI conversations, providing content m
 - Protection against malicious prompts
 - Prevents prompt injection attacks
 - Application security
+- **Prompt Guard 2**: 86M parameters (high performance) and 22M parameters (low latency)
 
 **4. Code Shield**:
 - Inference-time filtering of insecure code
 - Prevents code interpreter abuse
 - Secure command execution
+- Supports 7 programming languages
+- Average latency: 200ms
+
+**5. LlamaFirewall**:
+- Integration suite for Llama Protections
+- Combines Llama Guard, Prompt Guard, and Code Shield
+- Unified protection layer
 
 ### Licensing and Collaboration
 
