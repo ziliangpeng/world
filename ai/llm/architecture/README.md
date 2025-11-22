@@ -45,13 +45,34 @@ Major open source LLM families with full architecture documentation:
 - Phi-4 (14B)
 
 #### [Other Notable Models](open-source-models/other-models.md)
-- Yi 1.5 (34B)
-- Falcon (40B, 180B)
-- BLOOM (176B)
-- GPT-NeoX (20B)
-- StableLM (1.6B, 12B)
-- MPT (7B, 30B)
-- Apple OpenELM (270M, 450M, 1.1B, 3B)
+- Yi 1.5 (34B) - 01.ai
+- Falcon (40B, 180B) - TII Abu Dhabi
+- BLOOM (176B) - BigScience/HuggingFace
+- GPT-NeoX (20B) - EleutherAI
+- StableLM (1.6B, 12B) - Stability AI
+- MPT (7B, 30B) - MosaicML/Databricks
+- Apple OpenELM (270M, 450M, 1.1B, 3B) - Apple
+- Baichuan (7B, 13B) - Baichuan Inc
+- InternLM (7B, 20B) - Shanghai AI Lab
+- ChatGLM (6B, 130B) - Tsinghua/Zhipu AI
+- Cohere Command R/R+ (104B) - Cohere
+- Databricks DBRX (132B MoE) - Databricks
+- OLMo (1B-32B) - Allen Institute for AI
+- Pythia Suite (70M-12B) - EleutherAI
+- StarCoder/StarCoder2 (3B, 7B, 15B) - BigCode/HuggingFace
+- CodeGen (350M-16B) - Salesforce
+- TinyLlama (1.1B) - Community/Zhang et al
+- MiniCPM (1.2B, 2.4B, 8B) - OpenBMB/Tsinghua
+- RWKV (0.1B-14B) - Bo Peng et al - RNN-Transformer hybrid
+- Jamba (12B-398B MoE) - AI21 Labs - SSM-Transformer hybrid, 256K context
+- LLaVA (7B, 13B, 34B) - Microsoft/Wisconsin - Vision-language model
+- CogVLM/CogVLM2 (8B-17B) - Tsinghua - Vision understanding
+- Fuyu (8B) - Adept - Multimodal for digital agents
+- Aya 101 (13B) - Cohere for AI - 101 languages
+- Hunyuan-Large (389B MoE) - Tencent - 256K context, Chinese-English
+- Falcon Mamba (7B) - TII - Pure SSM architecture
+- Palmyra (128M-20B) - Writer - Enterprise, 1M context
+- BioGPT (349M) - Microsoft - Biomedical domain
 
 ### Proprietary Models
 

@@ -293,6 +293,18 @@ def view():
 
     html_content = re.sub(r'src="([^"]+)"', fix_img_src, html_content)
 
+    # Fix relative markdown links: convert foo.md to /view?path=current/dir/foo.md
+    def fix_md_link(match):
+        href = match.group(1)
+        # Only fix relative .md links (not absolute URLs or anchors)
+        if href.endswith('.md') and not href.startswith(('http://', 'https://', '/', '#')):
+            # Construct absolute path based on markdown file's directory
+            abs_href = md_dir / href
+            return f'href="/view?path={abs_href}"'
+        return match.group(0)
+
+    html_content = re.sub(r'href="([^"]+)"', fix_md_link, html_content)
+
     # Get parent directory path
     parent_path = str(abs_path.parent.relative_to(ROOT_DIR))
     if parent_path == '.':
