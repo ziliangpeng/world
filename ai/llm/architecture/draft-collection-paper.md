@@ -49,8 +49,6 @@ A curated collection of AI/ML research papers across various domains.
 | Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models | 2023 | [2303.04671](https://arxiv.org/abs/2303.04671) |
 | HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face | 2023 | [2303.17580](https://arxiv.org/abs/2303.17580) |
 | The RefinedWeb Dataset for Falcon LLM: Outperforming Curated Corpora with Web Data, and Web Data Only (Falcon) | 2023 | [2306.01116](https://arxiv.org/abs/2306.01116) |
-| Llama 2: Open Foundation and Fine-Tuned Chat Models | 2023 | [2307.09288](https://arxiv.org/abs/2307.09288) |
-| Mistral 7B | 2023 | [2310.06825](https://arxiv.org/abs/2310.06825) |
 | Orca 2: Teaching Small Language Models How to Reason | 2023 | [2311.11045](https://arxiv.org/abs/2311.11045) |
 | Mixtral of Experts | 2024 | [2401.04088](https://arxiv.org/abs/2401.04088) |
 
