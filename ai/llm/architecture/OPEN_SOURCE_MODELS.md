@@ -3,11 +3,14 @@
 Major open source LLM families with full architecture documentation:
 
 ## [Meta Llama Series](open-source-models/meta-llama.md)
+- Llama 1 (7B, 13B, 33B, 65B)
 - Llama 2 (7B, 13B, 70B)
 - Llama 3 (8B, 70B)
 - Llama 3.1 (8B, 70B, 405B)
-- Llama 3.2 (1B, 3B, Vision)
+- Llama 3.2 (1B, 3B, 11B Vision, 90B Vision)
 - Llama 3.3
+- Code Llama (7B, 13B, 34B, 70B - Base/Python/Instruct variants)
+- Llama Guard (1B, 8B, 12B - Safety models)
 
 ## [Mistral/Mixtral](open-source-models/mistral-mixtral.md)
 - Mistral 7B (Dense)
