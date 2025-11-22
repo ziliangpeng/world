@@ -42,7 +42,7 @@ A curated collection of AI/ML research papers across various domains.
 
 | Paper | Year | ArXiv |
 |-------|------|-------|
-| Better language models and their implications (GPT-2) | 2019 | - |
+| Better language models and their implications (GPT-2) | 2019 | [Blog](https://openai.com/index/better-language-models/) |
 | Fine-Tuning Language Models from Human Preferences | 2019 | [1909.08593](https://arxiv.org/abs/1909.08593) |
 | Pathways: Asynchronous Distributed Dataflow for ML | 2022 | [2203.12533](https://arxiv.org/abs/2203.12533) |
 | PaLM: Scaling Language Modeling with Pathways | 2022 | [2204.02311](https://arxiv.org/abs/2204.02311) |
@@ -63,7 +63,7 @@ A curated collection of AI/ML research papers across various domains.
 
 | Paper | Year | ArXiv |
 |-------|------|-------|
-| Triton: An Intermediate Language and Compiler for Tiled Neural Network Computations | - | - |
+| Triton: An Intermediate Language and Compiler for Tiled Neural Network Computations | 2019 | [PDF](https://www.eecs.harvard.edu/~htk/publication/2019-mapl-tillet-kung-cox.pdf) |
 | The Deep Learning Compiler: A Comprehensive Survey | 2020 | [2002.03794](https://arxiv.org/abs/2002.03794) |
 
 ## 🎨 Misc
@@ -79,8 +79,8 @@ A curated collection of AI/ML research papers across various domains.
 
 | Paper | Year | ArXiv |
 |-------|------|-------|
-| Large Language Models and Nearest Neighbors | - | - |
-| Why gzip Just Beat a Large Language Model (Hendrik Erz) | - | - |
+| Large Language Models and Nearest Neighbors | 2023 | [Blog](https://magazine.sebastianraschka.com/p/llms-and-nearest-neighbors) |
+| Why gzip Just Beat a Large Language Model (Hendrik Erz) | 2023 | [Blog](https://www.hendrik-erz.de/post/why-gzip-just-beat-a-large-language-model) |
 | LLMZip: Lossless Text Compression using Large Language Models | 2023 | [2306.04050](https://arxiv.org/abs/2306.04050) |
 | Language Modeling Is Compression | 2023 | [2309.10668](https://arxiv.org/abs/2309.10668) |
 
@@ -90,12 +90,12 @@ A curated collection of AI/ML research papers across various domains.
 |-------|------|-------|
 | ZeRO: Memory Optimizations Toward Training Trillion Parameter Models | 2019 | [1910.02054](https://arxiv.org/abs/1910.02054) |
 | GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding | 2020 | [2006.16668](https://arxiv.org/abs/2006.16668) |
-| Introducing PyTorch Fully Sharded Data Parallel (FSDP) API | - | - |
-| Fully Sharded Data Parallel: faster AI training with fewer GPUs (Engineering at Meta) | - | - |
+| Introducing PyTorch Fully Sharded Data Parallel (FSDP) API | 2022 | [Blog](https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/) |
+| Fully Sharded Data Parallel: faster AI training with fewer GPUs (Engineering at Meta) | 2021 | [Blog](https://engineering.fb.com/2021/07/15/open-source/fsdp/) |
 | OSDP: Optimal Sharded Data Parallel for Distributed Deep Learning | 2022 | [2209.13258](https://arxiv.org/abs/2209.13258) |
 | PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel | 2023 | [2304.11277](https://arxiv.org/abs/2304.11277) |
-| Large Scale Training of Hugging Face Transformers on TPUs With PyTorch/XLA FSDP | - | - |
-| FSDP Cites | - | - |
+| Large Scale Training of Hugging Face Transformers on TPUs With PyTorch/XLA FSDP | 2023 | [Blog](https://pytorch.org/blog/large-scale-training-hugging-face/) |
+| FSDP Cites | 2023 | [2304.11277](https://arxiv.org/abs/2304.11277) |
 
 ## 🤖 Robotics
 
@@ -114,7 +114,7 @@ A curated collection of AI/ML research papers across various domains.
 
 | Paper | Year | ArXiv |
 |-------|------|-------|
-| A Neural Probabilistic Language Model (Very early 2003 NN NLP) | 2003 | - |
+| A Neural Probabilistic Language Model (Very early 2003 NN NLP) | 2003 | [PDF](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) |
 | Efficient Estimation of Word Representations in Vector Space | 2013 | [1301.3781](https://arxiv.org/abs/1301.3781) |
 | Distributed Representations of Words and Phrases and their Compositionality (Phrase2vec) | 2013 | [1310.4546](https://arxiv.org/abs/1310.4546) |
 | Proximal Policy Optimization Algorithms | 2017 | [1707.06347](https://arxiv.org/abs/1707.06347) |
@@ -149,7 +149,7 @@ A curated collection of AI/ML research papers across various domains.
 | The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions | 2024 | [2404.13208](https://arxiv.org/abs/2404.13208) |
 | KAN: Kolmogorov-Arnold Networks | 2024 | [2404.19756](https://arxiv.org/abs/2404.19756) |
 | xLSTM: Extended Long Short-Term Memory | 2024 | [2405.04517](https://arxiv.org/abs/2405.04517) |
-| Better & Faster Large Language Models via Multi-token Prediction | 2024 | - |
+| Better & Faster Large Language Models via Multi-token Prediction | 2024 | [2404.19737](https://arxiv.org/abs/2404.19737) |
 | LoRA Learns Less and Forgets Less | 2024 | [2405.09673](https://arxiv.org/abs/2405.09673) |
 | 4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities | 2024 | [2406.09406](https://arxiv.org/abs/2406.09406) |
 | MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention | 2024 | [2407.02490](https://arxiv.org/abs/2407.02490) |
