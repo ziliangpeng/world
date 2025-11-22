@@ -66,11 +66,6 @@ A curated collection of AI/ML research papers across various domains.
 | Triton: An Intermediate Language and Compiler for Tiled Neural Network Computations | - | - |
 | The Deep Learning Compiler: A Comprehensive Survey | 2020 | [2002.03794](https://arxiv.org/abs/2002.03794) |
 
-## 💻 Coding / Programming Languages
-
-| Paper | Year | ArXiv |
-|-------|------|-------|
-
 ## 🎨 Misc
 
 | Paper | Year | ArXiv |
