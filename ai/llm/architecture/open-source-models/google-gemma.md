@@ -337,9 +337,75 @@ Gemma demonstrates trends toward:
 4. **Stability techniques**: Logit capping, QK norm
 5. **Responsible AI**: Safety as a core design principle
 
+## Gemma 3 (March 2025)
+
+Gemma 3 models are multimodal, accepting both text and image input, and support over 140 languages.
+
+### Model Variants
+- **270M**: 270 million parameters
+- **1B**: 1 billion parameters
+- **4B**: 4 billion parameters
+- **12B**: 12 billion parameters
+- **27B**: 27 billion parameters
+
+Models are available as base, instruction-tuned, and quantized aware trained (QAT) versions.
+
+
+
+## Specialized Gemma Variants
+
+
+
+### CodeGemma
+
+Lightweight models for programming tasks (code completion, chat).
+
+- **2B**
+
+- **7B**
+
+
+
+### PaliGemma & PaliGemma 2
+
+Vision-language models for visual and image data processing.
+
+
+
+### ShieldGemma & ShieldGemma 2
+
+Safety models to assess and filter harmful content. ShieldGemma 2 (4B) is based on Gemma 3.
+
+
+
+### MedGemma
+
+Tailored for medical applications, including image analysis. Based on Gemma 3.
+
+- **4B**
+
+- **27B**
+
+
+
+### Other Variants
+
+- **DolphinGemma**: For studying dolphin communication.
+
+- **DataGemma**: Fine-tuned on Google's Data Commons.
+
+- **RecurrentGemma**: Uses a recurrent neural network architecture.
+
+- **T5Gemma**: Text-focused variants with different parameter counts (e.g., 18B, 11B, 4B).
+
+
+
 ## Sources
 
 - [Google launches Gemma 2](https://blog.google/technology/developers/google-gemma-2/)
+
 - [Gemma explained: Overview](https://developers.googleblog.com/gemma-explained-overview-gemma-model-family-architectures/)
+
 - [Gemma explained: What's new in Gemma 2](https://developers.googleblog.com/en/gemma-explained-new-in-gemma-2/)
+
 - [Gemma 2 27B - Hugging Face](https://huggingface.co/google/gemma-2-27b)
