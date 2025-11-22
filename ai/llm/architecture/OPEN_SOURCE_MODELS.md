@@ -12,7 +12,7 @@ Major open source LLM families with full architecture documentation.
 | Sep 2023 | [Mistral 7B](https://arxiv.org/abs/2310.06825) (Mistral AI) | Dense 7B, Sliding Window Attention |
 | Dec 2023 | [Mixtral 8x7B](https://arxiv.org/abs/2401.04088) (Mistral AI) | MoE, 46.7B total, 12.9B active - First open MoE |
 | Dec 2023 | [Llama Guard](https://arxiv.org/abs/2312.06674) (Meta) | 7B safety model |
-| Jan 2024 | Code Llama 70B (Meta) | 70B variant added |
+| Jan 2024 | [Code Llama 70B](https://arxiv.org/abs/2308.12950) (Meta) | 70B variant added |
 | Feb 2024 | Mistral Small (Mistral AI) | Dense 22B, low latency |
 | Apr 2024 | [Llama 3](https://arxiv.org/abs/2407.21783) (Meta) | 8B, 70B |
 | Apr 2024 | [Llama Guard 2](https://arxiv.org/abs/2407.21783) (Meta) | 8B safety model |
@@ -28,12 +28,12 @@ Major open source LLM families with full architecture documentation.
 | Sep 2024 | [Pixtral 12B](https://arxiv.org/abs/2410.07073) (Mistral AI) | Multimodal, 12B + 400M vision encoder |
 | Oct 2024 | Ministral 3B (Mistral AI) | Dense 3B, edge/on-device, 128K context |
 | Oct 2024 | Ministral 8B (Mistral AI) | Dense 8B, edge/on-device, 128K context |
-| Nov 2024 | Prompt Guard 2 (Meta) | 86M, 22M - Injection attack prevention |
 | Nov 2024 | Mistral Large 24.11 (Mistral AI) | Dense 123B, improved long context, 131K context |
 | Nov 2024 | Pixtral Large (Mistral AI) | Multimodal, 123B + 1B vision encoder, frontier multimodal |
 | Nov 2024 | [INTELLECT-1](https://arxiv.org/abs/2412.01152) (Prime Intellect) | 10B - First decentralized training across 3 continents |
 | Dec 2024 | [Llama 3.3](https://arxiv.org/abs/2407.21783) (Meta) | 70B |
 | Apr 2025 | [Llama 4](https://arxiv.org/abs/2510.12178) (Meta) | Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context |
+| Apr 2025 | Prompt Guard 2 (Meta) | 86M, 22M - Injection attack prevention |
 | May 2025 | [INTELLECT-2](https://arxiv.org/abs/2505.07291) (Prime Intellect) | 32B - First decentralized RL training |
 
 ---
@@ -52,9 +52,9 @@ Major open source LLM families with full architecture documentation.
 | Jul 2024 | Llama 3.1 | 8B, 70B, 405B |
 | Jul 2024 | Llama Guard 3 | 1B, 12B safety models |
 | Sep 2024 | Llama 3.2 | 1B, 3B, 11B Vision, 90B Vision |
-| Nov 2024 | Prompt Guard 2 | 86M, 22M - Injection attack prevention |
 | Dec 2024 | Llama 3.3 | 70B |
 | Apr 2025 | Llama 4 | Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context |
+| Apr 2025 | Prompt Guard 2 | 86M, 22M - Injection attack prevention |
 
 ## [Mistral/Mixtral](open-source-models/mistral-mixtral.md)
 
