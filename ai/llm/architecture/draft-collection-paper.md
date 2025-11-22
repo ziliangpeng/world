@@ -160,8 +160,8 @@ A curated collection of AI/ML research papers across various domains.
 
 ## 🔗 Resources & Blog Posts
 
-| Title | Type |
-|-------|------|
-| Efficient Fine-Tuning with LoRA: A Guide to Optimal Parameter Selection for Large Language Models (Databricks Blog) | Blog |
-| Weak-to-strong generalization (OpenAI) | Article |
-| Weak-to-strong generalization | Article |
+| Title | Type | Link |
+|-------|------|------|
+| Efficient Fine-Tuning with LoRA: A Guide to Optimal Parameter Selection for Large Language Models (Databricks Blog) | Blog | [Link](https://www.databricks.com/blog/efficient-fine-tuning-lora-guide-llms) |
+| Weak-to-strong generalization (OpenAI) | Article | [Blog](https://openai.com/index/weak-to-strong-generalization/) |
+| Weak-to-strong generalization (Paper) | Article | [2312.09390](https://arxiv.org/abs/2312.09390) |
