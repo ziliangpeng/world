@@ -43,7 +43,7 @@ Major open source LLM families with full architecture documentation.
 | Sep 2024 | [Pixtral 12B](https://arxiv.org/abs/2410.07073) (Mistral AI) | Multimodal, 12B + 400M vision encoder |
 | Oct 2024 | Ministral 3B (Mistral AI) | Dense 3B, edge/on-device, 128K context |
 | Oct 2024 | Ministral 8B (Mistral AI) | Dense 8B, edge/on-device, 128K context |
-| Nov 2024 | Mistral Large 24.11 (Mistral AI) | Dense 123B, improved long context, 131K context |
+| Nov 2024 | [Mistral Large 24.11](https://mistral.ai/news/pixtral-large) (Mistral AI) | Dense 123B, improved long context, 131K context |
 | Nov 2024 | Pixtral Large (Mistral AI) | Multimodal, 123B + 1B vision encoder, frontier multimodal |
 | Nov 2024 | QwQ-32B-Preview (Alibaba) | 32B reasoning model, o1-style thinking |
 | Nov 2024 | [INTELLECT-1](https://arxiv.org/abs/2412.01152) (Prime Intellect) | 10B - First decentralized training across 3 continents |
@@ -97,7 +97,7 @@ Major open source LLM families with full architecture documentation.
 | Sep 2024 | [Pixtral 12B](https://arxiv.org/abs/2410.07073) | Multimodal, 12B + 400M vision encoder |
 | Oct 2024 | [Ministral 3B](https://mistral.ai/news/ministraux) | Dense 3B, edge/on-device, 128K context |
 | Oct 2024 | [Ministral 8B](https://mistral.ai/news/ministraux) | Dense 8B, edge/on-device, 128K context |
-| Nov 2024 | Mistral Large 24.11 | Dense 123B, improved long context, 131K context |
+| Nov 2024 | [Mistral Large 24.11](https://mistral.ai/news/pixtral-large) | Dense 123B, improved long context, 131K context |
 | Nov 2024 | [Pixtral Large](https://mistral.ai/news/pixtral-large) | Multimodal, 123B + 1B vision encoder, frontier multimodal |
 
 ## [Qwen Series](open-source-models/qwen.md)
