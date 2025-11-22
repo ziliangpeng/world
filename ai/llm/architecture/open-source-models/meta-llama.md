@@ -227,6 +227,53 @@ The Llama series from Meta represents one of the most influential open-source LL
 - **Blog**: [The future of AI: Built with Llama](https://ai.meta.com/blog/future-of-ai-built-with-llama/)
 - **Hugging Face**: [Llama-3.3-70B-Instruct](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct)
 
+## Llama 4 (April 2025)
+
+### Model Variants
+
+**Scout**:
+- 17B active parameters
+- 16 experts (MoE architecture)
+- 10 million token context window
+
+**Maverick**:
+- Released alongside Scout
+- Natively multimodal (text, images, video)
+
+**Behemoth** (Announced, not yet released):
+- 288B active parameters
+- 16 experts
+- Still in training
+
+### Architecture
+
+**First Llama with MoE**: Llama 4 is Meta's first model family built using Mixture-of-Experts (MoE) architecture
+
+**Natively Multimodal**:
+- Analyzes and understands text, images, and video
+- Built multimodal from the ground up (not adapted like Llama 3.2 Vision)
+
+**Unprecedented Context**:
+- Scout: 10 million token context window
+- Largest context window in the Llama family
+
+### Training Details
+
+- **Tokens**: 30+ trillion tokens (2x Llama 3's training data)
+- **Compute**: Trained on cluster with 100,000+ H100 GPUs
+- **Multimodal Training**: Native multimodal training from scratch
+
+### Innovations
+
+- First open-weight natively multimodal models with MoE
+- Massive context length (10M tokens)
+- Advanced reasoning and speech capabilities
+- Doubled training data compared to Llama 3
+
+### Links
+- **Blog**: [The Llama 4 herd: The beginning of a new era of natively multimodal AI innovation](https://ai.meta.com/blog/llama-4-multimodal-intelligence/)
+- **Announcement**: [Meta Launches Llama 4 Models](https://www.socialmediatoday.com/news/meta-releases-llama-4-ai-models/744560/)
+
 ---
 
 ## Code Llama (August 2023)

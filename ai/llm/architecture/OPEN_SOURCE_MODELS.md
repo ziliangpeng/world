@@ -8,7 +8,8 @@ Major open source LLM families with full architecture documentation:
 - Llama 3 (8B, 70B)
 - Llama 3.1 (8B, 70B, 405B)
 - Llama 3.2 (1B, 3B, 11B Vision, 90B Vision)
-- Llama 3.3
+- Llama 3.3 (70B)
+- Llama 4 (Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context)
 - Code Llama (7B, 13B, 34B, 70B - Base/Python/Instruct variants)
 - Llama Guard (1B, 8B, 12B - Safety models)
 
