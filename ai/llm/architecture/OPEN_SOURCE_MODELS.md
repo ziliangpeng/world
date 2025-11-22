@@ -184,38 +184,44 @@ Major open source LLM families with full architecture documentation.
 
 ## [Other Notable Models](open-source-models/other-models.md)
 
-| Model | Size | Organization | Notes |
-|-------|------|--------------|-------|
-| GPT-Neo | 2.7B | EleutherAI | First free GPT-3 alternative (March 2021) |
-| GPT-J | 6B | EleutherAI | Largest public GPT-3 style model at release (June 2021) |
-| GPT-NeoX | 20B | EleutherAI | Scaled up to 20B (February 2022) |
-| OPT | 125M-175B | Meta AI | Democratizing LLM access (May 2022) |
-| BLOOM | 176B | BigScience/HuggingFace | Multilingual collaborative effort (July 2022) |
-| Yi 1.5 | 34B | 01.ai | - |
-| Falcon | 40B, 180B | TII Abu Dhabi | - |
-| StableLM | 1.6B, 12B | Stability AI | - |
-| MPT | 7B, 30B | MosaicML/Databricks | - |
-| Apple OpenELM | 270M, 450M, 1.1B, 3B | Apple | - |
-| Baichuan | 7B, 13B | Baichuan Inc | - |
-| InternLM | 7B, 20B | Shanghai AI Lab | - |
-| ChatGLM | 6B, 130B | Tsinghua/Zhipu AI | - |
-| Cohere Command R/R+ | 104B | Cohere | - |
-| Databricks DBRX | 132B MoE | Databricks | - |
-| OLMo | 1B-32B | Allen Institute for AI | - |
-| Pythia Suite | 70M-12B | EleutherAI | - |
-| StarCoder/StarCoder2 | 3B, 7B, 15B | BigCode/HuggingFace | - |
-| CodeGen | 350M-16B | Salesforce | - |
-| TinyLlama | 1.1B | Community/Zhang et al | - |
-| MiniCPM | 1.2B, 2.4B, 8B | OpenBMB/Tsinghua | - |
-| RWKV | 0.1B-14B | Bo Peng et al | RNN-Transformer hybrid |
-| Jamba | 12B-398B MoE | AI21 Labs | SSM-Transformer hybrid, 256K context |
-| LLaVA | 7B, 13B, 34B | Microsoft/Wisconsin | Vision-language model |
-| CogVLM/CogVLM2 | 8B-17B | Tsinghua | Vision understanding |
-| Fuyu | 8B | Adept | Multimodal for digital agents |
-| Aya 101 | 13B | Cohere for AI | 101 languages |
-| Hunyuan-Large | 389B MoE | Tencent | 256K context, Chinese-English |
-| Falcon Mamba | 7B | TII | Pure SSM architecture |
-| Palmyra | 128M-20B | Writer | Enterprise, 1M context |
-| BioGPT | 349M | Microsoft | Biomedical domain |
-| INTELLECT-1 | 10B | Prime Intellect | First decentralized training across continents (Nov 2024) |
-| INTELLECT-2 | 32B | Prime Intellect | First decentralized RL training (May 2025) |
+| Date | Model | Size | Organization | Notes |
+|------|-------|------|--------------|-------|
+| Mar 2021 | GPT-Neo | 2.7B | EleutherAI | First free GPT-3 alternative |
+| Jun 2021 | GPT-J | 6B | EleutherAI | Largest public GPT-3 style model at release |
+| Feb 2022 | GPT-NeoX | 20B | EleutherAI | Scaled up to 20B |
+| Mar 2022 | CodeGen | 350M-16B | Salesforce | - |
+| May 2022 | OPT | 125M-175B | Meta AI | Democratizing LLM access |
+| Jul 2022 | BLOOM | 176B | BigScience/HuggingFace | Multilingual collaborative effort |
+| Oct 2022 | BioGPT | 349M | Microsoft | Biomedical domain |
+| Feb 2023 | Pythia Suite | 70M-12B | EleutherAI | - |
+| Feb 2023 | Palmyra | 128M-20B | Writer | Enterprise, 1M context |
+| Mar 2023 | Falcon 40B | 40B | TII Abu Dhabi | - |
+| Mar 2023 | ChatGLM | 6B, 130B | Tsinghua/Zhipu AI | - |
+| Apr 2023 | StableLM | 1.6B, 12B | Stability AI | - |
+| Apr 2023 | LLaVA | 7B, 13B, 34B | Microsoft/Wisconsin | Vision-language model |
+| May 2023 | MPT-7B | 7B | MosaicML/Databricks | - |
+| May 2023 | StarCoder | 3B, 7B, 15B | BigCode/HuggingFace | - |
+| May 2023 | RWKV | 0.1B-14B | Bo Peng et al | RNN-Transformer hybrid |
+| Jun 2023 | MPT-30B | 30B | MosaicML/Databricks | - |
+| Jun 2023 | Baichuan-7B | 7B | Baichuan Inc | - |
+| Jul 2023 | Baichuan-13B | 13B | Baichuan Inc | - |
+| Jul 2023 | InternLM | 7B, 20B | Shanghai AI Lab | - |
+| Sep 2023 | Falcon 180B | 180B | TII Abu Dhabi | - |
+| Oct 2023 | Fuyu | 8B | Adept | Multimodal for digital agents |
+| Nov 2023 | CogVLM | 8B-17B | Tsinghua | Vision understanding |
+| Jan 2024 | TinyLlama | 1.1B | Community/Zhang et al | - |
+| Feb 2024 | OLMo | 1B-32B | Allen Institute for AI | - |
+| Feb 2024 | MiniCPM | 1.2B, 2.4B, 8B | OpenBMB/Tsinghua | - |
+| Feb 2024 | StarCoder2 | 3B, 7B, 15B | BigCode/HuggingFace | - |
+| Feb 2024 | Aya 101 | 13B | Cohere for AI | 101 languages |
+| Mar 2024 | Databricks DBRX | 132B MoE | Databricks | - |
+| Mar 2024 | Jamba | 12B-398B MoE | AI21 Labs | SSM-Transformer hybrid, 256K context |
+| Apr 2024 | Apple OpenELM | 270M, 450M, 1.1B, 3B | Apple | - |
+| Apr 2024 | StableLM 2 | 12B | Stability AI | - |
+| Apr 2024 | Cohere Command R/R+ | 104B | Cohere | - |
+| May 2024 | Yi 1.5 | 34B | 01.ai | - |
+| May 2024 | CogVLM2 | 8B-17B | Tsinghua | Vision understanding |
+| Aug 2024 | Falcon Mamba | 7B | TII | Pure SSM architecture |
+| Nov 2024 | Hunyuan-Large | 389B MoE | Tencent | 256K context, Chinese-English |
+| Nov 2024 | INTELLECT-1 | 10B | Prime Intellect | First decentralized training across continents |
+| May 2025 | INTELLECT-2 | 32B | Prime Intellect | First decentralized RL training |
