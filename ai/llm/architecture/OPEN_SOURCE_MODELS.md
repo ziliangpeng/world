@@ -253,7 +253,7 @@ Major open source LLM families with full architecture documentation.
 | Oct 2025 | 📜 [Granite 4.0](https://arxiv.org/abs/2510.12345) | 120B MoE | IBM Research | 🔥 Novel SSM-Transformer hybrid with enterprise focus |
 | Oct 2025 | 📜 [Jamba Reasoning 3B](https://arxiv.org/abs/2510.23456) | 3B | AI21 Labs | 🥱 Compact SSM reasoning model for edge deployment |
 | Nov 2025 | 📜 [Uni-MoE-2.0-Omni](https://arxiv.org/abs/2511.12345) | 500B MoE | Chinese Research Consortium | 🔥 Unified omni-modal MoE with dynamic routing |
-| 2025 | 📜 [RWKV-7](https://arxiv.org/abs/2512.12345) | 32B | RWKV Foundation | 🔥 7th-gen RNN architecture with linear complexity |
-| 2025 | [TildeOpen](https://github.com/tildeai/tildeopen) | 7B | Tilde AI | 🔥 Nordic/Baltic languages focus, regional AI sovereignty |
-| 2025 | 📜 [Aya Vision](https://arxiv.org/abs/2512.23456) | 21B | Cohere for AI | 🔥 Multilingual vision model, 101 languages |
-| 2025 | [SmolLM2](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B) | 135M-1.7B | Hugging Face | 🥱 Improved small language models for edge devices |
+| Feb 2025 | [SmolLM2](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B) | 135M-1.7B | Hugging Face | 🥱 Improved small language models for edge devices |
+| Mar 2025 | 📜 [Aya Vision](https://arxiv.org/abs/2512.23456) | 21B | Cohere for AI | 🔥 Multilingual vision model, 101 languages |
+| Mar 2025 | 📜 [RWKV-7](https://arxiv.org/abs/2503.14456) | 32B | RWKV Foundation | 🔥 7th-gen RNN architecture with linear complexity |
+| Sep 2025 | [TildeOpen](https://github.com/tildeai/tildeopen) | 30B | Tilde AI | 🔥 Nordic/Baltic languages focus, regional AI sovereignty |
