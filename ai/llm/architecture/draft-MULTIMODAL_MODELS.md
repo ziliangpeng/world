@@ -14,33 +14,33 @@ A comprehensive overview of multimodal language models that can process and unde
 | Jan 2022 | 📜 [BLIP](https://arxiv.org/abs/2201.12086) | Salesforce | Vision-Language | Open | Vision-language pre-training with bootstrapping | 🌟 Foundation - bootstrapping methodology |
 | Jan 2023 | 📜 [BLIP-2](https://arxiv.org/abs/2301.12597) | Salesforce | Vision-Language | Open | Efficient with frozen image encoders and LLMs | 🌟 Q-Former architecture, frozen encoders |
 | Apr 2023 | 📜 [LLaVA](https://arxiv.org/abs/2304.08485) | Microsoft/Wisconsin | Vision-Language | Open | 7B, 13B, 34B - Visual instruction tuning | 🌟 Visual instruction tuning paradigm |
-| Apr 2023 | 📜 [MiniGPT-4](https://arxiv.org/abs/2304.10592) | KAUST | Vision-Language | Open | GPT-4-like vision with minimal training | Me-too - adapter approach |
-| Apr 2023 | 📜 [LLaMA-Adapter V2](https://arxiv.org/abs/2304.15010) | Shanghai AI Lab | Vision-Language | Open | Parameter-efficient multimodal fine-tuning | Me-too - PEFT variation |
-| May 2023 | 📜 [InstructBLIP](https://arxiv.org/abs/2305.06500) | Salesforce | Vision-Language | Open | Instruction-tuning for vision-language models | Me-too - instruction tuning BLIP-2 |
-| Aug 2023 | 📜 [IDEFICS](https://arxiv.org/abs/2306.16527) | Hugging Face | Vision-Language | Open | 9B, 80B - Flamingo-like open vision-language model | Me-too - Flamingo replication |
+| Apr 2023 | 📜 [MiniGPT-4](https://arxiv.org/abs/2304.10592) | KAUST | Vision-Language | Open | GPT-4-like vision with minimal training | 🥱 Adapter approach |
+| Apr 2023 | 📜 [LLaMA-Adapter V2](https://arxiv.org/abs/2304.15010) | Shanghai AI Lab | Vision-Language | Open | Parameter-efficient multimodal fine-tuning | 🥱 PEFT variation |
+| May 2023 | 📜 [InstructBLIP](https://arxiv.org/abs/2305.06500) | Salesforce | Vision-Language | Open | Instruction-tuning for vision-language models | 🥱 Instruction tuning BLIP-2 |
+| Aug 2023 | 📜 [IDEFICS](https://arxiv.org/abs/2306.16527) | Hugging Face | Vision-Language | Open | 9B, 80B - Flamingo-like open vision-language model | 🥱 Flamingo replication |
 | Oct 2023 | 📜 [Qwen-VL](https://arxiv.org/abs/2308.12966) | Alibaba | Vision-Language | Open | Vision-language with grounding capabilities | 🌟 Grounding/localization capabilities |
 | Oct 2023 | [Fuyu](https://www.adept.ai/blog/fuyu-8b) | Adept | Vision-Language | Open | 8B - Multimodal for digital agents | 🌟 Optimized for UI/agent tasks |
 | Nov 2023 | 📜 [Qwen-Audio](https://arxiv.org/abs/2311.07919) | Alibaba | Audio-Language | Open | Universal audio understanding, 30+ tasks | 🌟 First major open audio LLM |
-| Nov 2023 | 📜 [CogVLM](https://arxiv.org/abs/2311.03079) | Tsinghua | Vision-Language | Open | 8B-17B - Vision understanding | Me-too - standard VLM |
+| Nov 2023 | 📜 [CogVLM](https://arxiv.org/abs/2311.03079) | Tsinghua | Vision-Language | Open | 8B-17B - Vision understanding | 🥱 Standard VLM |
 | Nov 2023 | 📜 [Mirasol3B](https://arxiv.org/abs/2311.05698) | Google | Vision-Audio-Language | Proprietary | 3B - Time-aligned and contextual modalities (paper only) | 🌟 Novel temporal alignment architecture |
-| Mar 2024 | 📜 [DeepSeek-VL](https://arxiv.org/abs/2403.05525) | DeepSeek | Vision-Language | Open | 1.3B, 7B - Vision-language model | Me-too - standard VLM |
+| Mar 2024 | 📜 [DeepSeek-VL](https://arxiv.org/abs/2403.05525) | DeepSeek | Vision-Language | Open | 1.3B, 7B - Vision-language model | 🥱 Standard VLM |
 | Mar 2024 | 📜 [MM1](https://arxiv.org/abs/2403.09611) | Apple | Vision-Language | Proprietary | Up to 30B - Dense and MoE variants (paper only) | 🌟 Best pretraining methodology documentation |
-| May 2024 | 📜 [PaliGemma](https://arxiv.org/abs/2407.07726) | Google | Vision-Language | Open | Vision-language model based on Gemma | Me-too - Gemma + vision |
+| May 2024 | 📜 [PaliGemma](https://arxiv.org/abs/2407.07726) | Google | Vision-Language | Open | Vision-language model based on Gemma | 🥱 Gemma + vision |
 | May 2024 | 📜 [Chameleon](https://arxiv.org/abs/2405.09818) | Meta | Vision-Language | Open | 7B, 30B - Mixed-modal early-fusion foundation models | 🌟 Revolutionary early-fusion architecture |
-| May 2024 | 📜 [Phi-3-vision](https://arxiv.org/abs/2404.14219) | Microsoft | Vision-Language | Open | 4.2B - Multimodal, 128K context | Me-too - Phi + vision |
-| May 2024 | 📜 [CogVLM2](https://arxiv.org/abs/2408.16500) | Tsinghua | Vision-Language | Open | 8B-17B - Enhanced vision understanding | Me-too - CogVLM iteration |
-| Jul 2024 | 📜 [Qwen2-Audio](https://arxiv.org/abs/2407.10759) | Alibaba | Audio-Language | Open | Voice chat + audio analysis modes | Me-too - Qwen-Audio v2 |
-| Aug 2024 | [Phi-3.5-vision-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | Microsoft | Vision-Language | Open | 4.2B - Multimodal, 128K context | Me-too - Phi-3-vision iteration |
+| May 2024 | 📜 [Phi-3-vision](https://arxiv.org/abs/2404.14219) | Microsoft | Vision-Language | Open | 4.2B - Multimodal, 128K context | 🥱 Phi + vision |
+| May 2024 | 📜 [CogVLM2](https://arxiv.org/abs/2408.16500) | Tsinghua | Vision-Language | Open | 8B-17B - Enhanced vision understanding | 🥱 CogVLM iteration |
+| Jul 2024 | 📜 [Qwen2-Audio](https://arxiv.org/abs/2407.10759) | Alibaba | Audio-Language | Open | Voice chat + audio analysis modes | 🥱 Qwen-Audio v2 |
+| Aug 2024 | [Phi-3.5-vision-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | Microsoft | Vision-Language | Open | 4.2B - Multimodal, 128K context | 🥱 Phi-3-vision iteration |
 | Sep 2024 | 📜 [Llama 3.2 Vision](https://arxiv.org/abs/2407.21783) | Meta | Vision-Language | Open | 11B, 90B - First Llama multimodal models | 🌟 Meta's entry, flagship quality |
 | Sep 2024 | 📜 [Qwen2-VL](https://arxiv.org/abs/2409.12191) | Alibaba | Vision-Language | Open | 2B, 7B - Any resolution vision | 🌟 Dynamic resolution/adaptive tokens |
-| Sep 2024 | 📜 [Pixtral 12B](https://arxiv.org/abs/2410.07073) | Mistral AI | Vision-Language | Open | 12B + 400M vision encoder | Me-too - Mistral + vision |
+| Sep 2024 | 📜 [Pixtral 12B](https://arxiv.org/abs/2410.07073) | Mistral AI | Vision-Language | Open | 12B + 400M vision encoder | 🥱 Mistral + vision |
 | Nov 2024 | 📜 [JanusFlow](https://arxiv.org/abs/2411.07975) | DeepSeek | Vision Generation | Open | 1.3B - Unified image understanding + generation | 🌟 Unified understanding + generation |
-| Nov 2024 | [Pixtral Large](https://mistral.ai/news/pixtral-large) | Mistral AI | Vision-Language | Open | 123B + 1B vision encoder | Me-too - Pixtral scaled up |
-| Dec 2024 | 📜 [DeepSeek-VL2](https://arxiv.org/abs/2412.10302) | DeepSeek | Vision-Language | Open | 3.37B-27.5B MoE - Advanced multimodal | Me-too - DeepSeek-VL iteration |
-| Jan 2025 | Janus-Pro | DeepSeek | Vision | Open | 1.5B, 7B - Understanding + generation | Me-too - JanusFlow iteration |
-| Jan 2025 | Qwen2.5-VL | Alibaba | Vision-Language | Open | 3B-72B - Multi-resolution vision | Me-too - Qwen2-VL iteration |
+| Nov 2024 | [Pixtral Large](https://mistral.ai/news/pixtral-large) | Mistral AI | Vision-Language | Open | 123B + 1B vision encoder | 🥱 Pixtral scaled up |
+| Dec 2024 | 📜 [DeepSeek-VL2](https://arxiv.org/abs/2412.10302) | DeepSeek | Vision-Language | Open | 3.37B-27.5B MoE - Advanced multimodal | 🥱 DeepSeek-VL iteration |
+| Jan 2025 | Janus-Pro | DeepSeek | Vision | Open | 1.5B, 7B - Understanding + generation | 🥱 JanusFlow iteration |
+| Jan 2025 | Qwen2.5-VL | Alibaba | Vision-Language | Open | 3B-72B - Multi-resolution vision | 🥱 Qwen2-VL iteration |
 | Feb 2025 | 📜 [Phi-4-multimodal-instruct](https://arxiv.org/abs/2503.01743) | Microsoft | Vision-Audio-Language | Open | 5.6B - Speech + vision + text, 20+ languages | 🌟 True multimodal (speech+vision) in SLM |
-| Mar 2025 | 📜 [Gemma 3](https://arxiv.org/abs/2503.19786) | Google | Vision-Language | Open | 270M-27B - Multimodal, 140+ languages | Me-too - Gemma + multimodal |
+| Mar 2025 | 📜 [Gemma 3](https://arxiv.org/abs/2503.19786) | Google | Vision-Language | Open | 270M-27B - Multimodal, 140+ languages | 🥱 Gemma + multimodal |
 | Mar 2025 | Qwen2.5-Omni | Alibaba | Omnimodal | Open | 7B - Text/image/video/audio | 🌟 Omnimodal integration |
 | Apr 2025 | 📜 [Llama 4](https://arxiv.org/abs/2510.12178) | Meta | Vision-Language | Open | Scout 17B, Maverick, Behemoth 288B - Multimodal | 🌟 10M context, MoE multimodal |
 | Sep 2025 | Qwen3-Omni | Alibaba | Omnimodal | Open | Real-time multimodal with speech generation | 🌟 Real-time speech generation |
