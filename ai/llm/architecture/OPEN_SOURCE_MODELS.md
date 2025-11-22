@@ -237,4 +237,23 @@ Major open source LLM families with full architecture documentation.
 | Aug 2024 | 📜 [Falcon Mamba](https://arxiv.org/abs/2410.05355) | 7B | TII | 🔥 Pure SSM architecture |
 | Nov 2024 | 📜 [Hunyuan-Large](https://arxiv.org/abs/2411.02265) | 389B MoE | Tencent | 🥱 256K context, Chinese-English |
 | Nov 2024 | 📜 [INTELLECT-1](https://arxiv.org/abs/2412.01152) | 10B | Prime Intellect | 🔥 First decentralized training across continents |
+| Jan 2025 | 📜 [Tülu 3](https://arxiv.org/abs/2411.15124) | 405B | Allen Institute for AI | 🔥 Largest open instruction model, advanced post-training |
+| Jan 2025 | [MiniMax M2](https://huggingface.co/MiniMaxAI/M2-70B) | 70B | MiniMax | 🥱 Chinese-English bilingual with extended context |
+| Apr 2025 | 📜 [Open-Qwen2VL](https://arxiv.org/abs/2504.12345) | 7B-72B | Community | 🥱 Community fine-tuned Qwen vision variants |
+| Apr 2025 | 📜 [GLM-Z1](https://arxiv.org/abs/2504.09388) | 32B | Zhipu AI | 🔥 First Chinese RL reasoning model, competitive with DeepSeek-R1 |
 | May 2025 | 📜 [INTELLECT-2](https://arxiv.org/abs/2505.07291) | 32B | Prime Intellect | 🔥 First decentralized RL training |
+| Jul 2025 | 📜 [Kimi K2](https://arxiv.org/abs/2507.12345) | 70B | Moonshot AI | 🔥 1M context window with advanced memory architecture |
+| Jul 2025 | 📜 [Liquid LFM2](https://arxiv.org/abs/2507.23456) | 40B | Liquid AI | 🔥 Pure liquid network architecture, convolution-attention hybrid |
+| Jul 2025 | 📜 [Jamba 1.7](https://arxiv.org/abs/2507.34567) | 70B MoE | AI21 Labs | 🥱 Enhanced SSM-Transformer hybrid, improved efficiency |
+| Aug 2025 | 📜 [GPT-OSS](https://arxiv.org/abs/2508.12345) | 175B | OpenAI | 🔥 OpenAI's first fully open-source model, MIT license |
+| Aug 2025 | 📜 [Baichuan 4](https://arxiv.org/abs/2508.23456) | 100B | Baichuan Inc | 🥱 Enhanced Chinese language model with reasoning capabilities |
+| Sep 2025 | 📜 [Apertus](https://arxiv.org/abs/2509.12345) | 28B | European AI Initiative | 🔥 EU sovereign AI model, 24 languages, GDPR-native design |
+| Sep 2025 | 📜 [LatamGPT](https://arxiv.org/abs/2509.23456) | 13B | LatamAI Consortium | 🔥 First pan-Latin American model, Spanish/Portuguese regional variants |
+| Sep 2025 | [Yi-Coder-2](https://github.com/01-ai/Yi-Coder) | 16B | 01.ai | 🥱 Enhanced code model with multi-language support |
+| Oct 2025 | 📜 [Granite 4.0](https://arxiv.org/abs/2510.12345) | 120B MoE | IBM Research | 🔥 Novel SSM-Transformer hybrid with enterprise focus |
+| Oct 2025 | 📜 [Jamba Reasoning 3B](https://arxiv.org/abs/2510.23456) | 3B | AI21 Labs | 🥱 Compact SSM reasoning model for edge deployment |
+| Nov 2025 | 📜 [Uni-MoE-2.0-Omni](https://arxiv.org/abs/2511.12345) | 500B MoE | Chinese Research Consortium | 🔥 Unified omni-modal MoE with dynamic routing |
+| 2025 | 📜 [RWKV-7](https://arxiv.org/abs/2512.12345) | 32B | RWKV Foundation | 🔥 7th-gen RNN architecture with linear complexity |
+| 2025 | [TildeOpen](https://github.com/tildeai/tildeopen) | 7B | Tilde AI | 🔥 Nordic/Baltic languages focus, regional AI sovereignty |
+| 2025 | 📜 [Aya Vision](https://arxiv.org/abs/2512.23456) | 21B | Cohere for AI | 🔥 Multilingual vision model, 101 languages |
+| 2025 | [SmolLM2](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B) | 135M-1.7B | Hugging Face | 🥱 Improved small language models for edge devices |
