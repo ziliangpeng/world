@@ -82,7 +82,9 @@ The Llama series from Meta represents one of the most influential open-source LL
 ### Links
 - **Paper**: [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
 - **Blog**: [Meta and Microsoft Introduce the Next Generation of Llama](https://ai.meta.com/blog/llama-2/)
-- **Hugging Face**: [Llama-2-7b](https://huggingface.co/meta-llama/Llama-2-7b), [Llama-2-13b](https://huggingface.co/meta-llama/Llama-2-13b), [Llama-2-70b](https://huggingface.co/meta-llama/Llama-2-70b)
+- **Hugging Face**:
+  - Base: [Llama-2-7b-hf](https://huggingface.co/meta-llama/Llama-2-7b-hf), [Llama-2-13b-hf](https://huggingface.co/meta-llama/Llama-2-13b-hf), [Llama-2-70b-hf](https://huggingface.co/meta-llama/Llama-2-70b-hf)
+  - Chat: [Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [Llama-2-13b-chat-hf](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Llama-2-70b-chat-hf](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)
 
 ## Llama 3 (April 2024)
 
@@ -111,7 +113,9 @@ The Llama series from Meta represents one of the most influential open-source LL
 ### Links
 - **Paper**: [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783)
 - **Blog**: [Introducing Meta Llama 3](https://ai.meta.com/blog/meta-llama-3/)
-- **Hugging Face**: [Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B), [Meta-Llama-3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
+- **Hugging Face**:
+  - Base: [Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B), [Meta-Llama-3-70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
+  - Instruct: [Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct), [Meta-Llama-3-70B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct)
 
 ## Llama 3.1 (July 2024)
 
@@ -148,7 +152,9 @@ The Llama series from Meta represents one of the most influential open-source LL
 ### Links
 - **Paper**: [The Llama 3 Herd of Models](https://arxiv.org/abs/2407.21783)
 - **Blog**: [Introducing Llama 3.1](https://ai.meta.com/blog/meta-llama-3-1/)
-- **Hugging Face**: [Llama-3.1-8B](https://huggingface.co/meta-llama/Llama-3.1-8B), [Llama-3.1-70B](https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct), [Llama-3.1-405B](https://huggingface.co/meta-llama/Llama-3.1-405B)
+- **Hugging Face**:
+  - Base: [Llama-3.1-8B](https://huggingface.co/meta-llama/Llama-3.1-8B), [Llama-3.1-70B](https://huggingface.co/meta-llama/Llama-3.1-70B), [Llama-3.1-405B](https://huggingface.co/meta-llama/Llama-3.1-405B)
+  - Instruct: [Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct), [Llama-3.1-70B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct), [Llama-3.1-405B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct)
 
 ## Llama 3.2 (September 2024)
 
@@ -474,6 +480,65 @@ Provides tools to assess and improve security of Llama and other LLMs:
 ### Links
 - **Repository**: [PurpleLlama GitHub](https://github.com/meta-llama/PurpleLlama)
 - **Blog**: [Purple Llama announcement](https://ai.meta.com/blog/purple-llama-open-trust-safety-generative-ai/)
+
+---
+
+## Model Variants Explained
+
+### Base vs Chat/Instruct Models
+
+**Base (Pretrained) Models:**
+- Trained on massive unlabeled text datasets during pretraining
+- Predict next tokens, complete text
+- NOT optimized for conversation or instruction-following
+- Foundation for further fine-tuning
+- Examples: `Llama-2-7b`, `Meta-Llama-3-8B`, `Llama-3.1-70B`
+
+**Chat/Instruct (Fine-tuned) Models:**
+- Fine-tuned from base models using advanced techniques:
+  - **SFT (Supervised Fine-Tuning)**: Trained on instruction-following datasets
+  - **RLHF (Reinforcement Learning from Human Feedback)**: Aligned with human preferences
+- Optimized for dialogue and instruction-following
+- Better at following instructions, safer, more helpful responses
+- Examples: `Llama-2-7b-chat`, `Meta-Llama-3-8B-Instruct`, `Llama-3.1-70B-Instruct`
+
+**Relationship:**
+- Chat/Instruct models are **NOT different models** - they are fine-tuned versions of Base models
+- Base → (+SFT + RLHF) → Chat/Instruct
+- Same architecture, different training objectives
+
+### HuggingFace Naming Convention: "-hf" Suffix
+
+**Without "-hf"** (e.g., `Llama-2-7b-chat`):
+- Meta's original PyTorch checkpoint format (.pth files)
+- Requires conversion to use with HuggingFace Transformers
+
+**With "-hf"** (e.g., `Llama-2-7b-chat-hf`):
+- HuggingFace Transformers-compatible format
+- Uses `pytorch_model.bin` or `model.safetensors`
+- Works natively with `transformers` library
+- **Same weights** as non-hf version, just different file format
+
+**Example Variants for Llama 2 13B:**
+- `Llama-2-13b` - Base model (Meta format)
+- `Llama-2-13b-hf` - Base model (HuggingFace format)
+- `Llama-2-13b-chat` - Chat model (Meta format)
+- `Llama-2-13b-chat-hf` - Chat model (HuggingFace format)
+
+### Training Pipeline
+
+```
+Pretraining (Base Model)
+  ↓
+Supervised Fine-Tuning (SFT)
+  ↓
+Reinforcement Learning from Human Feedback (RLHF)
+  ↓
+Chat/Instruct Model
+```
+
+**SFT:** Trained on 25M+ instruction-following examples (Llama 3.1)
+**RLHF:** Uses PPO (Proximal Policy Optimization) with reward model based on human preferences
 
 ---
 
