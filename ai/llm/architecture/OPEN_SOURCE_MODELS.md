@@ -36,10 +36,13 @@ Major open source LLM families with full architecture documentation:
 - Phi-4 (14B)
 
 ## [Other Notable Models](open-source-models/other-models.md)
+- GPT-Neo (2.7B) - EleutherAI - First free GPT-3 alternative (March 2021)
+- GPT-J (6B) - EleutherAI - Largest public GPT-3 style model at release (June 2021)
+- GPT-NeoX (20B) - EleutherAI - Scaled up to 20B (February 2022)
+- OPT (125M-175B) - Meta AI - Democratizing LLM access (May 2022)
+- BLOOM (176B) - BigScience/HuggingFace - Multilingual collaborative effort (July 2022)
 - Yi 1.5 (34B) - 01.ai
 - Falcon (40B, 180B) - TII Abu Dhabi
-- BLOOM (176B) - BigScience/HuggingFace
-- GPT-NeoX (20B) - EleutherAI
 - StableLM (1.6B, 12B) - Stability AI
 - MPT (7B, 30B) - MosaicML/Databricks
 - Apple OpenELM (270M, 450M, 1.1B, 3B) - Apple
