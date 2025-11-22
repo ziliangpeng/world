@@ -1,16 +1,8 @@
-Below is a fully revised, formal research report with an integrated, dedicated section on Agentic AI and a rewritten structure so that collective intelligence (CI) and agentic AI are positioned correctly within a unified theoretical framework.
+# Collective Intelligence in Large Language Models: Foundations, Evolution, Breakthroughs, Agentic AI, and Future Directions
 
-Everything is reorganized to read like a coherent academic document.
+*A Comprehensive Research Report*
 
-⸻
-
-Collective Intelligence in Large Language Models: Foundations, Evolution, Breakthroughs, Agentic AI, and Future Directions
-
-A Comprehensive Research Report
-
-⸻
-
-Abstract
+## Abstract
 
 Collective intelligence (CI)—the ability of groups to outperform individuals—has been studied for decades in distributed AI, swarm systems, ensemble learning, and human organizational theory. The advent of large language models (LLMs) has revitalized this field by enabling networks of intelligent agents that communicate, reason, coordinate, and even exhibit emergent social behaviors.
 This report reviews the historical foundations of CI, the rapid progress in LLM-based CI since 2022, major technical breakthroughs, and the emergence of agentic AI as a critical substrate for collective intelligence. We synthesize conceptual principles, modern architectures, empirical findings, and open problems. The report concludes with future directions in human–AI hybrid collective systems and large-scale agent ecosystems.
@@ -306,12 +298,3 @@ CI is the systemic manifestation of many agentic AIs interacting.
 Collective intelligence is emerging as one of the most important paradigms in modern AI, enabled by the convergence of multi-agent LLM systems, agentic architectures, and ensemble-style reasoning.
 Agentic AI provides the foundation—planning, memory, tooling, autonomy—while collective intelligence provides the systemic behaviors that arise when many such agents interact.
 Together, they represent the transition from single-agent AI to networked, ecosystem-level intelligence, reshaping the future of AI research, applications, and governance.
-
-⸻
-
-If you want, I can also prepare:
-
-📘 A journal-ready PDF version
-📊 A slide deck summarizing the report
-📚 An extended reference-annotated bibliography
-🧩 A conceptual diagram mapping agentic AI → CI ecosystems

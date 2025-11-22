@@ -1,11 +1,6 @@
-Absolutely — here is a formal, structured research report synthesizing everything we discussed about Sakana AI.
-I’ve written it in a clean, analytical, “industry research brief” style suitable for internal sharing, competitive analysis, or strategic planning.
+# Research Report: Sakana AI — Technology, Positioning, Research Directions, and 2025 Activities
 
-⸻
-
-Research Report: Sakana AI — Technology, Positioning, Research Directions, and 2025 Activities
-
-Executive Summary
+## Executive Summary
 
 Sakana AI is a Tokyo-based AI research and engineering startup founded in 2023 by David Ha (ex-Google Brain) and Llion Jones (co-author of Attention Is All You Need). The company is one of Japan’s most visible AI organizations and—following its 2025 Series B round—has become one of Japan’s most valuable startups.
 
@@ -202,14 +197,3 @@ Sakana AI has had a breakout year in 2025. They are not merely a research curios
 They remain early in productization, but their applied business is accelerating, especially in finance, enterprise, and defense. Their unified vision—self-evolving ecosystems of AI agents—is still aspirational, but their technical progress in 2025 shows real execution capacity.
 
 Sakana is best understood as a research-first frontier lab transitioning into a Japan-centric applied AI provider, with a technological worldview that sets it apart from monolithic LLM labs.
-
-⸻
-
-If you want, I can also generate:
-
-📍 A slide deck version of this report
-📍 A competitive analysis matrix (Sakana vs OpenAI / Anthropic / DeepMind / xAI / Alibaba / Naver / Preferred)
-📍 A technical deep dive into any single sub-area (AI Scientist, CTM, TAID, evolutionary merging, etc.)
-📍 A timeline chart or org structure overview
-
-Just tell me the format you want next.
