@@ -169,16 +169,16 @@ Major open source LLM families with full architecture documentation.
 |------|-------|-------|
 | Jun 2023 | 📜 [Phi-1](https://arxiv.org/abs/2306.11644) | 1.3B - Python coding, textbook-quality data |
 | Sep 2023 | 📜 [Phi-1.5](https://arxiv.org/abs/2309.05463) | 1.3B - Common sense reasoning, 2K context |
-| Dec 2023 | Phi-2 | 2.7B - 1.4T tokens, 2K context |
+| Dec 2023 | [Phi-2](https://www.microsoft.com/en-us/research/blog/phi-2-the-surprising-power-of-small-language-models/) | 2.7B - 1.4T tokens, 2K context |
 | Apr 2024 | 📜 [Phi-3-mini](https://arxiv.org/abs/2404.14219) | 3.8B - 4K/128K context variants |
 | May 2024 | 📜 [Phi-3-small](https://arxiv.org/abs/2404.14219) | 7B - 8K/128K context variants |
 | May 2024 | 📜 [Phi-3-medium](https://arxiv.org/abs/2404.14219) | 14B - 4K/128K context variants |
 | May 2024 | 📜 [Phi-3-vision](https://arxiv.org/abs/2404.14219) | 4.2B - Multimodal (text + vision), 128K context |
-| May 2024 | Phi-Silica | 3.3B - Optimized for Copilot+ PC NPUs |
-| Aug 2024 | Phi-3.5-mini-instruct | 3.8B - 128K context, multi-lingual |
-| Aug 2024 | Phi-3.5-MoE-instruct | 42B total, 6.6B active - 16 experts, 128K context |
-| Aug 2024 | Phi-3.5-vision-instruct | 4.2B - Multimodal, 128K context |
-| Dec 2024 | Phi-4 | 14B - 16K context, complex reasoning, synthetic data |
+| May 2024 | [Phi-Silica](https://blogs.windows.com/windowsexperience/2024/12/06/phi-silica-small-but-mighty-on-device-slm/) | 3.3B - Optimized for Copilot+ PC NPUs |
+| Aug 2024 | [Phi-3.5-mini-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 3.8B - 128K context, multi-lingual |
+| Aug 2024 | [Phi-3.5-MoE-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 42B total, 6.6B active - 16 experts, 128K context |
+| Aug 2024 | [Phi-3.5-vision-instruct](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/ba-p/4225280) | 4.2B - Multimodal, 128K context |
+| Dec 2024 | [Phi-4](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-phi-4-microsoft%E2%80%99s-newest-small-language-model-specializing-in-comple/4357090) | 14B - 16K context, complex reasoning, synthetic data |
 | Feb 2025 | 📜 [Phi-4-mini](https://arxiv.org/abs/2503.01743) | 3.8B - 128K context, speed optimized |
 | Feb 2025 | 📜 [Phi-4-multimodal-instruct](https://arxiv.org/abs/2503.01743) | 5.6B - Speech + vision + text, 20+ languages |
 
