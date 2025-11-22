@@ -186,42 +186,42 @@ Major open source LLM families with full architecture documentation.
 
 | Date | Model | Size | Organization | Notes |
 |------|-------|------|--------------|-------|
-| Mar 2021 | GPT-Neo | 2.7B | EleutherAI | First free GPT-3 alternative |
-| Jun 2021 | GPT-J | 6B | EleutherAI | Largest public GPT-3 style model at release |
-| Feb 2022 | GPT-NeoX | 20B | EleutherAI | Scaled up to 20B |
-| Mar 2022 | CodeGen | 350M-16B | Salesforce | - |
-| May 2022 | OPT | 125M-175B | Meta AI | Democratizing LLM access |
-| Jul 2022 | BLOOM | 176B | BigScience/HuggingFace | Multilingual collaborative effort |
-| Oct 2022 | BioGPT | 349M | Microsoft | Biomedical domain |
-| Feb 2023 | Pythia Suite | 70M-12B | EleutherAI | - |
-| Feb 2023 | Palmyra | 128M-20B | Writer | Enterprise, 1M context |
-| Mar 2023 | Falcon 40B | 40B | TII Abu Dhabi | - |
-| Mar 2023 | ChatGLM | 6B, 130B | Tsinghua/Zhipu AI | - |
-| Apr 2023 | StableLM | 1.6B, 12B | Stability AI | - |
-| Apr 2023 | LLaVA | 7B, 13B, 34B | Microsoft/Wisconsin | Vision-language model |
-| May 2023 | MPT-7B | 7B | MosaicML/Databricks | - |
-| May 2023 | StarCoder | 3B, 7B, 15B | BigCode/HuggingFace | - |
-| May 2023 | RWKV | 0.1B-14B | Bo Peng et al | RNN-Transformer hybrid |
-| Jun 2023 | MPT-30B | 30B | MosaicML/Databricks | - |
-| Jun 2023 | Baichuan-7B | 7B | Baichuan Inc | - |
-| Jul 2023 | Baichuan-13B | 13B | Baichuan Inc | - |
-| Jul 2023 | InternLM | 7B, 20B | Shanghai AI Lab | - |
-| Sep 2023 | Falcon 180B | 180B | TII Abu Dhabi | - |
-| Oct 2023 | Fuyu | 8B | Adept | Multimodal for digital agents |
-| Nov 2023 | CogVLM | 8B-17B | Tsinghua | Vision understanding |
-| Jan 2024 | TinyLlama | 1.1B | Community/Zhang et al | - |
-| Feb 2024 | OLMo | 1B-32B | Allen Institute for AI | - |
-| Feb 2024 | MiniCPM | 1.2B, 2.4B, 8B | OpenBMB/Tsinghua | - |
-| Feb 2024 | StarCoder2 | 3B, 7B, 15B | BigCode/HuggingFace | - |
-| Feb 2024 | Aya 101 | 13B | Cohere for AI | 101 languages |
-| Mar 2024 | Databricks DBRX | 132B MoE | Databricks | - |
-| Mar 2024 | Jamba | 12B-398B MoE | AI21 Labs | SSM-Transformer hybrid, 256K context |
-| Apr 2024 | Apple OpenELM | 270M, 450M, 1.1B, 3B | Apple | - |
-| Apr 2024 | StableLM 2 | 12B | Stability AI | - |
-| Apr 2024 | Cohere Command R/R+ | 104B | Cohere | - |
-| May 2024 | Yi 1.5 | 34B | 01.ai | - |
-| May 2024 | CogVLM2 | 8B-17B | Tsinghua | Vision understanding |
-| Aug 2024 | Falcon Mamba | 7B | TII | Pure SSM architecture |
-| Nov 2024 | Hunyuan-Large | 389B MoE | Tencent | 256K context, Chinese-English |
-| Nov 2024 | INTELLECT-1 | 10B | Prime Intellect | First decentralized training across continents |
-| May 2025 | INTELLECT-2 | 32B | Prime Intellect | First decentralized RL training |
+| Mar 2021 | [GPT-Neo](https://zenodo.org/records/5297715) | 2.7B | EleutherAI | First free GPT-3 alternative |
+| Jun 2021 | [GPT-J](https://www.eleuther.ai/artifacts/gpt-j) | 6B | EleutherAI | Largest public GPT-3 style model at release |
+| Feb 2022 | 📜 [GPT-NeoX](https://arxiv.org/abs/2204.06745) | 20B | EleutherAI | Scaled up to 20B |
+| Mar 2022 | 📜 [CodeGen](https://arxiv.org/abs/2203.13474) | 350M-16B | Salesforce | - |
+| May 2022 | 📜 [OPT](https://arxiv.org/abs/2205.01068) | 125M-175B | Meta AI | Democratizing LLM access |
+| Jul 2022 | 📜 [BLOOM](https://arxiv.org/abs/2211.05100) | 176B | BigScience/HuggingFace | Multilingual collaborative effort |
+| Oct 2022 | 📜 [BioGPT](https://arxiv.org/abs/2210.10341) | 349M | Microsoft | Biomedical domain |
+| Feb 2023 | 📜 [Pythia Suite](https://arxiv.org/abs/2304.01373) | 70M-12B | EleutherAI | - |
+| Feb 2023 | [Palmyra](https://writer.com/blog/palmyra/) | 128M-20B | Writer | Enterprise, 1M context |
+| Mar 2023 | 📜 [Falcon 40B](https://arxiv.org/abs/2311.16867) | 40B | TII Abu Dhabi | - |
+| Mar 2023 | 📜 [ChatGLM](https://arxiv.org/abs/2406.12793) | 6B, 130B | Tsinghua/Zhipu AI | - |
+| Apr 2023 | 📜 [StableLM](https://arxiv.org/abs/2402.17834) | 1.6B, 12B | Stability AI | - |
+| Apr 2023 | 📜 [LLaVA](https://arxiv.org/abs/2304.08485) | 7B, 13B, 34B | Microsoft/Wisconsin | Vision-language model |
+| May 2023 | [MPT-7B](https://www.databricks.com/blog/mpt-7b) | 7B | MosaicML/Databricks | - |
+| May 2023 | 📜 [StarCoder](https://arxiv.org/abs/2305.06161) | 3B, 7B, 15B | BigCode/HuggingFace | - |
+| May 2023 | 📜 [RWKV](https://arxiv.org/abs/2305.13048) | 0.1B-14B | Bo Peng et al | RNN-Transformer hybrid |
+| Jun 2023 | [MPT-30B](https://www.databricks.com/blog/mpt-30b) | 30B | MosaicML/Databricks | - |
+| Jun 2023 | 📜 [Baichuan-7B](https://arxiv.org/abs/2309.10305) | 7B | Baichuan Inc | - |
+| Jul 2023 | 📜 [Baichuan-13B](https://arxiv.org/abs/2309.10305) | 13B | Baichuan Inc | - |
+| Jul 2023 | [InternLM](https://github.com/InternLM/InternLM-techreport) | 7B, 20B | Shanghai AI Lab | - |
+| Sep 2023 | 📜 [Falcon 180B](https://arxiv.org/abs/2311.16867) | 180B | TII Abu Dhabi | - |
+| Oct 2023 | [Fuyu](https://www.adept.ai/blog/fuyu-8b) | 8B | Adept | Multimodal for digital agents |
+| Nov 2023 | 📜 [CogVLM](https://arxiv.org/abs/2311.03079) | 8B-17B | Tsinghua | Vision understanding |
+| Jan 2024 | 📜 [TinyLlama](https://arxiv.org/abs/2401.02385) | 1.1B | Community/Zhang et al | - |
+| Feb 2024 | 📜 [OLMo](https://arxiv.org/abs/2402.00838) | 1B-32B | Allen Institute for AI | - |
+| Feb 2024 | 📜 [MiniCPM](https://arxiv.org/abs/2404.06395) | 1.2B, 2.4B, 8B | OpenBMB/Tsinghua | - |
+| Feb 2024 | 📜 [StarCoder2](https://arxiv.org/abs/2402.19173) | 3B, 7B, 15B | BigCode/HuggingFace | - |
+| Feb 2024 | 📜 [Aya 101](https://arxiv.org/abs/2402.07827) | 13B | Cohere for AI | 101 languages |
+| Mar 2024 | [Databricks DBRX](https://www.databricks.com/blog/introducing-dbrx-new-state-art-open-llm) | 132B MoE | Databricks | - |
+| Mar 2024 | 📜 [Jamba](https://arxiv.org/abs/2403.19887) | 12B-398B MoE | AI21 Labs | SSM-Transformer hybrid, 256K context |
+| Apr 2024 | 📜 [Apple OpenELM](https://arxiv.org/abs/2404.14619) | 270M, 450M, 1.1B, 3B | Apple | - |
+| Apr 2024 | [StableLM 2](https://stability.ai/news/introducing-stable-lm-2-12b) | 12B | Stability AI | - |
+| Apr 2024 | [Cohere Command R/R+](https://cohere.com/blog/command-r) | 104B | Cohere | - |
+| May 2024 | 📜 [Yi 1.5](https://arxiv.org/abs/2403.04652) | 34B | 01.ai | - |
+| May 2024 | 📜 [CogVLM2](https://arxiv.org/abs/2408.16500) | 8B-17B | Tsinghua | Vision understanding |
+| Aug 2024 | 📜 [Falcon Mamba](https://arxiv.org/abs/2410.05355) | 7B | TII | Pure SSM architecture |
+| Nov 2024 | 📜 [Hunyuan-Large](https://arxiv.org/abs/2411.02265) | 389B MoE | Tencent | 256K context, Chinese-English |
+| Nov 2024 | 📜 [INTELLECT-1](https://arxiv.org/abs/2412.01152) | 10B | Prime Intellect | First decentralized training across continents |
+| May 2025 | 📜 [INTELLECT-2](https://arxiv.org/abs/2505.07291) | 32B | Prime Intellect | First decentralized RL training |
