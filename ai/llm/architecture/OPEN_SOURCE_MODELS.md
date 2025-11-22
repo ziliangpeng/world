@@ -152,12 +152,35 @@ Major open source LLM families with full architecture documentation.
 | Oct 2025 | 📜 [DeepSeek-OCR](https://arxiv.org/abs/2510.18234) | 3B MoE (570M active) - Optical context compression |
 
 ## [Google Gemma](open-source-models/google-gemma.md)
-- Gemma 1 (2B, 7B)
-- Gemma 2 (2B, 9B, 27B)
+
+| Date | Model | Notes |
+|------|-------|-------|
+| Feb 2024 | 📜 [Gemma 1](https://arxiv.org/abs/2403.08295) | 2B, 7B |
+| Apr 2024 | 📜 [CodeGemma](https://arxiv.org/abs/2406.11409) | 2B, 7B - Code specialized |
+| May 2024 | 📜 [PaliGemma](https://arxiv.org/abs/2407.07726) | Vision-language model |
+| Jun 2024 | 📜 [Gemma 2](https://arxiv.org/abs/2408.00118) | 2B, 7B, 9B, 27B |
+| Jul 2024 | 📜 [ShieldGemma](https://arxiv.org/abs/2407.21772) | Safety assessment model |
+| Mar 2025 | 📜 [Gemma 3](https://arxiv.org/abs/2503.19786) | 270M-27B - Multimodal |
+| Mar 2025 | 📜 [ShieldGemma 2](https://arxiv.org/abs/2504.01081) | 4B - Safety assessment model |
 
 ## [Microsoft Phi](open-source-models/microsoft-phi.md)
-- Phi-3 Family (3.8B mini, 7B small, 14B medium, 4.2B vision)
-- Phi-4 (14B)
+
+| Date | Model | Notes |
+|------|-------|-------|
+| Jun 2023 | 📜 [Phi-1](https://arxiv.org/abs/2306.11644) | 1.3B - Python coding, textbook-quality data |
+| Sep 2023 | 📜 [Phi-1.5](https://arxiv.org/abs/2309.05463) | 1.3B - Common sense reasoning, 2K context |
+| Dec 2023 | Phi-2 | 2.7B - 1.4T tokens, 2K context |
+| Apr 2024 | 📜 [Phi-3-mini](https://arxiv.org/abs/2404.14219) | 3.8B - 4K/128K context variants |
+| May 2024 | 📜 [Phi-3-small](https://arxiv.org/abs/2404.14219) | 7B - 8K/128K context variants |
+| May 2024 | 📜 [Phi-3-medium](https://arxiv.org/abs/2404.14219) | 14B - 4K/128K context variants |
+| May 2024 | 📜 [Phi-3-vision](https://arxiv.org/abs/2404.14219) | 4.2B - Multimodal (text + vision), 128K context |
+| May 2024 | Phi-Silica | 3.3B - Optimized for Copilot+ PC NPUs |
+| Aug 2024 | Phi-3.5-mini-instruct | 3.8B - 128K context, multi-lingual |
+| Aug 2024 | Phi-3.5-MoE-instruct | 42B total, 6.6B active - 16 experts, 128K context |
+| Aug 2024 | Phi-3.5-vision-instruct | 4.2B - Multimodal, 128K context |
+| Dec 2024 | Phi-4 | 14B - 16K context, complex reasoning, synthetic data |
+| Feb 2025 | 📜 [Phi-4-mini](https://arxiv.org/abs/2503.01743) | 3.8B - 128K context, speed optimized |
+| Feb 2025 | 📜 [Phi-4-multimodal-instruct](https://arxiv.org/abs/2503.01743) | 5.6B - Speech + vision + text, 20+ languages |
 
 ## [Other Notable Models](open-source-models/other-models.md)
 - GPT-Neo (2.7B) - EleutherAI - First free GPT-3 alternative (March 2021)
