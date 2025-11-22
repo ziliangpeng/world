@@ -546,13 +546,19 @@ class MixtralMoELayer:
 | Mistral NeMo | Dense | 12B | 12B | 128K | Jul 2024 | Tekken tokenizer |
 | Mistral Large 2 | Dense | 123B | 123B | 128K | Jul 2024 | Flagship model |
 | Codestral Mamba | SSM | 7B | 7B | 256K | Jul 2024 | Linear complexity |
-| Pixtral | Multimodal | 12B+400M | 12B+400M | 128K | Sep 2024 | Vision + language |
+| Mathstral | Dense | 7B | 7B | 32K | Jul 2024 | Math/STEM specialized |
+| Pixtral 12B | Multimodal | 12B+400M | 12B+400M | 128K | Sep 2024 | Vision + language |
+| Ministral 3B | Dense | 3B | 3B | 128K | Oct 2024 | Edge/on-device |
+| Ministral 8B | Dense | 8B | 8B | 128K | Oct 2024 | Edge/on-device |
+| Mistral Large 24.11 | Dense | 123B | 123B | 131K | Nov 2024 | Updated flagship |
+| Pixtral Large | Multimodal | 123B+1B | 123B+1B | 128K | Nov 2024 | Frontier multimodal |
 
 **Key Insights:**
 - **MoE models** achieve similar quality to much larger dense models while using only ~25% compute per token
 - **Context evolution**: 8K → 32K → 64K → 128K → 256K tokens
 - **Architectural diversity**: Dense transformers, MoE, SSM, and multimodal
-- **Specialization trend**: General → Code → Vision capabilities
+- **Specialization trend**: General → Code → Math → Vision → Edge computing
+- **Scale range**: From 3B edge models to 141B MoE systems
 
 ## Impact and Applications
 
@@ -593,7 +599,10 @@ This paved the way for even larger MoE models like DeepSeek-V3 (671B total, 37B 
 - [Mistral NeMo](https://mistral.ai/news/mistral-nemo)
 - [Mistral Large 2](https://mistral.ai/news/mistral-large-2407)
 - [Codestral Mamba](https://mistral.ai/news/codestral-mamba)
+- [Mathstral 7B](https://mistral.ai/news/mathstral)
 - [Pixtral 12B](https://mistral.ai/news/pixtral-12b)
+- [Ministral 3B and 8B](https://mistral.ai/news/ministraux)
+- [Pixtral Large](https://mistral.ai/news/pixtral-large)
 
 ### Research Papers
 - [Mistral 7B - arXiv](https://arxiv.org/abs/2310.06825)
@@ -609,3 +618,7 @@ This paved the way for even larger MoE models like DeepSeek-V3 (671B total, 37B 
 - [Mistral vs Mixtral Comparison](https://towardsdatascience.com/mistral-vs-mixtral-comparing-the-7b-8x7b-and-8x22b-large-language-models-58ab5b2cc8ee/)
 - [Mixtral 8x22B Release Coverage](https://siliconangle.com/2024/04/10/mistralai-debuts-mixtral-8x22b-one-powerful-open-source-ai-models-yet/)
 - [Mistral Large 2 Analysis](https://techcrunch.com/2024/07/24/mistral-releases-mistral-large-2-its-latest-flagship-ai-model)
+- [Mathstral 7B Analysis - MarkTechPost](https://www.marktechpost.com/2024/07/16/mistral-ai-unveils-mathstral-7b-and-math-fine-tuning-base-achieving-56-6-on-math-and-63-47-on-mmlu-restructuring-mathematical-discovery/)
+- [Ministral 3B and 8B Release - SiliconANGLE](https://siliconangle.com/2024/10/16/mistral-introduces-ministral-3b-8b-device-ai-computing-models/)
+- [Mistral Large 24.11 on Vertex AI - Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/announcing-new-mistral-large-model-on-vertex-ai)
+- [Pixtral Large Release - MarkTechPost](https://www.marktechpost.com/2024/11/18/mistral-ai-releases-pixtral-large-a-124b-open-weights-multimodal-model-built-on-top-of-mistral-large-2/)
