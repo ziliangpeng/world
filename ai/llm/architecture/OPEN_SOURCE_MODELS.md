@@ -3,21 +3,41 @@
 Major open source LLM families with full architecture documentation:
 
 ## [Meta Llama Series](open-source-models/meta-llama.md)
-- Llama 1 (7B, 13B, 33B, 65B)
-- Llama 2 (7B, 13B, 70B)
-- Llama 3 (8B, 70B)
-- Llama 3.1 (8B, 70B, 405B)
-- Llama 3.2 (1B, 3B, 11B Vision, 90B Vision)
-- Llama 3.3 (70B)
-- Llama 4 (Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context)
-- Code Llama (7B, 13B, 34B, 70B - Base/Python/Instruct variants)
-- Llama Guard (7B, 8B, 1B, 12B - Safety models)
-- Prompt Guard 2 (86M, 22M - Injection attack prevention)
+
+| Date | Model | Notes |
+|------|-------|-------|
+| Feb 2023 | Llama 1 | 7B, 13B, 33B, 65B |
+| Jul 2023 | Llama 2 | 7B, 13B, 70B |
+| Aug 2023 | Code Llama | 7B, 13B, 34B - Base/Python/Instruct |
+| Dec 2023 | Llama Guard | 7B safety model |
+| Jan 2024 | Code Llama 70B | 70B variant added |
+| Apr 2024 | Llama 3 | 8B, 70B |
+| Apr 2024 | Llama Guard 2 | 8B safety model |
+| Jul 2024 | Llama 3.1 | 8B, 70B, 405B |
+| Jul 2024 | Llama Guard 3 | 1B, 12B safety models |
+| Sep 2024 | Llama 3.2 | 1B, 3B, 11B Vision, 90B Vision |
+| Nov 2024 | Prompt Guard 2 | 86M, 22M - Injection attack prevention |
+| Dec 2024 | Llama 3.3 | 70B |
+| Apr 2025 | Llama 4 | Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context |
 
 ## [Mistral/Mixtral](open-source-models/mistral-mixtral.md)
-- Mistral 7B (Dense)
-- Mixtral 8x7B (MoE, 46.7B total)
-- Mixtral 8x22B (MoE, 141B total)
+
+| Date | Model | Notes |
+|------|-------|-------|
+| Sep 2023 | Mistral 7B | Dense 7B, Sliding Window Attention |
+| Dec 2023 | Mixtral 8x7B | MoE, 46.7B total, 12.9B active |
+| Feb 2024 | Mistral Small | Dense 22B, low latency |
+| Apr 2024 | Mixtral 8x22B | MoE, 141B total, 39B active, 64K context |
+| May 2024 | Codestral | Dense 22B, code specialized, 80+ languages |
+| Jul 2024 | Mistral NeMo | Dense 12B, NVIDIA collab, Tekken tokenizer, 128K context |
+| Jul 2024 | Mistral Large 2 | Dense 123B, flagship model, 128K context |
+| Jul 2024 | Codestral Mamba | SSM 7B, State Space Model, 256K context |
+| Jul 2024 | Mathstral 7B | Dense 7B, math/STEM specialized, 32K context |
+| Sep 2024 | Pixtral 12B | Multimodal, 12B + 400M vision encoder |
+| Oct 2024 | Ministral 3B | Dense 3B, edge/on-device, 128K context |
+| Oct 2024 | Ministral 8B | Dense 8B, edge/on-device, 128K context |
+| Nov 2024 | Mistral Large 24.11 | Dense 123B, improved long context, 131K context |
+| Nov 2024 | Pixtral Large | Multimodal, 123B + 1B vision encoder, frontier multimodal |
 
 ## [Qwen Series](open-source-models/qwen.md)
 - Qwen 2.5 (0.5B, 1.5B, 3B, 7B, 14B, 32B, 72B)
