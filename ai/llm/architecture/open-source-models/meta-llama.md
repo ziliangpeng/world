@@ -46,7 +46,9 @@ The Llama series from Meta represents one of the most influential open-source LL
 ### Links
 - **Paper**: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
 - **Meta AI Research**: [LLaMA Publication](https://ai.meta.com/research/publications/llama-open-and-efficient-foundation-language-models/)
-- **Hugging Face**: Not officially released by Meta (research-only release, community conversions like [decapoda-research/llama-7b-hf](https://huggingface.co/decapoda-research/llama-7b-hf) available)
+- **Hugging Face**: Not officially released by Meta (research-only release requiring application)
+  - Community conversions available: [decapoda-research/llama-7b-hf](https://huggingface.co/decapoda-research/llama-7b-hf), [huggyllama/llama-7b](https://huggingface.co/huggyllama/llama-7b)
+  - Note: Community versions are format conversions (PyTorch .pth → HuggingFace Transformers format) of the same official weights, not different models. Early conversions like decapoda-research may be outdated.
 
 ## Llama 2 (July 2023)
 
