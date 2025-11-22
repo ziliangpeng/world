@@ -9,12 +9,16 @@ Major open source LLM families with full architecture documentation.
 | Feb 2023 | [Llama 1](https://arxiv.org/abs/2302.13971) (Meta) | 7B, 13B, 33B, 65B - First major open LLM |
 | Jul 2023 | [Llama 2](https://arxiv.org/abs/2307.09288) (Meta) | 7B, 13B, 70B - Fully open-source with commercial license |
 | Aug 2023 | [Code Llama](https://arxiv.org/abs/2308.12950) (Meta) | 7B, 13B, 34B - Code specialized |
+| Aug 2023 | [Qwen 1.0](https://arxiv.org/abs/2309.16609) (Alibaba) | 1.8B, 7B, 14B, 72B - First Qwen series |
 | Sep 2023 | [Mistral 7B](https://arxiv.org/abs/2310.06825) (Mistral AI) | Dense 7B, Sliding Window Attention |
+| Oct 2023 | [Qwen-VL](https://arxiv.org/abs/2308.12966) (Alibaba) | Vision-language with grounding capabilities |
+| Nov 2023 | [Qwen-Audio](https://arxiv.org/abs/2311.07919) (Alibaba) | Universal audio understanding, 30+ tasks |
 | Nov 2023 | [DeepSeek-Coder V1](https://arxiv.org/abs/2401.14196) (DeepSeek) | 1.3B-33B, 16K context - First DeepSeek model |
 | Nov 2023 | [DeepSeek-LLM V1](https://arxiv.org/abs/2401.02954) (DeepSeek) | 7B, 67B - General-purpose LLM |
 | Dec 2023 | [Mixtral 8x7B](https://arxiv.org/abs/2401.04088) (Mistral AI) | MoE, 46.7B total, 12.9B active - First open MoE |
 | Dec 2023 | [Llama Guard](https://arxiv.org/abs/2312.06674) (Meta) | 7B safety model |
 | Jan 2024 | [Code Llama 70B](https://arxiv.org/abs/2308.12950) (Meta) | 70B variant added |
+| Feb 2024 | Qwen 1.5 (Alibaba) | 0.5B-110B, includes MoE-A2.7B variant |
 | Feb 2024 | Mistral Small (Mistral AI) | Dense 22B, low latency |
 | Feb 2024 | [DeepSeek-Math](https://arxiv.org/abs/2402.03300) (DeepSeek) | 7B - Math specialized |
 | Mar 2024 | [DeepSeek-VL](https://arxiv.org/abs/2403.05525) (DeepSeek) | 1.3B, 7B - Vision-language |
@@ -23,25 +27,39 @@ Major open source LLM families with full architecture documentation.
 | Apr 2024 | Mixtral 8x22B (Mistral AI) | MoE, 141B total, 39B active, 64K context |
 | May 2024 | Codestral (Mistral AI) | Dense 22B, code specialized, 80+ languages |
 | May 2024 | [DeepSeek-V2](https://arxiv.org/abs/2405.04434) (DeepSeek) | 236B total, 21B active - MoE with MLA, 128K context |
+| Jun 2024 | [Qwen2](https://arxiv.org/abs/2407.10671) (Alibaba) | 0.5B-72B, includes 57B-A14B MoE |
 | Jul 2024 | [Llama 3.1](https://arxiv.org/abs/2407.21783) (Meta) | 8B, 70B, 405B - First 400B+ open model |
 | Jul 2024 | [Llama Guard 3](https://arxiv.org/abs/2407.21783) (Meta) | 1B, 12B safety models |
+| Jul 2024 | [Qwen2-Audio](https://arxiv.org/abs/2407.10759) (Alibaba) | Voice chat + audio analysis modes |
 | Jul 2024 | Mistral NeMo (Mistral AI) | Dense 12B, NVIDIA collab, Tekken tokenizer, 128K context |
 | Jul 2024 | Mistral Large 2 (Mistral AI) | Dense 123B, flagship model, 128K context |
 | Jul 2024 | Codestral Mamba (Mistral AI) | SSM 7B, State Space Model, 256K context |
 | Jul 2024 | Mathstral 7B (Mistral AI) | Dense 7B, math/STEM specialized, 32K context |
 | Sep 2024 | [Llama 3.2](https://arxiv.org/abs/2407.21783) (Meta) | 1B, 3B, 11B Vision, 90B Vision - First Llama multimodal |
+| Sep 2024 | [Qwen2-VL](https://arxiv.org/abs/2409.12191) (Alibaba) | 2B, 7B - Any resolution vision |
+| Sep 2024 | [Qwen2.5](https://arxiv.org/abs/2412.15115) (Alibaba) | 0.5B-72B, 18T tokens, 128K context |
+| Sep 2024 | [Qwen2.5-Coder](https://arxiv.org/abs/2409.12186) (Alibaba) | 0.5B-32B, 5.5T code tokens, 92 languages |
+| Sep 2024 | [Qwen2.5-Math](https://arxiv.org/abs/2409.12122) (Alibaba) | 1.5B-72B - Math specialist via self-improvement |
 | Sep 2024 | [Pixtral 12B](https://arxiv.org/abs/2410.07073) (Mistral AI) | Multimodal, 12B + 400M vision encoder |
 | Oct 2024 | Ministral 3B (Mistral AI) | Dense 3B, edge/on-device, 128K context |
 | Oct 2024 | Ministral 8B (Mistral AI) | Dense 8B, edge/on-device, 128K context |
 | Nov 2024 | Mistral Large 24.11 (Mistral AI) | Dense 123B, improved long context, 131K context |
 | Nov 2024 | Pixtral Large (Mistral AI) | Multimodal, 123B + 1B vision encoder, frontier multimodal |
+| Nov 2024 | QwQ-32B-Preview (Alibaba) | 32B reasoning model, o1-style thinking |
 | Nov 2024 | [INTELLECT-1](https://arxiv.org/abs/2412.01152) (Prime Intellect) | 10B - First decentralized training across 3 continents |
 | Dec 2024 | [DeepSeek-V3](https://arxiv.org/abs/2412.19437) (DeepSeek) | 671B total, 37B active - 14.8T tokens, 128K context |
 | Dec 2024 | [Llama 3.3](https://arxiv.org/abs/2407.21783) (Meta) | 70B |
 | Jan 2025 | [DeepSeek-R1](https://arxiv.org/abs/2501.12948) (DeepSeek) | 671B MoE - Reasoning via RL, comparable to OpenAI o1 |
+| Jan 2025 | Qwen2.5-VL (Alibaba) | 3B-72B - Multi-resolution vision |
+| Mar 2025 | Qwen2.5-Omni (Alibaba) | 7B omni-modal (text/image/video/audio) |
+| Apr 2025 | [Qwen3](https://arxiv.org/abs/2505.09388) (Alibaba) | 0.6B-235B, dense + MoE, 36T tokens, 119 languages |
 | Apr 2025 | [Llama 4](https://arxiv.org/abs/2510.12178) (Meta) | Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context |
 | Apr 2025 | Prompt Guard 2 (Meta) | 86M, 22M - Injection attack prevention |
 | May 2025 | [INTELLECT-2](https://arxiv.org/abs/2505.07291) (Prime Intellect) | 32B - First decentralized RL training |
+| Jul 2025 | Qwen3-Coder (Alibaba) | 480B MoE (35B active) - Agentic coding |
+| Sep 2025 | Qwen3-Omni (Alibaba) | Real-time multimodal with speech generation |
+| Sep 2025 | Qwen3-Max (Alibaba) | Flagship proprietary model |
+| Sep 2025 | Qwen3-Next (Alibaba) | 80B total, 3B active MoE |
 
 ---
 
@@ -69,22 +87,41 @@ Major open source LLM families with full architecture documentation.
 |------|-------|-------|
 | Sep 2023 | [Mistral 7B](https://arxiv.org/abs/2310.06825) | Dense 7B, Sliding Window Attention |
 | Dec 2023 | [Mixtral 8x7B](https://arxiv.org/abs/2401.04088) | MoE, 46.7B total, 12.9B active |
-| Feb 2024 | Mistral Small | Dense 22B, low latency |
-| Apr 2024 | Mixtral 8x22B | MoE, 141B total, 39B active, 64K context |
-| May 2024 | Codestral | Dense 22B, code specialized, 80+ languages |
-| Jul 2024 | Mistral NeMo | Dense 12B, NVIDIA collab, Tekken tokenizer, 128K context |
-| Jul 2024 | Mistral Large 2 | Dense 123B, flagship model, 128K context |
-| Jul 2024 | Codestral Mamba | SSM 7B, State Space Model, 256K context |
-| Jul 2024 | Mathstral 7B | Dense 7B, math/STEM specialized, 32K context |
+| Feb 2024 | [Mistral Small](https://mistral.ai/news/mistral-large) | Dense 22B, low latency |
+| Apr 2024 | [Mixtral 8x22B](https://mistral.ai/news/mixtral-8x22b) | MoE, 141B total, 39B active, 64K context |
+| May 2024 | [Codestral](https://mistral.ai/news/codestral) | Dense 22B, code specialized, 80+ languages |
+| Jul 2024 | [Mistral NeMo](https://mistral.ai/news/mistral-nemo) | Dense 12B, NVIDIA collab, Tekken tokenizer, 128K context |
+| Jul 2024 | [Mistral Large 2](https://mistral.ai/news/mistral-large-2407) | Dense 123B, flagship model, 128K context |
+| Jul 2024 | [Codestral Mamba](https://mistral.ai/news/codestral-mamba) | SSM 7B, State Space Model, 256K context |
+| Jul 2024 | [Mathstral 7B](https://mistral.ai/news/mathstral) | Dense 7B, math/STEM specialized, 32K context |
 | Sep 2024 | [Pixtral 12B](https://arxiv.org/abs/2410.07073) | Multimodal, 12B + 400M vision encoder |
-| Oct 2024 | Ministral 3B | Dense 3B, edge/on-device, 128K context |
-| Oct 2024 | Ministral 8B | Dense 8B, edge/on-device, 128K context |
+| Oct 2024 | [Ministral 3B](https://mistral.ai/news/ministraux) | Dense 3B, edge/on-device, 128K context |
+| Oct 2024 | [Ministral 8B](https://mistral.ai/news/ministraux) | Dense 8B, edge/on-device, 128K context |
 | Nov 2024 | Mistral Large 24.11 | Dense 123B, improved long context, 131K context |
-| Nov 2024 | Pixtral Large | Multimodal, 123B + 1B vision encoder, frontier multimodal |
+| Nov 2024 | [Pixtral Large](https://mistral.ai/news/pixtral-large) | Multimodal, 123B + 1B vision encoder, frontier multimodal |
 
 ## [Qwen Series](open-source-models/qwen.md)
-- Qwen 2.5 (0.5B, 1.5B, 3B, 7B, 14B, 32B, 72B)
-- Qwen 3 (Dense and MoE variants with 128 experts)
+
+| Date | Model | Notes |
+|------|-------|-------|
+| Aug 2023 | [Qwen 1.0](https://arxiv.org/abs/2309.16609) | 1.8B, 7B, 14B, 72B |
+| Oct 2023 | [Qwen-VL](https://arxiv.org/abs/2308.12966) | Vision-language with grounding |
+| Nov 2023 | [Qwen-Audio](https://arxiv.org/abs/2311.07919) | Universal audio understanding |
+| Feb 2024 | Qwen 1.5 | 0.5B-110B, includes MoE-A2.7B |
+| Jun 2024 | [Qwen2](https://arxiv.org/abs/2407.10671) | 0.5B-72B, 57B-A14B MoE |
+| Jul 2024 | [Qwen2-Audio](https://arxiv.org/abs/2407.10759) | Voice chat + audio analysis |
+| Sep 2024 | [Qwen2-VL](https://arxiv.org/abs/2409.12191) | 2B, 7B - Any resolution vision |
+| Sep 2024 | [Qwen2.5](https://arxiv.org/abs/2412.15115) | 0.5B-72B, 18T tokens, 128K context |
+| Sep 2024 | [Qwen2.5-Coder](https://arxiv.org/abs/2409.12186) | 0.5B-32B - Code specialized |
+| Sep 2024 | [Qwen2.5-Math](https://arxiv.org/abs/2409.12122) | 1.5B-72B - Math specialized |
+| Nov 2024 | QwQ-32B-Preview | 32B reasoning model |
+| Jan 2025 | Qwen2.5-VL | 3B-72B vision models |
+| Mar 2025 | Qwen2.5-Omni | 7B omni-modal |
+| Apr 2025 | [Qwen3](https://arxiv.org/abs/2505.09388) | 0.6B-235B, dense + MoE, 36T tokens |
+| Jul 2025 | Qwen3-Coder | 480B MoE - Agentic coding |
+| Sep 2025 | Qwen3-Omni | Real-time multimodal |
+| Sep 2025 | Qwen3-Max | Flagship proprietary |
+| Sep 2025 | Qwen3-Next | 80B total, 3B active MoE |
 
 ## [DeepSeek](open-source-models/deepseek.md)
 
