@@ -2,6 +2,79 @@
 
 The Llama series from Meta represents one of the most influential open-source LLM families, setting standards for decoder-only transformer architectures.
 
+## Origin Story: How Llama Came to Be
+
+### The Catalyst: ChatGPT Disruption (November 2022)
+
+When OpenAI launched ChatGPT in late November 2022, Meta was caught off guard. The company was perceived as having fallen far behind OpenAI, Anthropic, and Google in generative AI. This became the catalyst for what would become Meta's most important AI project.
+
+### The Response: Efficiency Over Scale (2022-2023)
+
+Meta's **FAIR** (Fundamental AI Research) team, led by **Joelle Pineau** (VP of AI Research, head of FAIR), developed a different approach from competitors:
+
+**The Philosophy:**
+- While competitors focused on massive models (GPT-3: 175B, PaLM: 540B), LLaMA focused on **parameter efficiency**
+- Train models of various sizes (7B-65B) on **more data** (1.4T tokens)
+- Use **only publicly available data** for reproducibility
+- Make it accessible to researchers with **different hardware capabilities**
+- **Result**: LLaMA-13B matched GPT-3 175B on many benchmarks
+
+**Initial Release (February 24, 2023):**
+- Paper: "LLaMA: Open and Efficient Foundation Language Models" by Hugo Touvron + 13 authors
+- Access: Restricted to approved researchers via application (case-by-case basis)
+- Goal: Research utility, not commercial release
+- Inference code: Released as open-source (GPLv3)
+
+### The Plot Twist: The 4chan Leak (March 3, 2023)
+
+Just days after the restricted release, someone posted a **BitTorrent link** to the entire LLaMA package on **4chan**. This was historic: the first time a major tech firm's proprietary AI model leaked publicly.
+
+**Meta's Response:**
+- Filed takedown requests (but torrents spread anyway)
+- Stood by their democratization approach
+- Didn't punish the research community
+
+**Impact:** The leak inadvertently achieved Meta's goal of democratization, giving developers and researchers unprecedented access to cutting-edge AI. What was meant to be a controlled research release became an open-source movement by accident.
+
+### The Open-Source Pivot: Llama 2 (July 18, 2023)
+
+Rather than fight the democratization, Meta embraced it fully.
+
+**The Decision:**
+- **Yann LeCun** (Chief AI Scientist) and **Joelle Pineau** pushed for wide open-source release
+- **Mark Zuckerberg** made the final call to release Llama 2 as fully open-source
+- Partnership with **Microsoft** for distribution
+
+**Llama 2 Changes:**
+- Truly open-source with commercial license
+- No application needed
+- Available to everyone
+- Turned potential PR disaster into strategic advantage
+
+### The Transformation
+
+Since then, Meta has fully rebuilt around Llama:
+- From afterthought to core company strategy
+- Rapid iteration: Llama 3, 3.1, 3.2, 3.3, and Llama 4
+- Zuckerberg committed to making Meta the leader in open-source AI
+- Became the most influential open-source LLM family
+
+### Key Figures
+
+**Yann LeCun** - Meta's Chief AI Scientist
+- Played "very indirect" role in Llama 1
+- Pushed for Llama 2 open-source release
+
+**Joelle Pineau** - VP of AI Research, Head of FAIR
+- Led development of original Llama and Llama 2
+- Drove the efficiency-focused approach
+
+**Mark Zuckerberg** - Meta CEO
+- Made final decision to go fully open-source with Llama 2
+- Committed Meta's strategic direction to open AI
+
+---
+
 ## Llama 1 (February 2023)
 
 ### Model Variants
