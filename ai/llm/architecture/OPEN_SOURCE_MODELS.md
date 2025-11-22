@@ -1,6 +1,42 @@
 # Open Source Models
 
-Major open source LLM families with full architecture documentation:
+Major open source LLM families with full architecture documentation.
+
+## Industry Timeline: All Models
+
+| Date | Model | Notes |
+|------|-------|-------|
+| Feb 2023 | [Llama 1](https://arxiv.org/abs/2302.13971) (Meta) | 7B, 13B, 33B, 65B - First major open LLM |
+| Jul 2023 | [Llama 2](https://arxiv.org/abs/2307.09288) (Meta) | 7B, 13B, 70B - Fully open-source with commercial license |
+| Aug 2023 | [Code Llama](https://arxiv.org/abs/2308.12950) (Meta) | 7B, 13B, 34B - Code specialized |
+| Sep 2023 | [Mistral 7B](https://arxiv.org/abs/2310.06825) (Mistral AI) | Dense 7B, Sliding Window Attention |
+| Dec 2023 | [Mixtral 8x7B](https://arxiv.org/abs/2401.04088) (Mistral AI) | MoE, 46.7B total, 12.9B active - First open MoE |
+| Dec 2023 | [Llama Guard](https://arxiv.org/abs/2312.06674) (Meta) | 7B safety model |
+| Jan 2024 | Code Llama 70B (Meta) | 70B variant added |
+| Feb 2024 | Mistral Small (Mistral AI) | Dense 22B, low latency |
+| Apr 2024 | [Llama 3](https://arxiv.org/abs/2407.21783) (Meta) | 8B, 70B |
+| Apr 2024 | [Llama Guard 2](https://arxiv.org/abs/2407.21783) (Meta) | 8B safety model |
+| Apr 2024 | Mixtral 8x22B (Mistral AI) | MoE, 141B total, 39B active, 64K context |
+| May 2024 | Codestral (Mistral AI) | Dense 22B, code specialized, 80+ languages |
+| Jul 2024 | [Llama 3.1](https://arxiv.org/abs/2407.21783) (Meta) | 8B, 70B, 405B - First 400B+ open model |
+| Jul 2024 | [Llama Guard 3](https://arxiv.org/abs/2407.21783) (Meta) | 1B, 12B safety models |
+| Jul 2024 | Mistral NeMo (Mistral AI) | Dense 12B, NVIDIA collab, Tekken tokenizer, 128K context |
+| Jul 2024 | Mistral Large 2 (Mistral AI) | Dense 123B, flagship model, 128K context |
+| Jul 2024 | Codestral Mamba (Mistral AI) | SSM 7B, State Space Model, 256K context |
+| Jul 2024 | Mathstral 7B (Mistral AI) | Dense 7B, math/STEM specialized, 32K context |
+| Sep 2024 | [Llama 3.2](https://arxiv.org/abs/2407.21783) (Meta) | 1B, 3B, 11B Vision, 90B Vision - First Llama multimodal |
+| Sep 2024 | [Pixtral 12B](https://arxiv.org/abs/2410.07073) (Mistral AI) | Multimodal, 12B + 400M vision encoder |
+| Oct 2024 | Ministral 3B (Mistral AI) | Dense 3B, edge/on-device, 128K context |
+| Oct 2024 | Ministral 8B (Mistral AI) | Dense 8B, edge/on-device, 128K context |
+| Nov 2024 | Prompt Guard 2 (Meta) | 86M, 22M - Injection attack prevention |
+| Nov 2024 | Mistral Large 24.11 (Mistral AI) | Dense 123B, improved long context, 131K context |
+| Nov 2024 | Pixtral Large (Mistral AI) | Multimodal, 123B + 1B vision encoder, frontier multimodal |
+| Nov 2024 | [INTELLECT-1](https://arxiv.org/abs/2412.01152) (Prime Intellect) | 10B - First decentralized training across 3 continents |
+| Dec 2024 | [Llama 3.3](https://arxiv.org/abs/2407.21783) (Meta) | 70B |
+| Apr 2025 | [Llama 4](https://arxiv.org/abs/2510.12178) (Meta) | Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context |
+| May 2025 | [INTELLECT-2](https://arxiv.org/abs/2505.07291) (Prime Intellect) | 32B - First decentralized RL training |
+
+---
 
 ## [Meta Llama Series](open-source-models/meta-llama.md)
 
@@ -87,3 +123,5 @@ Major open source LLM families with full architecture documentation:
 - Falcon Mamba (7B) - TII - Pure SSM architecture
 - Palmyra (128M-20B) - Writer - Enterprise, 1M context
 - BioGPT (349M) - Microsoft - Biomedical domain
+- INTELLECT-1 (10B) - Prime Intellect - First decentralized training across continents (Nov 2024)
+- INTELLECT-2 (32B) - Prime Intellect - First decentralized RL training (May 2025)

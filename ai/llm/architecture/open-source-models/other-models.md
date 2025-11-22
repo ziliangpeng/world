@@ -386,6 +386,75 @@ These models represent different eras and approaches:
 - StableLM: Architectural simplification
 - OpenELM: Novel scaling approaches
 
+## Prime Intellect INTELLECT Series
+
+### INTELLECT-1 (November 2024)
+
+**Model Specifications**:
+- **Parameters**: 10 billion (Base + Instruct variants)
+- **Training**: 1 trillion tokens over 42 days (Oct 10 - Nov 22, 2024)
+- **Architecture**: Based on Llama-3
+- **Dataset**: Fineweb-Edu (HuggingFace)
+
+**Key Innovation - Decentralized Training**:
+- First large-scale **decentralized pre-training** experiment
+- Trained across **3 continents** (5 countries)
+- **14 concurrent nodes** with dynamic joining/leaving
+- Up to **112 H100 GPUs** simultaneously
+- **96% compute utilization** under optimal conditions
+- Uses **PRIME framework** for coordination
+
+**Performance**:
+- MMLU: 37.5%
+- HellaSwag: 72.26%
+- WinoGrande: 65.82%
+
+**Open-Source Release**:
+- Model checkpoints (Base + Instruct)
+- Training data
+- PRIME framework code
+
+**Significance**:
+- Proved decentralized training viable at scale
+- Democratizes large-scale training (no single entity needs all compute)
+- Novel approach to distributed AI development
+
+### INTELLECT-2 (May 2025)
+
+**Model Specifications**:
+- **Parameters**: 32 billion
+- **Training**: 285,000 math and coding tasks
+- **Datasets**: NuminaMath-1.5, SYNTHETIC-1
+- **Training Type**: Reinforcement Learning (not pre-training)
+
+**Key Innovation - Decentralized RL**:
+- First **globally distributed Reinforcement Learning** training
+- **Fully asynchronous RL** across heterogeneous compute
+- **Permissionless contribution** (anyone can add compute)
+- Dynamic, heterogeneous swarm of contributors
+
+**Performance**:
+- Outperforms **QwQ-32B** (previous RL-trained model)
+- Strong on math and programming tasks
+- Specialized reasoning capabilities
+
+**Significance**:
+- Extended decentralized training to RL (not just pre-training)
+- Demonstrates scalability of distributed approach
+- Opens RL training to broader community
+
+**Links**:
+- [INTELLECT-1 Blog](https://www.primeintellect.ai/blog/intellect-1)
+- [INTELLECT-1 Release](https://www.primeintellect.ai/blog/intellect-1-release)
+- [INTELLECT-1 Paper](https://arxiv.org/abs/2412.01152)
+- [INTELLECT-1 HuggingFace](https://huggingface.co/PrimeIntellect/INTELLECT-1)
+- [INTELLECT-2 Blog](https://www.primeintellect.ai/blog/intellect-2)
+- [INTELLECT-2 Release](https://www.primeintellect.ai/blog/intellect-2-release)
+- [INTELLECT-2 Paper](https://arxiv.org/abs/2505.07291)
+- [INTELLECT-2 HuggingFace](https://huggingface.co/PrimeIntellect/INTELLECT-2)
+
+---
+
 ## Sources
 
 - [Yi 34B - Hugging Face](https://huggingface.co/01-ai/Yi-34B)
