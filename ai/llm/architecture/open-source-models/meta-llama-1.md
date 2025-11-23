@@ -10,7 +10,11 @@
   - Community conversions available: [decapoda-research/llama-7b-hf](https://huggingface.co/decapoda-research/llama-7b-hf), [huggyllama/llama-7b](https://huggingface.co/huggyllama/llama-7b)
   - Note: Community versions are format conversions (PyTorch .pth → HuggingFace Transformers format) of the same official weights, not different models. Early conversions like decapoda-research may be outdated.
 
-The original LLaMA (Large Language Model Meta AI) - Meta's first open foundation model that proved smaller, well-trained models could outperform much larger proprietary models.
+## Origin Story: An Underdog Mission
+
+The Llama 1 project began in August 2022 with a core team of only about **five researchers** at Meta AI. Their mission was to challenge the prevailing "bigger is always better" philosophy by proving that smaller, more efficiently trained models could outperform larger competitors.
+
+Their core strategy was to make a huge bet on the "Chinchilla scaling laws"—a theory from DeepMind suggesting that most large models were being "starved" of data. The Llama team's goal was to prove that a model trained on a massive amount of data (over 1 trillion tokens) could achieve state-of-the-art performance despite having a smaller parameter count (7B to 65B). This focus on **data volume and quality over sheer model size** became the project's guiding principle and led to its groundbreaking success.
 
 ## Architecture
 
@@ -156,6 +160,19 @@ On the HumanEval benchmark (pass@1, zero-shot), LLaMA-13B is on par with models 
 - **PaLM-540B:** 26.2
 
 This level of performance, achieved using only publicly available data, marked a significant milestone for open-source model development.
+
+## The Leak and Its Aftermath
+
+### The Controlled Release and 4chan Leak
+Meta's initial plan was a traditional, controlled release to the research community under a non-commercial license. However, just **one week** after the announcement in February 2023, the entire plan was turned upside down. A user on the anonymous forum **4chan** posted a BitTorrent link containing the full weights for all the Llama 1 models. For the first time, a state-of-the-art foundation model from a major AI lab was fully in the public domain.
+
+### The Dual Impact
+The leak's impact was immediate and twofold:
+1.  **The Alarm:** It sparked intense debate about the risks of AI proliferation, with many warning of potential misuse for spam and misinformation. Meta began filing takedown requests for the leaked copies.
+2.  **The Cambrian Explosion:** Simultaneously, the open-source community ignited. Because Llama 1 was so small and efficient, developers worldwide immediately began experimenting, creating iconic instruction-tuned models like **Stanford's Alpaca** and **Vicuna** that demonstrated the base model's incredible potential.
+
+### The Unintended Legacy
+The leak, while unintentional, became a massive, real-world experiment that proved giving the community access to powerful base models leads to an explosion of innovation. This widespread, positive impact almost certainly influenced Meta's future strategy, leading them to fully and officially open-source Llama 2 just five months later.
 
 ## Legacy and Impact
 
