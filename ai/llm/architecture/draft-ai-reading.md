@@ -77,8 +77,8 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Quantization aware training | Documentation | TensorFlow Model Optimization | [Link](https://www.tensorflow.org/model_optimization/guide/quantization/training) |
 | Scalable MatMul-free Language Modeling | Paper | arXiv | [2406.02528](https://arxiv.org/abs/2406.02528) |
 | Introducing Apple's On-Device and Server Foundation Models | Research | Apple ML Research | [Link](https://machinelearning.apple.com/research/introducing-apple-foundation-models) |
-| Qwen 2: a story of Alibaba vs Meta | Article | Rick Lamers | - |
-| OpenVLA: An Open-Source Vision-Language-Action Model | Research | - | - |
+| Qwen 2: a story of Alibaba vs Meta | Article | Rick Lamers | [Link](https://codingwithintelligence.com/p/qwen-2-a-story-of-alibaba-vs-meta) |
+| OpenVLA: An Open-Source Vision-Language-Action Model | Research | - | [Link](https://openvla.github.io/) |
 | Transformer Architecture: The Positional Encoding | Blog | Amirhossein Kazemnejad | [Link](https://kazemnejad.com/blog/transformer_architecture_positional_encoding/) |
 | [RFC] PagedAttention Support | GitHub Issue | pytorch/pytorch | - |
 | Extrinsic Hallucinations in LLMs | Blog | Lil'Log | [Link](https://lilianweng.github.io/posts/2024-07-07-hallucination/) |
@@ -117,20 +117,20 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Claude 3.5 Sonnet Insane Coding Ability | Article | - | - |
 | AI-Engineering.academy: Mastering Applied AI, One Concept at a Time | GitHub | adithya-s-k | [Link](https://github.com/adithya-s-k/AI-Engineering.academy) |
 | Late Takes on OpenAI o1 | Article | - | - |
-| Ways to use torch.compile | Blog | ezyang's blog | - |
+| Ways to use torch.compile | Blog | ezyang's blog | [Link](https://blog.ezyang.com/2024/11/ways-to-use-torch-compile/) |
 | On AI for developer productivity | Article | - | - |
 | Scaling test-time compute | Demo | Hugging Face Space | - |
 | Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters | Paper | arXiv | [2408.03314](https://arxiv.org/abs/2408.03314) |
 | Building effective agents | Guide | Anthropic | [Link](https://www.anthropic.com/research/building-effective-agents) |
 | 2024 best papers | Collection | - | - |
-| Learning CUDA by optimizing softmax: A worklog | Tutorial | Maharshi's blog | - |
+| Learning CUDA by optimizing softmax: A worklog | Tutorial | Maharshi's blog | [Link](https://maharshi.bearblog.dev/optimizing-softmax-cuda/) |
 | Reinforcement learning from AI feedback (RLAIF): Complete overview | Tutorial | SuperAnnotate | - |
 | Agents | Article | - | - |
 | Video Generation Models Explosion 2024 | Article | Yen-Chen Lin | - |
 | Tenstorrent Blackhole, Grendel, And Buda – A Scale Out Architecture | Analysis | SemiAnalysis | - |
 | Dario Amodei — On DeepSeek and Export Controls | Article | - | - |
 | Foundations of Large Language Models (this is a book) | Book | arXiv | [2501.09223](https://arxiv.org/abs/2501.09223) |
-| How multi-node inference works for massive LLMs like DeepSeek-R1 | Blog | Baseten | - |
+| How multi-node inference works for massive LLMs like DeepSeek-R1 | Blog | Baseten | [Link](https://www.baseten.co/blog/how-multi-node-inference-works-llms-deepseek-r1/) |
 | Understanding Peak, Max-Achievable & Delivered FLOPs, Part 1 | Tutorial | ROCm Blogs | - |
 | LLM训练终极指南 | The Ultra-Scale Playbook | Guide | Hugging Face Space | - |
 | Minions: Cost-efficient Collaboration Between On-device and Cloud Language Models | Paper | arXiv | [2502.15964](https://arxiv.org/abs/2502.15964) |
