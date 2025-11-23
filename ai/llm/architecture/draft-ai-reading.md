@@ -119,7 +119,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Late Takes on OpenAI o1 | Article | - | - |
 | Ways to use torch.compile | Blog | ezyang's blog | [Link](https://blog.ezyang.com/2024/11/ways-to-use-torch-compile/) |
 | On AI for developer productivity | Article | - | - |
-| Scaling test-time compute | Demo | Hugging Face Space | - |
+| Scaling test-time compute | Demo | Hugging Face Space | [Link](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute) |
 | Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters | Paper | arXiv | [2408.03314](https://arxiv.org/abs/2408.03314) |
 | Building effective agents | Guide | Anthropic | [Link](https://www.anthropic.com/research/building-effective-agents) |
 | 2024 best papers | Collection | - | - |
@@ -127,7 +127,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Reinforcement learning from AI feedback (RLAIF): Complete overview | Tutorial | SuperAnnotate | [Link](https://www.superannotate.com/blog/reinforcement-learning-from-ai-feedback-rlaif) |
 | Agents | Article | - | - |
 | Video Generation Models Explosion 2024 | Article | Yen-Chen Lin | [Link](https://yenchenlin.me/blog/2025/01/08/video-generation-models-explosion-2024/) |
-| Tenstorrent Blackhole, Grendel, And Buda – A Scale Out Architecture | Analysis | SemiAnalysis | - |
+| Tenstorrent Blackhole, Grendel, And Buda – A Scale Out Architecture | Analysis | SemiAnalysis | [Link](https://semianalysis.com/2022/04/12/tenstorrent-blackhole-grendel-and/) |
 | Dario Amodei — On DeepSeek and Export Controls | Article | - | - |
 | Foundations of Large Language Models (this is a book) | Book | arXiv | [2501.09223](https://arxiv.org/abs/2501.09223) |
 | How multi-node inference works for massive LLMs like DeepSeek-R1 | Blog | Baseten | [Link](https://www.baseten.co/blog/how-multi-node-inference-works-llms-deepseek-r1/) |
@@ -146,7 +146,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | The Ultra-Scale Playbook | Guide | Hugging Face Space | - |
 | TensorRT-LLM Architecture | Documentation | TensorRT-LLM | - |
 | A Manual Implementation of Quantization in PyTorch - Single Layer | Tutorial | Hexo | - |
-| Measuring the environmental impact of AI inference | Blog | Google Cloud | - |
+| Measuring the environmental impact of AI inference | Blog | Google Cloud | [Link](https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference) |
 | How to Think About GPUs | Guide | How To Scale Your Model | - |
 | A Primer on LLM Post-Training | Tutorial | PyTorch | [Link](https://pytorch.org/blog/a-primer-on-llm-post-training/) |
 | AI 2027 | Prediction | - | - |
@@ -160,7 +160,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | checkpoint-engine: Checkpoint-engine is a simple middleware to update model weights | GitHub | MoonshotAI | [Link](https://github.com/MoonshotAI/checkpoint-engine) |
 | Improving Cursor Tab With RL | Blog | Cursor | [Link](https://cursor.com/blog/tab-rl) |
 | Paged Attention from First Principles: A View Inside vLLM | Blog | Hamza's Blog | [Link](https://hamzaelshafie.bearblog.dev/paged-attention-from-first-principles-a-view-inside-vllm/) |
-| Speculative cascades — A hybrid approach for smarter, faster LLM inference | Article | - | - |
+| Speculative cascades — A hybrid approach for smarter, faster LLM inference | Article | - | [Link](https://research.google/blog/speculative-cascades-a-hybrid-approach-for-smarter-faster-llm-inference/) |
 | Cornell Virtual Workshop: Understanding GPU Architecture | Workshop | Cornell | [Link](https://cvw.cac.cornell.edu/gpu-architecture) |
 | Disaggregated Inference at Scale with PyTorch & vLLM | Tutorial | PyTorch | [Link](https://pytorch.org/blog/disaggregated-inference-at-scale-with-pytorch-vllm/) |
 | SGLang v0.4: Zero-Overhead Batch Scheduler, Cache-Aware Load Balancer | Blog | LMSYS Org | [Link](https://lmsys.org/blog/2024-12-04-sglang-v0-4/) |
@@ -179,5 +179,5 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | LLM evolution | Article | - | - |
 | Qwen 3 | Announcement | Qwen | [Link](https://open.substack.com/pub/aibyhand/p/qwen-3?r=3w4d5&utm_medium=ios) |
 | flash decoding | Research | - | - |
-| Dissecting Batching Effects in GPT Inference | Analysis | - | - |
+| Dissecting Batching Effects in GPT Inference | Analysis | - | [Link](https://le.qun.ch/en/blog/2023/05/13/transformer-batching/) |
 | How to think about GPU | Guide | - | - |
