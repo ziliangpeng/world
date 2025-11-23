@@ -107,7 +107,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Blog list | Collection | - | - |
 | GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models | Paper | arXiv | [2410.05229](https://arxiv.org/abs/2410.05229) |
 | Distilling Llama3.1 8B into 1B in torchtune | Tutorial | PyTorch | [Link](https://pytorch.org/blog/llama-into-torchtune/) |
-| Archive • AI News • Buttondown | Newsletter | AI News | - |
+| Archive • AI News • Buttondown | Newsletter | AI News | [Link](https://buttondown.com/ainews/archive/) |
 | Hugging Face – Blog | Blog | Hugging Face | [Link](https://huggingface.co/blog) |
 | vllm quantization | Documentation | vLLM | [Link](https://docs.vllm.ai/en/latest/features/quantization/index.html) |
 | how-to-optim-algorithm-in-cuda: how to optimize some algorithm in cuda | GitHub | BBuf | [Link](https://github.com/BBuf/how-to-optim-algorithm-in-cuda) |
@@ -118,7 +118,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | AI-Engineering.academy: Mastering Applied AI, One Concept at a Time | GitHub | adithya-s-k | [Link](https://github.com/adithya-s-k/AI-Engineering.academy) |
 | Late Takes on OpenAI o1 | Article | - | - |
 | Ways to use torch.compile | Blog | ezyang's blog | [Link](https://blog.ezyang.com/2024/11/ways-to-use-torch-compile/) |
-| On AI for developer productivity | Article | - | - |
+| On AI for developer productivity | Article | - | [Link](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) |
 | Scaling test-time compute | Demo | Hugging Face Space | [Link](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute) |
 | Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters | Paper | arXiv | [2408.03314](https://arxiv.org/abs/2408.03314) |
 | Building effective agents | Guide | Anthropic | [Link](https://www.anthropic.com/research/building-effective-agents) |
@@ -128,13 +128,13 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Agents | Article | - | - |
 | Video Generation Models Explosion 2024 | Article | Yen-Chen Lin | [Link](https://yenchenlin.me/blog/2025/01/08/video-generation-models-explosion-2024/) |
 | Tenstorrent Blackhole, Grendel, And Buda – A Scale Out Architecture | Analysis | SemiAnalysis | [Link](https://semianalysis.com/2022/04/12/tenstorrent-blackhole-grendel-and/) |
-| Dario Amodei — On DeepSeek and Export Controls | Article | - | - |
+| Dario Amodei — On DeepSeek and Export Controls | Article | - | [Link](https://www.darioamodei.com/post/on-deepseek-and-export-controls) |
 | Foundations of Large Language Models (this is a book) | Book | arXiv | [2501.09223](https://arxiv.org/abs/2501.09223) |
 | How multi-node inference works for massive LLMs like DeepSeek-R1 | Blog | Baseten | [Link](https://www.baseten.co/blog/how-multi-node-inference-works-llms-deepseek-r1/) |
 | Understanding Peak, Max-Achievable & Delivered FLOPs, Part 1 | Tutorial | ROCm Blogs | [Link](https://rocm.blogs.amd.com/software-tools-optimization/Understanding_Peak_and_Max-Achievable_FLOPS/README.html) |
-| LLM训练终极指南 | The Ultra-Scale Playbook | Guide | Hugging Face Space | - |
+| LLM训练终极指南 | The Ultra-Scale Playbook | Guide | Hugging Face Space | [Link](https://huggingface.co/spaces/nanotron/ultrascale-playbook) |
 | Minions: Cost-efficient Collaboration Between On-device and Cloud Language Models | Paper | arXiv | [2502.15964](https://arxiv.org/abs/2502.15964) |
-| Circuit Tracing: Revealing Computational Graphs in Language Models | Research | - | - |
+| Circuit Tracing: Revealing Computational Graphs in Language Models | Research | - | [Link](https://transformer-circuits.pub/2025/attribution-graphs/methods.html) |
 | On the Biology of a Large Language Model | Article | - | - |
 | TAO: Using test-time compute to train efficient LLMs without labeled data | Blog | Databricks | [Link](https://www.databricks.com/blog/tao-using-test-time-compute-train-efficient-llms-without-labeled-data) |
 | RLHF Book by Nathan Lambert | Book | Nathan Lambert | [Link](https://rlhfbook.com/) |
@@ -143,7 +143,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Why I No Longer Recommend RAG for Autonomous Coding Agents | Opinion | - | - |
 | xAI's Grok 4: The tension of frontier performance with a side of Elon favoritism | Analysis | - | - |
 | Awesome-ML-SYS-Tutorial: My learning notes/codes for ML SYS | GitHub | zhaochenyang20 | [Link](https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial) |
-| The Ultra-Scale Playbook | Guide | Hugging Face Space | - |
+| The Ultra-Scale Playbook | Guide | Hugging Face Space | [Link](https://huggingface.co/spaces/nanotron/ultrascale-playbook) |
 | TensorRT-LLM Architecture | Documentation | TensorRT-LLM | [Link](https://nvidia.github.io/TensorRT-LLM/architecture/overview.html) |
 | A Manual Implementation of Quantization in PyTorch - Single Layer | Tutorial | Hexo | - |
 | Measuring the environmental impact of AI inference | Blog | Google Cloud | [Link](https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference) |
