@@ -20,15 +20,24 @@ Recognizing the immense value of this open ecosystem, Meta made a pivotal strate
 
 ## Architecture
 
-**Base Design**: Decoder-only transformer with optimizations
+The Llama 2 models maintain the decoder-only transformer architecture, building upon the foundation established with Llama 1 while introducing key optimizations, especially for larger variants.
 
-**Key Components**:
-- **Normalization**: RMSNorm pre-normalization
-- **Activation**: SwiGLU activation function
-- **Position Encoding**: RoPE (Rotary Position Embeddings)
-- **Attention**:
-  - 7B and 13B: Multi-Head Attention (MHA)
-  - **70B: Grouped-Query Attention (GQA)** - First major production use!
+### Core Architectural Components:
+*   **Base Design**: Auto-regressive decoder-only transformer
+*   **Normalization**: RMSNorm pre-normalization
+*   **Activation**: SwiGLU activation function
+*   **Position Encoding**: RoPE (Rotary Position Embeddings)
+*   **Attention**: Multi-Head Attention (MHA) for 7B and 13B models. The 70B model utilizes Grouped-Query Attention (GQA) for improved inference efficiency.
+
+### Model Specifications:
+
+| Parameters | Dimension (`dim`) | # Layers (`n_layers`) | # Heads (`n_heads`) | # KV Heads (`n_kv_heads`) |
+| :--------- | :---------------- | :-------------------- | :------------------ | :------------------------ |
+| **7B**     | 4096              | 32                    | 32                  | 8                         |
+| **13B**    | 5120              | 40                    | 40                  | 8                         |
+| **70B**    | 8192              | 80                    | 64                  | 8                         |
+
+*Note: Grouped-Query Attention (GQA) is an optimization where multiple query heads share the same key and value heads, reducing the computational cost and memory footprint during inference, especially beneficial for larger models like the 70B variant.*
 
 ## Training Details
 
