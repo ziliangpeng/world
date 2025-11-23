@@ -19,7 +19,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Neural Network Architectures | Article | Towards Data Science | [Link](https://towardsdatascience.com/neural-network-architectures-156e5bad51ba) |
 | Information Theory, Inference and Learning Algorithms | Book | David MacKay | [Link](https://www.inference.org.uk/mackay/itila/) |
 | Adversarial Attacks on LLMs | Blog | Lil'Log | [Link](https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/) |
-| At the Intersection of LLMs and Kernels - Research Roundup | Article | - | - |
+| At the Intersection of LLMs and Kernels - Research Roundup | Article | Charles Frye | [Link](https://charlesfrye.github.io/programming/2023/11/10/llms-systems.html) |
 | The Transient Nature of Emergent In-Context Learning in Transformers | Paper | arXiv | [2311.08360](https://arxiv.org/abs/2311.08360) |
 | AI at Scale | Research | Microsoft Research | [Link](https://www.microsoft.com/en-us/research/project/ai-at-scale/) |
 | ZeRO & DeepSpeed: New system optimizations enable training models with over 100 billion parameters | Blog | Microsoft Research | [Link](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/) |
@@ -33,11 +33,11 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | NVIDIA cuda-samples: Samples for CUDA Developers | GitHub | NVIDIA | [Link](https://github.com/NVIDIA/cuda-samples) |
 | Integrating NVIDIA TensorRT-LLM with the Databricks Inference Stack | Blog | Databricks | - |
 | My Fave New Podcasts of 2023 | Blog | - | - |
-| Introducing Mixtral 8x7B with Databricks Model Serving | Blog | Databricks | - |
+| Introducing Mixtral 8x7B with Databricks Model Serving | Blog | Databricks | [Link](https://www.databricks.com/blog/introducing-mixtral-8x7b) |
 | Getting Started with Mixtral 8X7B | Tutorial | Pinecone | [Link](https://www.pinecone.io/learn/mixtral-8x7b/) |
 | Welcome to the 🤗 Deep Reinforcement Learning Course | Course | Hugging Face | [Link](https://huggingface.co/learn/deep-rl-course/en/unit0/introduction) |
-| What do I need to know about Mamba in the ML world | Article | - | - |
-| The promise and challenges of crypto + AI applications | Article | - | - |
+| What do I need to know about Mamba in the ML world | Article | - | [Link](https://hamel.dev/blog/posts/mamba/) |
+| The promise and challenges of crypto + AI applications | Article | - | [Link](https://vitalik.eth.limo/general/2024/01/30/cryptoai.html) |
 | Large Language Models, How to Train Them, and xAI's Grok | Article | - | - |
 | Practical Tips for Finetuning LLMs Using LoRA (Low-Rank Adaptation) | Tutorial | - | - |
 | Human-like systematic generalization through a meta-learning neural network | Paper | Nature | [Link](https://www.nature.com/articles/s41586-023-06668-3) |
@@ -48,10 +48,10 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | V-JEPA: The next step toward advanced machine intelligence | Research | Meta | [Link](https://ai.meta.com/blog/v-jepa-yann-lecun-ai-model-video-joint-embedding-predictive-architecture/) |
 | Improving LoRA: Implementing Weight-Decomposed Low-Rank Adaptation (DoRA) from Scratch | Tutorial | - | - |
 | ML-YouTube-Courses: Discover the latest machine learning / AI courses on YouTube | GitHub | dair-ai | [Link](https://github.com/dair-ai/ML-YouTube-Courses) |
-| SolidGoldMagikarp (plus, prompt generation) | Article | LessWrong | - |
+| SolidGoldMagikarp (plus, prompt generation) | Article | LessWrong | [Link](https://www.lesswrong.com/posts/aPeJE8bSo6rAFoLqg/solidgoldmagikarp-plus-prompt-generation) |
 | Explaining SolidGoldMagikarp by looking at it from random directions | Article | LessWrong | - |
 | Mamba No. 5 (A Little Bit Of…) | Article | Sparse Notes | - |
-| Mamba: The Easy Way | Tutorial | - | - |
+| Mamba: The Easy Way | Tutorial | - | [Link](https://jackcook.com/2024/02/23/mamba.html) |
 | Mamba: The Hard Way | Tutorial | - | - |
 | q star info.pdf | Document | Google Drive | - |
 | Ilya Sutskever: The brain behind ChatGPT | Article | - | - |
