@@ -1818,11 +1818,125 @@ The Llama 4 project emerged during a period of significant organizational change
 - Works alongside AGI Foundations on bringing Llama 4 to Meta's products
 - Responsible for integration into Instagram, Facebook, and Meta AI
 
-**Loredana Crisan** - Lead PM for AI Products:
-- Appointed February 2025
-- Manages product strategy for Llama deployments
-- Coordinates between research (AGI Foundations) and product (AI Products)
-- Key role in defining use cases and priorities for Llama 4
+**Loredana Crisan** - **DEPARTED**:
+- Appointed February 2025 as Lead PM for AI Products
+- Left Meta in 2025 to join **Figma as Chief Design Officer**
+- Departure timing unclear but linked to Llama 4 period
+- Had led product teams across Messenger, Instagram, GenAI for nearly a decade at Meta
+
+**Alexandr Wang** - Chief AI Officer (Brought in June 2025):
+- Former CEO of Scale AI
+- Meta invested ~$14.3 billion into Scale AI
+- Brought in to lead the 4th AI reorganization
+- All four group leaders in new Meta Superintelligence Labs structure report to Wang
+- Tasked with fixing Llama 4 disasters and delivering Llama 4.5/5
+
+**Nat Friedman** - Product and Applied Research Lead (Brought in 2025):
+- Former GitHub CEO
+- Leads product and applied research in new structure
+- Part of Zuckerberg's response to Llama 4 crisis
+
+### Executive Exodus: The Leadership Crisis
+
+The Llama 4 disaster triggered a wave of executive departures that decimated Meta's AI leadership, compounding the talent exodus challenge.
+
+**Joelle Pineau** - VP of AI Research, Head of FAIR:
+
+**Timeline**:
+- **April 1, 2025**: Announced departure (just **4 days before Llama 4's April 5 release**)
+- **May 30, 2025**: Last day at Meta
+- **August 2025**: Joined **Cohere as Chief AI Officer**
+
+**Background**:
+- Led Meta's Fundamental AI Research (FAIR) labs for **8 years**
+- FAIR developed original Llama and Llama 2
+- After Llama 2, GenAI organization took over, leaving FAIR "mostly on the sidelines"
+- Departure announced just before controversial weekend Llama 4 rollout
+- Came weeks before Meta's LlamaCon AI conference (April 29)
+
+**Significance**:
+- Timing raised immediate questions: Did she know Llama 4 would fail?
+- Fortune reported: **"Meta's AI research lab is 'dying a slow death,' some insiders say"**
+- Meta's response: "a new beginning"
+- Loss of institutional knowledge from Llama 1-2 era
+
+**VP of AI Resignation** (Name not publicly disclosed):
+- Resigned around the time of **"serious issues in Llama 4 training"**
+- Hacker News reported connection to training data sourcing concerns
+- Multiple sources cited **"lack of transparency"** in training data
+- **Pressure over questionable data sources** contributed to departure
+
+**Loredana Crisan** - VP of GenAI:
+- Left for **Figma as Chief Design Officer** in 2025
+- Nearly a decade at Meta leading product/design across major platforms
+- One of the "expected executive departures" from the reorganization
+
+**The Pattern**:
+Multiple executive departures in 2025, all connected to:
+1. Llama 4's catastrophic failure
+2. Organizational chaos and repeated restructurings
+3. Concerns over training data sourcing and transparency
+4. Zuckerberg's fury and direct intervention
+5. Loss of autonomy as he took personal control
+
+### The 4th Reorganization in 6 Months: Meta Superintelligence Labs
+
+**The Crisis Response**:
+
+Following Llama 4's April 2025 disaster, Meta underwent its **fourth major AI restructuring in six months**—an unprecedented level of organizational chaos.
+
+**Meta Superintelligence Labs (MSL)** - The New Structure:
+
+Split the AI unit into **four separate divisions**:
+
+1. **Products Division**:
+   - User-facing tools like Meta AI assistant
+   - Consumer applications of AI research
+   - Integration into Facebook, Instagram, WhatsApp
+
+2. **Infrastructure Division**:
+   - Backbone systems for AI operations
+   - GPU clusters, training pipelines
+   - Supporting all other divisions
+
+3. **Fundamental AI Research (FAIR)**:
+   - Long-term research (pre-existing, but restructured)
+   - Academic partnerships and publications
+   - Reduced prominence after GenAI takeover
+
+4. **TBD Lab** - The Superintelligence Group:
+   - Newly formed centerpiece group
+   - Zuckerberg's personally handpicked ~50-person elite team
+   - Protected from October 2025 layoffs
+   - Focused on fixing Llama 4 and building Llama 5
+   - Reports directly to Alexandr Wang
+
+**Leadership Structure**:
+- **Alexandr Wang** (Chief AI Officer): All four group leaders report to him
+- **Nat Friedman**: Leads product and applied research
+- **Connor Hayes**: AI Products Team
+- **Ahmad Al-Dahle & Amir Frenkel**: AGI Foundations
+
+**The Previous Three Reorganizations** (context for "4th in 6 months"):
+1. **Early 2024**: Initial GenAI team formation, separating from FAIR
+2. **February 2025**: Leadership appointments (Al-Dahle, Frenkel, Crisan, Hayes)
+3. **May 2025**: Two-unit split (AGI Foundations + AI Products)
+4. **August 2025**: Meta Superintelligence Labs four-division structure
+
+**The October 2025 Layoffs**:
+- **600 employee layoffs** from the AI unit
+- Impacted AI infrastructure units, FAIR, and product positions
+- "Expected executive departures" (number unspecified)
+- At least one team shutdown
+- **TBD Labs (superintelligence team) protected from cuts**
+- Message: Zuckerberg's personal team safe, everyone else expendable
+
+**Why This Matters**:
+- Four reorganizations in six months shows **organizational chaos**
+- Constant restructuring prevents teams from executing effectively
+- Every reorg = new reporting lines, new priorities, lost momentum
+- Talent leaves when they can't predict who their manager will be next month
+- Llama 4's failure wasn't just technical—it was **organizational breakdown**
 
 ### Organizational Context
 
