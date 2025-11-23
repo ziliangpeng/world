@@ -113,7 +113,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | how-to-optim-algorithm-in-cuda: how to optimize some algorithm in cuda | GitHub | BBuf | [Link](https://github.com/BBuf/how-to-optim-algorithm-in-cuda) |
 | INTELLECT-1 Release The First Globally Trained 10B Parameter Model | Announcement | Prime Intellect | - |
 | INTELLECT_1_Technical_Report.pdf | Technical Report | PrimeIntellect-ai | - |
-| Making WAF ML models go brrr: saving decades of processing time | Blog | Cloudflare | - |
+| Making WAF ML models go brrr: saving decades of processing time | Blog | Cloudflare | [Link](https://blog.cloudflare.com/making-waf-ai-models-go-brr/) |
 | Claude 3.5 Sonnet Insane Coding Ability | Article | - | - |
 | AI-Engineering.academy: Mastering Applied AI, One Concept at a Time | GitHub | adithya-s-k | [Link](https://github.com/adithya-s-k/AI-Engineering.academy) |
 | Late Takes on OpenAI o1 | Article | - | - |
@@ -126,7 +126,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Learning CUDA by optimizing softmax: A worklog | Tutorial | Maharshi's blog | [Link](https://maharshi.bearblog.dev/optimizing-softmax-cuda/) |
 | Reinforcement learning from AI feedback (RLAIF): Complete overview | Tutorial | SuperAnnotate | [Link](https://www.superannotate.com/blog/reinforcement-learning-from-ai-feedback-rlaif) |
 | Agents | Article | - | - |
-| Video Generation Models Explosion 2024 | Article | Yen-Chen Lin | - |
+| Video Generation Models Explosion 2024 | Article | Yen-Chen Lin | [Link](https://yenchenlin.me/blog/2025/01/08/video-generation-models-explosion-2024/) |
 | Tenstorrent Blackhole, Grendel, And Buda – A Scale Out Architecture | Analysis | SemiAnalysis | - |
 | Dario Amodei — On DeepSeek and Export Controls | Article | - | - |
 | Foundations of Large Language Models (this is a book) | Book | arXiv | [2501.09223](https://arxiv.org/abs/2501.09223) |
@@ -166,18 +166,18 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | SGLang v0.4: Zero-Overhead Batch Scheduler, Cache-Aware Load Balancer | Blog | LMSYS Org | [Link](https://lmsys.org/blog/2024-12-04-sglang-v0-4/) |
 | sglang pdf | Document | - | - |
 | Tree Attention: Topology-aware Decoding for Long-Context Attention on GPU clusters | Paper | arXiv | [2408.04093](https://arxiv.org/abs/2408.04093) |
-| Will Amazon S3 Vectors Kill Vector Databases—or Save Them? | Article | Zilliz blog | - |
+| Will Amazon S3 Vectors Kill Vector Databases—or Save Them? | Article | Zilliz blog | [Link](https://zilliz.com/blog/will-amazon-s3-vectors-kill-vector-databases-or-save-them) |
 | Post-training 101 | Tutorial | Tokens for Thoughts | - |
 | Online RL for Cursor Tab | Blog | Cursor | [Link](https://cursor.com/blog/tab-rl) |
 | Stanford CRFM | Research Group | Stanford | [Link](https://crfm.stanford.edu/) |
 | Surprisingly Fast AI-Generated Kernels We Didn't Mean to Publish (Yet) | Research | Stanford Scaling Intelligence Lab | - |
 | Advanced RAG Techniques: an Illustrated Overview | Article | Towards AI | - |
 | Modular Manifolds | Research | Thinking Machines Lab | - |
-| Inside NVIDIA GPUs: Anatomy of high performance matmul kernels | Tutorial | Aleksa Gordić | - |
+| Inside NVIDIA GPUs: Anatomy of high performance matmul kernels | Tutorial | Aleksa Gordić | [Link](https://www.aleksagordic.com/blog/matmul) |
 | Weight Transfer for RL Post-Training in under 2 seconds | Article | - | - |
 | Deploying DeepSeek with PD Disaggregation and Large-Scale Expert Parallelism on 96 H100 GPUs | Blog | LMSYS Org | [Link](https://lmsys.org/blog/2025-05-05-large-scale-ep/) |
 | LLM evolution | Article | - | - |
-| Qwen 3 | Announcement | Qwen | - |
+| Qwen 3 | Announcement | Qwen | [Link](https://qwenlm.github.io/blog/qwen3/) |
 | flash decoding | Research | - | - |
 | Dissecting Batching Effects in GPT Inference | Analysis | - | - |
 | How to think about GPU | Guide | - | - |
