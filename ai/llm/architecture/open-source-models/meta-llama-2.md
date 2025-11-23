@@ -94,6 +94,33 @@ RLHF was applied in an iterative process to further align the model with human p
 
 **Result:** Through this rigorous SFT and multi-stage RLHF process, Llama 2-Chat models achieved competitiveness with proprietary models like ChatGPT for many conversational use cases, while demonstrating improved safety characteristics.
 
+## Performance
+
+Llama 2 demonstrated significant advancements over its predecessor, achieving competitive performance against leading proprietary models like GPT-3.5 and even approaching ChatGPT's quality in chat applications.
+
+### Overall Competitiveness
+
+*   **Llama 2-70B Base model** performs nearly on par with **GPT-3.5** on many traditional benchmarks like MMLU and GSM8k.
+*   **Llama 2-Chat models** (especially the 70B variant) have been shown through human evaluations to be competitive with or superior to **ChatGPT (GPT-3.5)** in terms of helpfulness and safety, achieving a 36% win rate and beating ChatGPT-03 by over 4 points in helpfulness assessments.
+
+### Key Benchmark Results
+
+| Benchmark Category | Llama 2-70B (Base) | GPT-3.5 | Llama 2-70B (Chat) | ChatGPT | Notes |
+| :----------------- | :----------------- | :------ | :----------------- | :------ | :---- |
+| **MMLU** (Average) | ~63.9%             | ~69.2%  | -                  | -       | Base model close to GPT-3.5 |
+| **GSM8k** (Math)   | ~46.0%             | ~57.0%  | -                  | -       | Base model performs well, still behind GPT-3.5 |
+| **HumanEval** (Code, pass@1) | ~29.9%             | ~48.1%  | -                  | -       | Llama 2 underperforms GPT-3.5 in coding. |
+| **Helpfulness** (Human Eval) | -                  | -       | High               | Competitive | Llama 2-Chat often preferred over ChatGPT. |
+| **Safety** (Human Eval) | -                  | -       | High               | Competitive | Llama 2-Chat designed with strong safety alignment. |
+| **Factual Accuracy** (Summarization) | -                  | -       | Near GPT-4         | Better than GPT-3.5-turbo | Llama 2-70B Chat model. |
+
+*Note: Specific numerical scores for GPT-3.5 and ChatGPT are indicative averages from various reports and may vary based on exact model versions and evaluation methodologies. Llama 2's knowledge cutoff was September 2022, providing it with more recent information than GPT-3.5's June 2021 cutoff.*
+
+### Strengths and Weaknesses
+
+*   **Strengths:** Llama 2 excels in general helpfulness, safety, and factual accuracy, often matching or surpassing GPT-3.5. It also benefits from faster response times and a more recent knowledge cutoff.
+*   **Weaknesses:** It tends to underperform GPT-3.5 in coding benchmarks (HumanEval) and can be less effective in highly specialized tasks where GPT-3.5 might be fine-tuned.
+
 ## Legacy and Impact
 
 The release of Llama 2 was a pivotal moment for the open-source AI movement, proving that open models could be directly competitive with and commercially viable against closed, proprietary systems.
