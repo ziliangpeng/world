@@ -108,7 +108,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models | Paper | arXiv | [2410.05229](https://arxiv.org/abs/2410.05229) |
 | Distilling Llama3.1 8B into 1B in torchtune | Tutorial | PyTorch | [Link](https://pytorch.org/blog/llama-into-torchtune/) |
 | Archive • AI News • Buttondown | Newsletter | AI News | - |
-| Hugging Face – Blog | Blog | Hugging Face | - |
+| Hugging Face – Blog | Blog | Hugging Face | [Link](https://huggingface.co/blog) |
 | vllm quantization | Documentation | vLLM | [Link](https://docs.vllm.ai/en/latest/features/quantization/index.html) |
 | how-to-optim-algorithm-in-cuda: how to optimize some algorithm in cuda | GitHub | BBuf | [Link](https://github.com/BBuf/how-to-optim-algorithm-in-cuda) |
 | INTELLECT-1 Release The First Globally Trained 10B Parameter Model | Announcement | Prime Intellect | [Link](https://www.primeintellect.ai/blog/intellect-1-release) |
@@ -138,13 +138,13 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | On the Biology of a Large Language Model | Article | - | - |
 | TAO: Using test-time compute to train efficient LLMs without labeled data | Blog | Databricks | [Link](https://www.databricks.com/blog/tao-using-test-time-compute-train-efficient-llms-without-labeled-data) |
 | RLHF Book by Nathan Lambert | Book | Nathan Lambert | [Link](https://rlhfbook.com/) |
-| CUTLASS Tutorial: Writing GEMM Kernels Using Tensor Memory For NVIDIA® Blackwell GPUs | Tutorial | Colfax Research | - |
+| CUTLASS Tutorial: Writing GEMM Kernels Using Tensor Memory For NVIDIA® Blackwell GPUs | Tutorial | Colfax Research | [Link](https://research.colfax-intl.com/cutlass-tutorial-writing-gemm-kernels-using-tensor-memory-for-nvidia-blackwell-gpus/) |
 | The Way of Code | Article | Rick Rubin | - |
 | Why I No Longer Recommend RAG for Autonomous Coding Agents | Opinion | - | - |
 | xAI's Grok 4: The tension of frontier performance with a side of Elon favoritism | Analysis | - | - |
 | Awesome-ML-SYS-Tutorial: My learning notes/codes for ML SYS | GitHub | zhaochenyang20 | [Link](https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial) |
 | The Ultra-Scale Playbook | Guide | Hugging Face Space | - |
-| TensorRT-LLM Architecture | Documentation | TensorRT-LLM | - |
+| TensorRT-LLM Architecture | Documentation | TensorRT-LLM | [Link](https://nvidia.github.io/TensorRT-LLM/architecture/overview.html) |
 | A Manual Implementation of Quantization in PyTorch - Single Layer | Tutorial | Hexo | - |
 | Measuring the environmental impact of AI inference | Blog | Google Cloud | [Link](https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference) |
 | How to Think About GPUs | Guide | How To Scale Your Model | - |
@@ -152,8 +152,8 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | AI 2027 | Prediction | - | - |
 | How To Scale Your Model | Guide | - | - |
 | Getting Started With CuTe | Documentation | NVIDIA CUTLASS | [Link](https://docs.nvidia.com/cutlass/media/docs/cpp/cute/00_quickstart.html) |
-| AMD Data Center GPUs Explained: MI250X, MI300X, MI350X and Beyond | Guide | - | - |
-| GPU L2 Cache Persistence | Blog | simons blog | - |
+| AMD Data Center GPUs Explained: MI250X, MI300X, MI350X and Beyond | Guide | - | [Link](https://www.bentoml.com/blog/amd-data-center-gpus-mi250x-mi300x-mi350x-and-beyond) |
+| GPU L2 Cache Persistence | Blog | simons blog | [Link](https://veitner.bearblog.dev/gpu-l2-cache-persistence/) |
 | RedOne: Revealing Domain-specific LLM Post-Training in Social Networking Services | Paper | arXiv | [2507.10605](https://arxiv.org/abs/2507.10605) |
 | The Big LLM Architecture Comparison | Article | - | - |
 | The Training Imperative | Article | - | - |
