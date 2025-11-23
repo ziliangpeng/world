@@ -589,6 +589,167 @@ Meta revamped the entire post-training pipeline for Llama 4, achieving **10x eff
 7. **10M context extension** via specialized training
 8. **Better safety** with lower false refusal rates
 
+## Performance: Competitive with GPT-4o and Gemini
+
+Llama 4 achieves competitive performance with leading proprietary models while being the first open-weight natively multimodal MoE family.
+
+### Overall Competitiveness
+
+**Llama 4 Maverick**: Matches or exceeds GPT-4o on broad benchmarks
+- Crossed LMArena 1400 rating (beating GPT-4o)
+- MMLU Pro: 80.5% (strong general knowledge)
+- HumanEval: 82.4% (strong coding)
+- **Caveat**: Public version received mixed feedback; advertised performance from unreleased experimental version
+
+**Llama 4 Scout**: Strong performance for 17B active parameters
+- MMLU Pro: 74.3% (competitive for size)
+- HumanEval: 74.1% (excellent coding for 17B active)
+- 10M context window (with practical limitations)
+
+**Llama 4 Behemoth**: Still in training, early results impressive
+- MATH-500: 95.0% (near-perfect math)
+- MMLU Pro: 82.2% (exceeds Maverick)
+- Targets frontier-level performance
+
+### Pre-Trained Models Performance
+
+#### Llama 3 vs Llama 4 Comparison
+
+| Benchmark | Llama 3.1 70B | Llama 3.1 405B | Llama 4 Scout | Llama 4 Maverick | Scout vs 70B | Maverick vs 405B |
+|-----------|---------------|----------------|---------------|------------------|--------------|------------------|
+| **MMLU** | 79.3% | 85.2% | 79.6% | 85.5% | **+0.3** | **+0.3** |
+| **MATH** | 41.6% | 53.5% | 50.3% | 61.2% | **+8.7** | **+7.7** |
+| **MBPP** | 66.4% | 74.4% | 67.8% | 77.6% | **+1.4** | **+3.2** |
+
+*Llama 4 shows improvements across the board despite having far fewer active parameters*
+
+### Instruction-Tuned Models Performance
+
+#### Core Benchmarks with Llama 3 Comparisons
+
+| Benchmark | Llama 3.3 70B | Llama 3.1 405B | Llama 4 Scout | Llama 4 Maverick | Scout Δ | Maverick Δ |
+|-----------|---------------|----------------|---------------|------------------|---------|------------|
+| **MMLU Pro** | 68.9% | 73.4% | **74.3%** | **80.5%** | **+5.4** | **+7.1** |
+| **GPQA Diamond** | 50.5% | 49.0% | **57.2%** | **69.8%** | **+6.7** | **+20.8** |
+| **HumanEval** | ~60% | ~65% | **74.1%** | **82.4%** | **+14.1** | **+17.4** |
+| **LiveCodeBench** | 33.3% | 27.7% | 32.8% | **43.4%** | -0.5 | **+15.7** |
+
+*Massive improvements in coding (HumanEval) and reasoning (GPQA) over Llama 3*
+
+#### Multimodal Benchmarks (New Capability)
+
+| Benchmark | Llama 3.2 11B Vision | Llama 3.2 90B Vision | Llama 4 Scout | Llama 4 Maverick |
+|-----------|---------------------|---------------------|---------------|------------------|
+| **ChartQA** | — | — | 88.8% | 90.0% |
+| **DocVQA** | — | — | 94.4% | 94.4% |
+
+*Llama 4's native multimodal approach delivers strong vision performance*
+
+### Llama 4 Behemoth Performance (Preliminary)
+
+| Benchmark | Behemoth Score | Llama 3.1 405B | Improvement |
+|-----------|---------------|----------------|-------------|
+| **MATH-500** | **95.0%** | ~53.5% | **+41.5** |
+| **MMLU Pro** | **82.2%** | 73.4% | **+8.8** |
+| **LiveCodeBench** | **49.4%** | 27.7% | **+21.7** |
+| **University Math** | **78.0%** | Unknown | - |
+
+*Behemoth shows potential to significantly exceed Llama 3.1 405B across the board*
+
+### Comparison to Leading Proprietary Models
+
+#### vs GPT-4o
+
+| Benchmark | GPT-4o | Llama 4 Scout | Llama 4 Maverick | Maverick vs GPT-4o |
+|-----------|--------|---------------|------------------|-------------------|
+| **MMLU** | 88.70% | 79.6% | 85.5% | -3.2 |
+| **HumanEval** | 90.20% | 74.1% | 82.4% | -7.8 |
+| **General Benchmarks** | Baseline | Competitive | **Beats per Meta** | +? |
+| **LMArena** | <1400 | Unknown | **>1400** | **Better** |
+
+*Maverick competitive with GPT-4o on many benchmarks, exceeds on some*
+
+#### vs Gemini
+
+| Model | Context | Multimodal | Performance vs Llama 4 |
+|-------|---------|------------|------------------------|
+| **Gemini 2.0 Flash** | 1M | Yes | **Maverick beats on broad benchmarks** |
+| **Gemini 2.5 Pro** | 1M | Yes | Outperforms Scout/Maverick in raw scores |
+| **Gemini 2.5 Pro** | 1M | Yes | Better long-context performance (90.6% at 120k vs 15.6% Scout) |
+
+*Llama 4 competitive but Gemini 2.5 Pro leads on some metrics*
+
+#### vs Claude
+
+| Model | HumanEval | Context | Notes |
+|-------|-----------|---------|-------|
+| **Claude 3.5 Sonnet** | 92.00% | 200K | Beats Maverick on coding |
+| **Claude 3.7 Sonnet** | Unknown | 200K | Behemoth outperforms on STEM |
+| **Llama 4 Maverick** | 82.4% | 1M | Strong but trails Claude coding |
+| **Llama 4 Scout** | 74.1% | **10M** | Extreme context advantage |
+
+*Claude still leads on coding, but Llama 4 has massive context advantage*
+
+#### vs DeepSeek V3
+
+| Aspect | DeepSeek V3 | Llama 4 Maverick | Advantage |
+|--------|-------------|------------------|-----------|
+| **Active Parameters** | >17B | 17B | Llama 4 more efficient |
+| **Reasoning/Coding** | Strong | **Comparable** | Similar performance |
+| **Architecture** | MoE | MoE | Both sparse |
+| **Open Source** | Yes | Yes | Both available |
+
+*Maverick achieves comparable results with fewer active parameters*
+
+### Strengths and Weaknesses
+
+**Strengths**:
+- **MoE efficiency**: 17B active delivering 400B capacity performance
+- **Multimodal**: Native text/image/video understanding
+- **Math reasoning**: Massive improvements (MATH: +7.7 to +8.7 over Llama 3)
+- **Coding**: Major gains (HumanEval: +14.1 to +17.4 over Llama 3)
+- **Context window**: 10M tokens (Scout) enables new use cases
+- **Safety**: Better usability (<2% political refusal vs 7% Llama 3.3)
+
+**Weaknesses**:
+- **Context degradation**: Advertised 10M, but 15.6% accuracy at 120k (vs Gemini 90.6%)
+- **Mixed reception**: Public Maverick version underperformed advertised benchmarks
+- **Trails Claude**: Still behind Claude 3.5 on coding (92% vs 82.4%)
+- **Trails GPT-4o**: Slightly behind on some benchmarks (MMLU, HumanEval)
+- **Behemoth delays**: Flagship model still not released, creating uncertainty
+
+### Per-Model-Size Analysis
+
+**Scout (17B active, 109B total)**:
+- **Best for**: Extreme context applications (10M tokens)
+- **Performance**: Competitive with Llama 3.1 70B despite 4.1x fewer active params
+- **Trade-off**: Context window impressive but practical performance degrades
+- **Use case**: Large codebase analysis, multi-book processing
+
+**Maverick (17B active, 400B total)**:
+- **Best for**: High-capacity multimodal tasks, general-purpose deployment
+- **Performance**: Matches/exceeds Llama 3.1 405B with 23.8x fewer active params
+- **Trade-off**: Public version vs experimental version performance gap
+- **Use case**: Production deployments requiring GPT-4 class performance
+
+**Behemoth (288B active, ~2T total)**:
+- **Best for**: Frontier-level reasoning, math, coding
+- **Performance**: Early results show massive improvements (MATH-500: 95%)
+- **Trade-off**: Still in training, delayed release
+- **Use case**: When absolute best performance needed
+
+### The Llama 3 → Llama 4 Performance Leap
+
+| Category | Llama 3.1 405B | Llama 4 Maverick (17B active) | Change |
+|----------|---------------|------------------------------|--------|
+| **MMLU Pro** | 73.4% | 80.5% | **+7.1** |
+| **GPQA** | 49.0% | 69.8% | **+20.8** |
+| **HumanEval** | ~65% | 82.4% | **+17.4** |
+| **Context** | 128K | 1M | **7.8x** |
+| **Active Params** | 405B | **17B** | **23.8x fewer** |
+
+**Key Insight**: Llama 4 Maverick delivers better performance than Llama 3.1 405B with 23.8x fewer active parameters—validating the MoE architecture's efficiency.
+
 ## Key Innovations
 
 1. **First Open-Weight Natively Multimodal MoE Models**
