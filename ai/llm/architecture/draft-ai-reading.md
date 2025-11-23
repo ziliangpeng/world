@@ -124,19 +124,19 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Building effective agents | Guide | Anthropic | [Link](https://www.anthropic.com/research/building-effective-agents) |
 | 2024 best papers | Collection | - | - |
 | Learning CUDA by optimizing softmax: A worklog | Tutorial | Maharshi's blog | [Link](https://maharshi.bearblog.dev/optimizing-softmax-cuda/) |
-| Reinforcement learning from AI feedback (RLAIF): Complete overview | Tutorial | SuperAnnotate | - |
+| Reinforcement learning from AI feedback (RLAIF): Complete overview | Tutorial | SuperAnnotate | [Link](https://www.superannotate.com/blog/reinforcement-learning-from-ai-feedback-rlaif) |
 | Agents | Article | - | - |
 | Video Generation Models Explosion 2024 | Article | Yen-Chen Lin | - |
 | Tenstorrent Blackhole, Grendel, And Buda – A Scale Out Architecture | Analysis | SemiAnalysis | - |
 | Dario Amodei — On DeepSeek and Export Controls | Article | - | - |
 | Foundations of Large Language Models (this is a book) | Book | arXiv | [2501.09223](https://arxiv.org/abs/2501.09223) |
 | How multi-node inference works for massive LLMs like DeepSeek-R1 | Blog | Baseten | [Link](https://www.baseten.co/blog/how-multi-node-inference-works-llms-deepseek-r1/) |
-| Understanding Peak, Max-Achievable & Delivered FLOPs, Part 1 | Tutorial | ROCm Blogs | - |
+| Understanding Peak, Max-Achievable & Delivered FLOPs, Part 1 | Tutorial | ROCm Blogs | [Link](https://rocm.blogs.amd.com/software-tools-optimization/Understanding_Peak_and_Max-Achievable_FLOPS/README.html) |
 | LLM训练终极指南 | The Ultra-Scale Playbook | Guide | Hugging Face Space | - |
 | Minions: Cost-efficient Collaboration Between On-device and Cloud Language Models | Paper | arXiv | [2502.15964](https://arxiv.org/abs/2502.15964) |
 | Circuit Tracing: Revealing Computational Graphs in Language Models | Research | - | - |
 | On the Biology of a Large Language Model | Article | - | - |
-| TAO: Using test-time compute to train efficient LLMs without labeled data | Blog | Databricks | - |
+| TAO: Using test-time compute to train efficient LLMs without labeled data | Blog | Databricks | [Link](https://www.databricks.com/blog/tao-using-test-time-compute-train-efficient-llms-without-labeled-data) |
 | RLHF Book by Nathan Lambert | Book | Nathan Lambert | [Link](https://rlhfbook.com/) |
 | CUTLASS Tutorial: Writing GEMM Kernels Using Tensor Memory For NVIDIA® Blackwell GPUs | Tutorial | Colfax Research | - |
 | The Way of Code | Article | Rick Rubin | - |
@@ -148,10 +148,10 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | A Manual Implementation of Quantization in PyTorch - Single Layer | Tutorial | Hexo | - |
 | Measuring the environmental impact of AI inference | Blog | Google Cloud | - |
 | How to Think About GPUs | Guide | How To Scale Your Model | - |
-| A Primer on LLM Post-Training | Tutorial | PyTorch | - |
+| A Primer on LLM Post-Training | Tutorial | PyTorch | [Link](https://pytorch.org/blog/a-primer-on-llm-post-training/) |
 | AI 2027 | Prediction | - | - |
 | How To Scale Your Model | Guide | - | - |
-| Getting Started With CuTe | Documentation | NVIDIA CUTLASS | - |
+| Getting Started With CuTe | Documentation | NVIDIA CUTLASS | [Link](https://docs.nvidia.com/cutlass/media/docs/cpp/cute/00_quickstart.html) |
 | AMD Data Center GPUs Explained: MI250X, MI300X, MI350X and Beyond | Guide | - | - |
 | GPU L2 Cache Persistence | Blog | simons blog | - |
 | RedOne: Revealing Domain-specific LLM Post-Training in Social Networking Services | Paper | arXiv | [2507.10605](https://arxiv.org/abs/2507.10605) |
@@ -159,11 +159,11 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | The Training Imperative | Article | - | - |
 | checkpoint-engine: Checkpoint-engine is a simple middleware to update model weights | GitHub | MoonshotAI | [Link](https://github.com/MoonshotAI/checkpoint-engine) |
 | Improving Cursor Tab With RL | Blog | Cursor | [Link](https://cursor.com/blog/tab-rl) |
-| Paged Attention from First Principles: A View Inside vLLM | Blog | Hamza's Blog | - |
+| Paged Attention from First Principles: A View Inside vLLM | Blog | Hamza's Blog | [Link](https://hamzaelshafie.bearblog.dev/paged-attention-from-first-principles-a-view-inside-vllm/) |
 | Speculative cascades — A hybrid approach for smarter, faster LLM inference | Article | - | - |
 | Cornell Virtual Workshop: Understanding GPU Architecture | Workshop | Cornell | - |
-| Disaggregated Inference at Scale with PyTorch & vLLM | Tutorial | PyTorch | - |
-| SGLang v0.4: Zero-Overhead Batch Scheduler, Cache-Aware Load Balancer | Blog | LMSYS Org | - |
+| Disaggregated Inference at Scale with PyTorch & vLLM | Tutorial | PyTorch | [Link](https://pytorch.org/blog/disaggregated-inference-at-scale-with-pytorch-vllm/) |
+| SGLang v0.4: Zero-Overhead Batch Scheduler, Cache-Aware Load Balancer | Blog | LMSYS Org | [Link](https://lmsys.org/blog/2024-12-04-sglang-v0-4/) |
 | sglang pdf | Document | - | - |
 | Tree Attention: Topology-aware Decoding for Long-Context Attention on GPU clusters | Paper | arXiv | [2408.04093](https://arxiv.org/abs/2408.04093) |
 | Will Amazon S3 Vectors Kill Vector Databases—or Save Them? | Article | Zilliz blog | - |
@@ -175,7 +175,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Modular Manifolds | Research | Thinking Machines Lab | - |
 | Inside NVIDIA GPUs: Anatomy of high performance matmul kernels | Tutorial | Aleksa Gordić | - |
 | Weight Transfer for RL Post-Training in under 2 seconds | Article | - | - |
-| Deploying DeepSeek with PD Disaggregation and Large-Scale Expert Parallelism on 96 H100 GPUs | Blog | LMSYS Org | - |
+| Deploying DeepSeek with PD Disaggregation and Large-Scale Expert Parallelism on 96 H100 GPUs | Blog | LMSYS Org | [Link](https://lmsys.org/blog/2025-05-05-large-scale-ep/) |
 | LLM evolution | Article | - | - |
 | Qwen 3 | Announcement | Qwen | - |
 | flash decoding | Research | - | - |
