@@ -26,7 +26,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Accelerate PyTorch workloads with PyTorch/XLA | Video | YouTube | - |
 | FunSearch: Making new discoveries in mathematical sciences using Large Language Models | Research | Google DeepMind | [Link](https://deepmind.google/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/) |
 | What I Wish Someone Had Told Me | Blog | Sam Altman | [Link](https://blog.samaltman.com/what-i-wish-someone-had-told-me) |
-| 10 Noteworthy AI Research Papers of 2023 | Article | - | - |
+| 10 Noteworthy AI Research Papers of 2023 | Article | - | [Link](https://magazine.sebastianraschka.com/p/10-ai-research-papers-2023) |
 | llm-course: Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks | GitHub | mlabonne | [Link](https://github.com/mlabonne/llm-course) |
 | Awesome-CUDA: A list of useful libraries and resources for CUDA development | GitHub | Erkaman | [Link](https://github.com/Erkaman/Awesome-CUDA) |
 | Hands-On GPU Programming with Python and CUDA | GitHub | Packt Publishing | [Link](https://github.com/PacktPublishing/Hands-On-GPU-Programming-with-Python-and-CUDA) |
