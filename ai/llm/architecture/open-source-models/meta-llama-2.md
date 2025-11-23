@@ -70,18 +70,29 @@ Llama 2's pre-training was a colossal undertaking, leveraging Meta's advanced GP
 *   **Total Compute:** The entire pre-training amounted to an astounding **3.3 million GPU hours** on A100-80GB GPUs.
 *   **Fine-tuning Hardware:** Fine-tuning also used A100 and newer H100 GPUs (80GB), often in configurations of up to 8 GPUs per node (640GB total memory), with smaller models being fine-tuned on single GPUs.
 
-## Fine-Tuning (Chat Variants)
+## Fine-Tuning Process (Chat Variants)
 
-**Supervised Fine-Tuning (SFT)**:
-- Trained on instruction-following datasets
-- Optimized for dialogue
+Llama 2 introduced official fine-tuned chat models, built through a rigorous multi-stage process involving Supervised Fine-Tuning (SFT) and Reinforcement Learning from Human Feedback (RLHF) with human annotations.
 
-**Reinforcement Learning from Human Feedback (RLHF)**:
-- Reward model trained on human preferences
-- PPO (Proximal Policy Optimization) for alignment
-- Focus on helpfulness and safety
+### 1. Supervised Fine-Tuning (SFT)
 
-**Result**: Llama 2-Chat models competitive with ChatGPT for many use cases
+*   **Objective:** To initialize the model's ability to follow instructions and generate helpful responses.
+*   **Data:** Approximately **27,540 meticulously annotated human-written prompts and high-quality responses** were used. This dataset emphasized data quality over quantity.
+*   **Methodology:** The pre-trained Llama 2 models were fine-tuned on this instruction-following dataset to adapt them for conversational use.
+
+### 2. Reinforcement Learning from Human Feedback (RLHF)
+
+RLHF was applied in an iterative process to further align the model with human preferences for helpfulness and safety.
+
+*   **Human Preference Data:** Over **1 million human annotations** were collected, where human annotators ranked different model responses based on helpfulness and safety criteria. This massive dataset was critical for training the reward models.
+*   **Reward Models:** Two separate reward models were trained:
+    *   **Helpfulness Reward Model:** Trained on Meta Helpfulness data, combined with Meta Safety and open-source data.
+    *   **Safety Reward Model:** Trained predominantly on Meta Safety and Anthropic Harmless data, with a smaller proportion of helpfulness data (90/10 mix). This separation allowed for distinct optimization of helpfulness and safety.
+*   **Iterative Refinement (PPO & Rejection Sampling):**
+    *   **PPO (Proximal Policy Optimization):** This reinforcement learning algorithm was used to fine-tune the chat models directly using the feedback from the reward models. The models were iteratively refined to maximize the reward scores.
+    *   **Rejection Sampling:** For a given prompt, the model generates multiple responses, which are then scored by the reward models. The highest-scoring response is selected. This allows for a more efficient use of the expensive human preference data.
+
+**Result:** Through this rigorous SFT and multi-stage RLHF process, Llama 2-Chat models achieved competitiveness with proprietary models like ChatGPT for many conversational use cases, while demonstrating improved safety characteristics.
 
 ## Legacy and Impact
 
