@@ -82,7 +82,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Transformer Architecture: The Positional Encoding | Blog | Amirhossein Kazemnejad | [Link](https://kazemnejad.com/blog/transformer_architecture_positional_encoding/) |
 | [RFC] PagedAttention Support | GitHub Issue | pytorch/pytorch | [Link](https://github.com/pytorch/pytorch/issues/121465) |
 | Extrinsic Hallucinations in LLMs | Blog | Lil'Log | [Link](https://lilianweng.github.io/posts/2024-07-07-hallucination/) |
-| Meta PyTorch Team 2024 H2 Roadmaps | Mailing List | PyTorch Developer | - |
+| Meta PyTorch Team 2024 H2 Roadmaps | Mailing List | PyTorch Developer | [Link](https://dev-discuss.pytorch.org/t/meta-pytorch-team-2024-h2-roadmaps/2226) |
 | Prime Intellect: OpenDiLoCo | Research | Prime Intellect | [Link](https://www.primeintellect.ai/blog/opendiloco) |
 | X OpenDiLoCo | Tweet | X/Twitter | - |
 | Apple Foundation Model | Research | Apple | [Link](https://machinelearning.apple.com/research/apple-intelligence-foundation-language-models) |
@@ -135,7 +135,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | LLM训练终极指南 | The Ultra-Scale Playbook | Guide | Hugging Face Space | [Link](https://huggingface.co/spaces/nanotron/ultrascale-playbook) |
 | Minions: Cost-efficient Collaboration Between On-device and Cloud Language Models | Paper | arXiv | [2502.15964](https://arxiv.org/abs/2502.15964) |
 | Circuit Tracing: Revealing Computational Graphs in Language Models | Research | - | [Link](https://transformer-circuits.pub/2025/attribution-graphs/methods.html) |
-| On the Biology of a Large Language Model | Article | - | - |
+| On the Biology of a Large Language Model | Article | - | [Link](https://transformer-circuits.pub/2025/attribution-graphs/biology.html) |
 | TAO: Using test-time compute to train efficient LLMs without labeled data | Blog | Databricks | [Link](https://www.databricks.com/blog/tao-using-test-time-compute-train-efficient-llms-without-labeled-data) |
 | RLHF Book by Nathan Lambert | Book | Nathan Lambert | [Link](https://rlhfbook.com/) |
 | CUTLASS Tutorial: Writing GEMM Kernels Using Tensor Memory For NVIDIA® Blackwell GPUs | Tutorial | Colfax Research | [Link](https://research.colfax-intl.com/cutlass-tutorial-writing-gemm-kernels-using-tensor-memory-for-nvidia-blackwell-gpus/) |
@@ -145,7 +145,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Awesome-ML-SYS-Tutorial: My learning notes/codes for ML SYS | GitHub | zhaochenyang20 | [Link](https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial) |
 | The Ultra-Scale Playbook | Guide | Hugging Face Space | [Link](https://huggingface.co/spaces/nanotron/ultrascale-playbook) |
 | TensorRT-LLM Architecture | Documentation | TensorRT-LLM | [Link](https://nvidia.github.io/TensorRT-LLM/architecture/overview.html) |
-| A Manual Implementation of Quantization in PyTorch - Single Layer | Tutorial | Hexo | - |
+| A Manual Implementation of Quantization in PyTorch - Single Layer | Tutorial | Hexo | [Link](https://franciscormendes.github.io/2024/05/16/quantization-1/) |
 | Measuring the environmental impact of AI inference | Blog | Google Cloud | [Link](https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference) |
 | How to Think About GPUs | Guide | How To Scale Your Model | - |
 | A Primer on LLM Post-Training | Tutorial | PyTorch | [Link](https://pytorch.org/blog/a-primer-on-llm-post-training/) |
@@ -178,6 +178,6 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Deploying DeepSeek with PD Disaggregation and Large-Scale Expert Parallelism on 96 H100 GPUs | Blog | LMSYS Org | [Link](https://lmsys.org/blog/2025-05-05-large-scale-ep/) |
 | LLM evolution | Article | - | - |
 | Qwen 3 | Announcement | Qwen | [Link](https://open.substack.com/pub/aibyhand/p/qwen-3?r=3w4d5&utm_medium=ios) |
-| flash decoding | Research | - | - |
+| flash decoding | Research | - | [Link](https://crfm.stanford.edu/2023/10/12/flashdecoding.html) |
 | Dissecting Batching Effects in GPT Inference | Analysis | - | [Link](https://le.qun.ch/en/blog/2023/05/13/transformer-batching/) |
-| How to think about GPU | Guide | - | - |
+| How to think about GPU | Guide | - | [Link](https://jax-ml.github.io/scaling-book/gpus/) |
