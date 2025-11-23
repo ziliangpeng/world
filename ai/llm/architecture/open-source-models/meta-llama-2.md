@@ -53,7 +53,9 @@ Llama 2 was trained on an even larger dataset than its predecessor, with a sophi
 
 ### Optimizer Configuration
 
-*   **Pre-training:** The AdamW optimizer was used with a cosine learning rate schedule, including a 2,000-step warm-up period. The learning rate decayed to 10% of its peak value.
+*   **Pre-training:** The AdamW optimizer was used with **β₁=0.9, β₂=0.95, and a weight decay of 0.1**. A cosine learning rate schedule was employed with a 2,000-step warm-up, and the final learning rate decayed to 10% of the peak. The peak learning rates were:
+    *   **7B & 13B models:** 3.0 × 10⁻⁴
+    *   **34B & 70B models:** 1.5 × 10⁻⁴
 *   **Supervised Fine-Tuning (SFT):** Also utilized a cosine learning rate schedule, starting with an initial learning rate of 2 × 10⁻⁵. This phase included a weight decay of 0.1, a batch size of 64, and a sequence length of 4096 tokens.
 *   **Reward Models (for RLHF):** Trained with the AdamW optimizer, using a constant learning rate of 1 × 10⁻⁶, a weight decay of 0.1, and gradient clipping at 1.0.
 *   **Llama 2-Chat Fine-tuning:** For the final RLHF stage, the maximum learning rate was set to 5 × 10⁻⁶ for the 70B parameter model and 1 × 10⁻⁵ for other models, decaying on a cosine schedule to 10% of the maximum.
