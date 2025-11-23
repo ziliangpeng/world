@@ -110,10 +110,40 @@ This finding has had a lasting impact, influencing nearly all subsequent foundat
 
 ## Performance
 
-- **LLaMA-13B outperformed GPT-3 175B** on most benchmarks
-- **LLaMA-65B competitive** with Chinchilla-70B and PaLM-540B
+The Llama 1 models demonstrated groundbreaking performance, proving that smaller, more efficiently trained models could outperform larger competitors. The paper's key finding is that **LLaMA-13B outperforms the much larger GPT-3 (175B) on most benchmarks**, while **LLaMA-65B is competitive with leading models like Chinchilla-70B and PaLM-540B**.
 
-This was groundbreaking: a 13B model beating a 175B model showed that training quality and data matter more than sheer size.
+### Common Sense Reasoning (Zero-shot)
+On a suite of common sense reasoning tasks, LLaMA-13B already surpasses GPT-3.
+
+| Benchmark | LLaMA-13B | GPT-3 (175B) |
+| :--- | :---: | :---: |
+| HellaSwag | 79.2 | 78.9 |
+| WinoGrande | 73.0 | 70.2 |
+| PIQA | 80.1 | 81.0 |
+
+### World Knowledge and Reasoning
+**MMLU (5-shot):** This comprehensive benchmark tests for massive multitask language understanding. LLaMA-13B again scores higher than GPT-3, and LLaMA-65B is competitive with Chinchilla-70B.
+
+- **LLaMA-13B:** 46.9
+- **GPT-3 (175B):** 43.9
+- **LLaMA-65B:** 63.4
+- **Chinchilla-70B:** 67.5
+
+**GSM8k (Few-shot Math Reasoning):** LLaMA-65B shows very strong performance, approaching the much larger PaLM 540B.
+
+- **LLaMA-13B:** 17.8
+- **LLaMA-65B:** 50.9
+- **PaLM-540B:** 56.5
+
+### Code Generation
+On the HumanEval benchmark (pass@1, zero-shot), LLaMA-13B is on par with models of a similar size, and LLaMA-65B is competitive with the much larger PaLM 540B.
+
+- **LLaMA-13B:** 15.8
+- **PaLM-62B:** 15.9
+- **LLaMA-65B:** 23.7
+- **PaLM-540B:** 26.2
+
+This level of performance, achieved using only publicly available data, marked a significant milestone for open-source model development.
 
 ## Legacy and Impact
 
