@@ -193,6 +193,6 @@ The success of Llama 1 and the community's enthusiastic adoption directly set th
 The Llama 1 project was the result of work from a dedicated research team and the strategic guidance of Meta's AI leadership.
 
 *   **Hugo Touvron (Lead Author):** As the first author on the Llama 1 paper, Touvron played a primary role in the hands-on research, experimentation, and development of the model.
-*   **Guillaume Lample (Lead Author):** The last author on the paper, signifying his role as the senior researcher who supervised the project. Lample was a key leader of the Llama 1 effort and has been a public voice explaining its development.
+*   **Guillaume Lample (Lead Author):** The last author on the paper, signifying his role as the senior researcher who supervised the project. Lample was a key leader of the Llama 1 effort and has been a public voice explaining its development. He has since co-founded the influential AI company Mistral AI.
 *   **Joelle Pineau (Head of FAIR):** As VP of AI Research, Pineau directly led the development and release of the Llama 1 project. She was instrumental in driving the lab's strategic focus on model efficiency and open science.
 *   **Yann LeCun (Chief AI Scientist):** While stating his own role in Llama 1 was "very indirect," LeCun's long-standing and vocal advocacy for open-source AI was crucial in shaping the environment at Meta that allowed the project to flourish. He was a primary proponent for the full open-sourcing of its successor, Llama 2.
