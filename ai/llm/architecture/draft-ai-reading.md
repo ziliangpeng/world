@@ -42,7 +42,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Practical Tips for Finetuning LLMs Using LoRA (Low-Rank Adaptation) | Tutorial | - | [Link](https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms) |
 | Human-like systematic generalization through a meta-learning neural network | Paper | Nature | [Link](https://www.nature.com/articles/s41586-023-06668-3) |
 | OpenAI: Facts from a Weekend | Article | LessWrong | [Link](https://www.lesswrong.com/posts/KXHMCH7wCxrvKsJyn/openai-facts-from-a-weekend) |
-| A checklist for switching to open source ML models | Guide | - | - |
+| A checklist for switching to open source ML models | Guide | - | [Link](https://www.baseten.co/blog/a-checklist-for-switching-to-open-source-ml-models/) |
 | Distill — Latest articles about machine learning | Website | Distill | [Link](https://distill.pub/) |
 | Research Papers in January 2024 | Newsletter | Sebastian Raschka | [Link](https://magazine.sebastianraschka.com/p/research-papers-in-january-2024) |
 | V-JEPA: The next step toward advanced machine intelligence | Research | Meta | [Link](https://ai.meta.com/blog/v-jepa-yann-lecun-ai-model-video-joint-embedding-predictive-architecture/) |
@@ -54,7 +54,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Mamba: The Easy Way | Tutorial | - | [Link](https://jackcook.com/2024/02/23/mamba.html) |
 | Mamba: The Hard Way | Tutorial | - | [Link](https://srush.github.io/annotated-mamba/hard.html) |
 | q star info.pdf | Document | Google Drive | - |
-| Ilya Sutskever: The brain behind ChatGPT | Article | - | - |
+| Ilya Sutskever: The brain behind ChatGPT | Article | - | [Link](https://journeymatters.ai/ilya-the-brain-behind-chatgpt/) |
 | Training great LLMs entirely from ground zero in the wilderness as a startup | Blog | Yi Tay | [Link](https://www.yitay.net/blog/training-great-llms-entirely-from-ground-zero-in-the-wilderness) |
 | Ben Thimpson podcast | Podcast | - | - |
 | Is Cosine-Similarity of Embeddings Really About Similarity? | Paper | arXiv | [2403.05440](https://arxiv.org/abs/2403.05440) |
@@ -65,8 +65,8 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | The pitfalls of next-token prediction | Paper | arXiv | [2403.06963](https://arxiv.org/abs/2403.06963) |
 | The N Implementation Details of RLHF with PPO | Blog | ICLR Blogposts 2024 | [Link](https://iclr-blogposts.github.io/2024/blog/the-n-implementation-details-of-rlhf-with-ppo/) |
 | Dear VC's, please stop throwing money at AI founders with no commercial plan, besides AGI | Opinion | - | - |
-| Are all LLMs really 1.58 bits? Inference at 4x the speed or more? | Article | - | - |
-| Medusa: Simple framework for accelerating LLM generation with multiple decoding heads | Research | - | - |
+| Are all LLMs really 1.58 bits? Inference at 4x the speed or more? | Article | - | [Link](https://learning-exhaust.hashnode.dev/are-all-large-language-models-really-in-158-bits) |
+| Medusa: Simple framework for accelerating LLM generation with multiple decoding heads | Research | - | [Link](https://github.com/FasterDecoding/Medusa) |
 | Ilya's recom to Carmack | Reference | - | - |
 | Speech and Language Processing | Textbook | - | [Link](https://web.stanford.edu/~jurafsky/slp3/) |
 | We need to talk about Agents... | Article | - | - |
@@ -80,18 +80,18 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Qwen 2: a story of Alibaba vs Meta | Article | Rick Lamers | [Link](https://codingwithintelligence.com/p/qwen-2-a-story-of-alibaba-vs-meta) |
 | OpenVLA: An Open-Source Vision-Language-Action Model | Research | - | [Link](https://openvla.github.io/) |
 | Transformer Architecture: The Positional Encoding | Blog | Amirhossein Kazemnejad | [Link](https://kazemnejad.com/blog/transformer_architecture_positional_encoding/) |
-| [RFC] PagedAttention Support | GitHub Issue | pytorch/pytorch | - |
+| [RFC] PagedAttention Support | GitHub Issue | pytorch/pytorch | [Link](https://github.com/pytorch/pytorch/issues/121465) |
 | Extrinsic Hallucinations in LLMs | Blog | Lil'Log | [Link](https://lilianweng.github.io/posts/2024-07-07-hallucination/) |
 | Meta PyTorch Team 2024 H2 Roadmaps | Mailing List | PyTorch Developer | - |
-| Prime Intellect: OpenDiLoCo | Research | Prime Intellect | - |
+| Prime Intellect: OpenDiLoCo | Research | Prime Intellect | [Link](https://www.primeintellect.ai/blog/opendiloco) |
 | X OpenDiLoCo | Tweet | X/Twitter | - |
-| Apple Foundation Model | Research | Apple | - |
-| Why do LLM input tokens cost less than output tokens? | Explainer | - | - |
+| Apple Foundation Model | Research | Apple | [Link](https://machinelearning.apple.com/research/apple-intelligence-foundation-language-models) |
+| Why do LLM input tokens cost less than output tokens? | Explainer | - | [Link](https://peterchng.com/blog/2024/05/01/why-do-llm-input-tokens-cost-less-than-output-tokens/) |
 | Welcome to Model Optimizer (ModelOpt) documentation! | Documentation | NVIDIA | [Link](https://nvidia.github.io/TensorRT-Model-Optimizer/) |
 | x.com Meta Agent | Tweet | X/Twitter | - |
 | Triton Architecture | Documentation | NVIDIA Triton Inference Server | [Link](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/user_guide/architecture.html) |
 | TensorRT-LLM Architecture | Documentation | TensorRT-LLM | [Link](https://nvidia.github.io/TensorRT-LLM/architecture/overview.html) |
-| What's Really Going On in Machine Learning? Some Minimal Models | Article | Stephen Wolfram | - |
+| What's Really Going On in Machine Learning? Some Minimal Models | Article | Stephen Wolfram | [Link](https://writings.stephenwolfram.com/2024/08/whats-really-going-on-in-machine-learning-some-minimal-models/) |
 | Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning | Paper | arXiv | [2408.14158](https://arxiv.org/abs/2408.14158) |
 | awesome-dspy | GitHub | tom-doerr | [Link](https://github.com/tom-doerr/awesome-dspy) |
 | Azure/kaito: Kubernetes AI Toolchain Operator | GitHub | Azure | [Link](https://github.com/Azure/kaito) |
@@ -171,7 +171,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Online RL for Cursor Tab | Blog | Cursor | [Link](https://cursor.com/blog/tab-rl) |
 | Stanford CRFM | Research Group | Stanford | [Link](https://crfm.stanford.edu/) |
 | Surprisingly Fast AI-Generated Kernels We Didn't Mean to Publish (Yet) | Research | Stanford Scaling Intelligence Lab | - |
-| Advanced RAG Techniques: an Illustrated Overview | Article | Towards AI | - |
+| Advanced RAG Techniques: an Illustrated Overview | Article | Towards AI | [Link](https://pub.towardsai.net/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6) |
 | Modular Manifolds | Research | Thinking Machines Lab | - |
 | Inside NVIDIA GPUs: Anatomy of high performance matmul kernels | Tutorial | Aleksa Gordić | [Link](https://www.aleksagordic.com/blog/matmul) |
 | Weight Transfer for RL Post-Training in under 2 seconds | Article | - | - |
