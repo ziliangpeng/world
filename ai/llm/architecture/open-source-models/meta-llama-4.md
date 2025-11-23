@@ -1180,26 +1180,170 @@ If Behemoth delivers and long-context quality improves, Llama 4 will be remember
 
 What's certain: Llama 4 has **irreversibly shifted expectations** for what open-source models should offer, and the techniques it pioneered will influence the AI landscape for years to come.
 
+## Key Figures: Leadership Through Transition
+
+The Llama 4 project emerged during a period of significant organizational change and talent transition at Meta AI, with new leadership navigating both technical challenges and team restructuring.
+
+### Current Leadership
+
+**Ahmad Al-Dahle** - VP, Head of GenAI at Meta, Head of Llama Team:
+- Reports directly to Chief Product Officer Chris Cox
+- Co-leads the AGI Foundations Unit (formed May 2025)
+- Oversees the broader generative AI strategy at Meta
+- Responsible for steering Llama 4 through organizational restructuring
+- Manages the pressure of competing with OpenAI, Anthropic, and Google
+- Background in scaling ML systems and product development
+
+**Amir Frenkel** - Engineering Head, AGI Foundations Unit Co-Lead:
+- Appointed February 2025 alongside Al-Dahle restructuring
+- Former VP of Mixed Reality at Meta
+- Brings product engineering expertise to foundational research
+- Co-leads AGI Foundations Unit with Al-Dahle
+- Responsible for engineering execution of Llama 4 and Behemoth
+- Tasked with implementing tighter performance standards
+
+**Connor Hayes** - AI Products Team Lead:
+- Leads the AI Products Team (formed May 2025 in organizational split)
+- Focuses on product integration and deployment
+- Works alongside AGI Foundations on bringing Llama 4 to Meta's products
+- Responsible for integration into Instagram, Facebook, and Meta AI
+
+**Loredana Crisan** - Lead PM for AI Products:
+- Appointed February 2025
+- Manages product strategy for Llama deployments
+- Coordinates between research (AGI Foundations) and product (AI Products)
+- Key role in defining use cases and priorities for Llama 4
+
+### Organizational Context
+
+**May 2025 Restructuring**:
+Meta split its AI division into two distinct units to balance research innovation with product delivery:
+
+1. **AGI Foundations Unit** (Al-Dahle & Frenkel):
+   - Foundational research and model development
+   - Llama family development and training
+   - Long-term AI capabilities research
+   - Academic partnerships and publications
+
+2. **AI Products Team** (Hayes):
+   - Product integration and deployment
+   - User-facing AI features in Meta apps
+   - Commercial applications of Llama models
+   - Customer support and tooling
+
+This structure reflects Meta's attempt to maintain research excellence while accelerating product velocity—a balance that proved challenging during Llama 4's development.
+
+### The Talent Exodus Challenge
+
+**Original Llama Team**:
+- **14 PhD researchers** created Llama 1 (2022-2023)
+- Small, focused team that proved "smaller + more data > larger models"
+- Published groundbreaking LLaMA paper (February 2023)
+
+**Current Reality** (Early 2025):
+- **11 of 14 original PhDs have left Meta**
+- Departures include:
+  - **Guillaume Lample**: Co-founded Mistral AI (became major Llama competitor)
+  - Other researchers: Moved to startups, competing labs, or left AI entirely
+- Only ~3 original Llama 1 team members remain
+
+**Impact on Llama 4**:
+- **Continuity loss**: Institutional knowledge from Llama 1-3 development
+- **Leadership changes**: New leaders navigating unfamiliar territory
+- **Pressure to perform**: Prove Meta can maintain excellence despite departures
+- **Tighter standards**: Response included stricter performance requirements
+- **Execution challenges**: May explain Behemoth delays and mixed reception
+
+### Contrast with Previous Llama Releases
+
+**Llama 1 Team** (2022-2023):
+- **Hugo Touvron**: Lead author, hands-on research
+- **Guillaume Lample**: Senior researcher, project supervisor (now at Mistral AI)
+- **Joelle Pineau**: Head of FAIR, drove model efficiency focus
+- **Yann LeCun**: Chief AI Scientist, championed open-source approach
+- **Core team**: ~5 researchers, tight-knit and focused
+
+**Llama 2 Team** (2023):
+- Most of the original Llama 1 team remained
+- Expanded to include safety and alignment specialists
+- Added product integration focus for commercial release
+- Benefited from Llama 1's momentum and team cohesion
+
+**Llama 3 Team** (2024):
+- Larger team but still included many Llama 1/2 veterans
+- Scaled infrastructure and data teams significantly
+- Maintained continuity in architectural decisions
+- Successfully delivered GPT-4 parity
+
+**Llama 4 Team** (2024-2025):
+- **Leadership**: Al-Dahle, Frenkel, Hayes, Crisan (newer to Llama)
+- **Core researchers**: Mostly new to the project (11 of 14 originals gone)
+- **Organizational**: Navigating May 2025 restructuring mid-development
+- **Pressure**: Competing with OpenAI while rebuilding team
+- **Challenges**: Behemoth delays, execution issues, mixed reception
+
+### Strategic Pressures and Decisions
+
+**Competitive Pressure**:
+- **OpenAI**: Named as top competitor in internal Meta documents
+- **Anthropic**: Claude 3.5's coding superiority a key target
+- **Google**: Gemini 1.5's extreme context and multimodality to match
+- **DeepSeek**: V3's MoE efficiency and performance to beat
+
+**Tighter Performance Standards**:
+- Response to talent loss and competitive pressure
+- More rigorous benchmarking before release
+- Stricter requirements for model advancement
+- May have contributed to Behemoth's multiple delays
+
+**Strategic Bets**:
+- **MoE architecture**: Committed as template for all future Llama models
+- **Native multimodality**: Belief that future AI is conversational, not text-only
+- **Extreme context**: 10M tokens as differentiator
+- **Open-source commitment**: Despite challenges, continuing open releases
+
+### The Yann LeCun Factor
+
+**Yann LeCun** - Chief AI Scientist at Meta:
+- While stating his direct role in Llama 4 was "limited," his influence remains significant
+- **Open-source advocacy**: Long-standing champion of open AI research
+- **Strategic vision**: Pushed Meta toward open releases since Llama 1
+- **Public voice**: Defends open-source AI benefits in industry debates
+- **Institutional support**: Ensures continued backing for Llama family despite setbacks
+
+LeCun's broader vision of open AI as essential for progress continues to shape Meta's strategy, even as day-to-day leadership has shifted to Al-Dahle and team.
+
+### Challenges of Leadership Transition
+
+**What the New Leadership Inherited**:
+1. **Legacy of excellence**: Llama 1-3's groundbreaking success
+2. **High expectations**: Community expecting continued frontier performance
+3. **Talent exodus**: 11 of 14 original team members departed
+4. **Fierce competition**: OpenAI, Anthropic, Google all advancing rapidly
+5. **Organizational flux**: Mid-development restructuring in May 2025
+
+**What They Delivered**:
+1. **Architectural innovation**: First open MoE + native multimodal models
+2. **Scale achievement**: 100K+ GPU training, 30T+ tokens
+3. **Technical advances**: MetaP, FP8 training, iRoPE, 10x post-training efficiency
+4. **Mixed execution**: Strong benchmarks but context degradation, Behemoth delays
+
+**The Leadership Question**:
+Can a largely new team maintain the Llama family's momentum and excellence? Llama 4's mixed reception suggests the transition has been challenging, but the technical innovations demonstrate continued capability. The ultimate judgment depends on Behemoth's eventual delivery and long-context improvements.
+
+### Looking Forward
+
+**Current Priorities** (under Al-Dahle/Frenkel leadership):
+1. **Deliver Behemoth**: Complete flagship model to validate Llama 4 vision
+2. **Improve context quality**: Address degradation issues in Scout/Maverick
+3. **Speech/Omni models**: Compete with GPT-4o Voice Mode, Gemini Live
+4. **Stabilize team**: Rebuild institutional knowledge and team cohesion
+5. **Maintain open commitment**: Continue open releases despite challenges
+
+**The Bottom Line on Leadership**:
+Llama 4 represents a significant test of whether Meta AI can maintain excellence through major organizational change and talent loss. The new leadership has demonstrated technical ambition and innovation, but execution challenges suggest the transition is still ongoing. Their ultimate legacy will be determined by whether they can deliver on Llama 4's promises and set the foundation for Llama 5 and beyond.
+
 ## Links
 
 - **Blog**: [The Llama 4 herd: The beginning of a new era of natively multimodal AI innovation](https://ai.meta.com/blog/llama-4-multimodal-intelligence/)
 - **Announcement**: [Meta Launches Llama 4 Models](https://www.socialmediatoday.com/news/meta-releases-llama-4-ai-models/744560/)
-
-## Future: Behemoth
-
-When released, Behemoth will be:
-- **288B active parameters** (~2T total with MoE)
-- Likely similar multimodal capabilities
-- Potentially even longer context
-
-This would make it one of the largest open models ever released.
-
-## Impact
-
-Llama 4 demonstrates:
-1. **Open can match proprietary** on frontier capabilities (MoE, multimodal)
-2. **Context can scale to extremes** (10M tokens)
-3. **MoE is the future** for efficient scaling
-4. **Multimodal is standard** moving forward
-
-Meta continues to push the boundaries of what's possible with open AI.
