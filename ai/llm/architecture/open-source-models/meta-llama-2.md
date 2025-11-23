@@ -41,9 +41,34 @@ The Llama 2 models maintain the decoder-only transformer architecture, building 
 
 ## Training Details
 
-- **Tokens**: 2 trillion tokens (2x Llama 1)
-- **Context Window**: 4,096 tokens (2x Llama 1's 2K)
-- **Vocabulary**: 32K tokens (SentencePiece tokenizer, same as Llama 1)
+Llama 2 was trained on an even larger dataset than its predecessor, with a sophisticated multi-stage training and fine-tuning process.
+
+### Optimizer Configuration
+
+*   **Pre-training:** The AdamW optimizer was used with a cosine learning rate schedule, including a 2,000-step warm-up period. The learning rate decayed to 10% of its peak value.
+*   **Supervised Fine-Tuning (SFT):** Also utilized a cosine learning rate schedule, starting with an initial learning rate of 2 × 10⁻⁵. This phase included a weight decay of 0.1, a batch size of 64, and a sequence length of 4096 tokens.
+*   **Reward Models (for RLHF):** Trained with the AdamW optimizer, using a constant learning rate of 1 × 10⁻⁶, a weight decay of 0.1, and gradient clipping at 1.0.
+*   **Llama 2-Chat Fine-tuning:** For the final RLHF stage, the maximum learning rate was set to 5 × 10⁻⁶ for the 70B parameter model and 1 × 10⁻⁵ for other models, decaying on a cosine schedule to 10% of the maximum.
+
+### Training Scale and Data
+
+*   **Tokens Trained:** The models were pre-trained on a massive **2 trillion tokens** of new and publicly available online data, marking a 40% increase over the Llama 1 dataset. Importantly, Meta explicitly **excluded data from its own products or services** and rigorously removed content from sites known to contain personal information.
+*   **Context Window:** The context window was doubled to **4,096 tokens**, allowing the models to process and generate longer sequences.
+*   **Vocabulary:** The vocabulary remained at **32K tokens** using the SentencePiece tokenizer, consistent with Llama 1.
+*   **Fine-tuning Data:**
+    *   **SFT:** Approximately **27,540 meticulously annotated instruction-tuning instances** were used for Supervised Fine-Tuning, focusing on high-quality human-written prompts and responses.
+    *   **RLHF:** Over **1 million human annotations** were collected for Llama 2-Chat, crucial for training the Helpfulness and Safety reward models used in the Reinforcement Learning from Human Feedback process.
+
+### Training Infrastructure
+
+Llama 2's pre-training was a colossal undertaking, leveraging Meta's advanced GPU clusters.
+
+*   **GPUs:** Pre-training primarily utilized **NVIDIA A100 GPUs (80GB)**.
+*   **Clusters:** The effort was spread across Meta's **Research Super Cluster (RSC)** and internal production clusters.
+    *   **RSC:** Featured NVIDIA Quantum InfiniBand interconnects, with GPUs operating under a 400W power consumption cap.
+    *   **Production Clusters:** Employed RoCE (RDMA over Converged Ethernet) solutions, with GPUs operating under a 350W power consumption cap.
+*   **Total Compute:** The entire pre-training amounted to an astounding **3.3 million GPU hours** on A100-80GB GPUs.
+*   **Fine-tuning Hardware:** Fine-tuning also used A100 and newer H100 GPUs (80GB), often in configurations of up to 8 GPUs per node (640GB total memory), with smaller models being fine-tuned on single GPUs.
 
 ## Fine-Tuning (Chat Variants)
 
