@@ -23,7 +23,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | The Transient Nature of Emergent In-Context Learning in Transformers | Paper | arXiv | [2311.08360](https://arxiv.org/abs/2311.08360) |
 | AI at Scale | Research | Microsoft Research | [Link](https://www.microsoft.com/en-us/research/project/ai-at-scale/) |
 | ZeRO & DeepSpeed: New system optimizations enable training models with over 100 billion parameters | Blog | Microsoft Research | [Link](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/) |
-| Accelerate PyTorch workloads with PyTorch/XLA | Video | YouTube | - |
+| Accelerate PyTorch workloads with PyTorch/XLA | Video | YouTube | [Link](https://io.google/2024/explore/6ad3f13a-9255-4ae1-8dd2-d89acada10c1/) |
 | FunSearch: Making new discoveries in mathematical sciences using Large Language Models | Research | Google DeepMind | [Link](https://deepmind.google/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/) |
 | What I Wish Someone Had Told Me | Blog | Sam Altman | [Link](https://blog.samaltman.com/what-i-wish-someone-had-told-me) |
 | 10 Noteworthy AI Research Papers of 2023 | Article | - | [Link](https://magazine.sebastianraschka.com/p/10-ai-research-papers-2023) |
@@ -31,25 +31,25 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Awesome-CUDA: A list of useful libraries and resources for CUDA development | GitHub | Erkaman | [Link](https://github.com/Erkaman/Awesome-CUDA) |
 | Hands-On GPU Programming with Python and CUDA | GitHub | Packt Publishing | [Link](https://github.com/PacktPublishing/Hands-On-GPU-Programming-with-Python-and-CUDA) |
 | NVIDIA cuda-samples: Samples for CUDA Developers | GitHub | NVIDIA | [Link](https://github.com/NVIDIA/cuda-samples) |
-| Integrating NVIDIA TensorRT-LLM with the Databricks Inference Stack | Blog | Databricks | - |
+| Integrating NVIDIA TensorRT-LLM with the Databricks Inference Stack | Blog | Databricks | [Link](https://www.databricks.com/blog/Integrating-NVIDIA-TensorRT-LLM) |
 | My Fave New Podcasts of 2023 | Blog | - | - |
 | Introducing Mixtral 8x7B with Databricks Model Serving | Blog | Databricks | [Link](https://www.databricks.com/blog/introducing-mixtral-8x7b) |
 | Getting Started with Mixtral 8X7B | Tutorial | Pinecone | [Link](https://www.pinecone.io/learn/mixtral-8x7b/) |
 | Welcome to the 🤗 Deep Reinforcement Learning Course | Course | Hugging Face | [Link](https://huggingface.co/learn/deep-rl-course/en/unit0/introduction) |
 | What do I need to know about Mamba in the ML world | Article | - | [Link](https://hamel.dev/blog/posts/mamba/) |
 | The promise and challenges of crypto + AI applications | Article | - | [Link](https://vitalik.eth.limo/general/2024/01/30/cryptoai.html) |
-| Large Language Models, How to Train Them, and xAI's Grok | Article | - | - |
-| Practical Tips for Finetuning LLMs Using LoRA (Low-Rank Adaptation) | Tutorial | - | - |
+| Large Language Models, How to Train Them, and xAI's Grok | Article | - | [Link](https://chamath.substack.com/p/large-language-models-how-to-train) |
+| Practical Tips for Finetuning LLMs Using LoRA (Low-Rank Adaptation) | Tutorial | - | [Link](https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms) |
 | Human-like systematic generalization through a meta-learning neural network | Paper | Nature | [Link](https://www.nature.com/articles/s41586-023-06668-3) |
-| OpenAI: Facts from a Weekend | Article | LessWrong | - |
+| OpenAI: Facts from a Weekend | Article | LessWrong | [Link](https://www.lesswrong.com/posts/KXHMCH7wCxrvKsJyn/openai-facts-from-a-weekend) |
 | A checklist for switching to open source ML models | Guide | - | - |
 | Distill — Latest articles about machine learning | Website | Distill | [Link](https://distill.pub/) |
-| Research Papers in January 2024 | Newsletter | Sebastian Raschka | - |
+| Research Papers in January 2024 | Newsletter | Sebastian Raschka | [Link](https://magazine.sebastianraschka.com/p/research-papers-in-january-2024) |
 | V-JEPA: The next step toward advanced machine intelligence | Research | Meta | [Link](https://ai.meta.com/blog/v-jepa-yann-lecun-ai-model-video-joint-embedding-predictive-architecture/) |
-| Improving LoRA: Implementing Weight-Decomposed Low-Rank Adaptation (DoRA) from Scratch | Tutorial | - | - |
+| Improving LoRA: Implementing Weight-Decomposed Low-Rank Adaptation (DoRA) from Scratch | Tutorial | - | [Link](https://magazine.sebastianraschka.com/p/lora-and-dora-from-scratch) |
 | ML-YouTube-Courses: Discover the latest machine learning / AI courses on YouTube | GitHub | dair-ai | [Link](https://github.com/dair-ai/ML-YouTube-Courses) |
 | SolidGoldMagikarp (plus, prompt generation) | Article | LessWrong | [Link](https://www.lesswrong.com/posts/aPeJE8bSo6rAFoLqg/solidgoldmagikarp-plus-prompt-generation) |
-| Explaining SolidGoldMagikarp by looking at it from random directions | Article | LessWrong | - |
+| Explaining SolidGoldMagikarp by looking at it from random directions | Article | LessWrong | [Link](https://www.lesswrong.com/posts/jbi9kxhb4iCQyWG9Y/explaining-solidgoldmagikarp-by-looking-at-it-from-random) |
 | Mamba No. 5 (A Little Bit Of…) | Article | Sparse Notes | - |
 | Mamba: The Easy Way | Tutorial | - | [Link](https://jackcook.com/2024/02/23/mamba.html) |
 | Mamba: The Hard Way | Tutorial | - | [Link](https://srush.github.io/annotated-mamba/hard.html) |
@@ -70,13 +70,13 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Ilya's recom to Carmack | Reference | - | - |
 | Speech and Language Processing | Textbook | - | [Link](https://web.stanford.edu/~jurafsky/slp3/) |
 | We need to talk about Agents... | Article | - | - |
-| What can LLMs never do? | Article | Rohit Krishnan | - |
+| What can LLMs never do? | Article | Rohit Krishnan | [Link](https://www.strangeloopcanon.com/p/what-can-llms-never-do) |
 | How to Optimize a CUDA Matmul Kernel for cuBLAS-like Performance: a Worklog | Tutorial | - | [Link](https://siboehm.com/articles/22/CUDA-MMM) |
 | Quantizing deep convolutional networks for efficient inference: A whitepaper | Paper | arXiv | [1806.08342](https://arxiv.org/abs/1806.08342) |
 | Claude's Character | Research | Anthropic | [Link](https://www.anthropic.com/research/claude-character) |
 | Quantization aware training | Documentation | TensorFlow Model Optimization | [Link](https://www.tensorflow.org/model_optimization/guide/quantization/training) |
 | Scalable MatMul-free Language Modeling | Paper | arXiv | [2406.02528](https://arxiv.org/abs/2406.02528) |
-| Introducing Apple's On-Device and Server Foundation Models | Research | Apple ML Research | - |
+| Introducing Apple's On-Device and Server Foundation Models | Research | Apple ML Research | [Link](https://machinelearning.apple.com/research/introducing-apple-foundation-models) |
 | Qwen 2: a story of Alibaba vs Meta | Article | Rick Lamers | - |
 | OpenVLA: An Open-Source Vision-Language-Action Model | Research | - | - |
 | Transformer Architecture: The Positional Encoding | Blog | Amirhossein Kazemnejad | [Link](https://kazemnejad.com/blog/transformer_architecture_positional_encoding/) |
