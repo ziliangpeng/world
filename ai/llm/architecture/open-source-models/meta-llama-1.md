@@ -15,6 +15,7 @@ The original LLaMA (Large Language Model Meta AI) - Meta's first open foundation
 ## Architecture
 
 **Common Components**:
+
 - **Base Design**: Auto-regressive decoder-only transformer
 - **Normalization**: RMSNorm pre-normalization
 - **Activation**: SwiGLU
