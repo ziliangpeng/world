@@ -106,10 +106,22 @@ The quality of the training data was a primary focus, involving several key prep
 
 While the Llama 1 team was not the first to discover the link between code-training and reasoning ability—predecessors like OpenAI's Codex and Google's PaLM had already indicated this—their work served as a massive, large-scale validation of the concept. By explicitly showing that increasing the proportion of code data directly improved performance on math and reasoning benchmarks, they helped solidify this into a core principle for the entire AI community.
 
-This finding has had a lasting impact, influencing nearly all subsequent foundation models (including the Mistral series and later Llama versions). Including a significant portion of high-quality code in the pre-training data is now considered standard practice for building capable, general-purpose models.
+    This finding has had a lasting impact, influencing nearly all subsequent foundation models (including the Mistral series and later Llama versions). Including a significant portion of high-quality code in the pre-training data is now considered standard practice for building capable, general-purpose models.
+
+### Training Infrastructure and Efficiency
+
+Training Llama 1 models required a substantial compute infrastructure and sophisticated optimization to achieve the reported performance and scale.
+
+*   **Hardware:** The models were trained on a cluster of **2,048 NVIDIA A100 GPUs**, each equipped with **80GB of High Bandwidth Memory (HBM)**. This massive parallel processing capability was crucial. The efficient communication between these GPUs, likely facilitated by NVLink interconnects, was vital for distributed training.
+*   **Performance:** The largest LLaMA-65B model was trained over **21 days** on 1.4 trillion tokens, achieving a high throughput of approximately **380 tokens/second/GPU**.
+*   **Software Optimizations:** Achieving this efficiency demanded custom software engineering beyond standard frameworks:
+    *   **Efficient Causal Multi-head Attention:** An optimized implementation, available in the `xformers` library, was used. This technique reduced memory usage and runtime by not storing attention weights and avoiding unnecessary computations for masked key/query scores.
+    *   **Selective Activation Checkpointing:** Instead of relying on PyTorch's default autograd, a manual backward pass was implemented. This allowed for strategic saving of computationally expensive activations, optimizing the trade-off between memory and re-computation during the backward pass.
+    *   **Overlapping Computation and Communication:** The training pipeline was designed to overlap communication between GPUs (e.g., `all_reduce` operations for gradient synchronization) with computation, effectively hiding network latency and keeping GPUs busy.
+
+*   **Carbon Footprint:** In a notable move towards transparency, the paper estimated the total carbon emissions for the project to be **~2,200 tCO2eq** (tons of CO2 equivalent) before any carbon offsets. This highlights the significant environmental cost of large-scale AI training.
 
 ## Performance
-
 The Llama 1 models demonstrated groundbreaking performance, proving that smaller, more efficiently trained models could outperform larger competitors. The paper's key finding is that **LLaMA-13B outperforms the much larger GPT-3 (175B) on most benchmarks**, while **LLaMA-65B is competitive with leading models like Chinchilla-70B and PaLM-540B**.
 
 ### Common Sense Reasoning (Zero-shot)
