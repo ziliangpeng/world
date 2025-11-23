@@ -101,6 +101,12 @@ The quality of the training data was a primary focus, involving several key prep
     *   **Tokenizer:** A SentencePiece tokenizer using the Byte-Pair Encoding (BPE) algorithm was used, with a vocabulary size of 32K tokens.
     *   **Number Handling:** A crucial detail is that all numbers were split into individual digits. This forces the model to learn the mathematical properties of numbers rather than memorizing them as distinct entities, which aids in numerical reasoning.
 
+#### The "Code for Reasoning" Hypothesis
+
+While the Llama 1 team was not the first to discover the link between code-training and reasoning ability—predecessors like OpenAI's Codex and Google's PaLM had already indicated this—their work served as a massive, large-scale validation of the concept. By explicitly showing that increasing the proportion of code data directly improved performance on math and reasoning benchmarks, they helped solidify this into a core principle for the entire AI community.
+
+This finding has had a lasting impact, influencing nearly all subsequent foundation models (including the Mistral series and later Llama versions). Including a significant portion of high-quality code in the pre-training data is now considered standard practice for building capable, general-purpose models.
+
 ## Performance
 
 - **LLaMA-13B outperformed GPT-3 175B** on most benchmarks
