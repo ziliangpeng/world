@@ -2,69 +2,6 @@
 
 **Release Date**: February 24, 2023
 
-The original LLaMA (Large Language Model Meta AI) - Meta's first open foundation model that proved smaller, well-trained models could outperform much larger proprietary models.
-
-## Model Variants
-
-- **7B**: 7 billion parameters
-- **13B**: 13 billion parameters
-- **33B**: 33 billion parameters
-- **65B**: 65 billion parameters
-
-## Architecture
-
-**Base Design**: Auto-regressive decoder-only transformer
-
-**Key Components**:
-- **Normalization**: RMSNorm pre-normalization (instead of post-normalization)
-- **Activation**: SwiGLU activation function (from PaLM)
-- **Position Encoding**: Rotary Embeddings (RoPE, not absolute positional embeddings)
-- **Attention**: Multi-Head Attention (MHA)
-- **FFN Dimension**: 2/3 × 4d instead of 4d (as in PaLM)
-
-## Training Details
-
-- **Tokens**:
-  - 65B & 33B: 1.4 trillion tokens
-  - 7B: 1 trillion tokens
-- **Context Window**: 2,048 tokens
-- **Vocabulary**: 32K tokens (SentencePiece tokenizer)
-- **Training Data**: Publicly available datasets only
-  - English CommonCrawl, C4
-  - GitHub, Wikipedia
-  - Gutenberg and Books3
-  - ArXiv, Stack Exchange
-
-## Performance
-
-- **LLaMA-13B outperformed GPT-3 175B** on most benchmarks
-- **LLaMA-65B competitive** with Chinchilla-70B and PaLM-540B
-
-This was groundbreaking: a 13B model beating a 175B model showed that training quality and data matter more than sheer size.
-
-## Significance
-
-- **First major open-source model from Meta**
-- **Proved open models could compete with proprietary ones**
-- **Established architectural patterns**: RMSNorm, SwiGLU, RoPE became standard
-- **Sparked explosion of derivative models**: Alpaca, Vicuna, and countless fine-tunes
-
-## Access and Distribution
-
-- **Initial Release**: Research-only, application required
-- **Access**: Case-by-case basis to academic researchers, government, civil society, academia, and industry research labs
-- **Inference Code**: Released as open-source (GPLv3 license)
-- **The Leak**: March 3, 2023 - Posted on 4chan via BitTorrent, democratizing access
-
-## Variants
-
-**No Official Chat/Instruct Versions**: Llama 1 was base-only. Community created fine-tuned versions:
-- **Alpaca** (Stanford) - Instruction-tuned using Self-Instruct method
-- **Vicuna** - Community chat model
-- Many others
-
-Meta didn't release official chat variants until Llama 2.
-
 ## Links
 
 - **Paper**: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
@@ -73,11 +10,67 @@ Meta didn't release official chat variants until Llama 2.
   - Community conversions available: [decapoda-research/llama-7b-hf](https://huggingface.co/decapoda-research/llama-7b-hf), [huggyllama/llama-7b](https://huggingface.co/huggyllama/llama-7b)
   - Note: Community versions are format conversions (PyTorch .pth → HuggingFace Transformers format) of the same official weights, not different models. Early conversions like decapoda-research may be outdated.
 
-## Legacy
+The original LLaMA (Large Language Model Meta AI) - Meta's first open foundation model that proved smaller, well-trained models could outperform much larger proprietary models.
 
-Llama 1 changed everything. It showed the world that:
-1. Open-source could compete with closed models
-2. Smaller, well-trained models beat larger, poorly-trained ones
-3. The AI community would embrace and build on open foundations
+## Architecture
 
-The leak, while not Meta's intention, accelerated the democratization of AI and set the stage for Llama 2's fully open release.
+**Common Components**:
+- **Base Design**: Auto-regressive decoder-only transformer
+- **Normalization**: RMSNorm pre-normalization
+- **Activation**: SwiGLU
+- **Position Encoding**: Rotary Embeddings (RoPE)
+- **Attention**: Multi-Head Attention (MHA)
+- **FFN Dimension**: 2/3 × 4d (as in PaLM)
+- **Vocabulary**: 32K tokens (SentencePiece tokenizer)
+
+**Model Specifications**:
+
+| Parameters | Dimension (`dim`) | # Layers (`n_layers`) | # Heads (`n_heads`) | FFN Dim (`hidden_dim`) |
+|------------|-------------------|-----------------------|---------------------|------------------------|
+| **7B**     | 4096              | 32                    | 32                  | 11008                  |
+| **13B**    | 5120              | 40                    | 40                  | 13824                  |
+| **33B**    | 6656              | 60                    | 52                  | 17920                  |
+| **65B**    | 8192              | 80                    | 64                  | 22016                  |
+
+
+## Training Details
+
+- **Optimizer**: AdamW (β₁=0.9, β₂=0.95)
+- **Learning Rate Schedule**: Cosine decay, with a 2,000-step warmup.
+  - **Peak LR (7B, 13B)**: 3.0 × 10⁻⁴
+  - **Peak LR (33B, 65B)**: 1.5 × 10⁻⁴
+- **Batch Size**: 4M tokens
+- **Weight Decay**: 0.1
+- **Gradient Clipping**: 1.0
+- **Tokens Trained**:
+  - **7B**: 1 trillion
+  - **13B, 33B, 65B**: 1.4 trillion
+- **Context Window**: 2,048 tokens
+- **Training Data Mix**: A blend of public datasets:
+  - **CommonCrawl (filtered)**: 67%
+  - **C4**: 15%
+  - **GitHub**: 4.5%
+  - **Wikipedia**: 4.5%
+  - **Books (Gutenberg & Books3)**: 4.5%
+  - **ArXiv**: 2.5%
+  - **Stack Exchange**: 2%
+
+## Performance
+
+- **LLaMA-13B outperformed GPT-3 175B** on most benchmarks
+- **LLaMA-65B competitive** with Chinchilla-70B and PaLM-540B
+
+This was groundbreaking: a 13B model beating a 175B model showed that training quality and data matter more than sheer size.
+
+## Legacy and Impact
+
+Llama 1's release was a watershed moment for open-source AI. It fundamentally shifted the landscape by proving that smaller, efficiently trained models could outperform larger, proprietary counterparts like GPT-3. This established a new paradigm where training quality and data curation were understood to be as important as sheer model size.
+
+**Key Impacts**:
+- **Architectural Standards**: It popularized a set of architectural choices—**RMSNorm**, **SwiGLU**, and **RoPE**—that became foundational for many subsequent open-source models.
+- **Democratization via "The Leak"**: Though initially released under a restrictive, research-only license, the model's weights were leaked online in March 2023. This unintended distribution massively accelerated the democratization of advanced AI, putting powerful foundation models into the hands of the global open-source community.
+- **An Explosion of Fine-Tuning**: As a base model with no official chat variant, Llama 1 became the foundation for a vibrant ecosystem of community-driven chat and instruction-tuned models. Notable examples include:
+  - **Alpaca (Stanford)**: An early and influential instruction-following model.
+  - **Vicuna**: A high-quality chat model that demonstrated the power of community fine-tuning.
+
+The success of Llama 1 and the community's enthusiastic adoption directly set the stage for Meta's subsequent release of Llama 2 as a fully open, commercially viable model, cementing the role of open-source in the future of AI development.
