@@ -1127,27 +1127,60 @@ The result: A model that looked impressive on paper (400B parameters, 10M contex
 
 Innovation must be staged. Master one new technique, validate it, then add the next. Meta tried to leap from dense Llama 3 to frontier MoE+multimodal+extreme-context Llama 4 in a single jump—and fell into the chasm.
 
-## Performance: Competitive with GPT-4o and Gemini
+## Performance: The Benchmark vs Reality Gap
 
-Llama 4 achieves competitive performance with leading proprietary models while being the first open-weight natively multimodal MoE family.
+**Critical Context**: Llama 4's performance story is split between impressive benchmark numbers and catastrophic real-world results. This section covers both—the advertised performance that generated headlines, and the actual performance that caused the community to call it "total trash."
 
-### Overall Competitiveness
+### The Two Versions: Experimental vs Public
 
-**Llama 4 Maverick**: Matches or exceeds GPT-4o on broad benchmarks
-- Crossed LMArena 1400 rating (beating GPT-4o)
+Understanding Llama 4's performance requires recognizing that **two fundamentally different versions existed**:
+
+**Experimental Version** (what Meta submitted to benchmarks):
+- LMArena ranking: **#2** (1400+ rating, beating GPT-4o)
+- Optimized for human preference voting with verbose, emoji-filled responses
+- **This is the version in Meta's marketing materials**
+- **This is NOT the version users could download**
+
+**Public Version** (what users actually got):
+- LMArena ranking when independently tested: **#32**
+- Concise responses without emojis
+- Higher error rates and hallucinations
+- **This is what the community tested and called "total trash"**
+
+**The Performance Gap**: A catastrophic **30-position difference** between what was advertised and what was delivered.
+
+### Overall Competitiveness: Benchmark Numbers vs Real-World
+
+**Llama 4 Maverick on Standard Benchmarks** (These are the advertised numbers):
+- LMArena: Crossed 1400 rating (experimental version only)
 - MMLU Pro: 80.5% (strong general knowledge)
-- HumanEval: 82.4% (strong coding)
-- **Caveat**: Public version received mixed feedback; advertised performance from unreleased experimental version
+- HumanEval: 82.4% (appears strong on coding)
+- **Critical caveat**: These benchmarks didn't reflect real-world performance
 
-**Llama 4 Scout**: Strong performance for 17B active parameters
-- MMLU Pro: 74.3% (competitive for size)
-- HumanEval: 74.1% (excellent coding for 17B active)
-- 10M context window (with practical limitations)
+**Llama 4 Maverick on Real-World Tasks** (What users actually experienced):
+- Aider Polyglot (real coding): **16%** (comparable to models 10x smaller)
+- Hard LeetCode problems: **10/632 passed** (98% failure rate)
+- Community consensus: **"Total trash," "atrocious for its size," "worse than qwq32b"**
+- r/LocalLLaMA (named after Llama!): "Severely underwhelming on all fronts"
 
-**Llama 4 Behemoth**: Still in training, early results impressive
-- MATH-500: 95.0% (near-perfect math)
+**Why the Gap?**
+1. HumanEval tests simple, isolated coding tasks—Llama 4 could produce plausible code
+2. Aider Polyglot tests real-world coding with context—Llama 4's verbosity and errors killed it
+3. Online RL post-training optimized for benchmark voting patterns, not practical usefulness
+4. FP8 precision errors and MoE routing instability broke multi-step reasoning
+
+**Llama 4 Scout**:
+- MMLU Pro: 74.3% (competitive for 17B active parameters)
+- HumanEval: 74.1% (appears excellent for size)
+- **10M context window claim**: Only trained to 256K; at 120K actual accuracy: **15.6%** (vs Gemini 2.5 Pro: 90.6%)
+- Real-world: Same verbosity and quality issues as Maverick
+
+**Llama 4 Behemoth**:
+- **Status**: Still in training as of late 2025, never publicly released
+- MATH-500: 95.0% (early internal results)
 - MMLU Pro: 82.2% (exceeds Maverick)
-- Targets frontier-level performance
+- **Reality**: Training at 20% compute utilization, 6+ months late, serious concerns about capability targets
+- **Question**: Do these preliminary numbers reflect real performance or another experimental variant?
 
 ### Pre-Trained Models Performance
 
@@ -1239,54 +1272,93 @@ Llama 4 achieves competitive performance with leading proprietary models while b
 
 *Maverick achieves comparable results with fewer active parameters*
 
-### Strengths and Weaknesses
+### Strengths and Weaknesses: The Honest Assessment
 
-**Strengths**:
-- **MoE efficiency**: 17B active delivering 400B capacity performance
-- **Multimodal**: Native text/image/video understanding
-- **Math reasoning**: Massive improvements (MATH: +7.7 to +8.7 over Llama 3)
-- **Coding**: Major gains (HumanEval: +14.1 to +17.4 over Llama 3)
-- **Context window**: 10M tokens (Scout) enables new use cases
-- **Safety**: Better usability (<2% political refusal vs 7% Llama 3.3)
+**Architectural Strengths** (What Meta got right technically):
+- **MoE innovation**: First open-weight natively multimodal MoE—genuine technical achievement
+- **Theoretical efficiency**: 17B active parameters delivering 400B capacity (on paper)
+- **Multimodal architecture**: Native text/image/video from token 0 (vs adapter approach)
+- **Training scale**: 100K+ GPU cluster, 30T+ tokens—ambitious infrastructure
 
-**Weaknesses**:
-- **Context degradation**: Advertised 10M, but 15.6% accuracy at 120k (vs Gemini 90.6%)
-- **Mixed reception**: Public Maverick version underperformed advertised benchmarks
-- **Trails Claude**: Still behind Claude 3.5 on coding (92% vs 82.4%)
-- **Trails GPT-4o**: Slightly behind on some benchmarks (MMLU, HumanEval)
-- **Behemoth delays**: Flagship model still not released, creating uncertainty
+**Benchmark Performance** (When it worked):
+- **MMLU Pro**: 80.5% (Maverick)—strong on general knowledge tests
+- **GPQA Diamond**: 69.8%—good on graduate-level questions
+- **Multimodal benchmarks**: ChartQA 90%, DocVQA 94.4%—solid vision performance
+- **Math on synthetic benchmarks**: MATH improved +7.7 to +8.7 over Llama 3
 
-### Per-Model-Size Analysis
+**Critical Weaknesses** (What made it a disaster):
+- **Benchmark manipulation scandal**: Experimental (#2) vs public (#32)—30-position gap destroyed trust
+- **Catastrophic real-world coding**: 16% Aider Polyglot, 98% LeetCode failure—"total trash" per community
+- **Context window fraud**: Advertised 10M, trained to 256K, 15.6% accuracy at 120K (vs Gemini 90.6%)
+- **"Yapping" problem**: 1000+ word verbose responses optimized for benchmarks, not usefulness
+- **FP8 precision failures**: Numerical errors broke reasoning and multi-step tasks
+- **MoE routing instability**: Inconsistent expert selection caused logic failures
+- **Behemoth never shipped**: Flagship model still in training, 6+ months late, 20% compute utilization
+
+**Execution Failures**:
+- **Seven simultaneous innovations**: MoE + FP8 + multimodal + 10M context + online RL + 100K GPUs + talent exodus = technical hubris
+- **Rushed to market**: Saturday launch, no technical paper, bugs and misconfigurations
+- **Poor testing**: Didn't validate public version on benchmarks, didn't test context beyond 256K
+- **Communication disaster**: Fine print disclosures, experimental vs public confusion, "cover-up" perception
+
+**Community Impact**:
+- **Trust destruction**: r/LocalLLaMA (named after Llama!) turned against Meta
+- **Reputation damage**: "By far the most negative reaction to any model release"
+- **LMArena policy changes**: Explicitly created new rules because of Meta's actions
+- **Open-source movement harm**: Skepticism about corporate "open source" claims
+
+### Per-Model-Size Analysis: Promises vs Reality
 
 **Scout (17B active, 109B total)**:
-- **Best for**: Extreme context applications (10M tokens)
-- **Performance**: Competitive with Llama 3.1 70B despite 4.1x fewer active params
-- **Trade-off**: Context window impressive but practical performance degrades
-- **Use case**: Large codebase analysis, multi-book processing
+- **Marketing claim**: "10M context window enables unprecedented use cases"
+- **Reality**: Trained only to 256K, 15.6% accuracy at 120K (vs Gemini's 90.6%)
+- **Benchmark performance**: Competitive with Llama 3.1 70B on standard tests
+- **Real-world**: Same verbosity and quality issues as Maverick
+- **Honest use case**: Standard tasks within 128K context—forget the 10M claim
 
 **Maverick (17B active, 400B total)**:
-- **Best for**: High-capacity multimodal tasks, general-purpose deployment
-- **Performance**: Matches/exceeds Llama 3.1 405B with 23.8x fewer active params
-- **Trade-off**: Public version vs experimental version performance gap
-- **Use case**: Production deployments requiring GPT-4 class performance
+- **Marketing claim**: "Beats GPT-4o, ranks #2 on LMArena"
+- **Reality**: Experimental version ranked #2, public version ranked #32
+- **Benchmark performance**: MMLU Pro 80.5%, HumanEval 82.4%
+- **Real-world**: 16% Aider Polyglot, 98% LeetCode failure, "total trash" per community
+- **Honest use case**: If you can tolerate verbose responses and accept significant quality gaps vs advertised
 
 **Behemoth (288B active, ~2T total)**:
-- **Best for**: Frontier-level reasoning, math, coding
-- **Performance**: Early results show massive improvements (MATH-500: 95%)
-- **Trade-off**: Still in training, delayed release
-- **Use case**: When absolute best performance needed
+- **Marketing claim**: "Flagship model delivering frontier performance"
+- **Reality**: Still in training late 2025, 6+ months delayed, 20% compute utilization
+- **Preliminary benchmarks**: MATH-500 95%, MMLU Pro 82.2%
+- **Question**: Are these real or another experimental variant situation?
+- **Honest status**: Vaporware until actually released and validated
 
-### The Llama 3 → Llama 4 Performance Leap
+### The Llama 3 → Llama 4 Performance: Benchmarks vs Reality
 
-| Category | Llama 3.1 405B | Llama 4 Maverick (17B active) | Change |
-|----------|---------------|------------------------------|--------|
-| **MMLU Pro** | 73.4% | 80.5% | **+7.1** |
-| **GPQA** | 49.0% | 69.8% | **+20.8** |
-| **HumanEval** | ~65% | 82.4% | **+17.4** |
-| **Context** | 128K | 1M | **7.8x** |
-| **Active Params** | 405B | **17B** | **23.8x fewer** |
+**Standard Benchmark Numbers** (What Meta advertised):
 
-**Key Insight**: Llama 4 Maverick delivers better performance than Llama 3.1 405B with 23.8x fewer active parameters—validating the MoE architecture's efficiency.
+| Category | Llama 3.1 405B | Llama 4 Maverick | Change | Reality Check |
+|----------|---------------|------------------|--------|---------------|
+| **MMLU Pro** | 73.4% | 80.5% | **+7.1** | Synthetic benchmark |
+| **GPQA** | 49.0% | 69.8% | **+20.8** | Synthetic benchmark |
+| **HumanEval** | ~65% | 82.4% | **+17.4** | Simple isolated tasks |
+| **Context** | 128K | 1M | **7.8x** | Only trained to 256K |
+| **Active Params** | 405B | **17B** | **23.8x fewer** | Real advantage |
+
+**Real-World Performance** (What users experienced):
+
+| Test | Llama 3.1 405B | Llama 4 Maverick | Change | Community Verdict |
+|------|---------------|------------------|--------|-------------------|
+| **Aider Polyglot** | Unknown | **16%** | Catastrophic | "Total trash" |
+| **LeetCode Hard** | Unknown | **10/632 (98% fail)** | Disaster | "Atrocious for size" |
+| **LMArena (public)** | Unknown | **#32** | vs #2 experimental | "Bait-and-switch" |
+| **Context at 120K** | Works | **15.6% accuracy** | Broken | "Worse than qwq32b" |
+| **Production use** | Viable | **Community rejection** | Failure | "Worse than much smaller models" |
+
+**The Bottom Line**:
+
+On synthetic benchmarks optimized for, Llama 4 appeared to validate MoE efficiency—delivering better scores than Llama 3.1 405B with 23.8x fewer active parameters.
+
+On real-world tasks users actually care about, Llama 4 was a catastrophic failure—ranking #32 instead of #2, scoring 16% on real coding instead of 82.4% on HumanEval, and earning universal condemnation from the community it was supposed to serve.
+
+**The lesson**: Benchmark numbers without real-world validation are marketing fiction.
 
 ## Key Innovations: Pushing the Frontier of Open AI
 
