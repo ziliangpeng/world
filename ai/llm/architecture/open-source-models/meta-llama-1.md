@@ -49,6 +49,19 @@ This approach involved a few key layers of innovation:
 The decision to use this specific combination was the result of extensive ablation studies on smaller models, where different components were tested and measured for their impact on performance, stability, and training speed. The final choices represent a carefully optimized balance of performance gains versus computational cost and implementation risk.
 
 
+### Hyperparameter Choices and Scaling
+
+The specific values for dimension, layers, and heads are not arbitrary. They are the result of a complex optimization process guided by three main factors:
+
+1.  **Chinchilla Scaling Laws:** The Llama paper explicitly followed the guidance from DeepMind's [Chinchilla paper (2022)](https://arxiv.org/abs/2203.15556). This research argued that for optimal performance, model size and training data size should be scaled proportionally. Llama was the first major project to prove this theory in practice, intentionally training smaller models on far more data than previous models like GPT-3.
+
+2.  **Hardware Efficiency:** The specific numbers (e.g., a `dim` of 4096, a `head_dim` of 128) are chosen to maximize training throughput on the underlying hardware (NVIDIA A100 GPUs). Dimensions are typically set to multiples of 64 or 128 to align with the architecture of GPU cores and memory, making matrix calculations significantly faster.
+
+3.  **Iterative Experimentation:** While guided by scaling laws, the final ratios of depth vs. width were likely refined through extensive, small-scale experiments. Teams typically run hundreds of tests on smaller models to find a "sweet spot" before committing to a multi-million dollar training run.
+
+These choices are highly sensitive and interdependent. Changing one value requires re-balancing the others to stay within a specific parameter budget, all while trying to maximize performance and efficiency.
+
+
 ## Training Details
 
 - **Optimizer**: AdamW (β₁=0.9, β₂=0.95)
