@@ -1,8 +1,8 @@
 # Llama 4
 
-**Release Date**: April 5, 2025
+**Release Date**: April 5, 2025 (Saturday—unusual timing that sparked immediate skepticism)
 
-Meta's first natively multimodal model family with Mixture-of-Experts architecture and unprecedented 10M token context window.
+**Summary**: Meta's first natively multimodal Mixture-of-Experts (MoE) model family became one of the most controversial AI launches in history. Despite genuine architectural innovations (MoE, native multimodality, extreme context via iRoPE), Llama 4 was destroyed by benchmark manipulation (experimental version ranked #2, public version #32), catastrophic real-world performance (16% Aider coding, 98% LeetCode failure), and community rejection ("total trash"). The scandal triggered Zuckerberg's personal intervention, a 4th organizational restructuring in 6 months, executive exodus, and 600 layoffs. Llama 4's enduring legacy: a cautionary tale of how not to release frontier AI.
 
 ## Origin Story: A Complete Architectural Reimagining
 
