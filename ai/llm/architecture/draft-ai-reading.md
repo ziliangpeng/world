@@ -50,7 +50,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | ML-YouTube-Courses: Discover the latest machine learning / AI courses on YouTube | GitHub | dair-ai | [Link](https://github.com/dair-ai/ML-YouTube-Courses) |
 | SolidGoldMagikarp (plus, prompt generation) | Article | LessWrong | [Link](https://www.lesswrong.com/posts/aPeJE8bSo6rAFoLqg/solidgoldmagikarp-plus-prompt-generation) |
 | Explaining SolidGoldMagikarp by looking at it from random directions | Article | LessWrong | [Link](https://www.lesswrong.com/posts/jbi9kxhb4iCQyWG9Y/explaining-solidgoldmagikarp-by-looking-at-it-from-random) |
-| Mamba No. 5 (A Little Bit Of…) | Article | Sparse Notes | - |
+| Mamba No. 5 (A Little Bit Of…) | Article | Sparse Notes | [Link](https://jameschen.io/jekyll/update/2024/02/12/mamba.html) |
 | Mamba: The Easy Way | Tutorial | - | [Link](https://jackcook.com/2024/02/23/mamba.html) |
 | Mamba: The Hard Way | Tutorial | - | [Link](https://srush.github.io/annotated-mamba/hard.html) |
 | q star info.pdf | Document | Google Drive | - |
@@ -60,7 +60,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Is Cosine-Similarity of Embeddings Really About Similarity? | Paper | arXiv | [2403.05440](https://arxiv.org/abs/2403.05440) |
 | OpenXLA is available now to accelerate and simplify machine learning | Blog | Google Open Source | [Link](https://opensource.googleblog.com/2023/03/openxla-is-ready-to-accelerate-and-simplify-ml-development.html) |
 | Many-shot jailbreaking | Research | Anthropic | [Link](https://www.anthropic.com/research/many-shot-jailbreaking) |
-| The Data Center is the New Compute Unit: Nvidia's Vision for System-Level Scaling | Article | - | - |
+| The Data Center is the New Compute Unit: Nvidia's Vision for System-Level Scaling | Article | - | [Link](https://www.fabricatedknowledge.com/p/the-data-center-is-the-new-compute) |
 | Techniques for training large neural networks | Guide | OpenAI | [Link](https://openai.com/index/techniques-for-training-large-neural-networks/) |
 | The pitfalls of next-token prediction | Paper | arXiv | [2403.06963](https://arxiv.org/abs/2403.06963) |
 | The N Implementation Details of RLHF with PPO | Blog | ICLR Blogposts 2024 | [Link](https://iclr-blogposts.github.io/2024/blog/the-n-implementation-details-of-rlhf-with-ppo/) |
@@ -95,14 +95,14 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning | Paper | arXiv | [2408.14158](https://arxiv.org/abs/2408.14158) |
 | awesome-dspy | GitHub | tom-doerr | [Link](https://github.com/tom-doerr/awesome-dspy) |
 | Azure/kaito: Kubernetes AI Toolchain Operator | GitHub | Azure | [Link](https://github.com/Azure/kaito) |
-| TensorRT explained | Article | aijobs.net | - |
+| TensorRT explained | Article | aijobs.net | [Link](https://aijobs.net/insights/tensorrt-explained/) |
 | The Evolution of Multimodal Model Architectures | Paper | arXiv | [2405.17927](https://arxiv.org/abs/2405.17927) |
 | Dynamic sparse attention | Tweet | X/Twitter | - |
-| $2 H100s: How the GPU Bubble Burst | Article | Eugene Cheah | - |
+| $2 H100s: How the GPU Bubble Burst | Article | Eugene Cheah | [Link](https://www.latent.space/p/gpu-bubble) |
 | vLLM v0.6.0: 2.7x Throughput Improvement and 5x Latency Reduction | Blog | vLLM | [Link](https://blog.vllm.ai/2024/09/05/perf-update.html) |
 | Making Deep Learning go Brrrr From First Principles | Tutorial | - | [Link](https://horace.io/brrr_intro.html) |
-| Glow | Framework | - | - |
-| ML Compilers Part 2: An Overview of Graph Optimizations | Blog | FuzzyWare | - |
+| Glow | Framework | - | [Link](https://github.com/pytorch/glow) |
+| ML Compilers Part 2: An Overview of Graph Optimizations | Blog | FuzzyWare | [Link](https://uditagarwal.in/ml-compilers-part-2-graph-optimizations/) |
 | GPU-Guide: Graphics Processing Unit (GPU) Architecture Guide | GitHub | mikeroyal | [Link](https://github.com/mikeroyal/GPU-Guide) |
 | Blog list | Collection | - | - |
 | GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models | Paper | arXiv | [2410.05229](https://arxiv.org/abs/2410.05229) |
@@ -111,8 +111,8 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Hugging Face – Blog | Blog | Hugging Face | - |
 | vllm quantization | Documentation | vLLM | [Link](https://docs.vllm.ai/en/latest/features/quantization/index.html) |
 | how-to-optim-algorithm-in-cuda: how to optimize some algorithm in cuda | GitHub | BBuf | [Link](https://github.com/BBuf/how-to-optim-algorithm-in-cuda) |
-| INTELLECT-1 Release The First Globally Trained 10B Parameter Model | Announcement | Prime Intellect | - |
-| INTELLECT_1_Technical_Report.pdf | Technical Report | PrimeIntellect-ai | - |
+| INTELLECT-1 Release The First Globally Trained 10B Parameter Model | Announcement | Prime Intellect | [Link](https://www.primeintellect.ai/blog/intellect-1-release) |
+| INTELLECT_1_Technical_Report.pdf | Technical Report | PrimeIntellect-ai | [Link](https://github.com/PrimeIntellect-ai/prime/blob/main/INTELLECT_1_Technical_Report.pdf) |
 | Making WAF ML models go brrr: saving decades of processing time | Blog | Cloudflare | [Link](https://blog.cloudflare.com/making-waf-ai-models-go-brr/) |
 | Claude 3.5 Sonnet Insane Coding Ability | Article | - | - |
 | AI-Engineering.academy: Mastering Applied AI, One Concept at a Time | GitHub | adithya-s-k | [Link](https://github.com/adithya-s-k/AI-Engineering.academy) |
@@ -161,7 +161,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Improving Cursor Tab With RL | Blog | Cursor | [Link](https://cursor.com/blog/tab-rl) |
 | Paged Attention from First Principles: A View Inside vLLM | Blog | Hamza's Blog | [Link](https://hamzaelshafie.bearblog.dev/paged-attention-from-first-principles-a-view-inside-vllm/) |
 | Speculative cascades — A hybrid approach for smarter, faster LLM inference | Article | - | - |
-| Cornell Virtual Workshop: Understanding GPU Architecture | Workshop | Cornell | - |
+| Cornell Virtual Workshop: Understanding GPU Architecture | Workshop | Cornell | [Link](https://cvw.cac.cornell.edu/gpu-architecture) |
 | Disaggregated Inference at Scale with PyTorch & vLLM | Tutorial | PyTorch | [Link](https://pytorch.org/blog/disaggregated-inference-at-scale-with-pytorch-vllm/) |
 | SGLang v0.4: Zero-Overhead Batch Scheduler, Cache-Aware Load Balancer | Blog | LMSYS Org | [Link](https://lmsys.org/blog/2024-12-04-sglang-v0-4/) |
 | sglang pdf | Document | - | - |
@@ -170,7 +170,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Post-training 101 | Tutorial | Tokens for Thoughts | - |
 | Online RL for Cursor Tab | Blog | Cursor | [Link](https://cursor.com/blog/tab-rl) |
 | Stanford CRFM | Research Group | Stanford | [Link](https://crfm.stanford.edu/) |
-| Surprisingly Fast AI-Generated Kernels We Didn't Mean to Publish (Yet) | Research | Stanford Scaling Intelligence Lab | - |
+| Surprisingly Fast AI-Generated Kernels We Didn't Mean to Publish (Yet) | Research | Stanford Scaling Intelligence Lab | [Link](https://scalingintelligence.stanford.edu/blogs/fastkernels/) |
 | Advanced RAG Techniques: an Illustrated Overview | Article | Towards AI | [Link](https://pub.towardsai.net/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6) |
 | Modular Manifolds | Research | Thinking Machines Lab | - |
 | Inside NVIDIA GPUs: Anatomy of high performance matmul kernels | Tutorial | Aleksa Gordić | [Link](https://www.aleksagordic.com/blog/matmul) |
