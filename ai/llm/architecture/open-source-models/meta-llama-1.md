@@ -120,6 +120,7 @@ This was groundbreaking: a 13B model beating a 175B model showed that training q
 Llama 1's release was a watershed moment for open-source AI. It fundamentally shifted the landscape by proving that smaller, efficiently trained models could outperform larger, proprietary counterparts like GPT-3. This established a new paradigm where training quality and data curation were understood to be as important as sheer model size.
 
 **Key Impacts**:
+
 - **Architectural Standards**: It popularized a set of architectural choices—**RMSNorm**, **SwiGLU**, and **RoPE**—that became foundational for many subsequent open-source models.
 - **Democratization via "The Leak"**: Though initially released under a restrictive, research-only license, the model's weights were leaked online in March 2023. This unintended distribution massively accelerated the democratization of advanced AI, putting powerful foundation models into the hands of the global open-source community.
 - **An Explosion of Fine-Tuning**: As a base model with no official chat variant, Llama 1 became the foundation for a vibrant ecosystem of community-driven chat and instruction-tuned models. Notable examples include:
