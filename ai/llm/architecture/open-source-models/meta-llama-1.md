@@ -63,6 +63,7 @@ These choices are highly sensitive and interdependent. Changing one value requir
 
 
 ## Training Details
+Llama 1 was released as a purely pre-trained base model, with no official post-training or fine-tuning (e.g., for instruction-following or alignment) applied by Meta.
 
 ### Optimizer Configuration
 - **Optimizer**: AdamW (β₁=0.9, β₂=0.95)
