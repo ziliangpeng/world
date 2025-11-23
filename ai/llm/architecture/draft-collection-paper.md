@@ -104,6 +104,7 @@ Efficient methods for customizing pretrained models to specific tasks without fu
 | LQ-LoRA: Low-rank Plus Quantized Matrix Decomposition for Efficient Language Model Finetuning | 2023 | [2311.12023](https://arxiv.org/abs/2311.12023) |
 | RAG vs Fine-tuning: Pipelines, Tradeoffs, and a Case Study on Agriculture | 2024 | [2401.08406](https://arxiv.org/abs/2401.08406) |
 | LoRA Learns Less and Forgets Less | 2024 | [2405.09673](https://arxiv.org/abs/2405.09673) |
+| Evolution of meta's llama models and parameter-efficient fine-tuning of large language models: a survey | 2025 | [2510.12178](https://arxiv.org/abs/2510.12178) |
 
 ## 🎨 Generative Models & Multimodal AI
 
