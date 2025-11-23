@@ -64,6 +64,7 @@ These choices are highly sensitive and interdependent. Changing one value requir
 
 ## Training Details
 
+### Optimizer Configuration
 - **Optimizer**: AdamW (β₁=0.9, β₂=0.95)
 - **Learning Rate Schedule**: Cosine decay, with a 2,000-step warmup.
   - **Peak LR (7B, 13B)**: 3.0 × 10⁻⁴
@@ -71,6 +72,10 @@ These choices are highly sensitive and interdependent. Changing one value requir
 - **Batch Size**: 4M tokens
 - **Weight Decay**: 0.1
 - **Gradient Clipping**: 1.0
+
+These optimizer settings are not novel; they represent the established best practices for training large Transformers in 2022-2023. The choices of AdamW, a cosine learning rate schedule, and gradient clipping were standard. The specific beta values (`β₂=0.95`) and learning rates were the result of meticulous hyperparameter tuning, following the precedent set by other large-scale models like GPT-3 rather than inventing new techniques. The innovation was in the flawless execution and precise tuning of these known methods at a massive scale.
+
+### Training Scale and Data
 - **Tokens Trained**:
   - **7B**: 1 trillion
   - **13B, 33B, 65B**: 1.4 trillion
