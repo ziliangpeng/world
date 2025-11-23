@@ -177,7 +177,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Weight Transfer for RL Post-Training in under 2 seconds | Article | - | - |
 | Deploying DeepSeek with PD Disaggregation and Large-Scale Expert Parallelism on 96 H100 GPUs | Blog | LMSYS Org | [Link](https://lmsys.org/blog/2025-05-05-large-scale-ep/) |
 | LLM evolution | Article | - | - |
-| Qwen 3 | Announcement | Qwen | [Link](https://qwenlm.github.io/blog/qwen3/) |
+| Qwen 3 | Announcement | Qwen | [Link](https://open.substack.com/pub/aibyhand/p/qwen-3?r=3w4d5&utm_medium=ios) |
 | flash decoding | Research | - | - |
 | Dissecting Batching Effects in GPT Inference | Analysis | - | - |
 | How to think about GPU | Guide | - | - |
