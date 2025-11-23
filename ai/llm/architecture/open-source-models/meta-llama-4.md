@@ -4,6 +4,103 @@
 
 Meta's first natively multimodal model family with Mixture-of-Experts architecture and unprecedented 10M token context window.
 
+## Origin Story: A Complete Architectural Reimagining
+
+Llama 4 represents Meta's most ambitious architectural departure in the Llama family history, moving from dense transformers to Mixture-of-Experts while introducing native multimodality and extreme context lengths. This wasn't an incremental improvement—it was a fundamental redesign.
+
+### The Strategic Pivot
+
+After Llama 3's success in matching GPT-4 with dense models, Meta faced a critical decision: continue scaling dense models to ever-larger sizes, or adopt the sparse MoE architecture that had enabled competitors like GPT-4 and Gemini 1.5 to achieve superior efficiency.
+
+**The MoE Decision**:
+- **Dense scaling limits**: Training a 1T+ parameter dense model would be prohibitively expensive
+- **MoE efficiency**: 400B total parameters with only 17B active delivers 400B capacity at 17B cost
+- **Competitive necessity**: GPT-4, Gemini 1.5, DeepSeek V3 all use MoE
+- **Future-proofing**: MoE enables continued scaling without proportional compute growth
+
+**The Multimodal Shift**:
+- Llama 3.2's adapter approach (vision added later) had fundamental limitations
+- Native multimodality from token 0 enables deeper cross-modal understanding
+- Unified representation space across text, images, and video
+- Competitive response to GPT-4o, Gemini 1.5, Claude 3.5 multimodal capabilities
+
+### Development Timeline and Challenges
+
+- **Development Start**: After Llama 3.1 release (July 2024), "complete re-design" initiated
+- **Release Date**: April 5, 2025 (Saturday release—unusual timing that sparked skepticism)
+- **Initial Models**: Scout and Maverick released immediately
+- **Behemoth**: Originally planned for April 2025 (LlamaCon), pushed to June, still in training as of late 2025
+
+**Development Challenges**:
+- **Behemoth delays**: Serious engineering/research concerns about meeting claimed capabilities
+- **Real-world performance**: Public Maverick version received mixed feedback; advertised LMArena ranking was from unreleased chat-optimized experimental version
+- **Context window issues**: Significant degradation even at 120k tokens (15.6% accuracy vs advertised 10M support)
+- **Talent exodus**: 11 of the original 14 PhD researchers who created Llama 1 have left Meta by early 2025
+
+### Team Organization and Leadership Changes
+
+**May 2025 Restructuring**:
+Meta split its AI division into two units:
+- **AI Products Team**: Led by Connor Hayes, focuses on product integration
+- **AGI Foundations Unit**: Co-led by Ahmad Al-Dahle and Amir Frenkel, handles foundational research
+
+**February 2025 Leadership Appointments**:
+- **Loredana Crisan**: Lead PM for AI products
+- **Amir Frenkel**: Engineering head (former VP of Mixed Reality)
+
+**Current Leadership**:
+- **Ahmad Al-Dahle**: VP, Head of GenAI at Meta, Head of Llama Team
+- Reports to Chief Product Officer Chris Cox
+- Leads AGI Foundations Unit alongside Frenkel
+
+**Team Challenges**:
+- Tighter performance standards implemented
+- Significant talent loss from original Llama team
+- Organizational restructuring mid-development
+- Pressure to compete with OpenAI (named top competitor in internal documents)
+
+### Strategic Objectives
+
+**Competing at the Frontier**:
+1. **Match GPT-4o**: Multimodal, efficient, strong reasoning
+2. **Match Gemini 1.5**: 1M+ context, multimodal, MoE architecture
+3. **Match Claude 3.5**: Strong reasoning and coding
+4. **Beat DeepSeek V3**: More efficient MoE with competitive reasoning/coding
+
+**Open-Source Leadership**:
+- Maintain Llama's 9% enterprise AI market share
+- First open-weight natively multimodal MoE models
+- Democratize frontier capabilities previously only in proprietary models
+- Prove open-source can match closed models on cutting-edge features
+
+**Future-Proofing AI Development**:
+- Belief that future AI agents will be conversational, not text-based
+- Speech capabilities (Omni models) to compete with GPT-4o Voice Mode, Gemini Live
+- Extreme context (10M tokens) enables entirely new use cases
+- MoE as template for all future Llama models
+
+### The Gamble and Early Reception
+
+**The Saturday Launch**:
+- Unusual April 5, 2025 (Saturday) release timing raised eyebrows
+- Sparked immediate skepticism about model readiness
+- Some viewed it as rushed to meet competitive pressure
+
+**Mixed Initial Response**:
+- **Positive**: Impressive benchmarks (Maverick beats GPT-4o on broad benchmarks per Meta)
+- **Negative**: Public Maverick version didn't match advertised performance
+- **Controversial**: LMArena ranking claim based on unreleased experimental version
+- **Technical issues**: Context window degradation at much shorter lengths than advertised
+
+**The Behemoth Situation**:
+- Announced as flagship 288B active parameter model
+- Originally planned for April 2025 launch
+- Pushed to June, then delayed further
+- Still in training with concerns about capability targets
+- Creates uncertainty about Meta's flagship model delivery
+
+Despite early challenges, Llama 4 represents Meta's bold bet that the future of open AI requires MoE, native multimodality, and extreme context—even if the execution has been imperfect.
+
 ## Model Variants
 
 ###
