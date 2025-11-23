@@ -750,23 +750,247 @@ Llama 4 achieves competitive performance with leading proprietary models while b
 
 **Key Insight**: Llama 4 Maverick delivers better performance than Llama 3.1 405B with 23.8x fewer active parameters—validating the MoE architecture's efficiency.
 
-## Key Innovations
+## Key Innovations: Pushing the Frontier of Open AI
 
-1. **First Open-Weight Natively Multimodal MoE Models**
-   - Combines MoE + multimodal in open model
-   - Previously only proprietary models (GPT-4, Gemini)
+Llama 4 introduces several breakthrough innovations that mark a fundamental departure from the Llama 3 architecture and methodology, bringing open-source models to the frontier of AI capabilities.
 
-2. **Massive Context Length (10M tokens)**
-   - 78x larger than Llama 3.1
-   - Enables entirely new use cases
+### 1. First Open-Weight Natively Multimodal MoE Models
 
-3. **Advanced Reasoning and Speech Capabilities**
-   - Enhanced reasoning over previous versions
-   - Speech processing capabilities
+**What's New**: Llama 4 combines two frontier techniques—Mixture-of-Experts (MoE) and native multimodality—in an open-weight model for the first time.
 
-4. **Doubled Training Data**
-   - 30T tokens vs 15T in Llama 3
-   - Higher quality multimodal data
+**Llama 3 Baseline**:
+- **Architecture**: Dense transformers (all parameters active every token)
+- **Multimodal**: Adapter-based approach (Llama 3.2 Vision)
+  - Text model trained separately
+  - Vision encoder added later via cross-attention adapters
+  - Limited cross-modal understanding
+
+**Llama 4 Advancement**:
+- **MoE Architecture**: Sparse activation (only 17B of 400B params active per token)
+  - **Efficiency**: 23.8x fewer FLOPs than Llama 3.1 405B dense model
+  - **Capacity**: Maintains 400B parameter capacity while computing with 17B
+  - **Specialization**: 128 experts (Maverick) can specialize in different domains
+- **Native Multimodality**: Early fusion from token 0
+  - Text, images, video jointly trained from the start
+  - Unified latent space across all modalities
+  - Deep cross-modal attention throughout model
+  - No adapter layers needed
+
+**Why This Matters**:
+- **Democratization**: Previously, only proprietary models (GPT-4, Gemini, Claude 3.5) combined these techniques
+- **Open research**: Enables community to study MoE + multimodal architectures
+- **Efficiency**: Makes frontier-level capabilities accessible at lower compute cost
+- **Future-proofing**: MoE + multimodal is the new standard for state-of-the-art models
+
+**Technical Implementation**:
+```
+Llama 3.2 Vision:
+1. Pre-train text model (dense) → 2. Freeze weights → 3. Train vision encoder separately →
+4. Add cross-attention adapters → 5. Fine-tune adapters only
+
+Llama 4:
+1. Joint pre-training (text + images + video as unified token sequence from token 0) →
+2. Native attention across all modalities → 3. No separate encoders/adapters needed
+```
+
+### 2. Extreme Context Windows via iRoPE
+
+**What's New**: Scout achieves 10 million token context—78x larger than Llama 3.1—through novel iRoPE (Interleaved Rotary Position Embeddings) architecture.
+
+**Llama 3 Baseline**:
+- **Llama 3**: 8K context window (standard RoPE)
+- **Llama 3.1**: 128K context window (RoPE scaling)
+  - Near limits of traditional RoPE scaling
+  - Quality degradation beyond ~200K tokens
+
+**Llama 4 Advancement**:
+
+| Model | Context Window | Llama 3.1 Baseline | Increase |
+|-------|---------------|-------------------|----------|
+| **Scout** | **10,000,000** | 128,000 | **78x** |
+| **Maverick** | **1,000,000** | 128,000 | **7.8x** |
+
+**Technical Innovation - iRoPE Components**:
+
+1. **Interleaved Attention Layers**:
+   - **NoPE layers** (every 4th layer): No positional encoding, global attention
+   - **RoPE layers** (3 out of 4 layers): Standard rotary embeddings with chunking
+   - Enables model to balance local and global dependencies
+
+2. **Chunked Attention** (8,192 token chunks):
+   - Local attention computed within chunks in RoPE layers
+   - Reduces memory footprint from O(n²) to O(n×chunk_size)
+   - Maintains quality while enabling extreme lengths
+
+3. **Inference-Time Temperature Scaling**:
+   - Scales attention scores to focus on relevant context parts
+   - Critical for finding relevant information in 10M token sequences
+
+4. **Specialized Long-Context Training**:
+   - Mid-training phase with long-context datasets
+   - Continued training to unlock extreme context
+   - Quality-enhancing during extension (not just extrapolation)
+
+**Why This Matters**:
+- **New use cases**: Entire large codebases, multiple books, years of conversation history
+- **Context=Memory**: Models can maintain context across previously impossible scales
+- **Competitive**: Matches Gemini 1.5 (1M-2M context) in scale
+
+**Practical Limitations**:
+- **Advertised**: 10M tokens (Scout)
+- **Reality**: Significant degradation at 120K tokens (15.6% accuracy on Fiction.LiveBench)
+- **Comparison**: Gemini 2.5 Pro at 120K: 90.6% accuracy
+- **Gap**: Significant difference between claimed and actual long-context performance
+
+### 3. Revolutionary Post-Training: 10x Efficiency Improvement
+
+**What's New**: Complete overhaul of post-training pipeline achieving 10x efficiency over Llama 3 through online RL and dynamic curriculum learning.
+
+**Llama 3 Approach**:
+- **Heavy SFT**: 10M+ supervised fine-tuning examples
+- **Multiple rounds**: Iterative SFT + DPO (Direct Preference Optimization)
+- **Static datasets**: Fixed training data throughout
+- **Broad coverage**: All difficulty levels included
+- **Efficiency**: Baseline
+
+**Llama 4 Approach**:
+
+**Stage 1 - Lightweight SFT**:
+- **Llama-as-Judge**: Used Llama models to filter training data
+- **Pruning**: Removed >50% of data tagged as "easy" or "low complexity"
+- **Focus**: Only high-difficulty tasks for initial instruction-following
+- **Result**: Highly curated, pruned dataset
+
+**Stage 2 - Intensive Online RL** (Primary Innovation):
+- **Hard prompt selection**: Used pass@k analysis for coding, math, reasoning
+- **Continuous learning cycle**:
+  1. Model trains on hard prompts
+  2. Generates new data from interactions
+  3. Filters for medium-to-hard difficulty
+  4. Creates dynamic, adaptive curriculum
+  5. Repeat continuously
+- **Adaptive curriculum**: Difficulty increases as model improves
+- **Multi-domain balance**: Maintains proficiency across reasoning, coding, dialogue
+- **Efficiency**: **~10x improvement** over Llama 3 (for Behemoth)
+
+**Stage 3 - Lightweight DPO**:
+- Applied to corner cases only
+- Balances intelligence and conversational abilities
+- Handles multimodal balance challenges
+
+**Comparison Table**:
+
+| Aspect | Llama 3 | Llama 4 | Impact |
+|--------|---------|---------|--------|
+| **SFT Data Volume** | 10M+ examples | **Pruned (50%+ removed)** | More efficient |
+| **Data Selection** | All difficulty levels | **Hard prompts only** | Targeted learning |
+| **Primary Training** | Multiple SFT rounds | **Intensive online RL** | Better performance |
+| **Curriculum** | Static datasets | **Dynamic, adaptive** | Continuous improvement |
+| **Learning Loop** | Offline (fixed data) | **Online (self-generated)** | Self-improving |
+| **Efficiency** | Baseline | **10x faster** | Massive speedup |
+| **Infrastructure** | Standard RL | **Revamped for 2T params** | Scaled to Behemoth |
+
+**Why This Matters**:
+- **Cost reduction**: 10x efficiency = 10x lower post-training cost
+- **Better results**: Dynamic curriculum targets model weaknesses
+- **Scalability**: Online RL enables continuous improvement
+- **Community impact**: More efficient fine-tuning methods for open models
+
+### 4. MetaP Optimizer: Per-Layer Learning Rate Optimization
+
+**What's New**: Novel optimizer that adjusts learning rates and initialization scales per layer, enabling stable training at extreme MoE scale.
+
+**Llama 3 Baseline**:
+- **Optimizer**: AdamW with global learning rate
+- **Learning rate**: Single peak LR for entire model
+- **Initialization**: Standard scaling across all layers
+- **Challenge**: Works well for dense models up to 405B
+
+**Llama 4 Advancement**:
+- **MetaP**: Optimizes per-layer learning rates individually
+- **Per-layer initialization**: Optimizes initialization scales per layer
+- **MoE stability**: Critical for training 400B MoE with 128 experts
+- **Scale enabler**: Required for Behemoth's 2T parameter MoE training
+
+**Why This Matters**:
+- **MoE challenges**: Different expert layers need different learning rates
+- **Training stability**: Prevents divergence in massive MoE models
+- **Efficiency**: Faster convergence with per-layer optimization
+- **Future scaling**: Enables even larger MoE models beyond Behemoth
+
+### 5. FP8 Precision Training: Efficiency at Scale
+
+**What's New**: Successfully trained models using FP8 (8-bit floating point) precision, significantly reducing compute and memory requirements.
+
+**Llama 3 Baseline**:
+- **Precision**: BF16 (16-bit brain floating point)
+- **Memory**: 2 bytes per parameter
+- **Compute**: Standard FLOPs for 16-bit operations
+- **405B model**: ~810GB memory for parameters alone
+
+**Llama 4 Advancement**:
+- **Precision**: FP8 (8-bit floating point)
+- **Memory**: 1 byte per parameter (50% reduction)
+- **Compute**: 390 TFLOPs/GPU on H100 (vs ~300 for BF16)
+- **Throughput**: Significant speedup in training
+
+**Efficiency Gains**:
+
+| Aspect | BF16 (Llama 3) | FP8 (Llama 4) | Improvement |
+|--------|----------------|---------------|-------------|
+| **Memory/param** | 2 bytes | 1 byte | **50% reduction** |
+| **TFLOPs/GPU** | ~300 | **390** | **30% increase** |
+| **Model size** | 400B × 2 = 800GB | 400B × 1 = 400GB | **50% smaller** |
+| **Training speed** | Baseline | **Faster** | Throughput gain |
+
+**Why This Matters**:
+- **Cost reduction**: Lower memory = more model fits per GPU = lower cost
+- **Speed**: Higher TFLOPs = faster training iterations
+- **Scalability**: Enables training even larger models (Behemoth's 2T params)
+- **Inference**: FP8 models can run inference with half the memory
+
+### 6. 100,000+ GPU Training Infrastructure
+
+**What's New**: Largest training cluster in Llama history—100,000+ H100 GPUs—requiring advanced distributed training techniques.
+
+**Llama 3 Baseline**:
+- **GPU count**: 16,384 H100 GPUs
+- **Scale**: Already massive by industry standards
+- **405B training**: Required 39.3M GPU hours
+
+**Llama 4 Advancement**:
+- **Scout/Maverick**: **100,000+ H100 GPUs**
+- **Behemoth**: 32,000 H100 GPUs (dedicated cluster)
+- **Scale**: **6x-20x larger** than Llama 3
+- **Total GPU hours**: 7.38M (Scout + Maverick combined)
+
+**Infrastructure Challenges Solved**:
+1. **Communication overhead**: 100K GPU cluster requires extremely fast interconnects
+2. **Fault tolerance**: At this scale, hardware failures are constant
+3. **Load balancing**: Ensuring all 100K GPUs stay busy
+4. **Synchronization**: Gradient synchronization across 100K devices
+5. **Memory management**: Coordinating distributed MoE expert placement
+
+**Why This Matters**:
+- **Frontier capabilities**: Only achievable with this scale of compute
+- **Open AI competitiveness**: Matches proprietary model training scales
+- **Future-proofing**: Infrastructure ready for even larger future models
+- **Environmental**: Despite scale, market-based emissions: 0 tons CO2eq (renewable energy)
+
+### Llama 3 → Llama 4 Innovation Summary
+
+| Innovation | Llama 3 | Llama 4 | Impact on Community |
+|------------|---------|---------|---------------------|
+| **Architecture** | Dense | **MoE + Multimodal** | First open MoE+multimodal |
+| **Context** | 128K (RoPE scaling) | **10M (iRoPE)** | New use cases unlocked |
+| **Post-training** | Static SFT/DPO | **Online RL (10x efficient)** | Cheaper fine-tuning |
+| **Optimizer** | AdamW (global LR) | **MetaP (per-layer)** | Enables MoE stability |
+| **Precision** | BF16 | **FP8** | 50% memory reduction |
+| **Infrastructure** | 16K GPUs | **100K+ GPUs** | Frontier-scale training |
+| **Training tokens** | 15T | **30T+** | 2x more data |
+| **Modalities** | Text (+ adapter vision) | **Native text/image/video** | True multimodal from start |
+
+**The Bottom Line**: Llama 4 represents the most significant architectural and methodological leap in the Llama family, bringing together innovations that make frontier capabilities—previously exclusive to proprietary models—available to the open-source community. While execution has faced challenges (context degradation, Behemoth delays), the technical innovations push the boundaries of what's possible in open AI.
 
 ## Use Cases
 
