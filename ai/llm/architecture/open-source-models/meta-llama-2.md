@@ -26,6 +26,8 @@ Recognizing the immense value of this open ecosystem, Meta made a pivotal strate
 - **Base**: Pretrained foundation models
 - **Chat**: Fine-tuned with SFT + RLHF for conversation
 
+*Note: The Llama 2 paper also details a 34B model which was part of the research and training, but it was not included in the official public release.*
+
 ## Architecture
 
 The Llama 2 models maintain the decoder-only transformer architecture, building upon the foundation established with Llama 1 while introducing key optimizations, especially for larger variants.
@@ -56,7 +58,6 @@ Llama 2 was trained on an even larger dataset than its predecessor, with a sophi
 *   **Pre-training:** The AdamW optimizer was used with **β₁=0.9, β₂=0.95, and a weight decay of 0.1**. A cosine learning rate schedule was employed with a 2,000-step warm-up, and the final learning rate decayed to 10% of the peak. The peak learning rates were:
     *   **7B & 13B models:** 3.0 × 10⁻⁴
     *   **34B & 70B models:** 1.5 × 10⁻⁴
-*   *Note: While a 34B model was part of the Llama 2 research and training efforts, it was not included in the publicly released model variants (7B, 13B, and 70B).*
 *   **Supervised Fine-Tuning (SFT):** Also utilized a cosine learning rate schedule, starting with an initial learning rate of 2 × 10⁻⁵. This phase included a weight decay of 0.1, a batch size of 64, and a sequence length of 4096 tokens.
 *   **Reward Models (for RLHF):** Trained with the AdamW optimizer, using a constant learning rate of 1 × 10⁻⁶, a weight decay of 0.1, and gradient clipping at 1.0.
 *   **Llama 2-Chat Fine-tuning:** For the final RLHF stage, the maximum learning rate was set to 5 × 10⁻⁶ for the 70B parameter model and 1 × 10⁻⁵ for other models, decaying on a cosine schedule to 10% of the maximum.
