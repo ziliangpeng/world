@@ -374,19 +374,220 @@ The shift to MoE represents Llama's most significant architectural evolution, tr
 - Llama 3.1: 128K
 - Llama 4 Scout: **10,000K** (10M)
 
-## Training Details
+## Training Details: Doubling Down on Scale
 
-- **Tokens**: **30+ trillion tokens** (2x Llama 3's 15T)
-- **Compute**: Trained on cluster with **100,000+ H100 GPUs**
-- **Multimodal Training**: Native multimodal training from scratch
-- **Data**: Text, images, video combined
+Llama 4's training represents a massive scale-up from Llama 3, with 2x the data, new multimodal training methodology, and revolutionary post-training approaches.
 
-### Training Scale
+### Training Scale: 2x Data Expansion from Llama 3
 
-The scale is unprecedented:
-- 100K+ H100 GPUs (massive infrastructure)
-- 30T tokens (double previous generation)
-- Multimodal from start (not adapter approach)
+**Token Counts**:
+
+| Model | Training Tokens | Llama 3 Baseline | Increase |
+|-------|----------------|------------------|----------|
+| **Scout** | ~40 trillion | 15T (Llama 3) | **2.7x** |
+| **Maverick** | ~22 trillion | 15T (Llama 3) | **1.5x** |
+| **Behemoth** | 30+ trillion | 15T (Llama 3) | **2x+** |
+
+**Key Changes**:
+- **Doubled training data** overall compared to Llama 3
+- **Multimodal from token 0**: Text, images, video jointly trained
+- **200 languages**: 100+ languages with >1B tokens each
+- **10x more multilingual**: Compared to Llama 3's multilingual data
+
+**Context Windows**:
+
+| Model | Training Context | Extended Context | Llama 3.1 Baseline |
+|-------|------------------|------------------|-------------------|
+| **Scout** | 131,072 (131K) | 10,000,000 (10M) | 128K (**78x larger**) |
+| **Maverick** | Unknown | 1,000,000 (1M) | 128K (**7.8x larger**) |
+
+### Data Mix: Multimodal by Default
+
+**Modalities** (exact ratios not publicly disclosed):
+- **Text**: Primary training data across 200 languages
+- **Images**: Jointly trained with text from token 0
+- **Video**: Native video understanding capability
+
+**Data Sources**:
+- Mix of publicly available data
+- Licensed data
+- **Meta's products and services**:
+  - Publicly shared Instagram posts
+  - Publicly shared Facebook posts
+  - User interactions with Meta AI
+- **Knowledge cutoff**: August 2024
+
+**Comparison to Llama 3**:
+
+| Aspect | Llama 3 | Llama 4 | Change |
+|--------|---------|---------|--------|
+| **Text Data** | 15T tokens | 30T+ tokens | **2x** |
+| **Image Data** | Adapter training only (3.2) | **Native from start** | Revolutionary |
+| **Video Data** | None | **Native** | New capability |
+| **Languages** | ~100 | **200** | **2x** |
+| **Multilingual Tokens** | Baseline | **10x more** | Massive increase |
+
+### Infrastructure: Unprecedented GPU Scale
+
+**Llama 3 vs Llama 4 Hardware**:
+
+| Aspect | Llama 3 (405B) | Llama 4 (Scout/Maverick) | Llama 4 (Behemoth) | Scale-Up |
+|--------|---------------|--------------------------|-------------------|----------|
+| **Primary GPUs** | H100 80GB | H100 80GB | H100 80GB | Same gen |
+| **GPU Count** | 16,384 H100s | **100,000+ H100s** | **32,000 H100s** | **6x-20x** |
+| **Total GPU Hours** | 39.3M | Unknown | Unknown | - |
+| **Training Precision** | BF16 | Likely BF16/FP8 | **FP8** | More efficient |
+| **TFLOPs/GPU** | ~400 | Unknown | **390** (FP8) | Similar |
+
+**Infrastructure Achievements**:
+- **100,000+ H100 GPUs**: Largest training cluster in Llama history
+- **FP8 precision** on Behemoth: 390 TFLOPs/GPU efficiency
+- **7.38 million GPU hours**: Scout + Maverick combined
+- **Massive parallelism**: Required advanced distributed training techniques
+
+**Environmental Impact**:
+- **Greenhouse gas emissions** (Scout + Maverick):
+  - Location-based: 1,999 tons CO2eq
+  - Market-based: 0 tons CO2eq (renewable energy purchases)
+
+### Optimizer & Training Configuration
+
+**Optimizer**: Likely AdamW (not explicitly disclosed, following Llama 3 precedent)
+
+**Novel Training Techniques**:
+
+1. **MetaP** (New):
+   - Optimizes per-layer learning rates
+   - Optimizes initialization scales
+   - Enables more reliable training at extreme scale
+   - Critical for MoE stability
+
+2. **FP8 Precision Training**:
+   - Achieved efficient training with FP8
+   - 390 TFLOPs/GPU on Behemoth
+   - Significant efficiency gains over BF16
+
+3. **Long Context Extension**:
+   - Mid-training phase with specialized datasets
+   - Unlocked 10M context for Scout, 1M for Maverick
+   - Enhanced model quality during extension
+   - Continued training beyond base pre-training
+
+### Multimodal Training Methodology
+
+**Pre-training Approach**:
+- **Early fusion**: Text, image, video as unified token sequence
+- **Joint pre-training** with large unlabeled multimodal data
+- **Vision encoder** (MetaCLIP-based) trained with frozen Llama model
+- **Unified representation space** from token 0
+
+**Comparison to Llama 3.2**:
+
+| Aspect | Llama 3.2 Vision | Llama 4 | Advantage |
+|--------|-----------------|---------|-----------|
+| **Approach** | Adapter (vision added later) | **Native (from token 0)** | Better integration |
+| **Text Model** | Pre-trained separately | **Joint training** | Unified understanding |
+| **Cross-modal** | Limited (adapter layers) | **Deep (attention across all)** | Better reasoning |
+| **Training Data** | 6B image-text pairs | **Multimodal from start** | More comprehensive |
+
+### Post-Training: Revolutionary Approach
+
+Meta revamped the entire post-training pipeline for Llama 4, achieving **10x efficiency improvement** over Llama 3's approach.
+
+**Three-Stage Pipeline**:
+
+**Stage 1: Lightweight Supervised Fine-Tuning (SFT)**:
+- Used **Llama models as judges** to filter low-complexity prompts
+- Removed >50% of data tagged as "easy"
+- Fine-tuned only on high-difficulty tasks
+- Highly pruned, curated dataset
+- Initial instruction-following stage
+
+**Stage 2: Intensive Online Reinforcement Learning (RL)**:
+- Focus on hard prompts (pass@k analysis for coding, math, reasoning)
+- **Continuous online learning cycle**:
+  1. Model trains on hard prompts
+  2. Generates new data
+  3. Filters for medium-to-hard difficulty
+  4. Creates dynamic learning curriculum
+- **Adaptive, curriculum-based RL**
+- Maintains proficiency across reasoning, coding, dialogue
+- **~10x efficiency improvement** over Llama 3 (for Behemoth)
+- Required revamping underlying RL infrastructure for 2T parameter model
+
+**Stage 3: Lightweight Direct Preference Optimization (DPO)**:
+- Applied to handle corner cases
+- Focused on response quality
+- Balance between intelligence and conversational abilities
+- Addresses multimodal balance challenges
+
+**Comparison to Llama 3**:
+
+| Aspect | Llama 3 | Llama 4 | Impact |
+|--------|---------|---------|--------|
+| **SFT Approach** | Heavy SFT (10M+ examples) | **Lightweight (pruned difficult only)** | More efficient |
+| **Primary Training** | Multiple rounds SFT + DPO | **Intensive online RL** | Better performance |
+| **Curriculum** | Static datasets | **Dynamic, adaptive** | Continuous improvement |
+| **Efficiency** | Baseline | **10x better** | Massive speedup |
+| **Focus** | Broad coverage | **Hard prompt specialization** | Targeted improvement |
+
+### Safety & Alignment
+
+**Training-Time Safety**:
+
+1. **GOAT** (Generative Offensive Agent Tester):
+   - Used throughout training
+   - Highlights LLM susceptibilities
+   - Improves model safety proactively
+
+2. **Safety Fine-Tuning Objectives**:
+   - Provide readily available safe model
+   - Reduce deployment workload
+   - Resource for research community on robustness
+
+**Evaluation & Red Teaming**:
+
+1. **CBRN Risk Assessment** (Chemical, Biological, Radiological, Nuclear):
+   - Expert-designed evaluations
+   - Assesses capability increase for malicious actors
+   - Targets proliferation of weapons
+
+2. **Child Safety Risk Assessment**:
+   - Expert team evaluation
+   - Informs additional fine-tuning
+   - In-depth red teaming exercises
+
+3. **Additional Red Teaming**:
+   - Content policy violations
+   - Multi-modal safety concerns
+   - Political/social topic handling
+
+**Safety Tools Integration**:
+- **Llama Guard**: Input/output safety classifier
+- **Prompt Guard**: Jailbreak detection
+- **Code Shield**: Code safety validation
+- **CyberSecEval**: Cybersecurity evaluation
+
+**Safety Results vs Llama 3**:
+
+| Metric | Llama 3.3 | Llama 4 | Improvement |
+|--------|-----------|---------|-------------|
+| **Political/social refusal rate** | 7% | **<2%** | **71% reduction** |
+| **False refusals** | Higher | **Lower** | Better usability |
+| **Conversationality** | Good | **Better** | Improved tone |
+| **System prompt steerability** | Good | **Enhanced** | More controllable |
+
+### Training Innovations Summary
+
+**Key Advancements Over Llama 3**:
+1. **2x training data** with native multimodality
+2. **100K+ GPU cluster** (6x larger than Llama 3)
+3. **FP8 precision training** for efficiency
+4. **MetaP** for per-layer optimization
+5. **10x more efficient post-training** via online RL
+6. **Dynamic curriculum learning** vs static datasets
+7. **10M context extension** via specialized training
+8. **Better safety** with lower false refusal rates
 
 ## Key Innovations
 
