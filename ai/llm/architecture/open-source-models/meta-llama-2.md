@@ -129,3 +129,20 @@ The release of Llama 2 was a pivotal moment for the open-source AI movement, pro
 *   **Pioneered GQA at Scale:** The 70B model's use of Grouped-Query Attention was the first major production deployment of the technique, demonstrating its efficiency benefits and paving the way for its adoption in later models.
 *   **Accelerated the Fine-Tuning Ecosystem:** The fully accessible and high-quality base models triggered an explosion of innovation. The community created thousands of specialized fine-tunes for specific domains (e.g., medical, legal, coding) and developed new quantization techniques (GGUF, GPTQ) to run models on consumer hardware.
 *   **Democratized Access to AI:** By removing the application process required for Llama 1 and partnering with Microsoft for broad cloud availability on Azure, Llama 2 made state-of-the-art AI truly accessible to individual developers, researchers, and businesses of all sizes.
+
+## Key Figures
+
+The development and open-sourcing of Llama 2 was a collaborative effort involving a large team of researchers and engineers, guided by Meta's AI leadership.
+
+*   **Hugo Touvron (Lead Author):** As the first author on the Llama 2 paper (and Llama 1), Touvron was a primary force in the hands-on research and development of the model.
+*   **Louis Martin, Kevin Stone, and the Llama Team:** Among over 65 contributors listed on the paper, Martin and Stone are noted as primary authors, representing the extensive team effort behind Llama 2's development.
+*   **Joelle Pineau (Head of FAIR):** As the Managing Director of Meta AI's Fundamental AI Research (FAIR) group, Pineau played a pivotal leadership role, guiding the strategic development and release of the Llama models.
+*   **Yann LeCun (Chief AI Scientist):** While stating his direct involvement in Llama 2's development was "very indirect," LeCun was a prominent advocate for the full open-source release of Llama 2, championing Meta's commitment to open AI.
+
+## Links
+
+- **Paper**: [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
+- **Blog**: [Meta and Microsoft Introduce the Next Generation of Llama](https://ai.meta.com/blog/llama-2/)
+- **Hugging Face**:
+  - Base: [Llama-2-7b-hf](https://huggingface.co/meta-llama/Llama-2-7b-hf), [Llama-2-13b-hf](https://huggingface.co/meta-llama/Llama-2-13b-hf), [Llama-2-70b-hf](https://huggingface.co/meta-llama/Llama-2-70b-hf)
+  - Chat: [Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [Llama-2-13b-chat-hf](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Llama-2-70b-chat-hf](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)
