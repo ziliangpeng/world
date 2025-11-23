@@ -89,7 +89,17 @@ These optimizer settings are not novel; they represent the established best prac
   - **ArXiv**: 2.5%
   - **Stack Exchange**: 2%
 
-The most significant innovation in Llama 1's training was the **massive volume of data**, specifically the 1 to 1.4 trillion tokens used. This was a direct, successful application of the Chinchilla scaling laws, proving that training smaller models on significantly more data yielded superior performance compared to larger models trained on less data, a paradigm shift for the industry. In contrast, the 2,048-token context window was a standard industry practice at the time. The data mix, while using common sources, represented innovation not in novel data sources, but in the meticulous curation, rigorous filtering, quality control, and strategic blending of these diverse, publicly available sources (from code to scientific papers) to create a high-quality foundation for the model.
+The most significant innovation in Llama 1's training was the **massive volume of data**, specifically the 1 to 1.4 trillion tokens used. This was a direct, successful application of the Chinchilla scaling laws, proving that training smaller models on significantly more data yielded superior performance compared to larger models trained on less data, a paradigm shift for the industry. In contrast, the 2,048-token context window was a standard industry practice at the time. The data mix, while using common sources, represented innovation not in novel data sources, but in the meticulous curation, rigorous filtering, quality control, and strategic blending of these diverse, publicly available sources (from code to scientific papers) ...to create a high-quality foundation for the model.
+
+### Data Preparation and Tokenization
+
+The quality of the training data was a primary focus, involving several key preparation steps:
+
+*   **Aggressive Filtering:** A custom classifier was trained to filter the vast CommonCrawl dataset, removing low-quality pages and keeping text that resembled high-quality reference material like Wikipedia.
+*   **Strategic Blending:** The data mix was intentionally skewed towards high-quality sources. For the larger 33B and 65B models, the proportion of code from GitHub was increased to specifically enhance reasoning and problem-solving capabilities.
+*   **Tokenization Details:
+    *   **Tokenizer:** A SentencePiece tokenizer using the Byte-Pair Encoding (BPE) algorithm was used, with a vocabulary size of 32K tokens.
+    *   **Number Handling:** A crucial detail is that all numbers were split into individual digits. This forces the model to learn the mathematical properties of numbers rather than memorizing them as distinct entities, which aids in numerical reasoning.
 
 ## Performance
 
