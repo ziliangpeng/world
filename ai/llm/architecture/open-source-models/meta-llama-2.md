@@ -2,6 +2,14 @@
 
 **Release Date**: July 18, 2023
 
+## Links
+
+- **Paper**: [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
+- **Blog**: [Meta and Microsoft Introduce the Next Generation of Llama](https://ai.meta.com/blog/llama-2/)
+- **Hugging Face**:
+  - Base: [Llama-2-7b-hf](https://huggingface.co/meta-llama/Llama-2-7b-hf), [Llama-2-13b-hf](https://huggingface.co/meta-llama/Llama-2-13b-hf), [Llama-2-70b-hf](https://huggingface.co/meta-llama/Llama-2-70b-hf)
+  - Chat: [Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [Llama-2-13b-chat-hf](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Llama-2-70b-chat-hf](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)
+
 ## Origin Story: The Open-Source Pivot
 
 The release of Llama 2 was a direct response to the "unintended" but massively successful democratization of Llama 1 after its weights were leaked. While the Llama 1 leak sparked safety concerns, it also triggered a Cambrian explosion of innovation as developers and researchers worldwide began building on the powerful base model.
@@ -52,12 +60,16 @@ Llama 2 was trained on an even larger dataset than its predecessor, with a sophi
 
 ### Training Scale and Data
 
-*   **Tokens Trained:** The models were pre-trained on a massive **2 trillion tokens** of new and publicly available online data, marking a 40% increase over the Llama 1 dataset. Importantly, Meta explicitly **excluded data from its own products or services** and rigorously removed content from sites known to contain personal information.
+*   **Tokens Trained:** The models were pre-trained on a massive **2 trillion tokens** of new and publicly available online data, a 40% increase over the Llama 1 dataset.
 *   **Context Window:** The context window was doubled to **4,096 tokens**, allowing the models to process and generate longer sequences.
 *   **Vocabulary:** The vocabulary remained at **32K tokens** using the SentencePiece tokenizer, consistent with Llama 1.
+
+### Data Preparation and Tokenization
+
+*   **Data Mix and Filtering:** Unlike Llama 1, the paper does not disclose the exact pre-training data mix. However, it emphasizes that the data is from new, publicly available sources and that significant effort was made to **exclude data from Meta's own products or services** and to remove data from sites known to contain a high volume of personal information.
 *   **Fine-tuning Data:**
-    *   **SFT:** Approximately **27,540 meticulously annotated instruction-tuning instances** were used for Supervised Fine-Tuning, focusing on high-quality human-written prompts and responses.
-    *   **RLHF:** Over **1 million human annotations** were collected for Llama 2-Chat, crucial for training the Helpfulness and Safety reward models used in the Reinforcement Learning from Human Feedback process.
+    *   **SFT:** Approximately **27,540 meticulously annotated, high-quality instruction-tuning instances** were used for Supervised Fine-Tuning.
+    *   **RLHF:** Over **1 million human annotations** were collected to create the preference dataset for training the reward models for Reinforcement Learning from Human Feedback.
 
 ### Training Infrastructure
 
@@ -138,11 +150,3 @@ The development and open-sourcing of Llama 2 was a collaborative effort involvin
 *   **Louis Martin, Kevin Stone, and the Llama Team:** Among over 65 contributors listed on the paper, Martin and Stone are noted as primary authors, representing the extensive team effort behind Llama 2's development.
 *   **Joelle Pineau (Head of FAIR):** As the Managing Director of Meta AI's Fundamental AI Research (FAIR) group, Pineau played a pivotal leadership role, guiding the strategic development and release of the Llama models.
 *   **Yann LeCun (Chief AI Scientist):** While stating his direct involvement in Llama 2's development was "very indirect," LeCun was a prominent advocate for the full open-source release of Llama 2, championing Meta's commitment to open AI.
-
-## Links
-
-- **Paper**: [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
-- **Blog**: [Meta and Microsoft Introduce the Next Generation of Llama](https://ai.meta.com/blog/llama-2/)
-- **Hugging Face**:
-  - Base: [Llama-2-7b-hf](https://huggingface.co/meta-llama/Llama-2-7b-hf), [Llama-2-13b-hf](https://huggingface.co/meta-llama/Llama-2-13b-hf), [Llama-2-70b-hf](https://huggingface.co/meta-llama/Llama-2-70b-hf)
-  - Chat: [Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [Llama-2-13b-chat-hf](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Llama-2-70b-chat-hf](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)
