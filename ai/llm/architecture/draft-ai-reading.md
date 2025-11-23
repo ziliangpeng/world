@@ -52,7 +52,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Explaining SolidGoldMagikarp by looking at it from random directions | Article | LessWrong | - |
 | Mamba No. 5 (A Little Bit Of…) | Article | Sparse Notes | - |
 | Mamba: The Easy Way | Tutorial | - | [Link](https://jackcook.com/2024/02/23/mamba.html) |
-| Mamba: The Hard Way | Tutorial | - | - |
+| Mamba: The Hard Way | Tutorial | - | [Link](https://srush.github.io/annotated-mamba/hard.html) |
 | q star info.pdf | Document | Google Drive | - |
 | Ilya Sutskever: The brain behind ChatGPT | Article | - | - |
 | Training great LLMs entirely from ground zero in the wilderness as a startup | Blog | Yi Tay | [Link](https://www.yitay.net/blog/training-great-llms-entirely-from-ground-zero-in-the-wilderness) |
@@ -68,10 +68,10 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Are all LLMs really 1.58 bits? Inference at 4x the speed or more? | Article | - | - |
 | Medusa: Simple framework for accelerating LLM generation with multiple decoding heads | Research | - | - |
 | Ilya's recom to Carmack | Reference | - | - |
-| Speech and Language Processing | Textbook | - | - |
+| Speech and Language Processing | Textbook | - | [Link](https://web.stanford.edu/~jurafsky/slp3/) |
 | We need to talk about Agents... | Article | - | - |
 | What can LLMs never do? | Article | Rohit Krishnan | - |
-| How to Optimize a CUDA Matmul Kernel for cuBLAS-like Performance: a Worklog | Tutorial | - | - |
+| How to Optimize a CUDA Matmul Kernel for cuBLAS-like Performance: a Worklog | Tutorial | - | [Link](https://siboehm.com/articles/22/CUDA-MMM) |
 | Quantizing deep convolutional networks for efficient inference: A whitepaper | Paper | arXiv | [1806.08342](https://arxiv.org/abs/1806.08342) |
 | Claude's Character | Research | Anthropic | [Link](https://www.anthropic.com/research/claude-character) |
 | Quantization aware training | Documentation | TensorFlow Model Optimization | [Link](https://www.tensorflow.org/model_optimization/guide/quantization/training) |
@@ -100,7 +100,7 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | Dynamic sparse attention | Tweet | X/Twitter | - |
 | $2 H100s: How the GPU Bubble Burst | Article | Eugene Cheah | - |
 | vLLM v0.6.0: 2.7x Throughput Improvement and 5x Latency Reduction | Blog | vLLM | [Link](https://blog.vllm.ai/2024/09/05/perf-update.html) |
-| Making Deep Learning go Brrrr From First Principles | Tutorial | - | - |
+| Making Deep Learning go Brrrr From First Principles | Tutorial | - | [Link](https://horace.io/brrr_intro.html) |
 | Glow | Framework | - | - |
 | ML Compilers Part 2: An Overview of Graph Optimizations | Blog | FuzzyWare | - |
 | GPU-Guide: Graphics Processing Unit (GPU) Architecture Guide | GitHub | mikeroyal | [Link](https://github.com/mikeroyal/GPU-Guide) |
