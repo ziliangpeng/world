@@ -491,6 +491,7 @@ From the official paper and announcement:
 **What Is NOT Disclosed**:
 
 The paper deliberately does not provide:
+
 - **Exact data sources** (CommonCrawl, Wikipedia, books, etc.)
 - **Data mix ratios** (% web vs code vs books)
 - **Total training tokens** (likely trillions based on model scale)
@@ -535,6 +536,7 @@ The trade-off was accepted because:
 **What Is NOT Disclosed**:
 
 Critical infrastructure details not provided:
+
 - **GPU Type**: Not confirmed (likely H100s based on Mistral 7B partnership, but not stated)
 - **GPU Count**: Not disclosed
 - **Training Duration**: Not disclosed (wall-clock time)
@@ -597,6 +599,7 @@ Despite these challenges, Mistral AI successfully trained Mixtral in ~3 months�
 The Mixtral paper provides **zero information** about training hyperparameters:
 
 **NOT Disclosed**:
+
 - Optimizer type (Adam, AdamW, etc.)
 - Learning rate (peak, schedule, warmup)
 - Betas (β₁, β₂)
