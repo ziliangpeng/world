@@ -1,5 +1,9 @@
 # Google Gemma 3n: Mobile-First AI with MatFormer and Per-Layer Embeddings
 
+**Paper:** [Gemma 3 Technical Report](https://arxiv.org/abs/2503.19786) (arXiv:2503.19786) - Gemma 3n described in Section 4
+**MatFormer Foundation:** [MatFormer: Nested Transformer for Elastic Inference](https://arxiv.org/abs/2310.07707) (arXiv:2310.07707)
+**Release Date:** July 2025
+
 ## Origin Story
 
 ### Context: Gemma 3's Cloud Success
@@ -11,15 +15,15 @@ In March 2025, Google DeepMind released Gemma 3, achieving exceptional performan
 - **Single GPU deployment**: Efficient 5:1 attention ratio
 
 However, Gemma 3 was designed for **cloud/desktop environments** with substantial resources:
+
 - **Memory requirements**: 32GB+ VRAM for 27B model
 - **Target hardware**: NVIDIA A100, H100 GPUs
 - **Deployment**: Server-side inference
 
-###
-
- The Mobile/Edge Challenge
+### The Mobile/Edge Challenge
 
 Meanwhile, the demand for **on-device AI** was accelerating:
+
 - **Privacy**: Keep sensitive data on device (medical, financial, personal)
 - **Latency**: No network round-trip (instant responses)
 - **Offline capability**: Work without internet connectivity
@@ -41,19 +45,22 @@ Meanwhile, the demand for **on-device AI** was accelerating:
 
 Google DeepMind answered with Gemma 3n (released July 2025), built on three revolutionary techniques:
 
-**1. MatFormer (Matryoshka Transformer) Architecture:**
+**1. [MatFormer](https://arxiv.org/abs/2310.07707) (Matryoshka Transformer) Architecture:**
+
 - **"Many models in one"**: Single model contains nested, fully-functional sub-models
 - **E4B contains E2B**: 8B model has 5B model nested inside
 - **Elastic inference**: Choose model size at runtime based on task complexity
 - **No distillation needed**: All sub-models trained jointly in single pass
 
 **2. Per-Layer Embeddings (PLE):**
+
 - **CPU-GPU memory hierarchy**: Embeddings stay on CPU, pulled to GPU as needed
 - **Dramatic memory savings**: 5B model runs in 2GB, 8B model in 3GB
 - **No quality loss**: Full parameter count, reduced memory footprint
 - **40% memory reduction**: vs always-loaded embeddings
 
 **3. Conditional Parameter Loading:**
+
 - **Modality-specific parameters**: Separate text, vision, audio modules
 - **Load only what's needed**: Text-only task doesn't load vision/audio
 - **Dynamic activation**: Parameters loaded at runtime if required
@@ -92,6 +99,7 @@ Unlike Gemma 3's five discrete models (270M, 1B, 4B, 12B, 27B), Gemma 3n launche
 **Key Innovation:** E4B **contains** E2B as a nested sub-model. You get both models from a single download.
 
 Both models support:
+
 - **Text + Vision + Audio**: True multimodal on mobile
 - **32K context window**: Sufficient for most mobile use cases
 - **140+ languages**: Multilingual mobile AI
@@ -321,6 +329,8 @@ Like a car's "effective horsepower" (power at the wheels) vs "gross horsepower" 
 
 ### 1. MatFormer: Nested Transformers for Elastic Inference
 
+Based on the [MatFormer paper](https://arxiv.org/abs/2310.07707) (Devvrit et al., NeurIPS 2024), Gemma 3n implements nested transformer architecture for efficient mobile deployment.
+
 **The Core Idea: Matryoshka Dolls**
 
 Traditional approach:
@@ -353,6 +363,7 @@ A MatFormer model of size `N` contains nested sub-models of sizes `N₁, N₂, .
 **Nested Structure:**
 
 For Gemma 3n:
+
 - **E4B** (8B total) = Outer model
   - **E2B** (5B total) = Nested sub-model inside E4B
 
@@ -437,6 +448,7 @@ def matformer_loss(input, targets):
 ```
 
 **Benefits:**
+
 1. **E2B is optimized** during training (not an afterthought)
 2. **Shared weights** reduce total parameters
 3. **Single training run** produces multiple models
@@ -653,11 +665,13 @@ Input → Layer 0 (with embedding) → Layer 1 (with embedding) → ... → Outp
 ```
 
 **Benefits:**
+
 - Each layer can have specialized embeddings for its abstraction level
 - Lower layers: token-level patterns
 - Higher layers: semantic patterns
 
 **PLE applies to ALL these embeddings:**
+
 - Input embeddings: CPU
 - Per-layer embeddings (if present): CPU
 - Only small cache: GPU
@@ -854,7 +868,7 @@ Example conversation:
 
 **Key Benefit:** Most mobile tasks are text-only (80%+), so conditional loading saves memory on majority of queries.
 
-###4. Multimodal Architecture: MobileNet-V5 Vision + USM Audio
+### 4. Multimodal Architecture: MobileNet-V5 Vision + USM Audio
 
 **Design Philosophy: Mobile-First Encoders**
 
