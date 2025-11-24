@@ -353,6 +353,274 @@ output = γ * x_norm
 - Gemma (without bias)
 - Most modern decoder-only LLMs
 
+---
+
+## The Normalization Transition Story
+
+### Phase 1: BatchNorm Era (Pre-2017)
+
+**BatchNorm Dominance** (2015-2016):
+- Standard normalization for CNNs and deep learning
+- Normalizes across the batch dimension
+- Highly successful in computer vision
+
+**Why BatchNorm Failed for Transformers**:
+1. **Training-Inference Discrepancy (TID)**: Uses batch statistics during training but running averages during inference
+2. **Large Statistical Fluctuations**: NLP data exhibits much larger fluctuations than computer vision
+3. **Variable Sequence Lengths**: Different batches have different normalization constants
+4. **Poor Generalization**: Trains fast but validation performance degrades
+
+**Result**: BatchNorm was abandoned for sequence models and transformers.
+
+---
+
+### Phase 2: LayerNorm Era (2016-2022)
+
+**LayerNorm Introduction** (2016):
+- **Paper**: "Layer Normalization" (Ba, Kiros, Hinton)
+- **Original purpose**: Designed for RNNs
+- **Key innovation**: Normalizes across features for each sample independently
+- **Solves**: Batch dependency problem
+
+**Original Transformer** (2017):
+- Used **Post-Norm** (LayerNorm after residual): `LayerNorm(x + Sublayer(x))`
+- Combined with ReLU activation
+- Standard for early transformers
+
+**Post-Norm Era Models** (2017-2018):
+- Original Transformer (2017)
+- BERT (2018)
+- GPT-1 (2018)
+
+**Limitation**: Post-Norm requires learning rate warmup and struggles with very deep networks (>10 layers).
+
+---
+
+### Phase 3: Pre-Norm Revolution (2019-2020)
+
+**GPT-2 Changes the Game** (2019):
+- **Major shift**: Moved LayerNorm to INPUT of each sub-block
+- **Pre-Norm**: `x + Sublayer(LayerNorm(x))`
+- Similar to pre-activation ResNet
+
+**Why Pre-Norm Won**:
+1. **Training stability**: Better gradient flow for deep networks
+2. **No warmup needed**: Can use higher learning rates from start
+3. **Faster convergence**: Trains faster than Post-Norm
+4. **Enables depth**: Critical for 100+ layer models
+5. **Better gradients**: Well-behaved at initialization
+
+**Adoption**:
+- **2017-2018**: Post-Norm standard (Original Transformer, BERT, GPT-1)
+- **2019**: GPT-2 introduces Pre-Norm
+- **2020+**: Pre-Norm becomes universal (GPT-3, all modern models)
+
+**Trade-off**: Post-Norm performs better in shallow transformers (≤6 layers), but Pre-Norm essential for deep models.
+
+---
+
+### Phase 4: RMSNorm Era (2019-Present)
+
+**RMSNorm Introduction** (2019):
+- **Paper**: "Root Mean Square Layer Normalization" (Zhang & Sennrich)
+- **Published**: NeurIPS 2019
+- **Hypothesis**: Re-scaling (not re-centering) is what matters
+- **Innovation**: Remove mean subtraction, normalize only by RMS
+
+**Early Adopters** (2019-2021):
+
+**T5** (Google, 2019):
+- Early adopter alongside paper publication
+- Achieved 7-9% training speedup
+- Demonstrated viability at scale
+
+**Gopher** (DeepMind, 2021):
+- 280B parameters, 80 layers
+- Used RMSNorm throughout
+- Validated extreme-scale effectiveness
+- State-of-the-art on 81% of 152 tasks
+
+**Chinchilla** (DeepMind, 2022):
+- Gopher family, continued RMSNorm usage
+- Further validation at scale
+
+**Industry Validation** (2022):
+
+**PaLM** (Google, April 2022):
+- 540B parameters
+- Combined RMSNorm + SwiGLU + RoPE
+- Set modern architecture precedent
+
+**Popularization** (2023):
+
+**Llama 1** (Meta, February 2023):
+- **Confirmed RMSNorm**: Pre-normalization with RMSNorm
+- First major open-source model with modern stack
+- Made architecture accessible to researchers
+- **Turning point**: RMSNorm becomes standard after Llama
+
+**Rapid Adoption** (2023-2024):
+- Llama 2, 3, 3.1, 4 (Meta)
+- Mistral 7B, Mixtral series (Mistral AI)
+- DeepSeek V2, V3 (DeepSeek)
+- Qwen 2, 2.5 (Alibaba)
+- Gemma (Google)
+- Yi (01.AI)
+- Nearly all new open models
+
+**Why RMSNorm Won**:
+1. **Computational efficiency**: 7-64% faster than LayerNorm
+2. **Simplicity**: No mean calculation needed
+3. **Fewer parameters**: No bias term
+4. **Better stability**: More stable for very deep networks (80+ layers)
+5. **Distributed training**: Better for large-scale training
+6. **Empirical success**: Proven at 100B+ parameter scale
+7. **Mathematical insight**: Works because intermediate activations have mean ≈ 0
+
+---
+
+### Timeline Summary
+
+```
+Pre-2017: BatchNorm (CNNs, fails for sequences)
+    ↓
+2016: LayerNorm paper (designed for RNNs)
+    ↓
+2017: Original Transformer (Post-LN + LayerNorm + ReLU)
+    ↓
+2018: BERT, GPT-1 (Post-LN + LayerNorm + GELU)
+    ↓
+2019: GPT-2 introduces Pre-LN (major stability breakthrough)
+      RMSNorm paper + T5 early adoption
+    ↓
+2020: GPT-3 (Pre-LN + LayerNorm + GELU)
+    ↓
+2021: Gopher validates RMSNorm at 280B scale
+    ↓
+2022: PaLM (Pre-LN + RMSNorm + SwiGLU)
+      Modern stack emerges
+    ↓
+2023: Llama 1 (Feb) - RMSNorm becomes standard
+      Llama 2, Mistral follow
+    ↓
+2024-2025: RMSNorm universal in new models
+           Llama 3/4, Mixtral, DeepSeek, Qwen
+```
+
+---
+
+## Normalization by Model (2017-2025)
+
+### Post-Norm + LayerNorm Era (2017-2018)
+
+| Model | Year | Organization | Normalization | Activation |
+|-------|------|--------------|---------------|------------|
+| **Original Transformer** | 2017 | Google | Post-LN + LayerNorm | ReLU |
+| **BERT** | 2018 | Google | Post-LN + LayerNorm | GELU |
+| **GPT-1** | 2018 | OpenAI | Post-LN + LayerNorm | GELU |
+
+### Pre-Norm + LayerNorm Era (2019-2022)
+
+| Model | Year | Organization | Normalization | Activation |
+|-------|------|--------------|---------------|------------|
+| **GPT-2** | 2019 | OpenAI | Pre-LN + LayerNorm | GELU |
+| **GPT-3** | 2020 | OpenAI | Pre-LN + LayerNorm | GELU |
+| **GPT-4** | 2023 | OpenAI | Pre-LN + LayerNorm (likely) | GELU (likely) |
+| **BLOOM** | 2022 | BigScience | Pre-LN + LayerNorm | GELU |
+| **Falcon** | 2023 | TII | Pre-LN + LayerNorm | GELU |
+| **StableLM** | 2023 | Stability AI | Pre-LN + LayerNorm | GELU |
+
+### Pre-Norm + RMSNorm Era (2019-Present)
+
+| Model | Year | Organization | Normalization | Activation |
+|-------|------|--------------|---------------|------------|
+| **T5** | 2019 | Google | Pre-LN + RMSNorm | Early adopter |
+| **Gopher** | 2021 | DeepMind | Pre-LN + RMSNorm | 280B, 80 layers |
+| **Chinchilla** | 2022 | DeepMind | Pre-LN + RMSNorm | Gopher family |
+| **PaLM** | 2022 | Google | Pre-LN + RMSNorm | SwiGLU, 540B |
+| **Llama 1** | 2023 | Meta | Pre-LN + RMSNorm | SwiGLU - Popularizer |
+| **Llama 2** | 2023 | Meta | Pre-LN + RMSNorm | SwiGLU |
+| **Llama 3/3.1** | 2024 | Meta | Pre-LN + RMSNorm | SwiGLU |
+| **Llama 4** | 2025 | Meta | Pre-LN + RMSNorm | SwiGLU + MoE |
+| **Mistral 7B** | 2023 | Mistral AI | Pre-LN + RMSNorm | SwiGLU |
+| **Mixtral 8x7B/8x22B** | 2024 | Mistral AI | Pre-LN + RMSNorm | SwiGLU + MoE |
+| **DeepSeek V2** | 2024 | DeepSeek | Pre-LN + RMSNorm | SwiGLU + MoE |
+| **DeepSeek V3** | 2024 | DeepSeek | Pre-LN + RMSNorm | SwiGLU, 671B |
+| **Qwen2/2.5** | 2024 | Alibaba | Pre-LN + RMSNorm | SwiGLU + QK-Norm |
+| **Gemma** | 2024 | Google | Pre-LN + RMSNorm | GeGLU, no bias |
+| **Yi** | 2023 | 01.AI | Pre-LN + RMSNorm | SwiGLU |
+
+---
+
+## Current Normalization Consensus (2024-2025)
+
+### Open-Source Models: RMSNorm Dominant
+
+**Nearly universal adoption**:
+- All Llama derivatives (Llama 2, 3, 4)
+- Mistral/Mixtral series
+- DeepSeek series
+- Qwen series
+- Gemma (Google)
+- Yi models
+- All new major open models
+
+**Why**:
+- Llama's influence in open-source community
+- Proven performance at scale
+- Computational efficiency
+- Community standardization
+
+### Proprietary Models: Mixed
+
+**OpenAI (GPT series)**:
+- Likely continues LayerNorm tradition
+- GPT-2, 3 all used LayerNorm
+- GPT-4 architecture undisclosed but probably LayerNorm
+- Reason: Established optimization, "if it ain't broke"
+
+**Older Models Still Using LayerNorm**:
+- BLOOM (2022)
+- Falcon (2023)
+- StableLM (some versions)
+- Various pre-2023 models
+
+**Unknown**:
+- Claude (Anthropic) - architecture undisclosed
+- Gemini (Google) - architecture undisclosed
+
+### Advanced Variants (2024+)
+
+**QK-Norm** (Qwen 3):
+- Normalize queries and keys before attention
+- Prevents attention score explosion
+- Enables higher learning rates
+
+**LayerNorm without Bias** (Gemma 2):
+- Remove bias parameter entirely
+- Fewer parameters, cleaner architecture
+- No quality degradation
+
+**Logit Soft-Capping** (Gemma 2):
+- Prevent extreme logit values
+- Training stability
+- Smoother optimization
+
+### The Consensus
+
+**For new large-scale LLMs**:
+- ✅ **Use RMSNorm + Pre-Norm** - Industry standard
+- Proven, fast, stable
+- Best for 10B+ parameter models
+
+**For legacy/smaller models**:
+- ⚠️ **LayerNorm still viable** - Mature, well-understood
+- Acceptable for models <10B or where optimization is critical
+
+**Key Insight**: Just like activation functions, normalization has converged on a clear winner (RMSNorm) for modern models, driven by Llama's 2023 success.
+
+---
+
 ### Pre-Normalization vs Post-Normalization
 
 **Post-Norm** (Original Transformer):
@@ -635,9 +903,15 @@ class SwiGLU_FFN(nn.Module):
 - [ReLU Strikes Back (2024)](https://arxiv.org/abs/2310.04564) - Recent ReLU research
 
 ### Normalization
+- [Layer Normalization (2016)](https://arxiv.org/abs/1607.06450) - Original LayerNorm paper (Ba, Kiros, Hinton)
+- [Root Mean Square Layer Normalization (2019)](https://arxiv.org/abs/1910.07467) - RMSNorm paper (Zhang & Sennrich)
+- [On Layer Normalization in the Transformer Architecture (2020)](https://arxiv.org/abs/2002.04745) - Post-norm vs Pre-norm analysis
+- [Understanding the Failure of Batch Normalization for Transformers in NLP](https://arxiv.org/abs/2210.05153) - Why BatchNorm failed
 - [Re-Introducing LayerNorm](https://arxiv.org/abs/2409.12951)
 - [Mastering LLama - RMSNorm](https://medium.com/@hugmanskj/mastering-llama-rmsnorm-ae5c5d504e9a)
 - [Normalization Techniques in Transformer-Based LLMs](https://sushant-kumar.com/blog/normalization-in-transformer-based-llms)
+- [RMSNorm: Fueling the Next Generation of LLMs](https://medium.com/foundation-models-deep-dive/rmsnorm-fueling-the-next-generation-of-llms-f61cd8c0c09f)
+- [Why the Original Transformer Figure Shows Pre-LN](https://magazine.sebastianraschka.com/p/why-the-original-transformer-figure)
 
 ### Architecture Comparisons
 - [The Big LLM Architecture Comparison](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison)
