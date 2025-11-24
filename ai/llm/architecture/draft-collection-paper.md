@@ -43,6 +43,7 @@ The paradigm shift to attention-based architectures and innovations for handling
 | Attention is Not All You Need: Pure Attention Loses Rank Doubly Exponentially with Depth | 2021 | [2103.03404](https://arxiv.org/abs/2103.03404) |
 | Neighborhood Attention Transformer | 2022 | [2204.07143](https://arxiv.org/abs/2204.07143) |
 | HyperAttention: Long-context Attention in Near-Linear Time | 2023 | [2310.05869](https://arxiv.org/abs/2310.05869) |
+| MatFormer: Nested Transformer for Elastic Inference | 2023 | [2310.07707](https://arxiv.org/abs/2310.07707) |
 | Quest: Query-Aware Sparsity for Efficient Long-Context LLM Inference | 2024 | [2406.10774](https://arxiv.org/abs/2406.10774) |
 | RetrievalAttention: Accelerating Long-Context LLM Inference via Vector Retrieval | 2024 | [2409.10516](https://arxiv.org/abs/2409.10516) |
 
