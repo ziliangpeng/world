@@ -192,11 +192,13 @@ Multimodal Fusion:
   Type: Linear projection layer
   Input: 1152-dim (SigLIP output)
   Output: 2048-dim (Gemma 1 2B hidden dimension)
+  Initialization: Zero initialization
   Trainable: Yes (trained during PaliGemma pretraining)
 
   Philosophy: Simple, efficient cross-modal connection
     - No complex adapter modules
-    - Single linear transformation
+    - Single linear transformation with zero init
+    - MLP connector tested but showed no benefit (77.2 vs 77.1)
     - Follows PaLI-3 recipe
 
 Language Model:
@@ -211,6 +213,11 @@ Language Model:
     Number of Heads: 8
     Head Dimension: 256
     KV Heads: 1 (Multi-Query Attention)
+
+    Masking Strategy: Prefix-LM
+      - Full (unmasked) attention on image + prefix tokens
+      - Autoregressive mask on suffix/output tokens
+      - Loss computed only on suffix tokens (prefix loss hurts performance)
 
   Position Encoding:
     Type: RoPE (Rotary Position Embedding)
@@ -255,7 +262,11 @@ Vision Encoder:
   [Identical to PaliGemma 1 - SigLIP-So400m/14]
 
 Multimodal Fusion:
-  [Identical to PaliGemma 1 - Linear projection]
+  Type: Linear projection layer
+  Input: 1152-dim (SigLIP output)
+  Output: 2304-dim (Gemma 2 2B hidden dimension)
+  Initialization: Zero initialization
+  [Same approach as PaliGemma 1]
 
 Language Model:
   Base: Gemma 2 (2B)
@@ -269,6 +280,11 @@ Language Model:
     Number of Heads: 8
     Head Dimension: 256
     KV Heads: 4 (2:1 sharing ratio)
+
+    Masking Strategy: Prefix-LM (same as v1)
+      - Full attention on image + prefix tokens
+      - Autoregressive mask on suffix/output tokens
+      - Loss only on suffix tokens
 
     Innovation: Sliding window attention (local) + global attention
       - Local: 4096 token sliding window for recent context
@@ -286,7 +302,8 @@ Language Model:
     Epsilon: 1e-6
 
   Logit Soft-Capping:
-    Applied: Yes (Gemma 2 innovation)
+    Applied: Yes in Stages 1 and 2 (pretraining)
+    Disabled: In Stage 3 (transfer/fine-tuning)
     Cap Value: 30.0
     Formula: soft_cap * tanh(logits / soft_cap)
     Benefit: Stabilizes training, improves generation quality
@@ -522,17 +539,19 @@ PaliGemma: "cat <loc0547><loc0364><loc0773><loc0636> ;
 
 **Training for Location Tokens:**
 
-During pretraining, include detection datasets (OpenImages, COCO) with this format:
+During pretraining, detection tasks are formatted as:
 
 ```
+Task: "detect {thing}"
 Input: [image] + "detect cat"
 Target: "cat <loc0547><loc0364><loc0773><loc0636>"
 ```
 
 The language model learns to:
 - Understand object classes
-- Predict precise location tokens
+- Predict precise location tokens via next-token prediction
 - Handle multiple objects (sequence of object + location pairs)
+- Loss computed only on output tokens (not on input prefix)
 
 **Resolution Scaling:**
 
@@ -693,10 +712,12 @@ Language model learns to:
 **Stage 1: Low-Resolution Foundation (224px)**
 ```
 Duration: ~3 days on TPUv5e-256
-Tokens: ~350 billion
+Examples: 1 billion multimodal examples
+Tokens: ~350 billion (slightly less)
 Resolution: 224×224 (256 image tokens)
 Sequence Length: 128 tokens
 Data: WebLI, CC3M-35L (broad pretraining)
+Frozen Parameters: None (all parameters trainable)
 
 Goal: Learn basic vision-language alignment
   - Object recognition
@@ -713,7 +734,8 @@ Goal: Learn basic vision-language alignment
 **Stage 2a: Medium-Resolution Refinement (448px)**
 ```
 Duration: ~15 hours
-Tokens: ~45 billion
+Examples: 50 million additional examples
+Tokens: ~45 billion (part of ~90B Stage 2 total)
 Resolution: 448×448 (1,024 image tokens)
 Sequence Length: 512 tokens
 Data: Detection, OCR, detailed VQA
@@ -727,10 +749,12 @@ Goal: Add moderate detail understanding
 **Stage 2b: High-Resolution Specialization (896px)**
 ```
 Duration: ~15 hours
-Tokens: ~45 billion
+Examples: 10 million additional examples
+Tokens: ~45 billion (part of ~90B Stage 2 total)
 Resolution: 896×896 (4,096 image tokens)
-Sequence Length: Larger (exact length not disclosed)
+Sequence Length: 512+ tokens
 Data: High-resolution OCR, document understanding, fine details
+Strategy: Upweight high-resolution tasks in this stage
 
 Goal: Enable fine-grained tasks
   - Dense text recognition (TextVQA, Total-Text)
@@ -915,42 +939,54 @@ Complex fusion modules are beneficial when:
 
 **Primary Data Sources:**
 
-**1. WebLI (Web Language Image):**
-- **Scale**: ~1 billion image-text pairs
-- **Languages**: 100+ languages
-- **Source**: Web-scraped alt-text, captions, surrounding text
-- **Quality**: Filtered for safety, toxicity, PII removal
-- **Coverage**: Broad general knowledge (objects, scenes, actions, concepts)
+The pretraining uses a **multimodal task mixture** with specific formatting:
 
-**2. CC3M-35L (Conceptual Captions 3M, 35 Languages):**
-- **Scale**: ~3 million images
-- **Languages**: 35 languages (machine-translated from English)
-- **Source**: Alt-text from web images
-- **Purpose**: Multilingual caption quality
+**1. caption {lang} - Multilingual Captioning:**
+- **Data**: WebLI (100+ languages), CC3M-35L (35 languages)
+- **Scale**: ~1 billion image-text pairs (WebLI)
+- **Format**: Generate natural language captions
+- **Languages**: 100+ (WebLI), 35 (CC3M-35L machine-translated)
 
-**3. VQ²A (Visual Question Generation & Answering):**
-- **Scale**: Millions of synthetically generated QA pairs
-- **Method**: Generate questions from images using existing VQA models
-- **Quality**: Filtered for sensibility and answerability
-- **Purpose**: Improve question-answering capabilities
+**2. ocr - Optical Character Recognition:**
+- **Data**: Images with text
+- **Format**: Concatenated text in raster order (left-to-right, top-to-bottom)
+- **Purpose**: Dense text recognition
 
-**4. OpenImages:**
-- **Scale**: 9 million images with annotations
-- **Annotations**: Object detection boxes, segmentation masks
+**3. answer en {question} - Visual Question Answering:**
+- **Data**: Generated VQA on CC3M-35L and OpenImages
+- **Method**: Machine-generated questions using specialist models
+- **Variants**: Listing, presence, multi-object presence, counting
+- **Format**: Given image and question, generate answer
+
+**4. question {lang} - Visual Question Generation:**
+- **Data**: Generated VQG on CC3M-35L
+- **Format**: Given image and caption, generate question
+- **Purpose**: Improve understanding of image-text relationships
+
+**5. detect {thing} - Object Detection:**
+- **Data**: OpenImages with pseudo-labeling (OWL-ViTv2)
+- **Format**: "detect {class}" → "{class} <loc...> ; {class} <loc...>"
 - **Classes**: 600 object categories
-- **Purpose**: Train location and segmentation tokens
+- **Purpose**: Train location token prediction
 
-**5. OCR Datasets:**
-- Total-Text, TextVQA, TextCaps, HierText
-- **Purpose**: Text recognition and reading comprehension
-- **Stage**: Primarily Stage 2b (896px) for high-resolution text
+**6. segment {thing} - Instance Segmentation:**
+- **Data**: OpenImages with pseudo-labels (OWL-ViTv2, SAM)
+- **Format**: "segment {class}" → "{class} <seg...>"
+- **Purpose**: Train segmentation token prediction
 
-**6. Specialized Domain Data:**
-- Medical imaging datasets (e.g., MIMIC-CXR for radiology)
-- Scientific diagrams and charts
-- Molecular structure datasets (e.g., PubChem)
-- Table structure datasets
-- **Note**: Specific dataset names not fully disclosed
+**7. caption <coords> - Grounded Captioning:**
+- **Data**: LocCa dataset
+- **Format**: Caption with bounding box coordinates
+- **Purpose**: Connect language to spatial locations
+
+**8. Specialized Domain Data (PaliGemma 2):**
+- Document understanding tasks (tables, forms)
+- Music score recognition
+- Molecular structure recognition (PubChem-derived)
+- Radiography report generation (MIMIC-CXR-derived)
+- **Note**: "Labels mostly relying on publicly available specialist models"
+
+**Key Insight**: Task-based formatting (caption, detect, segment, etc.) rather than dataset-based splits. Exact dataset proportions **NOT disclosed**.
 
 **Data Filtering & Safety:**
 
@@ -1009,12 +1045,15 @@ PaliGemma's pretraining scale is comparable to Qwen-VL and follows the "extensiv
 **Hardware:**
 
 ```
-TPU Type: TPUv5e (Google's efficient TPU)
-Configuration: TPUv5e-256 (256 TPU chips)
+TPU Type: TPUv5e (Google's efficient TPU) for most training
+Configuration:
+  - TPUv5e-256 to TPUv5e-1024 (256-1024 chips)
+  - TPUv5p for PaliGemma 2 28B at 896px (higher performance)
 Memory per chip: 16 GB HBM2e
-Total memory: 256 × 16 GB = 4,096 GB (4 TB)
+Total memory: 256 × 16 GB = 4,096 GB (4 TB) minimum
 Interconnect: 2D torus topology
 Bandwidth: >100 GB/s per chip
+Sharding: FSDP (Fully Sharded Data Parallel)
 ```
 
 **Training Duration:**
@@ -1032,8 +1071,9 @@ Bandwidth: >100 GB/s per chip
 Framework: JAX + Flax
 Data Pipeline: TensorFlow Datasets (TFDS)
 Codebase: big_vision (Google Research)
-Precision: bfloat16 throughout
-Optimizer: AdamW (likely)
+Precision: bfloat16 for computation, float32 for parameters
+Optimizer: Adam with default hyperparameters
+Sharding: FSDP (Fully Sharded Data Parallel) strategy
 ```
 
 **Throughput Metrics:**
@@ -1054,16 +1094,20 @@ Stage 2 (448×448 and 896×896):
   Still efficient due to short duration (15h each)
 ```
 
-**Frozen Components:**
+**Trainable Components:**
 
-**Vision Encoder (SigLIP-So400m):**
+**All Parameters Trainable in Pretraining:**
 ```
-Status: Frozen (parameters not updated)
+Status: No frozen parameters during Stage 1 and Stage 2
+Components:
+  - Vision encoder (SigLIP-So400m): 400M params trainable
+  - Projection layer: 2.4M params trainable
+  - Language model (Gemma): 2.6B params trainable
+
 Rationale:
-  - Already well-pretrained on WebLI
-  - Freezing reduces memory for gradients (400M params saved)
-  - Prevents catastrophic forgetting of vision knowledge
-  - Faster training (no backprop through vision encoder)
+  - Joint optimization improves vision-language alignment
+  - Learning rate schedule with slow warmup for stability
+  - Full model adapts to multimodal task mixture
 ```
 
 **Language Model Initialization:**
@@ -1082,14 +1126,14 @@ PaliGemma 2:
 
 ```
 Total params: 3B (for PaliGemma 1 & 2 3B)
-Frozen: 400M (SigLIP)
-Trainable: 2.6B (Gemma decoder + projection layer)
+All trainable: 3B (SigLIP 400M + projection 2.4M + Gemma 2.6B)
 
-Gradient memory: 2.6B × 4 bytes (fp32 gradients) ≈ 10.4 GB
-Optimizer states (AdamW): 2.6B × 8 bytes ≈ 20.8 GB
-Total training memory: Model (6GB) + Gradients (10.4GB) + Optimizer (20.8GB) + Activations (~20GB) ≈ 57 GB per replica
+Gradient memory: 3B × 4 bytes (fp32 gradients) ≈ 12 GB
+Optimizer states (Adam): 3B × 8 bytes ≈ 24 GB
+Model parameters: 3B × 4 bytes (float32) = 12 GB
+Total training memory: Model (12GB) + Gradients (12GB) + Optimizer (24GB) + Activations (~20GB) ≈ 68 GB per replica
 
-With 256 TPU chips (16GB each = 4TB total), plenty of room for large batches and activation checkpointing.
+With 256 TPU chips (16GB each = 4TB total), FSDP sharding distributes memory across devices for efficient large-batch training.
 ```
 
 ### Training Methodology
@@ -1100,35 +1144,41 @@ With 256 TPU chips (16GB each = 4TB total), plenty of room for large batches and
 # Pseudocode for Stage 1 training
 def train_stage1():
     model = PaliGemma(
-        vision_encoder=SigLIP_So400m(frozen=True),
-        projector=LinearProjection(trainable=True),
+        vision_encoder=SigLIP_So400m(trainable=True),  # All parameters trainable
+        projector=LinearProjection(trainable=True, init='zeros'),
         language_model=Gemma2B(trainable=True)
     )
 
     resolution = 224
     sequence_length = 128
-    batch_size = 2048  # Estimated
+    batch_size = None  # Not disclosed in paper
+    learning_rate_schedule = 'rsqrt with slow linear warmup'
 
-    for batch in webli_cc3m_vqqa_datasets:
-        # Batch: {images: [2048, 224, 224, 3], text: [2048, seq_len]}
+    for batch in task_mixture_datasets:  # caption, ocr, answer, detect, segment, etc.
+        # Batch: {images: [..., 224, 224, 3], prefix: [...], suffix: [...]}
 
         # Forward pass
-        vision_features = model.vision_encoder(batch.images)  # [2048, 256, 1152]
-        vision_projected = model.projector(vision_features)    # [2048, 256, 2048]
+        vision_features = model.vision_encoder(batch.images)  # [..., 256, 1152]
+        vision_projected = model.projector(vision_features)    # [..., 256, 2048]
 
-        # Concatenate with text embeddings
-        text_embeds = model.language_model.embed_tokens(batch.text_ids)
-        combined = concat(vision_projected, text_embeds)  # [2048, 256+text_len, 2048]
+        # Concatenate prefix (input text) with vision tokens
+        prefix_embeds = model.language_model.embed_tokens(batch.prefix_ids)
+        suffix_embeds = model.language_model.embed_tokens(batch.suffix_ids)
 
-        # Autoregressive language modeling
-        logits = model.language_model(combined)
-        loss = cross_entropy(logits, batch.targets)
+        # Prefix-LM: Image + prefix get full attention, suffix is autoregressive
+        combined = concat(vision_projected, prefix_embeds, suffix_embeds)
 
-        # Backward (only through projector + language model)
+        # Forward through language model with Prefix-LM masking
+        logits = model.language_model(combined, mask='prefix_lm')
+
+        # Loss ONLY on suffix tokens (not on image or prefix)
+        loss = cross_entropy(logits[suffix_range], batch.suffix_targets)
+
+        # Backward through ALL parameters
         loss.backward()
-        optimizer.step()
+        optimizer.step()  # Adam with default hyperparameters
 
-    # Run for ~350B tokens (~3 days)
+    # Run for 1B examples (~350B tokens, ~3 days on TPUv5e-256)
 ```
 
 **Stage 2a/2b: High-Resolution Refinement (448px, 896px)**
@@ -1138,48 +1188,66 @@ def train_stage2(resolution=448):
     # Load Stage 1 checkpoint
     model = load_checkpoint("stage1_final.ckpt")
 
-    sequence_length = 512 if resolution == 448 else 768  # Estimated
-    batch_size = 512 if resolution == 448 else 256  # Smaller due to memory
+    sequence_length = 512  # Paper specifies 512 for Stage 2
+    examples = 50_000_000 if resolution == 448 else 10_000_000
 
-    # Focus on high-resolution tasks
-    for batch in detection_ocr_datasets:
-        # Similar forward/backward as Stage 1, but with:
+    # Stage 2b upweights high-resolution tasks
+    task_weights = upweight_high_res_tasks() if resolution == 896 else default_weights()
+
+    # Focus on detection, OCR, and specialized tasks
+    for batch in task_mixture_datasets:
+        # Same Prefix-LM training as Stage 1, but:
         # - Higher resolution images (448×448 or 896×896)
         # - More image tokens (1024 or 4096)
-        # - Longer sequences (detection/OCR tasks)
-        # - Inclusion of location tokens in targets
-        # - Inclusion of segmentation tokens in targets
+        # - Sequence length 512 tokens
+        # - Heavier weighting of detection/OCR/specialized tasks
+        # - Location tokens and segmentation tokens in outputs
 
-        loss = compute_loss(model, batch)
+        vision_features = model.vision_encoder(batch.images)  # [..., 1024/4096, 1152]
+        vision_projected = model.projector(vision_features)
+
+        combined = concat(vision_projected, prefix_embeds, suffix_embeds)
+        logits = model.language_model(combined, mask='prefix_lm')
+
+        # Loss only on suffix (outputs)
+        loss = cross_entropy(logits[suffix_range], batch.suffix_targets)
         loss.backward()
         optimizer.step()
 
-    # Run for ~45B tokens each (~15 hours each)
+    # Stage 2a: 50M examples (~45B tokens, ~15 hours)
+    # Stage 2b: 10M examples (~45B tokens, ~15 hours)
 ```
 
 **Key Training Decisions:**
 
-**1. Frozen Vision Encoder:**
-- Reduces memory and training time
-- Preserves pretrained vision knowledge
-- Follows PaLI-3 recipe successfully
+**1. All Parameters Trainable:**
+- No frozen components during pretraining
+- Joint optimization of vision encoder + projection + language model
+- Learning rate schedule with slow warmup for stability
+- Full model adapts to multimodal task mixture
 
-**2. Full Language Model Fine-tuning:**
-- Unlike LoRA or adapter methods
-- Updates all 2.6B language model parameters
-- Enables deep integration of vision-language understanding
+**2. Prefix-LM Training:**
+- Loss computed ONLY on suffix (output) tokens
+- Image and prefix get full bidirectional attention
+- Suffix tokens use autoregressive (causal) masking
+- Ablation showed prefix loss hurts performance
 
 **3. Progressive Resolution:**
-- Stage 1 cheaply learns broad concepts
-- Stage 2 efficiently adds high-resolution capabilities
+- Stage 1 cheaply learns broad concepts (1B examples, 224px)
+- Stage 2 efficiently adds high-resolution capabilities (60M examples, 448px/896px)
 - 15× speedup vs training only at 896px
 
-**4. Location & Segmentation Token Integration:**
-- Introduced in Stage 2 when detection/segmentation datasets added
-- Language model learns to output special tokens naturally
+**4. Task-Based Formatting:**
+- caption {lang}, ocr, answer, question, detect, segment tasks
+- Language model learns structured output (location/segmentation tokens)
 - No separate detection/segmentation heads needed
 
-### Post-Training: Mix Models
+**5. Zero-Initialized Projection:**
+- Linear projection starts at zero (no random init)
+- Allows pretrained Gemma to function initially
+- Projection learns gradually during training
+
+### Post-Training: Mix Models and Transfer Learning
 
 After pretraining, Google releases two model types:
 
@@ -1193,12 +1261,14 @@ Examples:
 - paligemma-3b-pt-224
 - paligemma-3b-pt-448
 - paligemma-3b-pt-896
+- paligemma2-10b-pt-896
+- paligemma2-28b-pt-896
 ```
 
 **2. mix (mixture) Models:**
 ```
 Purpose: Out-of-the-box usability without fine-tuning
-Training: Fine-tuned on mixture of tasks
+Training: Fine-tuned on mixture of tasks (Stage 3)
 Tasks included:
   - Short captioning (COCO)
   - Long captioning (detailed descriptions)
@@ -1208,6 +1278,8 @@ Tasks included:
   - Referring expression segmentation ("segment {description}")
   - Table structure recognition
   - Chart QA
+  - Document understanding (PaliGemma 2)
+  - Music scores, molecules, radiography (PaliGemma 2)
 
 Examples:
 - paligemma-3b-mix-224
@@ -1218,32 +1290,140 @@ Examples:
 - paligemma2-28b-mix-896
 ```
 
-**Mix Model Training:**
+**Transfer Learning Hyperparameters (Recommended from Paper):**
 
-```python
-# Pseudocode for mix model fine-tuning
-def train_mix_model():
-    model = load_checkpoint("paligemma_pt_896.ckpt")
+Based on extensive sweeps across 40+ tasks, the papers recommend:
 
-    # Task mixture (example proportions)
-    task_mixture = {
-        "captioning": 0.25,
-        "vqa": 0.30,
-        "detection": 0.15,
-        "ocr": 0.20,
-        "segmentation": 0.10
-    }
+**PaliGemma 1:**
+```
+Learning Rate: 1e-5 (best from sweep of 3e-5, 1e-5, 3e-6)
+Batch Size: 256
+Epochs: Task-dependent (1, 3, 10, 30, 100)
+Label Smoothing: 0.0, 0.1, or 0.3 (task-dependent)
+Dropout: 0.0, 0.1, or 0.3 (task-dependent)
+Weight Decay: 0.0 or 0.1 × learning_rate
+Optimizer: Adam
 
-    for batch in mixed_task_dataset:
-        # Batch contains diverse tasks with appropriate formats
-        loss = compute_loss(model, batch)
-        loss.backward()
-        optimizer.step()
-
-    # Fine-tune for moderate duration (not disclosed)
+Key Finding: "With simple hyperparameters (no tuning): 37/41 tasks
+showed <2.5% regret vs optimal sweep"
 ```
 
-**Result:** Mix models work reasonably well on multiple tasks without task-specific fine-tuning, suitable for general-purpose applications.
+**PaliGemma 2:**
+```
+Base Learning Rate: 2×10⁻⁵
+Size Multipliers:
+  - 3B: 0.5× (effective LR = 1×10⁻⁵)
+  - 10B: 0.25× (effective LR = 5×10⁻⁶)
+  - 28B: 0.25× (effective LR = 5×10⁻⁶)
+
+Transfer LR Sweep Range: {0.03, 0.06, 0.1, 0.3, 0.6, 1.0, 3.0}×10⁻⁵
+Optimizer: Adam (default hyperparameters)
+
+Key Finding: "Larger models tend to have a lower optimal transfer
+learning rate" - this explains the 0.25× multiplier for 10B/28B
+```
+
+**Logit Soft-Capping in Stage 3:**
+Note that logit soft-capping (cap value 30.0) is **disabled during transfer/fine-tuning** (Stage 3), even though it's used in Stages 1 and 2.
+
+**Result:** Mix models work reasonably well on multiple tasks without task-specific fine-tuning, suitable for general-purpose applications. For specialized domains, use pt models with recommended hyperparameters.
+
+### Compute Costs: Resolution and Model Size Trade-offs
+
+**PaliGemma 2 Paper Provides Relative Compute Costs** (per example):
+
+| Model Size | Resolution | Relative Cost | Notes |
+|------------|------------|---------------|-------|
+| **3B** | 224px² | 11.0 | Baseline (most efficient) |
+| **3B** | 896px² | ~123.5 | 11.2× cost for 16× more tokens |
+| **10B** | 224px² | 13.7 | 1.25× vs 3B at same resolution |
+| **10B** | 896px² | ~167.7 | 15.3× vs 3B/224px |
+| **28B** | 224px² | 18.9 | 1.72× vs 3B at same resolution |
+| **28B** | 896px² | ~155.6 | 14.1× vs 3B/224px |
+
+**Key Insights:**
+
+1. **Resolution Scaling**: 224px → 896px (16× tokens) ≈ 11× compute cost
+   - Not linear due to batch size and efficiency factors
+
+2. **Model Scaling**: 3B → 10B (3.3× params) ≈ 1.25× cost at 224px
+   - Sublinear due to fixed vision encoder (400M), only language model scales
+
+3. **28B Efficiency**: 28B/896px is actually **cheaper** than 10B/896px per example
+   - Better hardware utilization on TPUv5p
+   - Larger batches possible with FSDP sharding
+
+4. **Cost-Quality Trade-off**:
+   - Text-heavy tasks (OCR, documents): Use 896px (essential for quality)
+   - Reasoning tasks: Use larger models (10B/28B)
+   - General tasks: 3B/448px is sweet spot (moderate cost, good quality)
+
+**Training Budget Example:**
+
+```
+Stage 1 (3B, 224px, 1B examples):
+  Relative cost: 1B × 11.0 = 11B units
+  Duration: ~3 days on TPUv5e-256
+
+If same examples trained at 896px:
+  Relative cost: 1B × 123.5 = 123.5B units
+  Duration: ~33 days on TPUv5e-256 (11.2× longer)
+
+Multi-resolution strategy saves: 30 days of training!
+```
+
+### CPU Deployment and Quantization
+
+**PaliGemma 2 Paper Demonstrates Edge Deployment:**
+
+**8-bit Quantization via gemma.cpp:**
+
+```
+Model: PaliGemma 2 (3B)
+Quantization: INT8 (8-bit integers)
+Framework: gemma.cpp (Google's C++ inference engine)
+Platform: CPU-only (AMD Genoa processor, 32 threads)
+
+Performance:
+  - Prefill (process input): 323 tokens/second
+  - Extend (generate output): 41 tokens/second
+
+Quality Impact:
+  - Relative metric values: 99.9-100.2% of full precision
+  - Negligible quality loss across all benchmarks
+  - Suitable for production deployment
+```
+
+**Quantization Quality Analysis:**
+
+Across 30+ transfer tasks, 8-bit quantization shows:
+- **0.1-0.2% absolute difference** on most benchmarks
+- Some tasks even improve slightly (100.1-100.2% relative)
+- No task degrades >1% absolute
+
+**Deployment Scenarios:**
+
+| Environment | Hardware | Model | Throughput | Use Case |
+|-------------|----------|-------|------------|----------|
+| **Cloud GPU** | A100 (40GB) | 3B bfloat16 | ~200 tok/s | High-volume API |
+| **Cloud GPU** | A100 (40GB) | 28B bfloat16 | ~50 tok/s | Quality-critical API |
+| **Edge Server** | AMD Genoa CPU | 3B INT8 | ~41 tok/s | On-premise deployment |
+| **Mobile** | Pixel 9 Pro | 3B INT4 | ~10 tok/s | On-device inference |
+
+**Memory Footprint:**
+
+```
+PaliGemma 2 (3B):
+  - Full precision (float32): 12 GB
+  - bfloat16: 6 GB
+  - INT8 (gemma.cpp): 3 GB
+  - INT4 (experimental): 1.5 GB
+
+PaliGemma 2 (28B):
+  - bfloat16: 56 GB
+  - INT8: 28 GB (fits on single A100 80GB)
+  - INT4: 14 GB (fits on consumer GPU)
+```
 
 ### Carbon Footprint
 
