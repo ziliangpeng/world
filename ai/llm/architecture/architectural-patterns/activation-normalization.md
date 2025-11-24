@@ -2,6 +2,63 @@
 
 Activation functions and normalization techniques are critical for training stability and model performance in LLMs.
 
+## Historical Context: The Evolution of Activation Functions
+
+### Original Transformer (2017): ReLU Era
+
+The original "Attention Is All You Need" paper (Vaswani et al., 2017) used **ReLU (Rectified Linear Unit)** in the feed-forward networks.
+
+**FFN Formula**:
+```python
+FFN(x) = max(0, xW₁ + b₁)W₂ + b₂
+```
+
+**Architecture Details**:
+- Input/output dimension: d_model = 512
+- Inner layer dimension: d_ff = 2048 (4x expansion)
+- Two linear transformations with ReLU activation in between
+- Applied position-wise (same network at each position)
+
+**Why ReLU?**
+- **Standard choice in 2017**: De facto activation for deep learning
+- **Computationally efficient**: Just `max(0, x)`
+- **Proven track record**: Worked well in CNNs and other architectures
+- **No justification provided**: Paper did not conduct ablation studies on activation functions
+
+**The Transition**: ReLU (2017) → GELU (2018) → SwiGLU (2023)
+
+---
+
+## Activation Functions by Model (2017-2025)
+
+| Model/Series | Activation | Year | Organization | Notes |
+|--------------|-----------|------|--------------|-------|
+| **Original Transformer** | ReLU | 2017 | Google | "Attention Is All You Need" |
+| **GPT-1** | GELU | 2018 | OpenAI | First major model to use GELU in transformers |
+| **BERT** | GELU | 2018 | Google | Followed GPT-1's innovation |
+| **GPT-2** | GELU-New | 2019 | OpenAI | Variant of GELU |
+| **GPT-3** | GELU-New | 2020 | OpenAI | Continued GELU tradition |
+| **GPT-4** | GELU (likely) | 2023 | OpenAI | Architecture not disclosed |
+| **PaLM** | SwiGLU | 2022 | Google | First major model with SwiGLU |
+| **PaLM 2** | SwiGLU | 2023 | Google | Validated at scale |
+| **Llama 1** | SwiGLU | 2023 | Meta | Popularized in open-source |
+| **Llama 2** | SwiGLU | 2023 | Meta | Industry standard emerges |
+| **Llama 3/3.1** | SwiGLU | 2024 | Meta | Continued standard |
+| **Llama 4** | SwiGLU | 2025 | Meta | With MoE architecture |
+| **Mistral 7B** | SwiGLU | 2023 | Mistral AI | All variants |
+| **Mixtral 8x7B/8x22B** | SwiGLU | 2024 | Mistral AI | MoE with SwiGLU |
+| **DeepSeek V2** | SwiGLU | 2024 | DeepSeek | MoE architecture |
+| **DeepSeek V3** | SwiGLU | 2024 | DeepSeek | 671B params |
+| **Qwen2/2.5** | SwiGLU | 2024 | Alibaba | All sizes |
+| **Gemma** | GeGLU | 2024 | Google | GELU variant with gating |
+| **Yi** | SwiGLU | 2023 | 01.AI | Based on Llama architecture |
+| **BLOOM** | GELU | 2022 | BigScience | 176B multilingual |
+| **Falcon** | GELU | 2023 | TII | Uses standard GELU |
+| **Claude** | Unknown | 2023+ | Anthropic | Architecture not disclosed |
+| **Gemini** | Unknown | 2023+ | Google | Architecture not disclosed |
+
+---
+
 ## Activation Functions
 
 ### GELU (Gaussian Error Linear Unit)
@@ -78,16 +135,150 @@ Despite being more complex:
 ### Other Activation Functions
 
 **ReLU (x) = max(0, x)**:
-- Original transformer FFNs
-- Rarely used in LLMs now
+- **Original transformer** (2017) used ReLU in FFNs
+- Standard choice in deep learning at the time
+- Rarely used in modern LLMs now
+- **Recent research (2024)**: "ReLU Strikes Back" shows ReLU can match GELU/SwiGLU with proper tuning and slightly longer training, while providing faster inference
 
 **Swish (x) = x * sigmoid(x)**:
 - Smooth alternative to ReLU
 - Component of SwiGLU
+- Discovered via automatic search (Google, 2017)
 
 **xIELU (2024 Research)**:
 - Recent research shows superiority over SwiGLU and ReLU²
 - Not yet widely adopted
+
+**Obsolete in Modern LLMs**:
+- **Sigmoid/Tanh**: Vanishing gradient problems, only used in gating mechanisms
+- **LeakyReLU, PReLU, ELU**: Superseded by GELU/SwiGLU, no clear advantages
+- **Mish**: Computational cost without clear benefits
+
+---
+
+## The Industry Transition Story
+
+### Phase 1: ReLU Era (2017)
+
+**Original Transformer** (Vaswani et al., 2017):
+- Used standard ReLU activation
+- No exploration of alternatives
+- Simple, fast, proven choice
+
+**Limitation**: ReLU's hard cutoff at zero (non-differentiable at x=0) and sparse activations weren't optimal for transformers.
+
+### Phase 2: GELU Revolution (2018-2022)
+
+**GPT-1 Pioneers GELU** (OpenAI, 2018):
+- First major transformer to use GELU
+- Showed smooth, non-monotonic activation improved performance
+- BERT immediately followed this innovation
+
+**Why GELU Won**:
+1. **Smooth and differentiable**: Better gradient flow than ReLU
+2. **Probabilistic interpretation**: Weights inputs by percentile
+3. **Empirically better**: Improved performance across tasks
+4. **Non-zero gradient at x=0**: Allows learning in that region
+
+**Adoption**: Became standard for transformers (2018-2022)
+- GPT-2, GPT-3 (GELU-New variant)
+- BERT and derivatives
+- Most early transformer models
+
+### Phase 3: SwiGLU Era (2022-Present)
+
+**Introduction** (Noam Shazeer, 2020):
+- Paper: "GLU Variants Improve Transformer"
+- Tested GEGLU, ReGLU, SwiGLU
+- SwiGLU and GEGLU produced best results
+
+**First Major Adopter: PaLM** (Google, April 2022):
+- 540B parameter model with SwiGLU
+- Validated at extreme scale
+- Set precedent for industry
+
+**Popularizer: Llama** (Meta, February 2023):
+- First major open-source model with SwiGLU
+- Made architecture accessible to researchers
+- Spawned ecosystem of derivatives (Vicuna, Alpaca, etc.)
+
+**Rapid Adoption** (2023-2024):
+- Mistral, Mixtral
+- DeepSeek V2, V3
+- Qwen 2, 2.5
+- Nearly all new major open models
+
+**Why SwiGLU Won**:
+1. **Empirical superiority**: Consistently better results at scale
+2. **Gating mechanism**: Explicit control over information flow
+3. **Training stability**: Critical for very deep networks (100+ layers)
+4. **Better gradient flow**: Prevents vanishing/exploding gradients
+5. **Scale validation**: Proven in 100B+ parameter models
+
+### Timeline Summary
+
+```
+2017: ReLU (Original Transformer)
+      ↓
+2018: GELU (GPT-1 innovation, BERT adoption)
+      ↓
+2019-2020: GELU standard (GPT-2, GPT-3)
+      ↓
+2020: SwiGLU introduced (research)
+      ↓
+2022: PaLM validates SwiGLU at scale
+      ↓
+2023: Llama popularizes SwiGLU in open-source
+      ↓
+2024-2025: SwiGLU becomes industry standard
+```
+
+---
+
+## Current Industry Consensus (2024-2025)
+
+### Open-Source Models: SwiGLU Dominant
+
+**Nearly universal adoption**:
+- All Llama derivatives (Llama 2, 3, 4)
+- Mistral/Mixtral series
+- DeepSeek series
+- Qwen series
+- Yi models
+- Most new models default to SwiGLU
+
+**Why**: Llama's success and influence, proven performance, community standardization
+
+### Proprietary Models: Split
+
+**OpenAI (GPT series)**:
+- Likely continues GELU tradition
+- GPT-1, 2, 3 all used GELU
+- GPT-4 architecture undisclosed but probably GELU
+- Reason: "If it ain't broke, don't fix it" + proprietary optimizations
+
+**Anthropic (Claude)**:
+- Architecture completely undisclosed
+- May use novel activation or variant
+- Research-driven, likely experimenting
+
+**Google**:
+- PaLM/PaLM 2: SwiGLU
+- Gemma: GeGLU (GELU variant with gating)
+- Gemini: Unknown
+- Different teams, different choices
+
+### The Consensus
+
+**For new large-scale LLMs (>10B params)**:
+- ✅ **Use SwiGLU** - Industry standard
+- Proven, fast, effective
+- Best empirical results
+
+**For smaller models or efficiency-focused**:
+- ⚠️ **GELU still viable** - Mature implementations, lower complexity
+
+**Key Insight**: The industry has converged on just **two main choices** (GELU or SwiGLU), with SwiGLU dominant for modern models.
 
 ---
 
@@ -227,23 +418,39 @@ logits = cap * tanh(model_output / cap)
 
 ## Evolution and Adoption
 
-### Timeline
+### Timeline: Complete Evolution
 
 ```
 2017: LayerNorm + ReLU (Original Transformer)
       ↓
-2018-2019: LayerNorm + GELU (GPT-2, BERT)
+2018: LayerNorm + GELU (GPT-1 pioneers, BERT follows)
       ↓
-2020: GLU variants research
+2019-2020: LayerNorm + GELU becomes standard (GPT-2, GPT-3)
       ↓
-2021: SwiGLU + RMSNorm (PaLM, LLaMA research)
+2020: GLU variants research (SwiGLU introduced)
       ↓
-2023-2024: SwiGLU + RMSNorm Standard
-      - Llama 2
+2021-2022: SwiGLU + RMSNorm research
+      ↓
+2022: PaLM validates SwiGLU + RMSNorm at 540B scale
+      ↓
+2023: Llama popularizes SwiGLU + RMSNorm in open-source
+      - Llama 1, 2
       - Mistral
-      - Qwen
+      ↓
+2024-2025: SwiGLU + RMSNorm Industry Standard
+      - Llama 3, 4
+      - Mixtral
+      - DeepSeek V2, V3
+      - Qwen 2, 2.5
       - Most new models
 ```
+
+**Key Transition Points**:
+- **2017**: ReLU era (original transformer)
+- **2018**: GELU revolution (GPT-1 innovation)
+- **2022**: SwiGLU validation (PaLM at scale)
+- **2023**: SwiGLU popularization (Llama open-source)
+- **2024**: SwiGLU dominance (industry standard)
 
 ### Current Standard Stack (2024)
 
@@ -415,11 +622,24 @@ class SwiGLU_FFN(nn.Module):
 
 ## Sources
 
+### Original Papers
+- [Attention Is All You Need (2017)](https://arxiv.org/abs/1706.03762) - Original Transformer with ReLU
+- [GELU: Gaussian Error Linear Units (2016)](https://arxiv.org/abs/1606.08415) - GELU introduction
+- [GLU Variants Improve Transformer (2020)](https://arxiv.org/abs/2002.05202) - SwiGLU introduction
+- [PaLM: Scaling Language Modeling with Pathways (2022)](https://arxiv.org/abs/2204.02311) - First major SwiGLU adopter
+
+### Activation Functions
 - [Exploring SwiGLU](https://medium.com/@s_boudefel/exploring-swiglu-the-activation-function-powering-modern-llms-9697f88221e7)
-- [The Big LLM Architecture Comparison](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison)
 - [SwiGLU: The FFN Upgrade](https://dev.to/mshojaei77/swiglu-the-ffn-upgrade-i-use-to-get-free-performance-33jc)
+- [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/01/attention.html) - Original Transformer implementation
+- [ReLU Strikes Back (2024)](https://arxiv.org/abs/2310.04564) - Recent ReLU research
+
+### Normalization
 - [Re-Introducing LayerNorm](https://arxiv.org/abs/2409.12951)
 - [Mastering LLama - RMSNorm](https://medium.com/@hugmanskj/mastering-llama-rmsnorm-ae5c5d504e9a)
 - [Normalization Techniques in Transformer-Based LLMs](https://sushant-kumar.com/blog/normalization-in-transformer-based-llms)
-- GLU Variants Improve Transformer (2020)
-- PaLM paper (2022)
+
+### Architecture Comparisons
+- [The Big LLM Architecture Comparison](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison)
+- [All the Activation Functions](https://dublog.net/blog/all-the-activations/)
+- [Activation Functions - AussieAI Book](https://www.aussieai.com/book/ch21-activation-functions)

@@ -72,7 +72,11 @@ The key innovation is **scale**: everything is bigger than 8x7B while maintainin
 - **Position Encoding**: RoPE (Rotary Position Embeddings) with θ = 1,000,000
 - **Attention**: Grouped Query Attention (GQA) - 48 query heads, 8 KV heads
 - **Attention Dropout**: 0.0 (no dropout)
+- **Sliding Window Attention**: None (full attention within 64K context, unlike Mistral 7B's 4,096 token sliding window)
 - **Expert Routing**: Top-2 gating with auxiliary load balancing loss (coefficient: 0.001)
+- **Router Jitter Noise**: 0.0 (no noise injection during expert selection)
+- **Initializer Range**: 0.02 (for weight initialization)
+- **Tie Word Embeddings**: Disabled (input and output embeddings are separate)
 - **Precision**: bfloat16 (BF16)
 - **Tokenizer**: SentencePiece (32K vocabulary)
 
