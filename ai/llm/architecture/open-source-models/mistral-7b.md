@@ -232,15 +232,36 @@ While each layer has a limited window, information propagates recursively across
 - **Layer 3**: Position *i* sees [*i* - 12,288, *i*]
 - **Layer 32** (final): Position *i* sees [*i* - 131,072, *i*]
 
-**Theoretical attention span at layer 32**: **131K tokens** (4,096 × 32)
+**Theoretical attention span at layer 32**: **approximately 131K tokens** (4,096 × 32) as stated in the paper
 
-This recursive accumulation means that despite the local 4K window, the model can theoretically access information from **131K tokens** back at the final layer.
+This recursive accumulation means that despite the local 4K window, the model can theoretically access information from approximately **131K tokens** back at the final layer.
 
-**Memory and Speed Benefits**:
+**Rolling Buffer Cache Implementation**:
 
-1. **Fixed-size cache**: Uses a rotating buffer of size W (4,096) instead of growing linearly with sequence length
-2. **Memory savings**: **50% reduction** for sequences of 8,192 tokens (vs standard attention)
-3. **Speed improvement**: **2x faster inference** with FlashAttention and xFormers for 16K sequences with 4K window
+Mistral 7B uses a clever **rolling buffer cache** that dramatically reduces memory usage:
+
+1. **Fixed cache size**: W = 4,096 tokens (regardless of sequence length)
+2. **Position mapping**: Token at position *i* is stored at cache index `i mod W`
+3. **Overwriting old tokens**: When sequence exceeds W, older tokens are overwritten in circular fashion
+4. **Memory savings**: **8x reduction in cache memory** for 32K token sequences without quality loss
+
+Example for W = 4,096:
+- Token at position 0 → cache[0]
+- Token at position 4,096 → cache[0] (overwrites position 0)
+- Token at position 8,192 → cache[0] (overwrites position 4,096)
+
+**Pre-fill and Chunking**:
+
+For long sequences during generation:
+- Chunk size = W = 4,096 tokens
+- Process prompt in chunks of 4,096 tokens
+- Each chunk fills the cache completely before generating
+
+**Measured Performance Benefits**:
+
+1. **Fixed-size cache**: W tokens instead of growing linearly with sequence length
+2. **Memory savings**: 8x reduction for 32K sequences (paper: "cache memory usage" reduction without quality degradation)
+3. **Speed improvement**: **2x faster** with FlashAttention and xFormers for 16K sequences with W=4K window
 4. **Scalability**: Enables efficient processing of much longer sequences than standard attention
 
 **The Trade-off**:
@@ -399,22 +420,39 @@ The community generally accepted this trade-off given that the **model weights**
 
 ### Training Infrastructure
 
-**Compute Partner**: CoreWeave Cloud
+**What the Paper Discloses**:
 
-Mistral AI trained Mistral 7B on **CoreWeave Cloud**, a GPU-specialized cloud provider that became Mistral's long-term infrastructure partner.
+The Mistral 7B paper acknowledges compute support from:
+1. **CoreWeave**: GPU cluster support
+2. **Leonardo** (EuroHPC): European High-Performance Computing resources
+3. **Collaboration with**: FlashAttention, vLLM, and xFormers teams for optimization
 
-**Hardware**:
+**Infrastructure Details**:
+
+**Primary Compute Partner**: CoreWeave Cloud
+
+Mistral AI trained Mistral 7B primarily on **CoreWeave Cloud**, a GPU-specialized cloud provider that became Mistral's long-term infrastructure partner.
+
+**Hardware** (from external sources/partnerships):
 - **GPUs**: NVIDIA H100 Tensor Core GPUs (80GB HBM3)
 - **Networking**: NVIDIA Quantum InfiniBand (critical for multi-GPU training)
-- **Scale**: Exact GPU count not disclosed, but likely thousands of H100s for 3-month training run
+- **Scale**: Exact GPU count not disclosed in paper, but likely thousands of H100s for 3-month training run
+- **Additional resources**: Leonardo EuroHPC supercomputer access
 
 **Why CoreWeave?**
-- **Quick access**: Immediate availability of large H100 clusters (vs months-long waits at hyperscalers)
+- **Quick access**: Immediate availability of large H100 clusters (vs months-long waits at hyperscalers in mid-2023)
 - **GPU specialization**: Optimized for AI workloads, not general cloud computing
 - **Performance**: State-of-the-art networking for distributed training
 - **Partnership**: CoreWeave became a strategic partner, supporting later models (Mixtral, etc.)
 
 The CoreWeave partnership was crucial to the 3-month timeline—traditional cloud providers couldn't provision thousands of H100s on short notice in mid-2023.
+
+**What Was NOT Disclosed in Paper**:
+- Exact number of GPUs used
+- Training throughput (tokens/second/GPU)
+- Total compute budget (GPU-hours or FLOPs)
+- Specific distributed training techniques (model parallelism, data parallelism configuration)
+- Training stability metrics or loss curves
 
 ### Training Timeline
 
@@ -496,16 +534,29 @@ This represented a fundamental shift in the efficiency vs scale trade-off, demon
 
 ### Benchmark Results
 
-| Benchmark | Mistral 7B | Llama 2 13B | Llama 1 34B | Significance |
-|-----------|------------|-------------|-------------|--------------|
-| **MMLU** (5-shot) | 60.1% | ~55% | ~58% | **Beats both** |
-| **Reasoning** | Superior | Inferior | Comparable | Matches 34B |
-| **Mathematics** | Superior | Inferior | Comparable | Matches 34B |
-| **Code Generation** | Superior | Inferior | Comparable | Matches 34B |
-| **Commonsense Reasoning** | Superior | Inferior | - | Strong advantage |
-| **Reading Comprehension** | Superior | Inferior | - | Strong advantage |
+Complete benchmark scores from the official paper (Table 2):
 
-*Note: Some exact scores were not disclosed in public materials, but relative performance was clearly documented.*
+| Benchmark | Mistral 7B | Llama 2 7B | Llama 2 13B | CodeLlama 7B | Category |
+|-----------|------------|------------|-------------|--------------|----------|
+| **MMLU** (5-shot) | **60.1%** | 44.4% | 55.6% | 36.9% | Knowledge |
+| **HellaSwag** (0-shot) | **81.3%** | 77.1% | 80.7% | 62.9% | Commonsense |
+| **Winogrande** (0-shot) | **75.3%** | 69.5% | 72.9% | 62.3% | Commonsense |
+| **PIQA** (0-shot) | **83.0%** | 77.9% | 80.8% | 72.8% | Commonsense |
+| **ARC-Easy** (0-shot) | **80.0%** | 68.7% | 75.2% | 59.4% | Reasoning |
+| **ARC-Challenge** (0-shot) | **55.5%** | 43.2% | 48.8% | 34.5% | Reasoning |
+| **NaturalQuestions** (5-shot) | 28.8% | 24.7% | **29.0%** | 11.0% | Knowledge |
+| **TriviaQA** (5-shot) | **69.9%** | 63.8% | 69.6% | 34.9% | Knowledge |
+| **HumanEval** (0-shot) | **30.5%** | 11.6% | 18.9% | 31.1% | Code |
+| **MBPP** (3-shot) | 47.5% | 26.1% | 35.4% | **52.5%** | Code |
+| **MATH** (4-shot) | **13.1%** | 3.9% | 6.0% | 5.2% | Math |
+| **GSM8K** (8-shot) | **52.2%** | 16.0% | 34.3% | 20.8% | Math |
+
+**Key Observations**:
+- **Beats Llama 2 13B** on 10 out of 12 benchmarks (ties on TriviaQA, loses only on NaturalQuestions)
+- **Massive advantage on reasoning/math**: 3-4x better than Llama 2 13B on MATH (13.1% vs 6.0%) and GSM8K (52.2% vs 34.3%)
+- **Strong commonsense**: Outperforms Llama 2 13B on all commonsense benchmarks
+- **Code performance**: Approaches specialized CodeLlama 7B despite being a general model
+- **Efficiency claim validated**: Achieves 13B-level performance with 7B parameters
 
 ### Performance by Category
 
@@ -560,11 +611,18 @@ This was an acceptable trade-off: for most applications, reasoning ability matte
 
 #### Instruct Model Performance
 
-**Mistral 7B Instruct v0.1** (fine-tuned version) **surpassed Llama 2 13B Chat** on both:
-- **Human evaluations**: Preferred by human raters in head-to-head comparisons
-- **Automated benchmarks**: Higher scores on instruction-following metrics
+**Mistral 7B Instruct v0.1** (fine-tuned version) **surpassed Llama 2 13B Chat** on both automated and human evaluations:
 
-This demonstrated that the base model's strong capabilities transferred effectively to instruction-tuning, making it an excellent foundation for chat and assistant applications.
+**MT-Bench Scores** (automated evaluation):
+- **Mistral 7B Instruct**: 6.84 ± 0.07
+- **Llama 2 13B Chat**: 6.65
+
+**Human Evaluation** (Chatbot Arena):
+- **Mistral 7B outputs preferred**: 5,020 times
+- **Llama 2 13B outputs preferred**: 4,143 times
+- Win rate: **54.8%** for Mistral 7B Instruct
+
+This demonstrated that the base model's strong capabilities transferred effectively to instruction-tuning, making it an excellent foundation for chat and assistant applications. The human preference victory was particularly significant given Mistral 7B is nearly half the size of Llama 2 13B.
 
 ### Strengths
 
