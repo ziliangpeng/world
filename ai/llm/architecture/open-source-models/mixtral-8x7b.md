@@ -23,6 +23,7 @@ After Mistral 7B's success—proving that a well-designed 7B model could match 1
 **How do we scale beyond 7B without losing our efficiency advantage?**
 
 The options:
+
 1. **Dense scaling**: Build a 70B dense model (like Llama 2 70B)
    - ❌ Expensive: 70B parameters active every forward pass
    - ❌ Slow: Inference speed proportional to parameter count
