@@ -99,12 +99,11 @@ Since then, Meta has fully rebuilt around Llama:
 - **Llama 3.3** (December): 70B efficiency improvements
 - [Read more →](meta-llama-3.md)
 
-**[Llama 4](meta-llama-4.md)** (April 2025) - Multimodal MoE
-- Scout (17B active, 109B total, 10M context)
-- Maverick (17B active, 400B total, 1M context)
-- Behemoth (288B active, ~2T total, announced)
-- First Llama with MoE architecture
-- Natively multimodal (text, images, video)
+**[Llama 4](meta-llama-4.md)** (April 2025) - The Stumble
+- After massive hype, the Llama 4 release was a significant disappointment.
+- Its complex MoE and multimodal architecture did not deliver expected performance.
+- The community expressed frustration as models failed to follow instructions and underwhelmed on benchmarks like coding.
+- The release marked a stumble in Meta's otherwise successful open-source streak.
 - [Read more →](meta-llama-4.md)
 
 ### Specialized Models
@@ -202,7 +201,7 @@ Chat/Instruct Model
 └─ Dec:    Llama 3.3 (70B) - Efficiency improvements
 
 2025:
-└─ Apr 5:  Llama 4 (Scout, Maverick, Behemoth) - MoE + Multimodal
+└─ Apr 5:  Llama 4 (Scout, Maverick) - Hyped release ends in disappointment
 ```
 
 ### Evolution Summary Table
@@ -215,15 +214,15 @@ Chat/Instruct Model
 | **Llama 3.1** | Jul 2024 | 8-405B | 128K | 128K | Long context, 405B |
 | **Llama 3.2** | Sep 2024 | 1B-90B | Varies | 128K | Edge + Vision |
 | **Llama 3.3** | Dec 2024 | 70B | 128K | 128K | Efficiency |
-| **Llama 4** | Apr 2025 | 17B-288B active | 1M-10M | 128K | MoE + Native multimodal |
+| **Llama 4** | Apr 2025 | 17B-400B+ | up to 10M | 128K | MoE, Community Backlash |
 
 ### Key Milestones
 
-- **2K → 10M tokens**: Context expanded 5000x over 2 years
-- **7B → 405B**: Dense models scaled 60x
-- **400B total (17B active)**: First MoE Llama (Llama 4)
-- **32K → 128K vocab**: 4x vocabulary expansion (Llama 3)
-- **Text-only → Multimodal**: Native vision + text (Llama 4)
+- **2K → 10M tokens**: Context expanded 5000x, a major leap with Llama 4 Scout
+- **7B → 405B**: Dense models scaled 60x before the shift to MoE
+- **First MoE Llama**: Llama 4 introduced a Mixture-of-Experts architecture
+- **32K → 128K vocab**: 4x vocabulary expansion with Llama 3
+- **Text-only → Multimodal**: Llama 4 introduced native multimodality, though community reception on its effectiveness was mixed
 
 ---
 
@@ -260,7 +259,7 @@ Final RMSNorm → Output Projection
 - **Llama 3**: GQA for all sizes, TikToken tokenizer (universality)
 - **Llama 3.1**: RoPE scaling for long context (128K)
 - **Llama 3.2**: Vision adapters, edge optimization (specialization)
-- **Llama 4**: MoE, native multimodal (next generation)
+- **Llama 4**: MoE and native multimodality (next-gen architecture with new challenges)
 
 ---
 
@@ -299,9 +298,9 @@ Open weights allowed rapid experimentation:
 **Proved open models can compete with proprietary alternatives**:
 - Llama 2 → GPT-3.5 level
 - Llama 3.1 405B → GPT-4 level
-- Llama 4 → GPT-4 + multimodal
+- Llama 4 → Failed to be the "GPT-4 killer" many had hoped for
 
-Businesses can build on open foundations without vendor lock-in.
+The stumble of Llama 4 cast doubt on whether the open-source movement could truly keep pace with the bleeding-edge of proprietary models.
 
 ### 6. Transparency and Safety
 - Open weights enable security research
@@ -331,15 +330,32 @@ Businesses can build on open foundations without vendor lock-in.
 
 ---
 
-## Looking Forward
+## An Uncertain Future
 
-The Llama series continues to push boundaries:
+After the disappointing launch of Llama 4, the future of Meta's flagship AI project is at a crossroads. The stumble has shaken confidence and raised critical questions about the program's direction.
 
-- **Llama 4**: First open MoE + native multimodal with 10M context
-- **Behemoth** (upcoming): 288B active (~2T total) parameters
-- **Future**: Continued scaling, efficiency improvements, new modalities
+- **The Llama 4 Setback**: The project's momentum was severely blunted by Llama 4. What was meant to be a triumphant leap forward became a cautionary tale about letting hype outpace reality. Reports of delayed releases due to missed benchmarks only fueled the narrative that the MoE architecture was a gamble that didn't pay off.
+- **Redemption with Behemoth?**: The fate of the Llama series may now rest on the still-in-training "Behemoth" model. The pressure is immense for it to deliver where its smaller siblings failed, and to prove that Meta can overcome the complex challenges of its next-generation architecture.
+- **A Crack in the Open-Source Crown**: For the first time, a major Llama release was seen as a step backward. This has put Meta's leadership in the open-source AI movement in question, proving that staying on top is a monumental challenge.
 
-Meta has committed to maintaining Llama as the flagship open-source AI model family, competing with and often surpassing the best proprietary models.
+The entire AI community is now watching to see if Meta can recover from this public stumble and restore the Llama family to its former glory.
+
+---
+
+## The Pivot to Superintelligence: Meta Superintelligence Labs (MSL)
+
+In the wake of Llama 4's troubled release, Meta made a dramatic strategic pivot, signaling a new phase in its AI ambitions. In June 2025, the company announced the formation of **Meta Superintelligence Labs (MSL)**, a new top-level division dedicated to building artificial general intelligence (AGI) and superintelligence.
+
+This move was widely seen as a direct response to the challenges faced by the Llama project and an attempt to consolidate power in the escalating AI race.
+
+### Key Aspects of MSL:
+
+-   **New Leadership**: In a stunning move, Meta hired **Alexandr Wang**, the founder of Scale AI, as its new Chief AI Officer to lead MSL. The deal involved a reported **$14.3 billion investment** in Scale AI.
+-   **Aggressive Talent Acquisition**: CEO Mark Zuckerberg took personal charge of recruitment, offering massive compensation packages to poach top researchers from rivals like Google DeepMind and OpenAI.
+-   **Centralized Structure**: MSL was formed by absorbing and reorganizing Meta's existing AI teams, including the legendary **FAIR** (Fundamental AI Research) lab, into a single, powerful division.
+-   **New Mission**: The lab's stated goal is to create "personal superintelligence," aiming to empower individuals with their own powerful AI agents, a departure from the centralized service model of competitors.
+
+The creation of MSL marks the most significant reorganization in Meta's history and casts the future of its open-source Llama series in a new light. While the company has not officially abandoned its open-source commitments, the immense investment and focus on a centralized, AGI-focused lab run by new leadership suggests a potential shift away from the philosophy that made Llama a phenomenon.
 
 ---
 
@@ -365,3 +381,4 @@ Meta has committed to maintaining Llama as the flagship open-source AI model fam
 - [Llama 4 →](meta-llama-4.md)
 - [Code Llama →](meta-llama-code.md)
 - [Safety & Security Tools →](meta-llama-misc.md)
+
