@@ -302,6 +302,57 @@ GQA: Middle ground needed!
 
 ---
 
+## Alternative Attention Approaches
+
+Beyond the mainstream MHA → MQA → GQA → MLA evolution focused on KV cache efficiency, several alternative approaches have emerged to address different aspects of the attention mechanism's computational challenges.
+
+### Sparse Attention Patterns
+
+**Goal**: Reduce O(n²) complexity by limiting which tokens attend to which
+
+- **Longformer** (2020): Combines sliding window attention with global attention on special tokens; enables 4K+ contexts efficiently
+- **BigBird** (2020): Random + sliding window + global attention patterns combined; theoretically proven to approximate full attention
+- **Sparse Transformers** (OpenAI, 2019): Fixed strided and local attention patterns; early attempt at long-context efficiency
+- **Sliding Window** (Mistral, Gemma 2): Each token attends only to fixed window (e.g., 4096 nearby tokens); O(n×w) complexity
+
+**Adoption**: Moderate in specialized use cases; Gemma 2 uses alternating sliding window and global layers
+
+### Linear Attention Mechanisms
+
+**Goal**: Achieve true O(n) complexity instead of O(n²)
+
+- **Linear Transformers** (2020): Kernel-based approximation of softmax attention; mathematically elegant but quality trade-offs
+- **Performer** (Google, 2020): FAVOR+ algorithm using random Fourier features; promising but not widely adopted
+- **RWKV** (2023): Receptance Weighted Key Value; RNN-like linear attention with competitive performance on some tasks
+- **RetNet** (Microsoft, 2023): Retentive Networks; parallel training, O(n) inference, competitive with Transformers at small scale
+
+**Adoption**: Limited; quality-efficiency trade-offs not yet compelling enough to displace quadratic attention + FlashAttention
+
+### State Space Models (Attention Alternatives)
+
+**Goal**: Replace attention entirely with alternative architectures
+
+- **Mamba** (2023): Selective state space model; ~5x faster inference than Transformers, competitive quality up to 7B scale
+- **S4** (2021): Structured State Spaces; foundation for Mamba, enables very long sequences
+- **Codestral Mamba** (2024): 7B production model from Mistral; validates SSMs for code generation
+
+**Adoption**: Growing interest; Mamba showing promise as genuine alternative to Transformers for certain scales/tasks
+
+### Why GQA Still Dominates
+
+Despite these alternatives, GQA + FlashAttention remains the industry standard because:
+
+1. **Quality preservation**: GQA maintains ~95%+ of MHA quality; alternatives often trade quality for efficiency
+2. **Proven at scale**: Validated from 8B to 405B parameters; many alternatives struggle beyond 10B
+3. **Ecosystem maturity**: All major inference engines optimized for GQA; alternatives lack tooling
+4. **Incremental improvement**: GQA is evolutionary (works with existing architecture); alternatives are revolutionary (require rethinking)
+5. **FlashAttention sufficiency**: With FlashAttention-3, quadratic attention is practical for 128K-1M contexts
+6. **Different problems**: Sparse/linear attention solve sequence length; GQA solves memory bandwidth (different bottleneck)
+
+**The reality**: For production LLMs in 2024-2025, GQA + FlashAttention hits the sweet spot. Alternatives remain research directions or niche applications.
+
+---
+
 ## Multi-Head Attention (MHA) - Original (2017)
 
 ### From "Attention Is All You Need"
