@@ -334,30 +334,38 @@ All 8 experts receive roughly balanced token distribution, ensuring:
 - No compute bottlenecks
 - Full utilization of model capacity
 
-### Expert Specialization
+### Expert Specialization and Routing Patterns
 
-While the router is learned, not hand-designed, research shows experts naturally specialize:
+**What the Paper Found**:
 
-**Observed Patterns** (from MoE literature and Mixtral analysis):
-- **Code Expert**: Activates for programming tokens (functions, syntax)
-- **Math Expert**: Handles numerical reasoning and equations
-- **Language-Specific Experts**: Specialize in French, German, Spanish, etc.
-- **Domain Experts**: Scientific, medical, legal terminology
-- **Syntactic Experts**: Grammar, punctuation, structure
+The Mixtral paper analyzed expert assignment patterns and found surprising results:
 
-**Temporal Locality**:
+1. **No Clear Topic-Based Specialization**:
+   - Quote from paper: *"we do not observe obvious patterns in the assignment of experts based on the topic"*
+   - Experts do NOT clearly specialize by domain (math, code, etc.) as might be expected
+   - Distribution of expert selection is more subtle than simple domain clustering
 
-A fascinating property: consecutive tokens often use the **same experts**.
+2. **Syntactic Behavior**:
+   - The router **does** exhibit "structured syntactic behavior"
+   - Example: Token 'self' in Python code shows consistent expert routing patterns
+   - Suggests some syntax-level specialization rather than semantic/domain specialization
 
-Example for the sentence "The cat sat on the mat":
-- "The" → Experts [2, 5]
-- "cat" → Experts [2, 5]
-- "sat" → Experts [2, 5]
-- "on" → Experts [2, 5]
-- "the" → Experts [2, 5]
-- "mat" → Experts [2, 5]
+3. **Temporal Locality** (Key Finding):
+   - Consecutive tokens often route to the **same experts**
+   - At layer 15: **27.9% of consecutive tokens** share the same expert assignments
+   - Baseline random expectation: 12.5% (chance of 2/8 experts matching)
+   - **2.2x higher than random** - strong locality effect
 
-This locality enables **caching optimizations**: reuse expert computations for adjacent tokens.
+**Why This Matters**:
+
+- **Caching optimizations**: Can reuse expert computations for adjacent tokens
+- **Routing patterns**: More about local context continuity than global topic
+- **Challenges assumptions**: MoE doesn't learn simple "math expert" / "code expert" divisions
+
+**Quote from Paper**:
+*"we do observe high expert locality in each layer: a particular expert mostly gets selected for adjacent tokens (from the same sequence) at a given layer."*
+
+This temporal locality is a key property enabling efficient MoE inference.
 
 ### Architecture Components Shared with Mistral 7B
 
@@ -463,63 +471,91 @@ Mistral AI maintained their policy of selective disclosure for Mixtral 8x7B, rel
 
 ### Training Data
 
-**Official Disclosure**: NOT publicly disclosed
+**What the Paper Discloses**:
 
-**Known Information**:
+From the official paper and announcement:
 
-1. **Multilingual Training**:
-   - Explicitly trained on **English, French, German, Spanish, and Italian**
-   - Significantly outperforms Llama 2 70B on non-English benchmarks
-   - Suggests substantial multilingual data in training corpus
+1. **Data Source**: "Data extracted from the open Web" (from Mistral AI announcement)
 
-2. **Likely Data Sources** (inferred from Mistral 7B and model capabilities):
-   - Web scrapes (CommonCrawl, etc.)
-   - Code repositories (GitHub, Stack Overflow)
-   - Books and literature
-   - Scientific papers (ArXiv, academic databases)
-   - Multilingual web content for language coverage
+2. **Multilingual Training**:
+   - **Languages**: English, French, German, Spanish, and Italian
+   - Quote from paper: *"Mixtral is pretrained with multilingual data"*
+   - Quote from paper: *"we significantly upsample the proportion of multilingual data during pretraining"* (compared to Mistral 7B)
+   - This upsampling explains Mixtral's strong multilingual performance
 
-3. **Context Window Training**:
-   - Trained with **32,000 token context** (4x Mistral 7B's 8K)
+3. **Context Window**:
+   - Quote from paper: *"Mixtral was trained with a context size of 32k tokens"*
+   - 4x longer than Mistral 7B's 8K context
    - Required long-document data for effective long-context learning
 
-**Estimated Scale**:
-- Token count: NOT disclosed (likely trillions, following industry trends)
-- Training duration: ~3 months (September to December 2023)
-- Data quality emphasized over quantity (Mistral philosophy)
+**What Is NOT Disclosed**:
 
-**Why Non-Disclosure?**
+The paper deliberately does not provide:
+- **Exact data sources** (CommonCrawl, Wikipedia, books, etc.)
+- **Data mix ratios** (% web vs code vs books)
+- **Total training tokens** (likely trillions based on model scale)
+- **Data preprocessing** (filtering, deduplication)
+- **Quality control methods**
+- **Domain distribution**
+- **Code data percentage**
 
-Following Mistral 7B's precedent:
+**Why the Limited Disclosure?**
+
+Consistent with Mistral 7B and industry practice (OpenAI, Anthropic, Google):
 - **Competitive advantage**: Data curation is a key differentiator
-- **Legal complexity**: Disclosing exact sources invites copyright scrutiny
+- **Legal complexity**: Disclosing sources invites copyright scrutiny
 - **Iteration speed**: Avoid debates about data provenance
 
-The community accepted this trade-off given the **Apache 2.0 weights** were fully open.
+**Community Acceptance**:
+
+The trade-off was accepted because:
+- **Model weights**: Fully open under Apache 2.0
+- **Architecture**: Fully documented
+- **Consistent practice**: All major labs limit data disclosure
 
 ### Training Infrastructure
 
-**What We Know**:
+**What the Paper/Announcement Discloses**:
 
-Based on Mistral 7B's infrastructure and Mixtral's scale:
+1. **Deployment Support** (from official announcement):
+   - **CoreWeave**: Infrastructure support mentioned
+   - **Scaleway**: Support mentioned
+   - Inference optimizations via vLLM project integration with Megablocks CUDA kernels
+   - Skypilot for cloud deployment
 
-**Likely Compute Provider**: CoreWeave Cloud
-- Established partnership from Mistral 7B
-- NVIDIA H100 Tensor Core GPUs (80GB HBM3)
-- NVIDIA Quantum InfiniBand networking
-- Possible supplemental use of Leonardo (EuroHPC) supercomputer
+2. **Efficient Inference** (from paper):
+   - Quote: *"we submitted changes to the vLLM project, which integrates Megablocks CUDA kernels for efficient inference"*
+   - Megablocks enables variable-sized expert assignments per batch
+   - Critical for production MoE deployment
 
-**Scale** (estimated):
-- Thousands of H100 GPUs (exact count not disclosed)
-- 3-month training window (September-December 2023)
-- Significant compute budget (likely millions in GPU costs)
+3. **Training Approach** (from announcement):
+   - Quote: *"train experts and routers simultaneously"* (not staged)
+   - All 8 experts and routing network trained end-to-end
 
 **What Is NOT Disclosed**:
-- Exact GPU count
-- Total FLOPs or GPU-hours
-- Training throughput (tokens/second/GPU)
-- Distributed training configuration (data parallelism, expert parallelism, pipeline parallelism)
-- Training stability metrics or loss curves
+
+Critical infrastructure details not provided:
+- **GPU Type**: Not confirmed (likely H100s based on Mistral 7B partnership, but not stated)
+- **GPU Count**: Not disclosed
+- **Training Duration**: Not disclosed (wall-clock time)
+- **Total FLOPs**: Not disclosed
+- **GPU-hours**: Not disclosed
+- **Training Throughput**: Not disclosed (tokens/second/GPU)
+- **Distributed Training Strategy**: Not detailed
+  - Data parallelism configuration
+  - Expert parallelism (how experts distributed across GPUs)
+  - Pipeline parallelism (if used)
+  - Communication patterns
+- **Memory Optimizations**: Not detailed (gradient checkpointing, activation checkpointing)
+- **Training Stability**: No loss curves or metrics provided
+
+**Inferred from Context**:
+
+Based on Mistral 7B precedent and 3-month timeline:
+- **Likely provider**: CoreWeave Cloud (H100 GPUs)
+- **Scale**: Thousands of GPUs (required for 47B model in 3 months)
+- **Timeline**: ~3 months (September-December 2023)
+- **Cost**: Likely millions in compute (industry standard for 47B models)
 
 ### MoE Training Challenges
 
@@ -556,35 +592,54 @@ Despite these challenges, Mistral AI successfully trained Mixtral in ~3 months�
 
 ### Optimizer Configuration
 
-**NOT officially disclosed in paper or announcement**
+**What the Paper Discloses**: NOTHING
 
-Based on industry standards and Mistral 7B precedent, likely configuration:
+The Mixtral paper provides **zero information** about training hyperparameters:
 
-**Optimizer**: AdamW
-- **Beta1 (β₁)**: 0.9
-- **Beta2 (β₂)**: 0.95 (standard for large transformers)
-- **Epsilon**: 1e-05
-- **Weight Decay**: 0.1
+**NOT Disclosed**:
+- Optimizer type (Adam, AdamW, etc.)
+- Learning rate (peak, schedule, warmup)
+- Betas (β₁, β₂)
+- Epsilon
+- Weight Decay
+- Batch size (tokens or sequences)
+- Number of training steps
+- Total training tokens
+- Gradient clipping value
+- Training precision (bf16/fp16/fp32)
+- **MoE-specific settings**:
+  - Load balancing loss coefficient (α)
+  - Expert capacity factors
+  - Expert dropout rates
+  - Router z-loss coefficient (if used)
+  - Auxiliary loss weighting
 
-**Learning Rate**:
-- **Schedule**: Cosine decay with warmup
-- **Peak LR**: Likely 1e-4 to 3e-4 (MoE models often use lower LR than dense)
-- **Warmup Steps**: ~2,000-5,000 steps
+**Why This Matters**:
 
-**Batch Size**:
-- Likely **large token batches** (millions of tokens)
-- Critical for MoE load balancing statistics
+This level of non-disclosure makes Mixtral **non-reproducible** from the paper alone. Unlike academic papers that typically provide full training recipes, Mistral AI chose to release:
+- ✅ **Model weights** (Apache 2.0 - fully open)
+- ✅ **Architecture** (well-documented)
+- ❌ **Training recipe** (proprietary)
 
-**Gradient Clipping**: 1.0 (standard)
+**Industry Context**:
 
-**Precision**: bfloat16 mixed precision training
+This is standard for commercial foundation model labs:
+- **OpenAI**: No GPT-3.5/4 training details
+- **Anthropic**: No Claude training details
+- **Google**: No Gemini training details
+- **Meta Llama 2**: Some details but incomplete
 
-**MoE-Specific**:
-- **Load balancing loss coefficient (α)**: NOT disclosed
-- **Expert capacity factor**: NOT disclosed
-- **Router z-loss** (if used): NOT disclosed
+**Community Acceptance**:
 
-These are informed inferences based on published MoE literature (Switch Transformer, ST-MoE) and standard practices.
+The open-source community accepted this because:
+1. **Weights are truly open** (Apache 2.0, no restrictions)
+2. **Can use and modify** the trained model freely
+3. **Reproducibility isn't the goal** - deployment is
+
+For researchers needing training details, inference from:
+- MoE literature (Switch Transformer, ST-MoE)
+- Standard LLM practices
+- Mistral 7B patterns (where disclosed)
 
 ### Training Timeline and Execution Speed
 
