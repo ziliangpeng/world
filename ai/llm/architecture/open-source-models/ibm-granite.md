@@ -1,31 +1,5 @@
 # IBM Granite: Enterprise-Focused Open-Source Language Models
 
-## Table of Contents
-
-1. [Overview & IBM's Enterprise AI Strategy](#overview--ibms-enterprise-ai-strategy)
-2. [Granite 3.0 (October 2024)](#granite-30-october-2024)
-3. [Granite 3.1 (December 2024)](#granite-31-december-2024)
-4. [Granite 4.0 - Hybrid Mamba-Transformer (October 2025)](#granite-40---hybrid-mamba-transformer-october-2025)
-5. [Mamba-Transformer Hybrid Architecture](#mamba-transformer-hybrid-architecture)
-6. [Detailed Architecture Specifications](#detailed-architecture-specifications)
-7. [Training Details](#training-details)
-8. [Enterprise Features](#enterprise-features)
-9. [Performance Benchmarks](#performance-benchmarks)
-10. [Memory Efficiency Analysis](#memory-efficiency-analysis)
-11. [Model Variants](#model-variants)
-12. [128K Context Window](#128k-context-window)
-13. [Tool Use and Function Calling](#tool-use-and-function-calling)
-14. [Comparison Tables](#comparison-tables)
-15. [Use Cases & Applications](#use-cases--applications)
-16. [Technical Implementation](#technical-implementation)
-17. [Licensing & Open Source](#licensing--open-source)
-18. [Comparison with Alternative Architectures](#comparison-with-alternative-architectures)
-19. [Impact on Enterprise AI](#impact-on-enterprise-ai)
-20. [Future Directions](#future-directions)
-21. [Sources and Citations](#sources-and-citations)
-
----
-
 ## Overview & IBM's Enterprise AI Strategy
 
 ### What is IBM Granite?

@@ -1,23 +1,5 @@
 # DBRX: Databricks' Fine-Grained Mixture-of-Experts LLM
 
-## Table of Contents
-- [Overview](#overview)
-- [Model Architecture](#model-architecture)
-- [Mixture-of-Experts Deep Dive](#mixture-of-experts-deep-dive)
-- [Training Details](#training-details)
-- [Performance Benchmarks](#performance-benchmarks)
-- [Unique Innovations](#unique-innovations)
-- [Inference Characteristics](#inference-characteristics)
-- [Use Cases & Applications](#use-cases--applications)
-- [Comparison with Other Models](#comparison-with-other-models)
-- [Licensing & Access](#licensing--access)
-- [Technical Implementation](#technical-implementation)
-- [Impact on the Field](#impact-on-the-field)
-- [Strengths and Limitations](#strengths-and-limitations)
-- [Future and Updates](#future-and-updates)
-- [Code Examples](#code-examples)
-- [Sources and Citations](#sources-and-citations)
-
 ## Overview
 
 ### Release Context

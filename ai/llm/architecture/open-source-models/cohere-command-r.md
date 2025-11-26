@@ -1,30 +1,5 @@
 # Cohere Command R: Enterprise RAG-Optimized Language Model
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Model Overview](#model-overview)
-- [Model Specifications](#model-specifications)
-- [Architecture Deep Dive](#architecture-deep-dive)
-- [RAG Optimization: The Primary Differentiator](#rag-optimization-the-primary-differentiator)
-- [Multilingual Capabilities](#multilingual-capabilities)
-- [Tool Use and Function Calling](#tool-use-and-function-calling)
-- [Training Methodology](#training-methodology)
-- [Performance Benchmarks](#performance-benchmarks)
-- [Comparison with Competitors](#comparison-with-competitors)
-- [Command R vs Command R+](#command-r-vs-command-r)
-- [Enterprise Features](#enterprise-features)
-- [Deployment Options](#deployment-options)
-- [Hardware Requirements](#hardware-requirements)
-- [Pricing and Cost Analysis](#pricing-and-cost-analysis)
-- [Enterprise Use Cases](#enterprise-use-cases)
-- [Safety and Content Filtering](#safety-and-content-filtering)
-- [Limitations and Challenges](#limitations-and-challenges)
-- [August 2024 Updates](#august-2024-updates)
-- [Future Directions](#future-directions)
-- [Technical Implementation Guide](#technical-implementation-guide)
-- [Conclusion](#conclusion)
-- [Sources](#sources)
-
 ## Introduction
 
 Command R represents a significant milestone in enterprise AI, released by Cohere in March 2024 as a production-scale language model specifically optimized for Retrieval-Augmented Generation (RAG) and tool use. As a 35-billion parameter model with a 128,000-token context window, Command R bridges the gap between efficiency and capability, targeting real-world enterprise deployments where accuracy, cost-effectiveness, and multilingual support are paramount.

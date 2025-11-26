@@ -1,27 +1,5 @@
 # Grok-1.5 and Grok-1.5V: xAI's Enhanced Context and Multimodal Models
 
-## Table of Contents
-- [Overview](#overview)
-- [Grok-1.5: Extended Context Model](#grok-15-extended-context-model)
-- [Grok-1.5V: Vision-Enabled Multimodal Model](#grok-15v-vision-enabled-multimodal-model)
-- [Architecture](#architecture)
-- [128K Context Window](#128k-context-window)
-- [Performance Benchmarks](#performance-benchmarks)
-- [Vision Capabilities](#vision-capabilities)
-- [RealWorldQA Benchmark](#realworldqa-benchmark)
-- [Training Infrastructure](#training-infrastructure)
-- [Comparison with Grok-1](#comparison-with-grok-1)
-- [Comparison with Competitors](#comparison-with-competitors)
-- [Real-Time X Platform Integration](#real-time-x-platform-integration)
-- [Use Cases](#use-cases)
-- [Inference Requirements](#inference-requirements)
-- [API Access and Availability](#api-access-and-availability)
-- [Open Source Status](#open-source-status)
-- [xAI's Rapid Development Roadmap](#xais-rapid-development-roadmap)
-- [Technical Implementation](#technical-implementation)
-- [Limitations and Considerations](#limitations-and-considerations)
-- [Sources](#sources)
-
 ## Overview
 
 Grok-1.5 represents xAI's second-generation language model, announced on March 29, 2024, just weeks after Grok-1 was open-sourced. It introduces significant improvements in reasoning capabilities and a massive 16x expansion in context window length, from 8K to 128K tokens. Following this, Grok-1.5V (Grok-1.5 Vision) was unveiled on April 12, 2024, making it xAI's first multimodal model capable of processing and understanding visual information.

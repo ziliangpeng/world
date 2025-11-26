@@ -1,31 +1,5 @@
 # xAI Grok-1: The 314B Parameter MoE Model Released via BitTorrent
 
-## Table of Contents
-
-- [Overview](#overview)
-- [xAI Company Background](#xai-company-background)
-- [Model Specifications](#model-specifications)
-- [Mixture of Experts (MoE) Architecture](#mixture-of-experts-moe-architecture)
-- [Training Details](#training-details)
-- [Real-Time Information Access](#real-time-information-access)
-- [Performance Benchmarks](#performance-benchmarks)
-- [Open Release via BitTorrent](#open-release-via-bittorrent)
-- [Architecture Details](#architecture-details)
-- [Comparison with Mixtral](#comparison-with-mixtral)
-- [Inference Requirements](#inference-requirements)
-- [Use Cases & Applications](#use-cases--applications)
-- [Controversies & Unique Aspects](#controversies--unique-aspects)
-- [Technical Implementation](#technical-implementation)
-- [Grok Evolution Context](#grok-evolution-context)
-- [xAI Infrastructure](#xai-infrastructure)
-- [Comparison Tables](#comparison-tables)
-- [Licensing & Access](#licensing--access)
-- [Community Response](#community-response)
-- [Impact on Open-Source AI](#impact-on-open-source-ai)
-- [Sources and Citations](#sources-and-citations)
-
----
-
 ## Overview
 
 Grok-1 is xAI's groundbreaking 314 billion parameter Mixture of Experts (MoE) large language model, released open-source on March 17, 2024, under the Apache 2.0 license. What makes Grok-1 particularly notable is its unconventional distribution method via BitTorrent—a first for a model of this scale—and its integration with X (formerly Twitter) for real-time information access.

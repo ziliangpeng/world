@@ -1,27 +1,5 @@
 # Moonshot AI Kimi K2: Open Agentic Intelligence
 
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Company Background](#company-background)
-3. [Model Specifications](#model-specifications)
-4. [Model Variants](#model-variants)
-5. [Architecture Deep-Dive](#architecture-deep-dive)
-6. [Training Details](#training-details)
-7. [Long Context Capabilities](#long-context-capabilities)
-8. [Performance Benchmarks](#performance-benchmarks)
-9. [Agentic Capabilities](#agentic-capabilities)
-10. [Technical Innovations](#technical-innovations)
-11. [Deployment and Access](#deployment-and-access)
-12. [License and Usage](#license-and-usage)
-13. [Comparison with Similar Models](#comparison-with-similar-models)
-14. [Use Cases](#use-cases)
-15. [Impact and Significance](#impact-and-significance)
-16. [Future Directions](#future-directions)
-17. [Sources](#sources)
-
----
-
 ## Overview
 
 Kimi K2, released by Beijing-based Moonshot AI on July 11, 2025, represents a watershed moment in open-source artificial intelligence. As the first open-weight model with 1 trillion total parameters and 256K context window support (in later variants), K2 demonstrated that frontier-class AI capabilities could be democratized without sacrificing performance.

@@ -1,28 +1,5 @@
 # Snowflake Arctic: Enterprise Dense-MoE Hybrid Language Model
 
-## Table of Contents
-
-1. [Overview and Release Context](#overview-and-release-context)
-2. [The Dense-MoE Hybrid Architecture](#the-dense-moe-hybrid-architecture)
-3. [Detailed Architecture Specifications](#detailed-architecture-specifications)
-4. [MoE Component Design](#moe-component-design)
-5. [Training Details](#training-details)
-6. [Enterprise Focus](#enterprise-focus)
-7. [Performance Benchmarks](#performance-benchmarks)
-8. [Training Efficiency and Cost](#training-efficiency-and-cost)
-9. [Inference Characteristics](#inference-characteristics)
-10. [Arctic Model Family](#arctic-model-family)
-11. [Comparison Tables](#comparison-tables)
-12. [Licensing and Access](#licensing-and-access)
-13. [Technical Implementation](#technical-implementation)
-14. [Use Cases and Applications](#use-cases-and-applications)
-15. [Impact and Innovation](#impact-and-innovation)
-16. [Strengths and Limitations](#strengths-and-limitations)
-17. [Future Directions](#future-directions)
-18. [Sources and Citations](#sources-and-citations)
-
----
-
 ## Overview and Release Context
 
 ### Release Announcement

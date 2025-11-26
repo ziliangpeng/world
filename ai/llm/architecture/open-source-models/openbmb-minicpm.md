@@ -1,29 +1,5 @@
 # MiniCPM: Ultra-Efficient Language Models for End Devices
 
-## Table of Contents
-- [Overview](#overview)
-- [OpenBMB Organization](#openbmb-organization)
-- [Model Family Structure](#model-family-structure)
-- [MiniCPM Text Models](#minicpm-text-models)
-- [MiniCPM-V Vision-Language Models](#minicpm-v-vision-language-models)
-- [MiniCPM 4/4.1 Deep-Dive](#minicpm-441-deep-dive)
-- [MiniCPM-V 4.5 Deep-Dive](#minicpm-v-45-deep-dive)
-- [Historical Evolution](#historical-evolution)
-- [Architecture Details](#architecture-details)
-- [On-Device Deployment](#on-device-deployment)
-- [Training Methodology](#training-methodology)
-- [Performance Benchmarks](#performance-benchmarks)
-- [Comparison with Competitors](#comparison-with-competitors)
-- [Technical Innovations](#technical-innovations)
-- [Integration & Ecosystem](#integration--ecosystem)
-- [Use Cases](#use-cases)
-- [Limitations](#limitations)
-- [Future Directions](#future-directions)
-- [License](#license)
-- [References](#references)
-
----
-
 ## Overview
 
 MiniCPM is a groundbreaking series of ultra-efficient language models developed by OpenBMB (Open Big Model Benchmark), designed to bring GPT-4V-level performance to end devices including mobile phones, tablets, and edge computing platforms. The project embodies the mission of "GPT-4V level on your phone," democratizing access to powerful AI capabilities through aggressive optimization for resource-constrained environments.

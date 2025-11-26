@@ -1,30 +1,5 @@
 # OLMo: Open Language Model by Allen Institute for AI
 
-## Table of Contents
-- [Overview](#overview)
-- [What Makes OLMo "Truly Open"](#what-makes-olmo-truly-open)
-- [Model Variants and Releases](#model-variants-and-releases)
-- [Complete Release Package](#complete-release-package)
-- [Architecture Specifications](#architecture-specifications)
-- [Dolma Dataset](#dolma-dataset)
-- [Training Details](#training-details)
-- [Training Framework and Code](#training-framework-and-code)
-- [Performance Benchmarks](#performance-benchmarks)
-- [Intermediate Checkpoints](#intermediate-checkpoints)
-- [Research Contributions](#research-contributions)
-- [Comparison with Other "Open" Models](#comparison-with-other-open-models)
-- [Use Cases and Applications](#use-cases-and-applications)
-- [Community Impact](#community-impact)
-- [Licensing](#licensing)
-- [Technical Implementation](#technical-implementation)
-- [Evaluation Framework: Catwalk and Paloma](#evaluation-framework-catwalk-and-paloma)
-- [OLMo Evolution](#olmo-evolution)
-- [Allen AI's Broader Ecosystem](#allen-ais-broader-ecosystem)
-- [Impact on Reproducibility](#impact-on-reproducibility)
-- [OLMoE: Mixture of Experts Variant](#olmoe-mixture-of-experts-variant)
-- [Comparison Tables](#comparison-tables)
-- [Sources and Citations](#sources-and-citations)
-
 ## Overview
 
 OLMo (Open Language Model) is a groundbreaking language model project from the Allen Institute for AI (AI2) that represents the first truly open and transparent large language model in the modern era. Released in February 2024, OLMo distinguishes itself from other "open" models by providing not just model weights, but the complete training data, training code, evaluation code, intermediate checkpoints, and training logs necessary for full scientific reproducibility.

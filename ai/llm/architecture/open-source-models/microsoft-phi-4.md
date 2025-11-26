@@ -1,37 +1,5 @@
 # Microsoft Phi-4: The Culmination of Small Language Model Innovation
 
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Phi-4 Base Model (14B)](#phi-4-base-model-14b)
-   - [Architecture Specifications](#architecture-specifications)
-   - [Training Data and Methodology](#training-data-and-methodology)
-   - [Synthetic Data Generation](#synthetic-data-generation)
-   - [Post-Training and Alignment](#post-training-and-alignment)
-   - [Performance Benchmarks](#performance-benchmarks)
-   - [Key Innovations](#key-innovations)
-3. [Phi-4-mini (3.8B)](#phi-4-mini-38b)
-   - [Architecture and Specifications](#architecture-and-specifications-mini)
-   - [Training and Data](#training-and-data-mini)
-   - [Performance](#performance-mini)
-   - [Capabilities and Use Cases](#capabilities-and-use-cases)
-4. [Phi-4-multimodal (5.6B)](#phi-4-multimodal-56b)
-   - [Multimodal Architecture](#multimodal-architecture)
-   - [Mixture of LoRAs Design](#mixture-of-loras-design)
-   - [Training Data and Methodology](#training-data-and-methodology-multimodal)
-   - [Performance Across Modalities](#performance-across-modalities)
-5. [Phi-4 Reasoning Variants](#phi-4-reasoning-variants)
-6. [Comparison Across Phi-4 Family](#comparison-across-phi-4-family)
-7. [Evolution from Phi-3.5 to Phi-4](#evolution-from-phi-35-to-phi-4)
-8. [Technical Innovations](#technical-innovations)
-9. [Limitations and Weaknesses](#limitations-and-weaknesses)
-10. [Safety and Responsible AI](#safety-and-responsible-ai)
-11. [Deployment and Availability](#deployment-and-availability)
-12. [Impact on Small Language Model Field](#impact-on-small-language-model-field)
-13. [Future Directions](#future-directions)
-14. [Conclusion](#conclusion)
-15. [Sources](#sources)
-
 ## Introduction
 
 Microsoft's Phi-4 family represents the culmination of the company's small language model (SLM) research program, released in two waves: the flagship Phi-4 base model in December 2024 (14B parameters), followed by Phi-4-mini (3.8B) and Phi-4-multimodal (5.6B) in February 2025. This series marks a significant milestone in demonstrating that carefully curated training data and innovative training methodologies can enable smaller models to compete with—and in some cases surpass—much larger systems in specialized domains.

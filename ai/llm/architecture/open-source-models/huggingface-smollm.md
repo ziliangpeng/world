@@ -1,26 +1,5 @@
 # SmolLM: HuggingFace's Efficient Small Language Models
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Model Family](#model-family)
-3. [SmolLM2 - Updated Version](#smollm2---updated-version)
-4. [SmolLM3 - Latest Iteration](#smollm3---latest-iteration)
-5. [Architecture Design](#architecture-design)
-6. [SmolLM-Corpus Dataset](#smollm-corpus-dataset)
-7. [Training Methodology](#training-methodology)
-8. [On-Device Focus](#on-device-focus)
-9. [Performance Benchmarks](#performance-benchmarks)
-10. [Comparison with TinyLlama](#comparison-with-tinyllama)
-11. [Comparison with Microsoft Phi](#comparison-with-microsoft-phi)
-12. [Use Cases](#use-cases)
-13. [Implementation & Deployment](#implementation--deployment)
-14. [Licensing](#licensing)
-15. [Memory & Compute Requirements](#memory--compute-requirements)
-16. [Limitations](#limitations)
-17. [Sources & References](#sources--references)
-
----
-
 ## Overview
 
 SmolLM is HuggingFace's family of state-of-the-art small language models designed specifically for efficient on-device and edge deployment. Developed by HuggingFace's Transformers team (HuggingFaceTB), SmolLM represents a strategic focus on creating powerful yet compact models that challenge the assumption that only large models can deliver strong performance.

@@ -1,29 +1,5 @@
 # NVIDIA Hymba: Hybrid-Head Architecture for Efficient Small Language Models
 
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Executive Summary](#executive-summary)
-3. [Meta-Token Innovation](#meta-token-innovation)
-4. [Three-Way Hybrid Architecture](#three-way-hybrid-architecture)
-5. [10x Memory Reduction Mechanism](#10x-memory-reduction-mechanism)
-6. [Detailed Architecture](#detailed-architecture)
-7. [Model Variants](#model-variants)
-8. [Training Methodology](#training-methodology)
-9. [Benchmarks and Performance](#benchmarks-and-performance)
-10. [Memory Efficiency Analysis](#memory-efficiency-analysis)
-11. [Comparison with Other Hybrids](#comparison-with-other-hybrids)
-12. [Meta-Token Mechanism Deep Dive](#meta-token-mechanism-deep-dive)
-13. [Use Cases and Applications](#use-cases-and-applications)
-14. [Implementation Details](#implementation-details)
-15. [Limitations and Trade-offs](#limitations-and-trade-offs)
-16. [NVIDIA's Hybrid Strategy](#nvidias-hybrid-strategy)
-17. [Future Directions](#future-directions)
-18. [Performance Comparison Tables](#performance-comparison-tables)
-19. [References and Sources](#references-and-sources)
-
----
-
 ## Overview
 
 ### What is Hymba?
