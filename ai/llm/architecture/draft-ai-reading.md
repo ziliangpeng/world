@@ -65,6 +65,8 @@ A curated collection of AI/ML articles, blog posts, tutorials, and resources.
 | The pitfalls of next-token prediction | Paper | arXiv | [2403.06963](https://arxiv.org/abs/2403.06963) |
 | The N Implementation Details of RLHF with PPO | Blog | ICLR Blogposts 2024 | [Link](https://iclr-blogposts.github.io/2024/blog/the-n-implementation-details-of-rlhf-with-ppo/) |
 | Dear VC's, please stop throwing money at AI founders with no commercial plan, besides AGI | Opinion | - | - |
+| Disaggregated Inference: 18 Months Later | Blog | Hao AI Lab | [Link](https://hao-ai-lab.github.io/blogs/distserve-retro/) |
+| Distill — Latest articles about machine learning | Website | Distill | [Link](https://distill.pub/) |
 | Are all LLMs really 1.58 bits? Inference at 4x the speed or more? | Article | - | [Link](https://learning-exhaust.hashnode.dev/are-all-large-language-models-really-in-158-bits) |
 | Medusa: Simple framework for accelerating LLM generation with multiple decoding heads | Research | - | [Link](https://github.com/FasterDecoding/Medusa) |
 | Ilya's recom to Carmack | Reference | - | - |
