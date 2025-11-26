@@ -1,21 +1,6 @@
 # Microsoft Phi-2: Scaling Textbook Quality to 2.7B Parameters
 
-## Table of Contents
-- [Overview](#overview)
-- [Key Innovations](#key-innovations)
-- [Evolution from Phi-1 and Phi-1.5](#evolution-from-phi-1-and-phi-15)
-- [Architecture](#architecture)
-- [Training Data and Methodology](#training-data-and-methodology)
-- [Performance and Benchmarks](#performance-and-benchmarks)
-- [Comparison with Contemporary Models](#comparison-with-contemporary-models)
-- [Scaling Analysis: From 1.3B to 2.7B](#scaling-analysis-from-13b-to-27b)
-- [Satya Nadella's Announcement and Microsoft's Vision](#satya-nadellas-announcement-and-microsofts-vision)
-- [Impact and Significance](#impact-and-significance)
-- [Bridge to Phi-3 and the SLM Roadmap](#bridge-to-phi-3-and-the-slm-roadmap)
-- [Strengths and Limitations](#strengths-and-limitations)
-- [Use Cases and Applications](#use-cases-and-applications)
-- [Availability and Licensing](#availability-and-licensing)
-- [Sources](#sources)
+
 
 ## Overview
 

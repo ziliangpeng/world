@@ -1,18 +1,6 @@
 # Microsoft Phi-1.5: Textbooks Are All You Need II
 
-## Table of Contents
-- [Overview](#overview)
-- [Key Innovations](#key-innovations)
-- [Evolution from Phi-1](#evolution-from-phi-1)
-- [Architecture](#architecture)
-- [Training Data and Methodology](#training-data-and-methodology)
-- [Performance and Benchmarks](#performance-and-benchmarks)
-- [Comparison with Contemporary Models](#comparison-with-contemporary-models)
-- [Emergent Capabilities](#emergent-capabilities)
-- [Strengths and Limitations](#strengths-and-limitations)
-- [Impact and Significance](#impact-and-significance)
-- [Availability and Usage](#availability-and-usage)
-- [Sources](#sources)
+
 
 ## Overview
 

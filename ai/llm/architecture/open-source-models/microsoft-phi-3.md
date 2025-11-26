@@ -1,33 +1,6 @@
 # Microsoft Phi-3 Family: Small Language Models Redefining Efficiency
 
-## Table of Contents
-- [Overview](#overview)
-- [Release Timeline](#release-timeline)
-- [Phi-3 Family Models](#phi-3-family-models)
-- [Evolution from Phi-2](#evolution-from-phi-2)
-- [Phi-3-mini: The Foundation](#phi-3-mini-the-foundation)
-  - [Architecture](#phi-3-mini-architecture)
-  - [Training Methodology](#phi-3-mini-training)
-  - [Performance](#phi-3-mini-performance)
-  - [Context Length Variants](#phi-3-mini-context-variants)
-- [Phi-3-small: Enhanced Efficiency](#phi-3-small-enhanced-efficiency)
-  - [Architecture](#phi-3-small-architecture)
-  - [Performance](#phi-3-small-performance)
-- [Phi-3-medium: Maximum Capability](#phi-3-medium-maximum-capability)
-  - [Architecture](#phi-3-medium-architecture)
-  - [Performance](#phi-3-medium-performance)
-- [Phi-3-vision: Multimodal Intelligence](#phi-3-vision-multimodal-intelligence)
-  - [Architecture](#phi-3-vision-architecture)
-  - [Performance](#phi-3-vision-performance)
-- [Long Context Innovation: 128K Tokens](#long-context-innovation)
-- [Training Data and Methodology](#training-data-and-methodology)
-- [MIT License and Industry Impact](#mit-license-and-industry-impact)
-- [Safety and Alignment](#safety-and-alignment)
-- [On-Device Deployment](#on-device-deployment)
-- [Performance Comparisons](#performance-comparisons)
-- [Strengths and Limitations](#strengths-and-limitations)
-- [Use Cases and Applications](#use-cases-and-applications)
-- [Sources](#sources)
+
 
 ## Overview
 

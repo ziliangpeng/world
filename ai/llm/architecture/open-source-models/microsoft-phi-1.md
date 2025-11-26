@@ -1,18 +1,6 @@
 # Microsoft Phi-1: Textbooks Are All You Need
 
-## Table of Contents
-- [Overview](#overview)
-- [Key Innovations](#key-innovations)
-- [Architecture](#architecture)
-- [Training Data and Methodology](#training-data-and-methodology)
-- [Performance and Benchmarks](#performance-and-benchmarks)
-- [Ablation Studies](#ablation-studies)
-- [Emergent Properties](#emergent-properties)
-- [Comparison with Contemporary Models](#comparison-with-contemporary-models)
-- [Impact and Legacy](#impact-and-legacy)
-- [Strengths and Limitations](#strengths-and-limitations)
-- [Availability and Licensing](#availability-and-licensing)
-- [Sources](#sources)
+
 
 ## Overview
 
