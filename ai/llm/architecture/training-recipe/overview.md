@@ -81,11 +81,11 @@ Pre-training creates the foundation—a model that understands language and has 
 
 | Component | Purpose | Key Decisions |
 |-----------|---------|---------------|
-| [Data Preparation](data-preparation.md) | Create training corpus | Filtering, deduplication, mixing ratios |
-| [Optimizers](optimizers.md) | Update model weights | AdamW, learning rate schedule |
-| [Scaling Laws](scaling-laws.md) | Allocate compute | Model size vs data size |
-| [Distributed Training](distributed-training.md) | Scale to many GPUs | Parallelism strategy |
-| [Training Stability](training-stability.md) | Prevent failures | Architecture choices, monitoring |
+| [Data Preparation](pre-training/data-preparation.md) | Create training corpus | Filtering, deduplication, mixing ratios |
+| [Optimizers](pre-training/optimizers.md) | Update model weights | AdamW, learning rate schedule |
+| [Scaling Laws](pre-training/scaling-laws.md) | Allocate compute | Model size vs data size |
+| [Distributed Training](pre-training/distributed-training.md) | Scale to many GPUs | Parallelism strategy |
+| [Training Stability](pre-training/training-stability.md) | Prevent failures | Architecture choices, monitoring |
 
 ### How They Connect
 
@@ -178,12 +178,12 @@ Post-training transforms the base model into an assistant that follows instructi
 
 | Component | Purpose | Key Decisions |
 |-----------|---------|---------------|
-| [Supervised Fine-Tuning](supervised-fine-tuning.md) | Learn to follow instructions | Data format, full FT vs LoRA |
-| [RLHF](rlhf.md) | Optimize for human preference | Reward model quality, PPO tuning |
-| [Direct Preference](direct-preference.md) | RL-free preference learning | DPO vs IPO vs KTO |
-| [Safety Alignment](safety-alignment.md) | Avoid harmful outputs | Constitutional AI, red teaming |
-| [Synthetic Data](synthetic-data.md) | Generate training data | Teacher quality, diversity |
-| [Distillation](distillation.md) | Transfer to smaller models | Teacher-student gap |
+| [Supervised Fine-Tuning](post-training/supervised-fine-tuning.md) | Learn to follow instructions | Data format, full FT vs LoRA |
+| [RLHF](post-training/rlhf.md) | Optimize for human preference | Reward model quality, PPO tuning |
+| [Direct Preference](post-training/direct-preference.md) | RL-free preference learning | DPO vs IPO vs KTO |
+| [Safety Alignment](post-training/safety-alignment.md) | Avoid harmful outputs | Constitutional AI, red teaming |
+| [Synthetic Data](post-training/synthetic-data.md) | Generate training data | Teacher quality, diversity |
+| [Distillation](post-training/distillation.md) | Transfer to smaller models | Teacher-student gap |
 
 ### How They Connect
 
@@ -389,16 +389,16 @@ Large aligned model (teacher) → Generate responses → Train small model → O
 
 | Question | Document |
 |----------|----------|
-| How much data do I need? | [scaling-laws.md](scaling-laws.md) |
-| How do I prepare training data? | [data-preparation.md](data-preparation.md) |
-| What optimizer settings? | [optimizers.md](optimizers.md) |
-| How to train on multiple GPUs? | [distributed-training.md](distributed-training.md) |
-| Why is my training unstable? | [training-stability.md](training-stability.md) |
-| How to make model follow instructions? | [supervised-fine-tuning.md](supervised-fine-tuning.md) |
-| Should I use RLHF or DPO? | [rlhf.md](rlhf.md), [direct-preference.md](direct-preference.md) |
-| How to make model safe? | [safety-alignment.md](safety-alignment.md) |
-| Can I generate my own data? | [synthetic-data.md](synthetic-data.md) |
-| How to make a smaller model? | [distillation.md](distillation.md) |
+| How much data do I need? | [scaling-laws.md](pre-training/scaling-laws.md) |
+| How do I prepare training data? | [data-preparation.md](pre-training/data-preparation.md) |
+| What optimizer settings? | [optimizers.md](pre-training/optimizers.md) |
+| How to train on multiple GPUs? | [distributed-training.md](pre-training/distributed-training.md) |
+| Why is my training unstable? | [training-stability.md](pre-training/training-stability.md) |
+| How to make model follow instructions? | [supervised-fine-tuning.md](post-training/supervised-fine-tuning.md) |
+| Should I use RLHF or DPO? | [rlhf.md](post-training/rlhf.md), [direct-preference.md](post-training/direct-preference.md) |
+| How to make model safe? | [safety-alignment.md](post-training/safety-alignment.md) |
+| Can I generate my own data? | [synthetic-data.md](post-training/synthetic-data.md) |
+| How to make a smaller model? | [distillation.md](post-training/distillation.md) |
 | How do I evaluate my model? | [benchmarks.md](benchmarks.md) |
 
 ---
