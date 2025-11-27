@@ -2,7 +2,9 @@
 
 ## Overview
 
-Grok-1 is xAI's 314 billion parameter Mixture of Experts (MoE) language model, released open-source on March 17, 2024, under Apache 2.0. Notable for its unconventional BitTorrent distribution—a first for a model of this scale.
+Grok-1 is xAI's 314 billion parameter Mixture of Experts (MoE) language model, [released open-source on March 17, 2024](https://x.ai/news/grok-os), under Apache 2.0. Notable for its unconventional BitTorrent distribution—a first for a model of this scale.
+
+**Performance**: GPT-3.5 class—outperforms GPT-3.5 on most benchmarks (73% vs ~70% MMLU, 63% vs 57% HumanEval) but trails GPT-4 significantly. Math reasoning is the weakest area.
 
 ### Key Highlights
 
@@ -39,6 +41,7 @@ Grok-1 is xAI's 314 billion parameter Mixture of Experts (MoE) language model, r
 ### Tokenizer
 
 **131,072 tokens** - unusually large vocabulary (2^17):
+
 - Llama 2 / Mixtral: 32,000 tokens
 - Grok-1: 131,072 tokens (4x larger)
 
@@ -74,11 +77,16 @@ Top-2 routing with learned gating network. Load balancing via noise injection an
 
 ## Training
 
+### Infrastructure
+
+Trained on [~16,000 Nvidia GPUs via Oracle Cloud Infrastructure](https://www.datacenterdynamics.com/en/news/xai-to-use-oracle-cloud-infrastructure-to-train-and-run-inferencing-for-grok/)—xAI was one of Oracle's largest cloud customers. The split came later when [Oracle couldn't match xAI's timeline demands](https://aibusiness.com/verticals/musk-xai-ditches-oracle-cloud-to-build-massive-gpu-cluster-for-grok-3) for Grok-2/3, leading to the [Colossus supercomputer](https://www.nextplatform.com/2024/07/30/so-who-is-building-that-100000-gpu-cluster-for-xai/) (100K+ GPUs in Memphis).
+
 ### Training Stack
 
 xAI built a custom distributed training framework:
 
 **JAX** (Primary ML Framework):
+
 - Automatic differentiation, JIT compilation
 - Hardware agnostic (TPU/GPU)
 
@@ -86,6 +94,7 @@ xAI built a custom distributed training framework:
 > "Rust provides confidence that any code modification or refactor is likely to produce working programs that will run for months with minimal supervision."
 
 **Kubernetes** (Orchestration):
+
 - Container orchestration, fault tolerance, scalability
 
 ### Training Data
@@ -118,9 +127,9 @@ This is an "open-weight" release, not fully "open-source" (training details rema
 | **MATH** (4-shot) | Weak | baseline | ~52% | - |
 | **Hungarian Math** | 59% (C) | - | 68% (B) | - |
 
-**Key insight**: Grok-1 outperforms GPT-3.5 across benchmarks, but trails GPT-4 significantly. Math reasoning is the weakest area.
+**Key insight**: Grok-1 [outperforms GPT-3.5 across benchmarks](https://vectorinstitute.ai/benchmarking-xais-grok-1/), but trails GPT-4 significantly. Math reasoning is the weakest area.
 
-> "Grok-1 is only surpassed by models that were trained with a significantly larger amount of training data and compute resources like GPT-4." — xAI
+> "Grok-1 is only surpassed by models that were trained with a significantly larger amount of training data and compute resources like GPT-4." — [xAI](https://x.ai/news/grok-os)
 
 **Context**: This is a base model. Fine-tuned Grok versions (used in X Premium+) perform better.
 
@@ -135,6 +144,7 @@ This is an "open-weight" release, not fully "open-source" (training details rema
 **March 17, 2024**: Released via BitTorrent under Apache 2.0
 
 The announcement included a jab at OpenAI:
+
 - **Grok**: Posted "░W░E░I░G░H░T░S░I░N░B░I░O░"
 - **ChatGPT**: Replied "stole my whole joke"
 - **Musk**: "Tell us more about the 'open' part of OpenAI…"
@@ -148,7 +158,7 @@ magnet:?xt=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e
 
 - **Total size**: 318.24 GB
 - **Files**: 773 files in JAX checkpoint format
-- **Trackers**: Academic Torrents, public trackers
+- **Trackers**: [Academic Torrents](https://academictorrents.com/details/5f96d43576e3d386c9ba65b883210a393b68210e), public trackers
 
 ### Why BitTorrent?
 
@@ -160,43 +170,10 @@ magnet:?xt=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e
 ### Alternative Access
 
 - **GitHub**: [xai-org/grok-1](https://github.com/xai-org/grok-1)
-- **HuggingFace**: `xai-org/grok-1` (official), `hpcai-tech/grok-1` (PyTorch conversion)
+- **HuggingFace**: [xai-org/grok-1](https://huggingface.co/xai-org/grok-1) (official), [hpcai-tech/grok-1](https://huggingface.co/hpcai-tech/grok-1) (PyTorch conversion)
 - **Quantized**: GGUF versions available for llama.cpp
 
----
-
-## Comparison with Mixtral
-
-Both Grok-1 and Mixtral share the same MoE design pattern (8 experts, 2 active):
-
-| Feature | Grok-1 | Mixtral 8x7B | Mixtral 8x22B |
-|---------|--------|--------------|---------------|
-| **Total Params** | 314B | 47B | 141B |
-| **Active Params** | ~86B | ~13B | ~39B |
-| **Experts** | 8, 2 active | 8, 2 active | 8, 2 active |
-| **Attention** | GQA (48Q/8KV) | GQA (32Q/8KV) | GQA |
-| **Context** | 8,192 | 32,768 | 65,536 |
-| **Vocabulary** | 131,072 | 32,000 | 32,000 |
-| **Stack** | JAX + Rust | Likely PyTorch | Likely PyTorch |
-| **Release** | March 2024 | December 2023 | April 2024 |
-
-**Key differences**:
-- Grok-1 is much larger (314B vs 47-141B) but has smaller context (8K vs 32-65K)
-- Grok-1 has 4x larger vocabulary
-- Mixtral 8x7B often matches or outperforms Grok-1 despite being 7x smaller
-
----
-
-## Inference Requirements
-
-| Configuration | VRAM Required | GPUs |
-|---------------|---------------|------|
-| FP32 | ~1,256 GB | 16x H100 |
-| FP16/BF16 | ~628 GB | 8x H100 |
-| INT8 | ~314 GB | 4x H100 |
-| INT4 | ~157 GB | 2x H100 |
-
-**Practical**: Even with INT4 quantization, requires 2x H100 GPUs (~$50K+). Most researchers cannot run this model locally.
+**Practical barrier**: Even INT4 quantized requires 2x H100 GPUs (~$50K+), making local use impractical for most.
 
 ---
 

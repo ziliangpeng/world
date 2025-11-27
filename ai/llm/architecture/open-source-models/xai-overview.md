@@ -41,12 +41,13 @@ Musk described xAI as a counterweight to OpenAI, which he criticized for strayin
 | **Grok-1** | 314B (86B active) | MoE 8x2 | March 2024 | Open-source (Apache 2.0) |
 | **Grok-1.5** | 314B (86B active) | MoE 8x2 | March 2024 | Closed (X Premium+) |
 | **Grok-1.5V** | 314B+ | Multimodal MoE | April 2024 | Closed (X Premium+) |
-| **Grok-2** | Unknown | Unknown | August 2024 | Closed (X Premium+) |
+| **Grok-2** | ~270B (115B active) | MoE 8x2 | August 2024 | Open weights (Community License) |
 | **Grok-3** | Unknown | Unknown | 2025 | In development |
 
 See individual model documentation:
 - [Grok-1](xai-grok-1.md) - The 314B MoE model released via BitTorrent
 - [Grok-1.5](xai-grok-1-5.md) - Enhanced context and multimodal variants
+- [Grok-2](xai-grok-2.md) - Smaller model, more active parameters
 
 ---
 
