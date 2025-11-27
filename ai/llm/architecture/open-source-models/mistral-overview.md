@@ -1,4 +1,44 @@
-# Mistral and Mixtral Series
+# Mistral AI: European AI Sovereignty
+
+## Company Background
+
+### Foundation and Mission
+
+[Mistral AI](https://mistral.ai) was founded in April/May 2023 in Paris by three researchers who had known each other for 10 years since studying at École Polytechnique. The company's mission was to prove Europe could compete with US/China in frontier AI development.
+
+### Founding Team
+
+| Name | Role | Background |
+|------|------|------------|
+| **Guillaume Lample** | Chief Scientist | Meta FAIR Paris, [LLaMA co-author](https://arxiv.org/abs/2302.13971), pioneered unsupervised translation |
+| **Arthur Mensch** | CEO | DeepMind Paris (~3 years), worked on LLMs and retrieval-augmented architectures |
+| **Timothée Lacroix** | CTO | Meta (8 years), LLaMA co-author, large-scale training infrastructure |
+
+**Why They Left Big Tech**: After the Paris team built LLaMA at Meta FAIR, US-based executives took over leadership and sidelined the Parisian researchers. This experience—combined with Mensch's departure from DeepMind—motivated them to build something independently in Europe.
+
+### Record-Breaking Fundraising
+
+- **Seed (June 2023)**: €113M at €260M valuation—Europe's largest seed round ever, closed in 4 weeks
+- **Series A (December 2023)**: €415M at $2B valuation (7.7x increase in 6 months)
+- **By 2024**: €11B valuation, Europe's most valuable AI startup
+
+**Investors**: Lightspeed, Redpoint, Index Ventures, Xavier Niel, Eric Schmidt, Bpifrance
+
+### European AI Sovereignty
+
+Mistral AI represents Europe's answer to American AI dominance:
+
+- **Open weights**: Models can be inspected, audited, and deployed behind firewalls
+- **Apache 2.0 licensing**: No restrictions for commercial use
+- **European values**: Developed under European privacy and ethical frameworks
+- **Talent retention**: Proving researchers don't need Silicon Valley to lead in AI
+
+> **See also**: Individual model documentation for technical details:
+> - [Mistral 7B](mistral-7b.md) - The flagship 7B model that started it all
+
+---
+
+## Model Family
 
 Mistral AI's models are known for exceptional performance-to-size ratios and pioneering work in Mixture of Experts (MoE) architectures.
 

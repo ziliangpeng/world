@@ -1,20 +1,22 @@
 # Llama 1 (LLaMA)
 
-**Release Date**: February 24, 2023
+## Overview
 
-## Links
+**Release Date**: February 24, 2023 | **Organization**: Meta AI | **License**: Research-only (later leaked)
 
-- **Paper**: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
-- **Meta AI Research**: [LLaMA Publication](https://ai.meta.com/research/publications/llama-open-and-efficient-foundation-language-models/)
-- **Hugging Face**: Not officially released by Meta (research-only release requiring application)
-  - Community conversions available: [decapoda-research/llama-7b-hf](https://huggingface.co/decapoda-research/llama-7b-hf), [huggyllama/llama-7b](https://huggingface.co/huggyllama/llama-7b)
-  - Note: Community versions are format conversions (PyTorch .pth → HuggingFace Transformers format) of the same official weights, not different models. Early conversions like decapoda-research may be outdated.
+LLaMA was Meta's proof that smaller models trained on more data could outperform larger models—validating DeepMind's Chinchilla scaling laws in practice. The project started with just 5 researchers at Meta AI Paris.
+
+**Performance**: GPT-3 class—the 13B model [outperforms GPT-3 (175B)](https://arxiv.org/abs/2302.13971) on most benchmarks despite being 10x smaller (46.9% vs 43.9% MMLU). The 65B model is competitive with Chinchilla-70B but doesn't reach GPT-3.5 tier (63.4% MMLU).
+
+**Significance**: First major open model to challenge "bigger is better" orthodoxy. Sparked open-source LLM explosion when weights leaked to 4chan one week after release. Models like Alpaca, Vicuna, and most subsequent open-source work trace back to LLaMA.
+
+**Technical Innovations**: Pragmatic synthesis of cutting-edge techniques (RMSNorm, SwiGLU, RoPE) that became the template for all modern LLMs. Proved code training improves reasoning.
 
 ## Origin Story: An Underdog Mission
 
 The Llama 1 project began in August 2022 with a core team of only about **five researchers** at Meta AI. Their mission was to challenge the prevailing "bigger is always better" philosophy by proving that smaller, more efficiently trained models could outperform larger competitors.
 
-Their core strategy was to make a huge bet on the "Chinchilla scaling laws"—a theory from DeepMind suggesting that most large models were being "starved" of data. The Llama team's goal was to prove that a model trained on a massive amount of data (over 1 trillion tokens) could achieve state-of-the-art performance despite having a smaller parameter count (7B to 65B). This focus on **data volume and quality over sheer model size** became the project's guiding principle and led to its groundbreaking success.
+Their core strategy was to bet on the "[Chinchilla scaling laws](https://arxiv.org/abs/2203.15556)"—DeepMind's theory that most large models were "starved" of data. The Llama team's goal was to prove that a model trained on massive data (1+ trillion tokens) could match larger models with fewer parameters (7B to 65B). This focus on **data volume and quality over sheer model size** became the project's guiding principle.
 
 ## Model Variants
 
@@ -30,9 +32,9 @@ Their core strategy was to make a huge bet on the "Chinchilla scaling laws"—a 
 ### Core Architectural Components
 
 - **Base Design**: Auto-regressive decoder-only transformer
-- **Normalization**: RMSNorm pre-normalization
-- **Activation**: SwiGLU
-- **Position Encoding**: Rotary Embeddings (RoPE)
+- **Normalization**: [RMSNorm](../architectural-patterns/normalization.md) pre-normalization
+- **Activation**: [SwiGLU](../architectural-patterns/activations.md)
+- **Position Encoding**: [RoPE](../architectural-patterns/position-embeddings.md)
 - **Attention**: Multi-Head Attention (MHA)
 - **FFN Dimension**: 2/3 × 4d (as in PaLM)
 - **Vocabulary**: 32K tokens (SentencePiece tokenizer)
@@ -65,7 +67,7 @@ The decision to use this specific combination was the result of extensive ablati
 
 The specific values for dimension, layers, and heads are not arbitrary. They are the result of a complex optimization process guided by three main factors:
 
-1.  **Chinchilla Scaling Laws:** The Llama paper explicitly followed the guidance from DeepMind's [Chinchilla paper (2022)](https://arxiv.org/abs/2203.15556). This research argued that for optimal performance, model size and training data size should be scaled proportionally. Llama was the first major project to prove this theory in practice, intentionally training smaller models on far more data than previous models like GPT-3.
+1.  **[Chinchilla Scaling Laws](https://arxiv.org/abs/2203.15556):** This DeepMind research argued that for optimal performance, model size and training data size should be scaled proportionally. Llama was the first major project to prove this theory in practice, intentionally training smaller models on far more data than previous models like GPT-3.
 
 2.  **Hardware Efficiency:** The specific numbers (e.g., a `dim` of 4096, a `head_dim` of 128) are chosen to maximize training throughput on the underlying hardware (NVIDIA A100 GPUs). Dimensions are typically set to multiples of 64 or 128 to align with the architecture of GPU cores and memory, making matrix calculations significantly faster.
 
@@ -195,3 +197,16 @@ The Llama 1 project was the result of work from a dedicated research team and th
 *   **Guillaume Lample (Lead Author):** The last author on the paper, signifying his role as the senior researcher who supervised the project. Lample was a key leader of the Llama 1 effort and has been a public voice explaining its development. He has since co-founded the influential AI company Mistral AI.
 *   **Joelle Pineau (Head of FAIR):** As VP of AI Research, Pineau directly led the development and release of the Llama 1 project. She was instrumental in driving the lab's strategic focus on model efficiency and open science.
 *   **Yann LeCun (Chief AI Scientist):** While stating his own role in Llama 1 was "very indirect," LeCun's long-standing and vocal advocacy for open-source AI was crucial in shaping the environment at Meta that allowed the project to flourish. He was a primary proponent for the full open-sourcing of its successor, Llama 2.
+
+## Sources
+
+### Official
+- [LLaMA: Open and Efficient Foundation Language Models (Paper)](https://arxiv.org/abs/2302.13971)
+- [Meta AI Research Publication](https://ai.meta.com/research/publications/llama-open-and-efficient-foundation-language-models/)
+
+### HuggingFace
+- Community conversions: [decapoda-research/llama-7b-hf](https://huggingface.co/decapoda-research/llama-7b-hf), [huggyllama/llama-7b](https://huggingface.co/huggyllama/llama-7b)
+- Note: Not officially released by Meta (research-only). Community versions are format conversions of the same weights.
+
+### Related
+- [Chinchilla Scaling Laws (DeepMind)](https://arxiv.org/abs/2203.15556)
