@@ -410,3 +410,6 @@ For inference optimization after training, see:
 - [Speculative Decoding](../inference-optimization/speculative-decoding.md)
 - [KV Cache Optimization](../inference-optimization/kv-cache-optimization.md)
 - [Batching Strategies](../inference-optimization/batching-strategies.md)
+
+For external learning resources (blogs, courses, papers):
+- [Curated Resources](resources.md)
