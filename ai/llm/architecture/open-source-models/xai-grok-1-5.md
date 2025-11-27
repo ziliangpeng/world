@@ -14,6 +14,8 @@ Grok-1.5 represents xAI's second-generation language model, announced on March 2
 - **Math Performance**: 90% on GSM8K (up from ~63% in Grok-1)
 - **Availability**: Released to X Premium+ users (May 2024)
 
+> **See also**: [xAI Overview](xai-overview.md) for company background and infrastructure details.
+
 ### Why Grok-1.5 Was Developed So Quickly
 
 xAI's rapid development cycle from Grok-1 to Grok-1.5 (approximately 4 months) demonstrates several factors:
