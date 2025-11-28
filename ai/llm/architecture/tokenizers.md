@@ -214,7 +214,11 @@ Modern LLMs use three main tokenizer implementations: **SentencePiece** (languag
 
 **Used by**: Llama 1/2, Mistral/Mixtral, Yi, Gemma 2, early Qwen models
 
+**What It Is**: SentencePiece is a **software library** (developed by Google), not an algorithm. It implements BPE (and Unigram) as a standardized tool that anyone can use.
+
 **Key Innovation**: Treats text as a raw stream, with whitespace encoded as a special character (`▁`).
+
+**Important**: Like all tokenizers, you **train SentencePiece on your own data**. Llama, Mistral, and Gemma all use SentencePiece, but each trained on different corpora, resulting in **incompatible tokenizers** despite using the same software.
 
 #### How It Works
 
@@ -273,13 +277,40 @@ text = sp.decode(tokens)
 # 'Hello world'
 ```
 
+#### Choosing Training Data
+
+**Critical**: The `input='corpus.txt'` is **your training data** - this determines what tokens the model learns.
+
+| Your Goal | Training Corpus | Example Models |
+|-----------|-----------------|----------------|
+| **General multilingual** | Balanced mix of languages (Wikipedia, web crawl) | Llama 1/2, Mistral |
+| **Code-focused** | GitHub repositories + documentation | StarCoder, CodeLlama |
+| **Scientific** | ArXiv papers, PubMed, textbooks | Galactica |
+| **Multilingual-optimized** | Heavily multilingual web data | BLOOM, mGPT |
+| **Chat/conversational** | Dialogue datasets, social media | (used in instruction tuning) |
+
+**Examples from real models**:
+- **Llama 1**: Trained on mix of CommonCrawl, Wikipedia, books, ArXiv, code (1.4T tokens)
+- **Mistral 7B**: Trained on similar mixed corpus (details not public)
+- **BLOOM**: Trained on 46-language corpus with careful balancing
+
+**Key Insight**: Llama and Mistral both use SentencePiece with 32,000 tokens, but their tokenizers are **completely incompatible** because they trained on different data. The same sentence gets different token IDs in each tokenizer.
+
 ---
 
 ### 3.2 tiktoken
 
 **Used by**: GPT-4, GPT-4o, Llama 3, Qwen 2.5, DeepSeek V2/V3, Phi-3/4
 
+**What It Is**: tiktoken is **OpenAI's BPE library** (Rust + Python bindings), not an algorithm. Like SentencePiece, it's software that implements BPE.
+
+**Two Ways to Use tiktoken**:
+1. **Pre-trained encodings**: Use OpenAI's tokenizers (cl100k_base for GPT-4, o200k_base for GPT-4o)
+2. **Train your own**: Organizations train custom tiktoken-based tokenizers (Llama 3, Qwen 2.5, DeepSeek)
+
 **Key Innovation**: Optimized byte-level BPE implementation designed for efficiency and large vocabularies.
+
+**Important**: Even models using "tiktoken" have different tokenizers if they trained on different data. Llama 3's tokenizer is incompatible with GPT-4's, despite both being "tiktoken-based."
 
 #### How It Works
 
