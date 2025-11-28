@@ -122,32 +122,40 @@ DeepSeek-V3 671B MoE:
 
 ### Early Academic Era (2020-2021): Experimentation
 
-| Model | Year | Total Params | Active Params | Experts | Activation | Type | Status |
-|-------|------|--------------|---------------|---------|------------|------|--------|
-| GShard | 2020 | 600B | ~10B | Many | Low | Academic | Google internal |
-| Switch-XXL | 2021 | 1.6T | ~13B | 2048 | <1% | Academic | Research only |
-| GLaM | 2021 | 1.2T | ~96B | 64 | 8% | Academic | Google internal |
+| Model | Year | Total Params | Active Params | Experts | Active Experts | Activation | Type | Status |
+|-------|------|--------------|---------------|---------|----------------|------------|------|--------|
+| GShard | 2020 | 600B | ~10B | 2048 | 2 | <1% | Academic | Google internal |
+| Switch-XXL | 2021 | 1.6T | ~13B | 2048 | 1 | <1% | Academic | Research only |
+| GLaM | 2021 | 1.2T | ~96B | 64 | 2 | 3.1% | Academic | Google internal |
 
 **Characteristics**: Massive parameter counts, academic experiments, not production-ready
 
 ### Production Breakthrough Era (2023-2024): Validation
 
-| Model | Year | Total Params | Active Params | Experts | Activation | Impact |
-|-------|------|--------------|---------------|---------|------------|--------|
-| **Mixtral 8x7B** | **Dec 2023** | **46.7B** | **12.9B** | **8** | **27%** | **🚀 Breakthrough** |
-| Mixtral 8x22B | Apr 2024 | 141B | 39B | 8 | 28% | Scaled validation |
-| DeepSeek-V2 | May 2024 | 236B | 21B | Many | ~9% | Fine-grained MoE |
-| Grok-1 | Mar 2024 | 314B | 86B | 8 | 27% | Open-sourced (xAI) |
-| Arctic | Apr 2024 | 480B | 17B | 128 | ~4% | Extreme efficiency |
+| Model | Year | Total Params | Active Params | Experts | Active Experts | Activation | Impact |
+|-------|------|--------------|---------------|---------|----------------|------------|--------|
+| **Mixtral 8x7B** | **Dec 2023** | **46.7B** | **12.9B** | **8** | **2** | **27%** | **🚀 Breakthrough** |
+| DeepSeek-MoE 16B | Jan 2024 | 16.4B | ~2.7B | 66 (2s+64r) | 8 (2s+6r) | 12% | First fine-grained |
+| Qwen1.5-MoE | Early 2024 | 14.3B | 2.7B | 64 (+shared) | ~4 | ~6% | Fine-grained |
+| Jamba | Mar 2024 | 52B | 12B | 16 | 2 | 12.5% | Hybrid SSM-MoE |
+| Grok-1 | Mar 2024 | 314B | 86B | 8 | 2 | 27% | Open-sourced (xAI) |
+| DBRX | Mar 2024 | 132B | 36B | 16 | 4 | 27% | Open, fine-grained |
+| Mixtral 8x22B | Apr 2024 | 141B | 39B | 8 | 2 | 28% | Scaled validation |
+| Arctic | Apr 2024 | 480B | 17B | 128 | 2 | 1.6% | Extreme efficiency |
+| DeepSeek-V2 | May 2024 | 236B | 21B | 162 (2s+160r) | 8 (2s+6r) | 4.9% | Fine-grained MoE |
+| Qwen2-MoE | Mid 2024 | 57B | 14B | 64 (+shared) | ~8 | ~12% | Fine-grained |
 
 ### Modern Era (2024-2025): Mainstream + Fine-Grained
 
-| Model | Year | Total Params | Active Params | Experts | Activation | Type | Notes |
-|-------|------|--------------|---------------|---------|------------|------|-------|
-| Qwen 3 MoE | 2024 | ~300B+ | ~40B | 128 | ~6.25% | Fine-grained | Most experts |
-| **DeepSeek-V3** | **Dec 2024** | **671B** | **37B** | **Many** | **5.5%** | **Fine-grained** | **$5.57M training** |
-| Gemini 1.5 Pro | 2024 | Unknown | Unknown | Unknown | Unknown | Production | 1M+ context |
-| GPT-4 (rumored) | 2023? | 1.8T? | ~280B? | 8-16? | ~15%? | Unknown | Unconfirmed MoE |
+| Model | Year | Total Params | Active Params | Experts | Active Experts | Activation | Type | Notes |
+|-------|------|--------------|---------------|---------|----------------|------------|------|-------|
+| OLMoE | Sep 2024 | 7B | 1B | 64 | 8 | 12.5% | Fine-grained | 100% open source |
+| Qwen 3 MoE | 2024 | ~300B+ | ~40B | 128 | 8 | 6.25% | Fine-grained | Most experts |
+| Nemotron Nano 3 | 2024 | 32B | 3.6B | ? | ? | ~11% | Fine-grained | NVIDIA MoE |
+| **DeepSeek-V3** | **Dec 2024** | **671B** | **37B** | **257 (1s+256r)** | **9 (1s+8r)** | **3.5%** | **Fine-grained** | **$5.57M training** |
+| Kimi K2 | Jul 2025 | 1T | 32B | 384 | 8 | 3.2% | Fine-grained | Moonshot AI, open-source |
+| Gemini 1.5 Pro | 2024 | Unknown | Unknown | Unknown | ? | Unknown | Production | 1M+ context |
+| GPT-4 (rumored) | 2023? | 1.8T? | ~280B? | 8-16? | ? | ~15%? | Unknown | Unconfirmed MoE |
 
 ### Adoption Statistics (2024-2025)
 
