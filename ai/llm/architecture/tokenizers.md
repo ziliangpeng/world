@@ -95,6 +95,52 @@ Final tokenization: "lower" → ['low', 'er']
 
 ---
 
+### BPE vs WordPiece vs Unigram
+
+While BPE dominates modern LLMs (2023-2025), three main subword tokenization algorithms exist:
+
+#### Byte-Pair Encoding (BPE)
+
+**Algorithm**: Frequency-based iterative merging of character/byte pairs
+
+**Used by**: GPT series, tiktoken, SentencePiece (BPE mode), Llama 3+, most modern models
+
+**Why it won**:
+- Truly language-agnostic (works for all scripts including CJK)
+- No preprocessing required
+- Proven at massive scale (GPT-4o with 200K vocab)
+- Handles any UTF-8 text without unknown tokens (byte-level variant)
+
+#### WordPiece
+
+**Algorithm**: Greedy likelihood-based tokenization with word-level assumptions
+
+**Used by**: BERT (2018), Original Transformer English-French (2017)
+
+**Why it lost**:
+- **Assumes word boundaries** (requires space-separated preprocessing)
+- **Fails for CJK languages** (Chinese, Japanese, Korean don't use spaces)
+- Cannot handle agglutinative languages well
+- Lost competition as multilingual requirements grew (2019-2020)
+
+**Historical note**: WordPiece vs BPE competition in 2017-2020. WordPiece dominated encoders (BERT), BPE dominated decoders (GPT). By 2023, BPE won completely.
+
+#### Unigram Language Model
+
+**Algorithm**: Probabilistic language model approach (trains vocabulary distribution)
+
+**Used by**: SentencePiece (Unigram mode option)
+
+**Why rarely deployed**:
+- More complex than BPE
+- No clear advantages in practice
+- Theoretically available in SentencePiece but virtually no production models use it
+- All major SentencePiece deployments (Llama 1/2, Mistral v1) chose BPE mode
+
+**Current Reality (2023-2025)**: ~95% of modern LLMs use BPE variants. WordPiece is historical, Unigram is theoretical.
+
+---
+
 # Part II: Tokenizer Technologies
 
 ## 3. The Three Approaches
@@ -272,13 +318,26 @@ Beyond the two main approaches, several models use specialized tokenizer feature
 
 #### Qwen Tokenizers (Evolution)
 
-**Qwen 1.5 / 2.0**: SentencePiece (64K vocab)
-**Qwen 2.5**: Custom tiktoken-based (152K vocab)
+Qwen models demonstrate progressive tokenizer evolution across generations:
 
-**Qwen 2.5 improvements**:
-- Better multilingual support (especially Chinese)
-- Optimized for code and technical text
-- Reduced token count for same content (~30% compression)
+| Version | Tokenizer | Vocabulary | Key Improvements |
+|---------|-----------|-----------|------------------|
+| **Qwen 1.0** | SentencePiece BPE | 151,646 tokens | Initial multilingual focus |
+| **Qwen 1.5** | SentencePiece BPE | 151,646 tokens | Same as 1.0 |
+| **Qwen 2.0** | Custom tiktoken BPE | 151,936 tokens | Improved multilingual compression |
+| **Qwen 2.5** | Custom tiktoken BPE | 152,064 tokens | Enhanced code optimization |
+
+**Why the progression**:
+- Qwen 1.0/1.5: Started with large SentencePiece vocab for Chinese optimization
+- Qwen 2.0: Switched to tiktoken-based BPE for better compression (+290 tokens)
+- Qwen 2.5: Further refined vocabulary for code (+128 tokens)
+
+**Performance impact**:
+- 30% better compression than 32K SentencePiece tokenizers
+- Especially efficient for Chinese (3-4x better than English-focused tokenizers)
+- Code tokenization improved 20-25% from Qwen 2.0 → 2.5
+
+**Significance**: Demonstrates that vocabulary evolution continues even after reaching 150K+ scale—refinement matters as much as size.
 
 ---
 
@@ -309,6 +368,128 @@ Beyond the two main approaches, several models use specialized tokenizer feature
 - Improved multilingual support critical for global deployment
 - Competitive with frontier models (Llama 3, GPT-4)
 - tiktoken's proven scalability and performance at 100K+ vocabulary sizes
+
+---
+
+#### StarCoder Tokenizer (Code-Optimized)
+
+**Used by**: IBM Granite 3.0, IBM Granite 3.1
+
+**Based on**: Byte Pair Encoding (BPE)
+
+**Vocabulary**: ~49,000 tokens (49,152 precisely)
+
+**Specialization**: Code-focused tokenization optimized for programming languages
+
+**Key Features**:
+- Trained on **116 programming languages** + 12 natural languages
+- Optimized token boundaries for code syntax (functions, variables, operators)
+- Better handling of camelCase, snake_case, and language-specific patterns
+- Efficient tokenization of common code patterns and keywords
+
+**Why code-specific tokenizers matter**:
+- General-purpose tokenizers treat code as text, splitting identifiers inefficiently
+- Code has distinct patterns: `functionName`, `snake_case`, operators (`&&`, `||`)
+- StarCoder learned these patterns from massive code corpus
+- Results in 20-30% better compression for code vs general tokenizers
+
+**Performance**: IBM Granite 3.x models using StarCoder tokenizer show strong coding benchmarks (HumanEval, MBPP) partly due to efficient code tokenization.
+
+---
+
+#### Modified GPT-NeoX (Security-Enhanced)
+
+**Used by**: AllenAI OLMo 0424 and earlier versions (pre-OLMo 2)
+
+**Based on**: GPT-NeoX-20B tokenizer
+
+**Vocabulary**: ~50,280 tokens
+
+**Unique Feature**: **PII (Personally Identifiable Information) masking**
+
+**How it works**:
+- Tokenizer includes PII detection during preprocessing
+- Masks email addresses, phone numbers, SSNs, and other sensitive data
+- First tokenizer with built-in privacy preservation at tokenization stage
+- Part of OLMo's broader data safety pipeline
+
+**Why it matters**:
+- Traditional tokenizers preserve PII in training data verbatim
+- PII leakage is a major concern for LLM deployment
+- OLMo pioneered security-focused tokenization
+- Demonstrates tokenizers can do more than just text→tokens conversion
+
+**Evolution**: OLMo 2 (2024) switched to standard tiktoken cl100k_base, dropping the custom PII-masked tokenizer. The PII protection moved to data preprocessing pipeline instead.
+
+---
+
+#### Cohere Custom BPE (Enterprise)
+
+**Used by**: Cohere Command R, Cohere Command R+
+
+**Based on**: GPT-2 style Byte Pair Encoding (BPE)
+
+**Vocabulary**: 256,000 tokens (tied with Gemma 2 for largest)
+
+**Specialization**: Enterprise and multilingual optimization
+
+**Key Features**:
+- Optimized for **23 languages** with focus on business/enterprise text
+- Massive vocabulary enables efficient tokenization across diverse content
+- Designed for RAG (Retrieval-Augmented Generation) and document processing
+- Better handling of business terminology, proper nouns, technical jargon
+
+**Why 256K vocabulary**:
+- Enterprise documents contain diverse terminology
+- Better compression for multilingual business content
+- Reduces context window pressure when processing long documents
+- Trade-off: Larger embedding layer accepted for efficiency gains
+
+**Performance**: Command R+ demonstrates strong multilingual capabilities and document understanding, partly enabled by the large, diverse tokenizer vocabulary.
+
+---
+
+#### Phi-4 tiktoken Migration
+
+**Used by**: Phi-4 (14B and Mini variants)
+
+**Migration**: Switched from custom Phi tokenizer to **tiktoken** (OpenAI standard)
+
+**Vocabulary**:
+- Phi-4 14B: 100,352 tokens
+- Phi-4 Mini: 200,064 tokens (second-largest tiktoken deployment after GPT-4o)
+
+**Why Microsoft switched**:
+- **Multilingual requirements**: Phi series expanding beyond English
+- **Industry standardization**: tiktoken becoming de facto standard
+- **Proven scalability**: OpenAI demonstrated 200K vocab viability
+- **Competitive pressure**: Match Llama 3 (128K) and GPT-4o (200K) efficiency
+
+**Significance of 200K vocab**:
+- Phi-4 Mini's 200K vocabulary is the second-largest tiktoken deployment
+- Only GPT-4o (~200K) matches this scale
+- Demonstrates Microsoft betting on ultra-large vocabularies for small models
+- Trade-off: Larger embedding overhead (~600M params) for better compression
+
+---
+
+#### Alternative Architecture Tokenizers
+
+Beyond mainstream transformers, alternative architectures use custom tokenizers:
+
+**RWKV (Finch Series)**:
+- Architecture: RNN-like (not transformer)
+- Tokenizer: Custom implementation (details not publicly documented)
+- Vocabulary: Unknown
+- Note: Alternative architectures may have different tokenization requirements
+
+**xLSTM**:
+- Architecture: Extended LSTM (NeuralCompany)
+- Tokenizer: Custom
+- Vocabulary: 32,000 tokens
+- Note: Uses standard vocab size despite non-transformer architecture
+
+**Why mention these**: While transformer-based models dominate (GPT, Llama, etc.), alternative architectures remind us that tokenization choices depend on model architecture, not just data.
 
 ---
 
@@ -543,9 +724,9 @@ The history of tokenization mirrors the broader evolution of language models—f
 |-------|------|---------------|----------------|-------|
 | **Original Transformer** | 2017 | BPE / WordPiece | 32-37K | Mixed approach |
 | **GPT-1** | 2018 | BPE | ~40K | First BPE standard |
-| **BERT** | 2018 | WordPiece | 30,522 | Encoder standard |
+| **BERT** | 2018 | **WordPiece (non-BPE)** | 30,522 | Encoder standard, assumes spaces |
 | **GPT-2** | 2019 | Byte-level BPE | 50,257 | Innovation |
-| **T5** | 2019 | SentencePiece | 32,000 | First major SentencePiece |
+| **T5** | 2019 | SentencePiece BPE | 32,000 | First major SentencePiece |
 | **GPT-3** | 2020 | Byte-level BPE | 50,257 | Same as GPT-2 |
 
 ### SentencePiece Dominance Era (2020-2023)
@@ -587,6 +768,16 @@ The history of tokenization mirrors the broader evolution of language models—f
 | **Mistral v3** | 2024 | SentencePiece | 32,768 | Slight expansion |
 | **Mistral NeMo** | 2024 | tiktoken (Tekken) | 131,072 | Mistral switches to tiktoken |
 | **Mistral-Small-24B-Instruct-2501** | 2025 | tiktoken (Tekken) | 131,072 | Continued Tekken adoption |
+| **IBM Granite 3.0** | 2024 | BPE (StarCoder) | 49,152 | Code-optimized (116 langs) |
+| **IBM Granite 3.1** | 2024 | BPE (StarCoder) | 49,152 | Same as 3.0 |
+| **Cohere Command R** | 2024 | Custom BPE | 256,000 | Enterprise multilingual |
+| **Cohere Command R+** | 2024 | Custom BPE | 256,000 | Tied for largest |
+| **OLMo 0424** | 2024 | Modified GPT-NeoX | ~50,280 | PII masking feature |
+| **OLMo 2** | 2024 | tiktoken (cl100k) | ~100,000 | Switched from GPT-NeoX |
+| **Phi-4 (14B)** | 2024 | tiktoken | 100,352 | Switched from custom |
+| **Phi-4 Mini** | 2024 | tiktoken | 200,064 | 2nd largest tiktoken |
+| **RWKV Finch** | 2024 | Custom | Unknown | Alternative architecture |
+| **xLSTM** | 2024 | Custom | 32,000 | LSTM-based architecture |
 
 ### Proprietary Models (Details Known)
 
@@ -594,6 +785,9 @@ The history of tokenization mirrors the broader evolution of language models—f
 |-------|------|---------------|----------------|-------|
 | **Claude 3** | 2024 | Custom BPE | ~65,000 | 70% overlap with GPT-4 |
 | **Gemini** | 2024 | SentencePiece | 256,000 | Same as Gemma 2 |
+| **Cohere Command R** | 2024 | Custom BPE | 256,000 | Enterprise multilingual optimization |
+| **Cohere Command R+** | 2024 | Custom BPE | 256,000 | Tied for largest tokenizer |
+| **xAI Grok-2** | 2024 | tiktoken | ~100,000 (estimated) | OpenAI standard format |
 
 ---
 
@@ -926,26 +1120,56 @@ print(len(enc.encode("Your text here")))
 
 ## 10. Future Directions
 
+### Non-BPE Approaches: Why BPE Remains Dominant
+
+Despite research into alternatives, **BPE variants (tiktoken, SentencePiece BPE) dominate 95%+ of modern LLMs**. Here's why:
+
+**Byte-level / Character-level models** (ByT5):
+- ✅ No tokenizer needed, simpler pipeline
+- ❌ Extremely long sequences (10x longer than BPE)
+- ❌ Prohibitive inference cost at scale
+- **Status**: Research curiosity, not production-viable
+
+**WordPiece** (BERT era):
+- ❌ Assumes spaces, fails for CJK languages
+- ❌ Lost the 2017-2020 competition to BPE
+- **Status**: Historical only, not used in modern models
+
+**Unigram Language Model**:
+- ✅ Theoretically interesting (probabilistic approach)
+- ❌ No proven advantages over BPE in practice
+- ❌ More complex to implement and tune
+- **Status**: Available in SentencePiece but virtually unused
+
+**Why BPE won and will continue to dominate**:
+1. Language-agnostic (works for all scripts including CJK)
+2. Proven at massive scale (GPT-4o with 200K vocab)
+3. Network effects: Industry standardized on tiktoken/SentencePiece BPE
+4. No compelling alternative has emerged despite years of research
+
 ### Research Areas
 
-1. **Byte-level models**: Skip tokenization entirely (ByT5, etc.)
+1. **Byte-level models**: Skip tokenization entirely (ByT5, etc.) - **Research only, not production**
 2. **Learned tokenization**: Train tokenizer end-to-end with model
 3. **Context-sensitive**: Different tokenization based on context
 4. **Multimodal tokenizers**: Unified for text, image, audio
+5. **Specialized tokenizers**: Code (StarCoder), security (PII masking), domain-specific
 
-### Trends
+### Production Trends (2024-2025)
 
-1. **Larger vocabularies**: 256K+ tokens
-2. **Better multilingual**: Equal treatment of all languages
-3. **Efficiency focus**: Minimize tokens per text
-4. **Standardization**: tiktoken, SentencePiece dominate
+1. **Larger vocabularies**: 100-200K is new standard, 256K for heavy multilingual
+2. **tiktoken dominance**: ~70% of new models, driven by "Llama 3 effect"
+3. **Vocabulary refinement**: Qwen shows evolution continues even at 150K+ scale
+4. **Specialization**: Code-focused (StarCoder), enterprise (Cohere 256K)
+5. **Standardization**: Industry converging on tiktoken BPE as de facto standard
 
 ### Open Questions
 
-1. Optimal vocabulary size for given model size?
-2. Can we do better than BPE?
-3. How to handle code vs natural language optimally?
-4. Should digits/numbers be special-cased?
+1. Optimal vocabulary size for given model size? (Research suggests: scales with model size and training compute)
+2. Can we do better than BPE? (No compelling alternative yet, despite research)
+3. How to handle code vs natural language optimally? (StarCoder shows specialized tokenizers work)
+4. Should digits/numbers be special-cased? (Arcade100k experiments with this)
+5. Will 256K+ vocabularies become standard? (Trade-off: embedding cost vs compression gains)
 
 ---
 
@@ -1002,6 +1226,13 @@ print(len(enc.encode("Your text here")))
 - [DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437)
 - [Phi-3 Documentation - Hugging Face](https://huggingface.co/docs/transformers/model_doc/phi3)
 - [Phi-4 Model Page - Hugging Face](https://huggingface.co/microsoft/Phi-4-mini-instruct)
+- [IBM Granite 3.0/3.1 - HuggingFace](https://huggingface.co/collections/ibm-granite/granite-30-language-models-6751dbbf2f3389bec5c6f02e)
+- [AllenAI OLMo - HuggingFace](https://huggingface.co/collections/allenai/olmo-suite-65aeaae8fe5b6b2122b46778)
+- [Cohere Command R - HuggingFace](https://huggingface.co/CohereForAI/c4ai-command-r-v01)
+- [Cohere Command R+ - HuggingFace](https://huggingface.co/CohereForAI/c4ai-command-r-plus)
+- [xAI Grok-2 - HuggingFace](https://huggingface.co/xai-org/grok-2)
+- [RWKV Documentation - HuggingFace](https://huggingface.co/docs/transformers/model_doc/rwkv)
+- [xLSTM Paper - arXiv](https://arxiv.org/abs/2405.04517)
 - [BLOOM Documentation - Hugging Face](https://huggingface.co/docs/transformers/model_doc/bloom)
 - [Papers Explained: BLOOM](https://medium.com/dair-ai/papers-explained-52-bloom-9654c56cd2)
 - [GPT-NeoX Documentation - Hugging Face](https://huggingface.co/docs/transformers/model_doc/gpt_neox)
