@@ -141,6 +141,69 @@ While BPE dominates modern LLMs (2023-2025), three main subword tokenization alg
 
 ---
 
+### One Algorithm, Many Tokenizers
+
+**Critical Distinction**: BPE is an **algorithm** (the iterative merging process), but each model organization trains its **own tokenizer** using that algorithm.
+
+#### How This Works
+
+When a team builds a new LLM, they:
+
+1. **Take the BPE algorithm** (the same merging process everyone uses)
+2. **Run it on their own training corpus** (different data from other models)
+3. **Get a unique vocabulary** with different token boundaries
+
+**Result**: GPT-2's tokenizer splits text differently than RoBERTa's, even though both use BPE, because they learned from different data.
+
+#### Early BPE Era (2017-2020): Same Algorithm, Different Implementations
+
+During the 2017-2020 period, every major model trained its own BPE tokenizer on different data:
+
+| Model | Year | Training Corpus | Vocabulary | Notes |
+|-------|------|-----------------|------------|-------|
+| **GPT-2** | 2019 | **WebText** (40GB from Reddit links) | 50,257 | Introduced byte-level BPE |
+| **RoBERTa** | 2019 | Different corpus than GPT-2 | 50,265 | Also byte-level BPE |
+| **BART** | 2019 | Similar to GPT-2 approach | 50,265 | Facebook AI |
+| **XLM** | 2019 | Multilingual corpus | Varies | Language-pair specific |
+| **GPT-3** | 2020 | Larger than WebText | 50,257 | Reused GPT-2 tokenizer |
+
+**Key Insight**: Each organization ran BPE on **their own data**, producing **incompatible tokenizers**. You couldn't use GPT-2's tokenizer with RoBERTa's weights, even though both are "BPE tokenizers."
+
+#### Why Different Data Matters
+
+The training corpus determines which merges happen first:
+
+**Example - Code-heavy corpus**:
+- Frequently sees `def`, `class`, `return`
+- BPE learns these as single tokens early
+- Better compression for code
+
+**Example - Multilingual corpus**:
+- Frequently sees characters from many scripts
+- BPE learns multilingual patterns
+- Better compression across languages
+
+**Example - GPT-2's WebText** (Reddit-curated internet text):
+- English-heavy with informal language
+- Learned common internet slang as tokens
+- Worse at non-English and formal text
+
+#### The Consolidation Era (2023-2025)
+
+Modern era shows industry consolidation around **two standard implementations**:
+
+1. **tiktoken** (OpenAI): ~70% of new models (GPT-4, Llama 3, Qwen 2.5)
+2. **SentencePiece BPE** (Google): ~25% of models (Llama 1/2, Gemma 2, Mistral)
+
+But even within tiktoken, models **still train unique tokenizers**:
+- Llama 3: 128,000 tokens (multilingual focus)
+- GPT-4o: 200,064 tokens (maximum efficiency)
+- Qwen 2.5: 152,064 tokens (multilingual + code)
+
+**Same technology, different vocabularies** - because each team trains on different data.
+
+---
+
 # Part II: Tokenizer Technologies
 
 ## 3. The Three Approaches
