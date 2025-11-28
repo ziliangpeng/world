@@ -188,7 +188,7 @@ for prompt in prompts:
 
 Standard benchmarks measure general capabilities, but your application has specific needs. This section covers designing evaluations tailored to your use case.
 
-> For complete benchmark specifications and catalog, see [Benchmarks](../benchmarks.md).
+> For complete benchmark specifications and catalog, see [Benchmarks](../training-recipe/benchmarks.md).
 
 ### 1. When to Build Custom Evaluations
 
@@ -980,6 +980,6 @@ eval_data = load('test')
 ---
 
 **Related Documentation**:
-- [Benchmarks](../benchmarks.md) - Specific benchmark datasets and what they measure
+- [Benchmarks](../training-recipe/benchmarks.md) - Specific benchmark datasets and what they measure
 - [Production Patterns](production-patterns.md) - Deployment best practices
 - [Monitoring](monitoring.md) - Production monitoring and observability

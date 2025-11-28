@@ -281,7 +281,7 @@ MQA: 32 Q heads, 1 K head, 1 V head     → 32× smaller KV cache
 | GQA-4 | 32 | 4 | 0.125× |
 | MQA | 32 | 1 | 0.03× |
 
-> **See also**: [Attention Mechanisms](../architectural-patterns/attention-mechanisms.md) for GQA details.
+> **See also**: [Attention Mechanisms](../architecture/architectural-patterns/attention-mechanisms.md) for GQA details.
 
 ### Multi-Query Attention (MQA)
 

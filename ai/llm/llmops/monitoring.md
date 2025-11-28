@@ -894,5 +894,5 @@ if latest_run.summary['train_loss'] > 3.0:
 **Related Documentation**:
 - [Evaluation](evaluation.md) - What metrics to monitor for quality
 - [Checkpoint Management](checkpoint-management.md) - Monitoring checkpoint health
-- [Training Stability](../pre-training/training-stability.md) - Detecting and fixing training issues
-- [Distributed Training](../pre-training/distributed-training.md) - Monitoring distributed systems
+- [Training Stability](../training-recipe/pre-training/training-stability.md) - Detecting and fixing training issues
+- [Distributed Training](../training-recipe/pre-training/distributed-training.md) - Monitoring distributed systems

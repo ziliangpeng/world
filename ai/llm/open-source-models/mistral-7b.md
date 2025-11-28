@@ -10,7 +10,7 @@ Mistral 7B is [Mistral AI's](mistral-overview.md) debut model—built in just 3 
 
 **Significance**: First model to prove 7B could compete with 13B through architectural innovation. Sparked shift from "bigger is better" to "efficiency matters." European AI sovereignty milestone.
 
-**Technical Innovations**: [Sliding Window Attention (SWA)](../architectural-patterns/attention-mechanisms.md) for efficient long-context, [Grouped Query Attention (GQA)](../architectural-patterns/attention-mechanisms.md) for faster inference. Together, 2x faster inference with 50% less cache memory.
+**Technical Innovations**: [Sliding Window Attention (SWA)](../architecture/architectural-patterns/attention-mechanisms.md) for efficient long-context, [Grouped Query Attention (GQA)](../architecture/architectural-patterns/attention-mechanisms.md) for faster inference. Together, 2x faster inference with 50% less cache memory.
 
 ### The BitTorrent Release
 
@@ -33,9 +33,9 @@ On September 26, 2023, [Mistral AI posted only a magnet link](https://mistral.ai
 | **Context Window** | 8,192 tokens |
 | **Sliding Window** | 4,096 tokens |
 | **Vocabulary** | 32,000 tokens (32,768 in v0.3) |
-| **Position Encoding** | [RoPE](../architectural-patterns/position-embeddings.md) (θ=10,000; 1M in v0.2 Instruct) |
-| **Normalization** | [RMSNorm](../architectural-patterns/normalization.md) |
-| **Activation** | [SwiGLU](../architectural-patterns/activations.md) |
+| **Position Encoding** | [RoPE](../architecture/architectural-patterns/position-embeddings.md) (θ=10,000; 1M in v0.2 Instruct) |
+| **Normalization** | [RMSNorm](../architecture/architectural-patterns/normalization.md) |
+| **Activation** | [SwiGLU](../architecture/architectural-patterns/activations.md) |
 | **Data Type** | bfloat16 |
 | **License** | Apache 2.0 |
 

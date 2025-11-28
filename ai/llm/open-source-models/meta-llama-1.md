@@ -32,9 +32,9 @@ Their core strategy was to bet on the "[Chinchilla scaling laws](https://arxiv.o
 ### Core Architectural Components
 
 - **Base Design**: Auto-regressive decoder-only transformer
-- **Normalization**: [RMSNorm](../architectural-patterns/normalization.md) pre-normalization
-- **Activation**: [SwiGLU](../architectural-patterns/activations.md)
-- **Position Encoding**: [RoPE](../architectural-patterns/position-embeddings.md)
+- **Normalization**: [RMSNorm](../architecture/architectural-patterns/normalization.md) pre-normalization
+- **Activation**: [SwiGLU](../architecture/architectural-patterns/activations.md)
+- **Position Encoding**: [RoPE](../architecture/architectural-patterns/position-embeddings.md)
 - **Attention**: Multi-Head Attention (MHA)
 - **FFN Dimension**: 2/3 × 4d (as in PaLM)
 - **Vocabulary**: 32K tokens (SentencePiece tokenizer)

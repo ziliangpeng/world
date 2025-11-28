@@ -943,6 +943,6 @@ def verify_all_checkpoints(checkpoint_dir):
 ---
 
 **Related Documentation**:
-- [Distributed Training](../pre-training/distributed-training.md) - FSDP, DeepSpeed, parallelism strategies
+- [Distributed Training](../training-recipe/pre-training/distributed-training.md) - FSDP, DeepSpeed, parallelism strategies
 - [Evaluation](evaluation.md) - When and how to evaluate checkpoints
 - [Monitoring](monitoring.md) - Track checkpoint health and storage usage

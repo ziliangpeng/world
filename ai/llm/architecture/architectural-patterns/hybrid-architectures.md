@@ -203,7 +203,7 @@ def hybrid_layer(x, meta_tokens):
 - 3x throughput vs Mixtral at 128K context
 - Fits 140K tokens on single 80GB GPU
 
-> **See also**: [Jamba 1.5 documentation](../open-source-models/ai21-jamba-1-5.md)
+> **See also**: [Jamba 1.5 documentation](../../open-source-models/ai21-jamba-1-5.md)
 
 ### Zamba (Zyphra)
 
@@ -221,7 +221,7 @@ def hybrid_layer(x, meta_tokens):
 - Competitive with LLaMA-2 7B on fewer tokens
 - 2x faster time-to-first-token vs Phi-3
 
-> **See also**: [Zamba documentation](../open-source-models/zyphra-zamba.md)
+> **See also**: [Zamba documentation](../../open-source-models/zyphra-zamba.md)
 
 ### Hymba (NVIDIA)
 
@@ -239,7 +239,7 @@ def hybrid_layer(x, meta_tokens):
 - 3.49x higher throughput
 - Outperforms 3B models with 1.5B parameters
 
-> **See also**: [Hymba documentation](../open-source-models/nvidia-hymba.md)
+> **See also**: [Hymba documentation](../../open-source-models/nvidia-hymba.md)
 
 ---
 

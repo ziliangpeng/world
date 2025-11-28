@@ -12,7 +12,7 @@ This repository contains detailed research on:
 
 ## Directory Structure
 
-### [Open Source Models](OPEN_SOURCE_MODELS.md)
+### [Open Source Models](../OPEN_SOURCE_MODELS.md)
 
 Comprehensive list of 40+ open source LLM families including:
 - Major foundation models (Llama, Mistral, Qwen, DeepSeek, Gemma, Phi)
@@ -24,30 +24,30 @@ Comprehensive list of 40+ open source LLM families including:
 - Research models (OLMo, Pythia)
 - Efficient small models (TinyLlama, MiniCPM)
 
-See [OPEN_SOURCE_MODELS.md](OPEN_SOURCE_MODELS.md) for complete list with links to detailed documentation.
+See [OPEN_SOURCE_MODELS.md](../OPEN_SOURCE_MODELS.md) for complete list with links to detailed documentation.
 
 ### Proprietary Models
 
 Private models with known architectural details:
 
-#### [OpenAI GPT Series](proprietary-models/openai-gpt.md)
+#### [OpenAI GPT Series](../proprietary-models/openai-gpt.md)
 - GPT-4 (rumored ~1.76T total, MoE)
 - GPT-4 Turbo (128K context)
 - GPT-4o (multimodal, 128K context)
 - GPT-4o mini
 - GPT-5 (reported 400K context)
 
-#### [Anthropic Claude](proprietary-models/anthropic-claude.md)
+#### [Anthropic Claude](../proprietary-models/anthropic-claude.md)
 - Claude 3 Family (Haiku, Sonnet, Opus)
 - Claude 3.5 Sonnet
 - Claude 3.5 Haiku
 - Claude Sonnet 4.5
 
-#### [Google Gemini](proprietary-models/google-gemini.md)
+#### [Google Gemini](../proprietary-models/google-gemini.md)
 - Gemini 1.5 Pro (MoE, 1M-2M context)
 - Gemini 2.0 Flash (MoE, 1M context)
 
-#### [Other Proprietary](proprietary-models/other-proprietary.md)
+#### [Other Proprietary](../proprietary-models/other-proprietary.md)
 - Google PaLM 2 (540B, deprecated)
 - xAI Grok-1 (314B MoE, open-sourced)
 - xAI Grok 1.5

@@ -788,7 +788,7 @@ print(f"Payback period: {payback_period:.1f} months")
 ---
 
 **Related Documentation**:
-- [Scaling Laws](../pre-training/scaling-laws.md) - Chinchilla-optimal training
-- [Distributed Training](../pre-training/distributed-training.md) - Parallelism strategies
+- [Scaling Laws](../training-recipe/pre-training/scaling-laws.md) - Chinchilla-optimal training
+- [Distributed Training](../training-recipe/pre-training/distributed-training.md) - Parallelism strategies
 - [Monitoring](monitoring.md) - Track costs in production
-- [Inference Optimization](../../inference-optimization/) - Quantization, batching, KV cache
+- [Inference Optimization](../inference-optimization/) - Quantization, batching, KV cache
