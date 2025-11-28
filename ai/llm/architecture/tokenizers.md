@@ -487,12 +487,9 @@ num_tokens = len(enc.encode("Some text"))
 - GPT-4, GPT-4o (100-200K)
 
 **Why tiktoken Won**:
-1. **The "Llama 3 effect"**: Meta's switch validated tiktoken for open-source
-2. **Larger vocabularies**: Efficiently handles 100K+ tokens
-3. **Proven at scale**: GPT-4's success
-4. **Better compression**: 20-40% fewer tokens for same text
-5. **Multilingual efficiency**: 3-6x better for non-English
-6. **Speed**: Optimized implementation
+1. **The "Llama 3 effect"**: Meta's switch from SentencePiece validated tiktoken for open-source
+2. **GPT-4's proven success**: Demonstrated reliability at massive scale
+3. **Network effects**: Once leaders adopted it, followers converged quickly
 
 ### SentencePiece: Still Viable
 
