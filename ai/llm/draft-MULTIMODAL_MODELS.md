@@ -61,13 +61,13 @@ A comprehensive overview of multimodal language models that can process and unde
 - 11B and 90B variants
 - First multimodal Llama models
 - Vision + language understanding
-- [Llama Documentation](../open-source-models/meta-llama.md)
+- [Llama Documentation](open-source-models/meta-llama.md)
 
 **Llama 4** (April 2025)
 - Scout 17B, Maverick, Behemoth 288B
 - MoE architecture with multimodal capabilities
 - 10M token context window
-- [Llama Documentation](../open-source-models/meta-llama.md)
+- [Llama Documentation](open-source-models/meta-llama.md)
 
 ### Alibaba Qwen Multimodal Series
 
@@ -84,7 +84,7 @@ A comprehensive overview of multimodal language models that can process and unde
 - **Qwen2.5-Omni** (Mar 2025) - 7B text/image/video/audio
 - **Qwen3-Omni** (Sep 2025) - Real-time with speech generation
 
-[Qwen Documentation](../open-source-models/qwen.md)
+[Qwen Documentation](open-source-models/qwen.md)
 
 ### DeepSeek Vision & Generation
 
@@ -99,14 +99,14 @@ A comprehensive overview of multimodal language models that can process and unde
 **OCR Specialized:**
 - **DeepSeek-OCR** (Oct 2025) - 3B MoE for optical context
 
-[DeepSeek Documentation](../open-source-models/deepseek.md)
+[DeepSeek Documentation](open-source-models/deepseek.md)
 
 ### Google Gemma Vision
 
 - **PaliGemma** (May 2024) - Vision-language model
 - **Gemma 3** (Mar 2025) - 270M-27B multimodal, 140+ languages
 
-[Gemma Documentation](../open-source-models/google-gemma.md)
+[Gemma Documentation](open-source-models/google-gemma.md)
 
 ### Microsoft Phi Vision
 
@@ -114,14 +114,14 @@ A comprehensive overview of multimodal language models that can process and unde
 - **Phi-3.5-vision-instruct** (Aug 2024) - 4.2B enhanced
 - **Phi-4-multimodal-instruct** (Feb 2025) - 5.6B speech+vision+text
 
-[Phi Documentation](../open-source-models/microsoft-phi.md)
+[Phi Documentation](open-source-models/microsoft-phi.md)
 
 ### Mistral Pixtral Series
 
 - **Pixtral 12B** (Sep 2024) - 12B + 400M vision encoder
 - **Pixtral Large** (Nov 2024) - 123B + 1B vision encoder
 
-[Mistral Documentation](../open-source-models/mistral-mixtral.md)
+[Mistral Documentation](open-source-models/mistral-mixtral.md)
 
 ### Salesforce BLIP Family
 
