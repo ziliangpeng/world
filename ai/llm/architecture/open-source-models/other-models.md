@@ -388,70 +388,13 @@ These models represent different eras and approaches:
 
 ## Prime Intellect INTELLECT Series
 
-### INTELLECT-1 (November 2024)
+For detailed technical deep-dives on Prime Intellect's training innovations, see the dedicated documentation:
 
-**Model Specifications**:
-- **Parameters**: 10 billion (Base + Instruct variants)
-- **Training**: 1 trillion tokens over 42 days (Oct 10 - Nov 22, 2024)
-- **Architecture**: Based on Llama-3
-- **Dataset**: Fineweb-Edu (HuggingFace)
+- **[INTELLECT-1](prime-intellect-1.md)**: First 10B model trained via decentralized pre-training. Covers DiLoCo algorithm, PRIME framework, ElasticDeviceMesh, int8 all-reduce, and fault tolerance mechanisms.
 
-**Key Innovation - Decentralized Training**:
-- First large-scale **decentralized pre-training** experiment
-- Trained across **3 continents** (5 countries)
-- **14 concurrent nodes** with dynamic joining/leaving
-- Up to **112 H100 GPUs** simultaneously
-- **96% compute utilization** under optimal conditions
-- Uses **PRIME framework** for coordination
+- **[INTELLECT-2](prime-intellect-2.md)**: First 32B model trained via decentralized reinforcement learning. Covers PRIME-RL framework, TOPLOC verification, SHARDCAST weight broadcasting, and modified GRPO training.
 
-**Performance**:
-- MMLU: 37.5%
-- HellaSwag: 72.26%
-- WinoGrande: 65.82%
-
-**Open-Source Release**:
-- Model checkpoints (Base + Instruct)
-- Training data
-- PRIME framework code
-
-**Significance**:
-- Proved decentralized training viable at scale
-- Democratizes large-scale training (no single entity needs all compute)
-- Novel approach to distributed AI development
-
-### INTELLECT-2 (May 2025)
-
-**Model Specifications**:
-- **Parameters**: 32 billion
-- **Training**: 285,000 math and coding tasks
-- **Datasets**: NuminaMath-1.5, SYNTHETIC-1
-- **Training Type**: Reinforcement Learning (not pre-training)
-
-**Key Innovation - Decentralized RL**:
-- First **globally distributed Reinforcement Learning** training
-- **Fully asynchronous RL** across heterogeneous compute
-- **Permissionless contribution** (anyone can add compute)
-- Dynamic, heterogeneous swarm of contributors
-
-**Performance**:
-- Outperforms **QwQ-32B** (previous RL-trained model)
-- Strong on math and programming tasks
-- Specialized reasoning capabilities
-
-**Significance**:
-- Extended decentralized training to RL (not just pre-training)
-- Demonstrates scalability of distributed approach
-- Opens RL training to broader community
-
-**Links**:
-- [INTELLECT-1 Blog](https://www.primeintellect.ai/blog/intellect-1)
-- [INTELLECT-1 Release](https://www.primeintellect.ai/blog/intellect-1-release)
-- [INTELLECT-1 Paper](https://arxiv.org/abs/2412.01152)
-- [INTELLECT-1 HuggingFace](https://huggingface.co/PrimeIntellect/INTELLECT-1)
-- [INTELLECT-2 Blog](https://www.primeintellect.ai/blog/intellect-2)
-- [INTELLECT-2 Release](https://www.primeintellect.ai/blog/intellect-2-release)
-- [INTELLECT-2 Paper](https://arxiv.org/abs/2505.07291)
-- [INTELLECT-2 HuggingFace](https://huggingface.co/PrimeIntellect/INTELLECT-2)
+- **[INTELLECT-3](prime-intellect-3.md)**: First 106B MoE model trained via large-scale asynchronous RL. Achieved MATH-500 98.1%, AIME24 90.8%, AIME25 88.0% using Prime Intellect's RL infrastructure stack (see [Prime Intellect RL Stack](../tools/prime-intellect-rl-stack.md) for infrastructure details).
 
 ---
 

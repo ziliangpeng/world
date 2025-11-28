@@ -182,6 +182,13 @@ Major open source LLM families with full architecture documentation.
 | Feb 2025 | 📜 [Phi-4-mini](https://arxiv.org/abs/2503.01743) | 🥱 3.8B - 128K context, speed optimized |
 | Feb 2025 | 📜 [Phi-4-multimodal-instruct](https://arxiv.org/abs/2503.01743) | 🔥 5.6B - Speech + vision + text, 20+ languages |
 
+## Prime Intellect INTELLECT Series
+
+| Date | Model | Notes |
+|------|-------|-------|
+| Nov 2024 | 📜 [INTELLECT-1](open-source-models/prime-intellect-1.md) | 🔥 10B - First decentralized pre-training, DiLoCo, PRIME framework |
+| May 2025 | 📜 [INTELLECT-2](open-source-models/prime-intellect-2.md) | 🔥 32B - First decentralized RL training, TOPLOC, SHARDCAST |
+
 ## [Other Notable Models](open-source-models/other-models.md)
 
 | Date | Model | Size | Organization | Notes |
