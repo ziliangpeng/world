@@ -2234,7 +2234,7 @@ K2 uses 64 heads while similar models (DeepSeek-V3) use 128. This reflects desig
 
 #### Kimi Linear Attention
 
-In follow-up research (ArXiv 2510.26692), Moonshot introduced **Kimi Linear**, a linear-time attention variant:
+In follow-up research (ArXiv 2510.26692), Moonshot introduced [**Kimi Linear**](https://arxiv.org/pdf/2510.26692), a linear-time attention variant:
 
 **Concept**: Replace O(n²) attention with O(n) linear attention
 **Achievement**:
