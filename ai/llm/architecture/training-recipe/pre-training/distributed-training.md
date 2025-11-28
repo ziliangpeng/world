@@ -398,6 +398,262 @@ model = parallelize_module(
 
 ---
 
+## FSDP vs DeepSpeed ZeRO: Practical Comparison
+
+Both FSDP and DeepSpeed ZeRO solve the same problem (memory-efficient distributed training), but with different trade-offs. This section helps you choose.
+
+### Quick Decision Guide
+
+```
+                                Start Here
+                                    │
+                    ┌───────────────┴───────────────┐
+                    │  Need CPU/NVMe offloading?    │
+                    └───────────────┬───────────────┘
+                           ╱                ╲
+                         Yes                No
+                          │                  │
+                    ┌─────▼─────┐    ┌───────▼───────┐
+                    │ DeepSpeed │    │ Using PyTorch │
+                    │  ZeRO-3   │    │   primarily?  │
+                    │ + Offload │    └───────┬───────┘
+                    └───────────┘           ╱ ╲
+                                         Yes   No
+                                          │     │
+                                    ┌─────▼─────┐  ┌─────▼─────┐
+                                    │   FSDP    │  │ DeepSpeed │
+                                    │ (native)  │  │  (HF/DS)  │
+                                    └───────────┘  └───────────┘
+```
+
+### Feature Comparison
+
+| Feature | FSDP | DeepSpeed ZeRO |
+|---------|------|----------------|
+| **Integration** | PyTorch native | Separate library |
+| **Stages** | FULL_SHARD (≈ZeRO-3), SHARD_GRAD_OP (≈ZeRO-2) | ZeRO-1, 2, 3, 3++ |
+| **CPU Offload** | Basic support | Mature, optimized |
+| **NVMe Offload** | No | Yes (ZeRO-Infinity) |
+| **Mixed Precision** | Native PyTorch AMP | Custom implementation |
+| **Activation Checkpointing** | PyTorch native | Built-in |
+| **TP/PP Integration** | Via DeviceMesh | Native support |
+| **Debugging** | Easier (standard PyTorch) | Harder (abstraction layer) |
+| **HuggingFace Integration** | Via Accelerate | Via Accelerate or native |
+
+### Memory Efficiency Comparison
+
+For a 7B model on 8× A100-80GB:
+
+| Configuration | Per-GPU Memory | Notes |
+|---------------|----------------|-------|
+| DDP (no sharding) | ~100 GB | OOM |
+| FSDP SHARD_GRAD_OP | ~45 GB | Works |
+| FSDP FULL_SHARD | ~25 GB | Comfortable |
+| ZeRO-2 | ~45 GB | Similar to FSDP SHARD_GRAD_OP |
+| ZeRO-3 | ~25 GB | Similar to FSDP FULL_SHARD |
+| ZeRO-3 + CPU Offload | ~12 GB | Slower, but fits larger models |
+| ZeRO-Infinity (NVMe) | ~8 GB | Slowest, maximum model size |
+
+### Throughput Comparison
+
+Relative training speed (higher is better):
+
+| Model Size | GPUs | FSDP | ZeRO-2 | ZeRO-3 | ZeRO-3+Offload |
+|------------|------|------|--------|--------|----------------|
+| 7B | 8 | 1.0 | 0.95 | 0.85 | 0.40 |
+| 13B | 8 | 1.0 | 0.93 | 0.82 | 0.45 |
+| 70B | 64 | 1.0 | N/A | 0.90 | 0.50 |
+
+**Pattern**: FSDP slightly faster due to native integration; ZeRO offloading trades speed for memory.
+
+### Configuration Examples
+
+#### FSDP (HuggingFace Accelerate)
+
+```yaml
+# fsdp_config.yaml
+compute_environment: LOCAL_MACHINE
+distributed_type: FSDP
+fsdp_config:
+  fsdp_auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  fsdp_backward_prefetch_policy: BACKWARD_PRE
+  fsdp_forward_prefetch: true
+  fsdp_offload_params: false
+  fsdp_sharding_strategy: FULL_SHARD  # ZeRO-3 equivalent
+  fsdp_state_dict_type: SHARDED_STATE_DICT
+  fsdp_transformer_layer_cls_to_wrap: LlamaDecoderLayer
+mixed_precision: bf16
+```
+
+```python
+# Pure PyTorch FSDP
+from torch.distributed.fsdp import (
+    FullyShardedDataParallel as FSDP,
+    MixedPrecision,
+    ShardingStrategy,
+)
+from torch.distributed.fsdp.wrap import transformer_auto_wrap_policy
+
+# Wrap policy for transformer models
+auto_wrap_policy = functools.partial(
+    transformer_auto_wrap_policy,
+    transformer_layer_cls={LlamaDecoderLayer},
+)
+
+# Mixed precision config
+mp_policy = MixedPrecision(
+    param_dtype=torch.bfloat16,
+    reduce_dtype=torch.bfloat16,
+    buffer_dtype=torch.bfloat16,
+)
+
+model = FSDP(
+    model,
+    auto_wrap_policy=auto_wrap_policy,
+    sharding_strategy=ShardingStrategy.FULL_SHARD,
+    mixed_precision=mp_policy,
+    device_id=torch.cuda.current_device(),
+    limit_all_gathers=True,  # Memory optimization
+)
+```
+
+#### DeepSpeed ZeRO-3
+
+```json
+// ds_config_zero3.json
+{
+  "bf16": {"enabled": true},
+  "zero_optimization": {
+    "stage": 3,
+    "overlap_comm": true,
+    "contiguous_gradients": true,
+    "reduce_bucket_size": 5e7,
+    "stage3_prefetch_bucket_size": 5e7,
+    "stage3_param_persistence_threshold": 1e5,
+    "stage3_gather_16bit_weights_on_model_save": true
+  },
+  "gradient_accumulation_steps": 4,
+  "train_micro_batch_size_per_gpu": 2,
+  "wall_clock_breakdown": false
+}
+```
+
+#### DeepSpeed ZeRO-3 with CPU Offload
+
+```json
+// ds_config_zero3_offload.json
+{
+  "bf16": {"enabled": true},
+  "zero_optimization": {
+    "stage": 3,
+    "offload_optimizer": {
+      "device": "cpu",
+      "pin_memory": true
+    },
+    "offload_param": {
+      "device": "cpu",
+      "pin_memory": true
+    },
+    "overlap_comm": true,
+    "contiguous_gradients": true,
+    "reduce_bucket_size": 1e8,
+    "stage3_prefetch_bucket_size": 1e8,
+    "stage3_param_persistence_threshold": 1e6
+  },
+  "gradient_accumulation_steps": 8,
+  "train_micro_batch_size_per_gpu": 1
+}
+```
+
+### When to Use What
+
+#### Use FSDP When:
+
+1. **Research/experimentation**: Easier debugging, standard PyTorch
+2. **Medium-scale training**: 8-64 GPUs, models up to 30B
+3. **PyTorch ecosystem**: Using torchvision, torchaudio, etc.
+4. **Simplicity priority**: Don't want to manage DeepSpeed configs
+5. **Latest PyTorch features**: First-class integration with torch.compile, DTensor
+
+```python
+# Good FSDP use case: 13B model on 8 GPUs
+# Simple, native, good performance
+model = FSDP(model, sharding_strategy=ShardingStrategy.FULL_SHARD)
+```
+
+#### Use DeepSpeed ZeRO When:
+
+1. **Memory-constrained**: Need CPU/NVMe offloading
+2. **Very large models**: 70B+ where every GB matters
+3. **Established pipelines**: HuggingFace Trainer, existing DS configs
+4. **Maximum flexibility**: Fine-grained control over optimization stages
+5. **Inference optimization**: DeepSpeed-Inference for deployment
+
+```python
+# Good DeepSpeed use case: 70B model, limited GPU memory
+# Offloading makes it possible
+model, optimizer, _, _ = deepspeed.initialize(
+    model=model,
+    config="ds_config_zero3_offload.json"
+)
+```
+
+#### Use Both (Megatron-DeepSpeed) When:
+
+1. **Largest scale**: 100B+ models, 256+ GPUs
+2. **Maximum throughput**: Need TP + PP + ZeRO
+3. **Production training**: Running for weeks/months
+
+### Migration Guide
+
+#### FSDP → DeepSpeed
+
+```python
+# Before (FSDP)
+model = FSDP(model, sharding_strategy=ShardingStrategy.FULL_SHARD)
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+
+# After (DeepSpeed)
+model, optimizer, _, _ = deepspeed.initialize(
+    model=model,
+    config={
+        "zero_optimization": {"stage": 3},
+        "bf16": {"enabled": True},
+        "optimizer": {
+            "type": "AdamW",
+            "params": {"lr": 1e-4}
+        }
+    }
+)
+```
+
+#### DeepSpeed → FSDP
+
+```python
+# Before (DeepSpeed ZeRO-3)
+model, optimizer, _, _ = deepspeed.initialize(model=model, config=ds_config)
+
+# After (FSDP)
+model = FSDP(
+    model,
+    sharding_strategy=ShardingStrategy.FULL_SHARD,
+    mixed_precision=MixedPrecision(param_dtype=torch.bfloat16),
+)
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+```
+
+### Common Pitfalls
+
+| Pitfall | FSDP | DeepSpeed | Solution |
+|---------|------|-----------|----------|
+| OOM during saving | Yes | Yes | Use sharded checkpoints |
+| Slow first iteration | Yes | Yes | Expected—gathering parameters |
+| Gradient accumulation bugs | Sometimes | Rare | Check effective batch size |
+| Mixed precision issues | Rare | Sometimes | Use bf16 over fp16 |
+| Multi-node hanging | Sometimes | Sometimes | Check NCCL environment vars |
+
+---
+
 ## Communication Primitives
 
 ### Collective Operations

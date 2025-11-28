@@ -27,9 +27,50 @@ Curated external resources for deeper learning on LLM training topics.
 
 ## Pre-Training
 
+### Overview & Fundamentals
+
 | Resource | Focus |
 |----------|-------|
 | [New LLM Pre-training and Post-training Paradigms](https://magazine.sebastianraschka.com/p/new-llm-pre-training-and-post-training) | Analysis of Qwen 2, Apple AFM, Gemma 2, Llama 3.1 training pipelines |
+| [Comprehensive Guide to Pre-training LLMs](https://www.analyticsvidhya.com/blog/2025/02/llm-pre-training/) | FineWeb dataset (15T tokens), fundamentals, Andrej Karpathy references (Feb 2025) |
+| [How LLMs Work: Pre-Training to Post-Training](https://towardsdatascience.com/how-llms-work-pre-training-to-post-training-neural-networks-hallucinations-and-inference/) | Distilled Andrej Karpathy 3.5hr video, fundamentals (Feb 2025) |
+| [Pre-training vs Fine-Tuning vs In-Context Learning](https://www.entrypointai.com/blog/pre-training-vs-fine-tuning-vs-in-context-learning-of-large-language-models/) | Comparison of training approaches |
+
+### Data Pipeline & Preprocessing
+
+| Resource | Focus |
+|----------|-------|
+| [NVIDIA - Mastering LLM Techniques: Data Processing](https://developer.nvidia.com/blog/mastering-llm-techniques-data-preprocessing/) | Text cleaning, filtering, deduplication, NeMo Curator (Apr 2025) |
+| [Ultimate Guide to Preprocessing Pipelines for LLMs](https://latitude-blog.ghost.io/blog/ultimate-guide-to-preprocessing-pipelines-for-llms/) | Missing data, duplicates, noise, tokenization (Mar 2025) |
+| [Nebius - Data Preparation Techniques](https://nebius.com/blog/posts/data-preparation/llm-dataprep-techniques) | Collection and preparation stages (Jun 2024) |
+| [Selecting and Preparing Training Data](https://www.rohan-paul.com/p/selecting-and-preparing-training) | "Better data beats better algorithms" emphasis (Jun 2025) |
+| [Build Custom LLM Training Data](https://medium.com/decodingml/your-content-is-gold-i-turned-3-years-of-blog-posts-into-an-llm-training-d19c265bdd6e) | AWS Lambda & MongoDB pipelines (Dec 2024) |
+| [Building an LLM Pipeline](https://mirascope.com/blog/llm-pipeline) | Data ingestion, preprocessing, query generation (Aug 2024) |
+
+### Scaling Laws
+
+| Resource | Focus |
+|----------|-------|
+| [Chinchilla Scaling Laws in Plain English](https://lifearchitect.ai/chinchilla/) | Data-optimal training: 20 tokens per parameter |
+| [Scaling Laws for LLM Pretraining](https://www.jonvet.com/blog/llm-scaling-laws) | Kaplan vs Chinchilla laws, technical deep dive |
+| [How Long Should You Train Your Language Model?](https://www.databricks.com/blog/how-long-should-you-train-your-language-model) | Accounting for training and inference costs |
+| [Scaling Laws: From GPT-3 to o3](https://cameronrwolfe.substack.com/p/llm-scaling-laws) | Evolution of scaling laws |
+
+### Hands-on Implementation
+
+| Resource | Focus |
+|----------|-------|
+| [HuggingFace - Train a New Language Model from Scratch](https://huggingface.co/blog/how-to-train) | Using Transformers and Tokenizers |
+| [HuggingFace - Training a Causal Language Model](https://huggingface.co/learn/llm-course/chapter7/6) | LLM Course Chapter 7 |
+| [DeepLearning.AI - Pretraining LLMs](https://www.deeplearning.ai/short-courses/pretraining-llms/) | Course on data prep, config, evaluation |
+| [Pretrain Transformers with PyTorch](https://gmihaila.github.io/tutorial_notebooks/pretrain_transformers_pytorch/) | Custom datasets, MLM vs CLM loss |
+| [Keras - Pretraining a Transformer from Scratch](https://keras.io/guides/keras_nlp/transformer_pretraining/) | KerasNLP implementation guide |
+| [SwanLab - Pretraining Your Own Large Model](https://docs.swanlab.cn/en/examples/pretrain_llm.html) | Wikipedia dataset, cloud GPUs |
+
+### Distributed Training
+
+| Resource | Focus |
+|----------|-------|
 | [Everything about Distributed Training](https://sumanthrh.com/post/distributed-and-efficient-finetuning/) | FSDP vs DeepSpeed ZeRO, 3D parallelism, efficient fine-tuning |
 | [FSDP vs DeepSpeed](https://huggingface.co/docs/accelerate/en/concept_guides/fsdp_and_deepspeed) | HuggingFace official comparison guide |
 

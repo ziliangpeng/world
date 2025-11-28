@@ -281,6 +281,43 @@ Vision-language models follow modified laws:
 
 ## Practical Applications
 
+### Recommended Configurations by Budget
+
+**GPU-hours to compute budget conversion** (A100-80GB):
+- 1 A100 ≈ 312 TFLOP/s (bf16)
+- 1 GPU-hour ≈ 1.1 × 10¹⁸ FLOPs (at ~50% utilization)
+
+| Budget (A100-hours) | Chinchilla-Optimal | Inference-Optimal | Use Case |
+|---------------------|-------------------|-------------------|----------|
+| 1K | 300M params, 6B tokens | 125M params, 50B tokens | Experimentation |
+| 10K | 1B params, 20B tokens | 350M params, 150B tokens | Small production |
+| 100K | 3B params, 60B tokens | 1.3B params, 500B tokens | Medium production |
+| 1M | 10B params, 200B tokens | 7B params, 1T tokens | LLaMA-7B class |
+| 10M | 30B params, 600B tokens | 13B params, 3T tokens | LLaMA-13B class |
+| 100M | 100B params, 2T tokens | 70B params, 15T tokens | Frontier class |
+
+### Quick Reference: "Given X, Do Y"
+
+**I have $10K and access to cloud GPUs. What can I train?**
+- Budget: ~1,000 A100-hours at ~$3/hr spot pricing
+- Recommendation: 350M-1B model on 20-50B tokens
+- Quality: Useful for specific tasks, not general-purpose
+
+**I have $100K. What's achievable?**
+- Budget: ~10,000-30,000 A100-hours
+- Recommendation: 3-7B model on 100-300B tokens
+- Quality: Competitive with open-source 7B models
+
+**I have $1M. What should I build?**
+- Budget: ~100,000-300,000 A100-hours
+- Recommendation: 7-13B model on 1-2T tokens (inference-optimal) OR 30B on 600B (Chinchilla)
+- Quality: State-of-the-art for size class
+
+**I have $10M+. Frontier territory?**
+- Budget: 1M+ A100-hours
+- Recommendation: 70B+ model on 10T+ tokens
+- Quality: Frontier-competitive
+
 ### Budget Allocation
 
 Given a training budget, how to allocate?
@@ -304,6 +341,61 @@ def inference_optimal_allocation(budget_flops, expected_queries):
     N = budget_flops / (6 * target_ratio * target_ratio)
     D = N * target_ratio
     return N, D
+```
+
+### Practical Budget Calculator
+
+```python
+def estimate_training(params_billions, tokens_trillions,
+                      gpu_type="A100", utilization=0.5):
+    """
+    Estimate training requirements.
+
+    Args:
+        params_billions: Model parameters in billions
+        tokens_trillions: Training tokens in trillions
+        gpu_type: "A100" (312 TFLOP/s) or "H100" (990 TFLOP/s)
+        utilization: Expected MFU (model FLOP utilization)
+
+    Returns:
+        dict with GPU-hours, cost estimates, wall-clock time
+    """
+    # Compute FLOPs
+    N = params_billions * 1e9
+    D = tokens_trillions * 1e12
+    compute_flops = 6 * N * D
+
+    # GPU throughput
+    throughput = {
+        "A100": 312e12,  # TFLOP/s
+        "H100": 990e12,
+    }[gpu_type] * utilization
+
+    # Calculate time
+    gpu_seconds = compute_flops / throughput
+    gpu_hours = gpu_seconds / 3600
+
+    # Cost estimates (spot pricing)
+    hourly_cost = {"A100": 2.0, "H100": 4.0}[gpu_type]
+
+    return {
+        "compute_flops": f"{compute_flops:.2e}",
+        "gpu_hours": f"{gpu_hours:,.0f}",
+        "cost_estimate": f"${gpu_hours * hourly_cost:,.0f}",
+        "wall_clock_days_64_gpus": f"{gpu_hours / (64 * 24):,.1f}",
+        "wall_clock_days_256_gpus": f"{gpu_hours / (256 * 24):,.1f}",
+    }
+
+# Examples
+print(estimate_training(7, 1))    # 7B, 1T tokens
+# {'compute_flops': '4.20e+22', 'gpu_hours': '74,786',
+#  'cost_estimate': '$149,573', 'wall_clock_days_64_gpus': '48.7',
+#  'wall_clock_days_256_gpus': '12.2'}
+
+print(estimate_training(70, 15))  # 70B, 15T tokens
+# {'compute_flops': '6.30e+24', 'gpu_hours': '11,217,949',
+#  'cost_estimate': '$22,435,897', 'wall_clock_days_64_gpus': '7,303.9',
+#  'wall_clock_days_256_gpus': '1,826.0'}
 ```
 
 ### When to Stop Training

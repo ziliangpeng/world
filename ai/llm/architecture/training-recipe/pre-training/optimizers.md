@@ -372,7 +372,27 @@ Reduces memory by 50%:
 
 ## Practical Recommendations
 
-### For Pre-training
+### Recommended Configurations by Model Size
+
+| Model Size | Peak LR | Min LR | β₁ | β₂ | Weight Decay | Warmup Steps | Grad Clip |
+|------------|---------|--------|-----|-----|--------------|--------------|-----------|
+| 125M | 6e-4 | 6e-5 | 0.9 | 0.95 | 0.1 | 2000 | 1.0 |
+| 350M | 3e-4 | 3e-5 | 0.9 | 0.95 | 0.1 | 2000 | 1.0 |
+| 1.3B | 2e-4 | 2e-5 | 0.9 | 0.95 | 0.1 | 2000 | 1.0 |
+| 7B | 3e-4 | 3e-5 | 0.9 | 0.95 | 0.1 | 2000 | 1.0 |
+| 13B | 3e-4 | 3e-5 | 0.9 | 0.95 | 0.1 | 2000 | 1.0 |
+| 30B | 2e-4 | 2e-5 | 0.9 | 0.95 | 0.1 | 2000 | 1.0 |
+| 65-70B | 1.5e-4 | 1.5e-5 | 0.9 | 0.95 | 0.1 | 2000 | 1.0 |
+| 175B+ | 6e-5 | 6e-6 | 0.9 | 0.95 | 0.1 | 375 | 1.0 |
+
+**Key patterns**:
+- Peak LR decreases with model size (larger models need smaller LRs)
+- β₂=0.95 is universal for LLM pre-training (not Adam's default 0.999)
+- Weight decay=0.1 is standard across all sizes
+- Min LR is typically 10% of peak LR
+- Warmup steps ~2000 for most sizes, shorter for very large models
+
+### Complete Pre-training Configuration
 
 ```python
 # Standard configuration

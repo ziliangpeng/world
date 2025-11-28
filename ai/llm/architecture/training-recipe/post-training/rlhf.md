@@ -269,6 +269,286 @@ class PPOTrainer:
 
 ---
 
+## Deep Dive: Reward Model Training
+
+The reward model is the most critical component of RLHF—a poor reward model produces a poorly aligned policy. This section covers practical details for training high-quality reward models.
+
+### Architecture Choices
+
+**Option 1: Same architecture as policy (recommended)**
+```python
+class RewardModel(nn.Module):
+    def __init__(self, base_model_name="llama-2-7b"):
+        super().__init__()
+        # Use same architecture as policy
+        self.backbone = AutoModel.from_pretrained(base_model_name)
+        # Single scalar output
+        self.reward_head = nn.Linear(self.backbone.config.hidden_size, 1)
+
+    def forward(self, input_ids, attention_mask):
+        outputs = self.backbone(input_ids, attention_mask)
+        # Pool last token (for causal LM) or [CLS] token
+        pooled = outputs.last_hidden_state[:, -1, :]
+        return self.reward_head(pooled).squeeze(-1)
+```
+
+**Option 2: Smaller model (efficient)**
+```python
+# Use smaller model if compute-constrained
+# 7B policy → 1-3B reward model often works well
+reward_model = AutoModel.from_pretrained("llama-2-1b")
+```
+
+**Option 3: Ensemble (robust)**
+```python
+class EnsembleRewardModel(nn.Module):
+    def __init__(self, model_names, ensemble_method="mean"):
+        super().__init__()
+        self.models = nn.ModuleList([
+            RewardModel(name) for name in model_names
+        ])
+        self.method = ensemble_method
+
+    def forward(self, input_ids, attention_mask):
+        rewards = [m(input_ids, attention_mask) for m in self.models]
+        if self.method == "mean":
+            return torch.stack(rewards).mean(dim=0)
+        elif self.method == "min":  # Conservative
+            return torch.stack(rewards).min(dim=0).values
+```
+
+### Training Data Requirements
+
+**How many comparisons do you need?**
+
+| Model Quality | Comparisons | Notes |
+|---------------|-------------|-------|
+| Minimum viable | 5K-10K | For narrow domains only |
+| Good | 30K-50K | General instruction-following |
+| Production | 100K+ | InstructGPT used 33K, Claude uses more |
+| Frontier | 500K+ | For broad coverage and robustness |
+
+**Data quality vs quantity**:
+```
+10K high-quality comparisons > 100K noisy comparisons
+
+Quality factors:
+- Annotator expertise (domain experts > crowdworkers)
+- Clear guidelines with examples
+- Inter-annotator agreement >70%
+- Balanced coverage across capabilities
+```
+
+**Comparison format**:
+```python
+preference_example = {
+    "prompt": "Explain photosynthesis to a 10-year-old",
+    "chosen": "Plants are like tiny food factories! They use sunlight...",
+    "rejected": "Photosynthesis is the biochemical process whereby...",
+    "metadata": {
+        "annotator_id": "expert_42",
+        "margin": "clear",  # "clear", "slight", "tie"
+        "category": "explanation"
+    }
+}
+```
+
+### Training Configuration
+
+```python
+reward_model_config = {
+    # Data
+    "train_comparisons": 50000,
+    "eval_comparisons": 5000,
+    "max_length": 2048,
+
+    # Model
+    "base_model": "llama-2-7b",  # Or smaller
+    "precision": "bf16",
+
+    # Optimization
+    "optimizer": "AdamW",
+    "lr": 1e-5,  # Lower than SFT
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "epochs": 1,  # Often 1 epoch is enough to avoid overfitting
+    "batch_size": 64,
+
+    # Regularization
+    "dropout": 0.1,
+    "label_smoothing": 0.1,  # Helps with noisy labels
+}
+```
+
+**Training loop**:
+```python
+def train_reward_model(model, train_data, config):
+    optimizer = AdamW(model.parameters(), lr=config["lr"])
+    scheduler = get_cosine_schedule_with_warmup(optimizer, ...)
+
+    for epoch in range(config["epochs"]):
+        for batch in train_data:
+            # Forward pass for both responses
+            chosen_reward = model(batch["chosen_ids"], batch["chosen_mask"])
+            rejected_reward = model(batch["rejected_ids"], batch["rejected_mask"])
+
+            # Bradley-Terry loss with label smoothing
+            margin = chosen_reward - rejected_reward
+            loss = -F.logsigmoid(margin).mean()
+
+            # Optional: add margin-based loss for clear preferences
+            if "margin" in batch:
+                margin_target = batch["margin_target"]  # e.g., 1.0 for clear, 0.5 for slight
+                margin_loss = F.mse_loss(margin.abs(), margin_target)
+                loss = loss + 0.1 * margin_loss
+
+            loss.backward()
+            optimizer.step()
+            scheduler.step()
+```
+
+### Calibration
+
+Reward models often become overconfident. Calibrate to improve reliability:
+
+**Temperature scaling**:
+```python
+class CalibratedRewardModel(nn.Module):
+    def __init__(self, reward_model):
+        super().__init__()
+        self.rm = reward_model
+        self.temperature = nn.Parameter(torch.ones(1))
+
+    def forward(self, *args, **kwargs):
+        raw_reward = self.rm(*args, **kwargs)
+        return raw_reward / self.temperature
+
+    def calibrate(self, val_data):
+        """Find optimal temperature on validation set."""
+        # Optimize temperature to minimize NLL on val comparisons
+        optimizer = optim.LBFGS([self.temperature], lr=0.01)
+
+        def closure():
+            chosen_r = self.forward(val_data["chosen"])
+            rejected_r = self.forward(val_data["rejected"])
+            loss = -F.logsigmoid(chosen_r - rejected_r).mean()
+            return loss
+
+        optimizer.step(closure)
+```
+
+**Detecting overconfidence**:
+```python
+def check_calibration(model, test_data, n_bins=10):
+    """Check if predicted confidence matches actual accuracy."""
+    confidences = []
+    correct = []
+
+    for batch in test_data:
+        chosen_r = model(batch["chosen"])
+        rejected_r = model(batch["rejected"])
+        prob = torch.sigmoid(chosen_r - rejected_r)
+
+        confidences.extend(prob.tolist())
+        correct.extend([1] * len(prob))  # All should be correct
+
+    # Bin by confidence
+    bins = np.linspace(0, 1, n_bins + 1)
+    bin_accs = []
+    bin_confs = []
+
+    for i in range(n_bins):
+        mask = (np.array(confidences) >= bins[i]) & (np.array(confidences) < bins[i+1])
+        if mask.sum() > 0:
+            bin_accs.append(np.array(correct)[mask].mean())
+            bin_confs.append(np.array(confidences)[mask].mean())
+
+    # Perfect calibration: bin_accs ≈ bin_confs
+    ece = np.mean(np.abs(np.array(bin_accs) - np.array(bin_confs)))  # Expected Calibration Error
+    return {"ece": ece, "bin_accs": bin_accs, "bin_confs": bin_confs}
+```
+
+### Reward Hacking Detection
+
+**Over-optimization detection**:
+```python
+def detect_overoptimization(policy, reward_model, eval_prompts, ref_policy):
+    """
+    Check if policy is gaming the reward model.
+    Signs: high reward but low human preference vs reference.
+    """
+    policy_responses = policy.generate(eval_prompts)
+    ref_responses = ref_policy.generate(eval_prompts)
+
+    # Reward model scores
+    policy_rewards = reward_model.score(eval_prompts, policy_responses)
+    ref_rewards = reward_model.score(eval_prompts, ref_responses)
+
+    # If policy rewards >> ref rewards but human prefers ref,
+    # reward model is being gamed
+    reward_gap = policy_rewards.mean() - ref_rewards.mean()
+
+    # Get human preferences on sample
+    human_pref_policy = human_eval(policy_responses, ref_responses)
+
+    if reward_gap > 1.0 and human_pref_policy < 0.5:
+        return True, "Over-optimization detected"
+
+    return False, "OK"
+```
+
+**Gold standard evaluation**:
+```python
+def evaluate_against_gold(reward_model, gold_comparisons):
+    """
+    Evaluate on held-out human-labeled "gold" comparisons.
+    These should be high-quality, expert-labeled examples.
+    """
+    correct = 0
+    margin_errors = []
+
+    for example in gold_comparisons:
+        chosen_r = reward_model(example["chosen"])
+        rejected_r = reward_model(example["rejected"])
+
+        if chosen_r > rejected_r:
+            correct += 1
+
+        # Track margin for calibration
+        expected_margin = example.get("expected_margin", 1.0)
+        actual_margin = (chosen_r - rejected_r).item()
+        margin_errors.append(abs(actual_margin - expected_margin))
+
+    return {
+        "accuracy": correct / len(gold_comparisons),
+        "mean_margin_error": np.mean(margin_errors),
+    }
+```
+
+### Common Reward Model Failures
+
+| Failure Mode | Symptom | Fix |
+|--------------|---------|-----|
+| **Length bias** | Longer = higher reward | Normalize by length, add length penalty |
+| **Format bias** | Bullet points always win | Diverse format training data |
+| **Sycophancy** | Agreement = high reward | Include disagreement examples |
+| **Verbosity** | More detail = higher reward | Train on concise-preferred pairs |
+| **Position bias** | First option preferred | Randomize order during training |
+| **Overconfidence** | Extreme scores | Temperature calibration |
+
+**Fixing length bias**:
+```python
+def length_normalized_reward(model, input_ids, attention_mask):
+    raw_reward = model(input_ids, attention_mask)
+    response_length = attention_mask.sum(dim=1)
+
+    # Normalize by log length (less aggressive than linear)
+    normalized = raw_reward - 0.1 * torch.log(response_length.float())
+    return normalized
+```
+
+---
+
 ## Technical Challenges
 
 ### Reward Hacking
