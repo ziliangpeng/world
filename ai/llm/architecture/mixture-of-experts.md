@@ -172,22 +172,7 @@ DeepSeek-V3 671B MoE:
 
 ## Current MoE Consensus (2024-2025)
 
-### The Standard: Fine-Grained MoE for Large Models
-
-**Why Fine-Grained MoE Dominates**:
-1. **Cost efficiency**: 10-20x cheaper training than dense equivalents
-2. **Quality preservation**: Matches dense models at same active compute
-3. **Specialization**: More experts = better task-specific learning
-4. **Load balancing**: Easier with many experts
-5. **Proven at scale**: DeepSeek-V3 671B validates approach
-
-**Typical Configurations by Scale**:
-- **Small models (<30B)**: Dense often preferred (simpler)
-- **Medium models (30-100B)**: Standard MoE (8-16 experts, top-2)
-- **Large models (>100B)**: Fine-grained MoE (64-128 experts, top-8)
-- **Frontier models (>500B)**: Extreme fine-grained (hundreds of experts)
-
-### The Two MoE Philosophies
+### MoE Architecture Philosophies
 
 **Standard MoE** (Mixtral-style):
 - Fewer experts (8-16)
@@ -200,6 +185,19 @@ DeepSeek-V3 671B MoE:
 - Smaller experts (narrower specialization)
 - Shared + routed experts
 - Better specialization and load balancing
+
+**Why Fine-Grained MoE Dominates for Large Models**:
+1. **Cost efficiency**: 10-20x cheaper training than dense equivalents
+2. **Quality preservation**: Matches dense models at same active compute
+3. **Specialization**: More experts = better task-specific learning
+4. **Load balancing**: Easier with many experts
+5. **Proven at scale**: DeepSeek-V3 671B validates approach
+
+**Typical Configurations by Scale**:
+- **Small models (<30B)**: Dense often preferred (simpler)
+- **Medium models (30-100B)**: Standard MoE (8-16 experts, top-2)
+- **Large models (>100B)**: Fine-grained MoE (64-128 experts, top-8)
+- **Frontier models (>500B)**: Extreme fine-grained (hundreds of experts)
 
 **Trend**: Moving toward fine-grained for frontier models
 
