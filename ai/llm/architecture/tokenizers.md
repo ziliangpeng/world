@@ -641,20 +641,6 @@ Proper subword representation, 3-6x better
 Trend: Exponential expansion
 ```
 
-### Why Larger Vocabularies?
-
-**Advantages**:
-1. **Multilingual efficiency**: Better coverage of non-English
-2. **Fewer tokens per text**: More efficient encoding
-3. **Better compression**: Rare words as single tokens
-4. **Technical terms**: Better handling of code, math, etc.
-
-**Disadvantages**:
-1. **Larger embedding matrix**: More parameters
-2. **Output layer**: Larger final projection
-3. **Training cost**: More tokens to learn
-4. **Diminishing returns**: At some point, not worth it
-
 ## Special Tokenizer Features
 
 ### Arcade100k (StableLM)
@@ -715,17 +701,22 @@ Tokenizer B: ['Hello,', 'how', 'are', 'you?'] = 4 tokens
 ### Vocabulary Size
 
 **Small (30-50K)**:
-- ✅ Smaller embedding matrix
+- ✅ Smaller embedding matrix (fewer parameters)
 - ✅ Faster output projection
-- ❌ More tokens per text
+- ✅ Lower training cost (fewer tokens to learn)
+- ❌ More tokens per text (less efficient encoding)
 - ❌ Poor multilingual support
+- ❌ Worse compression for rare words
 
 **Large (100-256K)**:
-- ✅ Fewer tokens per text
-- ✅ Better multilingual
-- ✅ Handles rare words
-- ❌ Larger parameters
+- ✅ Fewer tokens per text (better compression)
+- ✅ Better multilingual efficiency (3-6x for non-English)
+- ✅ Handles rare words and technical terms as single tokens
+- ✅ Better handling of code, math, specialized domains
+- ❌ Larger embedding matrix and output layer (more parameters)
 - ❌ Slower output projection
+- ❌ Higher training cost
+- ❌ Diminishing returns beyond certain point
 
 ### Granularity
 
