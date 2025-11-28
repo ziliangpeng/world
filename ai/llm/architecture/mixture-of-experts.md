@@ -698,6 +698,159 @@ top_k = select_top_k(expert_affinities, k)
 
 ## Future Directions
 
+### Expert Scaling: The Race and Its Limits
+
+The evolution of MoE has seen a rapid escalation in expert counts, from Mixtral's 8 experts to Kimi K2's 384. But is the industry in an arms race for more experts? The answer reveals a more nuanced reality.
+
+#### The Expert Count Progression
+
+**Historical Timeline**:
+```
+2023: Mixtral 8x7B          → 8 experts
+2024: DeepSeek-MoE 16B      → 64 experts (fine-grained breakthrough)
+2024: Qwen 3 MoE            → 128 experts
+2024: DeepSeek-V3           → 256 experts
+2025: Kimi K2               → 384 experts
+Research: "Mixture of a Million Experts" (He et al., 2024)
+```
+
+This progression suggests an exponential trend, but the story is more complex than simply "more is better."
+
+#### The Scaling Paradox
+
+**The Key Insight**: The industry is racing toward **more total experts**, but **NOT more active experts**.
+
+- **Total experts**: 8 → 64 → 256 → 384 → trending upward
+- **Active experts**: Converging to **8-9** (research shows optimal is ~6.78)
+
+**Why?** 2025 research proves that **granularity** (total experts while keeping active experts constant) boosts model expressivity **exponentially**. More experts = better specialization and representational capacity, even with the same active parameters per token.
+
+**The Math**:
+- DeepSeek-V3: 256 experts, 8 active = 3.1% activation
+- Kimi K2: 384 experts, 8 active = 2.1% activation
+- Both use similar active parameters (~32-37B), but Kimi has 50% more expert choices
+
+#### Theoretical Insights (2025 Research)
+
+**Exponential Expressivity from Granularity**:
+> "Increasing the granularity of an MoE improves its expressivity **exponentially**, even while keeping the sparsity unchanged... future frontier architectures should be designed with **larger granularity**." — Fine-Grained Experts research
+
+**Optimal Active Expert Count**: Theoretical analysis shows the optimal number of activated experts is approximately **6.78**, closely aligning with mainstream models (DeepSeek-V3, Kimi K2, Qwen 3) that use 8-9 active experts.
+
+**MoE-Specific Scaling Laws**:
+- Dense model scaling laws are insufficient for MoE
+- MoE introduces non-monotonic, interdependent factors:
+  - Activated model size
+  - Number of activated experts
+  - Ratio of shared to routed experts
+- These factors interact in complex ways requiring new theoretical frameworks
+
+#### Major Challenges at Scale
+
+**1. Load Balancing & Expert Collapse**
+
+The most critical challenge: routers tend to select the same few experts repeatedly.
+
+- **Expert collapse**: Model converges to using only a subset of available experts
+- **Self-fulfilling loop**: Frequently selected experts train faster → get selected more often
+- **Resource wastage**: Idle experts consume memory without contributing
+
+**Solution approaches**:
+- Auxiliary loss functions to force balanced usage
+- DeepSeek-V3's auxiliary-loss-free architecture (advanced load balancing without penalty)
+- Shared experts that are always activated
+
+**2. Diminishing Returns**
+
+Research shows clear diminishing returns as expert counts increase:
+
+> "More experts lead to improved sample efficiency and faster speedup, but these are **diminishing gains (especially after 256 or 512)**" — MoE Scaling research
+
+**Empirical Evidence**:
+- 4 → 8 experts: **Significant gains**
+- 8 → 16 experts: **Little additional gain**
+- 256 → 512 experts: **Marginal improvements**, dataset size dependent
+
+**Why?** If the training dataset is sufficiently small, adding capacity via more experts has diminishing returns. The model can't learn meaningful specialization without enough data per expert.
+
+**3. Infrastructure Bottlenecks**
+
+**Memory Requirements**:
+- Total parameters scale with expert count
+- More VRAM needed for inference
+- Memory footprint grows even though compute doesn't
+
+**Routing Costs**:
+> "For high granularity values, training can be **bottlenecked by routing cost**" — Scaling Laws research
+
+- Router network must evaluate all experts
+- Communication overhead in distributed systems
+- Routing operations become dominant at extreme scales
+
+**System Challenges**:
+- Non-uniform workload distribution
+- Dynamic expert selection complicates resource allocation
+- Synchronization overhead across GPUs
+
+**4. The MoE Trilemma**
+
+Deploying MoE models reveals a fundamental optimization trilemma:
+
+- **Load imbalance**: Uneven expert utilization
+- **Parameter redundancy**: Underused experts waste memory
+- **Communication overhead**: Expert routing requires GPU communication
+
+**The problem**: Cannot optimize all three simultaneously. Improving one often worsens another.
+
+#### Strategic Design Choices
+
+**Case Study: Kimi K2 vs DeepSeek-V3**
+
+Why did Kimi choose 384 experts while DeepSeek chose 256? This reveals strategic tradeoffs in frontier model design.
+
+**Kimi K2's Approach** (384 experts, 64 attention heads):
+- **Bet**: Expressivity from expert granularity > expressivity from attention heads
+- **Tradeoff**: Reduced attention heads (64 vs DeepSeek's 128) to balance compute
+- **Reasoning**: "Scaling law analysis reveals continued increases in sparsity yield **substantial performance improvements**"
+- **Philosophy**: Push expert scaling as far as possible before hitting diminishing returns
+
+**DeepSeek-V3's Approach** (256 experts, 128 attention heads):
+- **Bet**: More balanced architecture across components
+- **Tradeoff**: Moderate expert count, more attention capacity
+- **Reasoning**: 256 experts already in diminishing returns zone; invest in other components
+- **Philosophy**: Optimize across all architectural dimensions
+
+**The Verdict**: Both approaches work. Kimi's bet on extreme granularity shows that losses keep dropping with more experts, validating the exponential expressivity theory. DeepSeek's balanced approach achieved GPT-4 quality at $5.57M training cost.
+
+#### The Scaling Ceiling
+
+Where does expert scaling hit its limits?
+
+**Short-term (2025-2026)**:
+- Expect **512-1024 expert** models as companies push boundaries
+- Focus on **better routing algorithms** to handle complexity
+- **Hardware optimizations** specifically for fine-grained MoE (specialized chips, better interconnects)
+- Empirical validation of scaling laws at extreme granularity
+
+**Medium-term (2026-2027)**:
+- Practical limits around **1024-2048 experts** with current infrastructure
+- Routing costs dominate gains beyond this threshold
+- Paradigm shift from "**more experts**" to "**smarter routing**":
+  - Dynamic expert creation/pruning based on task
+  - Hierarchical expert structures (experts of experts)
+  - Meta-learned routing that optimizes for efficiency
+  - Conditional expert activation (different expert counts per layer)
+
+**Long-term (2027+)**:
+- Potential paradigm shift **beyond traditional MoE**
+- **Adaptive architectures**: Models that learn optimal granularity during training
+- **Neurosymbolic approaches**: Combining MoE with symbolic reasoning
+- **Continuous MoE**: Infinite experts via continuous expert space (theoretical)
+
+**The Practical Limit**: With current infrastructure, the ceiling is likely **512-1024 experts** for production models. Beyond this, routing and communication costs outweigh expressivity gains.
+
+---
+
 ### Research Areas
 
 **1. Dynamic MoE**:
