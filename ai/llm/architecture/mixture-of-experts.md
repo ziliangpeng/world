@@ -873,25 +873,6 @@ Where does expert scaling hit its limits?
 - Automatic load balancing
 - Self-optimizing MoE
 
-### Trends
-
-**1. Fine-Grained Experts**:
-- Qwen 3: 128 experts
-- More flexibility and specialization
-
-**2. Auxiliary-Loss-Free**:
-- DeepSeek-V3 approach
-- Simpler training
-
-**3. Extreme Scale**:
-- 671B → 1T+ parameters
-- MoE enables trillion-parameter models
-
-**4. Multimodal MoE**:
-- Modality-specific experts
-- Cross-modal routing
-- Gemini-style integration
-
 ---
 
 ## Practical Recommendations
