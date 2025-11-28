@@ -331,6 +331,20 @@ for task, metrics in results["results"].items():
 
 ---
 
+## Using Benchmarks in Practice
+
+This document focuses on **what benchmarks exist** and **what they measure**. For practical guidance on how to use benchmarks in your evaluation workflow, see [Evaluation in Practice](llmops/evaluation.md).
+
+**Evaluation in Practice** covers:
+- When and how to run benchmarks during training
+- Setting up evaluation pipelines and automation
+- Building custom evaluations beyond standard benchmarks
+- LLM-as-a-judge, red teaming, and adversarial evaluation
+- Production evaluation and A/B testing
+- Comprehensive evaluation workflows
+
+---
+
 ## Modern Leaderboards
 
 ### Open LLM Leaderboard (HuggingFace)
