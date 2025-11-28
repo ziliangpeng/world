@@ -356,43 +356,97 @@ class MoE_Layer(nn.Module):
 
 ---
 
-## Challenges in MoE
+## Challenges and Solutions
 
-### 1. Load Balancing
+### 1. Load Balancing & Expert Collapse
 
-**Problem**: Router might send all tokens to same expert(s)
-- Underutilized experts
-- Inefficient compute
-- Poor specialization
+**The Problem**: Router tends to send all tokens to the same few experts, creating a self-reinforcing cycle.
 
-**Solution: Auxiliary Loss**:
+**Load Imbalance**:
+- Router might send all tokens to same expert(s)
+- Underutilized experts waste capacity
+- Inefficient compute distribution
+- Poor specialization across experts
+
+**Expert Collapse**:
+- Some experts never get selected during training
+- Frequently selected experts train faster → get selected more often (self-fulfilling loop)
+- Wasted parameters consuming memory without contributing
+- Reduced effective model capacity
+
+**Solutions**:
+
+*Traditional Approach - Auxiliary Loss*:
 ```python
 # Encourage balanced expert usage
 balance_loss = coefficient * variance(expert_usage_counts)
 total_loss = task_loss + balance_loss
 ```
 
-### 2. Expert Collapse
+*Modern Approaches*:
+- **DeepSeek-V3**: Auxiliary-loss-free architecture with built-in load balancing
+- **Shared experts**: Always-activated experts ensure minimum capacity
+- **Expert dropout**: Forces exploration of underutilized experts
+- **Careful initialization**: Prevents early collapse patterns
 
-**Problem**: Some experts never selected
-- Wasted parameters
-- Reduced effective capacity
+**At Scale**: Research shows load balancing becomes more critical with more experts. Beyond 256-512 experts, even small imbalances can leave dozens of experts unused.
 
-**Solution**:
-- Load balancing losses
-- Expert dropout
-- Initialization strategies
+### 2. Training Instability
 
-### 3. Training Instability
+**Problem**: Discrete routing decisions create gradient challenges
+- Non-differentiable top-k selection
+- Gradient flow issues through router
+- Unstable early training
 
-**Problem**: Discrete routing decisions
-- Non-differentiable top-k
-- Gradient issues
-
-**Solution**:
-- Differentiable approximations
+**Solutions**:
+- Differentiable approximations (soft routing)
 - Straight-through estimators
-- Careful initialization
+- Careful router initialization
+- Lower learning rate for router network
+
+### 3. Diminishing Returns at Scale
+
+**Problem**: Adding more experts yields progressively smaller gains.
+
+> "More experts lead to improved sample efficiency and faster speedup, but these are **diminishing gains (especially after 256 or 512)**" — MoE Scaling research
+
+**Empirical Evidence**:
+- 4 → 8 experts: **Significant gains**
+- 8 → 16 experts: **Little additional gain**
+- 256 → 512 experts: **Marginal improvements**, dataset size dependent
+
+**Why?** If the training dataset is sufficiently small relative to expert count, adding capacity via more experts has diminishing returns. The model can't learn meaningful specialization without enough data per expert.
+
+### 4. Infrastructure Bottlenecks
+
+**Memory Requirements**:
+- Must store ALL experts in memory, not just active ones
+- Total parameters scale with expert count
+- Memory footprint grows even though compute per token doesn't
+- Example: DeepSeek-V3 uses 37B active but requires memory for 671B parameters
+
+**Routing Costs**:
+> "For high granularity values, training can be **bottlenecked by routing cost**" — Scaling Laws research
+
+- Router network must evaluate all experts for scoring
+- Communication overhead in distributed systems
+- Routing operations become dominant at extreme scales (384+ experts)
+- Non-uniform workload distribution complicates resource allocation
+
+**System Challenges**:
+- Dynamic expert selection complicates static resource allocation
+- Synchronization overhead across GPUs
+- Expert parallelism requires sophisticated infrastructure
+
+### 5. The MoE Trilemma
+
+Deploying MoE models at scale reveals a fundamental three-way tradeoff:
+
+- **Load imbalance**: Uneven expert utilization hurts efficiency
+- **Parameter redundancy**: Underused experts waste memory
+- **Communication overhead**: Expert routing requires GPU communication
+
+**The constraint**: Cannot optimize all three simultaneously. Improving one dimension often worsens another. This trilemma shapes design decisions for frontier MoE models.
 
 ---
 
@@ -715,63 +769,6 @@ This progression suggests an exponential trend, but the story is more complex th
   - Number of activated experts
   - Ratio of shared to routed experts
 - These factors interact in complex ways requiring new theoretical frameworks
-
-#### Major Challenges at Scale
-
-**1. Load Balancing & Expert Collapse**
-
-The most critical challenge: routers tend to select the same few experts repeatedly.
-
-- **Expert collapse**: Model converges to using only a subset of available experts
-- **Self-fulfilling loop**: Frequently selected experts train faster → get selected more often
-- **Resource wastage**: Idle experts consume memory without contributing
-
-**Solution approaches**:
-- Auxiliary loss functions to force balanced usage
-- DeepSeek-V3's auxiliary-loss-free architecture (advanced load balancing without penalty)
-- Shared experts that are always activated
-
-**2. Diminishing Returns**
-
-Research shows clear diminishing returns as expert counts increase:
-
-> "More experts lead to improved sample efficiency and faster speedup, but these are **diminishing gains (especially after 256 or 512)**" — MoE Scaling research
-
-**Empirical Evidence**:
-- 4 → 8 experts: **Significant gains**
-- 8 → 16 experts: **Little additional gain**
-- 256 → 512 experts: **Marginal improvements**, dataset size dependent
-
-**Why?** If the training dataset is sufficiently small, adding capacity via more experts has diminishing returns. The model can't learn meaningful specialization without enough data per expert.
-
-**3. Infrastructure Bottlenecks**
-
-**Memory Requirements**:
-- Total parameters scale with expert count
-- More VRAM needed for inference
-- Memory footprint grows even though compute doesn't
-
-**Routing Costs**:
-> "For high granularity values, training can be **bottlenecked by routing cost**" — Scaling Laws research
-
-- Router network must evaluate all experts
-- Communication overhead in distributed systems
-- Routing operations become dominant at extreme scales
-
-**System Challenges**:
-- Non-uniform workload distribution
-- Dynamic expert selection complicates resource allocation
-- Synchronization overhead across GPUs
-
-**4. The MoE Trilemma**
-
-Deploying MoE models reveals a fundamental optimization trilemma:
-
-- **Load imbalance**: Uneven expert utilization
-- **Parameter redundancy**: Underused experts waste memory
-- **Communication overhead**: Expert routing requires GPU communication
-
-**The problem**: Cannot optimize all three simultaneously. Improving one often worsens another.
 
 #### Strategic Design Choices
 
