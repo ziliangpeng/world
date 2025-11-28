@@ -290,6 +290,28 @@ Beyond the two main approaches, several models use specialized tokenizer feature
 
 ---
 
+#### Mistral Tekken
+
+**Used by**: Mistral NeMo (July 2024), Mistral-Small-24B-Instruct-2501 (January 2025)
+
+**Based on**: tiktoken byte-level BPE
+
+**Vocabulary**: 131,072 tokens
+
+**Key improvements**:
+- Trained on 100+ languages with extensive multilingual coverage
+- 30% more efficient for source code compression
+- Outperforms Llama 3 tokenizer for ~85% of languages tested
+- Significantly better multilingual coverage than previous Mistral v1/v3 SentencePiece tokenizers (32K-32,768 tokens)
+
+**Why Mistral switched** (from SentencePiece):
+- Better compression efficiency across languages and code
+- Improved multilingual support critical for global deployment
+- Competitive with frontier models (Llama 3, GPT-4)
+- tiktoken's proven scalability and performance at 100K+ vocabulary sizes
+
+---
+
 # Part III: Evolution & Adoption
 
 ## 4. The Tokenization Journey (2017-2025)
@@ -563,6 +585,8 @@ The history of tokenization mirrors the broader evolution of language models—f
 | **Gemma 2** | 2024 | SentencePiece | 256,000 | **Largest!** |
 | **Llama 4** | 2025 | tiktoken BPE | 128,256 | Maintained Llama 3 approach |
 | **Mistral v3** | 2024 | SentencePiece | 32,768 | Slight expansion |
+| **Mistral NeMo** | 2024 | tiktoken (Tekken) | 131,072 | Mistral switches to tiktoken |
+| **Mistral-Small-24B-Instruct-2501** | 2025 | tiktoken (Tekken) | 131,072 | Continued Tekken adoption |
 
 ### Proprietary Models (Details Known)
 
@@ -969,6 +993,9 @@ print(len(enc.encode("Your text here")))
 - [Llama Documentation - Hugging Face](https://huggingface.co/docs/transformers/model_doc/llama)
 - [Llama 2 Documentation - Hugging Face](https://huggingface.co/docs/transformers/model_doc/llama2)
 - [Mistral Tokenization Guide](https://docs.mistral.ai/guides/tokenization/)
+- [Mistral NeMo Announcement (Tekken)](https://mistral.ai/news/mistral-nemo)
+- [Mistral AI & NVIDIA Release Mistral NeMo with Tekken Tokenizer](https://www.marktechpost.com/2024/07/18/mistral-ai-and-nvidia-collaborate-to-release-mistral-nemo-a-12b-open-llm-featuring-128k-context-window-multilingual-capabilities-and-tekken-tokenizer/)
+- [Mistral-Small-24B-Instruct-2501 - HuggingFace](https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501)
 - [Qwen Documentation - Hugging Face](https://huggingface.co/docs/transformers/model_doc/qwen2)
 - [Gemma 2 Documentation - Hugging Face](https://huggingface.co/docs/transformers/model_doc/gemma2)
 - [Gemma Explained - Google Developers](https://developers.googleblog.com/en/gemma-explained-overview-gemma-model-family-architectures/)
