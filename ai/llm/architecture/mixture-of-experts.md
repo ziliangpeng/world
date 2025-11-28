@@ -263,6 +263,20 @@ Mixtral 8x7B: 13B FLOPs per token
 Result: ~5x cheaper inference per token
 ```
 
+### Benefits and Trade-offs Summary
+
+**Key Advantages**:
+1. **Efficient scaling**: Add capacity without proportional compute increase (671B params with 37B active compute)
+2. **Specialization**: Different experts learn different patterns, better performance than dense models of same compute
+3. **Faster inference**: Lower FLOPs per token, better throughput
+4. **Cost-effective training**: DeepSeek-V3 $5.57M for 671B parameters vs $50-100M+ for dense equivalent
+
+**Key Trade-offs**:
+1. **Memory requirements**: Must store ALL experts, higher memory footprint than dense model of same active size
+2. **Implementation complexity**: Router logic, load balancing, expert parallelism
+3. **Communication overhead**: Distributed systems require routing communication, can bottleneck at scale
+4. **Quality ceiling**: Best MoE ≈ much larger dense model, but doesn't exactly match largest dense models
+
 ---
 
 ## Core Concept
@@ -576,47 +590,6 @@ top_k = select_top_k(expert_affinities, k)
 - 47B available, 13B active per token
 - 25% activation rate
 - **Open-sourced** (Apache 2.0)
-
----
-
-## MoE Benefits and Trade-offs
-
-### Advantages
-
-**1. Efficient Scaling**:
-- Add capacity without proportional compute increase
-- 671B parameters with 37B active compute
-
-**2. Specialization**:
-- Different experts learn different patterns
-- Better performance than dense models of same compute
-
-**3. Faster Inference**:
-- Lower FLOPs per token
-- Better throughput
-
-**4. Cost-Effective Training**:
-- DeepSeek-V3: $5.57M for 671B parameters
-- Significantly cheaper than dense alternatives
-
-### Disadvantages
-
-**1. Memory Requirements**:
-- Must store ALL experts
-- Higher memory footprint than dense model of same active size
-
-**2. Implementation Complexity**:
-- Router logic
-- Load balancing
-- Expert parallelism
-
-**3. Communication Overhead**:
-- Distributed systems: routing requires communication
-- Can bottleneck at scale
-
-**4. Quality Ceiling**:
-- Best MoE ≈ much larger dense model
-- But never exactly matching largest dense models
 
 ---
 
