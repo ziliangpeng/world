@@ -63,7 +63,7 @@ Major open source LLM families with full architecture documentation.
 
 ---
 
-## [Meta Llama Series](open-source-models/meta-llama.md)
+## [Meta Llama Series](open-source-models/meta/meta-llama-overview.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
@@ -81,7 +81,7 @@ Major open source LLM families with full architecture documentation.
 | Apr 2025 | 📜 [Llama 4](https://arxiv.org/abs/2510.12178) | 🔥 Scout 17B, Maverick, Behemoth 288B - MoE, multimodal, 10M context |
 | Apr 2025 | [Prompt Guard 2](https://huggingface.co/meta-llama/Llama-Prompt-Guard-2-86M) | 🔥 86M, 22M - Injection attack prevention |
 
-## [Mistral/Mixtral](open-source-models/mistral-mixtral.md)
+## [Mistral/Mixtral](open-source-models/mistral/mistral-overview.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
@@ -100,7 +100,7 @@ Major open source LLM families with full architecture documentation.
 | Nov 2024 | [Mistral Large 24.11](https://mistral.ai/news/pixtral-large) | 🥱 Dense 123B, improved long context, 131K context |
 | Nov 2024 | [Pixtral Large](https://mistral.ai/news/pixtral-large) | 🔥 Multimodal, 123B + 1B vision encoder, frontier multimodal |
 
-## [Qwen Series](open-source-models/qwen.md)
+## [Qwen Series](open-source-models/alibaba/alibaba-qwen-overview.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
@@ -123,7 +123,7 @@ Major open source LLM families with full architecture documentation.
 | Sep 2025 | Qwen3-Max | 🥱 Flagship proprietary |
 | Sep 2025 | [Qwen3-Next](https://github.com/QwenLM/Qwen3) | 🥱 80B total, 3B active MoE |
 
-## [DeepSeek](open-source-models/deepseek.md)
+## [DeepSeek](open-source-models/deepseek/deepseek-overview.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
@@ -151,7 +151,7 @@ Major open source LLM families with full architecture documentation.
 | Sep 2025 | [DeepSeek-V3.2-Exp](https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp) | 🥱 671B MoE - Sparse attention optimization |
 | Oct 2025 | 📜 [DeepSeek-OCR](https://arxiv.org/abs/2510.18234) | 🔥 3B MoE (570M active) - Optical context compression |
 
-## [Google Gemma](open-source-models/google-gemma.md)
+## [Google Gemma](open-source-models/google/google-gemma-overview.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
@@ -163,7 +163,7 @@ Major open source LLM families with full architecture documentation.
 | Mar 2025 | 📜 [Gemma 3](https://arxiv.org/abs/2503.19786) | 🔥 270M-27B - Multimodal, 140+ languages |
 | Mar 2025 | 📜 [ShieldGemma 2](https://arxiv.org/abs/2504.01081) | 🥱 4B - Safety assessment model |
 
-## [Microsoft Phi](open-source-models/microsoft-phi.md)
+## [Microsoft Phi](open-source-models/microsoft/microsoft-phi-overview.md)
 
 | Date | Model | Notes |
 |------|-------|-------|
@@ -186,10 +186,10 @@ Major open source LLM families with full architecture documentation.
 
 | Date | Model | Notes |
 |------|-------|-------|
-| Nov 2024 | 📜 [INTELLECT-1](open-source-models/prime-intellect-1.md) | 🔥 10B - First decentralized pre-training, DiLoCo, PRIME framework |
-| May 2025 | 📜 [INTELLECT-2](open-source-models/prime-intellect-2.md) | 🔥 32B - First decentralized RL training, TOPLOC, SHARDCAST |
+| Nov 2024 | 📜 [INTELLECT-1](open-source-models/prime/prime-intellect-1.md) | 🔥 10B - First decentralized pre-training, DiLoCo, PRIME framework |
+| May 2025 | 📜 [INTELLECT-2](open-source-models/prime/prime-intellect-2.md) | 🔥 32B - First decentralized RL training, TOPLOC, SHARDCAST |
 
-## [Other Notable Models](open-source-models/other-models.md)
+## [Other Notable Models](open-source-models/other/other-models.md)
 
 | Date | Model | Size | Organization | Notes |
 |------|-------|------|--------------|-------|

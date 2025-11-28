@@ -267,7 +267,7 @@ Modern large-scale training combines all three:
 
 ### Phase 6: Expert Parallelism for MoE (2022-Present)
 
-[Mixture of Experts](../architectural-patterns/mixture-of-experts.md) adds a new dimension:
+[Mixture of Experts](../../architecture/mixture-of-experts.md) adds a new dimension:
 
 ```
 Expert Parallelism (EP): Distribute experts across GPUs

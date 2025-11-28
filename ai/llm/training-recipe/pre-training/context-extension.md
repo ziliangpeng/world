@@ -785,7 +785,7 @@ sft(model, instruction_data, steps=5000)
 ---
 
 **Related Documentation**:
-- [Context Windows](../architecture/architectural-patterns/context-windows.md) - Architecture fundamentals
-- [Position Embeddings](../architecture/architectural-patterns/position-embeddings.md) - RoPE and alternatives
+- [Context Windows](../../architecture/context-windows.md) - Architecture fundamentals
+- [Position Embeddings](../../architecture/position-embeddings.md) - RoPE and alternatives
 - [Training Stability](training-stability.md) - Handling training issues during extension
 - [Evaluation](../llmops/evaluation.md) - How to evaluate extended models

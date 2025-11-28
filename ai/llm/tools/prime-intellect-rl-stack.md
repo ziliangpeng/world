@@ -593,9 +593,9 @@ trainer.train(steps=1000)
 - **Innovation**: Extended decentralized training to RL (not just pre-training)
 
 For full INTELLECT series documentation, see:
-- [INTELLECT-1 docs](../open-source-models/prime-intellect-1.md): Decentralized pre-training
-- [INTELLECT-2 docs](../open-source-models/prime-intellect-2.md): Decentralized RL
-- [INTELLECT-3 docs](../open-source-models/prime-intellect-3.md): Large-scale centralized RL
+- [INTELLECT-1 docs](../open-source-models/prime/prime-intellect-1.md): Decentralized pre-training
+- [INTELLECT-2 docs](../open-source-models/prime/prime-intellect-2.md): Decentralized RL
+- [INTELLECT-3 docs](../open-source-models/prime/prime-intellect-3.md): Large-scale centralized RL
 
 ---
 

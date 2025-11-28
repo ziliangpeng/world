@@ -57,12 +57,12 @@ Private models with known architectural details:
 
 Common patterns and innovations across models:
 
-- [Attention Mechanisms](architectural-patterns/attention-mechanisms.md) - MHA, MQA, GQA, MLA, FlashAttention
-- [Position Embeddings](architectural-patterns/position-embeddings.md) - RoPE, ALiBi, Sinusoidal
-- [Activation & Normalization](architectural-patterns/activation-normalization.md) - SwiGLU, GELU, RMSNorm, LayerNorm
-- [Mixture of Experts](architectural-patterns/mixture-of-experts.md) - MoE architectures and implementations
-- [Tokenizers](architectural-patterns/tokenizers.md) - BPE, SentencePiece, tiktoken
-- [Context Windows](architectural-patterns/context-windows.md) - Evolution and scaling techniques
+- [Attention Mechanisms](attention-mechanisms.md) - MHA, MQA, GQA, MLA, FlashAttention
+- [Position Embeddings](position-embeddings.md) - RoPE, ALiBi, Sinusoidal
+- [Activation & Normalization](activation-normalization.md) - SwiGLU, GELU, RMSNorm, LayerNorm
+- [Mixture of Experts](mixture-of-experts.md) - MoE architectures and implementations
+- [Tokenizers](tokenizers.md) - BPE, SentencePiece, tiktoken
+- [Context Windows](context-windows.md) - Evolution and scaling techniques
 
 ## Key Trends (2024-2025)
 

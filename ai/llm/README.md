@@ -11,7 +11,7 @@ Comprehensive documentation of Large Language Model architectures, training meth
 
 ### 🏗️ Architecture
 - **[Architecture Documentation](architecture/README.md)** - Comprehensive architectural research
-  - [Architectural Patterns](architecture/architectural-patterns/) - Attention mechanisms, position embeddings, MoE, tokenizers, etc.
+  - [Architectural Patterns](architecture/) - Attention mechanisms, position embeddings, MoE, tokenizers, etc.
 - **[Important LLM Papers](important-llm-papers.md)** - Foundational research and breakthrough techniques
 
 ### 🎓 Training & Operations

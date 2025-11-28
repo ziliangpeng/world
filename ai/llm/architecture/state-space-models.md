@@ -93,7 +93,7 @@ This selectivity allows Mamba to dynamically decide what to remember or forget�
 
 **Results**: Mamba-3B matched Transformer-6B quality with 5× higher throughput.
 
-> **See also**: [Mamba model documentation](../../open-source-models/cmu-princeton-mamba.md)
+> **See also**: [Mamba model documentation](../open-source-models/cmu/cmu-princeton-mamba.md)
 
 ### Phase 4: Hardware-Efficient SSMs (2024)
 
@@ -116,7 +116,7 @@ Key insight: restricting A to scalar×identity (not just diagonal) enables using
 | GPU utilization | Low (no tensor cores) | High (tensor cores) |
 | Training speed | Baseline | 2-8× faster |
 
-> **See also**: [Mamba-2 model documentation](../../open-source-models/cmu-princeton-mamba-2.md)
+> **See also**: [Mamba-2 model documentation](../open-source-models/cmu/cmu-princeton-mamba-2.md)
 
 ---
 
@@ -204,7 +204,7 @@ This enables parallel training while maintaining linear complexity.
 - Evolved through versions 4→5→6→7
 - RWKV-7 "Goose" achieves in-context learning
 
-> **See also**: [RWKV documentation](../../open-source-models/blinkdl-rwkv.md)
+> **See also**: [RWKV documentation](../open-source-models/other/blinkdl-rwkv.md)
 
 **[xLSTM](https://arxiv.org/abs/2405.04517)** (2024)
 
@@ -214,7 +214,7 @@ Extended LSTM from original inventor Sepp Hochreiter:
 - **mLSTM**: Parallelizable matrix memory
 - Competitive with Transformers at 1-7B scale
 
-> **See also**: [xLSTM documentation](../../open-source-models/nxai-xlstm.md)
+> **See also**: [xLSTM documentation](../open-source-models/other/nxai-xlstm.md)
 
 ### Comparison Matrix
 
