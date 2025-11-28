@@ -705,25 +705,6 @@ Tokenizer B: ['Hello,', 'how', 'are', 'you?'] = 4 tokens
 - Fewer tokens = faster inference and training
 - Critical for long-context models
 
-### Multilingual Performance
-
-**Example**: Chinese text
-
-**English-focused tokenizer** (32K vocab):
-```
-"你好世界" → 8-12 tokens (character-level fallback)
-```
-
-**Multilingual tokenizer** (128K vocab):
-```
-"你好世界" → 2-4 tokens (proper subwords)
-```
-
-**Impact**:
-- 3-6x more efficient for non-English
-- Better long-context support
-- Improved performance on multilingual tasks
-
 ### Out-of-Vocabulary Handling
 
 **Good tokenizer**: Graceful degradation to subwords/characters
