@@ -166,6 +166,29 @@ pass@10: Best of 10 attempts
 pass@100: Best of 100 attempts (measures capability ceiling)
 ```
 
+### Multimodal Benchmarks
+
+| Benchmark | Questions | Format | What It Tests |
+|-----------|-----------|--------|---------------|
+| **RealWorldQA** | Visual QA | Image + question | Real-world spatial understanding |
+| **MMMU** | 11.5K | Multi-discipline MC | College-level multimodal reasoning |
+| **MathVista** | 6,141 | Visual math | Mathematical reasoning from diagrams |
+
+**RealWorldQA Details**:
+```
+Created by: xAI (April 2024)
+Released with: Grok-1.5V
+
+Focus: Real-world spatial understanding from driving scenarios
+- Tests physical world reasoning using images
+- Emphasis on practical spatial relationships
+- Requires understanding of real-world context
+
+Notable Performance:
+- Grok-1.5V: 68.7%
+- GPT-4V: 61.4%
+```
+
 ### Instruction Following
 
 | Benchmark | Questions | Format | Evaluation |
