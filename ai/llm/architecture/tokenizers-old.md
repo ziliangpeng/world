@@ -1,147 +1,105 @@
 # Tokenizers
 
-Tokenization is the process of converting text into numerical tokens that language models can process. The choice of tokenizer profoundly impacts model efficiency, multilingual capabilities, and overall performance.
+Tokenization is the process of converting text into numerical tokens that models can process. The choice of tokenizer significantly impacts model efficiency, multilingual support, and performance.
 
----
-
-# Part I: Foundation (Why & What)
-
-## 1. Introduction & Motivation
-
-### What is Tokenization?
+## Why Tokenization Matters
 
 **Text → Tokens → Model → Tokens → Text**
 
-Every language model must bridge the gap between human text and numerical computation. Tokenization is that bridge—breaking text into discrete units (tokens) that can be embedded as vectors and processed by neural networks.
-
-### Why Tokenization Matters
-
-The tokenizer is not just a pre-processing step—it's a fundamental architectural choice that affects:
-
-1. **Vocabulary size**: Determines embedding matrix size (# params)
-2. **Sequence length**: Fewer tokens = faster inference, less memory
-3. **Multilingual support**: How efficiently non-English languages are encoded
-4. **Model performance**: Subtle but measurable impacts on downstream tasks
-5. **Training efficiency**: Shorter sequences reduce compute costs
-
-### The Core Tension
-
-Tokenization involves fundamental trade-offs:
-
-**Small Vocabulary (30-50K)**:
-- ✅ Fewer parameters (smaller embedding matrix)
-- ✅ Faster output projection
-- ❌ More tokens per text (longer sequences)
-- ❌ Poor multilingual support
-
-**Large Vocabulary (100-256K)**:
-- ✅ Fewer tokens per text (better compression)
-- ✅ Better multilingual efficiency
-- ❌ More parameters (larger embedding + output layer)
-- ❌ Higher training cost
-
-The industry has evolved from 30K → 50K → 100K → 256K vocabularies as models scale and multilingual AI becomes essential.
+Tokenization affects:
+1. **Vocabulary size**: Model embedding size
+2. **Sequence length**: Longer sequences = more compute
+3. **Multilingual support**: How well non-English works
+4. **Efficiency**: Tokens per text unit
+5. **Model performance**: Subtle but real impacts
 
 ---
 
-## 2. How Tokenization Works: Byte-Pair Encoding (BPE)
+## Byte-Pair Encoding (BPE)
 
 ### Foundation for Most Tokenizers
 
-Nearly all modern tokenizers—SentencePiece, tiktoken, GPT's tokenizer—are built on **Byte-Pair Encoding (BPE)**, a data-driven algorithm that learns subword vocabularies from training data.
-
-### The BPE Algorithm
-
 **Core Algorithm**:
-1. Start with character-level vocabulary (or bytes)
-2. Find most frequent adjacent pair in corpus
-3. Merge that pair into a new token
-4. Repeat until target vocabulary size reached
+1. Start with character-level vocabulary
+2. Find most frequent adjacent pair
+3. Merge pair into new token
+4. Repeat until target vocabulary size
 
 **Example**:
 ```
 Text: "lower lower lower lowest"
-Initial vocabulary: ['l', 'o', 'w', 'e', 'r', ...]
+Initial: ['l', 'o', 'w', 'e', 'r', ...]
 
 Iteration 1:
-Most frequent pair: ('e', 'r') → merge into 'er'
+Most frequent pair: ('e', 'r') → 'er'
 Result: ['l', 'o', 'w', 'er', ...]
 
 Iteration 2:
-Most frequent pair: ('l', 'o') → merge into 'lo'
+Most frequent pair: ('l', 'o') → 'lo'
 Result: ['lo', 'w', 'er', ...]
 
-Iteration 3:
-Most frequent pair: ('lo', 'w') → merge into 'low'
-Result: ['low', 'er', ...]
-
 Continue merging...
-Final vocabulary includes: ['low', 'er', 'est', ...]
-Final tokenization: "lower" → ['low', 'er']
+Final: ['low', 'er', 'low', 'est']
 ```
 
-### Properties of BPE
+**Properties**:
+- Data-driven vocabulary
+- Balances word-level and character-level
+- Can handle unseen words (fall back to characters)
+- Deterministic encoding
 
-**Advantages**:
-1. **Handles unknown words**: Can tokenize anything by falling back to characters/bytes
-2. **Efficient**: Good compression of common text patterns
-3. **Language-agnostic**: Works for any language (no hand-crafted rules)
-4. **Data-driven**: Learns vocabulary from actual corpus
+### Advantages
 
-**Disadvantages**:
-1. **Context-independent**: "new" in "news" vs "new car" tokenized identically
-2. **Greedy**: Locally optimal merges may not be globally optimal
-3. **Corpus-dependent**: Different training data → different vocabularies
+1. **Handles unknown words**: Can tokenize anything
+2. **Efficient**: Good compression of common text
+3. **Language-agnostic**: Works for any language
+4. **Data-driven**: Learns from corpus
+
+### Disadvantages
+
+1. **Context-independent**: "new" in "news" vs "new car" same tokenization
+2. **Greedy**: Locally optimal merges might not be globally optimal
+3. **Corpus-dependent**: Different corpora → different vocabularies
 
 ---
 
-# Part II: Tokenizer Technologies
+## SentencePiece
 
-## 3. The Three Approaches
+### Used By: Llama 1/2, Mistral, Yi, Qwen (early), Most Open-Source Models
 
-Modern LLMs use three main tokenizer implementations: **SentencePiece** (language-independent BPE), **tiktoken** (optimized byte-level BPE), and specialized variants. Understanding these technologies is essential for interpreting model architectures.
+**Key Innovation**: Treats text as raw stream, includes whitespace
 
-### 3.1 SentencePiece
-
-**Used by**: Llama 1/2, Mistral/Mixtral, Yi, Gemma 2, early Qwen models
-
-**Key Innovation**: Treats text as a raw stream, with whitespace encoded as a special character (`▁`).
-
-#### How It Works
-
-SentencePiece differs from traditional word-based BPE:
-- Works directly on Unicode code points (no pre-tokenization)
-- Treats spaces as special character (`▁` = U+2581)
-- Truly language-independent from the start
-- No assumptions about word boundaries
+**Differences from word-based BPE**:
+- Works on Unicode code points
+- Treats spaces as special character (▁)
+- Language-independent from the start
 
 **Example**:
-```python
+```
 Text: "Hello world"
 SentencePiece: ['▁Hello', '▁world']  # ▁ represents space
 
-Text: "你好世界" (Chinese: "Hello world")
-SentencePiece: ['▁你好', '▁世界']  # Works identically
+Text: "你好世界" (Chinese)
+SentencePiece: ['▁你好', '▁世界']  # Works same way
 ```
 
-#### Features
+**Features**:
+- No preprocessing required
+- Truly language-agnostic
+- Reversible encoding (preserves spaces)
+- Subword regularization (for training)
 
-- **No preprocessing required**: Raw text → tokens directly
-- **Truly language-agnostic**: Unicode support, no language-specific rules
-- **Reversible encoding**: Can exactly recover original text (lossless)
-- **Subword regularization**: Optional stochastic sampling for training robustness
-
-#### Advantages
+### Advantages
 
 1. **Language-independent**: No language-specific preprocessing or assumptions about text structure
-2. **Handles any text**: Full Unicode support
+2. **Handles any text**: Unicode support
 3. **Reversible**: Can exactly recover original text (lossless encoding)
 4. **Training features**: Subword regularization for robustness
 5. **Scalable**: Can scale from 32K to 256K vocabulary (proven by Gemma 2)
 6. **Mature and stable**: Well-understood, battle-tested in production
 7. **Backward compatibility**: Existing models maintain tokenizer for consistency
 
-#### Implementation
+### Implementation
 
 ```python
 import sentencepiece as spm
@@ -151,150 +109,92 @@ spm.SentencePieceTrainer.train(
     input='corpus.txt',
     model_prefix='tokenizer',
     vocab_size=32000,
-    character_coverage=0.9995,  # Ensure rare chars covered
-    model_type='bpe'            # or 'unigram'
+    character_coverage=0.9995,
+    model_type='bpe'
 )
 
 # Load and use
-sp = spm.SentencePieceProcessor(model_file='tokenizer.model')
-tokens = sp.encode('Hello world', out_type=str)
-# ['▁Hello', '▁world']
+sp = spm.SentencePieceProcessor()
+sp.load('tokenizer.model')
 
-text = sp.decode(tokens)
-# 'Hello world'
+tokens = sp.encode_as_pieces("Hello world")
+# ['▁Hello', '▁world']
 ```
 
 ---
 
-### 3.2 tiktoken
+## tiktoken
 
-**Used by**: GPT-4, GPT-4o, Llama 3, Qwen 2.5, DeepSeek V2/V3, Phi-3/4
+### Used By: GPT-4, Llama 3, GPT-3.5
 
-**Key Innovation**: Optimized byte-level BPE implementation designed for efficiency and large vocabularies.
+**Key Innovation**: UTF-8 byte-level BPE
 
-#### How It Works
+**Approach**:
+- Works on UTF-8 bytes, not code points
+- 256 bytes as base vocabulary
+- Builds up from there with BPE
 
-tiktoken operates at the **UTF-8 byte level** rather than Unicode code points:
-- Encodes text as UTF-8 bytes first
-- Applies BPE at byte level
-- No special handling of spaces (everything is bytes)
-- Extremely fast Rust implementation
+**Differences from SentencePiece**:
+```
+SentencePiece: Works on code points (characters)
+tiktoken: Works on UTF-8 bytes
 
-**Example**:
-```python
-Text: "Hello world"
-UTF-8 bytes: [72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
-tiktoken (conceptual): ['Hello', ' world']  # After BPE merges
-
-# In practice, tokens are opaque - might be bytes, subwords, or words
+Example: "你好" (Chinese)
+SentencePiece: Treats as 2 code points
+tiktoken: Treats as UTF-8 bytes (6 bytes)
 ```
 
-#### Features
+**Advantages**:
+1. **Can encode anything**: Any byte sequence is valid
+2. **Fast**: Optimized Rust implementation
+3. **No special cases**: Uniform handling
+4. **Open source**: Available for use
 
-- **UTF-8 byte-level**: Can encode any valid UTF-8 without unknown tokens
-- **Deterministic**: No special cases, consistent encoding
-- **Fast**: Optimized Rust core (~5-10x faster than pure Python)
-- **Large vocabulary support**: Efficiently handles 100K-200K token vocabularies
+### tiktoken Encodings
 
-#### Advantages
+**cl100k_base** (GPT-4, GPT-3.5-turbo):
+- ~100,000 tokens
+- Used in GPT-4
+- Better multilingual support than earlier versions
 
-1. **Universal encoding**: Handles any UTF-8 text (including emojis, rare scripts)
-2. **No special cases**: Clean, uniform byte-level representation
-3. **Optimized for speed**: Critical for high-throughput inference
-4. **Better compression**: Typically 20-40% fewer tokens than 32K SentencePiece
-5. **Multilingual efficiency**: 3-6x better for non-English (with large vocab)
+**o200k_base** (Newer models):
+- ~200,000 tokens
+- Even better efficiency
 
-#### Available Encodings
+### Vocabulary Evolution in OpenAI Models
 
-| Encoding | Vocabulary | Used By |
-|----------|-----------|---------|
-| **r50k_base** | 50,257 | GPT-3, early GPT-3.5 |
-| **p50k_base** | 50,281 | Codex, code-davinci-002 |
-| **cl100k_base** | 100,277 | GPT-4, GPT-3.5-turbo |
-| **o200k_base** | 200,019 | GPT-4o |
+| Model | Encoding | Vocab Size |
+|-------|----------|-----------|
+| GPT-2 | GPT-2 BPE | ~50K |
+| GPT-3 | GPT-2 BPE | ~50K |
+| GPT-3.5/4 | cl100k_base | ~100K |
+| Newer | o200k_base | ~200K |
 
-#### Implementation
+**Trend**: Larger vocabularies over time
+
+### Implementation
 
 ```python
 import tiktoken
 
-# Load encoding
-enc = tiktoken.get_encoding("cl100k_base")  # GPT-4 tokenizer
+# GPT-4 tokenizer
+enc = tiktoken.encoding_for_model("gpt-4")
 
 # Encode
-tokens = enc.encode("Hello world")
-# [9906, 1917]  # Actual token IDs (opaque)
+tokens = enc.encode("Hello, world!")
+# [9906, 11, 1917, 0]
 
 # Decode
 text = enc.decode(tokens)
-# 'Hello world'
+# "Hello, world!"
 
-# Count tokens (useful for API limits)
-num_tokens = len(enc.encode("Your text here"))
+# Count tokens
+num_tokens = len(enc.encode("Some text"))
 ```
 
 ---
 
-### 3.3 Special Features & Variants
-
-Beyond the two main approaches, several models use specialized tokenizer features or custom implementations.
-
-#### Arcade100k (StableLM)
-
-**Based on**: tiktoken `cl100k_base` (GPT-4's tokenizer)
-
-**Special feature**: Digits split into individual tokens
-```python
-"12345" → ['1', '2', '3', '4', '5']
-```
-
-**Rationale**: Forces model to learn mathematical properties of numbers rather than memorizing them as fixed entities. Improves numerical reasoning.
-
----
-
-#### Llama 3 Tokenizer
-
-**Based on**: tiktoken byte-level BPE
-
-**Vocabulary**: 128,256 tokens (128K, rounded to power-of-2 + special tokens)
-
-**Special optimizations**:
-- Heavily optimized for multilingual text (especially non-Latin scripts)
-- Increased code token coverage
-- Better handling of structured data (JSON, XML)
-
-**Why Meta switched** (from SentencePiece in Llama 2):
-- 3x better compression for non-English
-- Llama 3's multilingual focus required larger, more efficient vocabulary
-- Inference speed gains from shorter sequences
-
----
-
-#### Qwen Tokenizers (Evolution)
-
-**Qwen 1.5 / 2.0**: SentencePiece (64K vocab)
-**Qwen 2.5**: Custom tiktoken-based (152K vocab)
-
-**Qwen 2.5 improvements**:
-- Better multilingual support (especially Chinese)
-- Optimized for code and technical text
-- Reduced token count for same content (~30% compression)
-
----
-
-#### Gemma 2: Largest SentencePiece
-
-**Vocabulary**: 256,000 tokens (largest known SentencePiece deployment)
-
-**Significance**: Proves SentencePiece can scale to ultra-large vocabularies while maintaining stability. Shows the technology isn't limited to 32-64K range.
-
----
-
-# Part III: Evolution & Adoption
-
-## 4. The Tokenization Journey (2017-2025)
-
-The history of tokenization mirrors the broader evolution of language models—from experimental diversity to standardization, driven by multilingual requirements and competitive pressure.
+## The Tokenization Transition Story
 
 ### Phase 1: Early BPE Era (2017-2020)
 
@@ -474,7 +374,7 @@ The history of tokenization mirrors the broader evolution of language models—f
 - Optimized for heavily multilingual use
 
 **Current State** (2025):
-- **Trend**: ~80% of new models use 100K+ vocabularies
+- **RoPE**: ~80% of new models use 100K+ vocabularies
 - **100-128K**: New standard (Llama 3/4, DeepSeek, Qwen)
 - **200-256K**: Specialized heavily multilingual (GPT-4o, Gemma)
 - **32K**: Legacy (older models, backward compatibility)
@@ -513,7 +413,7 @@ The history of tokenization mirrors the broader evolution of language models—f
 
 ---
 
-## 5. Tokenizers by Model (2017-2025)
+## Tokenizers by Model (2017-2025)
 
 ### Early BPE Era (2017-2020)
 
@@ -573,7 +473,7 @@ The history of tokenization mirrors the broader evolution of language models—f
 
 ---
 
-## 6. Current Consensus (2024-2025)
+## Current Tokenization Consensus (2024-2025)
 
 ### tiktoken-Based with 100K+ Vocab: New Standard
 
@@ -622,13 +522,57 @@ The history of tokenization mirrors the broader evolution of language models—f
 
 ---
 
-# Part IV: The Driving Forces
+## Why Transitions Happened
 
-## 7. Why Transitions Happened
+### Early BPE → SentencePiece (2019-2020)
 
-### 7.1 Multilingual Efficiency: The Driving Force
+**Drivers**:
+1. **Multilingual necessity**: WordPiece assumes spaces, fails for CJK languages
+2. **Preprocessing complexity**: SentencePiece eliminates language-specific rules
+3. **Lossless requirement**: Perfect reversibility needed
+4. **T5's success**: Google's validation mattered
+5. **Simplicity**: One tool for all languages
 
-#### The Problem with Small Vocabularies
+**Impact**: SentencePiece became standard for open-source multilingual models (2020-2023)
+
+### SentencePiece 32K → tiktoken 100K+ (2023-2024)
+
+**Drivers**:
+1. **Research proved 32K too small**: Llama 2-70B should have had 216K (7x larger)
+2. **Multilingual inefficiency**: 3-6x more tokens for Chinese with 32K
+3. **GPT-4's success**: Proved 100K viable and beneficial
+4. **Competitive pressure**: Open models had to match GPT-4's efficiency
+5. **Hardware improvements**: Modern GPUs handle larger embedding matrices
+6. **Fairness concerns**: Under-tokenized languages perform worse and cost more
+
+**The Llama 3 Effect**:
+- Meta's switch from SentencePiece (32K) to tiktoken (128K) validated the transition
+- Most subsequent models followed: Qwen, DeepSeek, Phi
+- 128K became the new "standard" like 32K was before
+
+**Quantified Benefits**:
+- **English**: 10-15% compression improvement
+- **Chinese**: 40% length reduction, 3-6x efficiency gain
+- **Indic languages**: 3-4x improvement (GPT-4o)
+- **Code**: 20-30% better tokenization
+- **Overall**: 20-40% fewer tokens for same text
+
+### 100K → 200-256K (2024)
+
+**Drivers**:
+1. **Heavily multilingual models**: BLOOM, Gemma, GPT-4o
+2. **Diminishing returns understood**: Beyond 256K not worth it yet
+3. **Specialized use cases**: Global products need equal language support
+4. **Research shows**: Optimal vocab scales with model size
+5. **Competition**: Push for "best multilingual" claims
+
+**Open Question**: Will 256K become standard, or is 100-128K the sweet spot?
+
+---
+
+## Multilingual Efficiency: The Driving Force
+
+### The Problem with Small Vocabularies
 
 **Example: Chinese Text with Different Vocabularies**
 
@@ -651,7 +595,7 @@ Proper subword representation, 3-6x better
 - **European languages**: 30% improvement
 - **Code**: 20-30% better
 
-#### Why This Matters
+### Why This Matters
 
 **User Impact**:
 1. **Cost**: Token-based pricing means non-English users pay 3-6x more with small vocabs
@@ -669,57 +613,11 @@ Proper subword representation, 3-6x better
 - Training compute (more training justifies more embedding parameters)
 - Language coverage (multilingual requires larger vocabs)
 
-#### Historical Transitions Driven by Multilingual Needs
-
-**Early BPE → SentencePiece (2019-2020)**:
-
-**Drivers**:
-1. **Multilingual necessity**: WordPiece assumes spaces, fails for CJK languages
-2. **Preprocessing complexity**: SentencePiece eliminates language-specific rules
-3. **Lossless requirement**: Perfect reversibility needed
-4. **T5's success**: Google's validation mattered
-5. **Simplicity**: One tool for all languages
-
-**Impact**: SentencePiece became standard for open-source multilingual models (2020-2023)
-
-**SentencePiece 32K → tiktoken 100K+ (2023-2024)**:
-
-**Drivers**:
-1. **Research proved 32K too small**: Llama 2-70B should have had 216K (7x larger)
-2. **Multilingual inefficiency**: 3-6x more tokens for Chinese with 32K
-3. **GPT-4's success**: Proved 100K viable and beneficial
-4. **Competitive pressure**: Open models had to match GPT-4's efficiency
-5. **Hardware improvements**: Modern GPUs handle larger embedding matrices
-6. **Fairness concerns**: Under-tokenized languages perform worse and cost more
-
-**The Llama 3 Effect**:
-- Meta's switch from SentencePiece (32K) to tiktoken (128K) validated the transition
-- Most subsequent models followed: Qwen, DeepSeek, Phi
-- 128K became the new "standard" like 32K was before
-
-**Quantified Benefits**:
-- **English**: 10-15% compression improvement
-- **Chinese**: 40% length reduction, 3-6x efficiency gain
-- **Indic languages**: 3-4x improvement (GPT-4o)
-- **Code**: 20-30% better tokenization
-- **Overall**: 20-40% fewer tokens for same text
-
-**100K → 200-256K (2024)**:
-
-**Drivers**:
-1. **Heavily multilingual models**: BLOOM, Gemma, GPT-4o
-2. **Diminishing returns understood**: Beyond 256K not worth it yet
-3. **Specialized use cases**: Global products need equal language support
-4. **Research shows**: Optimal vocab scales with model size
-5. **Competition**: Push for "best multilingual" claims
-
-**Open Question**: Will 256K become standard, or is 100-128K the sweet spot?
-
 ---
 
-### 7.2 Vocabulary Size Evolution
+## Vocabulary Size Evolution
 
-#### Historical Trend
+### Historical Trend
 
 ```
 2018-2020: ~30-50K tokens
@@ -743,27 +641,38 @@ Proper subword representation, 3-6x better
 Trend: Exponential expansion
 ```
 
-#### The Economics of Larger Vocabularies
+## Special Tokenizer Features
 
-**Costs**:
-- **Embedding matrix**: 128K vocab × 4096 dims = ~524M parameters (vs 131M for 32K)
-- **Output layer**: Same size increase (another ~524M parameters)
-- **Total overhead**: ~400M extra parameters for 128K vs 32K vocab
-- **Training**: More tokens to learn, more data needed
+### Arcade100k (StableLM)
 
-**Benefits**:
-- **Compression**: 20-40% fewer tokens per text
-- **Inference speed**: Shorter sequences process faster
-- **Multilingual**: 3-6x better for non-English
-- **Quality**: Model capacity not wasted on sub-token composition
+**Based on**: tiktoken cl100k_base (GPT-4's tokenizer)
+**Extension**: Modified for StableLM specific needs
 
-**Break-even Point**: For models >7B parameters, the ~400M parameter overhead is <6% of total model size. The efficiency gains (faster inference, better quality, lower API costs) outweigh the embedding cost.
+**Special feature**: Digits split into individual tokens
+```
+"12345" → ['1', '2', '3', '4', '5']
+```
+
+**Rationale**: Better mathematical reasoning
+
+### Llama 3 Tokenizer
+
+**Base**: tiktoken
+**Vocabulary**: ~128,000 tokens
+
+**Improvements over Llama 2**:
+- 4x larger vocabulary (32K → 128K)
+- Better multilingual tokenization
+- More efficient encoding
+- Same byte-level approach as GPT-4
+
+**Impact**: Significant improvement in non-English performance
 
 ---
 
-### 7.3 Technical Performance Impact
+## Tokenization Impact on Model Performance
 
-#### Sequence Length Reduction
+### Sequence Length
 
 **More tokens = More compute**:
 ```
@@ -780,18 +689,14 @@ Tokenizer B: ['Hello,', 'how', 'are', 'you?'] = 4 tokens
 - Fewer tokens = faster inference and training
 - Critical for long-context models
 
-#### Out-of-Vocabulary Handling
+### Out-of-Vocabulary Handling
 
 **Good tokenizer**: Graceful degradation to subwords/characters
 **Poor tokenizer**: Many UNK tokens, information loss
 
-Modern byte-level BPE (tiktoken, GPT-2) eliminates UNK tokens entirely by falling back to raw bytes.
-
 ---
 
-# Part V: Design & Practice
-
-## 8. Tokenizer Design Trade-offs
+## Tokenizer Design Trade-offs
 
 ### Vocabulary Size
 
@@ -835,7 +740,7 @@ Modern byte-level BPE (tiktoken, GPT-2) eliminates UNK tokens entirely by fallin
 
 ---
 
-## 9. Practical Guidance
+## Practical Considerations
 
 ### Training a Tokenizer
 
@@ -865,6 +770,35 @@ Modern byte-level BPE (tiktoken, GPT-2) eliminates UNK tokens entirely by fallin
 - Changing = retraining from scratch
 
 **Fine-tuning**: Must use same tokenizer as base model
+
+---
+
+## Future Directions
+
+### Research Areas
+
+1. **Byte-level models**: Skip tokenization entirely (ByT5, etc.)
+2. **Learned tokenization**: Train tokenizer end-to-end with model
+3. **Context-sensitive**: Different tokenization based on context
+4. **Multimodal tokenizers**: Unified for text, image, audio
+
+### Trends
+
+1. **Larger vocabularies**: 256K+ tokens
+2. **Better multilingual**: Equal treatment of all languages
+3. **Efficiency focus**: Minimize tokens per text
+4. **Standardization**: tiktoken, SentencePiece dominate
+
+### Open Questions
+
+1. Optimal vocabulary size for given model size?
+2. Can we do better than BPE?
+3. How to handle code vs natural language optimally?
+4. Should digits/numbers be special-cased?
+
+---
+
+## Recommendations
 
 ### For Training New Models
 
@@ -900,32 +834,7 @@ print(len(enc.encode("Your text here")))
 
 ---
 
-## 10. Future Directions
-
-### Research Areas
-
-1. **Byte-level models**: Skip tokenization entirely (ByT5, etc.)
-2. **Learned tokenization**: Train tokenizer end-to-end with model
-3. **Context-sensitive**: Different tokenization based on context
-4. **Multimodal tokenizers**: Unified for text, image, audio
-
-### Trends
-
-1. **Larger vocabularies**: 256K+ tokens
-2. **Better multilingual**: Equal treatment of all languages
-3. **Efficiency focus**: Minimize tokens per text
-4. **Standardization**: tiktoken, SentencePiece dominate
-
-### Open Questions
-
-1. Optimal vocabulary size for given model size?
-2. Can we do better than BPE?
-3. How to handle code vs natural language optimally?
-4. Should digits/numbers be special-cased?
-
----
-
-## 11. Sources
+## Sources
 
 ### Foundational Papers
 - [Attention Is All You Need (2017)](https://arxiv.org/abs/1706.03762) - Original Transformer
