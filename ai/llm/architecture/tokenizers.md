@@ -91,10 +91,13 @@ SentencePiece: ['▁你好', '▁世界']  # Works same way
 
 ### Advantages
 
-1. **Language-independent**: No language-specific preprocessing
+1. **Language-independent**: No language-specific preprocessing or assumptions about text structure
 2. **Handles any text**: Unicode support
-3. **Reversible**: Can exactly recover original text
+3. **Reversible**: Can exactly recover original text (lossless encoding)
 4. **Training features**: Subword regularization for robustness
+5. **Scalable**: Can scale from 32K to 256K vocabulary (proven by Gemma 2)
+6. **Mature and stable**: Well-understood, battle-tested in production
+7. **Backward compatibility**: Existing models maintain tokenizer for consistency
 
 ### Implementation
 
@@ -500,12 +503,10 @@ num_tokens = len(enc.encode("Some text"))
 - Gemma 2 / Gemini (256K - largest implementation!)
 - Some multilingual models
 
-**Why SentencePiece Persists**:
-1. **Can scale**: Gemma 2's 256K proves viability
-2. **True language-independence**: No assumptions about text structure
-3. **Lossless**: Perfect reversibility
-4. **Mature**: Well-understood, stable
-5. **Backward compatibility**: Existing models can't switch
+**Why SentencePiece Still Thrives**:
+- **Ecosystem inertia**: Billions invested in models that can't switch tokenizers
+- **Research continuity**: Enables fair comparison across model generations
+- **Conservative choice**: Proven stability for production deployments
 
 ### The Vocabulary Size Consensus
 
