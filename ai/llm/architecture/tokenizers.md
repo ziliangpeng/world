@@ -89,18 +89,6 @@ SentencePiece: ['▁你好', '▁世界']  # Works same way
 - Reversible encoding (preserves spaces)
 - Subword regularization (for training)
 
-### Vocabulary Sizes in Practice
-
-| Model | Vocabulary | Tokenizer |
-|-------|-----------|-----------|
-| Llama 1 | 32K | SentencePiece |
-| Llama 2 | 32K | SentencePiece |
-| Mistral 7B | ~32K | SentencePiece |
-| Yi 34B | 64K | SentencePiece BPE |
-| Qwen 2 | 64K | SentencePiece |
-
-**Typical Range**: 32K - 64K tokens
-
 ### Advantages
 
 1. **Language-independent**: No language-specific preprocessing
@@ -668,21 +656,6 @@ Trend: Exponential expansion
 2. **Output layer**: Larger final projection
 3. **Training cost**: More tokens to learn
 4. **Diminishing returns**: At some point, not worth it
-
-### Vocabulary Size by Model
-
-| Model | Vocabulary | Tokenizer Type |
-|-------|-----------|---------------|
-| GPT-2/3 | 50K | BPE |
-| Llama 1/2 | 32K | SentencePiece |
-| Mistral | 32K | SentencePiece |
-| Yi | 64K | SentencePiece |
-| GPT-4 | 100K | tiktoken |
-| Llama 3 | 128K | tiktoken |
-| Qwen 2.5 | 152K | Custom |
-| **Gemma 2** | **256K** | **Custom (largest!)** |
-
----
 
 ## Special Tokenizer Features
 
