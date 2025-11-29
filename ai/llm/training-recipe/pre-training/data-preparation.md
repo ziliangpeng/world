@@ -1,8 +1,12 @@
 # Data Preparation for LLM Pre-training
 
-Data is the most important factor in LLM quality—more than architecture, scale, or training methodology. As the field has matured, data preparation has evolved from "scrape the web" to sophisticated pipelines involving deduplication, quality filtering, content classification, and carefully tuned mixing ratios. This document traces that evolution and explains the techniques that define modern data preparation.
+Data is the most important factor in LLM quality—more than architecture, scale, or training methodology. As the field has matured, data preparation has evolved from "scrape the web" to sophisticated pipelines involving deduplication, quality filtering, and content classification. This document traces that evolution and explains the techniques that define modern data curation.
+
+**Scope**: This document covers getting raw data into clean, usable form. For strategies on combining these cleaned data sources into optimal training mixtures, see [Data Mixing](data-mix.md).
 
 ---
+
+# Part I: Foundation (Why & What)
 
 ## The Data Quality Thesis
 
@@ -105,7 +109,7 @@ Meta's 1.4T token dataset mixed:
 | ArXiv          | 2.5%       | Scientific papers        |
 | StackExchange  | 2%         | QA pairs                 |
 
-This mixture became influential—most subsequent models use similar proportions.
+This mixture became influential—most subsequent models use similar proportions. For details on why these proportions were chosen and how mixture strategies evolved, see [Data Mixing](data-mix.md).
 
 ### Phase 4: Synthetic and Curated (2024-Present)
 
@@ -134,9 +138,9 @@ Systematic benchmark for data curation:
 
 ---
 
-## Core Techniques
+# Part II: Core Techniques
 
-### 1. Text Extraction
+## 1. Text Extraction
 
 Raw HTML → clean text is non-trivial. Key tools:
 
@@ -356,82 +360,9 @@ def safety_filter(doc, threshold=0.8):
 
 ---
 
-## Data Mixing
+# Part III: Pipeline & Quality Challenges
 
-### The Mixture Problem
-
-Given filtered data from multiple domains, how to combine?
-
-**Simple approach**: Proportional to source size (natural distribution)
-
-**Problem**: Web dominates (>90%), underrepresenting important domains (code, science, books).
-
-### Domain Weighting Strategies
-
-#### Manual Curation (LLaMA approach)
-
-Expert-defined weights based on downstream goals:
-
-| Domain | Natural % | LLaMA % | Upsampling |
-|--------|-----------|---------|------------|
-| Common Crawl | 90%+ | 67% | 0.7x |
-| Code | <1% | 4.5% | ~5x |
-| Books | <1% | 4.5% | ~5x |
-| Wikipedia | <1% | 4.5% | ~5x |
-| Scientific | <1% | 2.5% | ~3x |
-
-Intuition: Upsample high-quality, knowledge-dense sources.
-
-#### Learned Weights (DoReMi)
-
-**[DoReMi](https://arxiv.org/abs/2305.10429)** - Domain Reweighting with Minimax Optimization:
-
-1. Train small proxy model on uniform mixture
-2. Compute per-domain excess loss vs reference
-3. Upweight domains with high excess loss
-4. Iterate until convergence
-
-Result: Automatically discovers that rare domains (code, math) should be upsampled.
-
-#### Temperature Scaling
-
-Sample from each domain with temperature-adjusted probability:
-
-```python
-# Temperature sampling
-def sample_domain(domain_sizes, temperature=1.0):
-    # p_i = (size_i)^(1/T) / sum((size_j)^(1/T))
-    scaled = {d: s ** (1/temperature) for d, s in domain_sizes.items()}
-    total = sum(scaled.values())
-    probs = {d: s/total for d, s in scaled.items()}
-    return random.choices(list(probs.keys()), weights=probs.values())[0]
-
-# T=1.0: proportional to size (web dominates)
-# T=0.5: more uniform (upweight rare domains)
-# T=0.0: equal weighting (ignore size)
-```
-
-**Llama 3** uses T~0.7 for code/math domains.
-
-### Epoch and Repetition
-
-**Key finding**: Repeating high-quality data helps, but with diminishing returns.
-
-| Epochs | Effect | Risk |
-|--------|--------|------|
-| 1 | Baseline | May underfit |
-| 2-4 | Often beneficial | Acceptable |
-| 5+ | Diminishing returns | Memorization risk |
-| 10+ | Quality degradation | Overfitting |
-
-**Best practice**:
-- Core data (books, Wikipedia, code): 2-4 epochs acceptable
-- Web data: 1 epoch preferred
-- Synthetic data: Varies by quality
-
----
-
-## Pipeline Architecture
+## 6. Pipeline Architecture
 
 ### Modern Data Pipeline
 
@@ -510,236 +441,9 @@ For trillion-token datasets:
 
 ---
 
-## What Major LLMs Use
+## 7. Common Pitfalls
 
-### Foundation Model Data Mixtures
-
-| Model | Tokens | Web | Code | Math | Multilingual | Notes |
-|-------|--------|-----|------|------|--------------|-------|
-| **GPT-3** (2020) | 300B | ~60% | ~8% | Minimal | Minimal | Baseline |
-| **LLaMA 1** (2023) | 1.4T | ~82% | 4.5% | 2.5% | Minimal | CC + C4 |
-| **LLaMA 2** (2023) | 2T | ~82% | 4.5% | 2.5% | ~2% | Extended |
-| **LLaMA 3** (2024) | 15T | ~50% | ~17% | ~25% | ~8% (30+ langs) | 4x code, 10x math |
-| **Qwen2.5** (2024) | 18T | ~60% | ~25% | ~10% | 29+ langs | High code emphasis |
-| **Phi-4** (2024) | 10T | 30% | 20% | Included | 40 langs | 40% synthetic |
-| **DeepSeek-V3** (2024) | 14.8T | Not disclosed | Not disclosed | Not disclosed | 119+ langs | Sources known |
-| **Qwen3** (2025) | 36T | Multi-stage | Multi-stage | Multi-stage | 119 langs | 3-stage training |
-| **Mistral/Mixtral** | ~8T | Not disclosed | Not disclosed | Not disclosed | Not disclosed | Proprietary |
-| **Gemma 2/3** | Not disclosed | Not disclosed | Not disclosed | Not disclosed | 140+ langs | Proprietary |
-
-**Key patterns**: Modern models (2024+) use ~50-60% web, 17-25% code, 10-25% math vs early models' 82% web, 4.5% code. Synthetic data emerging (Phi-4: 40%).
-
-### Domain Specialist Models
-
-| Model | Base | Additional Training | Performance |
-|-------|------|---------------------|-------------|
-| **Qwen2.5-Coder** | Qwen2.5 (18T) | +5.5T code tokens | HumanEval: 92.1 (32B) |
-| **Qwen2.5-Math** | Qwen2.5 (18T) | Self-improvement RL | MATH: 83.1 vs base 50 |
-| **Code Llama** | LLaMA 2 (2T) | +500B code tokens | HumanEval: 53.7 (34B) |
-| **DeepSeek-Coder-V2** | DeepSeek-V2 | +6T code tokens | HumanEval: 90.2 (236B) |
-| **DeepSeek-Math** | DeepSeek-V2 | Math-focused training | MATH: 78.5 (7B) |
-
----
-
-## Multi-Stage Pre-training
-
-Modern LLMs don't train in a single phase—they use 3-4 distinct stages with different data mixes, learning rates, and objectives. This staged approach has become standard for state-of-the-art models.
-
-### Why Multi-Stage?
-
-Single-phase training has limitations:
-- **Fixed context length** from start wastes compute on short sequences
-- **Static data mix** can't adapt to model's evolving needs
-- **No curriculum** means no progression from easy to hard
-- **Quality dilution** from mixing high and low quality data equally
-
-Multi-stage training addresses these by adapting the training recipe as the model develops.
-
-### The Four Stages
-
-Based on analysis of Llama 3, Qwen 2, Gemma 2, and Apple AFM technical reports:
-
-```
-Stage 1: Core Pre-training
-├── Tokens: 7-15T
-├── Context: 4K-8K
-├── Data: Web-heavy (67%+), code/math baseline
-├── LR: Standard warmup + cosine decay
-└── Goal: General language understanding
-
-        ↓
-
-Stage 2: Continued Pre-training
-├── Tokens: 500B-1T additional
-├── Context: Same as Stage 1
-├── Data: Upweight math, code, reasoning (2-3x)
-├── LR: Reduced (often 10-30% of peak)
-└── Goal: Capability enhancement in key domains
-
-        ↓
-
-Stage 3: Context Lengthening
-├── Tokens: 100-500B
-├── Context: Extend to 32K, 128K, or longer
-├── Data: Long documents, synthetic long-context
-├── LR: Further reduced
-└── Goal: Long-range dependency learning
-
-        ↓
-
-Stage 4: Annealing
-├── Tokens: 50-100B
-├── Context: Full length
-├── Data: Highest quality only (benchmark-like)
-├── LR: Linear decay to near-zero
-└── Goal: Final quality refinement
-```
-
-### Stage-Specific Data Strategies
-
-#### Stage 1: Core Pre-training
-
-Standard mixture similar to original LLaMA:
-
-| Domain | Proportion | Notes |
-|--------|------------|-------|
-| Web (filtered) | 65-75% | Quality-scored Common Crawl |
-| Code | 5-10% | GitHub, StackOverflow |
-| Books/Literature | 5-8% | Long-form, narrative |
-| Scientific | 3-5% | arXiv, PubMed |
-| Wikipedia | 3-5% | Factual grounding |
-| Math | 2-3% | Textbooks, problems |
-
-#### Stage 2: Continued Pre-training (Domain Enhancement)
-
-Shift toward capability-building domains:
-
-| Domain | Change from Stage 1 | Rationale |
-|--------|---------------------|-----------|
-| Math | 2-3x increase | Reasoning foundation |
-| Code | 1.5-2x increase | Structured thinking |
-| Scientific | 1.5x increase | Technical knowledge |
-| Web | Decrease to 40-50% | Make room for quality |
-| Synthetic | Add 10-20% | Targeted skill data |
-
-**Llama 3 approach**:
-- Upsampled mathematical data
-- Added synthetic reasoning examples
-- Increased code proportion
-
-**Qwen 2 approach**:
-- Heavy math/code emphasis
-- Multilingual balancing (Chinese + English)
-
-#### Stage 3: Context Lengthening
-
-Data requirements change significantly:
-
-```python
-# Context extension data mix
-context_extension_mix = {
-    "long_documents": 0.40,    # Books, papers, legal docs (>8K tokens)
-    "synthetic_long": 0.30,    # Generated long-context examples
-    "short_replay": 0.20,      # Prevent forgetting short-context ability
-    "qa_long_context": 0.10,   # Long-context QA pairs
-}
-```
-
-**Key techniques**:
-- **Synthetic long-context**: Generate examples requiring long-range retrieval
-- **Position interpolation**: Extend RoPE frequencies gradually
-- **Replay buffer**: Include short sequences to prevent degradation
-
-#### Stage 4: Annealing
-
-Final refinement on highest-quality data:
-
-| Data Type | Purpose |
-|-----------|---------|
-| Curated Q&A | Instruction-following baseline |
-| Benchmark-adjacent | (Carefully decontaminated) Similar format/difficulty |
-| Expert-written | Human-authored high-quality text |
-| Filtered top-1% | Highest quality-score web content |
-
-**Critical**: Avoid actual benchmark contamination while training on similar-quality data.
-
-### Learning Rate Schedules Across Stages
-
-```
-           │
-    LR     │    ╱╲
-           │   ╱  ╲
-           │  ╱    ╲________
-           │ ╱              ╲____
-           │╱                    ╲___
-           └─────────────────────────────────
-              Stage 1    Stage 2   Stage 3  Stage 4
-
-Stage 1: Warmup → Peak → Cosine decay to ~10% of peak
-Stage 2: Resume at ~10-30% of peak → Slow decay
-Stage 3: ~5-10% of original peak → Slow decay
-Stage 4: Linear decay to near-zero
-```
-
-**Llama 3.1 example**:
-- Stage 1: Peak LR 1.5e-4, decay to 1.5e-5
-- Stage 2: Start at 1.5e-5, decay to 1.5e-6
-- Context extension: Start at 1e-5
-- Annealing: Linear to 0
-
-### Practical Considerations
-
-**When to transition stages**:
-- Loss plateaus suggest current data mix exhausted
-- Capability evals show diminishing returns
-- Validation perplexity on held-out set
-
-**Data preparation for multi-stage**:
-```python
-# Prepare stage-specific datasets
-datasets = {
-    "stage1": {
-        "shards": ["web_filtered/", "code/", "books/", ...],
-        "weights": {"web": 0.70, "code": 0.08, ...},
-    },
-    "stage2": {
-        "shards": ["math_enhanced/", "code/", "synthetic_reasoning/", ...],
-        "weights": {"math": 0.20, "code": 0.15, ...},  # Reweighted
-    },
-    "stage3": {
-        "shards": ["long_documents/", "synthetic_long/", "replay/", ...],
-        "sequence_length": 32768,  # Extended
-    },
-    "stage4": {
-        "shards": ["curated_high_quality/"],
-        "epochs": 1,  # No repetition
-    },
-}
-```
-
-**Checkpoint strategy**:
-- Save at end of each stage
-- Enable restart from any stage if issues found
-- Track per-stage metrics separately
-
-### Evidence from Technical Reports
-
-| Model | Stages | Key Innovation |
-|-------|--------|----------------|
-| Llama 3 | 4 | 15T tokens, extensive annealing |
-| Qwen 2 | 3+ | Dynamic mixture optimization |
-| Gemma 2 | 3 | Knowledge distillation in later stages |
-| Apple AFM | 4 | Rejection sampling for quality |
-
-> **Llama 3 Technical Report**: "We found that annealing on small amounts of high-quality code and math data during pre-training improved performance on key benchmarks."
-
-> **Qwen 2 Technical Report**: "We employ a multi-stage pre-training approach with curriculum learning, progressively increasing data complexity."
-
----
-
-## Common Pitfalls
-
-### 1. Over-Aggressive Filtering
+### Over-Aggressive Filtering
 
 Removing too much can hurt diversity:
 - "Bad word" lists removing medical/legal content
@@ -748,7 +452,7 @@ Removing too much can hurt diversity:
 
 **Solution**: Validate filters on downstream tasks.
 
-### 2. Benchmark Contamination
+### Benchmark Contamination
 
 Training data may contain benchmark test sets:
 - GSM8K problems on web forums
@@ -760,7 +464,7 @@ Training data may contain benchmark test sets:
 - n-gram filtering for evaluation data
 - [Documented contamination checks](https://arxiv.org/abs/2311.04850)
 
-### 3. Temporal Cutoff Issues
+### Temporal Cutoff Issues
 
 Web data has implicit temporal distribution:
 - Information may be outdated
@@ -769,7 +473,7 @@ Web data has implicit temporal distribution:
 
 **Solution**: Include time metadata, consider freshness in sampling.
 
-### 4. Geographic and Cultural Bias
+### Geographic and Cultural Bias
 
 Common Crawl overrepresents:
 - English (>50% of web)
@@ -780,7 +484,7 @@ Common Crawl overrepresents:
 
 ---
 
-## Synthetic Contamination in the LLM Era
+## 8. Synthetic Contamination in the LLM Era
 
 As LLMs proliferate, the web is increasingly filled with AI-generated content. This creates a fundamental challenge for future model training: **model collapse** from recursive training on synthetic data.
 
@@ -976,32 +680,37 @@ Different organizations handle synthetic contamination differently:
 
 ---
 
-## Future Directions
+# Part IV: Future & Sources
+
+## 9. Future Directions
 
 ### Near-term (2025)
 
 1. **Synthetic data scaling**: More sophisticated generation pipelines
 2. **Continual data curation**: Dynamic datasets that evolve
-3. **Specialized mixtures**: Task-specific data optimization
-4. **Better contamination detection**: Systematic benchmark isolation
+3. **Better contamination detection**: Systematic benchmark isolation
+4. **Advanced deduplication**: Semantic-level near-duplicate detection beyond n-grams
 
 ### Research Frontiers
 
 1. **Data attribution**: Understanding which training data caused outputs
-2. **Optimal mixture theory**: Principled approach to domain weighting
+2. **Automated quality scoring**: Self-supervised quality metrics
 3. **Data efficiency**: Extracting more value per token
 4. **Multimodal data curation**: Images, video, audio alongside text
+5. **Privacy-preserving filtering**: PII detection and removal at scale
 
 ### Open Questions
 
 1. **Scaling synthetic data**: When does generation quality plateau?
 2. **Data diversity vs quality**: How to optimally balance?
-3. **Curriculum learning**: Should data order matter?
-4. **Cross-lingual transfer**: Optimal multilingual mixtures?
+3. **Contamination arms race**: How to stay ahead of evolving AI-generated content?
+4. **Cross-domain transfer**: What data preparation techniques transfer across languages and modalities?
+
+**Note**: For future directions in data mixing strategies (domain weighting, multi-stage training, etc.), see [Data Mixing](data-mix.md).
 
 ---
 
-## Sources
+## 10. Sources
 
 ### Foundational Papers
 - [Language Models are Few-Shot Learners (GPT-3)](https://arxiv.org/abs/2005.14165) - WebText description
@@ -1011,7 +720,6 @@ Different organizations handle synthetic contamination differently:
 ### Data Curation Research
 - [Deduplicating Training Data Makes Language Models Better](https://arxiv.org/abs/2107.06499) - Google
 - [The RefinedWeb Dataset for Falcon LLM](https://arxiv.org/abs/2306.01116) - TII
-- [DoReMi: Optimizing Data Mixtures Speeds Up LM Pretraining](https://arxiv.org/abs/2305.10429) - Google
 
 ### Modern Datasets
 - [FineWeb: Decanting the Web for the Finest Text Data](https://arxiv.org/abs/2406.17557) - HuggingFace
