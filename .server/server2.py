@@ -35,11 +35,19 @@ class MarkdownChangeHandler(FileSystemEventHandler):
     """Watch for markdown file changes"""
 
     def on_modified(self, event):
-        if event.is_directory:
-            return
-        if event.src_path.endswith(".md"):
+        if not event.is_directory and event.src_path.endswith(".md"):
             with lock:
                 changed_files.append(str(Path(event.src_path).resolve()))
+
+    def on_created(self, event):
+        if not event.is_directory and event.src_path.endswith(".md"):
+            with lock:
+                changed_files.append(str(Path(event.src_path).resolve()))
+
+    def on_moved(self, event):
+        if not event.is_directory and event.dest_path.endswith(".md"):
+            with lock:
+                changed_files.append(str(Path(event.dest_path).resolve()))
 
 
 # HTML template for file browser
@@ -99,6 +107,25 @@ BROWSER_TEMPLATE = """
             localStorage.setItem('theme', newTheme);
             darkModeIcon.textContent = newTheme === 'dark' ? '💡' : '🌕';
         });
+
+        // Live reload for directory view
+        let lastCheck = Date.now();
+        const currentPath = "{{ rel_path }}";
+
+        setInterval(async () => {
+            try {
+                const response = await fetch('/changes?since=' + lastCheck + '&path=' + encodeURIComponent(currentPath));
+                const data = await response.json();
+                lastCheck = Date.now();
+
+                if (data.changed) {
+                    console.log('Directory changed, reloading...');
+                    location.reload();
+                }
+            } catch (e) {
+                console.error('Live reload check failed:', e);
+            }
+        }, 2000);
     </script>
 </body>
 </html>
@@ -247,6 +274,7 @@ def list_directory(rel_path: str):
 
     return render_template_string(
         BROWSER_TEMPLATE,
+        rel_path=str(Path(rel_path)),
         title=current_dir,
         current_dir=current_dir,
         items=items,
@@ -312,12 +340,20 @@ def static_files(filename):
 def changes():
     """Check for file changes (for live reload)"""
     path = request.args.get("path", "")
-    abs_path = str((ROOT_DIR / path).resolve())
+    target = (ROOT_DIR / path).resolve()
+    abs_path = str(target)
 
     with lock:
-        changed = any(abs_path == changed_path for changed_path in changed_files)
-        if changed:
-            changed_files[:] = [f for f in changed_files if f != abs_path]
+        if target.is_dir():
+            # Any markdown file change under this directory should trigger reload
+            prefix = abs_path if abs_path.endswith(os.sep) else abs_path + os.sep
+            changed = any(changed_path.startswith(prefix) for changed_path in changed_files)
+            if changed:
+                changed_files[:] = [f for f in changed_files if not f.startswith(prefix)]
+        else:
+            changed = any(abs_path == changed_path for changed_path in changed_files)
+            if changed:
+                changed_files[:] = [f for f in changed_files if f != abs_path]
 
     return jsonify({"changed": changed})
 
