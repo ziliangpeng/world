@@ -2,46 +2,91 @@
 
 **Company:** Nuro, Inc.
 **Founded:** 2016
-**Focus:** Autonomous delivery vehicles
+**Focus:** Autonomous delivery vehicles and licensing platform
 **Headquarters:** Mountain View, California
 
 ---
 
 ## Non-AI Tech Stack
 
-Nuro's infrastructure runs entirely on **Google Cloud Platform** with a polyglot backend using **Python** (data processing, automation), **C++** (performance-critical systems, robotics), **Go** (infrastructure services), and **Rust** (data mining). The data platform processes hundreds of petabytes through **AlloyDB for PostgreSQL** (vector search with ScaNN indexing), **BigQuery** (analytics), **Cloud Spanner** (distributed data), and **Cloud Storage**. Infrastructure is orchestrated through **Kubernetes** with BATES, a custom distributed task orchestration system managing millions of daily tasks and GPU hours of simulation. The vehicle platform runs on **NVIDIA DRIVE AGX Thor** with **DriveOS** for safety-critical operations. Backend services use **ROS** (Robot Operating System) for sensor integration. Development infrastructure includes **Bazel** (build system), **Docker** (containerization), and automated CI/CD pipelines.
+Nuro operates from **Mountain View, California** with infrastructure entirely on **Google Cloud Platform** using a polyglot backend: **Python** (data processing, automation), **C++** (performance-critical systems, robotics), **Go** (infrastructure services), and **Rust** (data mining). Founded in 2016 by **Dave Ferguson** and **Jiajun Zhu** (both ex-Waymo/Google Self-Driving Car Project engineers), the company raised **$2.1 billion total funding** including **$92M initial round** (Greylock, Gaorong Capital), **$940M Series B** (SoftBank, $2.7B valuation), and **$600M Series D** (Tiger Global, **$8.6B valuation** November 2021). The **Series E** ($106M April 2025, lower valuation) with **$97M extension August 2025** included **Nvidia, Uber, and other investors**. The data platform processes **hundreds of petabytes** through **AlloyDB for PostgreSQL** (vector search with ScaNN indexing), **BigQuery** (analytics), **Cloud Spanner** (distributed data), and **Cloud Storage**. Infrastructure orchestrates through **Kubernetes** with **BATES**, a custom distributed task orchestration system managing **millions of daily tasks and GPU hours of simulation**. The vehicle platform runs on **NVIDIA DRIVE AGX Thor** (Blackwell GPU + CPU + automotive-optimized modules) with **DriveOS** for safety-critical operations. Backend services use **ROS** (Robot Operating System) for sensor integration. Development infrastructure includes **Bazel** (build system), **Docker** (containerization), and automated CI/CD pipelines. The **fourth-generation hardware system** features **proprietary compute/ECU modules**, **proprietary sensor suite** (30 sensors: solid-state LiDAR, automotive cameras, imaging radar), and **custom sensor integrations** supporting L4 autonomy. The **R3 vehicle** includes **pedestrian protection airbag**, **self-cleaning sensors**, and **advanced electric battery system** for extended delivery routes. Nuro partners with **Uber** (2026 robotaxi launch using Lucid Gravity SUVs with Nuro Driver, 20,000+ vehicles planned), **Kroger** (grocery delivery since 2018), **FedEx** (logistics pilot Houston), **7-Eleven** (California's first commercial autonomous delivery), **CVS**, and **Domino's**, operating in **Texas, Arizona, and California**.
 
-**Salary Ranges**: Software Engineer $167K-$251K | Tech Lead Manager $223K-$334K | Staff roles $200K-$300K+
+**Salary Ranges**: Software Engineer $167K-$251K | Tech Lead Manager $223K-$334K | ML Research Scientist $180K-$280K | Senior/Lead Scientist $200K-$350K+
 
 ---
 
 ## AI/ML Tech Stack
 
-Nuro's ML infrastructure centers on the **Nuro ML Scheduler**, a custom distributed training orchestration system built on Kubeflow that supports **PyTorch** (primary framework), **JAX** (high-performance ML), **TensorFlow**, and **Horovod** (distributed training). Training runs on **NVIDIA V100/A100/H100 GPUs** and **Google Cloud TPUs** across hundreds of accelerators. The **FTL Model Compiler** optimizes inference through ONNX and TensorRT integration, achieving 27% latency reduction on perception models. ML stack supports data parallelism, model parallelism, mixed precision training (FP16/FP8), and quantization methods (AWQ, AQT, GPTQ). Reinforcement learning infrastructure enables **CIMRL** (Combining Imitation and Reinforcement Learning) for safe autonomous driving, training years of driving experience in hours through large-scale simulation. Research areas include vision transformers, foundation models, multi-sensor fusion (LiDAR/camera/radar), end-to-end driving, 3D vision (NeRF, Gaussian Splatting), and multi-agent trajectory prediction.
+### CIMRL - Combining Imitation and Reinforcement Learning for Safe Autonomy
 
-**Salary Ranges**: ML Research Scientist $180K-$280K | Senior/Lead Scientist $200K-$350K+ | ML Infrastructure Engineer $167K-$251K | Tech Lead Manager ML Training $223K-$334K
+**What's unique**: Nuro developed **CIMRL (Combining Imitation and Reinforcement Learning)**, a novel framework that **decouples imitation learning and reinforcement learning** to achieve both **expert-level driving smoothness** (from IL) and **long-horizon safety reasoning** (from RL). Unlike traditional approaches that directly optimize a joint IL+RL objective (BC-SAC), CIMRL performs **motion planning using motions generated by a previously learned IL component as temporally extended actions in a hierarchical RL framework**. The architecture **reduces the complexity of the action space** to a narrow subset of top motions generated by state-of-the-art motion generators, then employs **reinforcement learning to select** among these candidate trajectories based on a **long-horizon optimization objective**. This design provides **long-horizon reasoning crucial for safe driving** while delegating **trajectory generation to IL-based models for smooth and expert-level execution**. The key innovation: **learning motion selection** rather than direct action primitives. CIMRL additionally utilizes **recovery RL within a safe RL framework** to establish safety guarantees — the system learns recovery behaviors for edge cases while maintaining bounded risk. Results demonstrate **improved collision rate over pure imitation** and **significantly better progress rate** when incorporating multiple trajectory sources. The approach trains **years of driving experience in hours** through large-scale simulation, then **deploys successfully on real roads**. CIMRL was presented at **CVPR-2024 Workshop on Data-Driven Autonomous Driving Simulation** (arXiv:2406.08878).
+
+### FTL Model Compiler - 40% Latency Reduction Through Multi-Compiler Optimization
+
+**What makes it different**: Nuro built **FTL (Faster Than Light)**, a **compiler framework that flexibly applies multiple industry compilers in a single compilation** within a highly customizable Python environment. Unlike systems locked to a single compiler (TensorRT, ONNX, XLA), FTL enables **selective optimization** where different model layers use different compilation strategies — **TensorRT for convolutions**, **custom CUDA/Triton kernels for specific operations**, and **in-house optimization rules for novel architectures**. Migrating a vision model from legacy compiler to FTL (using **TensorRT + custom compilation rules**) achieved **40% latency reduction**. The framework supports **custom GPU kernel injection** written in **CUDA, Triton, or Pallas**, allowing the compiler team to **pick specific implementations for specific layers** rather than accepting one-size-fits-all optimization. FTL provides a **unified optimization platform** where a single code change delivers **performance impact to all models**, accelerating iteration velocity. The autonomy stack experienced **significant reductions in CPU utilization, GPU utilization, and GPU memory consumption**, enabling deployment of Nuro's **unified multi-head vision model with multi-GPU inference**. FTL's multi-framework support enables **leveraging advanced techniques like quantization, new operators, and emerging frameworks** without vendor lock-in. For autonomous vehicles requiring **millisecond-scale reaction speeds**, FTL's optimization directly improves safety margins and enables more sophisticated perception models within computational budgets.
+
+### Unified Perception Model - 30-Sensor Fusion in Voxel Feature Space
+
+**What sets Nuro apart**: Nuro's **unified perception model** processes **synchronized inputs from almost 30 individual sensors** (long-range and short-range cameras, LiDAR, radar) to **simultaneously address multiple perception and mapping tasks** — detection & tracking, localization & online mapping, occupancy and flow — within a **single foundation model**. The architecture **processes sensor features independently**, then employs a **sensor fusion module** that transforms features from **native formats into a unified voxel feature space**, generating **multi-modal spatial features**. A **temporal module** aligns spatial features from T to T-n and fuses them into **spatial-temporal features**, providing historical context for prediction. This design contrasts with traditional pipelines running **separate models for each task** (object detection, semantic segmentation, depth estimation, tracking), requiring **re-computation of features** across models and consuming significant on-board computational resources. The unified approach **conserves compute** while **elevating system performance** through shared representations. The **foundation model architecture** is **simple, performant, and scalable**, flexible enough to integrate **diverse sensor suites** across different vehicle platforms. Sensors provide **redundant, 360° field of view** with **four camera types** (ultra-long-range, long-range, short-range, traffic light-detection) complementing LiDAR and radar for **maximum scene detection and safety**. The **self-cleaning sensors** maintain operational integrity in varying weather conditions, addressing a key autonomous vehicle challenge.
+
+### Nuro ML Scheduler - Kubeflow-Based Distributed Training Orchestration
+
+**What's unique**: Nuro developed the **Nuro ML Scheduler**, a custom distributed training orchestration system built on **Kubeflow** that accepts training jobs from users and ensures they **acquire resources needed to run training** across **V100, A100, H100 GPUs** and **Google Cloud TPUs**. As frameworks like **Horovod, PyTorch, and JAX** gained popularity, implementing **custom recovery for each new training strategy** would slow ML development velocity — motivating Nuro's design using **Kubeflow's open-source training operators** to **delegate framework-specific logic** while creating **abstractions** so **all core scheduling logic is shared across frameworks and accelerator types**. The scheduler reserves accelerators on GCP to **guarantee minimum availability**, critical for continuous autonomous vehicle development. The infrastructure supports **data parallelism, model parallelism, mixed precision training (FP16/FP8), and quantization methods (AWQ, AQT, GPTQ)**. The system handles **fault tolerance** automatically — if a GPU fails during multi-day training runs, the scheduler **recovers** without manual intervention. Nuro runs training across **hundreds of accelerators simultaneously**, processing **petabyte-scale datasets** from real-world driving and simulation. The ML stack's primary framework is **PyTorch**, with **JAX** for high-performance ML and **TensorFlow** for legacy models, all orchestrated through the unified scheduler. This infrastructure enables researchers to **train years of driving experience in hours** through parallelized simulation, directly feeding CIMRL's reinforcement learning pipeline.
+
+### Licensing Business Model - Nuro Driver for OEM Integration
+
+**What makes it different**: Nuro **pivoted from operating its own autonomous delivery fleet** to **licensing the Nuro Driver autonomy platform** to existing automotive manufacturers, enabling them to **add autonomy to their vehicles at scale**. This strategic shift positions Nuro as an **autonomy supplier** rather than vehicle operator, analogous to how NVIDIA supplies autonomous driving compute rather than building cars. The **Nuro Driver** platform integrates **proprietary hardware (sensors, compute), software (perception, planning, control), and safety systems** as a **turnkey L4 autonomy solution**. OEMs and mobility providers can integrate Nuro Driver into their existing vehicle designs (trucks, SUVs, vans) without developing in-house autonomy stacks. The **Uber partnership** demonstrates this model: **Uber purchases Lucid Gravity SUVs** and **Nuro equips them with autonomous driving technology**, with Uber operating the robotaxi fleet launching in **2026** and scaling to **20,000+ vehicles over six years**. This approach enables **faster go-to-market** (leveraging existing vehicle manufacturing) and **capital efficiency** (avoiding vehicle production costs). Nuro's **100+ patents** (Jiajun Zhu alone awarded 100+) and **deep expertise from Waymo alumni** provide competitive moats. The licensing model aligns with Nuro's **fourth-generation hardware system** designed for **flexible integration** across vehicle platforms with **modular sensor configurations** and **scalable compute architectures**.
+
+### Commercial Deployment - Real-World Autonomy in Texas, Arizona, California
+
+Nuro operates **commercial autonomous delivery services** in **Texas, Arizona, and California**, providing the **real-world testing ground** essential for developing safe autonomy. Partnerships span **grocery delivery** (Kroger since 2018, starting in Scottsdale, Arizona), **convenience stores** (7-Eleven, California's first commercial autonomous delivery service), **pharmacy** (CVS), **food delivery** (Domino's), and **logistics** (FedEx pilot in Houston). Unlike companies operating solely in simulation or controlled environments, Nuro's **fleet accumulates edge case data** from unpredictable real-world scenarios — pedestrians jaywalking, construction zones, emergency vehicles, adverse weather. This data directly trains **CIMRL's reinforcement learning** and validates **unified perception model performance** across diverse conditions. The **R3 vehicle platform** includes **pedestrian protection airbag** (front external airbag deploying on collision), demonstrating Nuro's focus on **safety in mixed traffic environments**. The company's **regulatory expertise** (first to receive NHTSA exemptions for purpose-built autonomous vehicles) accelerates deployment timelines. Commercial operations generate **revenue** while providing **training data**, creating a **data flywheel** where deployed systems improve next-generation models. The **2026 Uber robotaxi launch** expands Nuro's deployment from goods delivery to passenger transport, demonstrating platform versatility and scaling potential.
 
 ---
 
 ## Sources
 
-**Engineering Blogs**:
-- [Scaling ML Training at Nuro](https://www.nuro.ai/blog/scaling-ml-training-at-nuro)
-- [FTL Model Compiler Framework](https://www.nuro.ai/blog/ftl-model-compiler-framework)
+**Nuro Official**:
+- [Nuro Homepage](https://www.nuro.ai/)
+- [Nuro Driver Platform](https://www.nuro.ai/nuro-driver)
+- [Technology Overview](https://www.nuro.ai/technology)
+- [Solutions](https://www.nuro.ai/solutions)
+- [Company](https://www.nuro.ai/company)
+
+**Engineering Blogs & Research**:
 - [CIMRL: Combining Imitation and Reinforcement Learning](https://www.nuro.ai/blog/cimrl-combining-imitation-reinforcement-learning-for-safe-autonomous-driving)
+- [CIMRL arXiv Paper](https://arxiv.org/abs/2406.08878)
+- [FTL Model Compiler Framework](https://www.nuro.ai/blog/ftl-model-compiler-framework)
+- [Unified Perception Model](https://www.nuro.ai/blog/unified-perception-model)
+- [Scaling ML Training at Nuro](https://www.nuro.ai/blog/scaling-ml-training-at-nuro)
 - [Enabling Reinforcement Learning at Scale](https://www.nuro.ai/blog/enabling-reinforcement-learning-at-scale)
+- [Next-Generation Sensor Architecture](https://www.nuro.ai/blog/introducing-the-nuro-drivers-next-generation-sensor-architecture)
 - [The Nuro Autonomy Stack](https://www.nuro.ai/blog/the-nuro-autonomy-stack)
 - [Scaling Autonomy in the Cloud](https://www.nuro.ai/blog/scaling-autonomy-in-the-cloud)
 
 **Google Cloud Case Studies**:
-- [Nuro drives autonomous innovation with AlloyDB](https://cloud.google.com/blog/products/databases/nuro-drives-autonomous-innovation-with-alloydb-for-postgresql/)
-- [Nuro builds the future of delivery with Google](https://cloud.google.com/blog/products/storage-data-transfer/nuro-builds-the-future-of-delivery-and-robotics-with-google)
+- [Nuro Drives Innovation with AlloyDB](https://cloud.google.com/blog/products/databases/nuro-drives-autonomous-innovation-with-alloydb-for-postgresql/)
+- [Nuro Builds Future of Delivery with Google](https://cloud.google.com/blog/products/storage-data-transfer/nuro-builds-the-future-of-delivery-and-robotics-with-google)
 
-**AI/ML Job Postings**:
-- [Tech Lead Manager, ML Training Infrastructure](https://jobs.icehouseventures.co.nz/companies/nuro/jobs/59711721-tech-lead-manager-ml-training-infrastructure) - $223K-$334K
-- [Machine Learning Research Scientist roles](https://boards.greenhouse.io/nuro) - Multiple positions
-- [Nuro Careers - All Positions](https://www.nuro.ai/careers)
-- [Early Career Opportunities](https://www.nuro.ai/early-career)
+**Founders & Company**:
+- [Nuro - Wikipedia](https://en.wikipedia.org/wiki/Nuro)
+- [The Co-founder Journey: Dave Ferguson & Jiajun Zhu - Trium Group](https://triumgroup.com/perspective/the-co-founder-journey/)
+- [Nuro Business Breakdown - Contrary Research](https://research.contrary.com/company/nuro)
+
+**Partnerships & Deployment**:
+- [Uber and Nuro 10-Year Partnership - Emerging Tech Brew](https://www.emergingtechbrew.com/stories/2022/09/14/two-years-after-ditching-robotaxis-uber-embraces-autonomous-delivery)
+- [Kroger Levels Up with Nuro - Grocery Dive](https://www.grocerydive.com/news/kroger-levels-up-autonomous-delivery-with-nuros-commercial-grade-vehicles/617104/)
+- [Nuro Moves into Logistics with FedEx - TechCrunch](https://techcrunch.com/2021/06/15/autonomous-delivery-startup-nuro-moves-into-logistics-with-fedex/)
+
+**Funding & Hardware**:
+- [Nvidia, Uber Join $97M Investment - SiliconANGLE](https://siliconangle.com/2025/08/21/nvidia-uber-join-97m-investment-autonomous-driving-startup-nuro/)
+- [Nuro Unveils Third-Generation Vehicle - The Robot Report](https://www.therobotreport.com/nuro-unveils-third-generation-autonomous-delivery-vehicle/)
+- [Lenovo and Nuro Forge Collaboration - Lenovo StoryHub](https://news.lenovo.com/pressroom/press-releases/lenovo-and-nuro-forge-collaboration-to-accelerate-autonomous-driving-built-on-nvidia-drive/)
+- [Nuro Automotive Partner - NVIDIA](https://www.nvidia.com/en-us/solutions/autonomous-vehicles/partners/nuro/)
+
+**Job Postings & Compensation**:
+- [Nuro Careers](https://www.nuro.ai/careers)
+- [Nuro Early Career Opportunities](https://www.nuro.ai/early-career)
+- [Nuro Jobs - Greenhouse](https://boards.greenhouse.io/nuro)
 
 ---
 
