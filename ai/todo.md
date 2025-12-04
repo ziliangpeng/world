@@ -262,3 +262,68 @@ ai/
 
 - [ ] Research 'AI Scientist' - autonomous AI research systems
 
+---
+
+## AI Startup Tech Stack Documentation
+
+### Completed Tech Stacks (26 companies)
+- ✅ Character.AI
+- ✅ Zoox
+- ✅ Perplexity
+- ✅ Figure
+- ✅ Anthropic
+- ✅ Baseten
+- ✅ Together AI
+- ✅ Groq
+- ✅ Cerebras
+- ✅ Modal
+- ✅ Waymo
+- ✅ Runway
+- ✅ Databricks
+- ✅ 1X Technologies
+- ✅ World Labs
+- ✅ Tesla Optimus
+- ✅ Unitree Robotics
+- ✅ Thinking Machines Lab (Mira Murati)
+- ✅ Nuro
+- ✅ Airbnb
+- ✅ Cohere
+- ✅ Scale AI
+- ✅ Anyscale
+- ✅ Sierra AI
+- ✅ Datology AI
+- ✅ Arcee AI
+
+### Tier 1 Priority (Major Funding $100M+, High Traction)
+- [ ] **Anysphere (Cursor)** - $29.3B valuation, $500M ARR, AI-powered code editor
+- [ ] **Safe Superintelligence (SSI)** - $32B valuation, Ilya Sutskever's new AI safety lab
+- [ ] **xAI** - $50B valuation, Elon Musk's AI company (Grok models)
+- [ ] **Fireworks AI** - $4B valuation, $250M Series C, inference platform
+- [ ] **Reflection AI** - $8B valuation, $2B Series B, AI reasoning models
+
+### Tier 2 Priority (Strong Potential $10M-$100M)
+- [ ] **OpenEvidence** - $6B valuation, $200M Series C, medical AI
+- [ ] **Lila Sciences** - $350M Series A, drug discovery AI
+- [ ] **OpenRouter** - 1M+ developers, 400+ LLM unified API
+- [ ] **Celestial AI** - $2.5B valuation, $250M Series C, AI hardware
+- [ ] **Braveheart** - $185M Series A, AI infrastructure
+- [ ] **Sesame AI** - $250M Series B, voice AI platform
+- [ ] **Nexthop AI** - $110M Series A, logistics AI
+- [ ] **Innovaccer** - Healthcare AI platform
+
+### Tier 3 Priority (Emerging/Specialized)
+- [ ] **Monica AI** - Chinese AI agent company
+- [ ] **Moveworks** - $100M ARR (acquired), enterprise AI
+- [ ] **Windsurf** - $100M ARR (acquired), AI development tool
+- [ ] **Abridge** - $250M+ funding, healthcare AI transcription
+- [ ] **Tempus** - $250M+ funding, precision medicine AI
+- [ ] **DeepSeek** - Emerging Chinese AI lab (not same as existing docs)
+- [ ] **Agility AI** - Robotics + AI automation
+
+### Notes for Tech Stack Documentation
+- Each doc should follow format: Non-AI Tech Stack (1 paragraph) + AI/ML Tech Stack (5-7 subsections)
+- Emphasize unique differentiators vs competitors with quantifiable metrics
+- Include salary ranges embedded in Non-AI section
+- Include comprehensive sources section at end
+- Focus on "what makes it different" for each technical capability
+
