@@ -1,0 +1,149 @@
+<svg width="1100" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1100" height="500" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="550" y="25" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">
+    Coinbase Quarterly Revenue by Category (Q1 2021 - Q3 2025)
+  </text>
+
+  <!-- Legend -->
+  <g transform="translate(350, 40)">
+    <rect x="0" y="0" width="15" height="15" fill="#2563eb"/>
+    <text x="20" y="12" font-size="12" fill="#666">Transaction Revenue</text>
+
+    <rect x="180" y="0" width="15" height="15" fill="#10b981"/>
+    <text x="200" y="12" font-size="12" fill="#666">Subscription &amp; Services</text>
+
+    <rect x="380" y="0" width="15" height="15" fill="#f59e0b"/>
+    <text x="400" y="12" font-size="12" fill="#666">Other Revenue</text>
+  </g>
+
+  <!-- Chart area -->
+  <g transform="translate(80, 80)">
+    <!-- Grid lines (horizontal) -->
+    <line x1="0" y1="350" x2="950" y2="350" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="0" y1="280" x2="950" y2="280" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="0" y1="210" x2="950" y2="210" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="0" y1="140" x2="950" y2="140" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="0" y1="70" x2="950" y2="70" stroke="#e0e0e0" stroke-width="1"/>
+    <line x1="0" y1="0" x2="950" y2="0" stroke="#e0e0e0" stroke-width="1"/>
+
+    <!-- Y-axis labels -->
+    <text x="-10" y="355" text-anchor="end" font-size="12" fill="#666">$0</text>
+    <text x="-10" y="285" text-anchor="end" font-size="12" fill="#666">$500M</text>
+    <text x="-10" y="215" text-anchor="end" font-size="12" fill="#666">$1,000M</text>
+    <text x="-10" y="145" text-anchor="end" font-size="12" fill="#666">$1,500M</text>
+    <text x="-10" y="75" text-anchor="end" font-size="12" fill="#666">$2,000M</text>
+    <text x="-10" y="5" text-anchor="end" font-size="12" fill="#666">$2,500M</text>
+
+    <!-- Stacked bars: Transaction (blue), Subscription (green), Other (orange) -->
+
+    <!-- Q1'21: Trans=1744, Sub=56, Other=0, Total=1800 -->
+    <rect x="0" y="105.84" width="40" height="244.16" fill="#2563eb"/>
+    <rect x="0" y="98.00" width="40" height="7.84" fill="#10b981"/>
+    <text x="20" y="375" text-anchor="middle" font-size="9" fill="#666">Q1'21</text>
+
+    <!-- Q2'21: Trans=1900, Sub=130, Other=0, Total=2030 -->
+    <rect x="50" y="84.00" width="40" height="266.00" fill="#2563eb"/>
+    <rect x="50" y="65.80" width="40" height="18.20" fill="#10b981"/>
+    <text x="70" y="375" text-anchor="middle" font-size="9" fill="#666">Q2'21</text>
+
+    <!-- Q3'21: Trans=1210, Sub=100, Other=0, Total=1310 -->
+    <rect x="100" y="180.60" width="40" height="169.40" fill="#2563eb"/>
+    <rect x="100" y="166.60" width="40" height="14.00" fill="#10b981"/>
+    <text x="120" y="375" text-anchor="middle" font-size="9" fill="#666">Q3'21</text>
+
+    <!-- Q4'21: Trans=2340, Sub=150, Other=0, Total=2490 -->
+    <rect x="150" y="22.40" width="40" height="327.60" fill="#2563eb"/>
+    <rect x="150" y="1.40" width="40" height="21.00" fill="#10b981"/>
+    <text x="170" y="375" text-anchor="middle" font-size="9" fill="#666">Q4'21</text>
+
+    <!-- Q1'22: Trans=1014, Sub=152, Other=0, Total=1166 -->
+    <rect x="200" y="208.04" width="40" height="141.96" fill="#2563eb"/>
+    <rect x="200" y="186.76" width="40" height="21.28" fill="#10b981"/>
+    <text x="220" y="375" text-anchor="middle" font-size="9" fill="#666">Q1'22</text>
+
+    <!-- Q2'22: Trans=656, Sub=147, Other=0, Total=803 -->
+    <rect x="250" y="258.16" width="40" height="91.84" fill="#2563eb"/>
+    <rect x="250" y="237.58" width="40" height="20.58" fill="#10b981"/>
+    <text x="270" y="375" text-anchor="middle" font-size="9" fill="#666">Q2'22</text>
+
+    <!-- Q3'22: Trans=365, Sub=211, Other=14, Total=590 -->
+    <rect x="300" y="298.90" width="40" height="51.10" fill="#2563eb"/>
+    <rect x="300" y="269.36" width="40" height="29.54" fill="#10b981"/>
+    <rect x="300" y="267.40" width="40" height="1.96" fill="#f59e0b"/>
+    <text x="320" y="375" text-anchor="middle" font-size="9" fill="#666">Q3'22</text>
+
+    <!-- Q4'22: Trans=322, Sub=283, Other=24, Total=629 -->
+    <rect x="350" y="304.92" width="40" height="45.08" fill="#2563eb"/>
+    <rect x="350" y="265.30" width="40" height="39.62" fill="#10b981"/>
+    <rect x="350" y="261.94" width="40" height="3.36" fill="#f59e0b"/>
+    <text x="370" y="375" text-anchor="middle" font-size="9" fill="#666">Q4'22</text>
+
+    <!-- Q1'23: Trans=375, Sub=362, Other=36, Total=773 -->
+    <rect x="400" y="297.50" width="40" height="52.50" fill="#2563eb"/>
+    <rect x="400" y="246.82" width="40" height="50.68" fill="#10b981"/>
+    <rect x="400" y="241.78" width="40" height="5.04" fill="#f59e0b"/>
+    <text x="420" y="375" text-anchor="middle" font-size="9" fill="#666">Q1'23</text>
+
+    <!-- Q2'23: Trans=328, Sub=335, Other=45, Total=708 -->
+    <rect x="450" y="304.08" width="40" height="45.92" fill="#2563eb"/>
+    <rect x="450" y="257.18" width="40" height="46.90" fill="#10b981"/>
+    <rect x="450" y="250.88" width="40" height="6.30" fill="#f59e0b"/>
+    <text x="470" y="375" text-anchor="middle" font-size="9" fill="#666">Q2'23</text>
+
+    <!-- Q3'23: Trans=340, Sub=334, Other=0, Total=674 -->
+    <rect x="500" y="302.40" width="40" height="47.60" fill="#2563eb"/>
+    <rect x="500" y="255.64" width="40" height="46.76" fill="#10b981"/>
+    <text x="520" y="375" text-anchor="middle" font-size="9" fill="#666">Q3'23</text>
+
+    <!-- Q4'23: Trans=529, Sub=375, Other=49, Total=953 -->
+    <rect x="550" y="275.94" width="40" height="74.06" fill="#2563eb"/>
+    <rect x="550" y="223.44" width="40" height="52.50" fill="#10b981"/>
+    <rect x="550" y="216.58" width="40" height="6.86" fill="#f59e0b"/>
+    <text x="570" y="375" text-anchor="middle" font-size="9" fill="#666">Q4'23</text>
+
+    <!-- Q1'24: Trans=1077, Sub=511, Other=48, Total=1636 -->
+    <rect x="600" y="199.22" width="40" height="150.78" fill="#2563eb"/>
+    <rect x="600" y="127.68" width="40" height="71.54" fill="#10b981"/>
+    <rect x="600" y="120.96" width="40" height="6.72" fill="#f59e0b"/>
+    <text x="620" y="375" text-anchor="middle" font-size="9" fill="#666">Q1'24</text>
+
+    <!-- Q2'24: Trans=781, Sub=599, Other=69, Total=1449 -->
+    <rect x="650" y="240.66" width="40" height="109.34" fill="#2563eb"/>
+    <rect x="650" y="156.80" width="40" height="83.86" fill="#10b981"/>
+    <rect x="650" y="147.14" width="40" height="9.66" fill="#f59e0b"/>
+    <text x="670" y="375" text-anchor="middle" font-size="9" fill="#666">Q2'24</text>
+
+    <!-- Q3'24: Trans=573, Sub=556, Other=77, Total=1206 -->
+    <rect x="700" y="269.78" width="40" height="80.22" fill="#2563eb"/>
+    <rect x="700" y="191.94" width="40" height="77.84" fill="#10b981"/>
+    <rect x="700" y="181.16" width="40" height="10.78" fill="#f59e0b"/>
+    <text x="720" y="375" text-anchor="middle" font-size="9" fill="#666">Q3'24</text>
+
+    <!-- Q4'24: Trans=1560, Sub=641, Other=69, Total=2270 -->
+    <rect x="750" y="131.60" width="40" height="218.40" fill="#2563eb"/>
+    <rect x="750" y="41.86" width="40" height="89.74" fill="#10b981"/>
+    <rect x="750" y="32.20" width="40" height="9.66" fill="#f59e0b"/>
+    <text x="770" y="375" text-anchor="middle" font-size="9" fill="#666">Q4'24</text>
+
+    <!-- Q1'25: Trans=1260, Sub=698, Other=72, Total=2030 -->
+    <rect x="800" y="173.60" width="40" height="176.40" fill="#2563eb"/>
+    <rect x="800" y="75.88" width="40" height="97.72" fill="#10b981"/>
+    <rect x="800" y="65.80" width="40" height="10.08" fill="#f59e0b"/>
+    <text x="820" y="375" text-anchor="middle" font-size="9" fill="#666">Q1'25</text>
+
+    <!-- Q2'25: Trans=764, Sub=656, Other=91, Total=1511 -->
+    <rect x="850" y="243.04" width="40" height="106.96" fill="#2563eb"/>
+    <rect x="850" y="151.20" width="40" height="91.84" fill="#10b981"/>
+    <rect x="850" y="138.46" width="40" height="12.74" fill="#f59e0b"/>
+    <text x="870" y="375" text-anchor="middle" font-size="9" fill="#666">Q2'25</text>
+
+    <!-- Q3'25: Trans=1000, Sub=747, Other=153, Total=1900 -->
+    <rect x="900" y="210.00" width="40" height="140.00" fill="#2563eb"/>
+    <rect x="900" y="105.42" width="40" height="104.58" fill="#10b981"/>
+    <rect x="900" y="84.00" width="40" height="21.42" fill="#f59e0b"/>
+    <text x="920" y="375" text-anchor="middle" font-size="9" fill="#666">Q3'25</text>
+  </g>
+</svg>

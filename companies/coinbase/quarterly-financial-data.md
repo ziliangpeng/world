@@ -28,6 +28,10 @@
 - Q2 2025 net income includes $1.5B gain on strategic investments and $362M gain on crypto investments
 - Coinbase went public via direct listing on April 14, 2021 (Q2 2021)
 
+### Quarterly Revenue Visualization
+
+![Coinbase Quarterly Revenue Chart](quarterly-revenue-chart.svg)
+
 ---
 
 ## Full Year Results
