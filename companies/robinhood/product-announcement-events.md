@@ -233,26 +233,6 @@ Position Robinhood as:
 
 ---
 
-## Comparison to Competitors
-
-### Apple
-- 3-4 events per year (iPhone, WWDC, iPad/Mac)
-- Robinhood is matching this cadence
-
-### Coinbase
-- Quarterly earnings calls
-- Occasional product announcements (e.g., Base blockchain)
-- No themed livestream events
-
-### Traditional Brokers (Schwab, Fidelity, E*TRADE)
-- 1 investor day per year (if any)
-- Quiet product launches via press releases
-- No consumer-facing events
-
-**Robinhood stands out:** Most aggressive event marketing in fintech
-
----
-
 ## Key Metrics Impact
 
 **Since starting event strategy (2024-2025):**
