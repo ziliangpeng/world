@@ -22,6 +22,8 @@ Starting in 2024, Robinhood adopted an Apple-style product announcement strategy
 
 **Theme:** Robinhood's first-ever keynote event (10 years after founding)
 
+**Official Link:** [The New Gold Standard: Introducing the Robinhood Gold Card](https://newsroom.aboutrobinhood.com/the-new-gold-standard-introducing-the-robinhood-gold-card/)
+
 **Major Announcements:**
 - **Robinhood Gold Card** - First credit card (3% cashback, no annual fee, no foreign transaction fees)
 - **App redesign** - Complete UI/UX overhaul
@@ -45,6 +47,10 @@ Starting in 2024, Robinhood adopted an Apple-style product announcement strategy
 **Tickets:** Sold to capacity, non-refundable/non-transferable
 
 **Keynote:** October 16 at 6:30 PM ET (livestreamed)
+
+**Official Links:**
+- [HOOD Summit 2024 announcement](https://newsroom.aboutrobinhood.com/hood-summit-2024-is-coming/)
+- [The Legend Awakens: Product announcements](https://newsroom.aboutrobinhood.com/the-legend-awakens/)
 
 **Major Announcements:**
 - **Robinhood Legend** - Desktop trading platform for active traders
@@ -72,6 +78,8 @@ Starting in 2024, Robinhood adopted an Apple-style product announcement strategy
 **Audience:** Institutional investors, analysts, some retail investors
 
 **Format:** In-person + livestream
+
+**Official Link:** [Robinhood Investor Day 2024](https://investors.robinhood.com/events/event-details/robinhood-investor-day-2024) (includes webcast recording, presentation materials, transcript)
 
 **Major Announcements:**
 - **10x growth vision** - Grow company 10x over next decade
@@ -101,6 +109,10 @@ Starting in 2024, Robinhood adopted an Apple-style product announcement strategy
 
 **Theme:** Second annual Gold keynote event
 
+**Official Links:**
+- [The Lost City of Gold: Event announcement](https://newsroom.aboutrobinhood.com/robinhood-presents-the-lost-city-of-gold/)
+- [Product announcements: Strategies, Banking, and Cortex](https://newsroom.aboutrobinhood.com/introducing-strategies-banking-and-cortex/)
+
 **Format:** Livestreamed at 6:30 PM PT / 9:30 PM ET
 - First time livestreamed directly in Robinhood app
 - Also on YouTube, X, Facebook, go.robinhood.com/presents
@@ -128,6 +140,10 @@ Starting in 2024, Robinhood adopted an Apple-style product announcement strategy
 
 **Theme:** First-ever international and crypto-focused event, "biggest crypto announcements of the year"
 
+**Official Links:**
+- [To Catch a Token: Event announcement](https://newsroom.aboutrobinhood.com/robinhood-presents-to-catch-a-token/)
+- [Product announcements: Stock Tokens, Layer 2 Blockchain, Crypto expansion](https://newsroom.aboutrobinhood.com/robinhood-launches-stock-tokens-reveals-layer-2-blockchain-and-expands-crypto-suite-in-eu-and-us-with-perpetual-futures-and-staking/)
+
 **Format:** Livestreamed at 5:00 PM CEST / 11:00 AM ET
 - In Robinhood app, YouTube, X, go.robinhood.com/presents
 
@@ -151,6 +167,10 @@ Starting in 2024, Robinhood adopted an Apple-style product announcement strategy
 **Duration:** 2 days
 
 **Keynote:** September 9 at 5:30 PM PT (livestreamed)
+
+**Official Links:**
+- [HOOD Summit '25: Event announcement](https://newsroom.aboutrobinhood.com/hood-summit-25/)
+- [Product announcements: New tools for active traders](https://newsroom.aboutrobinhood.com/hood-summit-2025-news/)
 
 **Major Announcements:**
 - **10 self-directed accounts** - Previously limited to 1 account
