@@ -312,11 +312,17 @@ Bittensor subnets span **6 major categories:**
 - **Description:** Utilizes advanced generative and discriminative AI models to detect AI-generated images
 - **Evaluation Method:** TBD (research in progress)
 
-### SN35: LogicNet
-- **Name:** LogicNet
-- **Purpose:** TBD (research in progress)
-- **Evaluation Method:** TBD (research in progress)
-- **Note:** Has alpha token (SN35/TAO trading pair)
+### SN35: LogicNet / Cartha
+- **Name:** Cartha (previously LogicNet)
+- **Operator:** AIT Protocol (original), repurposed in 2025
+- **GitHub:** [`LogicNet-Subnet/LogicNet`](https://github.com/LogicNet-Subnet/LogicNet)
+- **Purpose:** Decentralized liquidity provisioning (2025) / Mathematical AI (original)
+- **Description:** Originally focused on advanced mathematical and logical AI, repurposed in 2025 as Cartha - a decentralized liquidity engine for the 0xMarkets DEX
+- **Original Mission:** Fine-tuning competition for AI/ML models specializing in mathematics, computational reasoning, and data analysis
+- **Current Function:** Miners rewarded for committing capital; protocols redirect liquidity to forex pairs and volatile markets in real-time
+- **Evaluation Method:** Liquidity provision metrics (current) / Mathematical reasoning benchmarks (original)
+- **Resources:** [SubnetAlpha - Cartha](https://subnetalpha.ai/subnet/cartha/)
+- **Note:** Complete transformation from AI reasoning to DeFi liquidity subnet
 
 ### SN36: Web Agents / Pyramid Scheme
 - **Name:** Web Agents (Pyramid Scheme)
@@ -364,8 +370,13 @@ Bittensor subnets span **6 major categories:**
 - **Name:** Graphite
 - **Operator:** GraphiteAI
 - **GitHub:** [`GraphiteAI/Graphite-Subnet`](https://github.com/GraphiteAI/Graphite-Subnet)
-- **Purpose:** TBD (research in progress)
-- **Evaluation Method:** TBD (research in progress)
+- **Purpose:** Graph optimization problems / Traveling Salesman Problem (TSP) solver
+- **Description:** Specialized subnet designed to handle graphical problems efficiently, focusing on the Traveling Salesman Problem - finding shortest routes visiting cities and returning to start
+- **Algorithms:** Miners use nearest neighbor heuristic, dynamic programming, A* search, and deep learning approaches
+- **Function:** Decentralized network connecting miners and validators to solve complex graph optimization problems
+- **Evaluation Method:** Performance-based rewards for high-performance TSP solvers that outperform existing algorithms
+- **Significance:** Tackles fundamental computer science challenge with exponential complexity growth
+- **Resources:** [Learn Bittensor - Graphite](https://learnbittensor.org/subnets/43)
 
 ### SN44: Score Vision / Score Predict
 - **Name:** Score Vision (Score Predict)
@@ -380,28 +391,55 @@ Bittensor subnets span **6 major categories:**
 
 ### SN47: Reboot
 - **Name:** Reboot
-- **Purpose:** TBD (research in progress)
-- **Evaluation Method:** TBD (research in progress)
+- **Website:** [getreboot.org](https://getreboot.org/)
+- **Purpose:** Decentralized robotics AI network
+- **Description:** Provides scalable compute power and data for robotics development and AI training
+- **Key Features:** Advanced pathfinding, scheduling, optimization algorithms for autonomous robotic decision-making; swarm robotics and collaborative problem-solving
+- **Technology:** Distributed AI network enabling peer-to-peer competition, validated through Bittensor consensus
+- **Software:** Open-source Python stack (3.11+) with optional Docker support
+- **Function:** Miners provide robotics AI solutions, validators score outputs; leverages TAO staking and rewards
+- **Evaluation Method:** Bittensor consensus validation of robotic solutions and autonomous agent performance
+- **Community:** Open-source development by global AI and robotics researchers
 
 ### SN48-SN50: Placeholder
 - **Name:** TBD (research in progress)
 - **Purpose:** TBD (research in progress)
 - **Evaluation Method:** TBD (research in progress)
 
-### SN51: Celium
-- **Name:** Celium
-- **Purpose:** TBD (research in progress)
-- **Evaluation Method:** TBD (research in progress)
+### SN51: Celium / Lium
+- **Name:** Lium (previously Celium)
+- **Operator:** commune-ai
+- **GitHub:** [`commune-ai/celium`](https://github.com/commune-ai/celium)
+- **Purpose:** Decentralized GPU rental platform / compute marketplace
+- **Description:** "The AWS/Azure of Bittensor" - connects miners with idle GPUs to users needing compute resources for AI training and scientific computing
+- **Key Features:** Affordable GPU rentals, developer-friendly templates (PyTorch, TensorFlow), peer-to-peer network
+- **Performance:** Onboarded ~500 Nvidia H100 GPUs in first month (late 2024), became top-emitting subnet (6-7% of TAO emissions by 2025)
+- **Function:** Global GPU pool where miners contribute resources, users rent for ML and data analysis
+- **Evaluation Method:** GPU quality and performance-based compensation for miners
+- **Resources:** [SubnetAlpha - Lium](https://subnetalpha.ai/subnet/lium/)
 
 ### SN52-SN61: Placeholder
 - **Name:** TBD (research in progress)
 - **Purpose:** TBD (research in progress)
 - **Evaluation Method:** TBD (research in progress)
 
-### SN62: AgenTao
-- **Name:** AgenTao
-- **Purpose:** TBD (research in progress)
-- **Evaluation Method:** TBD (research in progress)
+### SN62: AgenTao / Ridges AI
+- **Name:** Ridges AI (originally AgenTao)
+- **Operator:** taoagents
+- **GitHub:** [`taoagents/agentao`](https://github.com/taoagents/agentao)
+- **Purpose:** Decentralized marketplace for autonomous software agents solving coding challenges
+- **Description:** AI agents autonomously solve complex software engineering problems by deconstructing tasks into discrete units (fixing regressions, writing tests, resolving GitHub issues)
+- **Core Technology:** Cerebro - learning-based system that classifies task difficulty, supervises solutions, and refines reward models
+- **Architecture:** Validators propose and assess tasks; miners compete to deliver best solutions
+- **Development Phases:**
+  - Epoch 1: Synthetic dataset collection
+  - Epoch 2: Real-world GitHub issues
+  - Epoch 3: Containerized agent marketplaces
+  - Epoch 4: Fully autonomous local development
+- **Recent Innovation:** OpenMine - developers log in with Google and submit agents without crypto/mining complexity
+- **Evaluation Method:** Cerebro-based task difficulty classification and solution quality scoring
+- **Token:** SN62/TAO on Subnet Tokens exchange
+- **Resources:** [SubnetAlpha - Ridges AI](https://subnetalpha.ai/subnet/ridgesai/)
 
 ### SN63: Placeholder
 - **Name:** TBD (research in progress)
@@ -410,18 +448,38 @@ Bittensor subnets span **6 major categories:**
 
 ### SN64: Chutes
 - **Name:** Chutes
-- **Purpose:** TBD (research in progress)
-- **Evaluation Method:** TBD (research in progress)
+- **Operator:** Rayon Labs
+- **GitHub:** [`minersunion/sn64-tools`](https://github.com/minersunion/sn64-tools) (community tools)
+- **Purpose:** Serverless AI compute / instant AI model hosting
+- **Description:** First $100M subnet on Bittensor (9 weeks after dTAO launch) - provides "instant on" AI model deployment in seconds
+- **Key Features:** Deploy and run AI models (DeepSeek, Mistral, etc.) via platform or API without managing infrastructure; Docker-based applications
+- **Cost Advantage:** 85% less expensive than AWS for AI model hosting
+- **Performance:** #1 ranked subnet on Bittensor with $50M+ valuation, powers most DeepSeek free token outputs on OpenRouter
+- **Developer:** One of three Rayon Labs subnets (alongside Gradients SN56, Nineteen SN19)
+- **Function:** Serverless platform for deploying, running, and scaling any AI model - quick experimentation to production
+- **Evaluation Method:** Model deployment performance, uptime, and compute delivery verification
+- **Market Position:** Top-performing subnet token with strong monthly gains
 
 ### SN65-SN66: Placeholder
 - **Name:** TBD (research in progress)
 - **Purpose:** TBD (research in progress)
 - **Evaluation Method:** TBD (research in progress)
 
-### SN67: Tenex
-- **Name:** Tenex
-- **Purpose:** TBD (research in progress)
-- **Evaluation Method:** TBD (research in progress)
+### SN67: Tenex / Tenexium
+- **Name:** Tenex (Tenexium / "10x")
+- **Operator:** Tenexium
+- **GitHub:** [`Tenexium/tenex-subnet`](https://github.com/Tenexium/tenex-subnet)
+- **Twitter:** [@Tenex_SN67](https://x.com/Tenex_SN67)
+- **Purpose:** Decentralized long-only spot margin protocol / DeFi leverage desk
+- **Description:** First native DeFi layer on Bittensor enabling leveraged trading of subnet tokens (alpha tokens) using TAO collateral
+- **Key Features:** Users borrow TAO against TAO collateral to amplify exposure on subnet tokens; long-only (no short selling) to avoid sell pressure
+- **Dual Benefits:**
+  - Traders: Establish leveraged long positions on subnet tokens
+  - Liquidity providers: Earn sustainable yields from Bittensor emissions + protocol fees (trading, borrowing, liquidations)
+- **Function:** Transforms TAO from staking token into productive financial instrument within Bittensor ecosystem
+- **Innovation:** "Bittensor's first native leverage desk" - enables DeFi inside the network
+- **Evaluation Method:** Protocol performance, liquidation health, liquidity provision metrics
+- **Resources:** [SubnetAlpha - Tenex](https://subnetalpha.ai/subnet/tenex/), [Backprop Finance](https://backprop.finance/dtao/subnets/67-tenexium/liquidityProviders)
 
 ### SN68-SN89: Placeholder
 - **Name:** TBD (research in progress)
@@ -560,11 +618,16 @@ TAO emissions are distributed across subnets based on:
 This document now includes **placeholder entries for all subnet numbers** from SN0 through SN89+.
 
 **Fully Documented Subnets (with detailed info):**
-- SN0-SN37 (governance + first 37 production subnets)
-- SN41, SN43, SN44, SN47, SN51, SN62, SN64, SN67 (partial info)
+- SN0-SN37 (governance + first 37 production subnets with purposes, operators, evaluation methods)
+- SN41 (SportsTensor), SN43 (Graphite), SN44 (Score Vision), SN47 (Reboot), SN51 (Lium), SN62 (Ridges AI), SN64 (Chutes), SN67 (Tenex) - all now have complete descriptions
 
 **Placeholder Subnets (awaiting detailed research):**
 - SN38-SN40, SN42, SN45-SN46, SN48-SN50, SN52-SN61, SN63, SN65-SN66, SN68-SN89+
+
+**Notable Subnet Evolutions:**
+- SN35: LogicNet (mathematical AI) → Cartha (DeFi liquidity) - complete repurposing in 2025
+- SN51: Celium → Lium (GPU marketplace) - rebranded but same purpose
+- SN62: AgenTao → Ridges AI (software agent marketplace) - rebranded but same purpose
 
 ## Incremental Updates Needed
 
