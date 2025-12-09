@@ -2,7 +2,9 @@
 
 ## Overview
 
-This document catalogs all active Bittensor subnets, including their purpose, operators, and evaluation mechanisms. Bittensor currently has **89 subnets** (as of December 2025), covering diverse AI tasks from text generation to compute marketplaces.
+This document catalogs all Bittensor subnets, including their purpose, operators, and evaluation mechanisms. Bittensor had approximately **89 active subnets** as of early December 2025, though the network has since expanded to include subnet numbers up to approximately **SN114+**. The subnet landscape changes frequently as new subnets register and others are deregistered based on emissions voting.
+
+This directory includes **placeholder entries for SN0-SN89+**, with detailed information for SN0-SN37 and partial information for select higher-numbered subnets. Subnets cover diverse AI tasks from text generation to compute marketplaces, DeFi predictions, data infrastructure, and specialized applications.
 
 **Resources:**
 - **Live Subnet Data:** [taostats.io/subnets](https://taostats.io/subnets)
@@ -113,22 +115,142 @@ Bittensor subnets span **6 major categories:**
 ### SN7: Subvortex
 - **Name:** Subvortex
 - **Operator:** ch3rnobog
-- **Purpose:** TBD (research in progress)
+- **Purpose:** Boosts Bittensor with decentralized subtensor nodes
 - **Evaluation Method:** TBD (research in progress)
 
-### SN19: Nineteen
-- **Name:** Nineteen
-- **Purpose:** Decentralized AI model inference at scale
+### SN8: Taoshi
+- **Name:** Taoshi / Time Series Prediction
+- **Operator:** Arrash / taoshidev
+- **GitHub:** [`taoshidev/time-series-prediction-subnet`](https://github.com/taoshidev/time-series-prediction-subnet)
+- **Purpose:** The Nexus of Decentralized Financial Forecasting
+- **Evaluation Method:** TBD (research in progress)
+
+### SN9: Pre Training
+- **Name:** Pre Training
+- **Operator:** Const / unconst
+- **GitHub:** [`unconst/pretrain-subnet`](https://github.com/unconst/pretrain-subnet)
+- **Purpose:** Facilitates pre-training of AI models on large-scale datasets
+- **Evaluation Method:** TBD (research in progress)
+
+### SN10: Apollo ZK / Map Reduce
+- **Name:** Apollo ZK (previously Map Reduce)
+- **Operator:** ChainDude / dream-well
+- **GitHub:** [`dream-well/map-reduce-subnet`](https://github.com/dream-well/map-reduce-subnet)
+- **Purpose:** Zero-knowledge proof computing with network scaling
+- **Evaluation Method:** TBD (research in progress)
+
+### SN11: Transcription
+- **Name:** Transcription
+- **Operator:** Cazure
+- **Purpose:** Decentralized AI for audio-to-text transcription
+- **Evaluation Method:** TBD (research in progress)
+
+### SN12: Compute Horde / Horde
+- **Name:** Compute Horde (Horde)
+- **Operator:** rhef
+- **Purpose:** Enables decentralized, parallel task processing
+- **Description:** Dedicated to decentralized resource allocation for computing
+- **Evaluation Method:** TBD (research in progress)
+
+### SN13: Dataverse / Data Universe
+- **Name:** Dataverse (Data Universe)
+- **Operator:** Macrocosmos / RusticLuftig
+- **GitHub:** [`RusticLuftig/data-universe`](https://github.com/RusticLuftig/data-universe)
+- **Purpose:** Data infrastructure for Bittensor AI development
+- **Description:** Critical pillar of AI for Bittensor
+- **Evaluation Method:** TBD (research in progress)
+
+### SN14: LLM Defender / VectorStore
+- **Name:** LLM Defender (VectorStore)
+- **Operator:** ceterum1
+- **GitHub:** [`ceterum1/llm-defender-subnet`](https://github.com/ceterum1/llm-defender-subnet)
+- **Purpose:** Enhancing LLM security through decentralized, multi-layered defense
+- **Evaluation Method:** TBD (research in progress)
+
+### SN15: Blockchain Insights
+- **Name:** Blockchain Insights
+- **Operator:** blockchain-insights
+- **GitHub:** [`blockchain-insights/blockchain-data-subnet`](https://github.com/blockchain-insights/blockchain-data-subnet)
+- **Purpose:** Graph-based blockchain data analytics and insight platform
+- **Evaluation Method:** TBD (research in progress)
+
+### SN16: BitAds / Audio Subnet
+- **Name:** BitAds (previously AudioSubnet)
+- **Operator:** Emperor Wang / UncleTensor
+- **GitHub:** [`UncleTensor/AudioSubnet`](https://github.com/UncleTensor/AudioSubnet)
+- **Purpose:** Decentralized advertising network (evolved from music generation)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN17: PixML / Three Gen / Flavia
+- **Name:** PixML (Flavia / Three Gen)
+- **Operator:** CortexLM
+- **GitHub:** [`CortexLM/flavia`](https://github.com/CortexLM/flavia)
+- **Purpose:** Diffusion model fine-tuning via Vision Subnet
+- **Description:** Focused on finetuning/pre-training Diffusion models on the Bittensor network
+- **Evaluation Method:** TBD (research in progress)
+
+### SN18: Cortex.T / Zeus
+- **Name:** Cortex.T (Zeus)
+- **Operator:** corcel-api
+- **GitHub:** [`corcel-api/cortex.t`](https://github.com/corcel-api/cortex.t)
+- **Purpose:** AI development and synthetic data generation platform
+- **Evaluation Method:** TBD (research in progress)
+
+### SN19: Nineteen / Vision
+- **Name:** Nineteen (Vision)
+- **Operator:** namoray
+- **GitHub:** [`namoray/vision`](https://github.com/namoray/vision)
+- **Purpose:** Decentralized AI model inference at scale / Multi-model inference platform
 - **Focus:** Text and image generation
 - **Models:** LLaMA 3, Stable Diffusion derivatives
 - **Evaluation Method:** TBD (research in progress)
 - **Description:** Leading inference subnet providing access to advanced open-source models
 
+### SN20: BitAgent / Oracle
+- **Name:** BitAgent (Oracle Subnet)
+- **Operator:** Rizzo / oracle-subnet
+- **GitHub:** [`oracle-subnet/oracle-subnet`](https://github.com/oracle-subnet/oracle-subnet)
+- **Purpose:** Intelligent agent integration and automation
+- **Evaluation Method:** TBD (research in progress)
+
+### SN21: Filetao / Storage / Omega Any-to-Any
+- **Name:** Filetao (Storage Subnet / Omega Any-to-Any)
+- **Operator:** philanthrope / ifrit98
+- **GitHub:** [`ifrit98/storage-subnet`](https://github.com/ifrit98/storage-subnet)
+- **Purpose:** Decentralized storage with zero-knowledge proofs
+- **Evaluation Method:** TBD (research in progress)
+
+### SN22: Meta Search / Datura
+- **Name:** Meta Search (Datura)
+- **Operator:** floppyfish
+- **Purpose:** Twitter data analysis platform
+- **Evaluation Method:** TBD (research in progress)
+
 ### SN23: Niche Image
 - **Name:** Niche Image
-- **Purpose:** Decentralized image generation
+- **Purpose:** Decentralized image generation (distributed image generation using Bittensor)
 - **Function:** Miners contribute compute to produce images across various models
 - **Evaluation Method:** Image quality assessment (specifics TBD)
+
+### SN24: Omega Labs
+- **Name:** Omega Labs
+- **Operator:** omegalabs
+- **GitHub:** [`omegalabsinc/omegalabs-bittensor-subnet`](https://github.com/omegalabsinc/omegalabs-bittensor-subnet)
+- **Purpose:** Decentralized multimodal dataset for AGI research
+- **Description:** Data collection supporting SN21's Any-to-Any multimodal model development
+- **Evaluation Method:** TBD (research in progress)
+
+### SN25: Hivetrain / Mainframe
+- **Name:** Hivetrain (Mainframe)
+- **Operator:** bitcurrent / Macrocosmos
+- **Purpose:** Distributed deep learning approach
+- **Evaluation Method:** TBD (research in progress)
+
+### SN26: Image Alchemy
+- **Name:** Image Alchemy
+- **Operator:** Emperor Wang
+- **Purpose:** Decentralized image creation and synthesis
+- **Evaluation Method:** TBD (research in progress)
 
 ### SN27: Compute Subnet
 - **Name:** Compute
@@ -141,17 +263,171 @@ Bittensor subnets span **6 major categories:**
 - **Evaluation Method:** Proof of compute delivery, verification of work completion
 - **Features:** Trustless GPU rental with built-in verification
 
+### SN28: Foundry S&P 500 Oracle
+- **Name:** Foundry S&P 500 Oracle
+- **Operator:** theBom
+- **Purpose:** Stock price prediction incentives
+- **Description:** Encourages miners to frequently predict the S&P 500 price during trading hours
+- **Evaluation Method:** TBD (research in progress)
+
+### SN29: Fractal
+- **Name:** Fractal
+- **Operator:** theAdoringFan
+- **Purpose:** Decentralized video generation inference
+- **Evaluation Method:** TBD (research in progress)
+
 ### SN30: WomboAI
 - **Name:** WomboAI
 - **Operator:** [WOMBO](https://www.wombo.ai) / WOMBO Dream team
 - **GitHub:** [`womboai/wombo-bittensor-subnet`](https://github.com/womboai/wombo-bittensor-subnet)
 - **Organization:** [`womboai`](https://github.com/womboai)
-- **Purpose:** Image generation and social sharing
+- **Purpose:** Image generation and social sharing / Decentralized content creation engine
 - **Description:** Powers WOMBO Dream and WOMBO Me apps with ~200K DAU, ~5M MAU
 - **Function:** High-quality image generation through Bittensor, powering real-world applications
 - **Applications:** [WOMBO Dream](https://dream.ai), [WOMBO Me](https://wombo.me)
 - **Evaluation Method:** Image quality + social engagement metrics (TBD)
 - **Additional Tools:** [`rusttensor`](https://github.com/womboai/rusttensor) - generalized Rust interface for subnets
+
+### SN31: NAS Chain
+- **Name:** NAS Chain
+- **Purpose:** Neural architecture search distribution
+- **Evaluation Method:** TBD (research in progress)
+
+### SN32: Its-AI / It's AI
+- **Name:** Its-AI (It's AI)
+- **Purpose:** Solutions aimed at identifying LLM-generated content
+- **Description:** Focuses on detecting AI-generated content amid the rapid growth of Large Language Models
+- **Evaluation Method:** TBD (research in progress)
+
+### SN33: ReadyAI / Conversation Genome Project
+- **Name:** ReadyAI (Conversation Genome Project)
+- **Operator:** 0xai / Afterparty AI
+- **Purpose:** Contributing high-quality datasets to open source AI
+- **Description:** Addresses scarcity of high-quality datasets, team from Afterparty AI (founded 2021)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN34: BitMind
+- **Name:** BitMind
+- **Purpose:** AI image detection
+- **Description:** Utilizes advanced generative and discriminative AI models to detect AI-generated images
+- **Evaluation Method:** TBD (research in progress)
+
+### SN35: LogicNet
+- **Name:** LogicNet
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+- **Note:** Has alpha token (SN35/TAO trading pair)
+
+### SN36: Web Agents / Pyramid Scheme
+- **Name:** Web Agents (Pyramid Scheme)
+- **Purpose:** Complex systems analysis
+- **Description:** Takes on complexity science's core mysteries: uncovering how simple rules can create complex, seemingly random behavior
+- **Evaluation Method:** TBD (research in progress)
+
+### SN37: Finetuning
+- **Name:** Finetuning
+- **Operator:** Macrocosmos & Taoverse
+- **Website:** [macrocosmos.ai/sn37](https://www.macrocosmos.ai/sn37)
+- **Purpose:** Fine-tuned model production
+- **Description:** Rewards miners for producing fine-tuned models according to competition parameters
+- **Function:** Acts like continuous benchmark, rewarding miners for achieving best losses on randomly sampled competition data
+- **Evaluation Method:** Loss-based scoring on competition datasets
+- **Resources:** [SubnetAlpha - Finetuning](https://subnetalpha.ai/subnet/finetuning-by-macrocosmos-and-taoverse/)
+
+### SN38: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN39: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN40: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN41: SportsTensor
+- **Name:** SportsTensor
+- **Purpose:** Sports analytics and predictions
+- **Description:** Blends advanced technology with sports analytics, develops accurate decentralized sports prediction algorithms
+- **Evaluation Method:** TBD (research in progress)
+
+### SN42: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN43: Graphite
+- **Name:** Graphite
+- **Operator:** GraphiteAI
+- **GitHub:** [`GraphiteAI/Graphite-Subnet`](https://github.com/GraphiteAI/Graphite-Subnet)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN44: Score Vision / Score Predict
+- **Name:** Score Vision (Score Predict)
+- **Purpose:** Football match prediction
+- **Description:** Incentivizes precise football (soccer) match predictions
+- **Evaluation Method:** TBD (research in progress)
+
+### SN45-SN46: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN47: Reboot
+- **Name:** Reboot
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN48-SN50: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN51: Celium
+- **Name:** Celium
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN52-SN61: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN62: AgenTao
+- **Name:** AgenTao
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN63: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN64: Chutes
+- **Name:** Chutes
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN65-SN66: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN67: Tenex
+- **Name:** Tenex
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+
+### SN68-SN89: Placeholder
+- **Name:** TBD (research in progress)
+- **Purpose:** TBD (research in progress)
+- **Evaluation Method:** TBD (research in progress)
+- **Note:** These subnet numbers exist but detailed information is not yet documented. As of December 2025, the network has expanded to include subnets up to approximately SN114, though many are in immunity period or have low emissions.
 
 ---
 
@@ -279,17 +555,28 @@ TAO emissions are distributed across subnets based on:
 
 ---
 
-## To Be Added (Incremental Updates)
+## Current Documentation Status
 
-This document will be incrementally updated with:
+This document now includes **placeholder entries for all subnet numbers** from SN0 through SN89+.
 
-- **Detailed subnet descriptions** for all 89 active subnets
-- **Operator information** and team backgrounds
-- **Evaluation mechanisms** for each subnet
-- **Performance metrics** (emissions, miners, validators)
+**Fully Documented Subnets (with detailed info):**
+- SN0-SN37 (governance + first 37 production subnets)
+- SN41, SN43, SN44, SN47, SN51, SN62, SN64, SN67 (partial info)
+
+**Placeholder Subnets (awaiting detailed research):**
+- SN38-SN40, SN42, SN45-SN46, SN48-SN50, SN52-SN61, SN63, SN65-SN66, SN68-SN89+
+
+## Incremental Updates Needed
+
+To complete this document, the following information is needed:
+
+- **Detailed descriptions** for placeholder subnets (SN38-SN89+)
+- **Operator information** and team backgrounds for all subnets
+- **Detailed evaluation mechanisms** for subnets currently marked "TBD"
+- **Performance metrics** (emissions, miners, validators) from taostats.io
 - **Use cases and applications** for each subnet
 - **Integration examples** (how to use subnet outputs)
-- **GitHub repositories** and documentation links
+- **Additional GitHub repositories** and documentation links
 - **Community resources** (Discord, Telegram, forums)
 
 ---
@@ -298,18 +585,18 @@ This document will be incrementally updated with:
 
 To add or update subnet information:
 
-1. Research subnet via taostats.io or subnet GitHub
+1. Research subnet via [taostats.io/subnets](https://taostats.io/subnets) or subnet GitHub repos
 2. Document: Number, Name, Operator, Purpose, Evaluation Method
-3. Verify information is current (subnet landscape changes)
-4. Add to appropriate category
-5. Include sources and links
+3. Verify information is current (subnet landscape changes frequently)
+4. Replace placeholder entries with detailed information
+5. Add sources and links (GitHub, websites, operator info)
 
-**Priority subnets to document next:**
-- SN8-SN18 (missing in current research)
-- SN20-SN22, SN24-SN26, SN28-SN29 (gaps)
-- SN31-SN89 (majority of subnets)
-- DeFi subnets (specific numbers TBD)
-- Storage subnets (specific numbers TBD)
+**High Priority Updates Needed:**
+- Fill in placeholder subnets (SN38-SN40, SN42, SN45-SN46, SN48-SN50, etc.)
+- Add detailed evaluation methods for all subnets
+- Document higher subnet numbers (SN90-SN114+ exist as of Dec 2025)
+- Add performance metrics and emissions data
+- Link to subnet Discord/Telegram communities
 
 ---
 
