@@ -13,7 +13,7 @@ This directory includes **placeholder entries for SN0-SN89+**, with detailed inf
 | SN | Name | Category |
 |----|------|----------|
 | SN0 | Root Network | Governance |
-| SN1 | Apex | Content Generation / LLM Ecosystem |
+| SN1 | Apex | LLM Ecosystem |
 | SN2 | Omron | DeFi & Financial |
 | SN3 | MyShell | Content Generation |
 | SN4 | Multi-Modality | Developer Tools |
@@ -104,7 +104,7 @@ Bittensor subnets span **6 major categories:**
 
 1. **Content Generation** - Text, images, audio, video
 2. **Data Collection & Processing** - Scraping, storage, datasets
-3. **LLM Ecosystem** - Training, fine-tuning, inference
+3. **LLM Ecosystem** - Training, fine-tuning, inference, evaluation
 4. **Decentralized Infrastructure** - Compute, storage, networking
 5. **DeFi** - Financial predictions, trading strategies, liquidity
 6. **Other Applications** - Protein folding, research, specialized tasks
@@ -125,19 +125,28 @@ Bittensor subnets span **6 major categories:**
 
 ## Production Subnets (Confirmed Active)
 
-### SN1: Text Prompting (Apex)
+### SN1: Apex
 - **Name:** Apex (formerly Text Prompting)
 - **Operator:** [Macrocosmos](https://www.macrocosmos.ai) / Opentensor Foundation
 - **GitHub:** [`macrocosm-os/apex`](https://github.com/macrocosm-os/apex)
 - **Previous Repo:** [`opentensor/prompting`](https://github.com/opentensor/prompting) (legacy)
-- **Purpose:** Conversational AI and text generation (LLM inference)
-- **Description:** "Most intelligent inference model on Bittensor" - first agent to achieve deep-researcher reasoning on protocol
+- **Purpose:** Decentralized AI quality evaluation and training data generation
+- **Current Version:** Apex 3.0 (August 2025)
+- **Description:** Game-theoretic evaluation subnet using adversarial mechanisms to judge AI quality. Produces millions of tokens per day of high-quality training data for model alignment. Inference outsourced to SN64 (Chutes); Apex focuses exclusively on quality judgment and creating training datasets.
+- **Evolution:**
+  - **Phase 1 (2023-Early 2024):** RLHF + DPO scoring vs reference answers (60%/40% weighted)
+  - **Phase 2 (Mid 2024):** GAN-style mechanism - miners act as both generators and discriminators
+  - **Phase 3 (Late 2024):** Organic query integration - real user questions mixed with synthetic prompts
+  - **Phase 4 (August 2025):** Apex 3.0 - Pure adversarial evaluation, specialization in judgment over generation
 - **Evaluation Method:**
-  - **Phase 1:** RLHF + DPO scoring vs reference answers (60%/40% weighted)
-  - **Phase 2:** GAN-style mechanism - miners act as both generators and discriminators
-  - **Phase 3:** Organic query integration - real user questions mixed with synthetic prompts
-  - Zero-sum game: Generators earn by fooling discriminators, discriminators earn by catching generators
-- **Status:** Most mature subnet, flagship Bittensor application
+  - Pure GAN-style adversarial evaluation
+  - Miners serve dual roles: generators (create responses) and discriminators (judge quality)
+  - Zero-sum reward system: Generators earn by fooling discriminators, discriminators earn by catching generators
+  - Emphasis on judgment validation over answer correctness
+  - Question shifted from "Is this correct?" to "Can you prove this achieves its goal?"
+- **Integration:** Works with SN64 (inference), SN13 (web retrieval/Gravity), SN37 (finetuning)
+- **Data Pipeline:** High-volume training data feeds Subnet 37 for continuous model improvement
+- **Status:** Most mature subnet, flagship evaluation platform, first to achieve deep-researcher reasoning
 - **See Also:** [Detailed Evaluation Deep Dive](subnet1-evaluation-deep-dive.md)
 
 ### SN2: Machine Translation / Omron
@@ -572,7 +581,6 @@ Bittensor subnets span **6 major categories:**
 ## Subnet Categories (High-Level)
 
 ### 1. Content Generation Subnets (Text, Image, Audio, Video)
-- **SN1:** Apex - Text generation / conversational AI (flagship subnet)
 - **SN3:** MyShell - Text-to-Speech (TTS)
 - **SN5:** OpenKaito - Evolved from image generation
 - **SN16:** BitAds - Advertising network (evolved from audio)
@@ -583,8 +591,8 @@ Bittensor subnets span **6 major categories:**
 - **SN29:** Fractal - Video generation inference
 - **SN30:** WomboAI - Image generation + social (200K DAU, 5M MAU)
 
-### 2. LLM Ecosystem (Training, Fine-tuning, Inference)
-- **SN1:** Apex - LLM inference (conversational AI)
+### 2. LLM Ecosystem (Training, Fine-tuning, Inference, Evaluation)
+- **SN1:** Apex - AI quality evaluation and training data generation (flagship evaluation platform)
 - **SN6:** Nous - Continuous LLM fine-tuning with synthetic data
 - **SN9:** Pre Training - Large-scale AI model pre-training
 - **SN18:** Cortex.T - AI development and synthetic data generation
