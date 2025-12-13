@@ -6,6 +6,74 @@ This document catalogs all Bittensor subnets, including their purpose, operators
 
 This directory includes **placeholder entries for SN0-SN89+**, with detailed information for SN0-SN37 and partial information for select higher-numbered subnets. Subnets cover diverse AI tasks from text generation to compute marketplaces, DeFi predictions, data infrastructure, and specialized applications.
 
+---
+
+## Subnet Directory Table
+
+| SN | Name | Category |
+|----|------|----------|
+| SN0 | Root Network | Governance |
+| SN1 | Apex | Content Generation / LLM Ecosystem |
+| SN2 | Omron | DeFi & Financial |
+| SN3 | MyShell | Content Generation |
+| SN4 | Multi-Modality | Developer Tools |
+| SN5 | OpenKaito | Content Generation |
+| SN6 | Nous | LLM Ecosystem |
+| SN7 | Subvortex | Infrastructure |
+| SN8 | Taoshi | DeFi & Financial |
+| SN9 | Pre Training | LLM Ecosystem |
+| SN10 | Apollo ZK | Infrastructure |
+| SN11 | Transcription | Developer Tools |
+| SN12 | Compute Horde | Infrastructure |
+| SN13 | Dataverse | Data & Processing |
+| SN14 | LLM Defender | Security & Safety |
+| SN15 | Blockchain Insights | Data & Processing |
+| SN16 | BitAds | Content Generation |
+| SN17 | PixML | Content Generation |
+| SN18 | Cortex.T | LLM Ecosystem |
+| SN19 | Vision/Nineteen | Content Generation / LLM Ecosystem |
+| SN20 | BitAgent | Developer Tools |
+| SN21 | Filetao | Infrastructure |
+| SN22 | Meta Search | Data & Processing |
+| SN23 | Niche Image | Content Generation |
+| SN24 | Omega Labs | Data & Processing |
+| SN25 | Hivetrain | Optimization & Specialized |
+| SN26 | Image Alchemy | Content Generation |
+| SN27 | Compute | Infrastructure |
+| SN28 | Foundry | DeFi & Financial |
+| SN29 | Fractal | Content Generation |
+| SN30 | WomboAI | Content Generation |
+| SN31 | NAS Chain | Optimization & Specialized |
+| SN32 | Its-AI | Security & Safety |
+| SN33 | ReadyAI | Data & Processing |
+| SN34 | BitMind | Security & Safety |
+| SN35 | Cartha | DeFi & Financial |
+| SN36 | Web Agents | Optimization & Specialized |
+| SN37 | Finetuning | LLM Ecosystem |
+| SN38 | *Placeholder* | *TBD* |
+| SN39 | *Placeholder* | *TBD* |
+| SN40 | *Placeholder* | *TBD* |
+| SN41 | SportsTensor | DeFi & Financial |
+| SN42 | *Placeholder* | *TBD* |
+| SN43 | Graphite | Optimization & Specialized |
+| SN44 | Score Vision | DeFi & Financial |
+| SN45 | *Placeholder* | *TBD* |
+| SN46 | *Placeholder* | *TBD* |
+| SN47 | Reboot | Optimization & Specialized |
+| SN48 | *Placeholder* | *TBD* |
+| SN49 | *Placeholder* | *TBD* |
+| SN50 | *Placeholder* | *TBD* |
+| SN51 | Lium | Infrastructure |
+| SN52-61 | *Placeholder* | *TBD* |
+| SN62 | Ridges AI | Developer Tools |
+| SN63 | *Placeholder* | *TBD* |
+| SN64 | Chutes | Infrastructure |
+| SN65-66 | *Placeholder* | *TBD* |
+| SN67 | Tenex | DeFi & Financial |
+| SN68-89+ | *Placeholder* | *TBD* |
+
+**Note:** 45 subnets fully documented (SN0-37, SN41, SN43-44, SN47, SN51, SN62, SN64, SN67). Remaining subnets are placeholders awaiting research.
+
 **Resources:**
 - **Live Subnet Data:** [taostats.io/subnets](https://taostats.io/subnets)
 - **Browse Subnets:** [tao.app](https://tao.app) (code repositories and details)
@@ -75,10 +143,22 @@ Bittensor subnets span **6 major categories:**
 ### SN2: Machine Translation / Omron
 - **Name:** Omron (previously Machine Translation)
 - **Operator:** Lucrosus Capital / Inference Labs
-- **Purpose:** Intelligent capital networks (evolved from translation tasks)
+- **GitHub:** [`inference-labs-inc/omron-subnet`](https://github.com/inference-labs-inc/omron-subnet)
+- **Website:** [omron.ai](https://omron.ai/) | [Documentation](https://docs.omron.ai/)
+- **Purpose:** Zero-knowledge machine learning / Verifiable AI inference
+- **Description:** Incentivizes generation and validation of high-quality, secure, and efficient verified AI predictions using zk-ML (zero-knowledge machine learning)
 - **Registered:** April 10, 2024
-- **Evaluation Method:** TBD (research in progress)
-- **Note:** Subnet purpose appears to have evolved over time
+- **Evaluation Method:**
+  - **Query Process:** Validators send queries to miners who run verifiable inferences using selected model and input data
+  - **Miner Response:** Miners respond with model output + zero-knowledge proof of inference
+  - **Scoring Criteria (v2):** Three-factor evaluation:
+    1. **Proof size** - Smallest proofs preferred
+    2. **Speed** - Fastest response time preferred
+    3. **Accuracy** - Highest accuracy model considering performance constraints
+  - **Innovation:** "Proof of Weights" - weight-setting process runs within zero-knowledge circuits for validator transparency
+  - Validators score miners on response time, proof size, model hash, and cryptographic verifiability
+- **Technical Focus:** Model distillation and circuit optimization for maximum accuracy with minimal proof overhead
+- **Note:** Evolved from machine translation to become zero-knowledge verifiable inference subnet
 
 ### SN3: Data Scraping / MyShell TTS
 - **Name:** MyShell (previously Data Scraping)
@@ -491,33 +571,71 @@ Bittensor subnets span **6 major categories:**
 
 ## Subnet Categories (High-Level)
 
-### Content Generation Subnets
-- SN1: Text generation (Apex)
-- SN3: Text-to-Speech (MyShell)
-- SN5: Image generation (evolved)
-- SN19: Multi-modal inference (Nineteen)
-- SN23: Niche image generation
-- SN30: Image generation + social (WomboAI)
+### 1. Content Generation Subnets (Text, Image, Audio, Video)
+- **SN1:** Apex - Text generation / conversational AI (flagship subnet)
+- **SN3:** MyShell - Text-to-Speech (TTS)
+- **SN5:** OpenKaito - Evolved from image generation
+- **SN16:** BitAds - Advertising network (evolved from audio)
+- **SN17:** PixML - Diffusion model fine-tuning
+- **SN19:** Vision/Nineteen - Multi-modal inference (text + images)
+- **SN23:** Niche Image - Distributed image generation
+- **SN26:** Image Alchemy - Image creation and synthesis
+- **SN29:** Fractal - Video generation inference
+- **SN30:** WomboAI - Image generation + social (200K DAU, 5M MAU)
 
-### Data & Infrastructure Subnets
-- SN27: GPU compute marketplace
-- Storage subnets (numbers TBD)
-- Data collection subnets (numbers TBD)
+### 2. LLM Ecosystem (Training, Fine-tuning, Inference)
+- **SN1:** Apex - LLM inference (conversational AI)
+- **SN6:** Nous - Continuous LLM fine-tuning with synthetic data
+- **SN9:** Pre Training - Large-scale AI model pre-training
+- **SN18:** Cortex.T - AI development and synthetic data generation
+- **SN19:** Nineteen - Inference at scale (LLaMA 3, Stable Diffusion)
+- **SN37:** Finetuning - Fine-tuned model production (Macrocosmos & Taoverse)
 
-### LLM Ecosystem Subnets
-- SN1: Inference (Apex)
-- SN6: Training/fine-tuning (Nous)
-- SN19: Inference at scale (Nineteen)
+### 3. Data Collection & Processing
+- **SN13:** Dataverse - Data infrastructure for Bittensor AI
+- **SN15:** Blockchain Insights - Graph-based blockchain analytics
+- **SN22:** Meta Search - Twitter data analysis
+- **SN24:** Omega Labs - Decentralized multimodal datasets for AGI
+- **SN33:** ReadyAI - High-quality dataset contribution
 
-### DeFi Subnets
-- Crypto market analysis subnets (numbers TBD)
-- DeFi strategy optimization subnets (numbers TBD)
-- Liquidity engine subnets (numbers TBD)
+### 4. Decentralized Infrastructure (Compute, Storage, Networking)
+- **SN7:** Subvortex - Decentralized subtensor nodes
+- **SN10:** Apollo ZK - Zero-knowledge proof computing
+- **SN12:** Compute Horde - Decentralized parallel task processing
+- **SN21:** Filetao - Decentralized storage with zero-knowledge proofs
+- **SN27:** Compute - GPU marketplace (Runpod, Lambda, AWS integration)
+- **SN51:** Lium - GPU rental platform ("AWS/Azure of Bittensor", 500+ H100 GPUs)
+- **SN64:** Chutes - Serverless AI compute (85% cheaper than AWS, first $100M subnet)
 
-### Specialized Subnets
-- Protein folding subnets (numbers TBD)
-- Financial predictions (numbers TBD)
-- Research tasks (numbers TBD)
+### 5. DeFi & Financial Predictions
+- **SN2:** Omron - AI liquid re-staking yield optimizer
+- **SN8:** Taoshi - Decentralized financial forecasting / time series prediction
+- **SN28:** Foundry - S&P 500 oracle / stock price prediction
+- **SN35:** Cartha - Decentralized liquidity provisioning (evolved from LogicNet)
+- **SN41:** SportsTensor - Sports analytics and predictions
+- **SN44:** Score Vision - Football match prediction
+- **SN67:** Tenex - Long-only margin protocol / DeFi leverage desk
+
+### 6. Security & Safety
+- **SN14:** LLM Defender - LLM security through decentralized defense
+- **SN32:** Its-AI - Detecting LLM-generated content
+- **SN34:** BitMind - AI image detection
+
+### 7. Developer Tools & Automation
+- **SN4:** Multi-Modality - Multi-modal AI (text + images + other)
+- **SN11:** Transcription - Audio-to-text transcription
+- **SN20:** BitAgent - Intelligent agent integration and automation
+- **SN62:** Ridges AI - Autonomous software agents solving coding challenges
+
+### 8. Optimization & Specialized Computing
+- **SN25:** Hivetrain - Distributed deep learning
+- **SN31:** NAS Chain - Neural architecture search
+- **SN36:** Web Agents - Complexity analysis / simple rules → complex behavior
+- **SN43:** Graphite - Graph optimization / Traveling Salesman Problem
+- **SN47:** Reboot - Decentralized robotics AI network
+
+### 9. Governance
+- **SN0:** Root Network - TAO emissions distribution and network governance
 
 ---
 
