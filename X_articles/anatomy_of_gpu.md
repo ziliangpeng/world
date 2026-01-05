@@ -1,77 +1,77 @@
-# 深入淺出 GPU 架構與 CUDA 編程：以 NVIDIA H100 為例
+# Deep Dive into GPU Architecture and CUDA Programming: The NVIDIA H100
 
-## GPU 硬件架構概覽
+## GPU Hardware Architecture Overview
 
-GPU由多個Streaming Multiprocessors (SM)組成，每個SM是獨立的處理單元。以NVIDIA的旗艦**H100 (SXM5版本)**為例，它擁有**132個SM**。
+GPUs are composed of multiple Streaming Multiprocessors (SMs), each functioning as an independent processing unit. Taking NVIDIA's flagship **H100 (SXM5 version)** as an example, it contains **132 SMs**.
 
-### SM內部組成
+### SM Internal Components
 
-每個SM包含多種類型的計算核心。H100的SM採用**4-Way Partitioned設計**：
-- **Partition結構**：每個SM分為**4個Partition**，每個Partition有**32個FP32 CUDA Cores**
-- **CUDA Cores**：通用運算核心，整個H100共有16,896個CUDA Cores
-- **Tensor Cores**：專門加速矩陣乘加運算(A×B+C)的專用單元，每個H100 SM有**4個第四代Tensor Cores**，對深度學習至關重要
-- **Warp Scheduler**：每個Partition有自己的Warp Scheduler，負責調度warp到32個CUDA Cores上執行
+Each SM contains various types of compute cores. The H100 SM adopts a **4-Way Partitioned design**:
+- **Partition Structure**: Each SM is divided into **4 Partitions**, with each Partition containing **32 FP32 CUDA Cores**
+- **CUDA Cores**: General-purpose computing cores, with the entire H100 containing 16,896 CUDA Cores
+- **Tensor Cores**: Specialized units for accelerating matrix multiply-accumulate operations (A×B+C), with each H100 SM having **4 fourth-generation Tensor Cores**, crucial for deep learning
+- **Warp Scheduler**: Each Partition has its own Warp Scheduler, responsible for scheduling warps to execute on the 32 CUDA Cores
 
-**關鍵點**：由於每個Partition有32個CUDA Cores，啱啱好可以跑一個warp嘅32個thread，實現SIMT並行。呢個4x32嘅結構直接決定咗CUDA編程模型入面warp嘅大小同調度方式。
+**Key Point**: Since each Partition has 32 CUDA Cores, it perfectly fits one warp's 32 threads, enabling SIMT parallelism. This 4×32 structure directly determines the warp size and scheduling approach in the CUDA programming model.
 
-## GPU內存層次結構
+## GPU Memory Hierarchy
 
-GPU採用多層次內存架構來平衡速度和容量，從快到慢依次是：
+GPUs employ a multi-level memory architecture to balance speed and capacity, ordered from fastest to slowest:
 
 ### Registers
 
-每個Thread最快的私有存儲空間，用於存放循環變量、地址計算等中間值。H100每個SM有65,536個32-bit寄存器，每個Thread最多可使用**255個Registers**。Register數量是有限資源，用太多會降低SM同時駐留的Thread數量（影響occupancy），當Register不夠用時，編譯器會將變量"spill"到Local Memory。
+The fastest private storage space for each Thread, used to store loop variables, address calculations, and other intermediate values. Each H100 SM has 65,536 32-bit registers, with each Thread able to use up to **255 Registers**. Register count is a limited resource—using too many reduces the number of Threads that can reside simultaneously on an SM (affecting occupancy). When registers run out, the compiler will "spill" variables to Local Memory.
 
 ### Local Memory
 
-這是一個容易誤解的概念。雖然名字叫"Local"，但它**物理上位於Global Memory (HBM)中**，只是邏輯上每個Thread私有。當Register溢出、定義大數組或使用動態索引時，編譯器會將變量放到Local Memory。由於它實際在HBM中，訪問速度和Global Memory一樣慢，會嚴重影響性能。
+This is an easily misunderstood concept. Despite its name, Local Memory is **physically located in Global Memory (HBM)**, but is logically private to each Thread. When registers overflow, large arrays are defined, or dynamic indexing is used, the compiler will place variables in Local Memory. Since it's actually in HBM, access speed is as slow as Global Memory and can severely impact performance.
 
-### L1 Cache與Shared Memory
+### L1 Cache and Shared Memory
 
-每個SM擁有**256KB**的統一L1/Shared Memory。Shared Memory是可編程的L1 cache，你可以明確控制其內容，而L1 cache由硬件自動管理。在H100上，最多可配置**228KB**作為Shared Memory。Shared Memory是同一Block內線程通信和數據重用的關鍵。
+Each SM has **256KB** of unified L1/Shared Memory. Shared Memory is programmable L1 cache—you can explicitly control its contents, while L1 cache is automatically managed by hardware. On the H100, up to **228KB** can be configured as Shared Memory. Shared Memory is key for thread communication and data reuse within the same Block.
 
 ### L2 Cache
 
-H100擁有**50MB**的L2 Cache，所有SM共享。它作為SM和全局內存之間的中間層，延遲約200個週期。所有寫入全局內存的操作都會通過L2進行同步。
+The H100 has **50MB** of L2 Cache, shared by all SMs. It serves as an intermediate layer between SMs and global memory, with a latency of approximately 200 cycles. All writes to global memory are synchronized through L2.
 
 ### Global Memory (HBM3)
 
-H100配備**80GB的HBM3內存**，帶寬高達**3.35 TB/s**。這是GPU的主存儲，容量最大但延遲最高，是性能優化的主要瓶頸。
+The H100 is equipped with **80GB of HBM3 memory**, with bandwidth up to **3.35 TB/s**. This is the GPU's main storage—largest in capacity but highest in latency, making it the primary bottleneck for performance optimization.
 
-## CUDA編程模型
+## CUDA Programming Model
 
-### Thread、Block與Warp
+### Thread, Block, and Warp
 
-CUDA執行模型基於層次結構：
-- **Thread**: 最基本的執行單元，對應一個CUDA Core的操作
-- **Warp**: **32個Thread**組成一個Warp，是GPU調度的基本單位
-- **關鍵對應**：由於H100每個Partition有32個CUDA Cores，一個Warp會被**schedule到一個Partition上**，32個Thread啱啱好跑在32個CUDA Cores上面，實現SIMT（Single Instruction, Multiple Threads）並行
-- **Block**: 多個Warp組成Thread Block，分配到單個SM執行，H100每個SM最多同時處理**32個Blocks**
+The CUDA execution model is based on a hierarchical structure:
+- **Thread**: The most basic execution unit, corresponding to one CUDA Core operation
+- **Warp**: **32 Threads** form a Warp, which is the basic unit of GPU scheduling
+- **Key Correspondence**: Since each H100 Partition has 32 CUDA Cores, a Warp is **scheduled to a Partition**, with 32 Threads running perfectly on 32 CUDA Cores, implementing SIMT (Single Instruction, Multiple Threads) parallelism
+- **Block**: Multiple Warps form a Thread Block, assigned to execute on a single SM. Each H100 SM can handle up to **32 Blocks** simultaneously
 
-當Warp內線程因條件分支走不同路徑時，會發生Warp Divergence，導致性能下降。
+When threads within a Warp take different paths due to conditional branches, Warp Divergence occurs, leading to performance degradation.
 
-### 異步執行與Streams
+### Asynchronous Execution and Streams
 
-現代CUDA編程不僅是launch kernel等結果，更要充分利用CPU-GPU並行性。**Streams**允許將kernel launch同memory copy重疊，隱藏數據傳輸延遲。要實現真正異步傳輸，需用`cudaMallocHost`分配pinned memory，否則傳輸會被block。在H100上，可同時進行HBM→GPU copy、GPU compute、GPU→HBM copy，將整體吞吐量提升2-3倍。這對大規模數據處理和流水線式計算特別重要。
+Modern CUDA programming is not just about launching kernels and waiting for results—it's about fully leveraging CPU-GPU parallelism. **Streams** allow kernel launches and memory copies to overlap, hiding data transfer latency. To achieve truly asynchronous transfers, use `cudaMallocHost` to allocate pinned memory; otherwise, transfers will be blocked. On the H100, HBM→GPU copy, GPU compute, and GPU→HBM copy can occur simultaneously, boosting overall throughput by 2-3x. This is especially important for large-scale data processing and pipelined computation.
 
-### 多GPU編程
+### Multi-GPU Programming
 
-H100通常不會單獨使用，而是在多GPU系統中。**NCCL (NVIDIA Collective Communications Library)** 提供優化的多GPU通信原語（AllReduce、Broadcast等），對深度學習訓練至關重要。編程模型可選single-threaded控制所有GPU、multi-threaded（每GPU一個thread）或multi-process（MPI+NCCL）。在H100上，NVLink提供高達900GB/s的GPU-to-GPU帶寬，遠超PCIe，寫multi-GPU code時要充分利用這些高速互連。
+The H100 is typically not used in isolation, but in multi-GPU systems. **NCCL (NVIDIA Collective Communications Library)** provides optimized multi-GPU communication primitives (AllReduce, Broadcast, etc.), which are crucial for deep learning training. Programming models include single-threaded control of all GPUs, multi-threaded (one thread per GPU), or multi-process (MPI+NCCL). On the H100, NVLink provides up to 900GB/s of GPU-to-GPU bandwidth, far exceeding PCIe. When writing multi-GPU code, fully leverage these high-speed interconnects.
 
-### 內存訪問優化
+### Memory Access Optimization
 
 #### Memory Coalescing
 
-當Warp中32個線程訪問Global Memory時，如果訪問連續地址，GPU可以合併為少數幾個內存事務，大幅提升帶寬利用率。不連續的訪問會導致性能遠低於峰值。
+When 32 threads in a Warp access Global Memory, if they access consecutive addresses, the GPU can merge them into a few memory transactions, dramatically improving bandwidth utilization. Non-contiguous accesses result in performance far below peak.
 
 #### Bank Conflicts
 
-Shared Memory被分為**32個Banks**（對應Warp大小）。當同一Warp中多個線程訪問同一Bank的不同地址時，會發生Bank Conflict，導致訪問序列化。解決方法是通過Padding或重新映射索引來讓線程訪問不同Banks。
+Shared Memory is divided into **32 Banks** (corresponding to Warp size). When multiple threads in the same Warp access different addresses in the same Bank, a Bank Conflict occurs, causing accesses to serialize. The solution is to use Padding or remap indices to have threads access different Banks.
 
-#### Tiling技術
+#### Tiling Techniques
 
-為充分利用L1/L2 cache和Shared Memory的高速度，將大問題分解為小塊(tiles)處理。每個Tile的數據載入Shared Memory後可被多次重用，減少Global Memory訪問次數。利用H100的**228KB Shared Memory**，可以將矩陣切成較大的Tiles，讓Tensor Cores在高速緩存中完成計算，再寫回HBM。
+To fully utilize the high speed of L1/L2 cache and Shared Memory, break large problems into small tiles for processing. Data for each Tile is loaded into Shared Memory and can be reused multiple times, reducing Global Memory accesses. Leveraging the H100's **228KB Shared Memory**, matrices can be cut into larger Tiles, allowing Tensor Cores to complete computation in high-speed cache before writing back to HBM.
 
-### 性能分析工具
+### Performance Analysis Tools
 
-要寫出高性能CUDA code，必須借助專業工具定位瓶頸。**Nsight Compute**提供詳細的kernel-level性能指標，可檢測每行code的memory utilization和指令效率，自動識別bank conflict、memory coalescing問題和register spilling。**Nsight Systems**則提供系統級分析，幫助理解CPU-GPU互動、異步執行和數據傳輸開銷。在後續文章中，我們將詳細介紹如何使用這些工具進行性能調試和優化。
+To write high-performance CUDA code, you must rely on professional tools to identify bottlenecks. **Nsight Compute** provides detailed kernel-level performance metrics, detecting memory utilization and instruction efficiency for each line of code, and automatically identifying bank conflicts, memory coalescing issues, and register spilling. **Nsight Systems** provides system-level analysis, helping understand CPU-GPU interaction, asynchronous execution, and data transfer overhead. In future articles, we'll detail how to use these tools for performance debugging and optimization.
